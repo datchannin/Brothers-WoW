@@ -1,16 +1,4 @@
 # Brothers-WoW
-This repository is used for private mode Battle Brothers game. Play Battle Brothers the same way as WoW.
-
-This file is part of the Brothers-WoW Project. 
-
-AUTHORS: Datchannin.
-
-COPYRIGHT: Reprint or usage of materials/scripts/unique names from this repository is permitted only with the consent of the owner.
-
-
-World of Warcraft content and materials are trademarks and copyrights of Blizzard or its licensors. All rights reserved. Brothers-WoW project is not affiliated with Blizzard or its licensors.
-
-Battle Brothers content and materials are trademarks and copyrights of Overhype Studios or its licensors. All rights reserved. Brothers-WoW project is not affiliated with Overhype Studios or its licensors.
 
 ## Mode Game Processing:
 В игре должны быть представлены все стандартные классы людей World of Warcraft:
@@ -27,6 +15,81 @@ Battle Brothers content and materials are trademarks and copyrights of Overhype 
 
 WoW-соратники должны иметь уникальные wow-подобные деревья талантов. Игрок сможет прокачать каждого соратника так же как прокачивает персонажа в WoW.
 
-После определенного дня в игре, или после определенных действий игрока, в игровом мире появятся редовые подземелья, каждое из которых будет содержать босса из World of Warcraft. Чтобы войти в это подземелье игроку придется оставить в основном составе только WoW-соратников. После победы над рейдовым боссом будет открываться следующее рейдовое подземелье.
+После определенного дня в игре, или после определенных действий игрока, в игровом мире появятся редовые подземелья, каждое из которых будет содержать босса из World of Warcraft. Чтобы войти в это подземелье игроку придется оставить в основном составе только WoW-соратников, а всех стандартных отправить в запас. После победы над рейдовым боссом будет открываться следующее рейдовое подземелье.
 
+В модификацию планируется кроме стандартного вооружения и экипировки добавить WoW-подобную экипировку, возможно с улучшением каких-то параметров персонажа. Также такая экипировка будет одеваться только на определенные классы соратников и давать бонусы за собранные сеты, как это делается с рейдовыми сетами World of Warcraft.
 
+## Roadmap:
+Тут будет описан краткий план по разработке модификации. Дополняется по мере выполнения предыдущих пунктов.
+### Phase 1 (skills, perks, trees)
+1. Создание репозитория.
+2. Добавление собственного мода.
+    * Декомпиляция исходного кода игры.
+    * Разбор готового мода.
+    * Создание файлов по примеру готового мода.
+3. Работа над созданием новой способности.
+    * Создание нового скила на примере старого.
+    * Подключение нового скила на старое оружие.
+    * Модификация параметров способности.
+4. Упорядочивание перков стандартной игры.
+    * Вынесение перков в отдельный файл.
+    * Подготовка стандартного дерева перков со ссылками из нового файла.
+    * Модификация дерева талантов и проверка его работы в игре.
+5. Создание дерева талантов.
+    * Создание имени дерева талантов и передача его в скрипты.
+    * Создание второго дерева талантов.
+    * Подключение различных деревьев и проверка их работы.
+6. Отдельное дерево на отдельного соратника.
+    * Создание отдельного соратника на примере готового.
+    * Подключение второго дерева на отдельного соратника.
+    * Проверка работы сразу двух деревьев в игре.
+
+### Phase 2 (new brother, paladin, warrior)
+1. Создание нового соратника.
+    * Подготовка собратника и его настройка.
+    * Создание отдельного дерева талантов для соратника.
+2. Паладин.
+    * Подготовка соратника по принципу паладина из WoW.
+    * Создание заготовки дерева талантов паладина.
+    * Подготовка графики для талантов паладина.
+    * Разработка скрипта каждого умения паладина.
+    * Подготовка звуков каждого умения паладина.
+    * Подключение скриптов, подключение графики, подключение озвучки.
+    * Добавление спец-событий для паладина в отряде.
+3. Воин.
+    * Подготовка соратника по принципу воина из WoW.
+    * Создание заготовки дерева талантов воина.
+    * Подготовка графики для талантов воина.
+    * Разработка скрипта каждого умения воина.
+    * Подготовка звуков каждого умения воина.
+    * Подключение скриптов, подключение графики, подключение озвучки.
+    * Добавление спец-событий для воина в отряде.
+4. Окружение.
+    * Разработка скриптов для найма паладина и воина.
+    * Разработка скриптов и условий для активации рейда.
+    
+### Phase 3 (first boss)
+1.
+2.
+3.
+4.
+
+### Phase 4 (first raid)
+1.
+2.
+3.
+4.
+
+## AUTHORS AND COPYRIGHT
+
+This repository is used for private mode Battle Brothers game. Play Battle Brothers the same way as WoW.
+
+This file is part of the Brothers-WoW Project. 
+
+AUTHORS: Datchannin.
+
+COPYRIGHT: Reprint or usage of materials/scripts/unique names from this repository is permitted only with the consent of the owner.
+
+World of Warcraft content and materials are trademarks and copyrights of Blizzard or its licensors. All rights reserved. Brothers-WoW project is not affiliated with Blizzard or its licensors.
+
+Battle Brothers content and materials are trademarks and copyrights of Overhype Studios or its licensors. All rights reserved. Brothers-WoW project is not affiliated with Overhype Studios or its licensors.
