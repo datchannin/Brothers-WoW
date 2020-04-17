@@ -5,7 +5,7 @@ if (!("Perks" in gt.Const))
 	gt.Const.Perks <- {};
 }
 
-gt.Const.Perks.Perks <- [
+gt.Const.Perks.PerksVanilla <- [
 	[
 		gt.Const.Perks.PerkDefObjects.FastAdaption
 		gt.Const.Perks.PerkDefObjects.CripplingStrikes
@@ -77,11 +77,11 @@ gt.Const.Perks.Perks <- [
 ];
 gt.Const.Perks.LookupMap <- {};
 
-for( local row = 0; row < this.Const.Perks.Perks.len(); row = ++row )
+for( local row = 0; row < this.Const.Perks.PerksVanilla.len(); row = ++row )
 {
-	for( local i = 0; i < this.Const.Perks.Perks[row].len(); i = ++i )
+	for( local i = 0; i < this.Const.Perks.PerksVanilla[row].len(); i = ++i )
 	{
-		local perk = this.Const.Perks.Perks[row][i];
+		local perk = this.Const.Perks.PerksVanilla[row][i];
 		perk.Row <- row;
 		perk.Unlocks <- row;
 		gt.Const.Perks.LookupMap[perk.ID] <- perk;
