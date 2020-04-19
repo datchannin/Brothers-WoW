@@ -545,9 +545,9 @@ this.data_helper <- {
 		return null;
 	}
 
-	function convertPerksToUIData()
+	function convertPerksToUIData(_current_tree)
 	{
-		return this.Const.Perks.TreesArray[0];
+		return this.Const.Perks.TreesArray[_current_tree];
 	}
 
 	function convertCombatResultRosterToUIData()
