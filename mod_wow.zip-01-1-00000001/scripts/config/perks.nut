@@ -5,6 +5,7 @@ if (!("Perks" in gt.Const))
 	gt.Const.Perks <- {};
 }
 
+gt.Const.Perks.TreesArray <- [];
 gt.Const.Perks.PerksVanilla <- [
 	[
 		gt.Const.Perks.PerkDefObjects.FastAdaption
@@ -75,16 +76,55 @@ gt.Const.Perks.PerksVanilla <- [
 	[],
 	[]
 ];
-gt.Const.Perks.LookupMap <- {};
 
-for( local row = 0; row < this.Const.Perks.PerksVanilla.len(); row = ++row )
+gt.Const.Perks.PerksWarrior <- [
+	[
+		gt.Const.Perks.PerkDefObjects.FastAdaption
+		gt.Const.Perks.PerkDefObjects.Recover
+		gt.Const.Perks.PerkDefObjects.Student
+	],
+	[
+		gt.Const.Perks.PerkDefObjects.CripplingStrikes
+	],
+	[
+		gt.Const.Perks.PerkDefObjects.Colossus
+	],
+	[
+		gt.Const.Perks.PerkDefObjects.NineLives
+	],
+	[
+		gt.Const.Perks.PerkDefObjects.BagsAndBelts
+	],
+	[
+		gt.Const.Perks.PerkDefObjects.Pathfinder
+	],
+	[
+		gt.Const.Perks.PerkDefObjects.Adrenaline
+	],
+	[],
+	[],
+	[],
+	[]
+];
+
+gt.Const.Perks.TreesArray.push(gt.Const.Perks.PerksVanilla);
+gt.Const.Perks.TreesArray.push(gt.Const.Perks.PerksWarrior);
+
+gt.Const.Perks.LookupMap <- {};
+for (local tree_number = 0; tree_number < this.Const.Perks.TreesArray.len(); tree_number = ++tree_number)
 {
-	for( local i = 0; i < this.Const.Perks.PerksVanilla[row].len(); i = ++i )
+	for( local row = 0; row < this.Const.Perks.TreesArray[tree_number].len(); row = ++row )
 	{
-		local perk = this.Const.Perks.PerksVanilla[row][i];
-		perk.Row <- row;
-		perk.Unlocks <- row;
-		gt.Const.Perks.LookupMap[perk.ID] <- perk;
+		for( local colomn = 0; colomn < this.Const.Perks.TreesArray[tree_number][row].len(); colomn = ++colomn )
+		{
+			local perk = this.Const.Perks.TreesArray[tree_number][row][colomn];
+			perk.Row <- row;
+			perk.Unlocks <- row;
+			if (!(perk.ID in this.Const.Perks.LookupMap))
+			{
+				gt.Const.Perks.LookupMap[perk.ID] <- perk;
+			}
+		}
 	}
 }
 
