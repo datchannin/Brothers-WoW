@@ -120,7 +120,7 @@ this.character_screen <- {
 	{
 		if (this.m.JSDataSourceHandle != null)
 		{
-			this.m.JSDataSourceHandle.asyncCall("loadPerkTrees", this.onQueryPerkTrees(0));
+			this.m.JSDataSourceHandle.asyncCall("loadPerkTrees", this.onQueryPerkTrees());
 		}
 	}
 
@@ -375,7 +375,7 @@ this.character_screen <- {
 		if (this.m.PerkTreesLoaded == false)
 		{
 			this.m.PerkTreesLoaded = true;
-			result.perkTrees <- this.onQueryPerkTrees(0);
+			result.perkTrees <- this.onQueryPerkTrees();
 		}
 
 		return result;
@@ -398,9 +398,9 @@ this.character_screen <- {
 		return this.UIDataHelper.convertStashToUIData(false, this.m.InventoryFilter);
 	}
 
-	function onQueryPerkTrees(_current_tree)
+	function onQueryPerkTrees()
 	{
-		return this.UIDataHelper.convertPerksToUIData(_current_tree);
+		return this.UIDataHelper.convertPerksToUIData();
 	}
 
 	function onQueryPerkInformation( _data )
@@ -876,7 +876,7 @@ this.character_screen <- {
 
 	function general_onQueryPerkInformation( _data )
 	{
-		return this.UIDataHelper.convertPerkToUIData(_data[0]);
+		return this.UIDataHelper.convertPerkToUIData(_data[0], _data[1]);
 	}
 
 	function general_onUnlockPerk( _data )

@@ -6,7 +6,7 @@ if (!("Perks" in gt.Const))
 }
 
 gt.Const.Perks.TreesArray <- [];
-gt.Const.Perks.PerksVanilla <- [
+gt.Const.Perks.PerkTreeVanilla <- [
 	[
 		gt.Const.Perks.PerkDefObjects.FastAdaption
 		gt.Const.Perks.PerkDefObjects.CripplingStrikes
@@ -77,29 +77,27 @@ gt.Const.Perks.PerksVanilla <- [
 	[]
 ];
 
-gt.Const.Perks.PerksWarrior <- [
+gt.Const.Perks.PerkTreeWarrior1 <- [
 	[
-		gt.Const.Perks.PerkDefObjects.FastAdaption
-		gt.Const.Perks.PerkDefObjects.Recover
 		gt.Const.Perks.PerkDefObjects.Student
 	],
 	[
-		gt.Const.Perks.PerkDefObjects.CripplingStrikes
+		gt.Const.Perks.PerkDefObjects.Student
 	],
 	[
-		gt.Const.Perks.PerkDefObjects.Colossus
+		gt.Const.Perks.PerkDefObjects.Student
 	],
 	[
-		gt.Const.Perks.PerkDefObjects.NineLives
+		gt.Const.Perks.PerkDefObjects.Student
 	],
 	[
-		gt.Const.Perks.PerkDefObjects.BagsAndBelts
+		gt.Const.Perks.PerkDefObjects.Student
 	],
 	[
-		gt.Const.Perks.PerkDefObjects.Pathfinder
+		gt.Const.Perks.PerkDefObjects.Student
 	],
 	[
-		gt.Const.Perks.PerkDefObjects.Adrenaline
+		gt.Const.Perks.PerkDefObjects.Student
 	],
 	[],
 	[],
@@ -107,8 +105,66 @@ gt.Const.Perks.PerksWarrior <- [
 	[]
 ];
 
-gt.Const.Perks.TreesArray.push(gt.Const.Perks.PerksVanilla);
-gt.Const.Perks.TreesArray.push(gt.Const.Perks.PerksWarrior);
+gt.Const.Perks.PerkTreeWarrior2 <- [
+	[
+		gt.Const.Perks.PerkDefObjects.Recover
+	],
+	[
+		gt.Const.Perks.PerkDefObjects.Recover
+	],
+	[
+		gt.Const.Perks.PerkDefObjects.Recover
+	],
+	[
+		gt.Const.Perks.PerkDefObjects.Recover
+	],
+	[
+		gt.Const.Perks.PerkDefObjects.Recover
+	],
+	[
+		gt.Const.Perks.PerkDefObjects.Recover
+	],
+	[
+		gt.Const.Perks.PerkDefObjects.Recover
+	],
+	[],
+	[],
+	[],
+	[]
+];
+
+gt.Const.Perks.PerkTreeWarrior3 <- [
+	[
+		gt.Const.Perks.PerkDefObjects.Colossus
+	],
+	[
+		gt.Const.Perks.PerkDefObjects.Colossus
+	],
+	[
+		gt.Const.Perks.PerkDefObjects.Colossus
+	],
+	[
+		gt.Const.Perks.PerkDefObjects.Colossus
+	],
+	[
+		gt.Const.Perks.PerkDefObjects.Colossus
+	],
+	[
+		gt.Const.Perks.PerkDefObjects.Colossus
+	],
+	[
+		gt.Const.Perks.PerkDefObjects.Colossus
+	],
+	[],
+	[],
+	[],
+	[]
+];
+
+gt.Const.Perks.TreesArray.push(gt.Const.Perks.PerkTreeVanilla);
+gt.Const.Perks.TreesArray.push(gt.Const.Perks.PerkTreeWarrior1);
+gt.Const.Perks.TreesArray.push(gt.Const.Perks.PerkTreeWarrior2);
+gt.Const.Perks.TreesArray.push(gt.Const.Perks.PerkTreeWarrior3);
 
 gt.Const.Perks.LookupMap <- {};
 for (local tree_number = 0; tree_number < this.Const.Perks.TreesArray.len(); tree_number = ++tree_number)
@@ -133,6 +189,36 @@ gt.Const.Perks.findById <- function ( _perkID )
 	if (_perkID != null && _perkID in this.Const.Perks.LookupMap)
 	{
 		return this.Const.Perks.LookupMap[_perkID];
+	}
+
+	return null;
+};
+
+gt.Const.Perks.findByBackground <- function ( _perkID, _background )
+{
+	if (_perkID == null || _background == null)
+	{
+		return null;
+	}
+
+	if (_perkID != null && _perkID in this.Const.Perks.LookupMap)
+	{
+		return this.Const.Perks.LookupMap[_perkID];
+	}
+
+	return null;
+};
+
+gt.Const.Perks.getPerksTree <- function ( _background )
+{
+	switch(_background)
+	{
+	case "background.companion":
+		return gt.Const.Perks.PerkTreeWarrior1;
+		break;
+
+	default:
+		return gt.Const.Perks.PerkTreeVanilla;
 	}
 
 	return null;

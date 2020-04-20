@@ -194,12 +194,21 @@ this.data_helper <- {
 			statusEffects = {},
 			injuries = [],
 			perks = [],
+			perkTree = [],
 			equipment = {},
 			bag = [],
 			ground = []
 		};
 		this.addFlagsToUIData(_entity, _activeEntity, result.flags);
 		this.addCharacterToUIData(_entity, result.character);
+		local bg = _entity.getBackground();	
+		
+		if (bg != null)
+		{
+			this.logInfo("Background" + _entity.getBackground().getID());
+			result.perkTree = _entity.getBackground().getPerkTree();
+		}
+		
 		this.addStatsToUIData(_entity, result.stats);
 		local skills = _entity.getSkills();
 		this.addSkillsToUIData(skills.querySortedByItems(this.Const.SkillType.Active), result.activeSkills);
@@ -335,6 +344,15 @@ this.data_helper <- {
 		_target.leveledUp <- _entity.isLeveled();
 		_target.moodIcon <- "ui/icons/mood_0" + (_entity.getMoodState() + 1) + ".png";
 		_target.isPlayerCharacter <- _entity.getTags().get("IsPlayerCharacter");
+
+		if (_entity.getBackground() != null)
+		{
+			_target.background <- _entity.getBackground().getID();
+		}
+		else
+		{
+			_target.background <- "";
+		}
 
 		if (_entity.getLevelUps() > 0)
 		{
@@ -528,7 +546,7 @@ this.data_helper <- {
 		}
 	}
 
-	function convertPerkToUIData( _perkId )
+	function convertPerkToUIData( _perkId, _background )
 	{
 		local perk = this.Const.Perks.findById(_perkId);
 
@@ -545,9 +563,9 @@ this.data_helper <- {
 		return null;
 	}
 
-	function convertPerksToUIData(_current_tree)
+	function convertPerksToUIData()
 	{
-		return this.Const.Perks.TreesArray[_current_tree];
+		return this.Const.Perks.PerkTreeVanilla;
 	}
 
 	function convertCombatResultRosterToUIData()
