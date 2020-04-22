@@ -534,3 +534,17 @@ gt.Const.Perks.PerkDefObjects.Indomitable <- {
 	IconDisabled = "ui/perks/perk_30_sw.png",
 	Const = "Indomitable"
 }
+
+// ---------------------------------------------|
+// ----------------  WOW WARRIOR ---------------|
+// ---------------------------------------------|
+
+gt.Const.Perks.PerkDefObjects.DefensiveStance <- {
+	ID = "perk.wow.warrior.defensive_stance",
+	Script = "scripts/skills/perks/perk_wow_defensive_stance",
+	Name = this.Const.Wow_strings.PerkName.DefensiveStance,
+	Tooltip = this.Const.Wow_strings.PerkDescription.DefensiveStance,
+	Icon = "ui/perks/perk_30.png",
+	IconDisabled = "ui/perks/perk_30_sw.png",
+	Const = "DefensiveStance"
+}

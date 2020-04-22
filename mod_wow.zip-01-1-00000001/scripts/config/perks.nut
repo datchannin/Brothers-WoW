@@ -79,7 +79,8 @@ gt.Const.Perks.PerkTreeVanilla <- [
 
 gt.Const.Perks.PerkTreeWarrior1 <- [
 	[
-		gt.Const.Perks.PerkDefObjects.Student
+		gt.Const.Perks.PerkDefObjects.DefensiveStance
+		gt.Const.Perks.PerkDefObjects.DefensiveStance
 	],
 	[
 		gt.Const.Perks.PerkDefObjects.Student
@@ -211,6 +212,7 @@ gt.Const.Perks.findByBackground <- function ( _perkID, _background )
 
 gt.Const.Perks.getPerksTree <- function ( _background )
 {
+	this.logInfo("PRINT" + _background);
 	switch(_background)
 	{
 	case "background.companion":
