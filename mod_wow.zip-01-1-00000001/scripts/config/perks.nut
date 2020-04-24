@@ -212,7 +212,6 @@ gt.Const.Perks.findByBackground <- function ( _perkID, _background )
 
 gt.Const.Perks.getPerksTree <- function ( _background )
 {
-	this.logInfo("PRINT" + _background);
 	switch(_background)
 	{
 	case "background.companion":

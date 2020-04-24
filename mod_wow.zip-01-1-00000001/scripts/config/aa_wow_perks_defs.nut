@@ -544,7 +544,7 @@ gt.Const.Perks.PerkDefObjects.DefensiveStance <- {
 	Script = "scripts/skills/perks/perk_wow_defensive_stance",
 	Name = this.Const.Wow_strings.PerkName.DefensiveStance,
 	Tooltip = this.Const.Wow_strings.PerkDescription.DefensiveStance,
-	Icon = "ui/perks/perk_30.png",
-	IconDisabled = "ui/perks/perk_30_sw.png",
+	Icon = "ui/perks/perk_warrior_defensivestance.png",
+	IconDisabled = "ui/perks/perk_warrior_defensivestance_sw.png",
 	Const = "DefensiveStance"
 }
