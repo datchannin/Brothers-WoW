@@ -77,84 +77,28 @@ gt.Const.Perks.PerkTreeVanilla <- [
 	[]
 ];
 
-gt.Const.Perks.PerkTreeWarrior1 <- [
+gt.Const.Perks.PerkTreeWarrior <- [
 	[
 		gt.Const.Perks.PerkDefObjects.DefensiveStance
-		gt.Const.Perks.PerkDefObjects.DefensiveStance
-	],
-	[
+		//gt.Const.Perks.PerkDefObjects.BerserkerStance
+		gt.Const.Perks.PerkDefObjects.Colossus
+		gt.Const.Perks.PerkDefObjects.NineLives
+		gt.Const.Perks.PerkDefObjects.Pathfinder
+		gt.Const.Perks.PerkDefObjects.Adrenaline
+		gt.Const.Perks.PerkDefObjects.Recover
 		gt.Const.Perks.PerkDefObjects.Student
 	],
 	[
-		gt.Const.Perks.PerkDefObjects.Student
 	],
 	[
-		gt.Const.Perks.PerkDefObjects.Student
 	],
 	[
-		gt.Const.Perks.PerkDefObjects.Student
 	],
 	[
-		gt.Const.Perks.PerkDefObjects.Student
 	],
 	[
-		gt.Const.Perks.PerkDefObjects.Student
-	],
-	[],
-	[],
-	[],
-	[]
-];
-
-gt.Const.Perks.PerkTreeWarrior2 <- [
-	[
-		gt.Const.Perks.PerkDefObjects.Recover
 	],
 	[
-		gt.Const.Perks.PerkDefObjects.Recover
-	],
-	[
-		gt.Const.Perks.PerkDefObjects.Recover
-	],
-	[
-		gt.Const.Perks.PerkDefObjects.Recover
-	],
-	[
-		gt.Const.Perks.PerkDefObjects.Recover
-	],
-	[
-		gt.Const.Perks.PerkDefObjects.Recover
-	],
-	[
-		gt.Const.Perks.PerkDefObjects.Recover
-	],
-	[],
-	[],
-	[],
-	[]
-];
-
-gt.Const.Perks.PerkTreeWarrior3 <- [
-	[
-		gt.Const.Perks.PerkDefObjects.Colossus
-	],
-	[
-		gt.Const.Perks.PerkDefObjects.Colossus
-	],
-	[
-		gt.Const.Perks.PerkDefObjects.Colossus
-	],
-	[
-		gt.Const.Perks.PerkDefObjects.Colossus
-	],
-	[
-		gt.Const.Perks.PerkDefObjects.Colossus
-	],
-	[
-		gt.Const.Perks.PerkDefObjects.Colossus
-	],
-	[
-		gt.Const.Perks.PerkDefObjects.Colossus
 	],
 	[],
 	[],
@@ -163,9 +107,7 @@ gt.Const.Perks.PerkTreeWarrior3 <- [
 ];
 
 gt.Const.Perks.TreesArray.push(gt.Const.Perks.PerkTreeVanilla);
-gt.Const.Perks.TreesArray.push(gt.Const.Perks.PerkTreeWarrior1);
-gt.Const.Perks.TreesArray.push(gt.Const.Perks.PerkTreeWarrior2);
-gt.Const.Perks.TreesArray.push(gt.Const.Perks.PerkTreeWarrior3);
+gt.Const.Perks.TreesArray.push(gt.Const.Perks.PerkTreeWarrior);
 
 gt.Const.Perks.LookupMap <- {};
 for (local tree_number = 0; tree_number < this.Const.Perks.TreesArray.len(); tree_number = ++tree_number)
@@ -215,7 +157,7 @@ gt.Const.Perks.getPerksTree <- function ( _background )
 	switch(_background)
 	{
 	case "background.companion":
-		return gt.Const.Perks.PerkTreeWarrior1;
+		return gt.Const.Perks.PerkTreeWarrior;
 		break;
 
 	default:
