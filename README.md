@@ -11,7 +11,7 @@
 * ![custom badges](https://img.shields.io/badge/status-to%20do-blue) маг
 * ![custom badges](https://img.shields.io/badge/status-to%20do-blue) жрец
 
-Roadmap is [HERE](https://github.com/datchannin/Brothers-WoW/blob/master/spec/roadmap.md)
+![custom badges](https://img.shields.io/badge/roadmap-yes-green): [Click](https://github.com/datchannin/Brothers-WoW/blob/master/spec/roadmap.md)
 
 Соратник каждого класса может быть нанят в городах, так же как и обычные соратники. Игрок может комбинировать и собирать в отряд как стандартных соратников, так и wow-соратников. И всех их прокачивать вместе.
 
