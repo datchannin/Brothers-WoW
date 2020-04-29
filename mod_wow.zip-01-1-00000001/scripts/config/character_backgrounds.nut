@@ -49,7 +49,8 @@ gt.Const.CharacterBackgrounds <- [
 	"historian_background",
 	"tailor_background",
 	"shepherd_background",
-	"houndmaster_background"
+	"houndmaster_background",
+	"raider_warrior_background"
 ];
 gt.Const.CharacterLaborerBackgrounds <- [
 	"farmhand_background",
