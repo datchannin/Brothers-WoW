@@ -1,4 +1,5 @@
 # Brothers-WoW
+![Brothers-WoW](spec/bbwow_02.png "Brothers WoW repo: Play Battle Brothers using WoW heroes")
 
 ## Mode Game Processing
 В игре должны быть представлены все стандартные классы альянса World of Warcraft Classic:
