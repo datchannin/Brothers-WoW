@@ -31,13 +31,12 @@ this.early_access_scenario <- this.inherit("scripts/scenarios/world/starting_sce
 
 		local bros = roster.getAll();
 		bros[0].setStartValuesEx([
-			"companion_1h_background"
+			"raider_warrior_background"
 		]);
-		bros[0].getBackground().m.RawDescription = "{You saved %name%\'s life in a battle against brigands, and he returned the favor in an alley ambush by thieves. Given that common criminals are a few levels beneath brigands, you often joke with him that he is still a little behind on the \'saving each other\'s asses\' debt.}";
 		bros[0].setPlaceInFormation(3);
-		bros[0].m.PerkPoints = 3;
-		bros[0].m.LevelUps = 3;
-		bros[0].m.Level = 4;
+		bros[0].m.PerkPoints = 4;
+		bros[0].m.LevelUps = 4;
+		bros[0].m.Level = 5;
 		
 		bros[1].setStartValuesEx([
 			"companion_2h_background"

@@ -160,6 +160,10 @@ gt.Const.Perks.getPerksTree <- function ( _background )
 		return gt.Const.Perks.PerkTreeWarrior;
 		break;
 
+	case "background.raider_warrior":
+		return gt.Const.Perks.PerkTreeWarrior;
+		break;
+
 	default:
 		return gt.Const.Perks.PerkTreeVanilla;
 	}
