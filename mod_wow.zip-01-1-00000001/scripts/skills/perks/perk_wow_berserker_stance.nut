@@ -1,11 +1,11 @@
-this.perk_wow_defensive_stance <- this.inherit("scripts/skills/skill", {
+this.perk_wow_berserker_stance <- this.inherit("scripts/skills/skill", {
 	m = {},
 	function create()
 	{
-		this.m.ID = "perk.wow.warrior.defensive_stance";
-		this.m.Name = this.Const.Wow_strings.PerkName.DefensiveStance;
-		this.m.Description = this.Const.Wow_strings.PerkDescription.DefensiveStance;
-		this.m.Icon = "ui/perks/perk_warrior_defensivestance.png";
+		this.m.ID = "perk.wow.warrior.berserker_stance";
+		this.m.Name = this.Const.Wow_strings.PerkName.BerserkerStance;
+		this.m.Description = this.Const.Wow_strings.PerkDescription.BerserkerStance;
+		this.m.Icon = "ui/perks/perk_warrior_berserkerstance.png";
 		this.m.Type = this.Const.SkillType.Perk | this.Const.SkillType.StatusEffect;
 		this.m.Order = this.Const.SkillOrder.Perk;
 		this.m.IsActive = false;
@@ -19,7 +19,7 @@ this.perk_wow_defensive_stance <- this.inherit("scripts/skills/skill", {
 		{
 			return;
 		}
-		_properties.DamageReceivedTotalMult *= 0.9;
+		_properties.DamageReceivedTotalMult *= 1.1;
 	}
 
 	function onAnySkillUsed( _skill, _targetEntity, _properties )
@@ -35,7 +35,7 @@ this.perk_wow_defensive_stance <- this.inherit("scripts/skills/skill", {
 		}
 		else
 		{
-			_properties.DamageTotalMult *= 0.9;
+			_properties.DamageTotalMult *= 1.1;
 		}
 	}
 

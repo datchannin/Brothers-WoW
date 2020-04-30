@@ -548,3 +548,13 @@ gt.Const.Perks.PerkDefObjects.DefensiveStance <- {
 	IconDisabled = "ui/perks/perk_warrior_defensivestance_sw.png",
 	Const = "DefensiveStance"
 }
+
+gt.Const.Perks.PerkDefObjects.BerserkerStance <- {
+	ID = "perk.wow.warrior.berserker_stance",
+	Script = "scripts/skills/perks/perk_wow_berserker_stance",
+	Name = this.Const.Wow_strings.PerkName.BerserkerStance,
+	Tooltip = this.Const.Wow_strings.PerkDescription.BerserkerStance,
+	Icon = "ui/perks/perk_warrior_berserkerstance.png",
+	IconDisabled = "ui/perks/perk_warrior_berserkerstance_sw.png",
+	Const = "BerserkerStance"
+}

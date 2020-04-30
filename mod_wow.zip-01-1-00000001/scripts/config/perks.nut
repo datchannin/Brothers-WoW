@@ -80,7 +80,7 @@ gt.Const.Perks.PerkTreeVanilla <- [
 gt.Const.Perks.PerkTreeWarrior <- [
 	[
 		gt.Const.Perks.PerkDefObjects.DefensiveStance
-		//gt.Const.Perks.PerkDefObjects.BerserkerStance
+		gt.Const.Perks.PerkDefObjects.BerserkerStance
 		gt.Const.Perks.PerkDefObjects.Colossus
 		gt.Const.Perks.PerkDefObjects.NineLives
 		gt.Const.Perks.PerkDefObjects.Pathfinder

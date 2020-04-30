@@ -29,9 +29,10 @@ if (!("Wow_strings" in gt.Const))
 }
 
 gt.Const.Wow_strings.PerkName <- {
-	DefensiveStance = "Defensive Stance"
+	DefensiveStance = "Defensive Stance",
+	BerserkerStance = "Berserker Stance",
 };
 gt.Const.Wow_strings.PerkDescription <- {
-	DefensiveStance = "A defensive combat stance. Decreases damage taken by [color=" + this.Const.UI.Color.PositiveValue + "]10%[/color] and damage caused by [color=" + this.Const.UI.Color.NegativeValue + "]10%[/color]."
-
+	DefensiveStance = "A defensive combat stance. Decreases damage taken by [color=" + this.Const.UI.Color.PositiveValue + "]10%[/color] and damage caused by [color=" + this.Const.UI.Color.NegativeValue + "]10%[/color].",
+	BerserkerStance = "An aggressive stance. Damage done is increased by [color=" + this.Const.UI.Color.PositiveValue + "]10%[/color] and all direct damage taken is increased by [color=" + this.Const.UI.Color.NegativeValue + "]10%[/color].",
 };
