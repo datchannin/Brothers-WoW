@@ -89,7 +89,7 @@ gt.Const.Perks.PerkTreeWarrior <- [
 		gt.Const.Perks.PerkDefObjects.Student
 	],
 	[
-		//gt.Const.Perks.PerkDefObjects.Toughness
+		gt.Const.Perks.PerkDefObjects.Toughness
 		//gt.Const.Perks.PerkDefObjects.Hardness
 		//gt.Const.Perks.PerkDefObjects.BattleShout
 		//gt.Const.Perks.PerkDefObjects.Mobility

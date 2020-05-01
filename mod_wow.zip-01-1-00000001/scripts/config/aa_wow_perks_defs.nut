@@ -558,3 +558,13 @@ gt.Const.Perks.PerkDefObjects.BerserkerStance <- {
 	IconDisabled = "ui/perks/perk_warrior_berserkerstance_sw.png",
 	Const = "BerserkerStance"
 }
+
+gt.Const.Perks.PerkDefObjects.Toughness <- {
+	ID = "perk.wow.warrior.toughness",
+	Script = "scripts/skills/perks/perk_wow_toughness",
+	Name = this.Const.Wow_strings.PerkName.Toughness,
+	Tooltip = this.Const.Wow_strings.PerkDescription.Toughness,
+	Icon = "ui/perks/perk_warrior_toughness.png",
+	IconDisabled = "ui/perks/perk_warrior_toughness_sw.png",
+	Const = "Toughness"
+}
