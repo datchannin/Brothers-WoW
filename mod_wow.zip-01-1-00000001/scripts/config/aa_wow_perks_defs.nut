@@ -578,3 +578,13 @@ gt.Const.Perks.PerkDefObjects.Hardness <- {
 	IconDisabled = "ui/perks/perk_warrior_hardness_sw.png",
 	Const = "Hardness"
 }
+
+gt.Const.Perks.PerkDefObjects.BattleShout <- {
+	ID = "perk.wow.warrior.battle_shout",
+	Script = "scripts/skills/perks/perk_wow_battle_shout",
+	Name = this.Const.Wow_strings.PerkName.BattleShout,
+	Tooltip = this.Const.Wow_strings.PerkDescription.BattleShout,
+	Icon = "ui/perks/perk_warrior_battleshout.png",
+	IconDisabled = "ui/perks/perk_warrior_battleshout_sw.png",
+	Const = "BattleShout"
+}

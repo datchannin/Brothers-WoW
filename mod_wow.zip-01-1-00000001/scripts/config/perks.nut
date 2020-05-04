@@ -91,7 +91,7 @@ gt.Const.Perks.PerkTreeWarrior <- [
 	[
 		gt.Const.Perks.PerkDefObjects.Toughness
 		gt.Const.Perks.PerkDefObjects.Hardness
-		//gt.Const.Perks.PerkDefObjects.BattleShout
+		gt.Const.Perks.PerkDefObjects.BattleShout
 		//gt.Const.Perks.PerkDefObjects.Mobility
 		gt.Const.Perks.PerkDefObjects.SteelBrow
 		gt.Const.Perks.PerkDefObjects.HoldOut
