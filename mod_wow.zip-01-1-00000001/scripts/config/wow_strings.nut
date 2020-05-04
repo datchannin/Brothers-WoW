@@ -34,6 +34,7 @@ gt.Const.Wow_strings.PerkName <- {
 	Toughness = "Toughness",
 	Hardness = "Hardness",
 	BattleShout = "Battle Shout",
+	Mobility = "Mobility",
 };
 gt.Const.Wow_strings.PerkDescription <- {
 	DefensiveStance = "A defensive combat stance. Decreases damage taken by [color=" + this.Const.UI.Color.PositiveValue + "]10%[/color] and damage caused by [color=" + this.Const.UI.Color.NegativeValue + "]10%[/color].",
@@ -41,4 +42,5 @@ gt.Const.Wow_strings.PerkDescription <- {
 	Toughness = "You have skill in armor using. Armor damage taken is reduced by [color=" + this.Const.UI.Color.PositiveValue + "]3%[/color].",
 	Hardness = "Do you know how to use muscles? Sure. Stamina value is increased by [color=" + this.Const.UI.Color.PositiveValue + "]20[/color].",
 	BattleShout = "The warrior shouts, increasing the melee attack power of all party members within 2 tile by [color=" + this.Const.UI.Color.PositiveValue + "]10%[/color].",
+	Mobility = "Unlocks the 'Mobility' skill which increases your Action Points by [color=" + this.Const.UI.Color.PositiveValue + "]2[/color]. Do you have enough Fatigue?",
 };

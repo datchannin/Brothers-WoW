@@ -588,3 +588,13 @@ gt.Const.Perks.PerkDefObjects.BattleShout <- {
 	IconDisabled = "ui/perks/perk_warrior_battleshout_sw.png",
 	Const = "BattleShout"
 }
+
+gt.Const.Perks.PerkDefObjects.Mobility <- {
+	ID = "perk.wow.warrior.mobility",
+	Script = "scripts/skills/perks/perk_wow_mobility",
+	Name = this.Const.Wow_strings.PerkName.Mobility,
+	Tooltip = this.Const.Wow_strings.PerkDescription.Mobility,
+	Icon = "ui/perks/perk_warrior_mobility.png",
+	IconDisabled = "ui/perks/perk_warrior_mobility_sw.png",
+	Const = "Mobility"
+}
