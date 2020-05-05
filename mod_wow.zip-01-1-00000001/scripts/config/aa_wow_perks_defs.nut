@@ -598,3 +598,47 @@ gt.Const.Perks.PerkDefObjects.Mobility <- {
 	IconDisabled = "ui/perks/perk_warrior_mobility_sw.png",
 	Const = "Mobility"
 }
+
+gt.Const.Perks.PerkDefObjects.LastStand <- {
+	ID = "perk.wow.warrior.last_stand",
+	Script = "scripts/skills/perks/perk_wow_last_stand",
+	Name = this.Const.Wow_strings.PerkName.LastStand,
+	Tooltip = this.Const.Wow_strings.PerkDescription.LastStand,
+	Icon = "ui/perks/perk_warrior_laststand.png",
+	IconDisabled = "ui/perks/perk_warrior_laststand_sw.png",
+	Const = "LastStand"
+}
+
+gt.Const.Perks.PerkDefObjects.Gravity <- {
+	ID = "perk.wow.warrior.gravity",
+	Script = "scripts/skills/perks/perk_wow_gravity",
+	Name = this.Const.Wow_strings.PerkName.Gravity,
+	Tooltip = this.Const.Wow_strings.PerkDescription.Gravity,
+	Icon = "ui/perks/perk_warrior_gravity.png",
+	IconDisabled = "ui/perks/perk_warrior_gravity_sw.png",
+	Const = "Gravity"
+}
+
+gt.Const.Perks.PerkDefObjects.BerserkerRage <- {
+	ID = "perk.wow.warrior.berserker_rage",
+	Script = "scripts/skills/perks/perk_wow_berserker_rage",
+	Name = this.Const.Wow_strings.PerkName.BerserkerRage,
+	Tooltip = this.Const.Wow_strings.PerkDescription.BerserkerRage,
+	Icon = "ui/perks/perk_warrior_berserkerrage.png",
+	IconDisabled = "ui/perks/perk_warrior_berserkerrage_sw.png",
+	Const = "BerserkerRage"
+}
+
+gt.Const.Perks.PerkDefObjects.Charge <- {
+	ID = "perk.wow.warrior.charge",
+	Script = "scripts/skills/perks/perk_wow_charge",
+	Name = this.Const.Wow_strings.PerkName.Charge,
+	Tooltip = this.Const.Wow_strings.PerkDescription.Charge,
+	Icon = "ui/perks/perk_warrior_charge.png",
+	IconDisabled = "ui/perks/perk_warrior_charge_sw.png",
+	Const = "Charge"
+}
+
+// ---------------------------------------------|
+// ----------------  WOW PALADIN ---------------|
+// ---------------------------------------------|
