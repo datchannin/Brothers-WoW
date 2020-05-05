@@ -109,12 +109,31 @@ gt.Const.Perks.PerkTreeWarrior <- [
 		gt.Const.Perks.PerkDefObjects.Taunt
 	],
 	[
+		//gt.Const.Perks.PerkDefObjects.MasterSpear
+		//gt.Const.Perks.PerkDefObjects.MasterSword
+		//gt.Const.Perks.PerkDefObjects.MasterAxe
+		//gt.Const.Perks.PerkDefObjects.MasterHammer
+		gt.Const.Perks.PerkDefObjects.SpecHammer
+		gt.Const.Perks.PerkDefObjects.SpecAxe
+		gt.Const.Perks.PerkDefObjects.SpecSword
+		gt.Const.Perks.PerkDefObjects.SpecSpear
 	],
 	[
+		gt.Const.Perks.PerkDefObjects.ReachAdvantage
+		gt.Const.Perks.PerkDefObjects.Overwhelm
+		gt.Const.Perks.PerkDefObjects.Underdog
+		gt.Const.Perks.PerkDefObjects.Footwork
 	],
 	[
+		gt.Const.Perks.PerkDefObjects.Berserk
+		gt.Const.Perks.PerkDefObjects.HeadHunter
+		gt.Const.Perks.PerkDefObjects.BattleForged
 	],
 	[
+		//gt.Const.Perks.PerkDefObjects.MasterShield
+		//gt.Const.Perks.PerkDefObjects.BloodThirst
+		gt.Const.Perks.PerkDefObjects.KillingFrenzy
+		gt.Const.Perks.PerkDefObjects.Indomitable
 	],
 	[],
 	[],
