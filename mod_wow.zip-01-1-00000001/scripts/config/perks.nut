@@ -130,8 +130,8 @@ gt.Const.Perks.PerkTreeWarrior <- [
 		gt.Const.Perks.PerkDefObjects.BattleForged
 	],
 	[
-		//gt.Const.Perks.PerkDefObjects.MasterShield
-		//gt.Const.Perks.PerkDefObjects.BloodThirst
+		gt.Const.Perks.PerkDefObjects.MasterShield
+		gt.Const.Perks.PerkDefObjects.BloodThirst
 		gt.Const.Perks.PerkDefObjects.KillingFrenzy
 		gt.Const.Perks.PerkDefObjects.Indomitable
 	],

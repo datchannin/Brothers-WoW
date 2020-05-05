@@ -34,7 +34,7 @@ this.early_access_scenario <- this.inherit("scripts/scenarios/world/starting_sce
 			"raider_warrior_background"
 		]);
 		bros[0].setPlaceInFormation(3);
-		bros[0].m.PerkPoints = 4;
+		bros[0].m.PerkPoints = 12;
 		bros[0].m.LevelUps = 4;
 		bros[0].m.Level = 5;
 		

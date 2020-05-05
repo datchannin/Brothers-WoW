@@ -679,6 +679,26 @@ gt.Const.Perks.PerkDefObjects.MasterHammer <- {
 	Const = "MasterHammer"
 }
 
+gt.Const.Perks.PerkDefObjects.MasterShield <- {
+	ID = "perk.wow.warrior.master_shield",
+	Script = "scripts/skills/perks/perk_wow_master_shield",
+	Name = this.Const.Wow_strings.PerkName.MasterShield,
+	Tooltip = this.Const.Wow_strings.PerkDescription.MasterShield,
+	Icon = "ui/perks/perk_warrior_mastershield.png",
+	IconDisabled = "ui/perks/perk_warrior_mastershield_sw.png",
+	Const = "MasterShield"
+}
+
+gt.Const.Perks.PerkDefObjects.BloodThirst <- {
+	ID = "perk.wow.warrior.blood_thirst",
+	Script = "scripts/skills/perks/perk_wow_blood_thirst",
+	Name = this.Const.Wow_strings.PerkName.BloodThirst,
+	Tooltip = this.Const.Wow_strings.PerkDescription.BloodThirst,
+	Icon = "ui/perks/perk_warrior_bloodthirst.png",
+	IconDisabled = "ui/perks/perk_warrior_bloodthirst_sw.png",
+	Const = "BloodThirst"
+}
+
 // ---------------------------------------------|
 // ----------------  WOW PALADIN ---------------|
 // ---------------------------------------------|
