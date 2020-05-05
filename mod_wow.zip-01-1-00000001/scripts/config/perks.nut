@@ -109,10 +109,10 @@ gt.Const.Perks.PerkTreeWarrior <- [
 		gt.Const.Perks.PerkDefObjects.Taunt
 	],
 	[
-		//gt.Const.Perks.PerkDefObjects.MasterSpear
-		//gt.Const.Perks.PerkDefObjects.MasterSword
-		//gt.Const.Perks.PerkDefObjects.MasterAxe
-		//gt.Const.Perks.PerkDefObjects.MasterHammer
+		gt.Const.Perks.PerkDefObjects.MasterSpear
+		gt.Const.Perks.PerkDefObjects.MasterSword
+		gt.Const.Perks.PerkDefObjects.MasterAxe
+		gt.Const.Perks.PerkDefObjects.MasterHammer
 		gt.Const.Perks.PerkDefObjects.SpecHammer
 		gt.Const.Perks.PerkDefObjects.SpecAxe
 		gt.Const.Perks.PerkDefObjects.SpecSword

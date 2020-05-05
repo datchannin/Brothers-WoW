@@ -639,6 +639,46 @@ gt.Const.Perks.PerkDefObjects.Charge <- {
 	Const = "Charge"
 }
 
+gt.Const.Perks.PerkDefObjects.MasterSpear <- {
+	ID = "perk.wow.warrior.master_spear",
+	Script = "scripts/skills/perks/perk_wow_master_spear",
+	Name = this.Const.Wow_strings.PerkName.MasterSpear,
+	Tooltip = this.Const.Wow_strings.PerkDescription.MasterSpear,
+	Icon = "ui/perks/perk_warrior_masterspear.png",
+	IconDisabled = "ui/perks/perk_warrior_masterspear_sw.png",
+	Const = "MasterSpear"
+}
+
+gt.Const.Perks.PerkDefObjects.MasterSword <- {
+	ID = "perk.wow.warrior.master_sword",
+	Script = "scripts/skills/perks/perk_wow_master_sword",
+	Name = this.Const.Wow_strings.PerkName.MasterSword,
+	Tooltip = this.Const.Wow_strings.PerkDescription.MasterSword,
+	Icon = "ui/perks/perk_warrior_mastersword.png",
+	IconDisabled = "ui/perks/perk_warrior_mastersword_sw.png",
+	Const = "MasterSword"
+}
+
+gt.Const.Perks.PerkDefObjects.MasterAxe <- {
+	ID = "perk.wow.warrior.master_axe",
+	Script = "scripts/skills/perks/perk_wow_master_axe",
+	Name = this.Const.Wow_strings.PerkName.MasterAxe,
+	Tooltip = this.Const.Wow_strings.PerkDescription.MasterAxe,
+	Icon = "ui/perks/perk_warrior_masteraxe.png",
+	IconDisabled = "ui/perks/perk_warrior_masteraxe_sw.png",
+	Const = "MasterAxe"
+}
+
+gt.Const.Perks.PerkDefObjects.MasterHammer <- {
+	ID = "perk.wow.warrior.master_hammer",
+	Script = "scripts/skills/perks/perk_wow_master_hammer",
+	Name = this.Const.Wow_strings.PerkName.MasterHammer,
+	Tooltip = this.Const.Wow_strings.PerkDescription.MasterHammer,
+	Icon = "ui/perks/perk_warrior_masterhammer.png",
+	IconDisabled = "ui/perks/perk_warrior_masterhammer_sw.png",
+	Const = "MasterHammer"
+}
+
 // ---------------------------------------------|
 // ----------------  WOW PALADIN ---------------|
 // ---------------------------------------------|

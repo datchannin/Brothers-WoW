@@ -39,6 +39,10 @@ gt.Const.Wow_strings.PerkName <- {
 	Gravity = "Gravity",
 	BerserkerRage = "Berserker Rage",
 	Charge = "Charge",
+	MasterSpear = "Spear Specialization",
+	MasterSword = "Sword Specialization",
+	MasterAxe = "Axe Specialization",
+	MasterHammer = "Hammer Specialization",
 };
 gt.Const.Wow_strings.PerkDescription <- {
 	DefensiveStance = "A defensive combat stance. Decreases damage taken by [color=" + this.Const.UI.Color.PositiveValue + "]10%[/color] and damage caused by [color=" + this.Const.UI.Color.NegativeValue + "]10%[/color].",
@@ -46,9 +50,13 @@ gt.Const.Wow_strings.PerkDescription <- {
 	Toughness = "You have skill in armor using. Armor damage taken is reduced by [color=" + this.Const.UI.Color.PositiveValue + "]3%[/color].",
 	Hardness = "Do you know how to use muscles? Sure. Stamina value is increased by [color=" + this.Const.UI.Color.PositiveValue + "]20[/color].",
 	BattleShout = "The warrior shouts, increasing the melee attack power of all party members within 2 tile by [color=" + this.Const.UI.Color.PositiveValue + "]10%[/color].",
-	Mobility = "Unlocks the 'Mobility' skill which increases your Action Points by [color=" + this.Const.UI.Color.PositiveValue + "]2[/color]. Do you have enough Fatigue? Characters can not hame more than their maximum Action Points",
+	Mobility = "Unlocks the \'Mobility\' skill which increases your Action Points by [color=" + this.Const.UI.Color.PositiveValue + "]2[/color]. Do you have enough Fatigue? Characters can not have more than their maximum Action Points",
 	LastStand = "Hitpoints are increased by [color=" + this.Const.UI.Color.PositiveValue + "]30%[/color]. More hitpoints - more survival. Now you are a defense machine.",
 	Gravity = "Unlocks the \'Gravity\' skill which allows you to drag in enemy. Drag and crush!",
 	BerserkerRage = "Unlocks the \'Berserker Rage\' skill which give you powerfull buff. Damage done is increased by [color=" + this.Const.UI.Color.PositiveValue + "]25%[/color]",
 	Charge = "Unlocks the \'Charge\' skill which allows you charge an enemy.",
+	MasterSpear = "Spear adept. Spear is your past, present and future. Damage done by spear is increased by [color=" + this.Const.UI.Color.PositiveValue + "]20%[/color]. Does not work with two-handed weapon.",
+	MasterSword = "Sword adept. What can be greater, that sword? Fast attack, then attack again and again. Damage done by sword is increased by [color=" + this.Const.UI.Color.PositiveValue + "]20%[/color]. Does not work with two-handed weapon.",
+	MasterAxe = "Axe adept. Now chopping opponents into pieces has become easier. After all, you have learned the details of destruction! Damage done by axe is increased by [color=" + this.Const.UI.Color.PositiveValue + "]20%[/color]. Does not work with one-handed weapon.",
+	MasterHammer = "Hammer adept. The severity of the hammers gives you confidence. And the more confident you hit, the more serious the damage becomes... Damage done by hammer is increased by [color=" + this.Const.UI.Color.PositiveValue + "]20%[/color]. Does not work with one-handed weapon.",
 };
