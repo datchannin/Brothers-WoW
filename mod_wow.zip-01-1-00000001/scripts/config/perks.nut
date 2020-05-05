@@ -99,6 +99,14 @@ gt.Const.Perks.PerkTreeWarrior <- [
 		gt.Const.Perks.PerkDefObjects.CoupDeGrace
 	],
 	[
+		//gt.Const.Perks.PerkDefObjects.LastStand
+		//gt.Const.Perks.PerkDefObjects.Gravity
+		//gt.Const.Perks.PerkDefObjects.BerserkerRage
+		//gt.Const.Perks.PerkDefObjects.Charge
+		gt.Const.Perks.PerkDefObjects.ShieldExpert
+		gt.Const.Perks.PerkDefObjects.Brawny
+		gt.Const.Perks.PerkDefObjects.Rotation
+		gt.Const.Perks.PerkDefObjects.Taunt
 	],
 	[
 	],
