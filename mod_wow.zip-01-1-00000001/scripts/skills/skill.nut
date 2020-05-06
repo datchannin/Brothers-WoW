@@ -1194,7 +1194,7 @@ this.skill <- {
 
 			if (shield != null && shield.isItemType(this.Const.Items.ItemType.Shield))
 			{
-				local shieldBonus = (this.m.IsRanged ? shield.getRangedDefense() : shield.getMeleeDefense()) * (_targetEntity.getCurrentProperties().IsSpecializedInShields ? 1.25 : 1.0);
+				local shieldBonus = (this.m.IsRanged ? shield.getRangedDefense() : shield.getMeleeDefense()) * (_targetEntity.getCurrentProperties().IsSpecializedInShields ? 1.25 : 1.0) * (_targetEntity.getCurrentProperties().IsMasterInShields ? 1.25 : 1.0);
 				toHit = toHit + shieldBonus;
 
 				if (!this.m.IsShieldwallRelevant && _targetEntity.getSkills().hasSkill("effects.shieldwall"))
@@ -1283,7 +1283,7 @@ this.skill <- {
 
 		if (shield != null && shield.isItemType(this.Const.Items.ItemType.Shield))
 		{
-			shieldBonus = (this.m.IsRanged ? shield.getRangedDefense() : shield.getMeleeDefense()) * (_targetEntity.getCurrentProperties().IsSpecializedInShields ? 1.25 : 1.0);
+			shieldBonus = (this.m.IsRanged ? shield.getRangedDefense() : shield.getMeleeDefense()) * (_targetEntity.getCurrentProperties().IsSpecializedInShields ? 1.25 : 1.0) * (_targetEntity.getCurrentProperties().IsMasterInShields ? 1.25 : 1.0);
 
 			if (!this.m.IsShieldRelevant)
 			{
