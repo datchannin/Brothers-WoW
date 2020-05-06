@@ -61,6 +61,6 @@ gt.Const.Wow_strings.PerkDescription <- {
 	MasterSword = "Sword adept. What can be greater, that sword? Fast attack, then attack again and again. Damage done by sword is increased by [color=" + this.Const.UI.Color.PositiveValue + "]20%[/color]. Does not work with two-handed weapon.",
 	MasterAxe = "Axe adept. Now chopping opponents into pieces has become easier. After all, you have learned the details of destruction! Damage done by axe is increased by [color=" + this.Const.UI.Color.PositiveValue + "]20%[/color]. Does not work with one-handed weapon.",
 	MasterHammer = "Hammer adept. The severity of the hammers gives you confidence. And the more confident you hit, the more serious the damage becomes... Damage done by hammer is increased by [color=" + this.Const.UI.Color.PositiveValue + "]20%[/color]. Does not work with one-handed weapon.",
-	MasterShield = "Shield adept. You become steady. It’s easier for your opponents to break through the wall than through your shield. The shield defense bonus is increased by [color=" + this.Const.UI.Color.PositiveValue + "]25%[/color]. Also it give you immunity to being stunned.",
-	BloodThirst = "Your successful melee attack will restore you [color=" + this.Const.UI.Color.PositiveValue + "]10[/color] health.",
+	MasterShield = "Shield adept. You become steady. It’s easier for your opponents to break through the wall than through your shield. The shield defense bonus is increased by [color=" + this.Const.UI.Color.PositiveValue + "]25%[/color]. Also it gives you immunity to being stunned.",
+	BloodThirst = "Your successful melee attack restores you [color=" + this.Const.UI.Color.PositiveValue + "]10[/color] health.",
 };
