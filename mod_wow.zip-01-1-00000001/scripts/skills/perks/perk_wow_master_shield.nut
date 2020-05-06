@@ -17,4 +17,14 @@ this.perk_wow_master_shield <- this.inherit("scripts/skills/skill", {
 	{
 		_properties.IsMasterInShields = true;
 	}
+	
+	function onCombatStarted()
+	{
+		this.getContainer().add(this.new("scripts/skills/effects/stunimmune_effect"));
+	}
+
+	function onRemoved()
+	{
+		this.getContainer().removeByID("effects.stun_immun");
+	}
 });
