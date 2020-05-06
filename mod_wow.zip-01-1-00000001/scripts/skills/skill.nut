@@ -1100,7 +1100,7 @@ this.skill <- {
 					text = "Resistance against ranged weapons"
 				});
 			}
-			else if (this.m.ID == "actives.spear_puncture" || this.m.ID == "actives.puncture" || this.m.ID == "actives.thrust" || this.m.ID == "actives.stab" || this.m.ID == "actives.impale" || this.m.ID == "actives.rupture" || this.m.ID == "actives.lunge")
+			else if (this.m.ID == "actives.puncture" || this.m.ID == "actives.thrust" || this.m.ID == "actives.stab" || this.m.ID == "actives.impale" || this.m.ID == "actives.rupture" || this.m.ID == "actives.lunge")
 			{
 				ret.push({
 					icon = "ui/tooltips/negative.png",
