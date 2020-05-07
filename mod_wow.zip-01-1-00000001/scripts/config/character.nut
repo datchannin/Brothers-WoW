@@ -874,7 +874,7 @@ gt.Const.CharacterProperties <- {
 	IsSpecializedInPolearms = false,
 	IsSpecializedInDaggers = false,
 	IsSpecializedInShields = false,
-	IsMasterInSwords = false,
+	IsMasterInShields = false,
 	IsMasterInHammers = false,
 	IsMasterInAxes = false,
 	IsMasterInSwords = false,
