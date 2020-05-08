@@ -191,10 +191,6 @@ gt.Const.Perks.getPerksTree <- function ( _background )
 {
 	switch(_background)
 	{
-	case "background.companion":
-		return gt.Const.Perks.PerkTreeWarrior;
-		break;
-
 	case "background.raider_warrior":
 		return gt.Const.Perks.PerkTreeWarrior;
 		break;
