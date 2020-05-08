@@ -4,7 +4,7 @@ this.wow_scenario <- this.inherit("scripts/scenarios/world/starting_scenario", {
 	{
 		this.m.ID = "scenario.wow";
 		this.m.Name = "WoW debug Company";
-		this.m.Description = "[p=c][img]gfx/ui/events/event_122.png[/img][/p][p]This scenario is created for debug WoW characters, new perks, skills and abilities. Use them and play. If you find any bug - please, inform the github repo.[/p]";
+		this.m.Description = "[p=c][img]gfx/ui/events/event_wow.png[/img][/p][p]This scenario was created for debug WoW characters, new perks, skills and abilities. Use them and play. If you find any bug - please, inform the github repo.[/p]";
 		this.m.Difficulty = 3;
 		this.m.Order = 10;
 	}
