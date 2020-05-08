@@ -58,6 +58,10 @@ this.early_access_scenario <- this.inherit("scripts/scenarios/world/starting_sce
 
 		this.World.Assets.getStash().add(this.new("scripts/items/supplies/ground_grains_item"));
 		this.World.Assets.getStash().add(this.new("scripts/items/supplies/ground_grains_item"));
+		for (local i = 0; i < 10; i=++i)
+		{
+			this.World.Assets.getStash().add(this.new("scripts/items/misc/potion_of_oblivion_item"));
+		}
 		this.World.Assets.m.Money = this.World.Assets.m.Money + 400;
 	}
 
