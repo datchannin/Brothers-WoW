@@ -37,6 +37,7 @@ To install this mode you should do step-by-step:
 3. Put addon into the \Battle Brothers\data dir.
 4. Run the game. "Brothers-WoW" addon works by default.
 5. For test, play or debug this addon, select "WoW debug Company" from the scenario list.
+![Selection screen](spec/company.png "Brothers WoW repo: Select company for play.")
 
 ## License, Authors and Copyright
 
