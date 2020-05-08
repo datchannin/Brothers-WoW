@@ -2,15 +2,15 @@
 ![Brothers-WoW](spec/bbwow_02.png "Brothers WoW repo: Play Battle Brothers using WoW heroes")
 
 ## Mode Game Processing
-В игре должны быть представлены все стандартные классы альянса World of Warcraft Classic:
-* ![custom badges](https://img.shields.io/badge/status-to%20do-blue) паладин
-* ![custom badges](https://img.shields.io/badge/status-in%20progress-yellow) [воин](https://github.com/datchannin/Brothers-WoW/blob/master/spec/warrior.md)
-* ![custom badges](https://img.shields.io/badge/status-to%20do-blue) охотник
-* ![custom badges](https://img.shields.io/badge/status-to%20do-blue) друид
-* ![custom badges](https://img.shields.io/badge/status-to%20do-blue) разбойник
-* ![custom badges](https://img.shields.io/badge/status-to%20do-blue) колдун
-* ![custom badges](https://img.shields.io/badge/status-to%20do-blue) маг
-* ![custom badges](https://img.shields.io/badge/status-to%20do-blue) жрец
+Classes that should be implemented for the addon - alliance classes from World of Warcraft Classic:
+* ![custom badges](https://img.shields.io/badge/status-to%20do-blue) paladin
+* ![custom badges](https://img.shields.io/badge/status-in%20progress-yellow) [warrior](https://github.com/datchannin/Brothers-WoW/blob/master/spec/warrior.md)
+* ![custom badges](https://img.shields.io/badge/status-to%20do-blue) hunter
+* ![custom badges](https://img.shields.io/badge/status-to%20do-blue) druid
+* ![custom badges](https://img.shields.io/badge/status-to%20do-blue) rogue
+* ![custom badges](https://img.shields.io/badge/status-to%20do-blue) warlock
+* ![custom badges](https://img.shields.io/badge/status-to%20do-blue) mage
+* ![custom badges](https://img.shields.io/badge/status-to%20do-blue) priest
 
 ## Workflow
 * ![custom badges](https://img.shields.io/badge/roadmap-yes-green): [Click](https://github.com/datchannin/Brothers-WoW/blob/master/spec/roadmap.md)
@@ -36,6 +36,7 @@ To install this mode you should do step-by-step:
 2. Download the latest directory from "Brothers-WoW" repo. (for example mod_wow.zip-01-1-00000001)
 3. Put addon into the \Battle Brothers\data dir.
 4. Run the game. "Brothers-WoW" addon works by default.
+5. For test, play or debug this addon, select "WoW debug Company" from the scenario list.
 
 ## License, Authors and Copyright
 
