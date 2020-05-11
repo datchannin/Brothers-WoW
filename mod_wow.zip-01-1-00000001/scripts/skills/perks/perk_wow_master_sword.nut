@@ -12,9 +12,22 @@ this.perk_wow_master_sword <- this.inherit("scripts/skills/skill", {
 		this.m.IsStacking = false;
 		this.m.IsHidden = false;
 	}
-	
+
 	function onUpdate( _properties )
 	{
 		_properties.IsMasterInSwords = true;
+	}
+	
+	function onAnySkillUsed( _skill, _targetEntity, _properties )
+	{
+		local mainhand = this.getContainer().getActor().getItems().getItemAtSlot(this.Const.ItemSlot.Mainhand);
+		if (mainhand != null && mainhand.isItemType(this.Const.Items.ItemType.OneHanded))
+		{
+			if (_skill.getID() == "actives.slash" || _skill.getID() == "actives.decapitate" || _skill.getID() == "actives.gash" || _skill.getID() == "actives.lunge" || _skill.getID() == "actives.slash_lightins")
+			{
+				_properties.DamageTotalMult *= 1.2;
+				_properties.TargetAttractionMult *= 1.2;
+			}
+		}
 	}
 });
