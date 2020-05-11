@@ -17,4 +17,17 @@ this.perk_wow_master_axe <- this.inherit("scripts/skills/skill", {
 	{
 		_properties.IsMasterInAxes = true;
 	}
+	
+	function onAnySkillUsed( _skill, _targetEntity, _properties )
+	{
+		local mainhand = this.getContainer().getActor().getItems().getItemAtSlot(this.Const.ItemSlot.Mainhand);
+		if (mainhand != null && mainhand.isItemType(this.Const.Items.ItemType.TwoHanded))
+		{
+			if (_skill.getID() == "actives.round_swing" || _skill.getID() == "actives.split_axe" || _skill.getID() == "actives.split_man" || _skill.getID() == "actives.strike")
+			{
+				_properties.DamageTotalMult *= 1.2;
+				_properties.TargetAttractionMult *= 1.2;
+			}
+		}
+	}
 });

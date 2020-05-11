@@ -60,7 +60,7 @@ this.wow_scenario <- this.inherit("scripts/scenarios/world/starting_scenario", {
 		{
 			this.World.Assets.getStash().add(this.new("scripts/items/misc/potion_of_oblivion_item"));
 		}
-		this.World.Assets.m.Money = this.World.Assets.m.Money + 400;
+		this.World.Assets.m.Money = this.World.Assets.m.Money + 40000;
 	}
 
 	function onSpawnPlayer()
