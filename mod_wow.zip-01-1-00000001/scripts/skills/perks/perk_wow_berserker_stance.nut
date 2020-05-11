@@ -13,6 +13,28 @@ this.perk_wow_berserker_stance <- this.inherit("scripts/skills/skill", {
 		this.m.IsHidden = false;
 	}
 
+	function getTooltip()
+	{
+		return [
+			{
+				id = 1,
+				type = "title",
+				text = this.getName()
+			},
+			{
+				id = 2,
+				type = "description",
+				text = this.getDescription()
+			},
+			{
+				id = 10,
+				type = "text",
+				icon = "ui/icons/special.png",
+				text = "[color=" + this.Const.UI.Color.PositiveValue + "]+10%[/color] Damage"
+			}
+		];
+	}
+
 	function onBeforeDamageReceived( _attacker, _skill, _hitInfo, _properties )
 	{
 		if (_attacker != null && _attacker.getID() == this.getContainer().getActor().getID() || _skill == null || !_skill.isAttack() || !_skill.isUsingHitchance())
@@ -22,21 +44,9 @@ this.perk_wow_berserker_stance <- this.inherit("scripts/skills/skill", {
 		_properties.DamageReceivedTotalMult *= 1.1;
 	}
 
-	function onAnySkillUsed( _skill, _targetEntity, _properties )
+	function onUpdate( _properties )
 	{
-		if (_targetEntity == null)
-		{
-			return;
-		}
-
-		if (_skill == null)
-		{
-			return;
-		}
-		else
-		{
-			_properties.DamageTotalMult *= 1.1;
-		}
+		_properties.DamageTotalMult *= 1.1;
+		_properties.TargetAttractionMult *= 1.1;
 	}
-
 });
