@@ -12,4 +12,19 @@ this.perk_wow_last_stand <- this.inherit("scripts/skills/skill", {
 		this.m.IsStacking = false;
 		this.m.IsHidden = false;
 	}
+	
+	function onAdded()
+	{
+		local actor = this.getContainer().getActor();
+
+		if (actor.getHitpoints() == actor.getHitpointsMax())
+		{
+			actor.setHitpoints(this.Math.floor(actor.getHitpoints() * 1.3));
+		}
+	}
+
+	function onUpdate( _properties )
+	{
+		_properties.HitpointsMult *= 1.3;
+	}
 });
