@@ -12,9 +12,18 @@ this.perk_wow_master_spear <- this.inherit("scripts/skills/skill", {
 		this.m.IsStacking = false;
 		this.m.IsHidden = false;
 	}
-	
+
 	function onUpdate( _properties )
 	{
 		_properties.IsMasterInSpears = true;
+	}
+
+	function onAnySkillUsed( _skill, _targetEntity, _properties )
+	{
+		if (_skill.getID() == "actives.thrust")
+		{
+			_properties.DamageTotalMult *= 1.2;
+			_properties.TargetAttractionMult *= 1.2;
+		}
 	}
 });
