@@ -12,4 +12,17 @@ this.perk_wow_charge <- this.inherit("scripts/skills/skill", {
 		this.m.IsStacking = false;
 		this.m.IsHidden = false;
 	}
+	
+	function onAdded()
+	{
+		if (!this.m.Container.hasSkill("actives.warrior_charge"))
+		{
+			this.m.Container.add(this.new("scripts/skills/actives/warrior_charge_skill"));
+		}
+	}
+
+	function onRemoved()
+	{
+		this.m.Container.removeByID("actives.warrior_charge");
+	}
 });
