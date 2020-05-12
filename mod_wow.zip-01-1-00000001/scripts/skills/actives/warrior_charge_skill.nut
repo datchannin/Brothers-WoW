@@ -19,7 +19,7 @@ this.warrior_charge_skill <- this.inherit("scripts/skills/skill", {
 		this.m.IsStacking = false;
 		this.m.IsAttack = false;
 		this.m.IsIgnoredAsAOO = true;
-		this.m.IsUsingActorPitch = true;	// TBD
+		//this.m.IsUsingActorPitch = true;	// TBD
 		this.m.ActionPointCost = 5;
 		this.m.FatigueCost = 25;
 		this.m.MinRange = 1;
@@ -92,9 +92,43 @@ this.warrior_charge_skill <- this.inherit("scripts/skills/skill", {
 
 	function onUse( _user, _targetTile )
 	{
-		this.Tactical.getNavigator().teleport(_user, _targetTile, null, null, false);
+		local tag = {
+			Skill = this,
+			User = _user,
+			OldTile = _user.getTile(),
+			TargetTile = _targetTile
+		};
+
+		if (tag.OldTile.IsVisibleForPlayer || _targetTile.IsVisibleForPlayer)
+		{
+			local myPos = _user.getPos();
+			local targetPos = _targetTile.Pos;
+			local distance = tag.OldTile.getDistanceTo(_targetTile);
+			local Dx = (targetPos.X - myPos.X) / distance;
+			local Dy = (targetPos.Y - myPos.Y) / distance;
+
+			for( local i = 0; i < distance; i = ++i )
+			{
+				local x = myPos.X + Dx * i;
+				local y = myPos.Y + Dy * i;
+				local tile = this.Tactical.worldToTile(this.createVec(x, y));
+
+				if (this.Tactical.isValidTile(tile.X, tile.Y) && this.Const.Tactical.DustParticles.len() != 0)
+				{
+					for( local i = 0; i < this.Const.Tactical.DustParticles.len(); i = ++i )
+					{
+						this.Tactical.spawnParticleEffect(false, this.Const.Tactical.DustParticles[i].Brushes, this.Tactical.getTile(tile), this.Const.Tactical.DustParticles[i].Delay, this.Const.Tactical.DustParticles[i].Quantity * 0.5, this.Const.Tactical.DustParticles[i].LifeTimeQuantity * 0.5, this.Const.Tactical.DustParticles[i].SpawnRate, this.Const.Tactical.DustParticles[i].Stages);
+					}
+				}
+			}
+		}
+
+		this.Tactical.getNavigator().teleport(_user, _targetTile, this.onTeleportDone.bindenv(this), tag, false, 2.5);
 		return true;
 	}
 
+	function onTeleportDone( _entity, _tag )
+	{
+	}
 });
 
