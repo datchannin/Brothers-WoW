@@ -4,7 +4,7 @@ this.warrior_charge_skill <- this.inherit("scripts/skills/skill", {
 	{
 		this.m.ID = "actives.charge_skill";
 		this.m.Name = "Charge";
-		this.m.Description = "Charge to the new point. Start and finish points should have the same height level. ";
+		this.m.Description = "Charge to the new point. Start and finish points should have the same height level. Stun warrior after use it for this turn.";
 		this.m.Icon = "ui/perks/perk_54_active.png";
 		this.m.IconDisabled = "ui/perks/perk_54_active_sw.png";
 		this.m.Overlay = "perk_54_active";
@@ -19,7 +19,6 @@ this.warrior_charge_skill <- this.inherit("scripts/skills/skill", {
 		this.m.IsStacking = false;
 		this.m.IsAttack = false;
 		this.m.IsIgnoredAsAOO = true;
-		//this.m.IsUsingActorPitch = true;	// TBD
 		this.m.ActionPointCost = 5;
 		this.m.FatigueCost = 25;
 		this.m.MinRange = 1;
@@ -124,11 +123,21 @@ this.warrior_charge_skill <- this.inherit("scripts/skills/skill", {
 		}
 
 		this.Tactical.getNavigator().teleport(_user, _targetTile, this.onTeleportDone.bindenv(this), tag, false, 2.5);
+
 		return true;
 	}
 
 	function onTeleportDone( _entity, _tag )
 	{
+		if (!_entity.getCurrentProperties().IsImmuneToStun)
+		{
+			_entity.getSkills().add(this.new("scripts/skills/effects/stunned_effect"));
+			this.Tactical.EventLog.log(this.Const.UI.getColorizedEntityName(_entity) + " has stunned by himself charge for one turn");
+		}
+		else
+		{
+			this.Tactical.EventLog.log(this.Const.UI.getColorizedEntityName(_entity) + " is immune to stun, so charge can not stun him");
+		}
 	}
 });
 
