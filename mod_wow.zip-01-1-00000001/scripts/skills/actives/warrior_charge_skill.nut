@@ -60,6 +60,31 @@ this.warrior_charge_skill <- this.inherit("scripts/skills/skill", {
 		return ret;
 	}
 
+	function isUsable()
+	{
+		if (this.getContainer().getActor().getCurrentProperties().IsRooted)
+		{
+			return false;
+		}
+
+		return true;
+	}
+
+	function onVerifyTarget( _originTile, _targetTile )
+	{
+		if (!this.skill.onVerifyTarget(_originTile, _targetTile))
+		{
+			return false;
+		}
+
+		if (!_targetTile.IsEmpty)
+		{
+			return false;
+		}
+
+		return true;
+	}
+
 	function onUse( _user, _targetTile )
 	{
 		return true;
