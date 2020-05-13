@@ -46,6 +46,13 @@ this.warrior_charge_skill <- this.inherit("scripts/skills/skill", {
 			}
 		];
 
+		ret.push({
+			id = 7,
+			type = "text",
+			icon = "ui/icons/vision.png",
+			text = "Has a maximum range of [color=" + this.Const.UI.Color.PositiveValue + "]4[/color] tiles"
+		});
+
 		if (this.getContainer().getActor().getCurrentProperties().IsRooted)
 		{
 			ret.push({
