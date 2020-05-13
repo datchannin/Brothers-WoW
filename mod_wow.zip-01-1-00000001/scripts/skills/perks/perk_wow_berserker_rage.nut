@@ -12,4 +12,17 @@ this.perk_wow_berserker_rage <- this.inherit("scripts/skills/skill", {
 		this.m.IsStacking = false;
 		this.m.IsHidden = false;
 	}
+	
+	function onAdded()
+	{
+		if (!this.m.Container.hasSkill("actives.berserkerrage_skill"))
+		{
+			this.m.Container.add(this.new("scripts/skills/actives/warrior_berserkerrage_skill"));
+		}
+	}
+
+	function onRemoved()
+	{
+		this.m.Container.removeByID("actives.berserkerrage_skill");
+	}
 });
