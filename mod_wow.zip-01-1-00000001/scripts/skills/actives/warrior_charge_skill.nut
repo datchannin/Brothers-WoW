@@ -129,6 +129,12 @@ this.warrior_charge_skill <- this.inherit("scripts/skills/skill", {
 
 	function onTeleportDone( _entity, _tag )
 	{
+		local myTile = _entity.getTile();
+		if (_tag.OldTile.IsVisibleForPlayer || myTile.IsVisibleForPlayer)
+		{
+			this.Tactical.EventLog.log(this.Const.UI.getColorizedEntityName(_entity) + " charges");
+		}
+
 		if (!_entity.getCurrentProperties().IsImmuneToStun)
 		{
 			_entity.getSkills().add(this.new("scripts/skills/effects/stunned_effect"));
