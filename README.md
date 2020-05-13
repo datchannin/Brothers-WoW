@@ -13,7 +13,7 @@ Classes that should be implemented for the addon - alliance classes from World o
 * ![custom badges](https://img.shields.io/badge/status-to%20do-blue) priest
 
 ## Workflow
-* ![custom badges](https://img.shields.io/badge/roadmap-yes-green): [Click](https://github.com/datchannin/Brothers-WoW/blob/master/spec/roadmap.md)
+* ![custom badges](https://img.shields.io/badge/roadmap-not-red)
 * ![custom badges](https://img.shields.io/badge/bug%20tracker-not-red)
 * ![custom badges](https://img.shields.io/badge/extended%20docs-not-red)
 
