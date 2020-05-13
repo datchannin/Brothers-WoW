@@ -17,8 +17,8 @@ this.warrior_gravity_skill <- this.inherit("scripts/skills/skill", {
 		this.m.IsStacking = false;
 		this.m.IsAttack = false;
 		this.m.IsIgnoredAsAOO = true;
-		this.m.ActionPointCost = 1; //6
-		this.m.FatigueCost = 1; //30
+		this.m.ActionPointCost = 6;
+		this.m.FatigueCost = 30;
 		this.m.MinRange = 2;
 		this.m.MaxRange = 2;
 	}
