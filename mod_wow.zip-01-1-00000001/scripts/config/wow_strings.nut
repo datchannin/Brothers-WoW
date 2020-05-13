@@ -54,7 +54,7 @@ gt.Const.Wow_strings.PerkDescription <- {
 	BattleShout = "The warrior shouts, increasing the melee attack power of all party members within 2 tile by [color=" + this.Const.UI.Color.PositiveValue + "]10%[/color].",
 	Mobility = "Unlocks the \'Mobility\' skill which increases your Action Points by [color=" + this.Const.UI.Color.PositiveValue + "]2[/color]. Do you have enough Fatigue? Characters can not have more than their maximum Action Points",
 	LastStand = "Hitpoints are increased by [color=" + this.Const.UI.Color.PositiveValue + "]30%[/color]. More hitpoints - more survival. Now you are a defense machine.",
-	Gravity = "Unlocks the \'Gravity\' skill which allows you to drag in enemy. Drag and crush!",
+	Gravity = "Unlocks the \'Gravity\' skill which allows you to drag in enemy or friend. Drag and crush!",
 	BerserkerRage = "Unlocks the \'Berserker Rage\' skill which give you powerfull buff. Damage done is increased by [color=" + this.Const.UI.Color.PositiveValue + "]25%[/color]",
 	Charge = "Unlocks the \'Charge\' skill which allows you to charge closer to enemy.",
 	MasterSpear = "Spear adept. Spear is your past, present and future. Damage done by spear is increased by [color=" + this.Const.UI.Color.PositiveValue + "]20%[/color]. Does not work with two-handed weapon.",

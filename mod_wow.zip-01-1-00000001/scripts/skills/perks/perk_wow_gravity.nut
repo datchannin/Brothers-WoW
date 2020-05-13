@@ -12,4 +12,17 @@ this.perk_wow_gravity <- this.inherit("scripts/skills/skill", {
 		this.m.IsStacking = false;
 		this.m.IsHidden = false;
 	}
+	
+	function onAdded()
+	{
+		if (!this.m.Container.hasSkill("actives.gravity_skill"))
+		{
+			this.m.Container.add(this.new("scripts/skills/actives/warrior_gravity_skill"));
+		}
+	}
+
+	function onRemoved()
+	{
+		this.m.Container.removeByID("actives.gravity_skill");
+	}
 });
