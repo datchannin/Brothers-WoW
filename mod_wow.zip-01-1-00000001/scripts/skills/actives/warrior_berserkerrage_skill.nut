@@ -4,7 +4,7 @@ this.warrior_berserkerrage_skill <- this.inherit("scripts/skills/skill", {
 	{
 		this.m.ID = "actives.berserkerrage_skill";
 		this.m.Name = "Berserker Rage";
-		this.m.Description = "Increase character\'s power. Damage done is increased by 25%.";
+		this.m.Description = "Increase character\'s power. Damage done is increased by 25% for this turn.";
 		this.m.Icon = "ui/perks/perk_warrior_berserkerrage.png";
 		this.m.IconDisabled = "ui/perks/perk_warrior_berserkerrage_sw.png";
 		this.m.Overlay = "perk_warrior_berserkerrage";
@@ -54,7 +54,7 @@ this.warrior_berserkerrage_skill <- this.inherit("scripts/skills/skill", {
 
 	function isUsable()
 	{
-		return this.skill.isUsable() && !this.getContainer().hasSkill("effects.warrior_berserkerrage");
+		return this.skill.isUsable() && !this.getContainer().hasSkill("effects.berserkerrage");
 	}
 
 	function onVerifyTarget( _originTile, _targetTile )
@@ -64,9 +64,9 @@ this.warrior_berserkerrage_skill <- this.inherit("scripts/skills/skill", {
 
 	function onUse( _user, _targetTile )
 	{
-		if (!this.getContainer().hasSkill("effects.warrior_berserkerrage"))
+		if (!this.getContainer().hasSkill("effects.berserkerrage"))
 		{
-			//this.m.Container.add(this.new("scripts/skills/effects/berserkerrage_effect"));
+			this.m.Container.add(this.new("scripts/skills/effects/berserkerrage_effect"));
 			return true;
 		}
 
