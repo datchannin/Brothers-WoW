@@ -18,9 +18,9 @@ Classes that should be implemented for the addon - alliance classes from World o
 * ![custom badges](https://img.shields.io/badge/extended%20docs-not-red)
 
 ## Description
-Соратник каждого класса может быть нанят в городах, так же как и обычные соратники. Игрок может комбинировать и собирать в отряд как стандартных соратников, так и wow-соратников. И всех их прокачивать вместе.
+New character from every class can be hired in the different random cities and villages, the same way as characters with original backgrounds. Player can combine original characters and new wow characters and use all of them in the battle. All characters should be leveled to the highest possible level.
 
-WoW-соратники должны иметь уникальные wow-подобные деревья талантов. Игрок сможет прокачать каждого соратника так же как прокачивает персонажа в WoW.
+WoW characters should have separate talent tree. There can be implemented talents (or perks) from different WoW specialization, for example Protection Spec Warrior talents and Arms Spec Warrior talents should be added to the same Perk Tree of Warrior. Player can select perks as he wants.
 
 После определенного дня в игре, или после определенных действий игрока, в игровом мире появятся рейдовые подземелья, каждое из которых будет содержать босса из World of Warcraft. Чтобы войти в это подземелье игроку придется оставить в основном составе только WoW-соратников, а всех стандартных отправить в запас. После победы над рейдовым боссом будет открываться следующее рейдовое подземелье.
 
