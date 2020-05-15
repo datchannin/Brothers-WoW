@@ -7,7 +7,7 @@ this.battleshout_effect <- this.inherit("scripts/skills/skill", {
 		this.m.ID = "effects.battleshout";
 		this.m.Name = "Battle Shout";
 		this.m.Description = "Your melee attack increased by Warrior\'s Battle Shout. Keep closer.";
-		this.m.Icon = "ui/perks/perk_01.png";
+		this.m.Icon = "ui/perks/perk_warrior_battleshout.png";
 		this.m.IconMini = "perk_01_mini";
 		this.m.Type = this.Const.SkillType.StatusEffect;
 		this.m.IsActive = false;
