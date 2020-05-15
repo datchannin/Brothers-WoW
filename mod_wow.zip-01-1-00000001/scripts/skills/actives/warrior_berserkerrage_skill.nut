@@ -9,8 +9,8 @@ this.warrior_berserkerrage_skill <- this.inherit("scripts/skills/skill", {
 		this.m.IconDisabled = "ui/perks/perk_warrior_berserkerrage_sw.png";
 		this.m.Overlay = "perk_warrior_berserkerrage";
 		this.m.SoundOnUse = [
-			"sounds/combat/indomitable_01.wav",
-			"sounds/combat/indomitable_02.wav"
+			"sounds/combat/warrior_berserkerrage1.wav",
+			"sounds/combat/warrior_berserkerrage2.wav"
 		];
 		this.m.Type = this.Const.SkillType.Active;
 		this.m.Order = this.Const.SkillOrder.Any;

@@ -7,9 +7,9 @@ this.perk_wow_blood_thirst <- this.inherit("scripts/skills/skill", {
 		this.m.Description = this.Const.Wow_strings.PerkDescription.BloodThirst;
 		this.m.Icon = "ui/perks/perk_warrior_bloodthirst.png";
 		this.m.SoundOnUse = [
-			"sounds/enemies/vampire_life_drain_01.wav",
-			"sounds/enemies/vampire_life_drain_02.wav",
-			"sounds/enemies/vampire_life_drain_03.wav"
+			"sounds/combat/warrior_bloodthirst1.wav",
+			"sounds/combat/warrior_bloodthirst2.wav",
+			"sounds/combat/warrior_bloodthirst3.wav"
 		];
 		this.m.Type = this.Const.SkillType.Perk;
 		this.m.Order = this.Const.SkillOrder.Perk;

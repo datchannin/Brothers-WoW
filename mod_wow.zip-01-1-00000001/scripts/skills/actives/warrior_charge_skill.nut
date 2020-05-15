@@ -8,7 +8,10 @@ this.warrior_charge_skill <- this.inherit("scripts/skills/skill", {
 		this.m.Icon = "ui/perks/perk_54_active.png";
 		this.m.IconDisabled = "ui/perks/perk_54_active_sw.png";
 		this.m.Overlay = "perk_54_active";
-		this.m.SoundOnUse = [];
+		this.m.SoundOnUse = [
+			"sounds/combat/warrior_charge1.wav",
+			"sounds/combat/warrior_charge2.wav"
+		];
 		this.m.Type = this.Const.SkillType.Active;
 		this.m.Order = this.Const.SkillOrder.Any;
 		this.m.IsSerialized = false;
