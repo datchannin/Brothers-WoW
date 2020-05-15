@@ -32,7 +32,7 @@ this.perk_wow_blood_thirst <- this.inherit("scripts/skills/skill", {
 			return;
 		}
 
-		this.spawnIcon("status_effect_09", actor.getTile());
+		this.spawnIcon("effect_warrior_bloodthirst", actor.getTile());
 
 		if (!actor.isHiddenToPlayer())
 		{
