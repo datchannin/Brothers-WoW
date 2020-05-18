@@ -7,7 +7,7 @@ this.warrior_gravity_skill <- this.inherit("scripts/skills/skill", {
 		this.m.Description = "Hook and pull target close to warrior. This is can be enemy or friendly, no difference. A target can not be pulled up a level of height, but may take damage if it is pulled down several levels of height at once. Shieldwall, Spearwall and Riposte will be canceled for a successfully hooked-in target. A rooted target can not be hooked.";
 		this.m.Icon = "ui/perks/skill_warrior_gravity.png";
 		this.m.IconDisabled = "ui/perks/skill_warrior_gravity_sw.png";
-		this.m.Overlay = "perk_54_active";
+		this.m.Overlay = "skill_warrior_gravity";
 		this.m.SoundOnUse = [
 			"sounds/combat/warrior_gravity1.wav",
 			"sounds/combat/warrior_gravity2.wav"
