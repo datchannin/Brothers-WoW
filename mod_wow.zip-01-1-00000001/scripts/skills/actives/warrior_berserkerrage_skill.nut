@@ -7,7 +7,7 @@ this.warrior_berserkerrage_skill <- this.inherit("scripts/skills/skill", {
 		this.m.Description = "Increase character\'s power. Damage done is increased by 25% for this turn.";
 		this.m.Icon = "ui/perks/skill_warrior_berserkerrage.png";
 		this.m.IconDisabled = "ui/perks/skill_warrior_berserkerrage_sw.png";
-		this.m.Overlay = "perk_warrior_berserkerrage";
+		this.m.Overlay = "skill_warrior_berserkerrage";
 		this.m.SoundOnUse = [
 			"sounds/combat/warrior_berserkerrage1.wav",
 			"sounds/combat/warrior_berserkerrage2.wav"

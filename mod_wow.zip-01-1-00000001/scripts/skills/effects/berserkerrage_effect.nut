@@ -5,7 +5,7 @@ this.berserkerrage_effect <- this.inherit("scripts/skills/skill", {
 		this.m.ID = "effects.berserkerrage";
 		this.m.Name = "Berserker Rage";
 		this.m.Description = "Your rage gives you possibility to increase damage done for one turn.";
-		this.m.Icon = "ui/perks/perk_01.png";
+		this.m.Icon = "ui/perks/effect_warrior_berserkerrage.png";
 		this.m.IconMini = "perk_01_mini";
 		this.m.Type = this.Const.SkillType.StatusEffect;
 		this.m.IsActive = false;
