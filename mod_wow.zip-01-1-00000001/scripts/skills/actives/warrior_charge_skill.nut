@@ -5,8 +5,8 @@ this.warrior_charge_skill <- this.inherit("scripts/skills/skill", {
 		this.m.ID = "actives.charge_skill";
 		this.m.Name = "Charge";
 		this.m.Description = "Charge to the new point. Start and finish points should have the same height level. Stun warrior after use it for this turn.";
-		this.m.Icon = "ui/perks/perk_54_active.png";
-		this.m.IconDisabled = "ui/perks/perk_54_active_sw.png";
+		this.m.Icon = "ui/perks/skill_warrior_charge.png";
+		this.m.IconDisabled = "ui/perks/skill_warrior_charge_sw.png";
 		this.m.Overlay = "perk_54_active";
 		this.m.SoundOnUse = [
 			"sounds/combat/warrior_charge1.wav",
