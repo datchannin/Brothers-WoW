@@ -24,7 +24,7 @@ WoW characters should have separate talent tree. There can be implemented talent
 
 После определенного дня в игре, или после определенных действий игрока, в игровом мире появятся рейдовые подземелья, каждое из которых будет содержать босса из World of Warcraft. Чтобы войти в это подземелье игроку придется оставить в основном составе только WoW-соратников, а всех стандартных отправить в запас. После победы над рейдовым боссом будет открываться следующее рейдовое подземелье.
 
-В модификацию планируется кроме стандартного вооружения и экипировки добавить WoW-подобную экипировку, возможно с улучшением каких-то параметров персонажа. Также такая экипировка будет одеваться только на определенные классы соратников и давать бонусы за собранные сеты, как это делается с рейдовыми сетами World of Warcraft.
+For the future the plan is to add WoW-like equipment in addition to standard weapons and equipment of this modification. Also such  equipment should be used by certain character classes and additional bonuses should be added to the user with full sets of equipments, as this is done by using raid sets of World of Warcraft.
 
 ## Requirements
 * Battle Brothers original, version 1.3.0.25 with all DLC installed
