@@ -22,7 +22,7 @@ New character from every class can be hired in the different random cities and v
 
 WoW characters should have separate talent tree. There can be implemented talents (or perks) from different WoW specialization, for example Protection Spec Warrior talents and Arms Spec Warrior talents should be added to the same Perk Tree of Warrior. Player can select perks as he wants.
 
-После определенного дня в игре, или после определенных действий игрока, в игровом мире появятся рейдовые подземелья, каждое из которых будет содержать босса из World of Warcraft. Чтобы войти в это подземелье игроку придется оставить в основном составе только WoW-соратников, а всех стандартных отправить в запас. После победы над рейдовым боссом будет открываться следующее рейдовое подземелье.
+After certain conditions will be executed, Raid Dungeons should be added into the world. Raid or dungeon bosses from the World of Warcraft game will be met by player. If player want come in into dungeon, he should use only new characters of this modification. After all npc in dungeon will be killed, new raid places will appear in the world.
 
 For the future the plan is to add WoW-like equipment in addition to standard weapons and equipment of this modification. Also such  equipment should be used by certain character classes and additional bonuses should be added to the user with full sets of equipments, as this is done by using raid sets of World of Warcraft.
 
