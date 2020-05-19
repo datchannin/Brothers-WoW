@@ -4,7 +4,7 @@ this.wow_scenario_brothers_in_arms <- this.inherit("scripts/scenarios/world/star
 	{
 		this.m.ID = "scenario.brothers_in_arms";
 		this.m.Name = "Brothers in Arms";
-		this.m.Description = "[p=c][img]gfx/ui/events/event_wow_battle_in_brothers.png[/img][/p][p]Two warriors came from a distant land: Azeroth. Defend and attack, might and power, strength and honor. They can become the basis of your army.[/p]";
+		this.m.Description = "[p=c][img]gfx/ui/events/event_wow_battle_in_brothers.png[/img][/p][p]Two wandering warriors came from a distant land: Azeroth. Defend and attack, might and power, strength and honor. They can become the basis of your army.\n\n[color=#bcad8c]Protection Warrior:[/color] Start with a warrior who is gifted in protection with great equipment.\n[color=#bcad8c]Arms Warrior:[/color] Start with a warrior who is gifted in arms with great equipment.[/p]";
 		this.m.Difficulty = 1;
 		this.m.Order = 11;
 	}
@@ -33,6 +33,7 @@ this.wow_scenario_brothers_in_arms <- this.inherit("scripts/scenarios/world/star
 		bros[0].setStartValuesEx([
 			"raider_warrior_background"
 		]);
+		bros[0].setTitle("Protection");
 		bros[0].setPlaceInFormation(3);
 		bros[0].m.PerkPoints = 0;
 		bros[0].m.LevelUps = 0;
@@ -48,6 +49,7 @@ this.wow_scenario_brothers_in_arms <- this.inherit("scripts/scenarios/world/star
 		bros[1].setStartValuesEx([
 			"raider_warrior_background"
 		]);
+		bros[1].setTitle("Arms");
 		bros[1].setPlaceInFormation(4);
 		bros[1].m.PerkPoints = 0;
 		bros[1].m.LevelUps = 0;
