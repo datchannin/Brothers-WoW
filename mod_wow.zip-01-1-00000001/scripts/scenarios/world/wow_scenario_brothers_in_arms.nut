@@ -4,7 +4,7 @@ this.wow_scenario_brothers_in_arms <- this.inherit("scripts/scenarios/world/star
 	{
 		this.m.ID = "scenario.brothers_in_arms";
 		this.m.Name = "Brothers in Arms";
-		this.m.Description = "[p=c][img]gfx/ui/events/event_wow.png[/img][/p][p]Two warriors came from a distant land: Azeroth. Defend and attack, might and power, strength and honor. They can become the basis of your army.[/p]";
+		this.m.Description = "[p=c][img]gfx/ui/events/event_wow_battle_in_brothers.png[/img][/p][p]Two warriors came from a distant land: Azeroth. Defend and attack, might and power, strength and honor. They can become the basis of your army.[/p]";
 		this.m.Difficulty = 1;
 		this.m.Order = 11;
 	}
