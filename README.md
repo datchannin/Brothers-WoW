@@ -4,7 +4,7 @@
 ## Mode Game Processing
 Classes that should be implemented for the addon - alliance classes from World of Warcraft Classic:
 * ![custom badges](https://img.shields.io/badge/status-to%20do-blue) paladin
-* ![custom badges](https://img.shields.io/badge/status-in%20progress-yellow) [warrior](https://github.com/datchannin/Brothers-WoW/blob/master/spec/warrior.md)
+* ![custom badges](https://img.shields.io/badge/status-done-green) [warrior](https://github.com/datchannin/Brothers-WoW/blob/master/spec/warrior.md)
 * ![custom badges](https://img.shields.io/badge/status-to%20do-blue) hunter
 * ![custom badges](https://img.shields.io/badge/status-to%20do-blue) druid
 * ![custom badges](https://img.shields.io/badge/status-to%20do-blue) rogue
@@ -14,7 +14,7 @@ Classes that should be implemented for the addon - alliance classes from World o
 
 ## Workflow
 * ![custom badges](https://img.shields.io/badge/roadmap-not-red)
-* ![custom badges](https://img.shields.io/badge/bug%20tracker-not-red)
+* ![custom badges](https://img.shields.io/badge/bug%20tracker-yes-green)
 * ![custom badges](https://img.shields.io/badge/extended%20docs-not-red)
 
 ## Description
