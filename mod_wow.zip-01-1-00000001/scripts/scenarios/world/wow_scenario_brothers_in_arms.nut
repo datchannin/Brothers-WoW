@@ -122,7 +122,7 @@ this.wow_scenario_brothers_in_arms <- this.inherit("scripts/scenarios/world/star
 		this.Time.scheduleEvent(this.TimeUnit.Real, 1000, function ( _tag )
 		{
 			this.Music.setTrackList(this.Const.Music.IntroTracks, this.Const.Music.CrossFadeTime);
-			this.World.Events.fire("event.early_access_scenario_intro");
+			this.World.Events.fire("event.brothers_in_arms_intro_event");
 		}, null);
 	}
 
