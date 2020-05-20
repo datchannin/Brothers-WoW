@@ -4,7 +4,7 @@ this.wow_scenario_brothers_in_arms <- this.inherit("scripts/scenarios/world/star
 	{
 		this.m.ID = "scenario.brothers_in_arms";
 		this.m.Name = "Brothers in Arms";
-		this.m.Description = "[p=c][img]gfx/ui/events/event_wow_battle_in_brothers.png[/img][/p][p]Two wandering warriors came from a distant land: Azeroth. Defend and attack, might and power, strength and honor. They can become the basis of your army.\n\n[color=#bcad8c]Protection Warrior:[/color] Start with a warrior who is gifted in protection with great equipment.\n[color=#bcad8c]Arms Warrior:[/color] Start with a warrior who is gifted in arms with great equipment.[/p]";
+		this.m.Description = "[p=c][img]gfx/ui/events/event_wow_battle_in_brothers.png[/img][/p][p]Two wandering warriors came from a distant land: Azeroth. Defend and attack, might and power, strength and honor. They can become the basis of your army.\n\n[color=#bcad8c]Protection Warrior:[/color] Start with a warrior who is gifted in protection with great equipment.\n[color=#bcad8c]Arms Warrior:[/color] Start with a warrior who is gifted in arms with great equipment.\n[color=#bcad8c]Perk Tree:[/color] Warrior characters use separate perk tree.[/p]";
 		this.m.Difficulty = 1;
 		this.m.Order = 11;
 	}
