@@ -1,0 +1,35 @@
+/*
+ *  @Project:		Battle Brothers
+ *	@Company:		Overhype Studios
+ *
+ *	@Copyright:		(c) Overhype Studios | 2013 - 2017
+ * 
+ *  @Author:		Overhype Studios
+ *  @Date:			06.08.2013 (revamped: 14.02.2017)
+ *  @Description:	UIs main entry point css
+ */
+
+/*
+	Main Frame
+*/
+
+/* Note: font-size: 62.5%; -> Base size -> 1.0rem ~ 10px */
+
+html,
+body
+{
+	font-size: 62.5%;
+
+	top    : 0;
+	left   : 0;
+	width  : 100%;
+	height : 100%;
+	margin : 0;
+	padding: 0;
+
+	overflow: hidden;
+
+	scroll-behavior: smooth;
+
+    /*border   : 1px red solid;*/
+}
