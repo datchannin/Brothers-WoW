@@ -5,8 +5,8 @@ this.raider_rogue_background <- this.inherit("scripts/skills/backgrounds/charact
 		this.character_background.create();
 		this.m.ID = "background.raider_rogue";
 		this.m.Name = "Rogue";
-		this.m.Icon = "ui/backgrounds/background_rogue.png";
-		this.m.BackgroundDescription = "At home in the shadows and skilled at disappearing from sight, the Rogues of Azeroth are most comfortable when acting in the background. Twisting events to their favor, striking only when advantage is greatest: this is where a Rogue excels. With their cunning tricks, physical abilities, and mastery of concealment and disguise, Rogues have no trouble finding employment as thieves, cutthroats, spies, and assassins.";
+		this.m.Icon = "ui/backgrounds/background_rogue.png";		
+		this.m.BackgroundDescription = "For rogues, the only code is the contract, and their honor is purchased in gold. Free from the constraints of a conscience, these mercenaries rely on brutal and efficient tactics. Lethal assassins and masters of stealth, they will approach their marks from behind, piercing a vital organ and vanishing into the shadows before the victim hits the ground.";
 		this.m.GoodEnding = "";
 		this.m.BadEnding = "";
 		this.m.HiringCost = 150;
