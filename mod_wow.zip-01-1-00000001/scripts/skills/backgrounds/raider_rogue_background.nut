@@ -112,16 +112,8 @@ this.raider_rogue_background <- this.inherit("scripts/skills/backgrounds/charact
 	{
 		local items = this.getContainer().getActor().getItems();
 		local r;
-		r = this.Math.rand(0, 1);
 
-		if (r == 0)
-		{
-			items.equip(this.new("scripts/items/weapons/knife"));
-		}
-		else if (r == 1)
-		{
-			items.equip(this.new("scripts/items/weapons/dagger"));
-		}
+		items.equip(this.new("scripts/items/weapons/dagger"));
 
 		r = this.Math.rand(0, 2);
 
