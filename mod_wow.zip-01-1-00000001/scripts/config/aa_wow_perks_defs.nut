@@ -703,6 +703,16 @@ gt.Const.Perks.PerkDefObjects.BloodThirst <- {
 // ----------------  WOW ROGUE -----------------|
 // ---------------------------------------------|
 
+gt.Const.Perks.PerkDefObjects.Poison <- {
+	ID = "perk.wow.rogue.poison",
+	Script = "scripts/skills/perks/perk_wow_poison",
+	Name = this.Const.Wow_strings.PerkName.Poison,
+	Tooltip = this.Const.Wow_strings.PerkDescription.Poison,
+	Icon = "ui/perks/perk_rogue_poison.png",
+	IconDisabled = "ui/perks/perk_rogue_poison_sw.png",
+	Const = "Poison"
+}
+
 // ---------------------------------------------|
 // ----------------  WOW PALADIN ---------------|
 // ---------------------------------------------|

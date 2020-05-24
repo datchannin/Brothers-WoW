@@ -143,7 +143,7 @@ gt.Const.Perks.PerkTreeWarrior <- [
 
 gt.Const.Perks.PerkTreeRogue <- [
 	[
-		//gt.Const.Perks.PerkDefObjects.Poison
+		gt.Const.Perks.PerkDefObjects.Poison
 		//gt.Const.Perks.PerkDefObjects.Camouflage
 		gt.Const.Perks.PerkDefObjects.FastAdaption
 		gt.Const.Perks.PerkDefObjects.CripplingStrikes
