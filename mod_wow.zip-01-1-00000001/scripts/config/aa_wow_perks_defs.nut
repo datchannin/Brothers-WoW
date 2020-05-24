@@ -723,6 +723,25 @@ gt.Const.Perks.PerkDefObjects.Camouflage <- {
 	Const = "Camouflage"
 }
 
+gt.Const.Perks.PerkDefObjects.Endurance <- {
+	ID = "perk.wow.rogue.endurance",
+	Script = "scripts/skills/perks/perk_wow_endurance",
+	Name = this.Const.Wow_strings.PerkName.Endurance,
+	Tooltip = this.Const.Wow_strings.PerkDescription.Endurance,
+	Icon = "ui/perks/perk_rogue_endurance.png",
+	IconDisabled = "ui/perks/perk_rogue_endurance_sw.png",
+	Const = "Endurance"
+}
+
+gt.Const.Perks.PerkDefObjects.VilePoison <- {
+	ID = "perk.wow.rogue.vilepoison",
+	Script = "scripts/skills/perks/perk_wow_vilepoison",
+	Name = this.Const.Wow_strings.PerkName.VilePoison,
+	Tooltip = this.Const.Wow_strings.PerkDescription.VilePoison,
+	Icon = "ui/perks/perk_rogue_vilepoison.png",
+	IconDisabled = "ui/perks/perk_rogue_vilepoison_sw.png",
+	Const = "VilePoison"
+}
 // ---------------------------------------------|
 // ----------------  WOW PALADIN ---------------|
 // ---------------------------------------------|

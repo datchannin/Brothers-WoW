@@ -153,8 +153,8 @@ gt.Const.Perks.PerkTreeRogue <- [
 		gt.Const.Perks.PerkDefObjects.Recover
 	],
 	[
-		//gt.Const.Perks.PerkDefObjects.Endurance
-		//gt.Const.Perks.PerkDefObjects.VilePoison
+		gt.Const.Perks.PerkDefObjects.VilePoison
+		gt.Const.Perks.PerkDefObjects.Endurance
 		//gt.Const.Perks.PerkDefObjects.ExposeArmor
 		//gt.Const.Perks.PerkDefObjects.Hemorrhage
 		gt.Const.Perks.PerkDefObjects.SteelBrow
