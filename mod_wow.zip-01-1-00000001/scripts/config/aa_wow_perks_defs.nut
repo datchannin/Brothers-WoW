@@ -742,6 +742,26 @@ gt.Const.Perks.PerkDefObjects.VilePoison <- {
 	IconDisabled = "ui/perks/perk_rogue_vilepoison_sw.png",
 	Const = "VilePoison"
 }
+
+gt.Const.Perks.PerkDefObjects.ExposeArmor <- {
+	ID = "perk.wow.rogue.exposearmor",
+	Script = "scripts/skills/perks/perk_wow_exposearmor",
+	Name = this.Const.Wow_strings.PerkName.ExposeArmor,
+	Tooltip = this.Const.Wow_strings.PerkDescription.ExposeArmor,
+	Icon = "ui/perks/perk_rogue_exposearmor.png",
+	IconDisabled = "ui/perks/perk_rogue_exposearmor_sw.png",
+	Const = "ExposeArmor"
+}
+
+gt.Const.Perks.PerkDefObjects.Hemorrhage <- {
+	ID = "perk.wow.rogue.hemorrhage",
+	Script = "scripts/skills/perks/perk_wow_hemorrhage",
+	Name = this.Const.Wow_strings.PerkName.Hemorrhage,
+	Tooltip = this.Const.Wow_strings.PerkDescription.Hemorrhage,
+	Icon = "ui/perks/perk_rogue_hemorrhage.png",
+	IconDisabled = "ui/perks/perk_rogue_hemorrhage_sw.png",
+	Const = "Hemorrhage"
+}
 // ---------------------------------------------|
 // ----------------  WOW PALADIN ---------------|
 // ---------------------------------------------|

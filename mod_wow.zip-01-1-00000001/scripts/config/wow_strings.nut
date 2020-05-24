@@ -49,6 +49,8 @@ gt.Const.Wow_strings.PerkName <- {
 	Camouflage = "Camouflage",
 	Endurance = "Endurance",
 	VilePoison = "Vile Poison",
+	ExposeArmor = "Expose Armor",
+	Hemorrhage = "Hemorrhage",
 };
 gt.Const.Wow_strings.PerkDescription <- {
 	DefensiveStance = "A defensive combat stance. Decreases damage taken by [color=" + this.Const.UI.Color.PositiveValue + "]10%[/color] and damage caused by [color=" + this.Const.UI.Color.NegativeValue + "]10%[/color].",
@@ -70,5 +72,7 @@ gt.Const.Wow_strings.PerkDescription <- {
 	Poison = "Unlocks the \'Poison\' skill which allows rogue to impose poisons on the target. Make your enemies die slowly.",
 	Camouflage = "Unlocks the \'Camouflage\' skill which allows you to sneak around. It increases your defense skill by [color=" + this.Const.UI.Color.PositiveValue + "]20[/color] points and allows you to ignore hostile zone of control.",
 	Endurance = "Drop the shield and don\'t think about the defense. This perk help you to increase Defense by [color=" + this.Const.UI.Color.PositiveValue + "]10[/color]. Your Initiative will be increased by [color=" + this.Const.UI.Color.PositiveValue + "]20[/color].",
-	VilePoison = "Your skill and poison knowledge enhances [color=" + this.Const.UI.Color.PositiveValue + "]\'Poison\'[/color] skill. Increases the damage dealt by your poisons by 10. Does not have any effect if you don\'t have [color=" + this.Const.UI.Color.PositiveValue + "]\'Poison\'[/color] skill",
+	VilePoison = "Your skill and poison knowledge enhances [color=" + this.Const.UI.Color.PositiveValue + "]\'Poison\'[/color] skill. Increases the damage dealt by your poisons by 10. Does not have any effect if you don\'t have [color=" + this.Const.UI.Color.PositiveValue + "]\'Poison\'[/color] skill.",
+	ExposeArmor = "You are almost \'Duelist\' now. An additional [color=" + this.Const.UI.Color.PositiveValue + "]10%[/color] of any damage ignores armor. Works only if your offhend is free.",
+	Hemorrhage = "Unlocks the \'Hemorrhage\' skill which allows you to debaff the target. Such debuff increases damage taken by enemy. No one will escape the fate!",
 };
