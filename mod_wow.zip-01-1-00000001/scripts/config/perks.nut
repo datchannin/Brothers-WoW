@@ -165,8 +165,8 @@ gt.Const.Perks.PerkTreeRogue <- [
 	[
 		gt.Const.Perks.PerkDefObjects.KidneyShot
 		gt.Const.Perks.PerkDefObjects.Initiative
-		//gt.Const.Perks.PerkDefObjects.Kick
-		//gt.Const.Perks.PerkDefObjects.Disarm
+		gt.Const.Perks.PerkDefObjects.Kick
+		gt.Const.Perks.PerkDefObjects.Disarm
 		gt.Const.Perks.PerkDefObjects.Backstabber
 		gt.Const.Perks.PerkDefObjects.Anticipation
 		gt.Const.Perks.PerkDefObjects.Relentless

@@ -53,6 +53,8 @@ gt.Const.Wow_strings.PerkName <- {
 	Hemorrhage = "Hemorrhage",
 	KidneyShot = "Kidney Shot",
 	Initiative = "Initiative",
+	Kick = "Kick",
+	Disarm = "Disarm",
 };
 gt.Const.Wow_strings.PerkDescription <- {
 	DefensiveStance = "A defensive combat stance. Decreases damage taken by [color=" + this.Const.UI.Color.PositiveValue + "]10%[/color] and damage caused by [color=" + this.Const.UI.Color.NegativeValue + "]10%[/color].",
@@ -63,7 +65,7 @@ gt.Const.Wow_strings.PerkDescription <- {
 	Mobility = "Unlocks the \'Mobility\' skill which increases your Action Points by [color=" + this.Const.UI.Color.PositiveValue + "]2[/color]. Do you have enough Fatigue? Characters can not have more than their maximum Action Points",
 	LastStand = "Hitpoints are increased by [color=" + this.Const.UI.Color.PositiveValue + "]30%[/color]. More hitpoints - more survival. Now you are a defense machine.",
 	Gravity = "Unlocks the \'Gravity\' skill which allows you to drag in enemy or friend. Drag and crush!",
-	BerserkerRage = "Unlocks the \'Berserker Rage\' skill which give you powerfull buff. Damage done is increased by [color=" + this.Const.UI.Color.PositiveValue + "]25%[/color]",
+	BerserkerRage = "Unlocks the \'Berserker Rage\' skill which give you powerful buff. Damage done is increased by [color=" + this.Const.UI.Color.PositiveValue + "]25%[/color]",
 	Charge = "Unlocks the \'Charge\' skill which allows you to charge closer to enemy.",
 	MasterSpear = "Spear adept. Spear is your past, present and future. Damage done by spear is increased by [color=" + this.Const.UI.Color.PositiveValue + "]20%[/color]. Does not work with two-handed weapon.",
 	MasterSword = "Sword adept. What can be greater, that sword? Fast attack, then attack again and again. Damage done by sword is increased by [color=" + this.Const.UI.Color.PositiveValue + "]20%[/color]. Does not work with two-handed weapon.",
@@ -79,4 +81,6 @@ gt.Const.Wow_strings.PerkDescription <- {
 	Hemorrhage = "Unlocks the \'Hemorrhage\' skill which allows you to debaff the target. Such debuff increases damage taken by enemy. No one will escape the fate!",
 	KidneyShot = "Unlocks the \'Kidney Shot\' skill which stuns the target. If target was stun by this skill, it damage taken is increased.",
 	Initiative = "No one can stop you. Your Initiative increases by [color=" + this.Const.UI.Color.PositiveValue + "]20[/color] points.\n\nAlso it gives you immunity to being rooted.",
+	Kick = "Unlocks the \'Kick\' skill which allows you to push the enemy. Emeny will not be able to understand where is his target now.",
+	Disarm = "Unlocks the \'Disarm\' skill which allows you to disarm the enemy with high probability. Who lost the weapon, will lose the life.",
 };

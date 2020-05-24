@@ -783,6 +783,26 @@ gt.Const.Perks.PerkDefObjects.Initiative <- {
 	Const = "Initiative"
 }
 
+gt.Const.Perks.PerkDefObjects.Kick <- {
+	ID = "perk.wow.rogue.kick",
+	Script = "scripts/skills/perks/perk_wow_kick",
+	Name = this.Const.Wow_strings.PerkName.Kick,
+	Tooltip = this.Const.Wow_strings.PerkDescription.Kick,
+	Icon = "ui/perks/perk_rogue_kick.png",
+	IconDisabled = "ui/perks/perk_rogue_kick_sw.png",
+	Const = "Kick"
+}
+
+gt.Const.Perks.PerkDefObjects.Disarm <- {
+	ID = "perk.wow.rogue.disarm",
+	Script = "scripts/skills/perks/perk_wow_disarm",
+	Name = this.Const.Wow_strings.PerkName.Disarm,
+	Tooltip = this.Const.Wow_strings.PerkDescription.Disarm,
+	Icon = "ui/perks/perk_rogue_disarm.png",
+	IconDisabled = "ui/perks/perk_rogue_disarm_sw.png",
+	Const = "Disarm"
+}
+
 // ---------------------------------------------|
 // ----------------  WOW PALADIN ---------------|
 // ---------------------------------------------|
