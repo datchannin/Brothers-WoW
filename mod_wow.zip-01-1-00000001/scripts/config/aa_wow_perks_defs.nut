@@ -762,6 +762,27 @@ gt.Const.Perks.PerkDefObjects.Hemorrhage <- {
 	IconDisabled = "ui/perks/perk_rogue_hemorrhage_sw.png",
 	Const = "Hemorrhage"
 }
+
+gt.Const.Perks.PerkDefObjects.KidneyShot <- {
+	ID = "perk.wow.rogue.kidneyshot",
+	Script = "scripts/skills/perks/perk_wow_kidneyshot",
+	Name = this.Const.Wow_strings.PerkName.KidneyShot,
+	Tooltip = this.Const.Wow_strings.PerkDescription.KidneyShot,
+	Icon = "ui/perks/perk_rogue_kidneyshot.png",
+	IconDisabled = "ui/perks/perk_rogue_kidneyshot_sw.png",
+	Const = "KidneyShot"
+}
+
+gt.Const.Perks.PerkDefObjects.Initiative <- {
+	ID = "perk.wow.rogue.initiative",
+	Script = "scripts/skills/perks/perk_wow_initiative",
+	Name = this.Const.Wow_strings.PerkName.Initiative,
+	Tooltip = this.Const.Wow_strings.PerkDescription.Initiative,
+	Icon = "ui/perks/perk_rogue_initiative.png",
+	IconDisabled = "ui/perks/perk_rogue_initiative_sw.png",
+	Const = "Initiative"
+}
+
 // ---------------------------------------------|
 // ----------------  WOW PALADIN ---------------|
 // ---------------------------------------------|
