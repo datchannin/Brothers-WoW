@@ -713,6 +713,16 @@ gt.Const.Perks.PerkDefObjects.Poison <- {
 	Const = "Poison"
 }
 
+gt.Const.Perks.PerkDefObjects.Camouflage <- {
+	ID = "perk.wow.rogue.camouflage",
+	Script = "scripts/skills/perks/perk_wow_camouflage",
+	Name = this.Const.Wow_strings.PerkName.Camouflage,
+	Tooltip = this.Const.Wow_strings.PerkDescription.Camouflage,
+	Icon = "ui/perks/perk_rogue_camouflage.png",
+	IconDisabled = "ui/perks/perk_rogue_camouflage_sw.png",
+	Const = "Camouflage"
+}
+
 // ---------------------------------------------|
 // ----------------  WOW PALADIN ---------------|
 // ---------------------------------------------|
