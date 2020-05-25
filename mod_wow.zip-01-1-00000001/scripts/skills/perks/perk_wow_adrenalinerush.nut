@@ -12,4 +12,14 @@ this.perk_wow_adrenalinerush <- this.inherit("scripts/skills/skill", {
 		this.m.IsStacking = false;
 		this.m.IsHidden = false;
 	}
+
+	function onCombatStarted()
+	{
+		this.getContainer().add(this.new("scripts/skills/effects/adrenalinerush_effect"));
+	}
+
+	function onRemoved()
+	{
+		this.getContainer().removeByID("effects.adrenalinerush");
+	}
 });
