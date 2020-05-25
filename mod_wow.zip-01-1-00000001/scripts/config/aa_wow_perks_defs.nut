@@ -843,6 +843,16 @@ gt.Const.Perks.PerkDefObjects.Vigor <- {
 	Const = "Vigor"
 }
 
+gt.Const.Perks.PerkDefObjects.AdrenalineRush <- {
+	ID = "perk.wow.rogue.adrenalinerush",
+	Script = "scripts/skills/perks/perk_wow_adrenalinerush",
+	Name = this.Const.Wow_strings.PerkName.AdrenalineRush,
+	Tooltip = this.Const.Wow_strings.PerkDescription.AdrenalineRush,
+	Icon = "ui/perks/perk_rogue_adrenalinerush.png",
+	IconDisabled = "ui/perks/perk_rogue_adrenalinerush_sw.png",
+	Const = "AdrenalineRush"
+}
+
 // ---------------------------------------------|
 // ----------------  WOW PALADIN ---------------|
 // ---------------------------------------------|

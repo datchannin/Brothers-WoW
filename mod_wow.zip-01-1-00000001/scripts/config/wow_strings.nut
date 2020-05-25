@@ -59,6 +59,7 @@ gt.Const.Wow_strings.PerkName <- {
 	MasterMace = "Mace Specialization",
 	MasterFlail = "Flail Specialization",
 	Vigor = "Vigor",
+	AdrenalineRush = "Adrenaline Rush",
 };
 gt.Const.Wow_strings.PerkDescription <- {
 	DefensiveStance = "A defensive combat stance. Decreases damage taken by [color=" + this.Const.UI.Color.PositiveValue + "]10%[/color] and damage caused by [color=" + this.Const.UI.Color.NegativeValue + "]10%[/color].",
@@ -91,4 +92,5 @@ gt.Const.Wow_strings.PerkDescription <- {
 	MasterMace = "Mace Adept. The mace in your hands becomes more destructive. Damage done by mace is increased by [color=" + this.Const.UI.Color.PositiveValue + "]20%[/color]. Does not work with two-handed weapon.",
 	MasterFlail = "Flail Adept. Сhain movements becomes faster. Take care of your head and ribs. Damage done by flail is increased by [color=" + this.Const.UI.Color.PositiveValue + "]20%[/color]. Does not work with two-handed weapon.",
 	Vigor = "Increase your efficiency! Lightning reflexes help you do more in the same time. Gives you [color=" + this.Const.UI.Color.PositiveValue + "]2[/color] additional Action Points",
+	AdrenalineRush = "Adrenaline pulsates in your veins. And every move restores your Fatigue now. [color=" + this.Const.UI.Color.PositiveValue + "]+5[/color] Fatigue Recovery per turn.",
 };
