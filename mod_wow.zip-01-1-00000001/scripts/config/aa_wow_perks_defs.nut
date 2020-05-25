@@ -833,6 +833,16 @@ gt.Const.Perks.PerkDefObjects.MasterFlail <- {
 	Const = "MasterFlail"
 }
 
+gt.Const.Perks.PerkDefObjects.Vigor <- {
+	ID = "perk.wow.rogue.vigor",
+	Script = "scripts/skills/perks/perk_wow_vigor",
+	Name = this.Const.Wow_strings.PerkName.Vigor,
+	Tooltip = this.Const.Wow_strings.PerkDescription.Vigor,
+	Icon = "ui/perks/perk_rogue_vigor.png",
+	IconDisabled = "ui/perks/perk_rogue_vigor_sw.png",
+	Const = "Vigor"
+}
+
 // ---------------------------------------------|
 // ----------------  WOW PALADIN ---------------|
 // ---------------------------------------------|

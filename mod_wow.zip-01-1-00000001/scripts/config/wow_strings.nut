@@ -58,6 +58,7 @@ gt.Const.Wow_strings.PerkName <- {
 	MasterDagger = "Dagger Specialization",
 	MasterMace = "Mace Specialization",
 	MasterFlail = "Flail Specialization",
+	Vigor = "Vigor",
 };
 gt.Const.Wow_strings.PerkDescription <- {
 	DefensiveStance = "A defensive combat stance. Decreases damage taken by [color=" + this.Const.UI.Color.PositiveValue + "]10%[/color] and damage caused by [color=" + this.Const.UI.Color.NegativeValue + "]10%[/color].",
@@ -89,4 +90,5 @@ gt.Const.Wow_strings.PerkDescription <- {
 	MasterDagger = "Dagger Adept. Dagger punctures becomes stronger and more accurate. Damage done by dagger is increased by [color=" + this.Const.UI.Color.PositiveValue + "]10%[/color]. An additional [color=" + this.Const.UI.Color.PositiveValue + "]10%[/color] of any dagger damage ignores armor.",
 	MasterMace = "Mace Adept. The mace in your hands becomes more destructive. Damage done by mace is increased by [color=" + this.Const.UI.Color.PositiveValue + "]20%[/color]. Does not work with two-handed weapon.",
 	MasterFlail = "Flail Adept. Сhain movements becomes faster. Take care of your head and ribs. Damage done by flail is increased by [color=" + this.Const.UI.Color.PositiveValue + "]20%[/color]. Does not work with two-handed weapon.",
+	Vigor = "Increase your efficiency! Lightning reflexes help you do more in the same time. Gives you [color=" + this.Const.UI.Color.PositiveValue + "]2[/color] additional Action Points",
 };

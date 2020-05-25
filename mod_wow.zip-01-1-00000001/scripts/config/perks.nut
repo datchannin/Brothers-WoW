@@ -194,7 +194,7 @@ gt.Const.Perks.PerkTreeRogue <- [
 		gt.Const.Perks.PerkDefObjects.Nimble
 	],
 	[
-		//gt.Const.Perks.PerkDefObjects.Vigor
+		gt.Const.Perks.PerkDefObjects.Vigor
 		//gt.Const.Perks.PerkDefObjects.AdrenalineRush
 		gt.Const.Perks.PerkDefObjects.Duelist
 		gt.Const.Perks.PerkDefObjects.Indomitable
