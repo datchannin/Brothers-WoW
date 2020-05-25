@@ -803,6 +803,36 @@ gt.Const.Perks.PerkDefObjects.Disarm <- {
 	Const = "Disarm"
 }
 
+gt.Const.Perks.PerkDefObjects.MasterDagger <- {
+	ID = "perk.wow.rogue.masterdagger",
+	Script = "scripts/skills/perks/perk_wow_masterdagger",
+	Name = this.Const.Wow_strings.PerkName.MasterDagger,
+	Tooltip = this.Const.Wow_strings.PerkDescription.MasterDagger,
+	Icon = "ui/perks/perk_rogue_masterdagger.png",
+	IconDisabled = "ui/perks/perk_rogue_masterdagger_sw.png",
+	Const = "MasterDagger"
+}
+
+gt.Const.Perks.PerkDefObjects.MasterMace <- {
+	ID = "perk.wow.rogue.mastermace",
+	Script = "scripts/skills/perks/perk_wow_mastermace",
+	Name = this.Const.Wow_strings.PerkName.MasterMace,
+	Tooltip = this.Const.Wow_strings.PerkDescription.MasterMace,
+	Icon = "ui/perks/perk_rogue_mastermace.png",
+	IconDisabled = "ui/perks/perk_rogue_mastermace_sw.png",
+	Const = "MasterMace"
+}
+
+gt.Const.Perks.PerkDefObjects.MasterFlail <- {
+	ID = "perk.wow.rogue.masterflail",
+	Script = "scripts/skills/perks/perk_wow_masterflail",
+	Name = this.Const.Wow_strings.PerkName.MasterFlail,
+	Tooltip = this.Const.Wow_strings.PerkDescription.MasterFlail,
+	Icon = "ui/perks/perk_rogue_masterflail.png",
+	IconDisabled = "ui/perks/perk_rogue_masterflail_sw.png",
+	Const = "MasterFlail"
+}
+
 // ---------------------------------------------|
 // ----------------  WOW PALADIN ---------------|
 // ---------------------------------------------|

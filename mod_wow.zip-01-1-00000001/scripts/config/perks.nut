@@ -173,10 +173,10 @@ gt.Const.Perks.PerkTreeRogue <- [
 		gt.Const.Perks.PerkDefObjects.Rotation
 	],
 	[
-		//gt.Const.Perks.PerkDefObjects.MasterDagger
-		//gt.Const.Perks.PerkDefObjects.MasterSword
-		//gt.Const.Perks.PerkDefObjects.MasterFlail
-		//gt.Const.Perks.PerkDefObjects.MasterMace
+		gt.Const.Perks.PerkDefObjects.MasterDagger
+		gt.Const.Perks.PerkDefObjects.MasterSword
+		gt.Const.Perks.PerkDefObjects.MasterFlail
+		gt.Const.Perks.PerkDefObjects.MasterMace
 		gt.Const.Perks.PerkDefObjects.SpecMace
 		gt.Const.Perks.PerkDefObjects.SpecFlail
 		gt.Const.Perks.PerkDefObjects.SpecSword
