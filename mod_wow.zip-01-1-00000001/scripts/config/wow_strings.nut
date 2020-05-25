@@ -82,7 +82,7 @@ gt.Const.Wow_strings.PerkDescription <- {
 	Camouflage = "Unlocks the \'Camouflage\' skill which allows you to sneak around. It increases your defense skill by [color=" + this.Const.UI.Color.PositiveValue + "]20[/color] points and allows you to ignore hostile zone of control.",
 	Endurance = "Drop the shield and don\'t think about the defense. This perk help you to increase Defense by [color=" + this.Const.UI.Color.PositiveValue + "]10[/color]. Your Initiative will be increased by [color=" + this.Const.UI.Color.PositiveValue + "]10[/color].",
 	VilePoison = "Your skill and poison knowledge enhances [color=" + this.Const.UI.Color.PositiveValue + "]\'Poison\'[/color] skill. Increases the damage dealt by your poisons by 10. Does not have any effect if you don\'t have [color=" + this.Const.UI.Color.PositiveValue + "]\'Poison\'[/color] skill.",
-	ExposeArmor = "You are almost \'Duelist\' now. An additional [color=" + this.Const.UI.Color.PositiveValue + "]10%[/color] of any damage ignores armor. Works only if your offhend is free.",
+	ExposeArmor = "You are almost \'Duelist\' now. An additional [color=" + this.Const.UI.Color.PositiveValue + "]10%[/color] of any damage ignores armor. Works only if your offhand is free.",
 	Hemorrhage = "Unlocks the \'Hemorrhage\' skill which allows you to debaff the target. Such debuff increases damage taken by enemy. No one will escape the fate!",
 	KidneyShot = "Unlocks the \'Kidney Shot\' skill which stuns the target. If target was stun by this skill, it damage taken is increased.",
 	Initiative = "No one can stop you. Your Initiative increases by [color=" + this.Const.UI.Color.PositiveValue + "]20[/color] points.\n\nAlso it gives you immunity to being rooted.",
