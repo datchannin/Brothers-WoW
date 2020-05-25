@@ -1,2 +1,2 @@
 # Rogue Description.
-![Rogue](/spec/rogue%20description.png "Brothers WoW repo: This is Rogue talent tree and his talents")
+![Rogue](https://github.com/datchannin/Brothers-WoW/blob/master/spec/rogue_description.png "Brothers WoW repo: This is Rogue talent tree and his talents")
