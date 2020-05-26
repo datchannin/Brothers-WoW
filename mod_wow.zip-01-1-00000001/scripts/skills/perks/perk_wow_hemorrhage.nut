@@ -12,4 +12,17 @@ this.perk_wow_hemorrhage <- this.inherit("scripts/skills/skill", {
 		this.m.IsStacking = false;
 		this.m.IsHidden = false;
 	}
+	
+	function onAdded()
+	{
+		if (!this.m.Container.hasSkill("actives.hemorrhage_skill"))
+		{
+			this.m.Container.add(this.new("scripts/skills/actives/rogue_hemorrhage_skill"));
+		}
+	}
+
+	function onRemoved()
+	{
+		this.m.Container.removeByID("actives.hemorrhage_skill");
+	}
 });
