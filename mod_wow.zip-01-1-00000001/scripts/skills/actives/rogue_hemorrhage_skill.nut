@@ -65,7 +65,7 @@ this.rogue_hemorrhage_skill <- this.inherit("scripts/skills/skill", {
 	{
 		local targetEntity = _targetTile.getEntity();
 	
-		//targetEntity.getSkills().add(this.new("scripts/skills/effects/hemorrhage_effect"));
+		targetEntity.getSkills().add(this.new("scripts/skills/effects/hemorrhage_effect"));
 		return true;
 	}
 });
