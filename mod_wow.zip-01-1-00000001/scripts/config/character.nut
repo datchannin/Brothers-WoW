@@ -725,6 +725,7 @@ gt.Const.CharacterProperties <- {
 
 	ActionPoints = 0,
 	ActionPointsMult = 1.0,
+	ActionPointsBonus = 0,
 	AdditionalActionPointCost = 0,
 	Hitpoints = 0,
 	HitpointsMult = 1.0,

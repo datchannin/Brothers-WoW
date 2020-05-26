@@ -10,6 +10,11 @@ this.perk_wow_vigor <- this.inherit("scripts/skills/skill", {
 		this.m.Order = this.Const.SkillOrder.Perk;
 		this.m.IsActive = false;
 		this.m.IsStacking = false;
-		this.m.IsHidden = false;
+		this.m.IsHidden = true;
 	}
+	
+	function onUpdate( _properties )
+	{
+		_properties.ActionPointsBonus = 2;
+	}	
 });
