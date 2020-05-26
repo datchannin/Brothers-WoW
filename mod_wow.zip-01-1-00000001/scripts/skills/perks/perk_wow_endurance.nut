@@ -12,4 +12,10 @@ this.perk_wow_endurance <- this.inherit("scripts/skills/skill", {
 		this.m.IsStacking = false;
 		this.m.IsHidden = false;
 	}
+	
+	function onUpdate( _properties )
+	{
+		_properties.MeleeDefense += 10;
+		_properties.Initiative += 10;
+	}
 });
