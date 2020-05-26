@@ -12,4 +12,15 @@ this.perk_wow_exposearmor <- this.inherit("scripts/skills/skill", {
 		this.m.IsStacking = false;
 		this.m.IsHidden = false;
 	}
+	
+	function onUpdate( _properties )
+	{
+		local items = this.getContainer().getActor().getItems();
+		local off = items.getItemAtSlot(this.Const.ItemSlot.Offhand);
+
+		if (off == null && !items.hasBlockedSlot(this.Const.ItemSlot.Offhand) || off != null && off.isItemType(this.Const.Items.ItemType.Tool))
+		{
+			_properties.DamageDirectAdd += 0.1;
+		}
+	}
 });
