@@ -12,4 +12,17 @@ this.perk_wow_camouflage <- this.inherit("scripts/skills/skill", {
 		this.m.IsStacking = false;
 		this.m.IsHidden = false;
 	}
+	
+	function onAdded()
+	{
+		if (!this.m.Container.hasSkill("actives.camouflage_skill"))
+		{
+			this.m.Container.add(this.new("scripts/skills/actives/rogue_camouflage_skill"));
+		}
+	}
+
+	function onRemoved()
+	{
+		this.m.Container.removeByID("actives.camouflage_skill");
+	}
 });
