@@ -34,13 +34,13 @@ this.camouflage_effect <- this.inherit("scripts/skills/skill", {
 				id = 6,
 				type = "text",
 				icon = "ui/icons/melee_defense.png",
-				text = "Defense increased by [color=" + this.Const.UI.Color.PositiveValue + "]20[/color]"
+				text = "Melee Defense increased by [color=" + this.Const.UI.Color.PositiveValue + "]20[/color]"
 			},
 			{
 				id = 6,
 				type = "text",
 				icon = "ui/icons/special.png",
-				text = "Ignores hostile zone of control"
+				text = "Ignores hostile Zone of Control"
 			},
 		];
 	}

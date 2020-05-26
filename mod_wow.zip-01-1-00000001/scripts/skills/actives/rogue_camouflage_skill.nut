@@ -4,7 +4,7 @@ this.rogue_camouflage_skill <- this.inherit("scripts/skills/skill", {
 	{
 		this.m.ID = "actives.camouflage_skill";
 		this.m.Name = "Camouglage";
-		this.m.Description = "Increase character\'s Defense for this turn and allows to ignore hostile zone of control.";
+		this.m.Description = "Increase character\'s Melee Defense for this turn and allows to ignore hostile zone of control.";
 		this.m.Icon = "ui/perks/skill_warrior_berserkerrage.png";
 		this.m.IconDisabled = "ui/perks/skill_warrior_berserkerrage_sw.png";
 		this.m.Overlay = "skill_warrior_berserkerrage";
@@ -47,7 +47,7 @@ this.rogue_camouflage_skill <- this.inherit("scripts/skills/skill", {
 				id = 6,
 				type = "text",
 				icon = "ui/icons/melee_defense.png",
-				text = "Defense will be increased by [color=" + this.Const.UI.Color.PositiveValue + "]20[/color]"
+				text = "Melee Defense will be increased by [color=" + this.Const.UI.Color.PositiveValue + "]20[/color]"
 			},
 		];
 	}
