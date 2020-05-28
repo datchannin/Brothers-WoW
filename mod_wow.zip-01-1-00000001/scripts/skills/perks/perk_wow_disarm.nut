@@ -12,4 +12,17 @@ this.perk_wow_disarm <- this.inherit("scripts/skills/skill", {
 		this.m.IsStacking = false;
 		this.m.IsHidden = false;
 	}
+	
+	function onAdded()
+	{
+		if (!this.m.Container.hasSkill("actives.rogue_disarm_skill"))
+		{
+			this.m.Container.add(this.new("scripts/skills/actives/rogue_disarm_skill"));
+		}
+	}
+
+	function onRemoved()
+	{
+		this.m.Container.removeByID("actives.rogue_disarm_skill");
+	}
 });
