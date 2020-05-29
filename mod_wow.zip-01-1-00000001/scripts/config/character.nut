@@ -880,6 +880,7 @@ gt.Const.CharacterProperties <- {
 	IsMasterInAxes = false,
 	IsMasterInSwords = false,
 	IsMasterInSpears = false,
+	IsMasterInPoison = false,
 	IsContentWithBeingInReserve = false,
 	DailyWage = 0,
 	DailyWageMult = 1.0,
