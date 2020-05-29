@@ -45,7 +45,7 @@ this.rogue_poison_skill <- this.inherit("scripts/skills/skill", {
 				{
 					id = 2,
 					type = "description",
-					text = this.getDescription()
+					text = "Poison the enemy with deadly toxin."
 				},
 				{
 					id = 7,
@@ -66,7 +66,7 @@ this.rogue_poison_skill <- this.inherit("scripts/skills/skill", {
 				{
 					id = 2,
 					type = "description",
-					text = this.getDescription()
+					text = "You know how to increase poison effency. Poison the enemy with deadly vile toxin."
 				},
 				{
 					id = 7,
