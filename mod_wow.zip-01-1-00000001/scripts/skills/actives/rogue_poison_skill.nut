@@ -97,12 +97,31 @@ this.rogue_poison_skill <- this.inherit("scripts/skills/skill", {
 			return false;
 		}
 
+		local targetEntity = _targetTile.getEntity();
+
+		if (targetEntity.getCurrentProperties().IsImmuneToPoison || targetEntity.getHitpoints() <= 0)
+		{
+			return false;
+		}
+
+		if (!targetEntity.isAlive())
+		{
+			return false;
+		}
+
+		if (targetEntity.getTags().has("undead"))
+		{
+			return false;
+		}
+
 		return true;
 	}
 
 	function onUse( _user, _targetTile )
 	{
 		local targetEntity = _targetTile.getEntity();
+
+		this.spawnIcon("status_effect_54", targetEntity.getTile());
 
 		if (this.m.PoisonMaster == 0)
 		{
@@ -128,6 +147,9 @@ this.rogue_poison_skill <- this.inherit("scripts/skills/skill", {
 				poison.resetTime();
 			}
 		}
+		
+		this.Tactical.EventLog.log(this.Const.UI.getColorizedEntityName(targetEntity) + " is poisoned");
+
 		return true;
 	}
 });
