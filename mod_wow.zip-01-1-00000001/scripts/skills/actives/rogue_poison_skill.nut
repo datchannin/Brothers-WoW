@@ -106,13 +106,28 @@ this.rogue_poison_skill <- this.inherit("scripts/skills/skill", {
 
 		if (this.m.PoisonMaster == 0)
 		{
-			targetEntity.getSkills().add(this.new("scripts/skills/effects/rogue_poison_effect"));
+			local poison = targetEntity.getSkills().getSkillByID("effects.rogue_poison");
+			if (poison == null)
+			{
+				targetEntity.getSkills().add(this.new("scripts/skills/effects/rogue_poison_effect"));
+			}
+			else
+			{
+				poison.resetTime();
+			}
 		}
 		else
 		{
-			targetEntity.getSkills().add(this.new("scripts/skills/effects/rogue_vilepoison_effect"));
+			local poison = targetEntity.getSkills().getSkillByID("effects.rogue_vilepoison");
+			if (poison == null)
+			{
+				targetEntity.getSkills().add(this.new("scripts/skills/effects/rogue_vilepoison_effect"));
+			}
+			else
+			{
+				poison.resetTime();
+			}
 		}
 		return true;
 	}
 });
-
