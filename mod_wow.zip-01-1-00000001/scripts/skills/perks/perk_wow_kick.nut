@@ -12,4 +12,17 @@ this.perk_wow_kick <- this.inherit("scripts/skills/skill", {
 		this.m.IsStacking = false;
 		this.m.IsHidden = false;
 	}
+	
+	function onAdded()
+	{
+		if (!this.m.Container.hasSkill("actives.kick_skill"))
+		{
+			this.m.Container.add(this.new("scripts/skills/actives/rogue_kick_skill"));
+		}
+	}
+
+	function onRemoved()
+	{
+		this.m.Container.removeByID("actives.kick_skill");
+	}
 });
