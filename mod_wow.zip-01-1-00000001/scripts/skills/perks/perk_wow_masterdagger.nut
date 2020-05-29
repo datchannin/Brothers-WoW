@@ -17,4 +17,18 @@ this.perk_wow_masterdagger <- this.inherit("scripts/skills/skill", {
 	{
 		_properties.IsMasterInDaggers = true;
 	}
+	
+	function onAnySkillUsed( _skill, _targetEntity, _properties )
+	{
+		local mainhand = this.getContainer().getActor().getItems().getItemAtSlot(this.Const.ItemSlot.Mainhand);
+		if (mainhand != null && mainhand.isItemType(this.Const.Items.ItemType.OneHanded))
+		{
+			if (_skill.getID() == "actives.stab" || _skill.getID() == "actives.puncture")
+			{
+				_properties.DamageTotalMult *= 1.1;
+				_properties.DamageDirectAdd += 0.1;
+				_properties.TargetAttractionMult *= 1.2;
+			}
+		}
+	}
 });
