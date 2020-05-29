@@ -104,7 +104,14 @@ this.rogue_poison_skill <- this.inherit("scripts/skills/skill", {
 	{
 		local targetEntity = _targetTile.getEntity();
 
-		//targetEntity.getSkills().add(this.new("scripts/skills/effects/poison_effect"));
+		if (this.m.PoisonMaster == 0)
+		{
+			targetEntity.getSkills().add(this.new("scripts/skills/effects/rogue_poison_effect"));
+		}
+		else
+		{
+			targetEntity.getSkills().add(this.new("scripts/skills/effects/rogue_vilepoison_effect"));
+		}
 		return true;
 	}
 });
