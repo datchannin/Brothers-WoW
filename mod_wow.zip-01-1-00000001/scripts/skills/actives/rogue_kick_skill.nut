@@ -9,14 +9,9 @@ this.rogue_kick_skill <- this.inherit("scripts/skills/skill", {
 		this.m.IconDisabled = "ui/perks/skill_rogue_kick_sw.png";
 		this.m.Overlay = "skill_rogue_kick";
 		this.m.SoundOnUse = [
-			//"sounds/combat/knockback_01.wav",
-			//"sounds/combat/knockback_02.wav",
-			//"sounds/combat/knockback_03.wav"
-		];
-		this.m.SoundOnHit = [
-			//"sounds/combat/knockback_hit_01.wav",
-			//"sounds/combat/knockback_hit_02.wav",
-			//"sounds/combat/knockback_hit_03.wav"
+			"sounds/combat/rogue_kick1.wav",
+			"sounds/combat/rogue_kick2.wav",
+			"sounds/combat/rogue_kick3.wav"
 		];
 		this.m.Type = this.Const.SkillType.Active;
 		this.m.Order = this.Const.SkillOrder.Any;
@@ -145,11 +140,6 @@ this.rogue_kick_skill <- this.inherit("scripts/skills/skill", {
 		skills.removeByID("effects.shieldwall");
 		skills.removeByID("effects.spearwall");
 		skills.removeByID("effects.riposte");
-
-		if (this.m.SoundOnHit.len() != 0)
-		{
-			this.Sound.play(this.m.SoundOnHit[this.Math.rand(0, this.m.SoundOnHit.len() - 1)], this.Const.Sound.Volume.Skill, _user.getPos());
-		}
 
 		target.setCurrentMovementType(this.Const.Tactical.MovementType.Involuntary);
 
