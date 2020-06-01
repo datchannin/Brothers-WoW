@@ -9,8 +9,7 @@ this.rogue_kidneyshot_skill <- this.inherit("scripts/skills/skill", {
 		this.m.IconDisabled = "ui/perks/skill_rogue_kidneyshot_sw.png";
 		this.m.Overlay = "skill_rogue_kidneyshot";
 		this.m.SoundOnUse = [
-			//"sounds/combat/dlc4/whip_01.wav",
-			//"sounds/combat/dlc4/whip_02.wav"
+			"sounds/combat/rogue_kidneyshot.wav"
 		];
 		this.m.Type = this.Const.SkillType.Active;
 		this.m.Order = this.Const.SkillOrder.Any;

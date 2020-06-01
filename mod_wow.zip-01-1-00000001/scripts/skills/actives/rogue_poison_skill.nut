@@ -11,8 +11,9 @@ this.rogue_poison_skill <- this.inherit("scripts/skills/skill", {
 		this.m.IconDisabled = "ui/perks/skill_rogue_poison_sw.png";
 		this.m.Overlay = "skill_rogue_poison";
 		this.m.SoundOnUse = [
-			//"sounds/combat/warrior_berserkerrage1.wav",
-			//"sounds/combat/warrior_berserkerrage2.wav"
+			"sounds/combat/rogue_poison1.wav",
+			"sounds/combat/rogue_poison2.wav",
+			"sounds/combat/rogue_poison3.wav"
 		];
 		this.m.Type = this.Const.SkillType.Active;
 		this.m.Order = this.Const.SkillOrder.Any;
