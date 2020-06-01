@@ -7,9 +7,9 @@ this.rogue_poison_skill <- this.inherit("scripts/skills/skill", {
 		this.m.ID = "actives.poison_skill";
 		this.m.Name = "Poison";
 		this.m.Description = "Poison the enemy with deadly toxin.";
-		this.m.Icon = "ui/perks/skill_warrior_berserkerrage.png";
-		this.m.IconDisabled = "ui/perks/skill_warrior_berserkerrage_sw.png";
-		this.m.Overlay = "skill_warrior_berserkerrage";
+		this.m.Icon = "ui/perks/skill_rogue_poison.png";
+		this.m.IconDisabled = "ui/perks/skill_rogue_poison_sw.png";
+		this.m.Overlay = "skill_rogue_poison";
 		this.m.SoundOnUse = [
 			//"sounds/combat/warrior_berserkerrage1.wav",
 			//"sounds/combat/warrior_berserkerrage2.wav"
