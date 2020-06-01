@@ -5,9 +5,9 @@ this.rogue_disarm_skill <- this.inherit("scripts/skills/skill", {
 		this.m.ID = "actives.rogue_disarm_skill";
 		this.m.Name = "Disarm";
 		this.m.Description = "Disarm an opponent. The hit does not damage, but temporarily disarm an target. A disarmed enemy can not use any weapon skills, but may still use other skills and move freely. Unarmed targets can not be disarmed.";
-		this.m.Icon = "skills/active_170.png";
-		this.m.IconDisabled = "skills/active_170_sw.png";
-		this.m.Overlay = "active_170";
+		this.m.Icon = "ui/perks/skill_rogue_disarm.png";
+		this.m.IconDisabled = "ui/perks/skill_rogue_disarm_sw.png";
+		this.m.Overlay = "skill_rogue_disarm";
 		this.m.SoundOnUse = [
 			//"sounds/combat/dlc4/whip_01.wav",
 			//"sounds/combat/dlc4/whip_02.wav"
@@ -45,6 +45,8 @@ this.rogue_disarm_skill <- this.inherit("scripts/skills/skill", {
 
 	function onUse( _user, _targetTile )
 	{
+		local target = _targetTile.getEntity();
+	
 		if (this.Math.rand(1, 100) < 21)
 		{
 			if (!_user.isHiddenToPlayer() && _targetTile.IsVisibleForPlayer)
@@ -53,8 +55,6 @@ this.rogue_disarm_skill <- this.inherit("scripts/skills/skill", {
 			}
 			return false;
 		}
-
-		local target = _targetTile.getEntity();
 
 		if (!target.getCurrentProperties().IsStunned && !target.getCurrentProperties().IsImmuneToDisarm)
 		{
