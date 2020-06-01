@@ -9,8 +9,7 @@ this.rogue_disarm_skill <- this.inherit("scripts/skills/skill", {
 		this.m.IconDisabled = "ui/perks/skill_rogue_disarm_sw.png";
 		this.m.Overlay = "skill_rogue_disarm";
 		this.m.SoundOnUse = [
-			//"sounds/combat/dlc4/whip_01.wav",
-			//"sounds/combat/dlc4/whip_02.wav"
+			"sounds/combat/rogue_disarm.wav"
 		];
 		this.m.Type = this.Const.SkillType.Active;
 		this.m.Order = this.Const.SkillOrder.Any;
