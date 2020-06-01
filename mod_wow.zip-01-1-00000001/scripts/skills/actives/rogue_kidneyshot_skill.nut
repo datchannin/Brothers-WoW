@@ -5,9 +5,9 @@ this.rogue_kidneyshot_skill <- this.inherit("scripts/skills/skill", {
 		this.m.ID = "actives.kidneyshot_skill";
 		this.m.Name = "Kidney Shot";
 		this.m.Description = "Hit the enemy in the kidneys. This move stuns target.";
-		this.m.Icon = "skills/active_170.png";
-		this.m.IconDisabled = "skills/active_170_sw.png";
-		this.m.Overlay = "active_170";
+		this.m.Icon = "ui/perks/skill_rogue_kidneyshot.png";
+		this.m.IconDisabled = "ui/perks/skill_rogue_kidneyshot_sw.png";
+		this.m.Overlay = "skill_rogue_kidneyshot";
 		this.m.SoundOnUse = [
 			//"sounds/combat/dlc4/whip_01.wav",
 			//"sounds/combat/dlc4/whip_02.wav"
