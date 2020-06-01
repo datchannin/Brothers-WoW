@@ -9,8 +9,7 @@ this.rogue_camouflage_skill <- this.inherit("scripts/skills/skill", {
 		this.m.IconDisabled = "ui/perks/skill_rogue_camouflage_sw.png";
 		this.m.Overlay = "skill_rogue_camouflage";
 		this.m.SoundOnUse = [
-			//"sounds/combat/warrior_berserkerrage1.wav",
-			//"sounds/combat/warrior_berserkerrage2.wav"
+			"sounds/combat/rogue_camouflage.wav"
 		];
 		this.m.Type = this.Const.SkillType.Active;
 		this.m.Order = this.Const.SkillOrder.Any;
