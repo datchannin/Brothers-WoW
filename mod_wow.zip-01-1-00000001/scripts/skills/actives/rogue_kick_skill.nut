@@ -5,9 +5,9 @@ this.rogue_kick_skill <- this.inherit("scripts/skills/skill", {
 		this.m.ID = "actives.kick_skill";
 		this.m.Name = "Kick";
 		this.m.Description = "Kick a target away by one tile. Targets hit may take damage if they are pushed down several levels of height. Shieldwall, Spearwall and Riposte will be canceled for a target that is successfully kicked back. A rooted target can not be kicked back.";
-		this.m.Icon = "skills/active_10.png";
-		this.m.IconDisabled = "skills/active_10_sw.png";
-		this.m.Overlay = "active_10";
+		this.m.Icon = "ui/perks/skill_rogue_kick.png";
+		this.m.IconDisabled = "ui/perks/skill_rogue_kick_sw.png";
+		this.m.Overlay = "skill_rogue_kick";
 		this.m.SoundOnUse = [
 			//"sounds/combat/knockback_01.wav",
 			//"sounds/combat/knockback_02.wav",
