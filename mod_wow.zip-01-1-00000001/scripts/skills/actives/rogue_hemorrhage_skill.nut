@@ -5,9 +5,9 @@ this.rogue_hemorrhage_skill <- this.inherit("scripts/skills/skill", {
 		this.m.ID = "actives.hemorrhage_skill";
 		this.m.Name = "Hemorrhage";
 		this.m.Description = " Debuff target for this turn and increase his damage taken by [color=" + this.Const.UI.Color.NegativeValue + "]10%[/color].";
-		this.m.Icon = "ui/perks/skill_warrior_berserkerrage.png";
-		this.m.IconDisabled = "ui/perks/skill_warrior_berserkerrage_sw.png";
-		this.m.Overlay = "skill_warrior_berserkerrage";
+		this.m.Icon = "ui/perks/skill_rogue_hemorrhage.png";
+		this.m.IconDisabled = "ui/perks/skill_rogue_hemorrhage_sw.png";
+		this.m.Overlay = "skill_rogue_hemorrhage";
 		this.m.SoundOnUse = [
 			//"sounds/combat/warrior_berserkerrage1.wav",
 			//"sounds/combat/warrior_berserkerrage2.wav"

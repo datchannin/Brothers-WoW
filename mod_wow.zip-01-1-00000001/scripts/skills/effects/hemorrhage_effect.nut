@@ -5,8 +5,8 @@ this.hemorrhage_effect <- this.inherit("scripts/skills/skill", {
 		this.m.ID = "effects.hemorrhage";
 		this.m.Name = "Hemorrhage";
 		this.m.Icon = "ui/perks/perk_rogue_hemorrhage.png";
-		this.m.IconMini = "perk_30_mini";
-		this.m.Overlay = "perk_30";
+		this.m.IconMini = "effect_mini_hemorrhage";
+		this.m.Overlay = "skill_rogue_hemorrhage";
 		this.m.Type = this.Const.SkillType.StatusEffect;
 		this.m.IsActive = false;
 		this.m.IsRemovedAfterBattle = true;
