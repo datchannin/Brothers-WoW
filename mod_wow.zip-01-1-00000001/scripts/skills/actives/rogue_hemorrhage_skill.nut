@@ -9,8 +9,9 @@ this.rogue_hemorrhage_skill <- this.inherit("scripts/skills/skill", {
 		this.m.IconDisabled = "ui/perks/skill_rogue_hemorrhage_sw.png";
 		this.m.Overlay = "skill_rogue_hemorrhage";
 		this.m.SoundOnUse = [
-			//"sounds/combat/warrior_berserkerrage1.wav",
-			//"sounds/combat/warrior_berserkerrage2.wav"
+			"sounds/combat/rogue_hemorrhage1.wav",
+			"sounds/combat/rogue_hemorrhage2.wav",
+			"sounds/combat/rogue_hemorrhage3.wav"
 		];
 		this.m.Type = this.Const.SkillType.Active;
 		this.m.Order = this.Const.SkillOrder.Any;
@@ -69,4 +70,3 @@ this.rogue_hemorrhage_skill <- this.inherit("scripts/skills/skill", {
 		return true;
 	}
 });
-
