@@ -3,11 +3,11 @@ this.rogue_camouflage_skill <- this.inherit("scripts/skills/skill", {
 	function create()
 	{
 		this.m.ID = "actives.camouflage_skill";
-		this.m.Name = "Camouglage";
+		this.m.Name = "Camouflage";
 		this.m.Description = "Increase character\'s Melee Defense for this turn and allows to ignore hostile zone of control.";
-		this.m.Icon = "ui/perks/skill_warrior_berserkerrage.png";
-		this.m.IconDisabled = "ui/perks/skill_warrior_berserkerrage_sw.png";
-		this.m.Overlay = "skill_warrior_berserkerrage";
+		this.m.Icon = "ui/perks/skill_rogue_camouflage.png";
+		this.m.IconDisabled = "ui/perks/skill_rogue_camouflage_sw.png";
+		this.m.Overlay = "skill_rogue_camouflage";
 		this.m.SoundOnUse = [
 			//"sounds/combat/warrior_berserkerrage1.wav",
 			//"sounds/combat/warrior_berserkerrage2.wav"
@@ -63,4 +63,3 @@ this.rogue_camouflage_skill <- this.inherit("scripts/skills/skill", {
 		return false;
 	}
 });
-

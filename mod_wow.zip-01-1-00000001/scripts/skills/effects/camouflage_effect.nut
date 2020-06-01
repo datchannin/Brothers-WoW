@@ -5,8 +5,7 @@ this.camouflage_effect <- this.inherit("scripts/skills/skill", {
 		this.m.ID = "effects.camouflage";
 		this.m.Name = "Camouflage";
 		this.m.Icon = "ui/perks/perk_rogue_camouflage.png";
-		this.m.IconMini = "perk_30_mini";
-		this.m.Overlay = "perk_30";
+		this.m.IconMini = "effect_mini_camouflage";
 		this.m.Type = this.Const.SkillType.StatusEffect;
 		this.m.IsActive = false;
 		this.m.IsRemovedAfterBattle = true;
@@ -55,6 +54,4 @@ this.camouflage_effect <- this.inherit("scripts/skills/skill", {
 	{
 		this.removeSelf();
 	}
-
 });
-
