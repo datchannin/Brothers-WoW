@@ -6,7 +6,7 @@ this.adrenalinerush_effect <- this.inherit("scripts/skills/skill", {
 		this.m.Name = "Adrenaline Rush";
 		this.m.Description = "Adrenaline in your veins allows you to restore part of your Fatigue.";
 		this.m.Icon = "ui/perks/perk_rogue_adrenalinerush.png";
-		this.m.IconMini = "perk_01_mini";
+		this.m.IconMini = "effect_mini_adrenalinerush";
 		this.m.Type = this.Const.SkillType.StatusEffect;
 		this.m.IsActive = false;
 		this.m.IsRemovedAfterBattle = true;
