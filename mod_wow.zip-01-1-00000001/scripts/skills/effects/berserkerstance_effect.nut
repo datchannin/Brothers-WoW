@@ -28,14 +28,14 @@ this.berserkerstance_effect <- this.inherit("scripts/skills/skill", {
 			{
 				id = 10,
 				type = "text",
-				icon = "ui/icons/fatigue.png",
-				text = "[color=" + this.Const.UI.Color.PositiveValue + "]+5[/color] Fatigue Recovery per turn"
+				icon = "ui/icons/damage_dealt.png",
+				text = "Damage done is increased by [color=" + this.Const.UI.Color.PositiveValue + "]10%[/color]"
 			},
 			{
-				id = 10,
+				id = 11,
 				type = "text",
-				icon = "ui/icons/fatigue.png",
-				text = "[color=" + this.Const.UI.Color.PositiveValue + "]+5[/color] Fatigue Recovery per turn"
+				icon = "ui/icons/damage_received.png",
+				text = "Damage received is increased by [color=" + this.Const.UI.Color.NegativeValue + "]10%[/color]"
 			}
 		];
 	}
