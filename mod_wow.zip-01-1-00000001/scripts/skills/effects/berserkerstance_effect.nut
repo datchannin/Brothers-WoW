@@ -6,7 +6,7 @@ this.berserkerstance_effect <- this.inherit("scripts/skills/skill", {
 		this.m.Name = "Berserker Stance";
 		this.m.Description = "An aggressive stance. Damage done is increased but all direct damage taken is increased too.";
 		this.m.Icon = "ui/perks/perk_warrior_berserkerstance.png";
-		this.m.IconMini = "effect_mini_adrenalinerush";
+		this.m.IconMini = "effect_mini_berserkerstance";
 		this.m.Type = this.Const.SkillType.StatusEffect;
 		this.m.IsActive = false;
 		this.m.IsRemovedAfterBattle = true;
