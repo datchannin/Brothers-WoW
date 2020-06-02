@@ -6,47 +6,20 @@ this.perk_wow_berserker_stance <- this.inherit("scripts/skills/skill", {
 		this.m.Name = this.Const.Wow_strings.PerkName.BerserkerStance;
 		this.m.Description = this.Const.Wow_strings.PerkDescription.BerserkerStance;
 		this.m.Icon = "ui/perks/perk_warrior_berserkerstance.png";
-		this.m.Type = this.Const.SkillType.Perk | this.Const.SkillType.StatusEffect;
+		this.m.Type = this.Const.SkillType.Perk;
 		this.m.Order = this.Const.SkillOrder.Perk;
 		this.m.IsActive = false;
 		this.m.IsStacking = false;
 		this.m.IsHidden = false;
 	}
 
-	function getTooltip()
+	function onCombatStarted()
 	{
-		return [
-			{
-				id = 1,
-				type = "title",
-				text = this.getName()
-			},
-			{
-				id = 2,
-				type = "description",
-				text = this.getDescription()
-			},
-			{
-				id = 10,
-				type = "text",
-				icon = "ui/icons/special.png",
-				text = "[color=" + this.Const.UI.Color.PositiveValue + "]+10%[/color] Damage"
-			}
-		];
+		this.getContainer().add(this.new("scripts/skills/effects/berserkerstance_effect"));
 	}
 
-	function onBeforeDamageReceived( _attacker, _skill, _hitInfo, _properties )
+	function onRemoved()
 	{
-		if (_attacker != null && _attacker.getID() == this.getContainer().getActor().getID() || _skill == null || !_skill.isAttack() || !_skill.isUsingHitchance())
-		{
-			return;
-		}
-		_properties.DamageReceivedTotalMult *= 1.1;
-	}
-
-	function onUpdate( _properties )
-	{
-		_properties.DamageTotalMult *= 1.1;
-		_properties.TargetAttractionMult *= 1.1;
+		this.getContainer().removeByID("effects.berserkerstance");
 	}
 });
