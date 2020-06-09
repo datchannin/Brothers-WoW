@@ -205,9 +205,74 @@ gt.Const.Perks.PerkTreeRogue <- [
 	[]
 ];
 
+gt.Const.Perks.PerkTreePaladin <- [
+	[
+		//gt.Const.Perks.PerkDefObjects.
+		//gt.Const.Perks.PerkDefObjects.
+		gt.Const.Perks.PerkDefObjects.CripplingStrikes
+		gt.Const.Perks.PerkDefObjects.Colossus
+		gt.Const.Perks.PerkDefObjects.Pathfinder
+		gt.Const.Perks.PerkDefObjects.Adrenaline
+		gt.Const.Perks.PerkDefObjects.Recover
+		gt.Const.Perks.PerkDefObjects.Student
+	],
+	[
+		//gt.Const.Perks.PerkDefObjects.
+		//gt.Const.Perks.PerkDefObjects.
+		//gt.Const.Perks.PerkDefObjects.
+		//gt.Const.Perks.PerkDefObjects.
+		gt.Const.Perks.PerkDefObjects.CoupDeGrace
+		gt.Const.Perks.PerkDefObjects.FortifiedMind
+		gt.Const.Perks.PerkDefObjects.HoldOut
+		gt.Const.Perks.PerkDefObjects.SteelBrow
+	],
+	[
+		//gt.Const.Perks.PerkDefObjects.
+		//gt.Const.Perks.PerkDefObjects.
+		//gt.Const.Perks.PerkDefObjects.
+		//gt.Const.Perks.PerkDefObjects.
+		gt.Const.Perks.PerkDefObjects.Anticipation
+		gt.Const.Perks.PerkDefObjects.ShieldExpert
+		gt.Const.Perks.PerkDefObjects.Brawny
+		gt.Const.Perks.PerkDefObjects.RallyTheTroops
+	],
+	[
+		gt.Const.Perks.PerkDefObjects.MasterAxe
+		gt.Const.Perks.PerkDefObjects.MasterHammer
+		gt.Const.Perks.PerkDefObjects.MasterFlail
+		gt.Const.Perks.PerkDefObjects.MasterMace
+		gt.Const.Perks.PerkDefObjects.SpecMace
+		gt.Const.Perks.PerkDefObjects.SpecFlail
+		gt.Const.Perks.PerkDefObjects.SpecHammer
+		gt.Const.Perks.PerkDefObjects.SpecAxe
+	],
+	[
+		gt.Const.Perks.PerkDefObjects.ReachAdvantage
+		gt.Const.Perks.PerkDefObjects.LoneWolf
+		gt.Const.Perks.PerkDefObjects.Underdog
+		gt.Const.Perks.PerkDefObjects.Footwork
+	],
+	[
+		gt.Const.Perks.PerkDefObjects.Berserk
+		gt.Const.Perks.PerkDefObjects.HeadHunter
+		gt.Const.Perks.PerkDefObjects.BattleForged
+	],
+	[
+		//gt.Const.Perks.PerkDefObjects.
+		//gt.Const.Perks.PerkDefObjects.
+		gt.Const.Perks.PerkDefObjects.KillingFrenzy
+		gt.Const.Perks.PerkDefObjects.Indomitable
+	],
+	[],
+	[],
+	[],
+	[]
+];
+
 gt.Const.Perks.TreesArray.push(gt.Const.Perks.PerkTreeVanilla);
 gt.Const.Perks.TreesArray.push(gt.Const.Perks.PerkTreeWarrior);
 gt.Const.Perks.TreesArray.push(gt.Const.Perks.PerkTreeRogue);
+gt.Const.Perks.TreesArray.push(gt.Const.Perks.PerkTreePaladin);
 
 gt.Const.Perks.LookupMap <- {};
 for (local tree_number = 0; tree_number < this.Const.Perks.TreesArray.len(); tree_number = ++tree_number)
@@ -262,6 +327,10 @@ gt.Const.Perks.getPerksTree <- function ( _background )
 
 	case "background.raider_rogue":
 		return gt.Const.Perks.PerkTreeRogue;
+		break;
+
+	case "background.raider_paladin":
+		return gt.Const.Perks.PerkTreePaladin;
 		break;
 
 	default:
