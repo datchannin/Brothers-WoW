@@ -6,7 +6,7 @@ this.wow_scenario <- this.inherit("scripts/scenarios/world/starting_scenario", {
 		this.m.Name = "WoW debug Company";
 		this.m.Description = "[p=c][img]gfx/ui/events/event_wow.png[/img][/p][p]This scenario was created for debug WoW characters, new perks, skills and abilities. Use them and play. If you find any bug - please, inform the github repo.[/p]";
 		this.m.Difficulty = 3;
-		this.m.Order = 10;
+		this.m.Order = 100;
 	}
 
 	function onSpawnAssets()
@@ -47,7 +47,7 @@ this.wow_scenario <- this.inherit("scripts/scenarios/world/starting_scenario", {
 		bros[1].m.Level = 5;
 
 		bros[2].setStartValuesEx([
-			"raider_rogue_background"
+			"raider_paladin_background"
 		]);
 		bros[2].setPlaceInFormation(5);
 		bros[2].m.PerkPoints = 12;
