@@ -856,3 +856,23 @@ gt.Const.Perks.PerkDefObjects.AdrenalineRush <- {
 // ---------------------------------------------|
 // ----------------  WOW PALADIN ---------------|
 // ---------------------------------------------|
+
+gt.Const.Perks.PerkDefObjects.HolyLight <- {
+	ID = "perk.wow.paladin.holylight",
+	Script = "scripts/skills/perks/perk_wow_holylight",
+	Name = this.Const.Wow_strings.PerkName.HolyLight,
+	Tooltip = this.Const.Wow_strings.PerkDescription.HolyLight,
+	Icon = "ui/perks/perk_paladin_holylight.png",
+	IconDisabled = "ui/perks/perk_paladin_holylight_sw.png",
+	Const = "HolyLight"
+}
+
+gt.Const.Perks.PerkDefObjects.BlessingofMight <- {
+	ID = "perk.wow.paladin.blessingofmight",
+	Script = "scripts/skills/perks/perk_wow_blessingofmight",
+	Name = this.Const.Wow_strings.PerkName.BlessingofMight,
+	Tooltip = this.Const.Wow_strings.PerkDescription.BlessingofMight,
+	Icon = "ui/perks/perk_paladin_blessingofmight.png",
+	IconDisabled = "ui/perks/perk_paladin_blessingofmight_sw.png",
+	Const = "BlessingofMight"
+}

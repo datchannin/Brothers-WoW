@@ -207,8 +207,8 @@ gt.Const.Perks.PerkTreeRogue <- [
 
 gt.Const.Perks.PerkTreePaladin <- [
 	[
-		//gt.Const.Perks.PerkDefObjects.
-		//gt.Const.Perks.PerkDefObjects.
+		gt.Const.Perks.PerkDefObjects.HolyLight
+		gt.Const.Perks.PerkDefObjects.BlessingofMight
 		gt.Const.Perks.PerkDefObjects.CripplingStrikes
 		gt.Const.Perks.PerkDefObjects.Colossus
 		gt.Const.Perks.PerkDefObjects.Pathfinder

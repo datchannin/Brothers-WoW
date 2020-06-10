@@ -3,8 +3,8 @@ this.perk_wow_holylight <- this.inherit("scripts/skills/skill", {
 	function create()
 	{
 		this.m.ID = "perk.wow.paladin.holylight";
-		this.m.Name = this.Const.Wow_strings.PerkName.Holylight;
-		this.m.Description = this.Const.Wow_strings.PerkDescription.Holylight;
+		this.m.Name = this.Const.Wow_strings.PerkName.HolyLight;
+		this.m.Description = this.Const.Wow_strings.PerkDescription.HolyLight;
 		this.m.Icon = "ui/perks/perk_paladin_holylight.png";
 		this.m.Type = this.Const.SkillType.Perk;
 		this.m.Order = this.Const.SkillOrder.Perk;
