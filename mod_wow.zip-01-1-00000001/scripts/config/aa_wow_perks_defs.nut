@@ -876,3 +876,43 @@ gt.Const.Perks.PerkDefObjects.BlessingofMight <- {
 	IconDisabled = "ui/perks/perk_paladin_blessingofmight_sw.png",
 	Const = "BlessingofMight"
 }
+
+gt.Const.Perks.PerkDefObjects.HolyPower <- {
+	ID = "perk.wow.paladin.holypower",
+	Script = "scripts/skills/perks/perk_wow_holypower",
+	Name = this.Const.Wow_strings.PerkName.HolyPower,
+	Tooltip = this.Const.Wow_strings.PerkDescription.HolyPower,
+	Icon = "ui/perks/perk_paladin_holypower.png",
+	IconDisabled = "ui/perks/perk_paladin_holypower_sw.png",
+	Const = "HolyPower"
+}
+
+gt.Const.Perks.PerkDefObjects.Anticipation_paladin <- {
+	ID = "perk.wow.paladin.anticipation",
+	Script = "scripts/skills/perks/perk_wow_anticipation",
+	Name = this.Const.Wow_strings.PerkName.Anticipation,
+	Tooltip = this.Const.Wow_strings.PerkDescription.Anticipation,
+	Icon = "ui/perks/perk_paladin_anticipation.png",
+	IconDisabled = "ui/perks/perk_paladin_anticipation_sw.png",
+	Const = "Anticipation"
+}
+
+gt.Const.Perks.PerkDefObjects.HammerofJustice <- {
+	ID = "perk.wow.paladin.hammerofjustice",
+	Script = "scripts/skills/perks/perk_wow_hammerofjustice",
+	Name = this.Const.Wow_strings.PerkName.HammerofJustice,
+	Tooltip = this.Const.Wow_strings.PerkDescription.HammerofJustice,
+	Icon = "ui/perks/perk_paladin_hammerofjustice.png",
+	IconDisabled = "ui/perks/perk_paladin_hammerofjustice_sw.png",
+	Const = "HammerofJustice"
+}
+
+gt.Const.Perks.PerkDefObjects.DivineStrength <- {
+	ID = "perk.wow.paladin.divinestrength",
+	Script = "scripts/skills/perks/perk_wow_divinestrength",
+	Name = this.Const.Wow_strings.PerkName.DivineStrength,
+	Tooltip = this.Const.Wow_strings.PerkDescription.DivineStrength,
+	Icon = "ui/perks/perk_paladin_divinestrength.png",
+	IconDisabled = "ui/perks/perk_paladin_divinestrength_sw.png",
+	Const = "DivineStrength"
+}

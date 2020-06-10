@@ -217,10 +217,10 @@ gt.Const.Perks.PerkTreePaladin <- [
 		gt.Const.Perks.PerkDefObjects.Student
 	],
 	[
-		//gt.Const.Perks.PerkDefObjects.
-		//gt.Const.Perks.PerkDefObjects.
-		//gt.Const.Perks.PerkDefObjects.
-		//gt.Const.Perks.PerkDefObjects.
+		gt.Const.Perks.PerkDefObjects.HolyPower
+		gt.Const.Perks.PerkDefObjects.Anticipation_paladin
+		gt.Const.Perks.PerkDefObjects.HammerofJustice
+		gt.Const.Perks.PerkDefObjects.DivineStrength
 		gt.Const.Perks.PerkDefObjects.CoupDeGrace
 		gt.Const.Perks.PerkDefObjects.FortifiedMind
 		gt.Const.Perks.PerkDefObjects.HoldOut
