@@ -884,6 +884,7 @@ gt.Const.CharacterProperties <- {
 	IsMasterInFlails = false,
 	IsMasterInMaces = false,
 	IsMasterInPoison = false,
+	IsMasterInLight = false,
 	IsContentWithBeingInReserve = false,
 	DailyWage = 0,
 	DailyWageMult = 1.0,
