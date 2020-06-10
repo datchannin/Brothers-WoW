@@ -227,10 +227,10 @@ gt.Const.Perks.PerkTreePaladin <- [
 		gt.Const.Perks.PerkDefObjects.SteelBrow
 	],
 	[
-		//gt.Const.Perks.PerkDefObjects.
-		//gt.Const.Perks.PerkDefObjects.
-		//gt.Const.Perks.PerkDefObjects.
-		//gt.Const.Perks.PerkDefObjects.
+		gt.Const.Perks.PerkDefObjects.DevoutionAura
+		gt.Const.Perks.PerkDefObjects.RetributionAura
+		gt.Const.Perks.PerkDefObjects.ConcentrationAura
+		gt.Const.Perks.PerkDefObjects.SanctityAura
 		gt.Const.Perks.PerkDefObjects.Anticipation
 		gt.Const.Perks.PerkDefObjects.ShieldExpert
 		gt.Const.Perks.PerkDefObjects.Brawny

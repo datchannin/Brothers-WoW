@@ -916,3 +916,43 @@ gt.Const.Perks.PerkDefObjects.DivineStrength <- {
 	IconDisabled = "ui/perks/perk_paladin_divinestrength_sw.png",
 	Const = "DivineStrength"
 }
+
+gt.Const.Perks.PerkDefObjects.DevoutionAura <- {
+	ID = "perk.wow.paladin.devoutionaura",
+	Script = "scripts/skills/perks/perk_wow_devoutionaura",
+	Name = this.Const.Wow_strings.PerkName.DevoutionAura,
+	Tooltip = this.Const.Wow_strings.PerkDescription.DevoutionAura,
+	Icon = "ui/perks/perk_paladin_devoutionaura.png",
+	IconDisabled = "ui/perks/perk_paladin_devoutionaura_sw.png",
+	Const = "DevoutionAura"
+}
+
+gt.Const.Perks.PerkDefObjects.RetributionAura <- {
+	ID = "perk.wow.paladin.retributionaura",
+	Script = "scripts/skills/perks/perk_wow_retributionaura",
+	Name = this.Const.Wow_strings.PerkName.RetributionAura,
+	Tooltip = this.Const.Wow_strings.PerkDescription.RetributionAura,
+	Icon = "ui/perks/perk_paladin_retributionaura.png",
+	IconDisabled = "ui/perks/perk_paladin_retributionaura_sw.png",
+	Const = "RetributionAura"
+}
+
+gt.Const.Perks.PerkDefObjects.ConcentrationAura <- {
+	ID = "perk.wow.paladin.concentrationaura",
+	Script = "scripts/skills/perks/perk_wow_concentrationaura",
+	Name = this.Const.Wow_strings.PerkName.ConcentrationAura,
+	Tooltip = this.Const.Wow_strings.PerkDescription.ConcentrationAura,
+	Icon = "ui/perks/perk_paladin_concentrationaura.png",
+	IconDisabled = "ui/perks/perk_paladin_concentrationaura_sw.png",
+	Const = "ConcentrationAura"
+}
+
+gt.Const.Perks.PerkDefObjects.SanctityAura <- {
+	ID = "perk.wow.paladin.sanctityaura",
+	Script = "scripts/skills/perks/perk_wow_sanctityaura",
+	Name = this.Const.Wow_strings.PerkName.SanctityAura,
+	Tooltip = this.Const.Wow_strings.PerkDescription.SanctityAura,
+	Icon = "ui/perks/perk_paladin_sanctityaura.png",
+	IconDisabled = "ui/perks/perk_paladin_sanctityaura_sw.png",
+	Const = "SanctityAura"
+}
