@@ -12,4 +12,17 @@ this.perk_wow_concentrationaura <- this.inherit("scripts/skills/skill", {
 		this.m.IsStacking = false;
 		this.m.IsHidden = false;
 	}
+	
+	function onAdded()
+	{
+		if (!this.m.Container.hasSkill("actives.concentrationaura_skill"))
+		{
+			this.m.Container.add(this.new("scripts/skills/actives/paladin_concentrationaura_skill"));
+		}
+	}
+
+	function onRemoved()
+	{
+		this.m.Container.removeByID("actives.concentrationaura_skill");
+	}
 });

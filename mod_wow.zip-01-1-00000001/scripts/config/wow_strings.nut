@@ -111,7 +111,7 @@ gt.Const.Wow_strings.PerkDescription <- {
 	Anticipation = "You have skill in armor using. This perk help you to increase Defense by [color=" + this.Const.UI.Color.PositiveValue + "]20[/color].",
 	HammerofJustice = "Unlocks the \'Hammer of Justice\' skill which allows paladin to summon a hammer into your enemy and stun the target.",
 	DivineStrength = "You have skill in weapon using. This perk help you to increase Melee Skill by [color=" + this.Const.UI.Color.PositiveValue + "]15[/color].",
-	DevoutionAura = "Unlocks the \'Devoution Aura\' skill. This aura increases Defense of all party members within 4 tiles by [color=" + this.Const.UI.Color.PositiveValue + "]10[/color].",
+	DevoutionAura = "Unlocks the \'Devoution Aura\' skill. This aura increases Melee Defense of all party members within 4 tiles by [color=" + this.Const.UI.Color.PositiveValue + "]10[/color].",
 	RetributionAura = "Unlocks the \'Retribution Aura\' skill. This aura allows all party members within 4 tiles to restore [color=" + this.Const.UI.Color.PositiveValue + "]4[/color] health by every successful melee attack.",
 	ConcentrationAura = "Unlocks the \'Concentration Aura\' skill. This aura increases Fatigue Recovery of all party members within 4 tiles by [color=" + this.Const.UI.Color.PositiveValue + "]3[/color].",
 	SanctityAura = "Unlocks the \'Sanctity Aura\' skill. This aura add Hitpoints regeneration of all party members within 4 tiles by [color=" + this.Const.UI.Color.PositiveValue + "]2[/color] points.",

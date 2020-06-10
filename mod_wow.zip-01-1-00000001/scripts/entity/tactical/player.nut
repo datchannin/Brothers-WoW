@@ -1106,6 +1106,8 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 		this.m.Skills.add(this.new("scripts/skills/actives/break_ally_free_skill"));
 		this.m.Skills.add(this.new("scripts/skills/effects/realm_of_nightmares_effect"));
 		this.m.Skills.add(this.new("scripts/skills/effects/battleshout_effect"));
+		this.m.Skills.add(this.new("scripts/skills/effects/devoutionaura_effect"));
+		this.m.Skills.add(this.new("scripts/skills/effects/concentrationaura_effect"));
 
 		if (this.Const.DLC.Unhold)
 		{
