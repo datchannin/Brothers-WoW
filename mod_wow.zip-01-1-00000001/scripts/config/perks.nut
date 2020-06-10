@@ -258,8 +258,8 @@ gt.Const.Perks.PerkTreePaladin <- [
 		gt.Const.Perks.PerkDefObjects.BattleForged
 	],
 	[
-		//gt.Const.Perks.PerkDefObjects.
-		//gt.Const.Perks.PerkDefObjects.
+		gt.Const.Perks.PerkDefObjects.DivineShield
+		gt.Const.Perks.PerkDefObjects.SealofCommand
 		gt.Const.Perks.PerkDefObjects.KillingFrenzy
 		gt.Const.Perks.PerkDefObjects.Indomitable
 	],

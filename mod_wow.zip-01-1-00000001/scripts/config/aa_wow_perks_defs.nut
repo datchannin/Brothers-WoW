@@ -956,3 +956,23 @@ gt.Const.Perks.PerkDefObjects.SanctityAura <- {
 	IconDisabled = "ui/perks/perk_paladin_sanctityaura_sw.png",
 	Const = "SanctityAura"
 }
+
+gt.Const.Perks.PerkDefObjects.DivineShield <- {
+	ID = "perk.wow.paladin.divineshield",
+	Script = "scripts/skills/perks/perk_wow_divineshield",
+	Name = this.Const.Wow_strings.PerkName.DivineShield,
+	Tooltip = this.Const.Wow_strings.PerkDescription.DivineShield,
+	Icon = "ui/perks/perk_paladin_divineshield.png",
+	IconDisabled = "ui/perks/perk_paladin_divineshield_sw.png",
+	Const = "DivineShield"
+}
+
+gt.Const.Perks.PerkDefObjects.SealofCommand <- {
+	ID = "perk.wow.paladin.sealofcommand",
+	Script = "scripts/skills/perks/perk_wow_sealofcommand",
+	Name = this.Const.Wow_strings.PerkName.SealofCommand,
+	Tooltip = this.Const.Wow_strings.PerkDescription.SealofCommand,
+	Icon = "ui/perks/perk_paladin_sealofcommand.png",
+	IconDisabled = "ui/perks/perk_paladin_sealofcommand_sw.png",
+	Const = "SealofCommand"
+}
