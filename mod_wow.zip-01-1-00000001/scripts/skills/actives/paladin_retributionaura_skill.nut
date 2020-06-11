@@ -19,7 +19,7 @@ this.paladin_retributionaura_skill <- this.inherit("scripts/skills/skill", {
 		this.m.IsTargeted = false;
 		this.m.IsStacking = false;
 		this.m.IsAttack = false;
-		this.m.ActionPointCost = 1;//9;
+		this.m.ActionPointCost = 9;
 		this.m.FatigueCost = 0;
 		this.m.MinRange = 0;
 		this.m.MaxRange = 0;
