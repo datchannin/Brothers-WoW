@@ -12,4 +12,17 @@ this.perk_wow_sanctityaura <- this.inherit("scripts/skills/skill", {
 		this.m.IsStacking = false;
 		this.m.IsHidden = false;
 	}
+
+	function onAdded()
+	{
+		if (!this.m.Container.hasSkill("actives.sanctityaura_skill"))
+		{
+			this.m.Container.add(this.new("scripts/skills/actives/paladin_sanctityaura_skill"));
+		}
+	}
+
+	function onRemoved()
+	{
+		this.m.Container.removeByID("actives.sanctityaura_skill");
+	}
 });
