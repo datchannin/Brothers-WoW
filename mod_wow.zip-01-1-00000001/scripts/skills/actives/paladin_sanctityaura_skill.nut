@@ -19,7 +19,7 @@ this.paladin_sanctityaura_skill <- this.inherit("scripts/skills/skill", {
 		this.m.IsTargeted = false;
 		this.m.IsStacking = false;
 		this.m.IsAttack = false;
-		this.m.ActionPointCost = 9;
+		this.m.ActionPointCost = 1;//9;
 		this.m.FatigueCost = 0;
 		this.m.MinRange = 0;
 		this.m.MaxRange = 0;
@@ -66,7 +66,7 @@ this.paladin_sanctityaura_skill <- this.inherit("scripts/skills/skill", {
 	{
 		if (!this.getContainer().hasSkill("effects.sanctityaura_setup"))
 		{
-			//this.m.Container.add(this.new("scripts/skills/effects/sanctityaura_setup_effect"));
+			this.m.Container.add(this.new("scripts/skills/effects/sanctityaura_setup_effect"));
 			
 			local actor = this.getContainer().getActor();
 			local allies = this.Tactical.Entities.getInstancesOfFaction(actor.getFaction());

@@ -16,7 +16,6 @@ this.devoutionaura_setup_effect <- this.inherit("scripts/skills/skill", {
 
 	function getTooltip()
 	{
-		local bonus = this.m.Difference;
 		return [
 			{
 				id = 1,
@@ -39,9 +38,9 @@ this.devoutionaura_setup_effect <- this.inherit("scripts/skills/skill", {
 
 	function onAdded()
 	{
-		//this.m.Container.removeByID("effects.retributionaura_setup");
+		this.m.Container.removeByID("effects.retributionaura_setup");
 		this.m.Container.removeByID("effects.concentrationaura_setup");
-		//this.m.Container.removeByID("effects.sanctityaura_setup");
+		this.m.Container.removeByID("effects.sanctityaura_setup");
 		
 		local actor = this.getContainer().getActor();
 		local allies = this.Tactical.Entities.getInstancesOfFaction(actor.getFaction());

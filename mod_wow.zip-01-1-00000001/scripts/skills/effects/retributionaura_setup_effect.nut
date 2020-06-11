@@ -1,11 +1,11 @@
-this.concentrationaura_setup_effect <- this.inherit("scripts/skills/skill", {
+this.retributionaura_setup_effect <- this.inherit("scripts/skills/skill", {
 	m = {},
 	function create()
 	{
-		this.m.ID = "effects.concentrationaura_setup";
-		this.m.Name = "Concentration Aura Setup";
-		this.m.Description = "You is under paladin Concentration Aura now. Your Fatigue Recovery per turn is increased by Paladin\'s Aura. Keep closer.";
-		this.m.Icon = "ui/perks/perk_paladin_concentrationaura.png";
+		this.m.ID = "effects.retributionaura_setup";
+		this.m.Name = "Retribution Aura Setup";
+		this.m.Description = "You is under paladin Retribution Aura now. Your successful melee attack restores you [color=" + this.Const.UI.Color.PositiveValue + "]4[/color] health. Keep closer.";
+		this.m.Icon = "ui/perks/perk_paladin_retributionaura.png";
 		this.m.IconMini = "perk_01_mini";
 		this.m.Type = this.Const.SkillType.StatusEffect;
 		this.m.IsActive = false;
@@ -30,8 +30,8 @@ this.concentrationaura_setup_effect <- this.inherit("scripts/skills/skill", {
 			{
 				id = 10,
 				type = "text",
-				icon = "ui/icons/fatigue.png",
-				text = "[color=" + this.Const.UI.Color.PositiveValue + "]+3[/color] Fatigue Recovery per turn for all party members within 4 tiles"
+				icon = "ui/icons/health.png",
+				text = "Successful melee attack restores [color=" + this.Const.UI.Color.PositiveValue + "]4[/color] health."
 			}
 		];
 	}
@@ -39,7 +39,7 @@ this.concentrationaura_setup_effect <- this.inherit("scripts/skills/skill", {
 	function onAdded()
 	{
 		this.m.Container.removeByID("effects.devoutionaura_setup");
-		this.m.Container.removeByID("effects.retributionaura_setup");
+		this.m.Container.removeByID("effects.concentrationaura_setup");
 		this.m.Container.removeByID("effects.sanctityaura_setup");
 		
 		local actor = this.getContainer().getActor();
@@ -88,8 +88,8 @@ this.concentrationaura_setup_effect <- this.inherit("scripts/skills/skill", {
 	function onUpdate( _properties )
 	{
 		_properties.IsDevoutionAuraActive = false;
-		_properties.IsRetributionAuraActive = false;
-		_properties.IsConcentrationAuraActive = true;
+		_properties.IsRetributionAuraActive = true;
+		_properties.IsConcentrationAuraActive = false;
 		_properties.IsSanctityAuraActive = false;
 		
 		local actor = this.getContainer().getActor();

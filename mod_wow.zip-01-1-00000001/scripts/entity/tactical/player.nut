@@ -1108,6 +1108,8 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 		this.m.Skills.add(this.new("scripts/skills/effects/battleshout_effect"));
 		this.m.Skills.add(this.new("scripts/skills/effects/devoutionaura_effect"));
 		this.m.Skills.add(this.new("scripts/skills/effects/concentrationaura_effect"));
+		this.m.Skills.add(this.new("scripts/skills/effects/retributionaura_effect"));
+		this.m.Skills.add(this.new("scripts/skills/effects/sanctityaura_effect"));
 
 		if (this.Const.DLC.Unhold)
 		{
