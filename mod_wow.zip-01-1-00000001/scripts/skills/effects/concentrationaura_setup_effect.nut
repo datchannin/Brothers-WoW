@@ -6,7 +6,7 @@ this.concentrationaura_setup_effect <- this.inherit("scripts/skills/skill", {
 		this.m.Name = "Concentration Aura Setup";
 		this.m.Description = "You is under paladin Concentration Aura now. Your Fatigue Recovery per turn is increased by Paladin\'s Aura. Keep closer.";
 		this.m.Icon = "ui/perks/perk_paladin_concentrationaura.png";
-		this.m.IconMini = "perk_01_mini";
+		this.m.IconMini = "effect_mini_concentrationaura";
 		this.m.Type = this.Const.SkillType.StatusEffect;
 		this.m.IsActive = false;
 		this.m.IsStacking = false;

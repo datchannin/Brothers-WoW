@@ -6,7 +6,7 @@ this.sanctityaura_setup_effect <- this.inherit("scripts/skills/skill", {
 		this.m.Name = "Sanctity Aura Setup";
 		this.m.Description = "You is under paladin Sanctity Aura now. Hitpoints Regeneration of all party members within 4 tiles increases by [color=" + this.Const.UI.Color.PositiveValue + "]2[/color] points. Keep closer.";
 		this.m.Icon = "ui/perks/perk_paladin_sanctityaura.png";
-		this.m.IconMini = "perk_01_mini";
+		this.m.IconMini = "effect_mini_sanctityaura";
 		this.m.Type = this.Const.SkillType.StatusEffect;
 		this.m.IsActive = false;
 		this.m.IsStacking = false;

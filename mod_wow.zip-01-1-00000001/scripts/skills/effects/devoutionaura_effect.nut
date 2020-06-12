@@ -6,7 +6,7 @@ this.devoutionaura_effect <- this.inherit("scripts/skills/skill", {
 		this.m.Name = "Devoution Aura";
 		this.m.Description = "You is under paladin Devoution Aura now. Your Melee Defence is increased by Paladin\'s Aura. Keep closer.";
 		this.m.Icon = "ui/perks/perk_paladin_devoutionaura.png";
-		this.m.IconMini = "perk_01_mini";
+		this.m.IconMini = "effect_mini_devoutionaura";
 		this.m.Type = this.Const.SkillType.StatusEffect;
 		this.m.IsActive = false;
 		this.m.IsRemovedAfterBattle = false;

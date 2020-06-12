@@ -6,7 +6,7 @@ this.retributionaura_effect <- this.inherit("scripts/skills/skill", {
 		this.m.Name = "Retribution Aura";
 		this.m.Description = "You is under paladin Retribution Aura now. Your successful melee attack restores you [color=" + this.Const.UI.Color.PositiveValue + "]4[/color] health. Keep closer.";
 		this.m.Icon = "ui/perks/perk_paladin_retributionaura.png";
-		this.m.IconMini = "perk_01_mini";
+		this.m.IconMini = "effect_mini_retributionaura";
 		this.m.Type = this.Const.SkillType.StatusEffect;
 		this.m.IsActive = false;
 		this.m.IsRemovedAfterBattle = false;
