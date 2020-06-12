@@ -9,7 +9,7 @@ this.paladin_divineshield_skill <- this.inherit("scripts/skills/skill", {
 		this.m.Description = "Ask \'Light\' to buff your friend with Immunity for one turn. You can do it with one turn delay.";
 		this.m.Icon = "ui/perks/skill_paladin_divineshield.png";
 		this.m.IconDisabled = "ui/perks/skill_paladin_divineshield_sw.png";
-		this.m.Overlay = "skill_rogue_hemorrhage";
+		this.m.Overlay = "skill_paladin_divineshield";
 		this.m.SoundOnUse = [
 			//"sounds/combat/rogue_hemorrhage1.wav",
 			//"sounds/combat/rogue_hemorrhage2.wav",
