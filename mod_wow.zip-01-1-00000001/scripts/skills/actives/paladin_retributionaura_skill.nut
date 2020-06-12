@@ -7,7 +7,7 @@ this.paladin_retributionaura_skill <- this.inherit("scripts/skills/skill", {
 		this.m.Description = "Apply Retribution Aura on the Paladin. This aura gives possibility of all party members within 4 tiles to restore [color=" + this.Const.UI.Color.PositiveValue + "]4[/color] health with every successful melee attack.";
 		this.m.Icon = "ui/perks/skill_paladin_retributionaura.png";
 		this.m.IconDisabled = "ui/perks/skill_paladin_retributionaura_sw.png";
-		this.m.Overlay = "skill_warrior_berserkerrage";
+		this.m.Overlay = "skill_paladin_retributionaura";
 		this.m.SoundOnUse = [
 			//"sounds/combat/warrior_berserkerrage1.wav",
 			//"sounds/combat/warrior_berserkerrage2.wav"
