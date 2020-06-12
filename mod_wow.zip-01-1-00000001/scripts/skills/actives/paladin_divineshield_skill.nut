@@ -40,7 +40,7 @@ this.paladin_divineshield_skill <- this.inherit("scripts/skills/skill", {
 				id = 7,
 				type = "text",
 				icon = "ui/icons/special.png",
-				text = "Impower your target with Immunity for one turn."
+				text = "Power your target with Immunity for one turn."
 		});
 		
 		if (this.m.Delay > 0)
@@ -88,7 +88,9 @@ this.paladin_divineshield_skill <- this.inherit("scripts/skills/skill", {
 		this.m.Delay = 2;
 		local targetEntity = _targetTile.getEntity();
 
-		//targetEntity.getSkills().add(this.new("scripts/skills/effects/divineshield_effect"));
+		this.spawnIcon("effect_paladin_sanctityaura", _targetTile);
+
+		targetEntity.getSkills().add(this.new("scripts/skills/effects/divineshield_effect"));
 		return true;
 	}
 
