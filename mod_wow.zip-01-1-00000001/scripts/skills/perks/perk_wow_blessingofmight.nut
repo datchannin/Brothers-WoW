@@ -12,4 +12,17 @@ this.perk_wow_blessingofmight <- this.inherit("scripts/skills/skill", {
 		this.m.IsStacking = false;
 		this.m.IsHidden = false;
 	}
+	
+	function onAdded()
+	{
+		if (!this.m.Container.hasSkill("actives.blessingofmight_skill"))
+		{
+			this.m.Container.add(this.new("scripts/skills/actives/paladin_blessingofmight_skill"));
+		}
+	}
+
+	function onRemoved()
+	{
+		this.m.Container.removeByID("actives.blessingofmight_skill");
+	}
 });

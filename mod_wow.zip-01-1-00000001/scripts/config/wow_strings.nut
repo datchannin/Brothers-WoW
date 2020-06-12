@@ -106,7 +106,7 @@ gt.Const.Wow_strings.PerkDescription <- {
 	Vigor = "Increase your efficiency! Lightning reflexes help you do more in the same time. Gives you [color=" + this.Const.UI.Color.PositiveValue + "]2[/color] additional Action Points",
 	AdrenalineRush = "Adrenaline pulsates in your veins. And every move restores your Fatigue now. [color=" + this.Const.UI.Color.PositiveValue + "]+5[/color] Fatigue Recovery per turn.",
 	HolyLight = "Unlocks the \'Holy Light\' skill. Light fills the paladin with power and help him heal the target for [color=" + this.Const.UI.Color.PositiveValue + "]7[/color] - [color=" + this.Const.UI.Color.PositiveValue + "]14[/color] Hitpoints.",
-	BlessingofMight = "Unlocks the \'Blessing of Might\' skill which gives you powerful buff. Damage done is increased by [color=" + this.Const.UI.Color.PositiveValue + "]25%[/color]",
+	BlessingofMight = "Unlocks the \'Blessing of Might\' skill which gives you powerful buff. Damage done is increased by [color=" + this.Const.UI.Color.PositiveValue + "]20%[/color]",
 	HolyPower = "You ask Light for help with double perseverance. This enhances your [color=" + this.Const.UI.Color.PositiveValue + "]\'Holy Light\'[/color] skill. Increases the number of Hitpoints healing for [color=" + this.Const.UI.Color.PositiveValue + "]10[/color] points. Does not have any effect if you don\'t have [color=" + this.Const.UI.Color.PositiveValue + "]\'Holy Light\'[/color] skill.",
 	Anticipation = "You have skill in armor using. This perk help you to increase Defense by [color=" + this.Const.UI.Color.PositiveValue + "]15[/color].",
 	HammerofJustice = "Unlocks the \'Hammer of Justice\' skill which allows paladin to summon a hammer into your enemy and stun the target.",
