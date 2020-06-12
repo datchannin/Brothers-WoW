@@ -108,7 +108,7 @@ gt.Const.Wow_strings.PerkDescription <- {
 	HolyLight = "Unlocks the \'Holy Light\' skill. Light fills the paladin with power and help him heal the target for [color=" + this.Const.UI.Color.PositiveValue + "]7[/color] - [color=" + this.Const.UI.Color.PositiveValue + "]14[/color] Hitpoints.",
 	BlessingofMight = "Unlocks the \'Blessing of Might\' skill which gives you powerful buff. Damage done is increased by [color=" + this.Const.UI.Color.PositiveValue + "]25%[/color]",
 	HolyPower = "You ask Light for help with double perseverance. This enhances your [color=" + this.Const.UI.Color.PositiveValue + "]\'Holy Light\'[/color] skill. Increases the number of Hitpoints healing for [color=" + this.Const.UI.Color.PositiveValue + "]10[/color] points. Does not have any effect if you don\'t have [color=" + this.Const.UI.Color.PositiveValue + "]\'Holy Light\'[/color] skill.",
-	Anticipation = "You have skill in armor using. This perk help you to increase Defense by [color=" + this.Const.UI.Color.PositiveValue + "]20[/color].",
+	Anticipation = "You have skill in armor using. This perk help you to increase Defense by [color=" + this.Const.UI.Color.PositiveValue + "]15[/color].",
 	HammerofJustice = "Unlocks the \'Hammer of Justice\' skill which allows paladin to summon a hammer into your enemy and stun the target.",
 	DivineStrength = "You have skill in weapon using. This perk help you to increase Melee Skill by [color=" + this.Const.UI.Color.PositiveValue + "]15[/color].",
 	DevoutionAura = "Unlocks the \'Devoution Aura\' skill. This aura increases Melee Defense of all party members within 4 tiles by [color=" + this.Const.UI.Color.PositiveValue + "]10[/color].",
