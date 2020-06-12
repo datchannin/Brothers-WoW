@@ -7,7 +7,7 @@ this.blessingofmight_effect <- this.inherit("scripts/skills/skill", {
 		this.m.ID = "effects.blessingofmight";
 		this.m.Name = "Blessing of Might";
 		this.m.Icon = "ui/perks/perk_paladin_blessingofmight.png";
-		this.m.IconMini = "effect_mini_berserkerrage";
+		this.m.IconMini = "effect_mini_blessingofmight";
 		this.m.Type = this.Const.SkillType.StatusEffect;
 		this.m.IsActive = false;
 		this.m.IsStacking = false;
