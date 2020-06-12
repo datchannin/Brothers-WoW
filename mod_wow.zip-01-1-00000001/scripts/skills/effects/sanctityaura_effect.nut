@@ -82,7 +82,7 @@ this.sanctityaura_effect <- this.inherit("scripts/skills/skill", {
 				return;
 			}
 			
-			this.spawnIcon("effect_warrior_bloodthirst", actor.getTile());
+			this.spawnIcon("effect_paladin_sanctityaura", actor.getTile());
 			
 			if (!actor.isHiddenToPlayer())
 			{
