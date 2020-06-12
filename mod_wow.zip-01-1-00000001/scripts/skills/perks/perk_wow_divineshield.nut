@@ -12,4 +12,18 @@ this.perk_wow_divineshield <- this.inherit("scripts/skills/skill", {
 		this.m.IsStacking = false;
 		this.m.IsHidden = false;
 	}
+	
+	function onAdded()
+	{
+		if (!this.m.Container.hasSkill("actives.divineshield"))
+		{
+			this.m.Container.add(this.new("scripts/skills/actives/paladin_divineshield_skill"));
+		}
+	}
+
+	function onRemoved()
+	{
+		this.m.Container.removeByID("actives.divineshield");
+	}
+
 });
