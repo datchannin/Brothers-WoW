@@ -7,7 +7,7 @@ this.paladin_blessingofmight_skill <- this.inherit("scripts/skills/skill", {
 		this.m.Description = "Increase character\'s power. Damage done is increased by 20% for two turns.";
 		this.m.Icon = "ui/perks/skill_paladin_blessingofmight.png";
 		this.m.IconDisabled = "ui/perks/skill_paladin_blessingofmight_sw.png";
-		this.m.Overlay = "skill_warrior_berserkerrage";
+		this.m.Overlay = "skill_paladin_blessingofmight";
 		this.m.SoundOnUse = [
 			//"sounds/combat/warrior_berserkerrage1.wav",
 			//"sounds/combat/warrior_berserkerrage2.wav"
