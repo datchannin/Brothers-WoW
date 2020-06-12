@@ -88,7 +88,7 @@ this.paladin_divineshield_skill <- this.inherit("scripts/skills/skill", {
 		this.m.Delay = 2;
 		local targetEntity = _targetTile.getEntity();
 
-		this.spawnIcon("effect_paladin_sanctityaura", _targetTile);
+		this.spawnIcon("effect_paladin_divineshield", _targetTile);
 
 		targetEntity.getSkills().add(this.new("scripts/skills/effects/divineshield_effect"));
 		return true;

@@ -8,7 +8,7 @@ this.divineshield_effect <- this.inherit("scripts/skills/skill", {
 		this.m.Name = "Divine Shield";
 		this.m.Description = "This powerful buff gives you Immunity for one turn.";
 		this.m.Icon = "ui/perks/perk_paladin_divineshield.png";
-		this.m.IconMini = "effect_mini_berserkerrage";
+		this.m.IconMini = "effect_mini_divineshield";
 		this.m.Type = this.Const.SkillType.StatusEffect;
 		this.m.IsActive = false;
 		this.m.IsRemovedAfterBattle = true;
