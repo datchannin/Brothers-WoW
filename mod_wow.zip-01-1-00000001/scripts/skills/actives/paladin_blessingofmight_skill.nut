@@ -9,8 +9,7 @@ this.paladin_blessingofmight_skill <- this.inherit("scripts/skills/skill", {
 		this.m.IconDisabled = "ui/perks/skill_paladin_blessingofmight_sw.png";
 		this.m.Overlay = "skill_paladin_blessingofmight";
 		this.m.SoundOnUse = [
-			//"sounds/combat/warrior_berserkerrage1.wav",
-			//"sounds/combat/warrior_berserkerrage2.wav"
+			"sounds/combat/paladin_blessingofmight.wav"
 		];
 		this.m.Type = this.Const.SkillType.Active;
 		this.m.Order = this.Const.SkillOrder.Any;
