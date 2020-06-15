@@ -41,16 +41,39 @@ this.divineshield_effect <- this.inherit("scripts/skills/skill", {
 		this.m.TurnsLeft = 1;
 	}
 
+	function onRemoved()
+	{
+		local actor = this.getContainer().getActor();
+		actor.getSprite("status_stunned").Visible = false;
+
+		if (!this.getContainer().hasSkill("effects.stunned"))
+		{
+			if (actor.hasSprite("status_stunned"))
+			{
+				actor.getSprite("status_stunned").Visible = false;
+			}
+		}
+	}
+
 	function onTurnEnd()
 	{
 		if (this.m.TurnsLeft == 0)
 		{
 			this.removeSelf();
+			local actor = this.getContainer().getActor();
+			if (!this.getContainer().hasSkill("effects.stunned"))
+			{
+				if (actor.hasSprite("status_stunned"))
+				{
+					actor.getSprite("status_stunned").Visible = false;
+				}
+			}
 		}
 	}
 
 	function onUpdate( _properties )
 	{
+		local actor = this.getContainer().getActor();
 		_properties.DamageReceivedTotalMult = 0;
 		_properties.IsImmuneToOverwhelm = true;
 		_properties.IsImmuneToZoneOfControl = true;
@@ -62,6 +85,22 @@ this.divineshield_effect <- this.inherit("scripts/skills/skill", {
 		_properties.IsImmuneToBleeding = true;
 		_properties.IsImmuneToPoison = true;
 		_properties.IsImmuneToDamageReflection = true;
+		
+		if (this.m.TurnsLeft != 0)
+		{
+			if (!this.getContainer().hasSkill("effects.stunned") && actor.hasSprite("status_stunned"))
+			{
+				actor.getSprite("status_stunned").setBrush("anim_paladin_divineshield");
+				actor.getSprite("status_stunned").Visible = true;
+			}
+			else
+			{
+				if (!this.getContainer().hasSkill("effects.stunned") && actor.hasSprite("status_stunned"))
+				{
+					actor.getSprite("status_stunned").Visible = false;
+				}
+			}
+		}
 	}
 
 	function onTurnStart()
