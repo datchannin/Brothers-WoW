@@ -9,7 +9,7 @@ this.paladin_holylight_skill <- this.inherit("scripts/skills/skill", {
 		this.m.Description = "Heal target with Holy Light.";
 		this.m.Icon = "ui/perks/skill_paladin_holylight.png";
 		this.m.IconDisabled = "ui/perks/skill_paladin_holylight_sw.png";
-		this.m.Overlay = "skill_rogue_poison";
+		this.m.Overlay = "skill_paladin_holylight";
 		this.m.SoundOnUse = [
 			//"sounds/combat/rogue_poison1.wav",
 			//"sounds/combat/rogue_poison2.wav",
