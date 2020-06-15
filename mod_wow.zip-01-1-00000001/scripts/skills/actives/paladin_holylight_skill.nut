@@ -18,7 +18,7 @@ this.paladin_holylight_skill <- this.inherit("scripts/skills/skill", {
 		];
 		this.m.Type = this.Const.SkillType.Active;
 		this.m.Order = this.Const.SkillOrder.Any;
-		this.m.Delay = 1200;
+		this.m.Delay = 0;
 		this.m.IsSerialized = false;
 		this.m.IsActive = true;
 		this.m.IsTargeted = true;
@@ -49,6 +49,11 @@ this.paladin_holylight_skill <- this.inherit("scripts/skills/skill", {
 					text = "Heal target with Holy Light."
 				},
 				{
+					id = 3,
+					type = "text",
+					text = this.getCostString()
+				},
+				{
 					id = 7,
 					type = "text",
 					icon = "ui/icons/special.png",
@@ -68,6 +73,11 @@ this.paladin_holylight_skill <- this.inherit("scripts/skills/skill", {
 					id = 2,
 					type = "description",
 					text = "You know how to increase healing effency. Heal target with Great Holy Light."
+				},
+				{
+					id = 3,
+					type = "text",
+					text = this.getCostString()
 				},
 				{
 					id = 7,
@@ -128,6 +138,8 @@ this.paladin_holylight_skill <- this.inherit("scripts/skills/skill", {
 			Target = targetEntity,
 			Healnumber = healnumber,
 		});
+		
+		return true;
 	}
 	
 	function onApplyEffect( _data )
