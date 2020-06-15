@@ -49,6 +49,11 @@ this.rogue_poison_skill <- this.inherit("scripts/skills/skill", {
 					text = "Poison the enemy with deadly toxin."
 				},
 				{
+					id = 3,
+					type = "text",
+					text = this.getCostString()
+				},
+				{
 					id = 7,
 					type = "text",
 					icon = "ui/icons/special.png",
@@ -68,6 +73,11 @@ this.rogue_poison_skill <- this.inherit("scripts/skills/skill", {
 					id = 2,
 					type = "description",
 					text = "You know how to increase poison effency. Poison the enemy with deadly vile toxin."
+				},
+				{
+					id = 3,
+					type = "text",
+					text = this.getCostString()
 				},
 				{
 					id = 7,
