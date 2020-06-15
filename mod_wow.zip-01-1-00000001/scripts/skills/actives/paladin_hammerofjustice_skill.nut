@@ -1,15 +1,15 @@
-this.rogue_kidneyshot_skill <- this.inherit("scripts/skills/skill", {
+this.paladin_hammerofjustice_skill <- this.inherit("scripts/skills/skill", {
 	m = {},
 	function create()
 	{
-		this.m.ID = "actives.kidneyshot_skill";
-		this.m.Name = "Kidney Shot";
-		this.m.Description = "Hit the enemy in the kidneys. This move stuns target.";
-		this.m.Icon = "ui/perks/skill_rogue_kidneyshot.png";
-		this.m.IconDisabled = "ui/perks/skill_rogue_kidneyshot_sw.png";
+		this.m.ID = "actives.hammerofjustice_skill";
+		this.m.Name = "Hammer of Justice";
+		this.m.Description = "Hit the enemy with Holy Hammer into your enemy and stun him for one turn.";
+		this.m.Icon = "ui/perks/skill_paladin_hammerofjustice.png";
+		this.m.IconDisabled = "ui/perks/skill_paladin_hammerofjustice_sw.png";
 		this.m.Overlay = "skill_rogue_kidneyshot";
 		this.m.SoundOnUse = [
-			"sounds/combat/rogue_kidneyshot.wav"
+			//"sounds/combat/rogue_kidneyshot.wav"
 		];
 		this.m.Type = this.Const.SkillType.Active;
 		this.m.Order = this.Const.SkillOrder.Any;
@@ -23,10 +23,10 @@ this.rogue_kidneyshot_skill <- this.inherit("scripts/skills/skill", {
 		this.m.IsIgnoredAsAOO = true;
 		this.m.IsShowingProjectile = false;
 		this.m.IsUsingHitchance = false;
-		this.m.ActionPointCost = 5;
-		this.m.FatigueCost = 25;
+		this.m.ActionPointCost = 4;
+		this.m.FatigueCost = 30;
 		this.m.MinRange = 1;
-		this.m.MaxRange = 1;
+		this.m.MaxRange = 2;
 	}
 
 	function getTooltip()
