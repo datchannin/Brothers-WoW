@@ -11,13 +11,14 @@ this.paladin_holylight_skill <- this.inherit("scripts/skills/skill", {
 		this.m.IconDisabled = "ui/perks/skill_paladin_holylight_sw.png";
 		this.m.Overlay = "skill_paladin_holylight";
 		this.m.SoundOnUse = [
-			//"sounds/combat/rogue_poison1.wav",
-			//"sounds/combat/rogue_poison2.wav",
-			//"sounds/combat/rogue_poison3.wav"
+			"sounds/combat/paladin_holylight_precast.wav"
+		];
+		this.m.SoundOnHit = [
+			"sounds/combat/paladin_holylight_cast.wav"
 		];
 		this.m.Type = this.Const.SkillType.Active;
 		this.m.Order = this.Const.SkillOrder.Any;
-		this.m.Delay = 0;
+		this.m.Delay = 1200;
 		this.m.IsSerialized = false;
 		this.m.IsActive = true;
 		this.m.IsTargeted = true;
@@ -122,10 +123,24 @@ this.paladin_holylight_skill <- this.inherit("scripts/skills/skill", {
 		local targetEntity = _targetTile.getEntity();
 		local healnumber = this.Math.rand(7, 14);
 
+		this.Time.scheduleEvent(this.TimeUnit.Real, 1200, this.onApplyEffect.bindenv(this), {
+			Skill = this,
+			Target = targetEntity,
+			Healnumber = healnumber,
+		});
+	}
+	
+	function onApplyEffect( _data )
+	{
+		local targetEntity = _data.Target;
+		local healnumber = _data.Healnumber;
+
 		this.spawnIcon("effect_paladin_holylight", targetEntity.getTile());
+		this.Sound.play(this.m.SoundOnHit[0], this.Const.Sound.Volume.Skill, targetEntity.getPos());
+
 		if (targetEntity.getHitpoints() == targetEntity.getHitpointsMax())
 		{
-			return true;
+			return;
 		}
 
 		if (this.m.IsMasterInLight == 0)
@@ -147,6 +162,5 @@ this.paladin_holylight_skill <- this.inherit("scripts/skills/skill", {
 		}
 
 		targetEntity.onUpdateInjuryLayer();
-		return true;
 	}
 });
