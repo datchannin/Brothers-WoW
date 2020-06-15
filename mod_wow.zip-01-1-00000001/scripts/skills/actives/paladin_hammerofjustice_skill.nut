@@ -9,7 +9,7 @@ this.paladin_hammerofjustice_skill <- this.inherit("scripts/skills/skill", {
 		this.m.IconDisabled = "ui/perks/skill_paladin_hammerofjustice_sw.png";
 		this.m.Overlay = "skill_paladin_hammerofjustice";
 		this.m.SoundOnUse = [
-			//"sounds/combat/rogue_kidneyshot.wav"
+			"sounds/combat/paladin_hammerofjustice.wav"
 		];
 		this.m.Type = this.Const.SkillType.Active;
 		this.m.Order = this.Const.SkillOrder.Any;
