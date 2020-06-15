@@ -122,7 +122,7 @@ this.paladin_holylight_skill <- this.inherit("scripts/skills/skill", {
 		local targetEntity = _targetTile.getEntity();
 		local healnumber = this.Math.rand(7, 14);
 
-		this.spawnIcon("effect_paladin_divineshield", targetEntity.getTile());
+		this.spawnIcon("effect_paladin_holylight", targetEntity.getTile());
 		if (targetEntity.getHitpoints() == targetEntity.getHitpointsMax())
 		{
 			return true;
