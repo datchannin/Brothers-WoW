@@ -7,7 +7,7 @@ this.paladin_hammerofjustice_skill <- this.inherit("scripts/skills/skill", {
 		this.m.Description = "Hit the enemy with Holy Hammer into your enemy and stun him for one turn.";
 		this.m.Icon = "ui/perks/skill_paladin_hammerofjustice.png";
 		this.m.IconDisabled = "ui/perks/skill_paladin_hammerofjustice_sw.png";
-		this.m.Overlay = "skill_rogue_kidneyshot";
+		this.m.Overlay = "skill_paladin_hammerofjustice";
 		this.m.SoundOnUse = [
 			//"sounds/combat/rogue_kidneyshot.wav"
 		];
