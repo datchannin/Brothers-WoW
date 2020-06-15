@@ -11,9 +11,7 @@ this.paladin_divineshield_skill <- this.inherit("scripts/skills/skill", {
 		this.m.IconDisabled = "ui/perks/skill_paladin_divineshield_sw.png";
 		this.m.Overlay = "skill_paladin_divineshield";
 		this.m.SoundOnUse = [
-			//"sounds/combat/rogue_hemorrhage1.wav",
-			//"sounds/combat/rogue_hemorrhage2.wav",
-			//"sounds/combat/rogue_hemorrhage3.wav"
+			"sounds/combat/paladin_divineshield.wav"
 		];
 		this.m.Type = this.Const.SkillType.Active;
 		this.m.Order = this.Const.SkillOrder.Any;
