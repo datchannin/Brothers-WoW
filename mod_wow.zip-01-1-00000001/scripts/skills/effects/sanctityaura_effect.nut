@@ -102,13 +102,23 @@ this.sanctityaura_effect <- this.inherit("scripts/skills/skill", {
 	function onAfterUpdate( _properties )
 	{
 		local bonus = this.getBonus();
+		local actor = this.getContainer().getActor();
 		if (bonus == 1)
 		{
 			this.m.IsHidden = false;
+			if (actor.hasSprite("aura4"))
+			{
+				actor.getSprite("aura4").setBrush("anim_paladin_sanctityaura");
+				actor.getSprite("aura4").Visible = true;
+			}
 		}
 		else
 		{
 			this.m.IsHidden = true;
+			if (actor.hasSprite("aura4"))
+			{
+				actor.getSprite("aura4").Visible = false;
+			}
 		}
 	}
 });

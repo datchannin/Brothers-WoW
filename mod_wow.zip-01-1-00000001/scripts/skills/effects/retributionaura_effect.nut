@@ -107,14 +107,23 @@ this.retributionaura_effect <- this.inherit("scripts/skills/skill", {
 	function onAfterUpdate( _properties )
 	{
 		local bonus = this.getBonus();
+		local actor = this.getContainer().getActor();
 		if (bonus == 1)
 		{
 			this.m.IsHidden = false;
-
+			if (actor.hasSprite("aura3"))
+			{
+				actor.getSprite("aura3").setBrush("anim_paladin_retributionaura");
+				actor.getSprite("aura3").Visible = true;
+			}
 		}
 		else
 		{
 			this.m.IsHidden = true;
+			if (actor.hasSprite("aura3"))
+			{
+				actor.getSprite("aura3").Visible = false;
+			}
 		}
 	}
 });

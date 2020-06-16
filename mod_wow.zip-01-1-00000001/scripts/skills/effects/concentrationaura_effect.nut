@@ -78,14 +78,24 @@ this.concentrationaura_effect <- this.inherit("scripts/skills/skill", {
 	function onAfterUpdate( _properties )
 	{
 		local bonus = this.getBonus();
+		local actor = this.getContainer().getActor();
 		if (bonus == 1)
 		{
 			this.m.IsHidden = false;
 			_properties.FatigueRecoveryRate += 3;
+			if (actor.hasSprite("aura2"))
+			{
+				actor.getSprite("aura2").setBrush("anim_paladin_concentrationaura");
+				actor.getSprite("aura2").Visible = true;
+			}
 		}
 		else
 		{
 			this.m.IsHidden = true;
+			if (actor.hasSprite("aura2"))
+			{
+				actor.getSprite("aura2").Visible = false;
+			}
 		}
 	}
 });
