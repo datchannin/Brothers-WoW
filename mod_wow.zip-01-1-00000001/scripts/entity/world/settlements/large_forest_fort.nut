@@ -69,8 +69,8 @@ this.large_forest_fort <- this.inherit("scripts/entity/world/settlement", {
 			"squire_background",
 			"raider_warrior_background",
 			"raider_warrior_background",
-			"raider_rogue_background",
-			"raider_rogue_background",
+			"raider_paladin_background",
+			"raider_paladin_background",
 			"swordmaster_background",
 			"cripple_background"
 		];
