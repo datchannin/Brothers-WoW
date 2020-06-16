@@ -78,14 +78,24 @@ this.devoutionaura_effect <- this.inherit("scripts/skills/skill", {
 	function onAfterUpdate( _properties )
 	{
 		local bonus = this.getBonus();
+		local actor = this.getContainer().getActor();
 		if (bonus == 1)
 		{
 			this.m.IsHidden = false;
 			_properties.MeleeDefense += 10;
+			if (actor.hasSprite("aura"))
+			{
+				actor.getSprite("aura").setBrush("anim_paladin_auras");
+				actor.getSprite("aura").Visible = true;
+			}
 		}
 		else
 		{
 			this.m.IsHidden = true;
+			if (actor.hasSprite("aura"))
+			{
+				actor.getSprite("aura").Visible = false;
+			}
 		}
 	}
 });

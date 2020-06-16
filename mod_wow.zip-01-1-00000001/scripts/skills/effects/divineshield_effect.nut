@@ -92,13 +92,15 @@ this.divineshield_effect <- this.inherit("scripts/skills/skill", {
 			{
 				actor.getSprite("status_stunned").setBrush("anim_paladin_divineshield");
 				actor.getSprite("status_stunned").Visible = true;
+				this.logInfo("Divine Set");
 			}
-			else
+		}
+		else
+		{
+			if (!this.getContainer().hasSkill("effects.stunned") && actor.hasSprite("status_stunned"))
 			{
-				if (!this.getContainer().hasSkill("effects.stunned") && actor.hasSprite("status_stunned"))
-				{
-					actor.getSprite("status_stunned").Visible = false;
-				}
+				actor.getSprite("status_stunned").Visible = false;
+				this.logInfo("Divine Unset");
 			}
 		}
 	}
