@@ -124,7 +124,7 @@ this.wow_scenario_holy_power <- this.inherit("scripts/scenarios/world/starting_s
 		this.Time.scheduleEvent(this.TimeUnit.Real, 1000, function ( _tag )
 		{
 			this.Music.setTrackList(this.Const.Music.IntroTracks, this.Const.Music.CrossFadeTime);
-			this.World.Events.fire("event.brothers_in_arms_intro_event");
+			this.World.Events.fire("event.holy_power_intro_event");
 		}, null);
 	}
 
