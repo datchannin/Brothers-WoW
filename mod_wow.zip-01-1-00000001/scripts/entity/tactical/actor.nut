@@ -3504,6 +3504,8 @@ this.actor <- this.inherit("scripts/entity/tactical/entity", {
 		this.addSprite("miniboss");
 		local aura = this.addSprite("aura");
 		aura.Visible = false;
+		local divine = this.addSprite("divineshield");
+		divine.Visible = false;
 		local hex = this.addSprite("status_hex");
 		hex.Visible = false;
 		local stunned = this.addSprite("status_stunned");

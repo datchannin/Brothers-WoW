@@ -44,14 +44,9 @@ this.divineshield_effect <- this.inherit("scripts/skills/skill", {
 	function onRemoved()
 	{
 		local actor = this.getContainer().getActor();
-		actor.getSprite("status_stunned").Visible = false;
-
-		if (!this.getContainer().hasSkill("effects.stunned"))
+		if (actor.hasSprite("divineshield"))
 		{
-			if (actor.hasSprite("status_stunned"))
-			{
-				actor.getSprite("status_stunned").Visible = false;
-			}
+			actor.getSprite("divineshield").Visible = false;
 		}
 	}
 
@@ -60,13 +55,11 @@ this.divineshield_effect <- this.inherit("scripts/skills/skill", {
 		if (this.m.TurnsLeft == 0)
 		{
 			this.removeSelf();
+
 			local actor = this.getContainer().getActor();
-			if (!this.getContainer().hasSkill("effects.stunned"))
+			if (actor.hasSprite("divineshield"))
 			{
-				if (actor.hasSprite("status_stunned"))
-				{
-					actor.getSprite("status_stunned").Visible = false;
-				}
+				actor.getSprite("divineshield").Visible = false;
 			}
 		}
 	}
@@ -88,19 +81,10 @@ this.divineshield_effect <- this.inherit("scripts/skills/skill", {
 		
 		if (this.m.TurnsLeft != 0)
 		{
-			if (!this.getContainer().hasSkill("effects.stunned") && actor.hasSprite("status_stunned"))
+			if (actor.hasSprite("divineshield"))
 			{
-				actor.getSprite("status_stunned").setBrush("anim_paladin_divineshield");
-				actor.getSprite("status_stunned").Visible = true;
-				this.logInfo("Divine Set");
-			}
-		}
-		else
-		{
-			if (!this.getContainer().hasSkill("effects.stunned") && actor.hasSprite("status_stunned"))
-			{
-				actor.getSprite("status_stunned").Visible = false;
-				this.logInfo("Divine Unset");
+				actor.getSprite("divineshield").setBrush("anim_paladin_divineshield");
+				actor.getSprite("divineshield").Visible = true;
 			}
 		}
 	}
