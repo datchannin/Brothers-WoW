@@ -3,6 +3,16 @@ this.rogue_vilepoison_effect <- this.inherit("scripts/skills/skill", {
 		TurnsLeft = 2,
 		Damage = 20
 	},
+	function getDamage()
+	{
+		return this.m.Damage;
+	}
+
+	function setDamage( _d )
+	{
+		this.m.Damage = _d;
+	}
+
 	function create()
 	{
 		this.m.ID = "effects.rogue_vilepoison";

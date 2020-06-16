@@ -2,7 +2,17 @@ this.rogue_poison_effect <- this.inherit("scripts/skills/skill", {
 	m = {
 		TurnsLeft = 1,
 		Damage = 10
-	},
+	},	
+	function getDamage()
+	{
+		return this.m.Damage;
+	}
+
+	function setDamage( _d )
+	{
+		this.m.Damage = _d;
+	}
+	
 	function create()
 	{
 		this.m.ID = "effects.rogue_poison";
