@@ -85,7 +85,7 @@ this.devoutionaura_effect <- this.inherit("scripts/skills/skill", {
 			_properties.MeleeDefense += 10;
 			if (actor.hasSprite("aura"))
 			{
-				actor.getSprite("aura").setBrush("anim_paladin_auras");
+				actor.getSprite("aura").setBrush("anim_paladin_devoutionaura");
 				actor.getSprite("aura").Visible = true;
 			}
 		}
