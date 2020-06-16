@@ -60,8 +60,6 @@ this.medium_tundra_fort <- this.inherit("scripts/entity/world/settlement", {
 			"raider_background",
 			"retired_soldier_background",
 			"retired_soldier_background",
-			"raider_warrior_background",
-			"raider_warrior_background",
 			"raider_rogue_background",
 			"raider_rogue_background",
 			"sellsword_background"

@@ -55,8 +55,6 @@ this.medium_mountains_fort <- this.inherit("scripts/entity/world/settlement", {
 			"deserter_background",
 			"disowned_noble_background",
 			"retired_soldier_background",
-			"raider_warrior_background",
-			"raider_warrior_background",
 			"raider_rogue_background",
 			"raider_rogue_background",
 			"sellsword_background",
