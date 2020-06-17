@@ -72,6 +72,7 @@ gt.Const.Wow_strings.PerkName <- {
 	SanctityAura = "Sanctity Aura",
 	DivineShield = "Divine Shield",
 	SealofCommand = "Seal of Command",
+	PetSummon = "Pet Summon",
 };
 gt.Const.Wow_strings.PerkDescription <- {
 	DefensiveStance = "A defensive combat stance. Decreases damage taken by [color=" + this.Const.UI.Color.PositiveValue + "]10%[/color] and damage caused by [color=" + this.Const.UI.Color.NegativeValue + "]10%[/color].",
@@ -117,4 +118,5 @@ gt.Const.Wow_strings.PerkDescription <- {
 	SanctityAura = "Unlocks the \'Sanctity Aura\' skill. This aura add Hitpoints regeneration of all party members within 4 tiles by [color=" + this.Const.UI.Color.PositiveValue + "]2[/color] points.",
 	DivineShield = "Unlocks the \'Divine Shield\' skill which gives your target Immunity for one turn.",
 	SealofCommand = "Fills you with \'Seal of Command\'. This give your additional Action Point, [color=" + this.Const.UI.Color.PositiveValue + "]10[/color] Fatigue and increase your Hitpoints by [color=" + this.Const.UI.Color.PositiveValue + "]10%[/color].",
+	PetSummon = "Unlocks the \'Pet Summon\' skill which give you possibility to summon Winter Wolf under your command.",
 };
