@@ -100,7 +100,7 @@ this.winterwolf_item <- this.inherit("scripts/items/accessory/accessory", {
 	function onEquip()
 	{
 		this.accessory.onEquip();
-		local unleash = this.new("scripts/skills/actives/unleash_wardog");
+		local unleash = this.new("scripts/skills/actives/unleash_winterwolf");
 		unleash.setItem(this);
 		this.m.Skill = this.WeakTableRef(unleash);
 		this.addSkill(unleash);
