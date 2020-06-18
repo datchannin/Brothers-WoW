@@ -5,10 +5,8 @@ this.winterwolf_item <- this.inherit("scripts/items/accessory/accessory", {
 		Script = "scripts/entity/tactical/winterwolf",
 		ArmorScript = null,
 		UnleashSounds = [
-			"sounds/combat/unleash_wardog_01.wav",
-			"sounds/combat/unleash_wardog_02.wav",
-			"sounds/combat/unleash_wardog_03.wav",
-			"sounds/combat/unleash_wardog_04.wav"
+			"sounds/combat/winterwolf_unleash1.wav",
+			"sounds/combat/winterwolf_unleash2.wav"
 		]
 	},
 	function isAllowedInBag()
@@ -67,7 +65,7 @@ this.winterwolf_item <- this.inherit("scripts/items/accessory/accessory", {
 		this.updateVariant();
 		this.m.ID = "accessory.winterwolf_item";
 		this.m.Name = this.Const.Strings.WardogNames[this.Math.rand(0, this.Const.Strings.WardogNames.len() - 1)] + " the Winterwolf";
-		this.m.Description = "A strong and loyal dog bred for war. Can be unleashed in battle for scouting, tracking or running down routing enemies.";
+		this.m.Description = "Snow wolf with huge fangs. Such an animal can gnaw the enemy's throat in an instant.";
 		this.m.SlotType = this.Const.ItemSlot.Accessory;
 		this.m.IsDroppedAsLoot = false;
 		this.m.ShowOnCharacter = false;
