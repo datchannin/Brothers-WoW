@@ -21,7 +21,7 @@ this.perk_wow_petsummon <- this.inherit("scripts/skills/skill", {
 		local actor = this.getContainer().getActor();
 		local items = actor.getItems();
 		items.unequip(items.getItemAtSlot(this.Const.ItemSlot.Accessory));
-		items.equip(this.new("scripts/items/accessory/wardog_item"));
+		items.equip(this.new("scripts/items/accessory/winterwolf_item"));
 		this.skill.onCombatStarted();
 	}
 
