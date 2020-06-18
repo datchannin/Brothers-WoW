@@ -63,7 +63,7 @@ this.winterwolf_item <- this.inherit("scripts/items/accessory/accessory", {
 	function create()
 	{
 		this.accessory.create();
-		this.m.Variant = this.Math.rand(1, 4);
+		this.m.Variant = 1;
 		this.updateVariant();
 		this.m.ID = "accessory.winterwolf_item";
 		this.m.Name = this.Const.Strings.WardogNames[this.Math.rand(0, this.Const.Strings.WardogNames.len() - 1)] + " the Winterwolf";
@@ -95,7 +95,7 @@ this.winterwolf_item <- this.inherit("scripts/items/accessory/accessory", {
 		}
 		else
 		{
-			this.m.Icon = "tools/dog_01_0" + this.m.Variant + "_70x70.png";
+			this.m.Icon = "tools/winterwolf_01_0" + this.m.Variant + "_70x70.png";
 		}
 	}
 
