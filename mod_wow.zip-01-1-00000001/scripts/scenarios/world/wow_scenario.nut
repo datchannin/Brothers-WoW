@@ -56,6 +56,9 @@ this.wow_scenario <- this.inherit("scripts/scenarios/world/starting_scenario", {
 
 		this.World.Assets.getStash().add(this.new("scripts/items/supplies/ground_grains_item"));
 		this.World.Assets.getStash().add(this.new("scripts/items/supplies/ground_grains_item"));
+		this.World.Assets.getStash().add(this.new("scripts/items/misc/wardog_armor_upgrade_item"));
+		this.World.Assets.getStash().add(this.new("scripts/items/misc/wardog_armor_upgrade_item"));
+		this.World.Assets.getStash().add(this.new("scripts/items/misc/wardog_armor_upgrade_item"));
 		for (local i = 0; i < 10; i=++i)
 		{
 			this.World.Assets.getStash().add(this.new("scripts/items/misc/potion_of_oblivion_item"));

@@ -162,12 +162,6 @@ this.unleash_winterwolf <- this.inherit("scripts/skills/skill", {
 		entity.setVariant(this.m.Item.getVariant());
 		this.m.Item.setEntity(entity);
 
-		if (this.m.Item.getArmorScript() != null)
-		{
-			local item = this.new(this.m.Item.getArmorScript());
-			entity.getItems().equip(item);
-		}
-
 		if (!this.World.getTime().IsDaytime)
 		{
 			entity.getSkills().add(this.new("scripts/skills/special/night_effect"));

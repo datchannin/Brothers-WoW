@@ -3,7 +3,6 @@ this.winterwolf_item <- this.inherit("scripts/items/accessory/accessory", {
 		Skill = null,
 		Entity = null,
 		Script = "scripts/entity/tactical/winterwolf",
-		ArmorScript = null,
 		UnleashSounds = [
 			"sounds/combat/winterwolf_unleash1.wav",
 			"sounds/combat/winterwolf_unleash2.wav"
@@ -17,11 +16,6 @@ this.winterwolf_item <- this.inherit("scripts/items/accessory/accessory", {
 	function getScript()
 	{
 		return this.m.Script;
-	}
-
-	function getArmorScript()
-	{
-		return this.m.ArmorScript;
 	}
 
 	function isUnleashed()
