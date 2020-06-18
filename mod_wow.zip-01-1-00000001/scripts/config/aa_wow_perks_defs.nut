@@ -981,12 +981,12 @@ gt.Const.Perks.PerkDefObjects.SealofCommand <- {
 // ----------------  WOW HUNTER ----------------|
 // ---------------------------------------------|
 
-gt.Const.Perks.PerkDefObjects.PetSummon <- {
-	ID = "perk.wow.hunter.petsummon",
-	Script = "scripts/skills/perks/perk_wow_petsummon",
-	Name = this.Const.Wow_strings.PerkName.PetSummon,
-	Tooltip = this.Const.Wow_strings.PerkDescription.PetSummon,
-	Icon = "ui/perks/perk_hunter_petsummon.png",
-	IconDisabled = "ui/perks/perk_hunter_petsummon_sw.png",
-	Const = "PetSummon"
+gt.Const.Perks.PerkDefObjects.BeastMaster <- {
+	ID = "perk.wow.hunter.beastmaster",
+	Script = "scripts/skills/perks/perk_wow_beastmaster",
+	Name = this.Const.Wow_strings.PerkName.BeastMaster,
+	Tooltip = this.Const.Wow_strings.PerkDescription.BeastMaster,
+	Icon = "ui/perks/perk_hunter_beastmaster.png",
+	IconDisabled = "ui/perks/perk_hunter_beastmaster_sw.png",
+	Const = "BeastMaster"
 }

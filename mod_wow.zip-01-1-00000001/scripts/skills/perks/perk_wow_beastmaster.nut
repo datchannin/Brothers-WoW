@@ -1,13 +1,13 @@
-this.perk_wow_petsummon <- this.inherit("scripts/skills/skill", {
+this.perk_wow_beastmaster <- this.inherit("scripts/skills/skill", {
 	m = {
 		IsSpent = false
 	},
 	function create()
 	{
-		this.m.ID = "perk.wow.hunter.petsummon";
-		this.m.Name = this.Const.Wow_strings.PerkName.PetSummon;
-		this.m.Description = this.Const.Wow_strings.PerkDescription.PetSummon;
-		this.m.Icon = "ui/perks/perk_hunter_petsummon.png";
+		this.m.ID = "perk.wow.hunter.beastmaster";
+		this.m.Name = this.Const.Wow_strings.PerkName.BeastMaster;
+		this.m.Description = this.Const.Wow_strings.PerkDescription.BeastMaster;
+		this.m.Icon = "ui/perks/perk_hunter_beastmaster.png";
 		this.m.Type = this.Const.SkillType.Perk;
 		this.m.Order = this.Const.SkillOrder.Perk;
 		this.m.IsActive = false;
