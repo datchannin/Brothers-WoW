@@ -36,12 +36,10 @@ this.winterwolf <- this.inherit("scripts/entity/tactical/actor", {
 		this.m.DecapitateBloodAmount = 0.5;
 		this.actor.create();
 		this.m.Sound[this.Const.Sound.ActorEvent.DamageReceived] = [
-			"sounds/enemies/wardog_hurt_00.wav",
-			"sounds/enemies/wardog_hurt_01.wav",
-			"sounds/enemies/wardog_hurt_02.wav",
-			"sounds/enemies/wardog_hurt_03.wav",
-			"sounds/enemies/wardog_hurt_04.wav",
-			"sounds/enemies/wardog_hurt_05.wav"
+			"sounds/enemies/winterwolf_hurt_00.wav",
+			"sounds/enemies/winterwolf_hurt_01.wav",
+			"sounds/enemies/winterwolf_hurt_02.wav",
+			"sounds/enemies/winterwolf_hurt_03.wav"
 		];
 		this.m.Sound[this.Const.Sound.ActorEvent.Death] = [
 			"sounds/enemies/wardog_death_00.wav",

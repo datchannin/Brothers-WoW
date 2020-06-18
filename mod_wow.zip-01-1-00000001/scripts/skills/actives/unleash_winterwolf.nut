@@ -2,12 +2,10 @@ this.unleash_winterwolf <- this.inherit("scripts/skills/skill", {
 	m = {
 		Item = null,
 		Sounds0 = [
-			"sounds/enemies/wardog_hurt_00.wav",
-			"sounds/enemies/wardog_hurt_01.wav",
-			"sounds/enemies/wardog_hurt_02.wav",
-			"sounds/enemies/wardog_hurt_03.wav",
-			"sounds/enemies/wardog_hurt_04.wav",
-			"sounds/enemies/wardog_hurt_05.wav"
+			"sounds/enemies/winterwolf_hurt_00.wav",
+			"sounds/enemies/winterwolf_hurt_01.wav",
+			"sounds/enemies/winterwolf_hurt_02.wav",
+			"sounds/enemies/winterwolf_hurt_03.wav"
 		],
 		Sounds1 = [
 			"sounds/enemies/wardog_death_00.wav",
