@@ -42,10 +42,7 @@ this.winterwolf <- this.inherit("scripts/entity/tactical/actor", {
 			"sounds/enemies/winterwolf_hurt_03.wav"
 		];
 		this.m.Sound[this.Const.Sound.ActorEvent.Death] = [
-			"sounds/enemies/wardog_death_00.wav",
-			"sounds/enemies/wardog_death_01.wav",
-			"sounds/enemies/wardog_death_02.wav",
-			"sounds/enemies/wardog_death_03.wav"
+			"sounds/enemies/winterwolf_death_00.wav"
 		];
 		this.m.Sound[this.Const.Sound.ActorEvent.Flee] = [
 			"sounds/enemies/wardog_flee_00.wav",
@@ -62,9 +59,7 @@ this.winterwolf <- this.inherit("scripts/entity/tactical/actor", {
 			"sounds/enemies/wardog_idle_05.wav"
 		];
 		this.m.Sound[this.Const.Sound.ActorEvent.Move] = [
-			"sounds/enemies/wardog_charge_00.wav",
-			"sounds/enemies/wardog_charge_01.wav",
-			"sounds/enemies/wardog_charge_02.wav"
+			"sounds/enemies/winterwolf_move_00.wav"
 		];
 		this.m.AIAgent = this.new("scripts/ai/tactical/agents/wardog_agent");
 		this.m.AIAgent.setActor(this);

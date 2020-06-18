@@ -8,10 +8,7 @@ this.unleash_winterwolf <- this.inherit("scripts/skills/skill", {
 			"sounds/enemies/winterwolf_hurt_03.wav"
 		],
 		Sounds1 = [
-			"sounds/enemies/wardog_death_00.wav",
-			"sounds/enemies/wardog_death_01.wav",
-			"sounds/enemies/wardog_death_02.wav",
-			"sounds/enemies/wardog_death_03.wav"
+			"sounds/enemies/winterwolf_death_00.wav"
 		],
 		Sounds2 = [
 			"sounds/enemies/wardog_flee_00.wav",
@@ -28,9 +25,7 @@ this.unleash_winterwolf <- this.inherit("scripts/skills/skill", {
 			"sounds/enemies/wardog_idle_05.wav"
 		],
 		Sounds4 = [
-			"sounds/enemies/wardog_charge_00.wav",
-			"sounds/enemies/wardog_charge_01.wav",
-			"sounds/enemies/wardog_charge_02.wav"
+			"sounds/enemies/winterwolf_move_00.wav"
 		],
 		Sounds5 = [
 			"sounds/enemies/wardog_bite_00.wav",
