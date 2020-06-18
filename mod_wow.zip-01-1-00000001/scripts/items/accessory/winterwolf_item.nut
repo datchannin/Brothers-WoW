@@ -64,7 +64,7 @@ this.winterwolf_item <- this.inherit("scripts/items/accessory/accessory", {
 		this.m.Variant = 1;
 		this.updateVariant();
 		this.m.ID = "accessory.winterwolf_item";
-		this.m.Name = this.Const.Strings.WardogNames[this.Math.rand(0, this.Const.Strings.WardogNames.len() - 1)] + " the Winterwolf";
+		this.m.Name = this.Const.Wow_strings.WinterwolfNames[this.Math.rand(0, this.Const.Wow_strings.WinterwolfNames.len() - 1)] + " the Winterwolf";
 		this.m.Description = "Snow wolf with huge fangs. Such an animal can gnaw the enemy's throat in an instant.";
 		this.m.SlotType = this.Const.ItemSlot.Accessory;
 		this.m.IsDroppedAsLoot = false;
