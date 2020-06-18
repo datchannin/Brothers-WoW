@@ -74,9 +74,9 @@ this.winterwolf <- this.inherit("scripts/entity/tactical/actor", {
 
 	function setVariant( _v )
 	{
-		this.m.Items.getAppearance().Body = "bust_dog_01_body_0" + _v;
-		this.getSprite("body").setBrush("bust_dog_01_body_0" + _v);
-		this.getSprite("head").setBrush("bust_dog_01_head_0" + _v);
+		this.m.Items.getAppearance().Body = "bust_winterwolf_body";
+		this.getSprite("body").setBrush("bust_winterwolf_body");
+		this.getSprite("head").setBrush("bust_winterwolf_head");
 		this.setDirty(true);
 	}
 
@@ -209,13 +209,13 @@ this.winterwolf <- this.inherit("scripts/entity/tactical/actor", {
 		this.m.CurrentProperties = clone b;
 		this.m.ActionPointCosts = this.Const.DefaultMovementAPCost;
 		this.m.FatigueCosts = this.Const.DefaultMovementFatigueCost;
-		local variant = this.Math.rand(1, 4);
-		this.m.Items.getAppearance().Body = "bust_dog_01_body_0" + variant;
+		local variant = 1;
+		this.m.Items.getAppearance().Body = "bust_winterwolf_body";
 		this.addSprite("socket").setBrush("bust_base_player");
 		local body = this.addSprite("body");
-		body.setBrush("bust_dog_01_body_0" + variant);
+		body.setBrush("bust_winterwolf_body");
 		local armor = this.addSprite("armor");
-		this.addSprite("head").setBrush("bust_dog_01_head_0" + variant);
+		this.addSprite("head").setBrush("bust_winterwolf_head");
 		local closed_eyes = this.addSprite("closed_eyes");
 		closed_eyes.setBrush("bust_dog_01_body_0" + variant + "_eyes_closed");
 		closed_eyes.Visible = false;
