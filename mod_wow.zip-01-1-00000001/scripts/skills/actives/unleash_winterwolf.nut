@@ -42,8 +42,8 @@ this.unleash_winterwolf <- this.inherit("scripts/skills/skill", {
 		this.m.ID = "actives.unleash_winterwolf";
 		this.m.Name = "Unleash Winterwolf";
 		this.m.Description = "Unleash your winterwolf and send him fighting against the enemy. Needs a free tile adjacent.";
-		this.m.Icon = "skills/active_83.png";
-		this.m.IconDisabled = "skills/active_83_sw.png";
+		this.m.Icon = "ui/perks/skill_hunter_unleashwinterwolf.png";
+		this.m.IconDisabled = "ui/perks/skill_hunter_unleashwinterwolf_sw.png";
 		this.m.Overlay = "active_83";
 		this.m.SoundOnUse = [
 			"sounds/combat/winterwolf_unleash1.wav",
