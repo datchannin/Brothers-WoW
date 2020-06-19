@@ -18,23 +18,18 @@ this.unleash_winterwolf <- this.inherit("scripts/skills/skill", {
 			"sounds/enemies/wardog_flee_04.wav"
 		],
 		Sounds3 = [
-			"sounds/enemies/wardog_idle_01.wav",
-			"sounds/enemies/wardog_idle_02.wav",
-			"sounds/enemies/wardog_idle_03.wav",
-			"sounds/enemies/wardog_idle_04.wav",
-			"sounds/enemies/wardog_idle_05.wav"
+			"sounds/enemies/winterwolf_idle_00.wav"
 		],
 		Sounds4 = [
 			"sounds/enemies/winterwolf_move_00.wav"
 		],
 		Sounds5 = [
-			"sounds/enemies/wardog_bite_00.wav",
-			"sounds/enemies/wardog_bite_01.wav",
-			"sounds/enemies/wardog_bite_02.wav",
-			"sounds/enemies/wardog_bite_03.wav",
-			"sounds/enemies/wardog_bite_04.wav",
-			"sounds/enemies/wardog_bite_05.wav",
-			"sounds/enemies/wardog_bite_06.wav"
+			"sounds/enemies/winterwolf_bite_00.wav",
+			"sounds/enemies/winterwolf_bite_01.wav",
+			"sounds/enemies/winterwolf_bite_02.wav",
+			"sounds/enemies/winterwolf_bite_03.wav",
+			"sounds/enemies/winterwolf_bite_04.wav",
+			"sounds/enemies/winterwolf_bite_05.wav"
 		]
 	},
 	function setItem( _i )
@@ -165,4 +160,3 @@ this.unleash_winterwolf <- this.inherit("scripts/skills/skill", {
 	}
 
 });
-

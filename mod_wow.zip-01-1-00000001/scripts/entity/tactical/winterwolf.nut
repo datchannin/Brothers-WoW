@@ -52,11 +52,7 @@ this.winterwolf <- this.inherit("scripts/entity/tactical/actor", {
 			"sounds/enemies/wardog_flee_04.wav"
 		];
 		this.m.Sound[this.Const.Sound.ActorEvent.Idle] = [
-			"sounds/enemies/wardog_idle_01.wav",
-			"sounds/enemies/wardog_idle_02.wav",
-			"sounds/enemies/wardog_idle_03.wav",
-			"sounds/enemies/wardog_idle_04.wav",
-			"sounds/enemies/wardog_idle_05.wav"
+			"sounds/enemies/winterwolf_idle_00.wav"
 		];
 		this.m.Sound[this.Const.Sound.ActorEvent.Move] = [
 			"sounds/enemies/winterwolf_move_00.wav"
