@@ -27,9 +27,9 @@ this.winterwolf <- this.inherit("scripts/entity/tactical/actor", {
 
 	function create()
 	{
-		this.m.Type = this.Const.EntityType.Wardog;
+		this.m.Type = this.Const.EntityType.Winterwolf;
 		this.m.BloodType = this.Const.BloodType.Red;
-		this.m.XP = this.Const.Tactical.Actor.Wardog.XP;
+		this.m.XP = this.Const.Tactical.Actor.Winterwolf.XP;
 		this.m.IsActingImmediately = true;
 		this.m.BloodSplatterOffset = this.createVec(0, 0);
 		this.m.DecapitateSplatterOffset = this.createVec(-4, -25);
@@ -57,7 +57,7 @@ this.winterwolf <- this.inherit("scripts/entity/tactical/actor", {
 		this.m.Sound[this.Const.Sound.ActorEvent.Move] = [
 			"sounds/enemies/winterwolf_move_00.wav"
 		];
-		this.m.AIAgent = this.new("scripts/ai/tactical/agents/wardog_agent");
+		this.m.AIAgent = this.new("scripts/ai/tactical/agents/winterwolf_agent");
 		this.m.AIAgent.setActor(this);
 	}
 
@@ -183,7 +183,7 @@ this.winterwolf <- this.inherit("scripts/entity/tactical/actor", {
 	{
 		this.actor.onInit();
 		local b = this.m.BaseProperties;
-		b.setValues(this.Const.Tactical.Actor.Wardog);
+		b.setValues(this.Const.Tactical.Actor.Winterwolf);
 		b.TargetAttractionMult = 0.1;
 		b.IsAffectedByInjuries = false;
 		this.m.ActionPoints = b.ActionPoints;
@@ -213,6 +213,4 @@ this.winterwolf <- this.inherit("scripts/entity/tactical/actor", {
 		this.m.Skills.add(this.new("scripts/skills/perks/perk_pathfinder"));
 		this.m.Skills.add(this.new("scripts/skills/perks/perk_steel_brow"));
 	}
-
 });
-
