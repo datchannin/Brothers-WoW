@@ -81,13 +81,6 @@ this.winterwolf <- this.inherit("scripts/entity/tactical/actor", {
 			decal.setBrightness(0.9);
 			decal.Scale = 0.95;
 
-			if (appearance.CorpseArmor != "")
-			{
-				decal = _tile.spawnDetail(appearance.CorpseArmor, this.Const.Tactical.DetailFlag.Corpse, flip);
-				decal.setBrightness(0.9);
-				decal.Scale = 0.95;
-			}
-
 			if (_fatalityType != this.Const.FatalityType.Decapitated)
 			{
 				decal = _tile.spawnDetail(this.getSprite("head").getBrush().Name + "_dead", this.Const.Tactical.DetailFlag.Corpse, flip);
