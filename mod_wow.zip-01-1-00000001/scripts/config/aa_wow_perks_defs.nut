@@ -990,3 +990,143 @@ gt.Const.Perks.PerkDefObjects.BeastMaster <- {
 	IconDisabled = "ui/perks/perk_hunter_beastmaster_sw.png",
 	Const = "BeastMaster"
 }
+
+gt.Const.Perks.PerkDefObjects.HuntersMark <- {
+	ID = "perk.wow.hunter.huntersmark",
+	Script = "scripts/skills/perks/perk_wow_huntersmark",
+	Name = this.Const.Wow_strings.PerkName.HuntersMark,
+	Tooltip = this.Const.Wow_strings.PerkDescription.HuntersMark,
+	Icon = "ui/perks/perk_hunter_huntersmark.png",
+	IconDisabled = "ui/perks/perk_hunter_huntersmark_sw.png",
+	Const = "HuntersMark"
+}
+
+gt.Const.Perks.PerkDefObjects.EnduranceTraining <- {
+	ID = "perk.wow.hunter.endurancetraining",
+	Script = "scripts/skills/perks/perk_wow_endurancetraining",
+	Name = this.Const.Wow_strings.PerkName.EnduranceTraining,
+	Tooltip = this.Const.Wow_strings.PerkDescription.EnduranceTraining,
+	Icon = "ui/perks/perk_hunter_endurancetraining.png",
+	IconDisabled = "ui/perks/perk_hunter_endurancetraining_sw.png",
+	Const = "EnduranceTraining"
+}
+
+gt.Const.Perks.PerkDefObjects.ThickHide <- {
+	ID = "perk.wow.hunter.thickhide",
+	Script = "scripts/skills/perks/perk_wow_thickhide",
+	Name = this.Const.Wow_strings.PerkName.ThickHide,
+	Tooltip = this.Const.Wow_strings.PerkDescription.ThickHide,
+	Icon = "ui/perks/perk_hunter_thickhide.png",
+	IconDisabled = "ui/perks/perk_hunter_thickhide_sw.png",
+	Const = "ThickHide"
+}
+
+gt.Const.Perks.PerkDefObjects.Survivalist <- {
+	ID = "perk.wow.hunter.survivalist",
+	Script = "scripts/skills/perks/perk_wow_survivalist",
+	Name = this.Const.Wow_strings.PerkName.Survivalist,
+	Tooltip = this.Const.Wow_strings.PerkDescription.Survivalist,
+	Icon = "ui/perks/perk_hunter_survivalist.png",
+	IconDisabled = "ui/perks/perk_hunter_survivalist_sw.png",
+	Const = "Survivalist"
+}
+
+gt.Const.Perks.PerkDefObjects.LightingReflexes <- {
+	ID = "perk.wow.hunter.lightingreflexes",
+	Script = "scripts/skills/perks/perk_wow_lightingreflexes",
+	Name = this.Const.Wow_strings.PerkName.LightingReflexes,
+	Tooltip = this.Const.Wow_strings.PerkDescription.LightingReflexes,
+	Icon = "ui/perks/perk_hunter_lightingreflexes.png",
+	IconDisabled = "ui/perks/perk_hunter_lightingreflexes_sw.png",
+	Const = "LightingReflexes"
+}
+
+gt.Const.Perks.PerkDefObjects.BestialSwifting <- {
+	ID = "perk.wow.hunter.bestialswifting",
+	Script = "scripts/skills/perks/perk_wow_bestialswifting",
+	Name = this.Const.Wow_strings.PerkName.BestialSwifting,
+	Tooltip = this.Const.Wow_strings.PerkDescription.BestialSwifting,
+	Icon = "ui/perks/perk_hunter_bestialswifting.png",
+	IconDisabled = "ui/perks/perk_hunter_bestialswifting_sw.png",
+	Const = "BestialSwifting"
+}
+
+gt.Const.Perks.PerkDefObjects.UnleashedFury <- {
+	ID = "perk.wow.hunter.unleashedfury",
+	Script = "scripts/skills/perks/perk_wow_unleashedfury",
+	Name = this.Const.Wow_strings.PerkName.UnleashedFury,
+	Tooltip = this.Const.Wow_strings.PerkDescription.UnleashedFury,
+	Icon = "ui/perks/perk_hunter_unleashedfury.png",
+	IconDisabled = "ui/perks/perk_hunter_unleashedfury_sw.png",
+	Const = "UnleashedFury"
+}
+
+gt.Const.Perks.PerkDefObjects.AspectoftheMonkey <- {
+	ID = "perk.wow.hunter.aspectofthemonkey",
+	Script = "scripts/skills/perks/perk_wow_aspectofthemonkey",
+	Name = this.Const.Wow_strings.PerkName.AspectoftheMonkey,
+	Tooltip = this.Const.Wow_strings.PerkDescription.AspectoftheMonkey,
+	Icon = "ui/perks/perk_hunter_aspectofthemonkey.png",
+	IconDisabled = "ui/perks/perk_hunter_aspectofthemonkey_sw.png",
+	Const = "AspectoftheMonkey"
+}
+
+gt.Const.Perks.PerkDefObjects.AspectoftheHawk <- {
+	ID = "perk.wow.hunter.aspectofthehawk",
+	Script = "scripts/skills/perks/perk_wow_aspectofthehawk",
+	Name = this.Const.Wow_strings.PerkName.AspectoftheHawk,
+	Tooltip = this.Const.Wow_strings.PerkDescription.AspectoftheHawk,
+	Icon = "ui/perks/perk_hunter_aspectofthehawk.png",
+	IconDisabled = "ui/perks/perk_hunter_aspectofthehawk_sw.png",
+	Const = "AspectoftheHawk"
+}
+
+gt.Const.Perks.PerkDefObjects.MasterThrowing <- {
+	ID = "perk.wow.hunter.masterthrowing",
+	Script = "scripts/skills/perks/perk_wow_masterthrowing",
+	Name = this.Const.Wow_strings.PerkName.MasterThrowing,
+	Tooltip = this.Const.Wow_strings.PerkDescription.MasterThrowing,
+	Icon = "ui/perks/perk_hunter_masterthrowing.png",
+	IconDisabled = "ui/perks/perk_hunter_masterthrowing_sw.png",
+	Const = "MasterThrowing"
+}
+
+gt.Const.Perks.PerkDefObjects.MasterBow <- {
+	ID = "perk.wow.hunter.masterbow",
+	Script = "scripts/skills/perks/perk_wow_masterbow",
+	Name = this.Const.Wow_strings.PerkName.MasterBow,
+	Tooltip = this.Const.Wow_strings.PerkDescription.MasterBow,
+	Icon = "ui/perks/perk_hunter_masterbow.png",
+	IconDisabled = "ui/perks/perk_hunter_masterbow_sw.png",
+	Const = "MasterBow"
+}
+
+gt.Const.Perks.PerkDefObjects.MasterCrossbow <- {
+	ID = "perk.wow.hunter.mastercrossbow",
+	Script = "scripts/skills/perks/perk_wow_mastercrossbow",
+	Name = this.Const.Wow_strings.PerkName.MasterCrossbow,
+	Tooltip = this.Const.Wow_strings.PerkDescription.MasterCrossbow,
+	Icon = "ui/perks/perk_hunter_mastercrossbow.png",
+	IconDisabled = "ui/perks/perk_hunter_mastercrossbow_sw.png",
+	Const = "MasterCrossbow"
+}
+
+gt.Const.Perks.PerkDefObjects.MendPet <- {
+	ID = "perk.wow.hunter.mendpet",
+	Script = "scripts/skills/perks/perk_wow_mendpet",
+	Name = this.Const.Wow_strings.PerkName.MendPet,
+	Tooltip = this.Const.Wow_strings.PerkDescription.MendPet,
+	Icon = "ui/perks/perk_hunter_mendpet.png",
+	IconDisabled = "ui/perks/perk_hunter_mendpet_sw.png",
+	Const = "MendPet"
+}
+
+gt.Const.Perks.PerkDefObjects.LethalShots <- {
+	ID = "perk.wow.hunter.lethalshots",
+	Script = "scripts/skills/perks/perk_wow_lethalshots",
+	Name = this.Const.Wow_strings.PerkName.LethalShots,
+	Tooltip = this.Const.Wow_strings.PerkDescription.LethalShots,
+	Icon = "ui/perks/perk_hunter_lethalshots.png",
+	IconDisabled = "ui/perks/perk_hunter_lethalshots_sw.png",
+	Const = "LethalShots"
+}
