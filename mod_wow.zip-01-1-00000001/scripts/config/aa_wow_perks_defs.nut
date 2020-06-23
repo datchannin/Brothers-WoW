@@ -1041,14 +1041,14 @@ gt.Const.Perks.PerkDefObjects.LightingReflexes <- {
 	Const = "LightingReflexes"
 }
 
-gt.Const.Perks.PerkDefObjects.BestialSwifting <- {
-	ID = "perk.wow.hunter.bestialswifting",
-	Script = "scripts/skills/perks/perk_wow_bestialswifting",
-	Name = this.Const.Wow_strings.PerkName.BestialSwifting,
-	Tooltip = this.Const.Wow_strings.PerkDescription.BestialSwifting,
-	Icon = "ui/perks/perk_hunter_bestialswifting.png",
-	IconDisabled = "ui/perks/perk_hunter_bestialswifting_sw.png",
-	Const = "BestialSwifting"
+gt.Const.Perks.PerkDefObjects.BestialSwiftness <- {
+	ID = "perk.wow.hunter.bestialswiftness",
+	Script = "scripts/skills/perks/perk_wow_bestialswiftness",
+	Name = this.Const.Wow_strings.PerkName.BestialSwiftness,
+	Tooltip = this.Const.Wow_strings.PerkDescription.BestialSwiftness,
+	Icon = "ui/perks/perk_hunter_bestialswiftness.png",
+	IconDisabled = "ui/perks/perk_hunter_bestialswiftness_sw.png",
+	Const = "BestialSwiftness"
 }
 
 gt.Const.Perks.PerkDefObjects.UnleashedFury <- {

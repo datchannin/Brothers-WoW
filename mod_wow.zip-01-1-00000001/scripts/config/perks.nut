@@ -272,7 +272,7 @@ gt.Const.Perks.PerkTreePaladin <- [
 gt.Const.Perks.PerkTreeHunter <- [
 	[
 		gt.Const.Perks.PerkDefObjects.BeastMaster
-		//gt.Const.Perks.PerkDefObjects.HuntersMark
+		gt.Const.Perks.PerkDefObjects.HuntersMark
 		gt.Const.Perks.PerkDefObjects.FastAdaption
 		gt.Const.Perks.PerkDefObjects.CripplingStrikes
 		gt.Const.Perks.PerkDefObjects.NineLives
@@ -281,29 +281,29 @@ gt.Const.Perks.PerkTreeHunter <- [
 		gt.Const.Perks.PerkDefObjects.Recover
 	],
 	[
-		//gt.Const.Perks.PerkDefObjects.EnduranceTraining
-		//gt.Const.Perks.PerkDefObjects.ThickHide
-		//gt.Const.Perks.PerkDefObjects.Survivalist
-		//gt.Const.Perks.PerkDefObjects.LightingReflexes
+		gt.Const.Perks.PerkDefObjects.EnduranceTraining
+		gt.Const.Perks.PerkDefObjects.ThickHide
+		gt.Const.Perks.PerkDefObjects.Survivalist
+		gt.Const.Perks.PerkDefObjects.LightingReflexes
 		gt.Const.Perks.PerkDefObjects.CoupDeGrace
 		gt.Const.Perks.PerkDefObjects.Bullseye
 		gt.Const.Perks.PerkDefObjects.Dodge
 		gt.Const.Perks.PerkDefObjects.QuickHands
 	],
 	[
-		//gt.Const.Perks.PerkDefObjects.BestialSwiftness
-		//gt.Const.Perks.PerkDefObjects.UnleashedFury
-		//gt.Const.Perks.PerkDefObjects.MonkeyAspect
-		//gt.Const.Perks.PerkDefObjects.HawkAspect
+		gt.Const.Perks.PerkDefObjects.BestialSwiftness
+		gt.Const.Perks.PerkDefObjects.UnleashedFury
+		gt.Const.Perks.PerkDefObjects.AspectoftheMonkey
+		gt.Const.Perks.PerkDefObjects.AspectoftheHawk
 		gt.Const.Perks.PerkDefObjects.Anticipation
 		gt.Const.Perks.PerkDefObjects.Brawny
 		gt.Const.Perks.PerkDefObjects.Relentless
 		gt.Const.Perks.PerkDefObjects.Rotation
 	],
 	[
-		//gt.Const.Perks.PerkDefObjects.MasterThrowing
-		//gt.Const.Perks.PerkDefObjects.MasterBow
-		//gt.Const.Perks.PerkDefObjects.MasterCrossbow
+		gt.Const.Perks.PerkDefObjects.MasterThrowing
+		gt.Const.Perks.PerkDefObjects.MasterBow
+		gt.Const.Perks.PerkDefObjects.MasterCrossbow
 		gt.Const.Perks.PerkDefObjects.MasterDagger
 		gt.Const.Perks.PerkDefObjects.SpecDagger
 		gt.Const.Perks.PerkDefObjects.SpecCrossbow
@@ -322,8 +322,8 @@ gt.Const.Perks.PerkTreeHunter <- [
 		gt.Const.Perks.PerkDefObjects.Nimble
 	],
 	[
-		//gt.Const.Perks.PerkDefObjects.MendPet
-		//gt.Const.Perks.PerkDefObjects.LethalShot
+		gt.Const.Perks.PerkDefObjects.MendPet
+		gt.Const.Perks.PerkDefObjects.LethalShots
 		gt.Const.Perks.PerkDefObjects.KillingFrenzy
 		gt.Const.Perks.PerkDefObjects.Indomitable
 	],
