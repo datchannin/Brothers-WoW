@@ -14,7 +14,7 @@ this.wow_scenario <- this.inherit("scripts/scenarios/world/starting_scenario", {
 		local roster = this.World.getPlayerRoster();
 		local names = [];
 
-		for( local i = 0; i < 3; i = ++i )
+		for( local i = 0; i < 4; i = ++i )
 		{
 			local bro;
 			bro = roster.create("scripts/entity/tactical/player");
@@ -53,6 +53,14 @@ this.wow_scenario <- this.inherit("scripts/scenarios/world/starting_scenario", {
 		bros[2].m.PerkPoints = 12;
 		bros[2].m.LevelUps = 6;
 		bros[2].m.Level = 5;
+
+		bros[3].setStartValuesEx([
+			"raider_hunter_background"
+		]);
+		bros[3].setPlaceInFormation(13);
+		bros[3].m.PerkPoints = 12;
+		bros[3].m.LevelUps = 6;
+		bros[3].m.Level = 5;
 
 		this.World.Assets.getStash().add(this.new("scripts/items/supplies/ground_grains_item"));
 		this.World.Assets.getStash().add(this.new("scripts/items/supplies/ground_grains_item"));
@@ -130,4 +138,3 @@ this.wow_scenario <- this.inherit("scripts/scenarios/world/starting_scenario", {
 	}
 
 });
-
