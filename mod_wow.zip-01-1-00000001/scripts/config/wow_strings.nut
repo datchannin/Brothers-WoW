@@ -151,7 +151,7 @@ gt.Const.Wow_strings.PerkName <- {
 	MasterBow = "Master Bow",
 	MasterCrossbow = "Master Crossbow",
 	MendPet = "Mend Pet",
-	LethalShot = "Lethal Shot"
+	LethalShots = "Lethal Shots"
 };
 
 gt.Const.Wow_strings.PerkDescription <- {
@@ -212,5 +212,5 @@ gt.Const.Wow_strings.PerkDescription <- {
 	MasterBow = "Bow Adept. Bow is weapon for the winner! Do your shot more powerful, kill your target faster. Damage done by Bow is increased by [color=" + this.Const.UI.Color.PositiveValue + "]20%[/color].",
 	MasterCrossbow = "Crossbow Adept. Сrossbow can pierce target that is inaccessible to anyone else! Damage done by Crossbow is increased by [color=" + this.Const.UI.Color.PositiveValue + "]20%[/color].",
 	MendPet = "Unlocks the \'Mend Pet\' skill which allows you to heal your pet.",
-	LethalShot = "Gives you \'Lethal Shot\' possibility. Learn to take advantage of your high Initiative and stun the enemy with your attacks.\n\nWith every attack, hit or miss, against an opponent that acts after you in the current round, you can stun him for one turn."
+	LethalShots = "Gives you \'Lethal Shots\' possibility. Learn to take advantage of your high Initiative and stun the enemy with your attacks.\n\nWith every attack, hit or miss, against an opponent that acts after you in the current round, you can stun him for one turn."
 };
