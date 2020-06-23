@@ -197,8 +197,8 @@ gt.Const.Wow_strings.PerkDescription <- {
 	ConcentrationAura = "Unlocks the \'Concentration Aura\' skill. This aura increases Fatigue Recovery of all party members within 4 tiles by [color=" + this.Const.UI.Color.PositiveValue + "]3[/color].",
 	SanctityAura = "Unlocks the \'Sanctity Aura\' skill. This aura add Hitpoints regeneration of all party members within 4 tiles by [color=" + this.Const.UI.Color.PositiveValue + "]2[/color] points.",
 	DivineShield = "Unlocks the \'Divine Shield\' skill which gives your target Immunity for one turn.",
-	SealofCommand = "Fills you with \'Seal of Command\'. This give your additional Action Point, [color=" + this.Const.UI.Color.PositiveValue + "]10[/color] Fatigue and increase your Hitpoints by [color=" + this.Const.UI.Color.PositiveValue + "]10%[/color].",
-	BeastMaster = "You have a personal pet now. Unlocks the \'Pet Summon\' skill which give you possibility to summon Winter Wolf under your command. Even if your pet was killed, you can summon him again in new battle.",
+	SealofCommand = "Fills you with \'Seal of Command\'. This gives your additional Action Point, [color=" + this.Const.UI.Color.PositiveValue + "]10[/color] Fatigue and increase your Hitpoints by [color=" + this.Const.UI.Color.PositiveValue + "]10%[/color].",
+	BeastMaster = "You have a personal pet now. Unlocks the \'Pet Summon\' skill which gives you possibility to summon Winter Wolf under your command. Even if your pet was killed, you can summon him again in new battle.",
 	HuntersMark = "Unlocks the \'Hunters Mark\' skill which allows you to mark the target. This debuff increases damage taken by enemy. You can mark enemy from long distance.",
 	EnduranceTraining = "Step to train your pet. Now Winter Wolf has more Hitpoints and Fatigue. This perk help you to increase your pet Hitpoints by [color=" + this.Const.UI.Color.PositiveValue + "]70[/color] points. Pet Fatigue also increases by [color=" + this.Const.UI.Color.PositiveValue + "]40[/color].",
 	ThickHide = "Step to train your pet. Now Winter Wolf has more Armor. This perk help you to increase your pet Armor by [color=" + this.Const.UI.Color.PositiveValue + "]70[/color] points.",
@@ -212,5 +212,5 @@ gt.Const.Wow_strings.PerkDescription <- {
 	MasterBow = "Bow Adept. Bow is weapon for the winner! Do your shot more powerful, kill your target faster. Damage done by Bow is increased by [color=" + this.Const.UI.Color.PositiveValue + "]20%[/color].",
 	MasterCrossbow = "Crossbow Adept. Сrossbow can pierce target that is inaccessible to anyone else! Damage done by Crossbow is increased by [color=" + this.Const.UI.Color.PositiveValue + "]20%[/color].",
 	MendPet = "Unlocks the \'Mend Pet\' skill which allows you to heal your pet.",
-	LethalShot = "Give you \'Lethal Shot\' possibility. Learn to take advantage of your high Initiative and stun the enemy with your attacks.\n\nWith every attack, hit or miss, against an opponent that acts after you in the current round, you can stun him for one turn."
+	LethalShot = "Gives you \'Lethal Shot\' possibility. Learn to take advantage of your high Initiative and stun the enemy with your attacks.\n\nWith every attack, hit or miss, against an opponent that acts after you in the current round, you can stun him for one turn."
 };
