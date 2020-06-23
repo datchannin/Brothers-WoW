@@ -138,6 +138,20 @@ gt.Const.Wow_strings.PerkName <- {
 	DivineShield = "Divine Shield",
 	SealofCommand = "Seal of Command",
 	BeastMaster = "Beast Master",
+	HuntersMark = "Hunters Mark",
+	EnduranceTraining = "Endurance Training",
+	ThickHide = "Thick Hide",
+	Survivalist = "Survivalist",
+	LightingReflexes = "Lighting Reflexes",
+	BestialSwifting = "Bestial Swifting",
+	UnleashedFury = "Unleashed Fury",
+	AspectoftheMonkey = "Aspect of the Monkey",
+	AspectoftheHawk = "Aspect of the Hawk",
+	MasterThrowing = "Master Throwing",
+	MasterBow = "Master Bow",
+	MasterCrossbow = "Master Crossbow",
+	MendPet = "Mend Pet",
+	LethalShot = "Lethal Shot"
 };
 
 gt.Const.Wow_strings.PerkDescription <- {
