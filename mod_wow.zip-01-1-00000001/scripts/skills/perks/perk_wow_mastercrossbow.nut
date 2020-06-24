@@ -12,4 +12,21 @@ this.perk_wow_mastercrossbow <- this.inherit("scripts/skills/skill", {
 		this.m.IsStacking = false;
 		this.m.IsHidden = true;
 	}
+	
+	function onUpdate( _properties )
+	{
+		_properties.IsMasterInCrossbow = true;
+	}
+	
+	function onAnySkillUsed( _skill, _targetEntity, _properties )
+	{
+		local mainhand = this.getContainer().getActor().getItems().getItemAtSlot(this.Const.ItemSlot.Mainhand);
+		if (mainhand != null && mainhand.isItemType(this.Const.Items.ItemType.RangedWeapon))
+		{
+			if (_skill.getID() == "actives.shoot_bolt" || _skill.getID() == "actives.shoot_stake")
+			{
+				_properties.DamageTotalMult *= 1.2;
+			}
+		}
+	}
 });

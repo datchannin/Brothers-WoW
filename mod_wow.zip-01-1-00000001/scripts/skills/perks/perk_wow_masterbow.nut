@@ -12,4 +12,21 @@ this.perk_wow_masterbow <- this.inherit("scripts/skills/skill", {
 		this.m.IsStacking = false;
 		this.m.IsHidden = true;
 	}
+	
+	function onUpdate( _properties )
+	{
+		_properties.IsMasterInBow = true;
+	}
+	
+	function onAnySkillUsed( _skill, _targetEntity, _properties )
+	{
+		local mainhand = this.getContainer().getActor().getItems().getItemAtSlot(this.Const.ItemSlot.Mainhand);
+		if (mainhand != null && mainhand.isItemType(this.Const.Items.ItemType.RangedWeapon))
+		{
+			if (_skill.getID() == "actives.quick_shot" || _skill.getID() == "actives.aimed_shot")
+			{
+				_properties.DamageTotalMult *= 1.2;
+			}
+		}
+	}
 });
