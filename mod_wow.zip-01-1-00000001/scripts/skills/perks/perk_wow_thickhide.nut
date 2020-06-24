@@ -12,4 +12,9 @@ this.perk_wow_thickhide <- this.inherit("scripts/skills/skill", {
 		this.m.IsStacking = false;
 		this.m.IsHidden = true;
 	}
+	
+	function onUpdate( _properties )
+	{
+		_properties.IsPetThickHide = true;
+	}
 });
