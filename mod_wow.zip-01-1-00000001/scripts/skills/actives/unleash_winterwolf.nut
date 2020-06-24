@@ -199,6 +199,18 @@ this.unleash_winterwolf <- this.inherit("scripts/skills/skill", {
 		{
 			entity.getSkills().add(this.new("scripts/skills/effects/endurancetraining_effect"));
 		}
+		if (this.m.IsMasterHasThickHide)
+		{
+			entity.getSkills().add(this.new("scripts/skills/effects/thickhide_effect"));
+		}
+		if (this.m.IsMasterHasBestialSwiftness)
+		{
+			entity.getSkills().add(this.new("scripts/skills/effects/bestialswiftness_effect"));
+		}
+		if (this.m.IsMasterHasUnleashFury)
+		{
+			entity.getSkills().add(this.new("scripts/skills/effects/unleashedfury_effect"));
+		}
 
 		this.m.IsHidden = true;
 		return true;
