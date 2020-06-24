@@ -5,8 +5,8 @@ this.endurancetraining_effect <- this.inherit("scripts/skills/skill", {
 		this.m.ID = "effects.endurancetraining";
 		this.m.Name = "Endurance Training";
 		this.m.Description = "";
-		this.m.Icon = "ui/perks/effect_warrior_stunimmunity.png";
-		this.m.IconMini = "effect_mini_stunimmunity";
+		this.m.Icon = "ui/perks/perk_hunter_endurancetraining.png";
+		this.m.IconMini = "effect_mini_endurancetraining";
 		this.m.Type = this.Const.SkillType.StatusEffect;
 		this.m.IsActive = false;
 		this.m.IsRemovedAfterBattle = true;
