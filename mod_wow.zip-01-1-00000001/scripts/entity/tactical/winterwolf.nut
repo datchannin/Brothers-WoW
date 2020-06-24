@@ -1,7 +1,11 @@
 this.winterwolf <- this.inherit("scripts/entity/tactical/actor", {
 	m = {
 		Item = null,
-		Name = "Winterwolf"
+		Name = "Winterwolf",
+		IsMasterHasEnduranceTraining = false,
+		IsMasterHasThickHide = false,
+		IsMasterHasBestialSwiftness = false,
+		IsMasterHasUnleashFury = false
 	},
 	function setItem( _i )
 	{
