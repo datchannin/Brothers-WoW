@@ -12,4 +12,10 @@ this.perk_wow_lightingreflexes <- this.inherit("scripts/skills/skill", {
 		this.m.IsStacking = false;
 		this.m.IsHidden = true;
 	}
+	
+	function onUpdate( _properties )
+	{
+		_properties.Stamina += 10;
+		_properties.Initiative += 10;
+	}
 });
