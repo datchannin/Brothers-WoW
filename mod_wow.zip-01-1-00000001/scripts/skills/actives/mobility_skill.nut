@@ -45,8 +45,8 @@ this.mobility_skill <- this.inherit("scripts/skills/skill", {
 			{
 				id = 7,
 				type = "text",
-				icon = "ui/icons/special.png",
-				text = "Current Fatigue is increased by 30"
+				icon = "ui/icons/action_points.png",
+				text = "Using this gives you 2 additional Action Points."
 			}
 		];
 		return ret;
