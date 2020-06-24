@@ -1,20 +1,8 @@
 this.winterwolf <- this.inherit("scripts/entity/tactical/actor", {
 	m = {
 		Item = null,
-		Name = "Winterwolf",
-		IsMasterHasEnduranceTraining = false,
-		IsMasterHasThickHide = false,
-		IsMasterHasBestialSwiftness = false,
-		IsMasterHasUnleashFury = false
+		Name = "Winterwolf"
 	},
-
-	function setMasterPerks( _et, _th, _bs, _uf )
-	{
-		this.m.IsMasterHasEnduranceTraining = _et;
-		this.m.IsMasterHasThickHide = _th;
-		this.m.IsMasterHasBestialSwiftness = _bs;
-		this.m.IsMasterHasUnleashFury = _uf;
-	}
 
 	function setItem( _i )
 	{

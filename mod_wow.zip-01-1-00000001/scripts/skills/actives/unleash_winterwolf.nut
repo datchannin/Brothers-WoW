@@ -31,10 +31,10 @@ this.unleash_winterwolf <- this.inherit("scripts/skills/skill", {
 			"sounds/enemies/winterwolf_bite_04.wav",
 			"sounds/enemies/winterwolf_bite_05.wav"
 		],
-		IsMasterHasEnduranceTraining = false,
-		IsMasterHasThickHide = false,
-		IsMasterHasBestialSwiftness = false,
-		IsMasterHasUnleashFury = false
+		IsMasterHasEnduranceTraining = 0,
+		IsMasterHasThickHide = 0,
+		IsMasterHasBestialSwiftness = 0,
+		IsMasterHasUnleashFury = 0
 	},
 	function setItem( _i )
 	{
@@ -184,7 +184,6 @@ this.unleash_winterwolf <- this.inherit("scripts/skills/skill", {
 	function onUse( _user, _targetTile )
 	{
 		local entity = this.Tactical.spawnEntity(this.m.Item.getScript(), _targetTile.Coords.X, _targetTile.Coords.Y);
-		entity.setMasterPerks(IsMasterHasEnduranceTraining, IsMasterHasThickHide, IsMasterHasBestialSwiftness, IsMasterHasUnleashFury);
 		entity.setFaction(this.Const.Faction.PlayerAnimals);
 		entity.setItem(this.m.Item);
 		entity.setName(this.m.Item.getName());
@@ -194,6 +193,11 @@ this.unleash_winterwolf <- this.inherit("scripts/skills/skill", {
 		if (!this.World.getTime().IsDaytime)
 		{
 			entity.getSkills().add(this.new("scripts/skills/special/night_effect"));
+		}
+		
+		if (this.m.IsMasterHasEnduranceTraining)
+		{
+			entity.getSkills().add(this.new("scripts/skills/effects/endurancetraining_effect"));
 		}
 
 		this.m.IsHidden = true;
