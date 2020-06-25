@@ -12,4 +12,17 @@ this.perk_wow_mendpet <- this.inherit("scripts/skills/skill", {
 		this.m.IsStacking = false;
 		this.m.IsHidden = true;
 	}
+	
+	function onAdded()
+	{
+		if (!this.m.Container.hasSkill("actives.mendpet_skill"))
+		{
+			this.m.Container.add(this.new("scripts/skills/actives/hunter_mendpet_skill"));
+		}
+	}
+
+	function onRemoved()
+	{
+		this.m.Container.removeByID("actives.mendpet_skill");
+	}
 });
