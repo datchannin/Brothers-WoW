@@ -211,6 +211,7 @@ this.unleash_winterwolf <- this.inherit("scripts/skills/skill", {
 		{
 			entity.getSkills().add(this.new("scripts/skills/effects/unleashedfury_effect"));
 		}
+		entity.getSkills().add(this.new("scripts/skills/effects/winterwolfgetheal_effect"));
 
 		this.m.IsHidden = true;
 		return true;

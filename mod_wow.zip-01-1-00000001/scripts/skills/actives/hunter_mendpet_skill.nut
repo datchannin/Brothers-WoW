@@ -79,10 +79,10 @@ this.hunter_mendpet_skill <- this.inherit("scripts/skills/skill", {
 			return false;
 		}
 
-		//if (!targetEntity.hasSkill("effects.winterwolfgetheal_effect"))
-		//{
-		//	return false;
-		//}
+		if (!targetEntity.getSkills().hasSkill("effects.winterwolfgetheal"))
+		{
+			return false;
+		}
 
 		return true;
 	}
