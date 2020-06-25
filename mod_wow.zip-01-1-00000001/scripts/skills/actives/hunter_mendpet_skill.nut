@@ -9,7 +9,7 @@ this.hunter_mendpet_skill <- this.inherit("scripts/skills/skill", {
 		this.m.IconDisabled = "ui/perks/skill_hunter_mendpet_sw.png";
 		this.m.Overlay = "skill_hunter_mendpet";
 		this.m.SoundOnUse = [
-			//"sounds/combat/paladin_holylight_precast.wav"
+			"sounds/combat/hunter_mendpet.wav"
 		];
 		this.m.Type = this.Const.SkillType.Active;
 		this.m.Order = this.Const.SkillOrder.Any;

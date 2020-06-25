@@ -9,9 +9,7 @@ this.hunter_huntersmark_skill <- this.inherit("scripts/skills/skill", {
 		this.m.IconDisabled = "ui/perks/skill_hunter_huntersmark_sw.png";
 		this.m.Overlay = "skill_hunter_huntersmark";
 		this.m.SoundOnUse = [
-			//"sounds/combat/rogue_hemorrhage1.wav",
-			//"sounds/combat/rogue_hemorrhage2.wav",
-			//"sounds/combat/rogue_hemorrhage3.wav"
+			"sounds/combat/hunter_huntersmark.wav"
 		];
 		this.m.Type = this.Const.SkillType.Active;
 		this.m.Order = this.Const.SkillOrder.Any;
