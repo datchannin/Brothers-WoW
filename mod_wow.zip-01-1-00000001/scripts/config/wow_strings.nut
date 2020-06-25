@@ -138,7 +138,7 @@ gt.Const.Wow_strings.PerkName <- {
 	DivineShield = "Divine Shield",
 	SealofCommand = "Seal of Command",
 	BeastMaster = "Beast Master",
-	HuntersMark = "Hunters Mark",
+	HuntersMark = "Hunter\'s Mark",
 	EnduranceTraining = "Endurance Training",
 	ThickHide = "Thick Hide",
 	Survivalist = "Survivalist",
