@@ -57,6 +57,8 @@ this.medium_steppe_fort <- this.inherit("scripts/entity/world/settlement", {
 			"retired_soldier_background",
 			"raider_rogue_background",
 			"raider_rogue_background",
+			"raider_hunter_background",
+			"raider_hunter_background",
 			"sellsword_background"
 		];
 		this.m.UIDescription = "A stone keep projecting power over the flat steppe";

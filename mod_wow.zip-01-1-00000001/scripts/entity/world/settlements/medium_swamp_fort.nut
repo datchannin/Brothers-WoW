@@ -62,6 +62,8 @@ this.medium_swamp_fort <- this.inherit("scripts/entity/world/settlement", {
 			"raider_background",
 			"raider_rogue_background",
 			"raider_rogue_background",
+			"raider_hunter_background",
+			"raider_hunter_background",
 			"retired_soldier_background"
 		];
 		this.m.UIDescription = "A stone keep controlling routes through the swamps";
