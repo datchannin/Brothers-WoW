@@ -67,5 +67,17 @@ this.huntersmark_effect <- this.inherit("scripts/skills/skill", {
 			this.removeSelf();
 		}
 	}
-});
+	
+	function onAdded()
+	{
+		local actor = this.getContainer().getActor();
 
+		if (this.Const.Tactical.HuntersMarkParticles.len() != 0)
+		{
+			for( local i = 0; i < this.Const.Tactical.HuntersMarkParticles.len(); i = ++i )
+			{
+				this.Tactical.spawnParticleEffect(false, this.Const.Tactical.HuntersMarkParticles[i].Brushes, actor.getTile(), this.Const.Tactical.HuntersMarkParticles[i].Delay, this.Const.Tactical.HuntersMarkParticles[i].Quantity, this.Const.Tactical.HuntersMarkParticles[i].LifeTimeQuantity, this.Const.Tactical.HuntersMarkParticles[i].SpawnRate, this.Const.Tactical.HuntersMarkParticles[i].Stages);
+			}
+		}
+	}
+});
