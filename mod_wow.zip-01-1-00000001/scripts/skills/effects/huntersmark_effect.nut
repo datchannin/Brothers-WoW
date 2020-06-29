@@ -8,7 +8,7 @@ this.huntersmark_effect <- this.inherit("scripts/skills/skill", {
 		this.m.Name = "Hunter\'s Mark";
 		this.m.Icon = "ui/perks/perk_hunter_huntersmark.png";
 		this.m.IconMini = "effect_mini_huntersmark";
-		this.m.Overlay = "skill_hunter_huntersmark";
+		this.m.Overlay = "";
 		this.m.Type = this.Const.SkillType.StatusEffect;
 		this.m.IsActive = false;
 		this.m.IsRemovedAfterBattle = true;
