@@ -536,6 +536,20 @@ gt.Const.Perks.PerkDefObjects.Indomitable <- {
 }
 
 // ---------------------------------------------|
+// ----------------  WOW GAMEDEV ---------------|
+// ---------------------------------------------|
+
+gt.Const.Perks.PerkDefObjects.GameDev <- {
+	ID = "perk.wow.gamedev.gamedev",
+	Script = "scripts/skills/perks/perk_wow_gamedev",
+	Name = this.Const.Wow_strings.PerkName.GameDev,
+	Tooltip = this.Const.Wow_strings.PerkDescription.GameDev,
+	Icon = "ui/perks/perk_gamedev1.png",
+	IconDisabled = "ui/perks/perk_gamedev1_sw.png",
+	Const = "GameDev"
+}
+
+// ---------------------------------------------|
 // ----------------  WOW WARRIOR ---------------|
 // ---------------------------------------------|
 

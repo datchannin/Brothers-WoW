@@ -94,6 +94,7 @@ gt.Const.Wow_strings.WinterwolfNames <- [
 ];
 
 gt.Const.Wow_strings.PerkName <- {
+	GameDev = "Game Design",
 	DefensiveStance = "Defensive Stance",
 	BerserkerStance = "Berserker Stance",
 	Toughness = "Toughness",
@@ -155,6 +156,7 @@ gt.Const.Wow_strings.PerkName <- {
 };
 
 gt.Const.Wow_strings.PerkDescription <- {
+	GameDev = "Perk for test, design and debug skills.",
 	DefensiveStance = "A defensive combat stance. Decreases damage taken by [color=" + this.Const.UI.Color.PositiveValue + "]10%[/color] and damage caused by [color=" + this.Const.UI.Color.NegativeValue + "]10%[/color].",
 	BerserkerStance = "An aggressive stance. Damage done is increased by [color=" + this.Const.UI.Color.PositiveValue + "]10%[/color] and all direct damage taken is increased by [color=" + this.Const.UI.Color.NegativeValue + "]10%[/color].",
 	Toughness = "You have skill in armor using. Armor damage taken is reduced by [color=" + this.Const.UI.Color.PositiveValue + "]3%[/color].",
