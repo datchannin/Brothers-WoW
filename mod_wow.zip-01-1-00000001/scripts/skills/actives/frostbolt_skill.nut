@@ -11,7 +11,7 @@ this.frostbolt_skill <- this.inherit("scripts/skills/skill", {
 		this.m.KilledString = "Chilled!";
 		this.m.Icon = "ui/perks/skill_mage_frostbolt.png";
 		this.m.IconDisabled = "ui/perks/skill_mage_frostbolt_sw.png";
-		this.m.Overlay = "skill_mage_fireball";
+		this.m.Overlay = "skill_mage_frostbolt";
 		this.m.SoundOnUse = [
 			//"sounds/combat/mage_fireball_precast1.wav"
 		];

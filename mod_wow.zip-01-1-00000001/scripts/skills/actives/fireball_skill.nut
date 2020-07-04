@@ -48,7 +48,7 @@ this.fireball_skill <- this.inherit("scripts/skills/skill", {
 			id = 6,
 			type = "text",
 			icon = "ui/icons/special.png",
-			text = "Damage target for [color=" + this.Const.UI.Color.DamageValue + "]20[/color] points."
+			text = "Damage target for [color=" + this.Const.UI.Color.DamageValue + "]15-25[/color] points."
 		});
 		ret.push({
 			id = 6,
