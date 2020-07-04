@@ -19,10 +19,15 @@ this.perk_wow_gamedev <- this.inherit("scripts/skills/skill", {
 		{
 			this.m.Container.add(this.new("scripts/skills/actives/fireball_skill"));
 		}
+		if (!this.m.Container.hasSkill("actives.frostbolt_skill"))
+		{
+			this.m.Container.add(this.new("scripts/skills/actives/frostbolt_skill"));
+		}
 	}
 
 	function onRemoved()
 	{
 		this.m.Container.removeByID("actives.fireball_skill");
+		this.m.Container.removeByID("actives.frostbolt_skill");
 	}
 });
