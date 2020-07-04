@@ -9,8 +9,8 @@ this.frostbolt_skill <- this.inherit("scripts/skills/skill", {
 		this.m.Name = "Frostbolt";
 		this.m.Description = "Throws a fiery ball that causes Frost damage to your target.";
 		this.m.KilledString = "Chilled!";
-		this.m.Icon = "ui/perks/skill_mage_fireball.png";
-		this.m.IconDisabled = "ui/perks/skill_mage_fireball_sw.png";
+		this.m.Icon = "ui/perks/skill_mage_frostbolt.png";
+		this.m.IconDisabled = "ui/perks/skill_mage_frostbolt_sw.png";
 		this.m.Overlay = "skill_mage_fireball";
 		this.m.SoundOnUse = [
 			//"sounds/combat/mage_fireball_precast1.wav"
