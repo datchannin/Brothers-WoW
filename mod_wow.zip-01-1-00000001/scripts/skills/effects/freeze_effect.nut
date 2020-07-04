@@ -8,7 +8,7 @@ this.freeze_effect <- this.inherit("scripts/skills/skill", {
 		this.m.ID = "effects.freeze";
 		this.m.Name = "Frozen";
 		this.m.Icon = "ui/perks/effect_mage_freeze.png";
-		this.m.IconMini = "effect_mini_burn_damage";
+		this.m.IconMini = "effect_mini_freeze";
 		this.m.SoundOnUse = [
 			//"sounds/combat/mage_burn_effect.wav"
 		];
