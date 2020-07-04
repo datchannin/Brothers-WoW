@@ -123,7 +123,7 @@ this.frostbolt_skill <- this.inherit("scripts/skills/skill", {
 			//freeze.resetTime();
 		}
 		
-		this.spawnIcon("effect_mage_burn_apply", _data.TargetTile);
+		this.spawnIcon("effect_mage_freeze_apply", _data.TargetTile);
 
 		return true;
 	}
