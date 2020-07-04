@@ -10,7 +10,7 @@ this.freeze_effect <- this.inherit("scripts/skills/skill", {
 		this.m.Icon = "ui/perks/effect_mage_freeze.png";
 		this.m.IconMini = "effect_mini_freeze";
 		this.m.SoundOnUse = [
-			//"sounds/combat/mage_burn_effect.wav"
+			"sounds/combat/mage_freeze_effect.wav"
 		];
 		this.m.Type = this.Const.SkillType.StatusEffect;
 		this.m.IsActive = false;
