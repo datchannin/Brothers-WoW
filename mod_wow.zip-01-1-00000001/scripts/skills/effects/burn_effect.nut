@@ -37,7 +37,7 @@ this.burn_effect <- this.inherit("scripts/skills/skill", {
 
 	function applyDamage()
 	{
-		this.spawnIcon("status_effect_54", this.getContainer().getActor().getTile());
+		this.spawnIcon("effect_mage_burn_damage", this.getContainer().getActor().getTile());
 
 		if (this.m.SoundOnUse.len() != 0)
 		{

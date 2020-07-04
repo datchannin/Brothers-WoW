@@ -123,7 +123,7 @@ this.fireball_skill <- this.inherit("scripts/skills/skill", {
 			burn.resetTime();
 		}
 		
-		this.spawnIcon("effect_mage_burn", _data.TargetTile);
+		this.spawnIcon("effect_mage_burn_apply", _data.TargetTile);
 
 		return true;
 	}
