@@ -13,10 +13,10 @@ this.frostbolt_skill <- this.inherit("scripts/skills/skill", {
 		this.m.IconDisabled = "ui/perks/skill_mage_frostbolt_sw.png";
 		this.m.Overlay = "skill_mage_frostbolt";
 		this.m.SoundOnUse = [
-			//"sounds/combat/mage_fireball_precast1.wav"
+			"sounds/combat/mage_frostbolt_precast1.wav"
 		];
 		this.m.SoundOnHit = [
-			//"sounds/combat/mage_fireball_cast1.wav",
+			"sounds/combat/mage_frostbolt_cast1.wav",
 		];
 		this.m.SoundOnHitDelay = 0;
 		this.m.Type = this.Const.SkillType.Active;
