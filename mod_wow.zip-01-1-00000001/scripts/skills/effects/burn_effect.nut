@@ -21,8 +21,7 @@ this.burn_effect <- this.inherit("scripts/skills/skill", {
 		this.m.Icon = "ui/perks/effect_mage_burn_damage.png";
 		this.m.IconMini = "effect_mini_burn_damage";
 		this.m.SoundOnUse = [
-			//"sounds/enemies/dlc2/giant_spider_poison_01.wav",
-			//"sounds/enemies/dlc2/giant_spider_poison_02.wav"
+			"sounds/combat/mage_burn_effect.wav"
 		];
 		this.m.Type = this.Const.SkillType.StatusEffect | this.Const.SkillType.DamageOverTime;
 		this.m.IsActive = false;
@@ -70,7 +69,7 @@ this.burn_effect <- this.inherit("scripts/skills/skill", {
 		
 		if (this.m.SoundOnUse.len() != 0)
 		{
-			this.Sound.play(this.m.SoundOnUse[this.Math.rand(0, this.m.SoundOnUse.len() - 1)], this.Const.Sound.Volume.RacialEffect * 1.2, actor.getPos());
+			this.Sound.play(this.m.SoundOnUse[this.Math.rand(0, this.m.SoundOnUse.len() - 1)], this.Const.Sound.Volume.RacialEffect * 1.2, this.getContainer().getActor().getPos());
 		}
 	}
 
