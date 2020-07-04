@@ -116,11 +116,11 @@ this.fireball_skill <- this.inherit("scripts/skills/skill", {
 
 		if (burn == null)
 		{
-		//	targetEntity.getSkills().add(this.new("scripts/skills/effects/burn_effect"));
+			targetEntity.getSkills().add(this.new("scripts/skills/effects/burn_effect"));
 		}
 		else
 		{
-		//	burn.resetTime();
+			burn.resetTime();
 		}
 		
 		this.spawnIcon("effect_mage_burn", _data.TargetTile);
