@@ -19,7 +19,7 @@ this.burn_effect <- this.inherit("scripts/skills/skill", {
 		this.m.Name = "Burned";
 		this.m.KilledString = "Fired!";
 		this.m.Icon = "skills/status_effect_54.png";
-		this.m.IconMini = "status_effect_54_mini";
+		this.m.IconMini = "effect_mini_burn_damage";
 		this.m.SoundOnUse = [
 			//"sounds/enemies/dlc2/giant_spider_poison_01.wav",
 			//"sounds/enemies/dlc2/giant_spider_poison_02.wav"
