@@ -116,11 +116,11 @@ this.frostbolt_skill <- this.inherit("scripts/skills/skill", {
 
 		if (freeze == null)
 		{
-			//targetEntity.getSkills().add(this.new("scripts/skills/effects/burn_effect"));
+			targetEntity.getSkills().add(this.new("scripts/skills/effects/freeze_effect"));
 		}
 		else
 		{
-			//freeze.resetTime();
+			freeze.resetTime();
 		}
 		
 		this.spawnIcon("effect_mage_freeze_apply", _data.TargetTile);
