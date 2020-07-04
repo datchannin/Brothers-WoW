@@ -37,7 +37,7 @@ this.frostbolt_skill <- this.inherit("scripts/skills/skill", {
 		this.m.MinRange = 1;
 		this.m.MaxRange = 7;
 		this.m.MaxLevelDifference = 4;
-		this.m.ProjectileType = this.Const.ProjectileType.Fireball;
+		this.m.ProjectileType = this.Const.ProjectileType.Frostbolt;
 		this.m.ProjectileTimeScale = 1.5;
 	}
 

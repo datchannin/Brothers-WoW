@@ -573,7 +573,8 @@ gt.Const.ProjectileType <- {
 	Flask2 = 6,
 	Stone = 7,
 	Fireball = 8,
-	COUNT = 9
+	Frostbolt = 9,
+	COUNT = 10
 };
 gt.Const.ProjectileDecals <- [
 	[],
@@ -610,6 +611,7 @@ gt.Const.ProjectileDecals <- [
 		"detail_stone_03",
 		"detail_stone_04"
 	],
+	[],
 	[]
 ];
 gt.Const.ProjectileSprite <- [
@@ -621,7 +623,8 @@ gt.Const.ProjectileSprite <- [
 	"projectile_05",
 	"projectile_06",
 	"projectile_07",
-	"projectile_fireball2"
+	"projectile_fireball2",
+	"projectile_frostbolt"
 ];
 gt.Const.FliesDecals <- [
 	"detail_flies_01",
