@@ -121,17 +121,7 @@ this.raider_mage_background <- this.inherit("scripts/skills/backgrounds/characte
 		{
 			items.equip(this.new("scripts/items/armor/leather_tunic"));
 		}
-
-		r = this.Math.rand(0, 1);
-
-		if (r == 0)
-		{
-			items.equip(this.new("scripts/items/helmets/hood"));
-		}
-		else
-		{
-			items.equip(this.new("scripts/items/helmets/hunters_hat"));
-		}
+		items.equip(this.new("scripts/items/helmets/hunters_hat"));
 	}
 
 });
