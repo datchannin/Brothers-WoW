@@ -229,4 +229,17 @@ gt.Const.Wow_strings.PerkDescription <- {
 	MasterCrossbow = "Crossbow Adept. Сrossbow can pierce target that is inaccessible to anyone else! Damage done by Crossbow is increased by [color=" + this.Const.UI.Color.PositiveValue + "]20%[/color].",
 	MendPet = "Unlocks the \'Mend Pet\' skill which allows you to heal your pet.",
 	LethalShots = "Gives you \'Lethal Shots\' possibility. Learn to take advantage of your high Initiative and stun the enemy with your attacks.\n\nWith every attack, hit or miss, against an opponent that acts after you in the current round, you can stun him for one turn with [color=" + this.Const.UI.Color.PositiveValue + "]33%[/color] probability."
+	Fireball = "This is main spell for mages who wants to be '\Fire Mage'\. Unlocks the \'Fireball\' skill. Use this to burn an enemy.",
+	Frostbolt = "This is main spell for mages who wants to be '\Frost Mage'\. Unlocks the \'Frostbolt\' skill. Use this to freeze an enemy.",
+	ArcaneIntellect = "You know how to cast spells more effectively. Fatigue value is increased by [color=" + this.Const.UI.Color.PositiveValue + "]20[/color] points.",
+	PresenceofMind = "Your knowledge is beyond limits. Learning is your credo! Get additional [color=" + this.Const.UI.Color.PositiveValue + "]40%[/color] experience from battle.",
+	Evocation = "Unlocks the \'Evocation\' skill. This skill can restore your Fatigue pull. But once per combat. Use it wisely.",
+	ManaShield = "Use your mana as a shield. Decreases damage taken by [color=" + this.Const.UI.Color.PositiveValue + "]10%[/color]",
+	BlastWave = "You understood how to use \'Fireball\' more destructive. Increase range of '\Fireball'\ by [color=" + this.Const.UI.Color.PositiveValue + "]2[/color] and damage done by [color=" + this.Const.UI.Color.PositiveValue + "]5[/color] points.",
+	FireWard = "Unlocks the \'Fire Ward\' skill which can be used to buff the user. Increase your Range and Melee Defense by [color=" + this.Const.UI.Color.PositiveValue + "]20[/color] points for one turn.",
+	ArcticReach = You understood how to use \'Frostbolt\' more destructive. Increase range of '\Frostbolt'\ by [color=" + this.Const.UI.Color.PositiveValue + "]2[/color] and damage done by [color=" + this.Const.UI.Color.PositiveValue + "]5[/color] points.",
+	FrostArmor = "Unlocks the \'Frost Armor\' skill which can be used to buff the user. Allows you to ignore hostile zone of control for one turn.",
+	MasterPolearm = "Polearm Adept. Hit enemies from behind allies with great power. Damage done by polearms is increased by [color=" + this.Const.UI.Color.PositiveValue + "]20%[/color].",
+	Ignite = "Now your \'Fireball\' is able to ignite target. Target gets damage for every turn under this effect.",
+	WintersChill = "Now your \'Frostbolt\' is able to freeze target. Target will be chained by this effect."
 };
