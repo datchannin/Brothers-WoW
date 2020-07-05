@@ -152,7 +152,21 @@ gt.Const.Wow_strings.PerkName <- {
 	MasterBow = "Master Bow",
 	MasterCrossbow = "Master Crossbow",
 	MendPet = "Mend Pet",
-	LethalShots = "Lethal Shots"
+	LethalShots = "Lethal Shots",
+	Fireball = "Fireball",
+	Frostbolt = "Frostbolt",
+	ArcaneIntellect = "Arcane Intellect",
+	PresenceofMind = "Presence of Mind",
+	Evocation = "Evocation",
+	ManaShield = "Mana Shield",
+	BlastWave = "Blast Wave",
+	FireWard = "Fire Ward",
+	ArcticReach = "Arctic Reach",
+	FrostArmor = "Frost Armor",
+	MasterPolearm = "Polearm Specialization",
+	Ignite = "Ignite",
+	WintersChill = "Winter\'s Chill"
+	
 };
 
 gt.Const.Wow_strings.PerkDescription <- {
