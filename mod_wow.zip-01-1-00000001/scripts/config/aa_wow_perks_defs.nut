@@ -1144,3 +1144,137 @@ gt.Const.Perks.PerkDefObjects.LethalShots <- {
 	IconDisabled = "ui/perks/perk_hunter_lethalshots_sw.png",
 	Const = "LethalShots"
 }
+
+// ---------------------------------------------|
+// ----------------  WOW MAGE ------------------|
+// ---------------------------------------------|
+
+gt.Const.Perks.PerkDefObjects.Fireball <- {
+	ID = "perk.wow.mage.fireball",
+	Script = "scripts/skills/perks/perk_wow_fireball",
+	Name = this.Const.Wow_strings.PerkName.Fireball,
+	Tooltip = this.Const.Wow_strings.PerkDescription.Fireball,
+	Icon = "ui/perks/perk_mage_fireball.png",
+	IconDisabled = "ui/perks/perk_mage_fireball_sw.png",
+	Const = "Fireball"
+}
+
+gt.Const.Perks.PerkDefObjects.Frostbolt <- {
+	ID = "perk.wow.mage.frostbolt",
+	Script = "scripts/skills/perks/perk_wow_frostbolt",
+	Name = this.Const.Wow_strings.PerkName.Frostbolt,
+	Tooltip = this.Const.Wow_strings.PerkDescription.Frostbolt,
+	Icon = "ui/perks/perk_mage_frostbolt.png",
+	IconDisabled = "ui/perks/perk_mage_frostbolt_sw.png",
+	Const = "Frostbolt"
+}
+
+gt.Const.Perks.PerkDefObjects.ArcaneIntellect <- {
+	ID = "perk.wow.mage.arcaneintellect",
+	Script = "scripts/skills/perks/perk_wow_arcaneintellect",
+	Name = this.Const.Wow_strings.PerkName.ArcaneIntellect,
+	Tooltip = this.Const.Wow_strings.PerkDescription.ArcaneIntellect,
+	Icon = "ui/perks/perk_mage_arcaneintellect.png",
+	IconDisabled = "ui/perks/perk_mage_arcaneintellect_sw.png",
+	Const = "ArcaneIntellect"
+}
+
+gt.Const.Perks.PerkDefObjects.PresenceofMind <- {
+	ID = "perk.wow.mage.presenceofmind",
+	Script = "scripts/skills/perks/perk_wow_presenceofmind",
+	Name = this.Const.Wow_strings.PerkName.PresenceofMind,
+	Tooltip = this.Const.Wow_strings.PerkDescription.PresenceofMind,
+	Icon = "ui/perks/perk_mage_presenceofmind.png",
+	IconDisabled = "ui/perks/perk_mage_presenceofmind_sw.png",
+	Const = "PresenceofMind"
+}
+
+gt.Const.Perks.PerkDefObjects.Evocation <- {
+	ID = "perk.wow.mage.evocation",
+	Script = "scripts/skills/perks/perk_wow_evocation",
+	Name = this.Const.Wow_strings.PerkName.Evocation,
+	Tooltip = this.Const.Wow_strings.PerkDescription.Evocation,
+	Icon = "ui/perks/perk_mage_evocation.png",
+	IconDisabled = "ui/perks/perk_mage_evocation_sw.png",
+	Const = "Evocation"
+}
+
+gt.Const.Perks.PerkDefObjects.ManaShield <- {
+	ID = "perk.wow.mage.manashield",
+	Script = "scripts/skills/perks/perk_wow_manashield",
+	Name = this.Const.Wow_strings.PerkName.ManaShield,
+	Tooltip = this.Const.Wow_strings.PerkDescription.ManaShield,
+	Icon = "ui/perks/perk_mage_manashield.png",
+	IconDisabled = "ui/perks/perk_mage_manashield_sw.png",
+	Const = "ManaShield"
+}
+
+gt.Const.Perks.PerkDefObjects.BlastWave <- {
+	ID = "perk.wow.mage.blastwave",
+	Script = "scripts/skills/perks/perk_wow_blastwave",
+	Name = this.Const.Wow_strings.PerkName.BlastWave,
+	Tooltip = this.Const.Wow_strings.PerkDescription.BlastWave,
+	Icon = "ui/perks/perk_mage_blastwave.png",
+	IconDisabled = "ui/perks/perk_mage_blastwave_sw.png",
+	Const = "BlastWave"
+}
+
+gt.Const.Perks.PerkDefObjects.FireWard <- {
+	ID = "perk.wow.mage.fireward",
+	Script = "scripts/skills/perks/perk_wow_fireward",
+	Name = this.Const.Wow_strings.PerkName.FireWard,
+	Tooltip = this.Const.Wow_strings.PerkDescription.FireWard,
+	Icon = "ui/perks/perk_mage_fireward.png",
+	IconDisabled = "ui/perks/perk_mage_fireward_sw.png",
+	Const = "FireWard"
+}
+
+gt.Const.Perks.PerkDefObjects.ArcticReach <- {
+	ID = "perk.wow.mage.arcticreach",
+	Script = "scripts/skills/perks/perk_wow_arcticreach",
+	Name = this.Const.Wow_strings.PerkName.ArcticReach,
+	Tooltip = this.Const.Wow_strings.PerkDescription.ArcticReach,
+	Icon = "ui/perks/perk_mage_arcticreach.png",
+	IconDisabled = "ui/perks/perk_mage_arcticreach_sw.png",
+	Const = "ArcticReach"
+}
+
+gt.Const.Perks.PerkDefObjects.FrostArmor <- {
+	ID = "perk.wow.mage.frostarmor",
+	Script = "scripts/skills/perks/perk_wow_frostarmor",
+	Name = this.Const.Wow_strings.PerkName.FrostArmor,
+	Tooltip = this.Const.Wow_strings.PerkDescription.FrostArmor,
+	Icon = "ui/perks/perk_mage_frostarmor.png",
+	IconDisabled = "ui/perks/perk_mage_frostarmor_sw.png",
+	Const = "FrostArmor"
+}
+
+gt.Const.Perks.PerkDefObjects.MasterPolearm <- {
+	ID = "perk.wow.mage.masterpolearm",
+	Script = "scripts/skills/perks/perk_wow_masterpolearm",
+	Name = this.Const.Wow_strings.PerkName.MasterPolearm,
+	Tooltip = this.Const.Wow_strings.PerkDescription.MasterPolearm,
+	Icon = "ui/perks/perk_mage_masterpolearm.png",
+	IconDisabled = "ui/perks/perk_mage_masterpolearm_sw.png",
+	Const = "MasterPolearm"
+}
+
+gt.Const.Perks.PerkDefObjects.Ignite <- {
+	ID = "perk.wow.mage.ignite",
+	Script = "scripts/skills/perks/perk_wow_ignite",
+	Name = this.Const.Wow_strings.PerkName.Ignite,
+	Tooltip = this.Const.Wow_strings.PerkDescription.Ignite,
+	Icon = "ui/perks/perk_mage_ignite.png",
+	IconDisabled = "ui/perks/perk_mage_ignite_sw.png",
+	Const = "Ignite"
+}
+
+gt.Const.Perks.PerkDefObjects.WintersChill <- {
+	ID = "perk.wow.mage.winterschill",
+	Script = "scripts/skills/perks/perk_wow_winterschill",
+	Name = this.Const.Wow_strings.PerkName.WintersChill,
+	Tooltip = this.Const.Wow_strings.PerkDescription.WintersChill,
+	Icon = "ui/perks/perk_mage_winterschill.png",
+	IconDisabled = "ui/perks/perk_mage_winterschill_sw.png",
+	Const = "WintersChill"
+}
