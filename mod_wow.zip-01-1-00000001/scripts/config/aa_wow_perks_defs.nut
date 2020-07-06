@@ -654,8 +654,8 @@ gt.Const.Perks.PerkDefObjects.Charge <- {
 }
 
 gt.Const.Perks.PerkDefObjects.MasterSpear <- {
-	ID = "perk.wow.warrior.master_spear",
-	Script = "scripts/skills/perks/perk_wow_master_spear",
+	ID = "perk.wow.warrior.masterspear",
+	Script = "scripts/skills/perks/perk_wow_masterspear",
 	Name = this.Const.Wow_strings.PerkName.MasterSpear,
 	Tooltip = this.Const.Wow_strings.PerkDescription.MasterSpear,
 	Icon = "ui/perks/perk_warrior_masterspear.png",
@@ -664,8 +664,8 @@ gt.Const.Perks.PerkDefObjects.MasterSpear <- {
 }
 
 gt.Const.Perks.PerkDefObjects.MasterSword <- {
-	ID = "perk.wow.warrior.master_sword",
-	Script = "scripts/skills/perks/perk_wow_master_sword",
+	ID = "perk.wow.warrior.mastersword",
+	Script = "scripts/skills/perks/perk_wow_mastersword",
 	Name = this.Const.Wow_strings.PerkName.MasterSword,
 	Tooltip = this.Const.Wow_strings.PerkDescription.MasterSword,
 	Icon = "ui/perks/perk_warrior_mastersword.png",
@@ -674,8 +674,8 @@ gt.Const.Perks.PerkDefObjects.MasterSword <- {
 }
 
 gt.Const.Perks.PerkDefObjects.MasterAxe <- {
-	ID = "perk.wow.warrior.master_axe",
-	Script = "scripts/skills/perks/perk_wow_master_axe",
+	ID = "perk.wow.warrior.masteraxe",
+	Script = "scripts/skills/perks/perk_wow_masteraxe",
 	Name = this.Const.Wow_strings.PerkName.MasterAxe,
 	Tooltip = this.Const.Wow_strings.PerkDescription.MasterAxe,
 	Icon = "ui/perks/perk_warrior_masteraxe.png",
@@ -684,8 +684,8 @@ gt.Const.Perks.PerkDefObjects.MasterAxe <- {
 }
 
 gt.Const.Perks.PerkDefObjects.MasterHammer <- {
-	ID = "perk.wow.warrior.master_hammer",
-	Script = "scripts/skills/perks/perk_wow_master_hammer",
+	ID = "perk.wow.warrior.masterhammer",
+	Script = "scripts/skills/perks/perk_wow_masterhammer",
 	Name = this.Const.Wow_strings.PerkName.MasterHammer,
 	Tooltip = this.Const.Wow_strings.PerkDescription.MasterHammer,
 	Icon = "ui/perks/perk_warrior_masterhammer.png",
@@ -694,8 +694,8 @@ gt.Const.Perks.PerkDefObjects.MasterHammer <- {
 }
 
 gt.Const.Perks.PerkDefObjects.MasterShield <- {
-	ID = "perk.wow.warrior.master_shield",
-	Script = "scripts/skills/perks/perk_wow_master_shield",
+	ID = "perk.wow.warrior.mastershield",
+	Script = "scripts/skills/perks/perk_wow_mastershield",
 	Name = this.Const.Wow_strings.PerkName.MasterShield,
 	Tooltip = this.Const.Wow_strings.PerkDescription.MasterShield,
 	Icon = "ui/perks/perk_warrior_mastershield.png",

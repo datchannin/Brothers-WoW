@@ -1,8 +1,8 @@
-this.perk_wow_master_sword <- this.inherit("scripts/skills/skill", {
+this.perk_wow_mastersword <- this.inherit("scripts/skills/skill", {
 	m = {},
 	function create()
 	{
-		this.m.ID = "perk.wow.warrior.master_sword";
+		this.m.ID = "perk.wow.warrior.mastersword";
 		this.m.Name = this.Const.Wow_strings.PerkName.MasterSword;
 		this.m.Description = this.Const.Wow_strings.PerkDescription.MasterSword;
 		this.m.Icon = "ui/perks/perk_warrior_mastersword.png";
