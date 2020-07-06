@@ -311,6 +311,69 @@ gt.Const.Perks.PerkTreeHunter <- [
 		gt.Const.Perks.PerkDefObjects.SpecThrowing
 	],
 	[
+		gt.Const.Perks.PerkDefObjects.LoneWolf
+		gt.Const.Perks.PerkDefObjects.Underdog
+		gt.Const.Perks.PerkDefObjects.Footwork
+	],
+	[
+		gt.Const.Perks.PerkDefObjects.Berserk
+		gt.Const.Perks.PerkDefObjects.Nimble
+		gt.Const.Perks.PerkDefObjects.BattleForged
+	],
+	[
+		gt.Const.Perks.PerkDefObjects.MendPet
+		gt.Const.Perks.PerkDefObjects.LethalShots
+		gt.Const.Perks.PerkDefObjects.KillingFrenzy
+		gt.Const.Perks.PerkDefObjects.Indomitable
+	],
+	[],
+	[],
+	[],
+	[]
+];
+
+gt.Const.Perks.PerkTreeMage <- [
+	[
+		gt.Const.Perks.PerkDefObjects.Fireball
+		gt.Const.Perks.PerkDefObjects.Frostbolt
+		gt.Const.Perks.PerkDefObjects.Colossus
+		gt.Const.Perks.PerkDefObjects.NineLives
+		gt.Const.Perks.PerkDefObjects.Pathfinder
+		gt.Const.Perks.PerkDefObjects.Adrenaline
+		gt.Const.Perks.PerkDefObjects.Recover
+		gt.Const.Perks.PerkDefObjects.Student
+	],
+	[
+		gt.Const.Perks.PerkDefObjects.ArcaneIntellect
+		gt.Const.Perks.PerkDefObjects.PresenceofMind
+		gt.Const.Perks.PerkDefObjects.Evocation
+		gt.Const.Perks.PerkDefObjects.ManaShield
+		gt.Const.Perks.PerkDefObjects.Dodge
+		gt.Const.Perks.PerkDefObjects.FortifiedMind
+		gt.Const.Perks.PerkDefObjects.HoldOut
+		gt.Const.Perks.PerkDefObjects.SteelBrow
+	],
+	[
+		gt.Const.Perks.PerkDefObjects.BlastWave
+		gt.Const.Perks.PerkDefObjects.FireWard
+		gt.Const.Perks.PerkDefObjects.ArcticReach
+		gt.Const.Perks.PerkDefObjects.FrostArmor
+		gt.Const.Perks.PerkDefObjects.ShieldExpert
+		gt.Const.Perks.PerkDefObjects.Brawny
+		gt.Const.Perks.PerkDefObjects.Rotation
+		gt.Const.Perks.PerkDefObjects.RallyTheTroops
+	],
+	[
+		gt.Const.Perks.PerkDefObjects.MasterThrowing
+		gt.Const.Perks.PerkDefObjects.MasterPolearm
+		gt.Const.Perks.PerkDefObjects.MasterMace
+		gt.Const.Perks.PerkDefObjects.MasterDagger
+		gt.Const.Perks.PerkDefObjects.SpecDagger
+		gt.Const.Perks.PerkDefObjects.SpecMace
+		gt.Const.Perks.PerkDefObjects.SpecPolearm
+		gt.Const.Perks.PerkDefObjects.SpecThrowing
+	],
+	[
 		gt.Const.Perks.PerkDefObjects.Overwhelm
 		gt.Const.Perks.PerkDefObjects.LoneWolf
 		gt.Const.Perks.PerkDefObjects.Underdog
@@ -322,8 +385,8 @@ gt.Const.Perks.PerkTreeHunter <- [
 		gt.Const.Perks.PerkDefObjects.Nimble
 	],
 	[
-		gt.Const.Perks.PerkDefObjects.MendPet
-		gt.Const.Perks.PerkDefObjects.LethalShots
+		gt.Const.Perks.PerkDefObjects.Ignite
+		gt.Const.Perks.PerkDefObjects.WintersChill
 		gt.Const.Perks.PerkDefObjects.KillingFrenzy
 		gt.Const.Perks.PerkDefObjects.Indomitable
 	],
@@ -338,6 +401,7 @@ gt.Const.Perks.TreesArray.push(gt.Const.Perks.PerkTreeWarrior);
 gt.Const.Perks.TreesArray.push(gt.Const.Perks.PerkTreeRogue);
 gt.Const.Perks.TreesArray.push(gt.Const.Perks.PerkTreePaladin);
 gt.Const.Perks.TreesArray.push(gt.Const.Perks.PerkTreeHunter);
+gt.Const.Perks.TreesArray.push(gt.Const.Perks.PerkTreeMage);
 
 gt.Const.Perks.LookupMap <- {};
 for (local tree_number = 0; tree_number < this.Const.Perks.TreesArray.len(); tree_number = ++tree_number)
@@ -400,6 +464,10 @@ gt.Const.Perks.getPerksTree <- function ( _background )
 
 	case "background.raider_hunter":
 		return gt.Const.Perks.PerkTreeHunter;
+		break;
+
+	case "background.raider_mage":
+		return gt.Const.Perks.PerkTreeMage;
 		break;
 
 	default:
