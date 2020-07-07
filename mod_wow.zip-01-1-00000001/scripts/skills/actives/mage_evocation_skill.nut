@@ -10,7 +10,7 @@ this.mage_evocation_skill <- this.inherit("scripts/skills/skill", {
 		this.m.Description = "Allows the mage to recover fatigue very quickly, even in battle. You can use this only once per combat.";
 		this.m.Icon = "ui/perks/skill_mage_evocation.png";
 		this.m.IconDisabled = "ui/perks/skill_mage_evocation_sw.png";
-		this.m.Overlay = "skill_paladin_blessingofmight";
+		this.m.Overlay = "skill_mage_evocation";
 		this.m.SoundOnUse = [
 			"sounds/combat/mage_fireball_precast1.wav"
 		];
