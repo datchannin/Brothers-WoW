@@ -6,7 +6,7 @@ this.manashield_effect <- this.inherit("scripts/skills/skill", {
 		this.m.Name = "Mana Shield";
 		this.m.Description = "Mage can use his mana to decrease damage taken.";
 		this.m.Icon = "ui/perks/perk_mage_manashield.png";
-		this.m.IconMini = "effect_mini_defensivestance";
+		this.m.IconMini = "effect_mini_manashield";
 		this.m.Type = this.Const.SkillType.StatusEffect;
 		this.m.IsActive = false;
 		this.m.IsRemovedAfterBattle = true;
