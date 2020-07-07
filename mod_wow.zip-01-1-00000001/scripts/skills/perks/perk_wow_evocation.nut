@@ -12,4 +12,17 @@ this.perk_wow_evocation <- this.inherit("scripts/skills/skill", {
 		this.m.IsStacking = false;
 		this.m.IsHidden = false;
 	}
+	
+	function onAdded()
+	{
+		if (!this.m.Container.hasSkill("actives.evocation_skill"))
+		{
+			this.m.Container.add(this.new("scripts/skills/actives/mage_evocation_skill"));
+		}
+	}
+
+	function onRemoved()
+	{
+		this.m.Container.removeByID("actives.evocation_skill");
+	}
 });
