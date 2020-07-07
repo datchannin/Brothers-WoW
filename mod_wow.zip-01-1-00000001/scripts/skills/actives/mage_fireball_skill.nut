@@ -2,6 +2,8 @@ this.mage_fireball_skill <- this.inherit("scripts/skills/skill", {
 	m = {
 		damage_min = 15,
 		damage_max = 25,
+		blastwave = false,
+		ignite = false,
 	},
 	function create()
 	{
@@ -32,10 +34,10 @@ this.mage_fireball_skill <- this.inherit("scripts/skills/skill", {
 		this.m.IsShowingProjectile = true;
 		this.m.IsUsingHitchance = false;
 		this.m.IsDoingForwardMove = true;
-		this.m.ActionPointCost = 1;
-		this.m.FatigueCost = 5;
+		this.m.ActionPointCost = 3;
+		this.m.FatigueCost = 20;
 		this.m.MinRange = 1;
-		this.m.MaxRange = 7;
+		this.m.MaxRange = 5;
 		this.m.MaxLevelDifference = 4;
 		this.m.ProjectileType = this.Const.ProjectileType.Fireball;
 		this.m.ProjectileTimeScale = 1.5;
@@ -44,18 +46,72 @@ this.mage_fireball_skill <- this.inherit("scripts/skills/skill", {
 	function getTooltip()
 	{
 		local ret = this.getDefaultUtilityTooltip();
-		ret.push({
-			id = 6,
-			type = "text",
-			icon = "ui/icons/special.png",
-			text = "Damage target for [color=" + this.Const.UI.Color.DamageValue + "]15-25[/color] points."
-		});
-		ret.push({
-			id = 6,
-			type = "text",
-			icon = "ui/icons/special.png",
-			text = "Has a chance to apply \'Burn\' effect on the target."
-		});
+		
+		if (this.m.blastwave)
+		{		
+			ret.push({
+				id = 6,
+				type = "text",
+				icon = "ui/icons/regular_damage.png",
+				text = "Inflicts [color=" + this.Const.UI.Color.DamageValue + "] 20 [/color]-[color=" + this.Const.UI.Color.DamageValue + "] 30 [/color] damage to hitpoints."
+			});
+			ret.push({
+				id = 6,
+				type = "text",
+				icon = "ui/icons/armor_damage.png",
+				text = "Inflicts [color=" + this.Const.UI.Color.DamageValue + "] 20 [/color]-[color=" + this.Const.UI.Color.DamageValue + "] 30 [/color] damage to armor."
+			});
+			ret.push({
+				id = 6,
+				type = "text",
+				icon = "ui/icons/hitchance.png",
+				text = "Has [color=" + this.Const.UI.Color.DamageValue + "] 100% [/color] chance to hit."
+			});
+			ret.push({
+				id = 6,
+				type = "text",
+				icon = "ui/icons/special.png",
+				text = "Maximum range is 7 tiles."
+			});
+		}
+		else
+		{
+			ret.push({
+				id = 6,
+				type = "text",
+				icon = "ui/icons/regular_damage.png",
+				text = "Inflicts [color=" + this.Const.UI.Color.DamageValue + "] 15 [/color]-[color=" + this.Const.UI.Color.DamageValue + "] 25 [/color] damage to hitpoints."
+			});
+			ret.push({
+				id = 6,
+				type = "text",
+				icon = "ui/icons/armor_damage.png",
+				text = "Inflicts [color=" + this.Const.UI.Color.DamageValue + "] 15 [/color]-[color=" + this.Const.UI.Color.DamageValue + "] 25 [/color] damage to armor."
+			});
+			ret.push({
+				id = 6,
+				type = "text",
+				icon = "ui/icons/hitchance.png",
+				text = "Has [color=" + this.Const.UI.Color.DamageValue + "] 100% [/color] chance to hit."
+			});
+			ret.push({
+				id = 6,
+				type = "text",
+				icon = "ui/icons/special.png",
+				text = "Maximum range is 5 tiles."
+			});
+		}
+
+		if (this.m.ignite)
+		{
+			ret.push({
+				id = 6,
+				type = "text",
+				icon = "ui/icons/special.png",
+				text = "Has a chance to apply \'Burn\' effect on the target."
+			});
+		}
+
 		return ret;
 	}
 
@@ -71,6 +127,17 @@ this.mage_fireball_skill <- this.inherit("scripts/skills/skill", {
 
 	function onUpdate( _properties )
 	{
+		local user = this.getContainer().getActor();
+		this.m.blastwave = user.getSkills().hasSkill("perk.wow.mage.blastwave");
+		this.m.ignite = user.getSkills().hasSkill("perk.wow.mage.ignite");
+
+		if (this.m.blastwave)
+		{
+			this.m.MaxRange += 2;
+			this.m.damage_min += 5;
+			this.m.damage_max +=5;
+		}
+
 		_properties.DamageRegularMin = this.m.damage_min;
 		_properties.DamageRegularMax = this.m.damage_max;
 		_properties.DamageRegularMult = 1;
@@ -127,4 +194,3 @@ this.mage_fireball_skill <- this.inherit("scripts/skills/skill", {
 		return true;
 	}
 });
-
