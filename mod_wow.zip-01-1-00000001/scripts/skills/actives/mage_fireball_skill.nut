@@ -70,8 +70,8 @@ this.mage_fireball_skill <- this.inherit("scripts/skills/skill", {
 			ret.push({
 				id = 6,
 				type = "text",
-				icon = "ui/icons/special.png",
-				text = "Maximum range is 7 tiles."
+				icon = "ui/icons/vision.png",
+				text = "Has a range of [color=" + this.Const.UI.Color.PositiveValue + "] 7 [/color] tiles."
 			});
 		}
 		else
@@ -97,8 +97,8 @@ this.mage_fireball_skill <- this.inherit("scripts/skills/skill", {
 			ret.push({
 				id = 6,
 				type = "text",
-				icon = "ui/icons/special.png",
-				text = "Maximum range is 5 tiles."
+				icon = "ui/icons/vision.png",
+				text = "Has a range of [color=" + this.Const.UI.Color.PositiveValue + "] 5 [/color] tiles."
 			});
 		}
 
@@ -108,7 +108,7 @@ this.mage_fireball_skill <- this.inherit("scripts/skills/skill", {
 				id = 6,
 				type = "text",
 				icon = "ui/icons/special.png",
-				text = "Has a chance to apply \'Burn\' effect on the target."
+				text = "Has a chance to apply [color=" + this.Const.UI.Color.PositiveValue + "] \'Burn\' [/color] effect on the target."
 			});
 		}
 
@@ -130,18 +130,31 @@ this.mage_fireball_skill <- this.inherit("scripts/skills/skill", {
 		local user = this.getContainer().getActor();
 		this.m.blastwave = user.getSkills().hasSkill("perk.wow.mage.blastwave");
 		this.m.ignite = user.getSkills().hasSkill("perk.wow.mage.ignite");
+	}
 
+	function onAfterUpdate( _properties )
+	{
 		if (this.m.blastwave)
 		{
-			this.m.MaxRange += 2;
-			this.m.damage_min += 5;
-			this.m.damage_max +=5;
+			this.m.MaxRange = 7;
 		}
+	}
 
-		_properties.DamageRegularMin = this.m.damage_min;
-		_properties.DamageRegularMax = this.m.damage_max;
-		_properties.DamageRegularMult = 1;
-		_properties.DamageArmorMult = 1;
+	function onAnySkillUsed( _skill, _targetEntity, _properties )
+	{
+		if (_skill == this)
+		{
+			if (this.m.blastwave)
+			{
+				this.m.damage_min = 20;
+				this.m.damage_max = 30;
+			}
+
+			_properties.DamageRegularMin = this.m.damage_min;
+			_properties.DamageRegularMax = this.m.damage_max;
+			_properties.DamageRegularMult = 1;
+			_properties.DamageArmorMult = 1;
+		}
 	}
 
 	function onUse( _user, _targetTile )

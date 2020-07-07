@@ -70,8 +70,8 @@ this.mage_frostbolt_skill <- this.inherit("scripts/skills/skill", {
 			ret.push({
 				id = 6,
 				type = "text",
-				icon = "ui/icons/special.png",
-				text = "Maximum range is 6 tiles."
+				icon = "ui/icons/vision.png",
+				text = "Has a range of [color=" + this.Const.UI.Color.PositiveValue + "] 6 [/color] tiles."
 			});
 		}
 		else
@@ -97,8 +97,8 @@ this.mage_frostbolt_skill <- this.inherit("scripts/skills/skill", {
 			ret.push({
 				id = 6,
 				type = "text",
-				icon = "ui/icons/special.png",
-				text = "Maximum range is 4 tiles."
+				icon = "ui/icons/vision.png",
+				text = "Has a range of [color=" + this.Const.UI.Color.PositiveValue + "] 4 [/color] tiles."
 			});
 		}
 
@@ -108,7 +108,7 @@ this.mage_frostbolt_skill <- this.inherit("scripts/skills/skill", {
 				id = 6,
 				type = "text",
 				icon = "ui/icons/special.png",
-				text = "Has a chance to apply \'Freeze\' effect on the target."
+				text = "Has a chance to apply [color=" + this.Const.UI.Color.PositiveValue + "] \'Freeze\' [/color] effect on the target."
 			});
 		}
 
@@ -130,18 +130,31 @@ this.mage_frostbolt_skill <- this.inherit("scripts/skills/skill", {
 		local user = this.getContainer().getActor();
 		this.m.arcticreach = user.getSkills().hasSkill("perk.wow.mage.arcticreach");
 		this.m.winterschill = user.getSkills().hasSkill("perk.wow.mage.winterschill");
+	}
 
+	function onAfterUpdate( _properties )
+	{
 		if (this.m.arcticreach)
 		{
-			this.m.MaxRange += 2;
-			this.m.damage_min += 5;
-			this.m.damage_max +=5;
+			this.m.MaxRange = 6;
 		}
-	
-		_properties.DamageRegularMin = this.m.damage_min;
-		_properties.DamageRegularMax = this.m.damage_max;
-		_properties.DamageRegularMult = 1;
-		_properties.DamageArmorMult = 1;
+	}
+
+	function onAnySkillUsed( _skill, _targetEntity, _properties )
+	{
+		if (_skill == this)
+		{
+			if (this.m.arcticreach)
+			{
+				this.m.damage_min = 23;
+				this.m.damage_max = 28;
+			}
+		
+			_properties.DamageRegularMin = this.m.damage_min;
+			_properties.DamageRegularMax = this.m.damage_max;
+			_properties.DamageRegularMult = 1;
+			_properties.DamageArmorMult = 1;
+		}
 	}
 
 	function onUse( _user, _targetTile )
