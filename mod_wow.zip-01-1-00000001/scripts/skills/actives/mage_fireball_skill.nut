@@ -20,7 +20,7 @@ this.mage_fireball_skill <- this.inherit("scripts/skills/skill", {
 		];
 		this.m.SoundOnHitDelay = 0;
 		this.m.Type = this.Const.SkillType.Active;
-		this.m.Order = this.Const.SkillOrder.OffensiveTargeted;
+		this.m.Order = this.Const.SkillOrder.UtilityTargeted;
 		this.m.Delay = 1500;
 		this.m.IsSerialized = false;
 		this.m.IsActive = true;
@@ -43,7 +43,7 @@ this.mage_fireball_skill <- this.inherit("scripts/skills/skill", {
 
 	function getTooltip()
 	{
-		local ret = this.getDefaultTooltip();
+		local ret = this.getDefaultUtilityTooltip();
 		ret.push({
 			id = 6,
 			type = "text",
