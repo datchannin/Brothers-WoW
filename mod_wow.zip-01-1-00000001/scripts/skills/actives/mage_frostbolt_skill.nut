@@ -2,6 +2,8 @@ this.mage_frostbolt_skill <- this.inherit("scripts/skills/skill", {
 	m = {
 		damage_min = 18,
 		damage_max = 22,
+		arcticreach = false,
+		winterschill = false,
 	},
 	function create()
 	{
@@ -32,10 +34,10 @@ this.mage_frostbolt_skill <- this.inherit("scripts/skills/skill", {
 		this.m.IsShowingProjectile = true;
 		this.m.IsUsingHitchance = false;
 		this.m.IsDoingForwardMove = true;
-		this.m.ActionPointCost = 1;
-		this.m.FatigueCost = 5;
+		this.m.ActionPointCost = 3;
+		this.m.FatigueCost = 15;
 		this.m.MinRange = 1;
-		this.m.MaxRange = 7;
+		this.m.MaxRange = 4;
 		this.m.MaxLevelDifference = 4;
 		this.m.ProjectileType = this.Const.ProjectileType.Frostbolt;
 		this.m.ProjectileTimeScale = 1.5;
@@ -44,18 +46,72 @@ this.mage_frostbolt_skill <- this.inherit("scripts/skills/skill", {
 	function getTooltip()
 	{
 		local ret = this.getDefaultUtilityTooltip();
-		ret.push({
-			id = 6,
-			type = "text",
-			icon = "ui/icons/special.png",
-			text = "Damage target for [color=" + this.Const.UI.Color.DamageValue + "] 18-22 [/color] points."
-		});
-		ret.push({
-			id = 6,
-			type = "text",
-			icon = "ui/icons/special.png",
-			text = "Has a chance to apply \'Freeze\' effect on the target."
-		});
+		
+		if (this.m.arcticreach)
+		{		
+			ret.push({
+				id = 6,
+				type = "text",
+				icon = "ui/icons/regular_damage.png",
+				text = "Inflicts [color=" + this.Const.UI.Color.DamageValue + "] 23 [/color]-[color=" + this.Const.UI.Color.DamageValue + "] 28 [/color] damage to hitpoints."
+			});
+			ret.push({
+				id = 6,
+				type = "text",
+				icon = "ui/icons/armor_damage.png",
+				text = "Inflicts [color=" + this.Const.UI.Color.DamageValue + "] 23 [/color]-[color=" + this.Const.UI.Color.DamageValue + "] 28 [/color] damage to armor."
+			});
+			ret.push({
+				id = 6,
+				type = "text",
+				icon = "ui/icons/hitchance.png",
+				text = "Has [color=" + this.Const.UI.Color.DamageValue + "] 100% [/color] chance to hit."
+			});
+			ret.push({
+				id = 6,
+				type = "text",
+				icon = "ui/icons/special.png",
+				text = "Maximum range is 6 tiles."
+			});
+		}
+		else
+		{
+			ret.push({
+				id = 6,
+				type = "text",
+				icon = "ui/icons/regular_damage.png",
+				text = "Inflicts [color=" + this.Const.UI.Color.DamageValue + "] 18 [/color]-[color=" + this.Const.UI.Color.DamageValue + "] 22 [/color] damage to hitpoints."
+			});
+			ret.push({
+				id = 6,
+				type = "text",
+				icon = "ui/icons/armor_damage.png",
+				text = "Inflicts [color=" + this.Const.UI.Color.DamageValue + "] 18 [/color]-[color=" + this.Const.UI.Color.DamageValue + "] 22 [/color] damage to armor."
+			});
+			ret.push({
+				id = 6,
+				type = "text",
+				icon = "ui/icons/hitchance.png",
+				text = "Has [color=" + this.Const.UI.Color.DamageValue + "] 100% [/color] chance to hit."
+			});
+			ret.push({
+				id = 6,
+				type = "text",
+				icon = "ui/icons/special.png",
+				text = "Maximum range is 4 tiles."
+			});
+		}
+
+		if (this.m.winterschill)
+		{
+			ret.push({
+				id = 6,
+				type = "text",
+				icon = "ui/icons/special.png",
+				text = "Has a chance to apply \'Freeze\' effect on the target."
+			});
+		}
+
 		return ret;
 	}
 
@@ -71,6 +127,17 @@ this.mage_frostbolt_skill <- this.inherit("scripts/skills/skill", {
 
 	function onUpdate( _properties )
 	{
+		local user = this.getContainer().getActor();
+		this.m.arcticreach = user.getSkills().hasSkill("perk.wow.mage.arcticreach");
+		this.m.winterschill = user.getSkills().hasSkill("perk.wow.mage.winterschill");
+
+		if (this.m.arcticreach)
+		{
+			this.m.MaxRange += 2;
+			this.m.damage_min += 5;
+			this.m.damage_max +=5;
+		}
+	
 		_properties.DamageRegularMin = this.m.damage_min;
 		_properties.DamageRegularMax = this.m.damage_max;
 		_properties.DamageRegularMult = 1;
