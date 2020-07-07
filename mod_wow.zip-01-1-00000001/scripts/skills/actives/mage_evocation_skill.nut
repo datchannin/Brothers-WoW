@@ -12,10 +12,10 @@ this.mage_evocation_skill <- this.inherit("scripts/skills/skill", {
 		this.m.IconDisabled = "ui/perks/skill_mage_evocation_sw.png";
 		this.m.Overlay = "skill_mage_evocation";
 		this.m.SoundOnUse = [
-			"sounds/combat/mage_fireball_precast1.wav"
+			"sounds/combat/mage_evocation_precast1.wav"
 		];
 		this.m.SoundOnHit = [
-			"sounds/combat/mage_fireball_cast1.wav",
+			"sounds/combat/mage_evocation_cast1.wav",
 		];
 		this.m.Type = this.Const.SkillType.Active;
 		this.m.Order = this.Const.SkillOrder.Any;
