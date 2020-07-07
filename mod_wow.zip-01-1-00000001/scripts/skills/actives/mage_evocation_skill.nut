@@ -33,29 +33,31 @@ this.mage_evocation_skill <- this.inherit("scripts/skills/skill", {
 
 	function getTooltip()
 	{
-		return [
-			{
-				id = 1,
-				type = "title",
-				text = this.getName()
-			},
-			{
-				id = 2,
-				type = "description",
-				text = this.getDescription()
-			},
-			{
-				id = 3,
+		local ret = this.skill.getDefaultUtilityTooltip();
+
+		ret.push({
+			id = 6,
+			type = "text",
+			icon = "ui/icons/fatigue.png",
+			text = "Restores all your Fatigue."
+		});
+		
+		if (this.m.isUsed)
+		{
+			ret.push({
+				id = 7,
 				type = "text",
-				text = this.getCostString()
-			},
-			{
-				id = 6,
-				type = "text",
-				icon = "ui/icons/fatigue.png",
-				text = "Restores all your Fatigue."
-			},
-		];
+				icon = "ui/icons/special.png",
+				text = "You can not use this spell one more time during this battle."
+			});
+		}
+		
+		return ret;
+	}
+
+	function onCombatStarted()
+	{
+		this.m.isUsed = false;
 	}
 
 	function isUsable()
