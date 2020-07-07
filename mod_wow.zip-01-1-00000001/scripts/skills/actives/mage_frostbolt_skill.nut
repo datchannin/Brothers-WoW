@@ -80,14 +80,9 @@ this.mage_frostbolt_skill <- this.inherit("scripts/skills/skill", {
 	function onUse( _user, _targetTile )
 	{
 		local targetEntity = _targetTile.getEntity();
+		this.getContainer().setBusy(true);
 
 		this.Time.scheduleEvent(this.TimeUnit.Real, this.m.Delay, this.onApplyDirect.bindenv(this), {
-			Skill = this,
-			TargetTile = _targetTile,
-			User = _user
-		});
-		
-		this.Time.scheduleEvent(this.TimeUnit.Real, (this.m.Delay*2), this.onApplyFreeze.bindenv(this), {
 			Skill = this,
 			TargetTile = _targetTile,
 			User = _user
@@ -106,26 +101,30 @@ this.mage_frostbolt_skill <- this.inherit("scripts/skills/skill", {
 			this.Sound.play(_data.Skill.m.SoundOnHit[this.Math.rand(0, _data.Skill.m.SoundOnHit.len() - 1)], this.Const.Sound.Volume.Skill, targetEntity.getPos());
 		}
 		
-		return _data.Skill.attackEntity(user, targetEntity);
-	}
-
-	function onApplyFreeze( _data )
-	{
-		local targetEntity = _data.TargetTile.getEntity();
-		local freeze = targetEntity.getSkills().getSkillByID("effects.freeze");
-
-		if (freeze == null)
+		_data.Skill.attackEntity(user, targetEntity);
+		
+		if (!targetEntity.isAlive() || targetEntity.isDying())
 		{
-			targetEntity.getSkills().add(this.new("scripts/skills/effects/freeze_effect"));
-		}
-		else
-		{
-			freeze.resetTime();
+			return;
 		}
 		
-		this.spawnIcon("effect_mage_freeze_apply", _data.TargetTile);
+		if (targetEntity)
+		{
+			local freeze = targetEntity.getSkills().getSkillByID("effects.freeze");
+
+			if (freeze == null)
+			{
+				targetEntity.getSkills().add(this.new("scripts/skills/effects/freeze_effect"));
+			}
+			else
+			{
+				freeze.resetTime();
+			}
+			
+			this.spawnIcon("effect_mage_freeze_apply", _data.TargetTile);
+		}
+		_data.Skill.getContainer().setBusy(false);
 
 		return true;
 	}
 });
-
