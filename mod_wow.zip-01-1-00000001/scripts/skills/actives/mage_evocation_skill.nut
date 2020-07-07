@@ -19,7 +19,7 @@ this.mage_evocation_skill <- this.inherit("scripts/skills/skill", {
 		];
 		this.m.Type = this.Const.SkillType.Active;
 		this.m.Order = this.Const.SkillOrder.Any;
-		this.m.Delay = 1500;
+		this.m.Delay = 2200;
 		this.m.IsSerialized = false;
 		this.m.IsActive = true;
 		this.m.IsTargeted = false;
@@ -78,7 +78,8 @@ this.mage_evocation_skill <- this.inherit("scripts/skills/skill", {
 	function onUse( _user, _targetTile )
 	{
 		this.m.isUsed = true;
-	
+		this.getContainer().setBusy(true);
+
 		this.Time.scheduleEvent(this.TimeUnit.Real, this.m.Delay, this.onRestoreMana.bindenv(this), {
 			Skill = this,
 			User = _user
@@ -99,17 +100,8 @@ this.mage_evocation_skill <- this.inherit("scripts/skills/skill", {
 				this.Sound.play(_data.Skill.m.SoundOnHit[this.Math.rand(0, _data.Skill.m.SoundOnHit.len() - 1)], this.Const.Sound.Volume.Skill, user.getPos());
 			}
 		}
+		this.getContainer().setBusy(false);
 
-		this.Time.scheduleEvent(this.TimeUnit.Real, 500, this.onEmpty.bindenv(this), {
-			Skill = _data.Skill,
-			User = _data.User
-		});
-
-		return true;
-	}
-	
-	function onEmpty( _data )
-	{
 		return true;
 	}
 });
