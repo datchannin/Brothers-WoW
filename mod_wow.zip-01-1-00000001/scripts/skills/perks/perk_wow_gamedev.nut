@@ -17,11 +17,11 @@ this.perk_wow_gamedev <- this.inherit("scripts/skills/skill", {
 	{
 		if (!this.m.Container.hasSkill("actives.fireball_skill"))
 		{
-			this.m.Container.add(this.new("scripts/skills/actives/fireball_skill"));
+			this.m.Container.add(this.new("scripts/skills/actives/mage_fireball_skill"));
 		}
 		if (!this.m.Container.hasSkill("actives.frostbolt_skill"))
 		{
-			this.m.Container.add(this.new("scripts/skills/actives/frostbolt_skill"));
+			this.m.Container.add(this.new("scripts/skills/actives/mage_frostbolt_skill"));
 		}
 	}
 

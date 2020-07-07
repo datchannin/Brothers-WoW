@@ -1,4 +1,4 @@
-this.frostbolt_skill <- this.inherit("scripts/skills/skill", {
+this.mage_frostbolt_skill <- this.inherit("scripts/skills/skill", {
 	m = {
 		damage_min = 18,
 		damage_max = 22,

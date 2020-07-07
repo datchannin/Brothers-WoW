@@ -1,4 +1,4 @@
-this.fireball_skill <- this.inherit("scripts/skills/skill", {
+this.mage_fireball_skill <- this.inherit("scripts/skills/skill", {
 	m = {
 		damage_min = 15,
 		damage_max = 25,
