@@ -80,14 +80,9 @@ this.mage_fireball_skill <- this.inherit("scripts/skills/skill", {
 	function onUse( _user, _targetTile )
 	{
 		local targetEntity = _targetTile.getEntity();
+		this.getContainer().setBusy(true);
 
 		this.Time.scheduleEvent(this.TimeUnit.Real, this.m.Delay, this.onApplyDirect.bindenv(this), {
-			Skill = this,
-			TargetTile = _targetTile,
-			User = _user
-		});
-		
-		this.Time.scheduleEvent(this.TimeUnit.Real, (this.m.Delay*2), this.onApplyBurn.bindenv(this), {
 			Skill = this,
 			TargetTile = _targetTile,
 			User = _user
@@ -105,25 +100,29 @@ this.mage_fireball_skill <- this.inherit("scripts/skills/skill", {
 		{
 			this.Sound.play(_data.Skill.m.SoundOnHit[this.Math.rand(0, _data.Skill.m.SoundOnHit.len() - 1)], this.Const.Sound.Volume.Skill, targetEntity.getPos());
 		}
-		
-		return _data.Skill.attackEntity(user, targetEntity);
-	}
+		_data.Skill.attackEntity(user, targetEntity);
 
-	function onApplyBurn( _data )
-	{
-		local targetEntity = _data.TargetTile.getEntity();
-		local burn = targetEntity.getSkills().getSkillByID("effects.burn");
+		if (!targetEntity.isAlive() || targetEntity.isDying())
+		{
+			return;
+		}
 
-		if (burn == null)
+		if (targetEntity)
 		{
-			targetEntity.getSkills().add(this.new("scripts/skills/effects/burn_effect"));
+			local burn = targetEntity.getSkills().getSkillByID("effects.burn");
+
+			if (burn == null)
+			{
+				targetEntity.getSkills().add(this.new("scripts/skills/effects/burn_effect"));
+			}
+			else
+			{
+				burn.resetTime();
+			}
+			
+			this.spawnIcon("effect_mage_burn_apply", _data.TargetTile);
 		}
-		else
-		{
-			burn.resetTime();
-		}
-		
-		this.spawnIcon("effect_mage_burn_apply", _data.TargetTile);
+		_data.Skill.getContainer().setBusy(false);
 
 		return true;
 	}
