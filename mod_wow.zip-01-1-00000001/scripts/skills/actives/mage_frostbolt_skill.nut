@@ -108,7 +108,7 @@ this.mage_frostbolt_skill <- this.inherit("scripts/skills/skill", {
 				id = 6,
 				type = "text",
 				icon = "ui/icons/special.png",
-				text = "Has a chance to apply [color=" + this.Const.UI.Color.PositiveValue + "] \'Freeze\' [/color] effect on the target."
+				text = "Has a [color=" + this.Const.UI.Color.PositiveValue + "] 100% [/color] chance to apply [color=" + this.Const.UI.Color.PositiveValue + "] \'Freeze\' [/color] effect on the target."
 			});
 		}
 
@@ -188,20 +188,23 @@ this.mage_frostbolt_skill <- this.inherit("scripts/skills/skill", {
 			return;
 		}
 		
-		if (targetEntity)
+		if (this.m.winterschill)
 		{
-			local freeze = targetEntity.getSkills().getSkillByID("effects.freeze");
+			if (targetEntity)
+			{
+				local freeze = targetEntity.getSkills().getSkillByID("effects.freeze");
 
-			if (freeze == null)
-			{
-				targetEntity.getSkills().add(this.new("scripts/skills/effects/freeze_effect"));
+				if (freeze == null)
+				{
+					targetEntity.getSkills().add(this.new("scripts/skills/effects/freeze_effect"));
+				}
+				else
+				{
+					freeze.resetTime();
+				}
+				
+				this.spawnIcon("effect_mage_freeze_apply", _data.TargetTile);
 			}
-			else
-			{
-				freeze.resetTime();
-			}
-			
-			this.spawnIcon("effect_mage_freeze_apply", _data.TargetTile);
 		}
 		_data.Skill.getContainer().setBusy(false);
 

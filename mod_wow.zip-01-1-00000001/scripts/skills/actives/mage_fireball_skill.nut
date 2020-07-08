@@ -108,7 +108,7 @@ this.mage_fireball_skill <- this.inherit("scripts/skills/skill", {
 				id = 6,
 				type = "text",
 				icon = "ui/icons/special.png",
-				text = "Has a [color=" + this.Const.UI.Color.PositiveValue + "] 70%' [/color] chance to apply [color=" + this.Const.UI.Color.PositiveValue + "] \'Burn\' [/color] effect on the target."
+				text = "Has a [color=" + this.Const.UI.Color.PositiveValue + "] 70% [/color] chance to apply [color=" + this.Const.UI.Color.PositiveValue + "] \'Burn\' [/color] effect on the target."
 			});
 		}
 
