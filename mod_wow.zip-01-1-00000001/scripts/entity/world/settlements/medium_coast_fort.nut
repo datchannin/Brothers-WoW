@@ -51,7 +51,7 @@ this.medium_coast_fort <- this.inherit("scripts/entity/world/settlement", {
 			"adventurous_noble_background",
 			"adventurous_noble_background",
 			"raider_rogue_background",
-			"raider_rogue_background",
+			"raider_mage_background",
 			"raider_hunter_background",
 			"raider_hunter_background",
 			"bastard_background",
