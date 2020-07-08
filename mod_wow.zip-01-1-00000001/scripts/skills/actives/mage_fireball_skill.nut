@@ -108,7 +108,7 @@ this.mage_fireball_skill <- this.inherit("scripts/skills/skill", {
 				id = 6,
 				type = "text",
 				icon = "ui/icons/special.png",
-				text = "Has a chance to apply [color=" + this.Const.UI.Color.PositiveValue + "] \'Burn\' [/color] effect on the target."
+				text = "Has a [color=" + this.Const.UI.Color.PositiveValue + "] 70%' [/color] chance to apply [color=" + this.Const.UI.Color.PositiveValue + "] \'Burn\' [/color] effect on the target."
 			});
 		}
 
@@ -187,20 +187,28 @@ this.mage_fireball_skill <- this.inherit("scripts/skills/skill", {
 			return;
 		}
 
-		if (targetEntity)
+		if (this.m.ignite)
 		{
-			local burn = targetEntity.getSkills().getSkillByID("effects.burn");
+			local r;
+			r = this.Math.rand(0, 9);
+			if (r > 2)
+			{
+				if (targetEntity)
+				{
+					local burn = targetEntity.getSkills().getSkillByID("effects.burn");
 
-			if (burn == null)
-			{
-				targetEntity.getSkills().add(this.new("scripts/skills/effects/burn_effect"));
+					if (burn == null)
+					{
+						targetEntity.getSkills().add(this.new("scripts/skills/effects/burn_effect"));
+					}
+					else
+					{
+						burn.resetTime();
+					}
+					
+					this.spawnIcon("effect_mage_burn_apply", _data.TargetTile);
+				}
 			}
-			else
-			{
-				burn.resetTime();
-			}
-			
-			this.spawnIcon("effect_mage_burn_apply", _data.TargetTile);
 		}
 		_data.Skill.getContainer().setBusy(false);
 
