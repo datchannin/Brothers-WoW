@@ -77,7 +77,7 @@ this.mage_fireward_skill <- this.inherit("scripts/skills/skill", {
 		}
 		else
 		{
-			//this.m.Container.add(this.new("scripts/skills/effects/fireward_effect"));
+			this.m.Container.add(this.new("scripts/skills/effects/fireward_effect"));
 		}
 
 		return true;
