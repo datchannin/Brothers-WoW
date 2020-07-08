@@ -1,15 +1,15 @@
-this.mage_fireward_skill <- this.inherit("scripts/skills/skill", {
+this.mage_frostarmor_skill <- this.inherit("scripts/skills/skill", {
 	m = {},
 	function create()
 	{
-		this.m.ID = "actives.fireward_skill";
-		this.m.Name = "Fire Ward";
-		this.m.Description = "Increase character\'s Ranged and Melee Defense for one turn.";
-		this.m.Icon = "ui/perks/skill_mage_fireward.png";
-		this.m.IconDisabled = "ui/perks/skill_mage_fireward_sw.png";
-		this.m.Overlay = "skill_mage_fireward";
+		this.m.ID = "actives.frostarmor_skill";
+		this.m.Name = "Frost Armor";
+		this.m.Description = "Allows character to ignore hostile zone of control for one turn.";
+		this.m.Icon = "ui/perks/skill_mage_frostarmor.png";
+		this.m.IconDisabled = "ui/perks/skill_mage_frostarmor_sw.png";
+		this.m.Overlay = "skill_mage_frostarmor";
 		this.m.SoundOnUse = [
-			"sounds/combat/mage_fireward_cast.wav"
+			"sounds/combat/mage_frostarmor_cast.wav"
 		];
 		this.m.Type = this.Const.SkillType.Active;
 		this.m.Order = this.Const.SkillOrder.Any;
@@ -45,14 +45,8 @@ this.mage_fireward_skill <- this.inherit("scripts/skills/skill", {
 			{
 				id = 6,
 				type = "text",
-				icon = "ui/icons/melee_defense.png",
-				text = "Melee Defense will be increased by [color=" + this.Const.UI.Color.PositiveValue + "]20[/color]"
-			},
-			{
-				id = 6,
-				type = "text",
-				icon = "ui/icons/ranged_defense.png",
-				text = "Ranged Defense will be increased by [color=" + this.Const.UI.Color.PositiveValue + "]20[/color]"
+				icon = "ui/icons/special.png",
+				text = "Ignores hostile Zone of Control"
 			},
 		];
 	}
@@ -69,9 +63,9 @@ this.mage_fireward_skill <- this.inherit("scripts/skills/skill", {
 
 	function onUse( _user, _targetTile )
 	{
-		if (!this.getContainer().hasSkill("effects.fireward"))
+		if (!this.getContainer().hasSkill("effects.frostarmor"))
 		{
-			this.m.Container.add(this.new("scripts/skills/effects/fireward_effect"));
+			this.m.Container.add(this.new("scripts/skills/effects/frostarmor_effect"));
 			return true;
 		}
 
