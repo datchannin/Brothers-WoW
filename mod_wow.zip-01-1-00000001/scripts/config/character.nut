@@ -889,6 +889,7 @@ gt.Const.CharacterProperties <- {
 	IsMasterInDaggers = false,
 	IsMasterInFlails = false,
 	IsMasterInMaces = false,
+	IsMasterInPolearms = false,
 	IsMasterInThrowing = false,
 	IsMasterInBow = false,
 	IsMasterInCrossbow = false,
