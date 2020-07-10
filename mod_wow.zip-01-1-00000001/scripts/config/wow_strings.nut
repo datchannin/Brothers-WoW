@@ -233,7 +233,7 @@ gt.Const.Wow_strings.PerkDescription <- {
 	Frostbolt = "This is main spell for mages who wants to be \'Frost Mage\'. Unlocks the \'Frostbolt\' skill. Use this to freeze an enemy.",
 	ArcaneIntellect = "You know how to cast spells more effectively. Fatigue value is increased by [color=" + this.Const.UI.Color.PositiveValue + "]20[/color] points.",
 	PresenceofMind = "Your knowledge is beyond limits. Learning is your credo! Get additional [color=" + this.Const.UI.Color.PositiveValue + "]40%[/color] experience from battle.",
-	Evocation = "Unlocks the \'Evocation\' skill. This skill can restore your Fatigue pull. But once per combat. Use it wisely.",
+	Evocation = "Unlocks the \'Evocation\' skill. This skill can restore your Fatigue pool. But once per combat. Use it wisely.",
 	ManaShield = "Use your mana as a shield. Decreases damage taken by [color=" + this.Const.UI.Color.PositiveValue + "]10%[/color]",
 	BlastWave = "You understood how to use \'Fireball\' more destructive. Increase range of \'Fireball\' by [color=" + this.Const.UI.Color.PositiveValue + "]2[/color] and damage done by [color=" + this.Const.UI.Color.PositiveValue + "]5[/color] points.",
 	FireWard = "Unlocks the \'Fire Ward\' skill which can be used to buff the user. Increase your Range and Melee Defense by [color=" + this.Const.UI.Color.PositiveValue + "]20[/color] points for one turn.",
