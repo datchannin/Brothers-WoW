@@ -13,9 +13,9 @@ Classes that should be implemented for the addon - alliance classes from World o
 * ![custom badges](https://img.shields.io/badge/status-to%20do-blue) priest
 
 ## Workflow
-* ![custom badges](https://img.shields.io/badge/roadmap-not-red)
 * ![custom badges](https://img.shields.io/badge/bug%20tracker-yes-green)
 * ![custom badges](https://img.shields.io/badge/extended%20docs-not-red)
+* ![custom badges](https://img.shields.io/badge/perk%20calculator-in%20progress-yellow) [perk calculator](https://bbwow.net)
 
 ## Description
 New character from every class can be hired in the different random cities and villages, the same way as characters with original backgrounds. Player can combine original characters and new wow characters and use all of them in the battle. All characters should be leveled to the highest possible level.
