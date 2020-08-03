@@ -311,6 +311,7 @@ gt.Const.Perks.PerkTreeHunter <- [
 		gt.Const.Perks.PerkDefObjects.SpecThrowing
 	],
 	[
+		gt.Const.Perks.PerkDefObjects.Overwhelm
 		gt.Const.Perks.PerkDefObjects.LoneWolf
 		gt.Const.Perks.PerkDefObjects.Underdog
 		gt.Const.Perks.PerkDefObjects.Footwork
