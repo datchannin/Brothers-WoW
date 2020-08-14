@@ -29,6 +29,7 @@ this.skill <- {
 		FatigueCostMult = 1.0,
 		MinRange = 0,
 		MaxRange = 0,
+		MaxRangeBonus = 9,
 		MaxLevelDifference = 1,
 		Order = this.Const.SkillOrder.Any,
 		DirectDamageMult = 0.0,
@@ -45,6 +46,7 @@ this.skill <- {
 		IsTargetingActor = true,
 		IsVisibleTileNeeded = true,
 		IsRanged = false,
+		IsRangeLimitsEnforced = false,
 		IsAOE = false,
 		IsHidden = false,
 		IsIgnoredAsAOO = false,
@@ -59,6 +61,7 @@ this.skill <- {
 		IsDoingForwardMove = true,
 		IsAudibleWhenHidden = true,
 		IsSerialized = true,
+		IsNew = true,
 		IsRemovedAfterBattle = false,
 		IsDisengagement = false,
 		IsTooCloseShown = false,
@@ -163,6 +166,11 @@ this.skill <- {
 	function getMaxLevelDifference()
 	{
 		return this.m.MaxLevelDifference;
+	}
+
+	function getMaxRangeBonus()
+	{
+		return this.m.MaxRangeBonus;
 	}
 
 	function getDirectDamage()
@@ -458,6 +466,13 @@ this.skill <- {
 		return this.Const.UI.Cursor.Attack;
 	}
 
+	function getAffectedTiles( _targetTile )
+	{
+		return [
+			_targetTile
+		];
+	}
+
 	function isUsable()
 	{
 		return this.m.IsUsable && this.m.Container.getActor().getCurrentProperties().IsAbleToUseSkills && (!this.m.IsWeaponSkill || this.m.Container.getActor().getCurrentProperties().IsAbleToUseWeaponSkills) && !this.isHidden();
@@ -537,7 +552,7 @@ this.skill <- {
 				return false;
 			}
 
-			if (this.m.IsRanged && d > this.getMaxRange() + this.Math.max(0, levelDifference))
+			if (this.m.IsRanged && d > this.getMaxRange() + this.Math.min(this.m.MaxRangeBonus, this.Math.max(0, levelDifference)))
 			{
 				return false;
 			}
@@ -546,18 +561,24 @@ this.skill <- {
 		return true;
 	}
 
-	function isInRange( _targetTile )
+	function isInRange( _targetTile, _userTile = null )
 	{
 		local user = this.m.Container.getActor();
-		local d = user.getTile().getDistanceTo(_targetTile);
-		local levelDifference = user.getTile().Level - _targetTile.Level;
+
+		if (_userTile == null)
+		{
+			_userTile = user.getTile();
+		}
+
+		local d = _userTile.getDistanceTo(_targetTile);
+		local levelDifference = _userTile.Level - _targetTile.Level;
 
 		if (d < this.m.MinRange || !this.m.IsRanged && d > this.getMaxRange())
 		{
 			return false;
 		}
 
-		if (this.m.IsRanged && d > this.getMaxRange() + this.Math.max(0, levelDifference))
+		if (this.m.IsRanged && d > this.getMaxRange() + this.Math.min(this.m.MaxRangeBonus, this.Math.max(0, levelDifference)))
 		{
 			return false;
 		}
@@ -599,7 +620,7 @@ this.skill <- {
 				return false;
 			}
 
-			if (this.m.IsRanged && d > this.getMaxRange() + this.Math.max(0, levelDifference))
+			if (this.m.IsRanged && d > this.getMaxRange() + this.Math.min(this.m.MaxRangeBonus, this.Math.max(0, levelDifference)))
 			{
 				return false;
 			}
@@ -657,7 +678,7 @@ this.skill <- {
 		local critical = 1.0 + p.getHitchance(this.Const.BodyPart.Head) / 100.0 * (p.DamageAgainstMult[this.Const.BodyPart.Head] - 1.0);
 		local armor = _target.getArmor(this.Const.BodyPart.Head) * (p.getHitchance(this.Const.BodyPart.Head) / 100.0) + _target.getArmor(this.Const.BodyPart.Body) * (this.Math.max(0, p.getHitchance(this.Const.BodyPart.Body)) / 100.0);
 		local armorDamage = this.Math.min(armor, p.getArmorDamageAverage());
-		local directDamage = this.Math.max(0, p.getRegularDamageAverage() * this.m.DirectDamageMult * critical - (this.m.DirectDamageMult < 1.0 ? armor * this.Const.Combat.ArmorDirectDamageMitigationMult : 0));
+		local directDamage = this.Math.max(0, p.getRegularDamageAverage() * this.m.DirectDamageMult * critical - (this.m.DirectDamageMult < 1.0 ? (armor - armorDamage) * this.Const.Combat.ArmorDirectDamageMitigationMult : 0));
 		local hitpointDamage = this.Math.max(0, p.getRegularDamageAverage() * critical - directDamage - armorDamage);
 		armorDamage = armorDamage * (d.DamageReceivedArmorMult * d.DamageReceivedTotalMult);
 		directDamage = directDamage * (d.DamageReceivedDirectMult * d.DamageReceivedTotalMult);
@@ -766,6 +787,10 @@ this.skill <- {
 	}
 
 	function onNewRound()
+	{
+	}
+
+	function onRoundEnd()
 	{
 	}
 
@@ -1091,7 +1116,7 @@ this.skill <- {
 			}
 		}
 
-		if (this.m.IsAttack && _targetTile.IsOccupiedByActor && targetEntity.getTags().has("skeleton"))
+		if (this.m.IsAttack && _targetTile.IsOccupiedByActor && (targetEntity.getFlags().has("skeleton") || targetEntity.getSkills().hasSkill("racial.golem")))
 		{
 			if (this.m.IsRanged)
 			{
@@ -1100,7 +1125,7 @@ this.skill <- {
 					text = "Resistance against ranged weapons"
 				});
 			}
-			else if (this.m.ID == "actives.puncture" || this.m.ID == "actives.thrust" || this.m.ID == "actives.stab" || this.m.ID == "actives.impale" || this.m.ID == "actives.rupture" || this.m.ID == "actives.lunge")
+			else if (this.m.ID == "actives.puncture" || this.m.ID == "actives.thrust" || this.m.ID == "actives.stab" || this.m.ID == "actives.deathblow" || this.m.ID == "actives.impale" || this.m.ID == "actives.rupture" || this.m.ID == "actives.prong" || this.m.ID == "actives.lunge")
 			{
 				ret.push({
 					icon = "ui/tooltips/negative.png",
@@ -1109,7 +1134,7 @@ this.skill <- {
 			}
 		}
 
-		if (_targetTile.IsOccupiedByActor && targetEntity.getCurrentProperties().IsImmuneToStun && (this.m.ID == "actives.knock_out" || this.m.ID == "actives.strike_down"))
+		if (_targetTile.IsOccupiedByActor && targetEntity.getCurrentProperties().IsImmuneToStun && (this.m.ID == "actives.knock_out" || this.m.ID == "actives.knock_over" || this.m.ID == "actives.strike_down"))
 		{
 			ret.push({
 				icon = "ui/tooltips/negative.png",
@@ -1176,7 +1201,7 @@ this.skill <- {
 
 		if (this.m.IsRanged)
 		{
-			toHit = toHit + (distanceToTarget - 1) * properties.HitChanceAdditionalWithEachTile * properties.HitChanceWithEachTileMult;
+			toHit = toHit + (distanceToTarget - this.m.MinRange) * properties.HitChanceAdditionalWithEachTile * properties.HitChanceWithEachTileMult;
 		}
 
 		if (levelDifference < 0)
@@ -1266,7 +1291,7 @@ this.skill <- {
 
 		if (this.m.IsRanged)
 		{
-			toHit = toHit + (distanceToTarget - 1) * properties.HitChanceAdditionalWithEachTile * properties.HitChanceWithEachTileMult;
+			toHit = toHit + (distanceToTarget - this.m.MinRange) * properties.HitChanceAdditionalWithEachTile * properties.HitChanceWithEachTileMult;
 		}
 
 		if (levelDifference < 0)
@@ -1304,7 +1329,7 @@ this.skill <- {
 		toHit = toHit * properties.TotalAttackToHitMult;
 		toHit = toHit + this.Math.max(0, 100 - toHit) * (1.0 - defenderProperties.TotalDefenseToHitMult);
 
-		if (this.m.IsRanged && !_allowDiversion)
+		if (this.m.IsRanged && !_allowDiversion && this.m.IsShowingProjectile)
 		{
 			toHit = toHit - 15;
 			properties.DamageTotalMult *= 0.75;
@@ -1441,6 +1466,11 @@ this.skill <- {
 					this.Sound.play(this.m.SoundOnHit[this.Math.rand(0, this.m.SoundOnHit.len() - 1)], this.Const.Sound.Volume.Skill * this.m.SoundVolume, _targetEntity.getPos());
 				}
 
+				if (this.Tactical.State.getStrategicProperties() != null && this.Tactical.State.getStrategicProperties().IsArenaMode && toHit <= 15)
+				{
+					this.Sound.play(this.Const.Sound.ArenaShock[this.Math.rand(0, this.Const.Sound.ArenaShock.len() - 1)], this.Const.Sound.Volume.Tactical * this.Const.Sound.Volume.Arena);
+				}
+
 				this.onScheduledTargetHit(info);
 			}
 
@@ -1526,6 +1556,18 @@ this.skill <- {
 						this.Tactical.spawnProjectileEffect(this.Const.ProjectileSprite[this.m.ProjectileType], _user.getTile(), divertTile, 1.0, this.m.ProjectileTimeScale, this.m.IsProjectileRotated, flip);
 					}
 				}
+
+				if (this.Tactical.State.getStrategicProperties() != null && this.Tactical.State.getStrategicProperties().IsArenaMode)
+				{
+					if (toHit >= 90 || _targetEntity.getHitpointsPct() <= 0.1)
+					{
+						this.Sound.play(this.Const.Sound.ArenaMiss[this.Math.rand(0, this.Const.Sound.ArenaBigMiss.len() - 1)], this.Const.Sound.Volume.Tactical * this.Const.Sound.Volume.Arena);
+					}
+					else if (this.Math.rand(1, 100) <= 20)
+					{
+						this.Sound.play(this.Const.Sound.ArenaMiss[this.Math.rand(0, this.Const.Sound.ArenaMiss.len() - 1)], this.Const.Sound.Volume.Tactical * this.Const.Sound.Volume.Arena);
+					}
+				}
 			}
 
 			return false;
@@ -1566,6 +1608,8 @@ this.skill <- {
 				], 1.0);
 			}
 		}
+
+		_info.TargetEntity.getItems().onShieldHit(_info.User, this);
 	}
 
 	function onPlayHitSound( _data )
@@ -1772,10 +1816,19 @@ this.skill <- {
 
 	function onSerialize( _out )
 	{
+		_out.writeBool(this.m.IsNew);
 	}
 
 	function onDeserialize( _in )
 	{
+		if (_in.getMetaData().getVersion() >= 57)
+		{
+			this.m.IsNew = _in.readU8();
+		}
+		else
+		{
+			this.m.IsNew = false;
+		}
 	}
 
 };

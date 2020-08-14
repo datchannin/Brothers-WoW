@@ -43,7 +43,7 @@ this.demolish_armor_skill <- this.inherit("scripts/skills/skill", {
 	function getTooltip()
 	{
 		local p = this.getContainer().getActor().getCurrentProperties();
-		local f = p.IsSpecializedInHammers ? 2.0 : 1.5;
+		local f = p.IsSpecializedInHammers ? 1.93 : 1.45;
 		if (p.IsMasterInHammers)
 		{
 			f = f * 1.2;
@@ -114,11 +114,11 @@ this.demolish_armor_skill <- this.inherit("scripts/skills/skill", {
 		{
 			if (p.IsMasterInHammers)
 			{
-				_properties.DamageArmorMult = _properties.DamageArmorMult * (this.getContainer().getActor().getCurrentProperties().IsSpecializedInHammers ? 2.0 : 1.5) * 1.2;
+				_properties.DamageArmorMult = _properties.DamageArmorMult * (this.getContainer().getActor().getCurrentProperties().IsSpecializedInHammers ? 1.93 : 1.45) * 1.2;
 			}
 			else
 			{
-				_properties.DamageArmorMult *= this.getContainer().getActor().getCurrentProperties().IsSpecializedInHammers ? 2.0 : 1.5;
+				_properties.DamageArmorMult *= this.getContainer().getActor().getCurrentProperties().IsSpecializedInHammers ? 1.93 : 1.45;
 			}
 			_properties.DamageRegularMult *= 0.0;
 			_properties.DamageMinimum = this.Math.max(_properties.DamageMinimum, 10);

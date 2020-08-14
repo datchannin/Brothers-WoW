@@ -9,9 +9,12 @@ this.character_background <- this.inherit("scripts/skills/skill", {
 		Hairs = null,
 		HairColors = null,
 		Beards = null,
-		Body = null,
+		Bodies = this.Const.Bodies.AllMale,
+		Ethnicity = 0,
 		Level = 1,
 		BeardChance = 60,
+		Names = this.Const.Strings.CharacterNames,
+		LastNames = [],
 		Titles = [],
 		RawDescription = "",
 		BackgroundDescription = "",
@@ -59,6 +62,11 @@ this.character_background <- this.inherit("scripts/skills/skill", {
 	function isLowborn()
 	{
 		return this.m.IsLowborn;
+	}
+
+	function getEthnicity()
+	{
+		return this.m.Ethnicity;
 	}
 
 	function getExcludedTalents()
@@ -127,6 +135,21 @@ this.character_background <- this.inherit("scripts/skills/skill", {
 		}
 
 		local villages = this.World.EntityManager.getSettlements();
+		local citystates = [];
+		local northern = [];
+
+		for( local i = 0; i < villages.len(); i = ++i )
+		{
+			if (this.isKindOf(villages[i], "city_state"))
+			{
+				citystates.push(villages[i]);
+			}
+			else
+			{
+				northern.push(villages[i]);
+			}
+		}
+
 		local brother = this.World.getPlayerRoster().getAll();
 		brother = brother.len() != 0 ? brother[this.Math.rand(0, brother.len() - 1)].getName() : "";
 		local vars = [
@@ -136,11 +159,15 @@ this.character_background <- this.inherit("scripts/skills/skill", {
 			],
 			[
 				"randomtown",
-				villages[this.Math.rand(0, villages.len() - 1)].getNameOnly()
+				northern[this.Math.rand(0, northern.len() - 1)].getNameOnly()
 			],
 			[
 				"randomcity",
-				villages[0].getNameOnly()
+				northern[0].getNameOnly()
+			],
+			[
+				"randomcitystate",
+				citystates.len() != 0 ? citystates[this.Math.rand(0, citystates.len() - 1)].getNameOnly() : ""
 			],
 			[
 				"randomname",
@@ -173,6 +200,10 @@ this.character_background <- this.inherit("scripts/skills/skill", {
 		vars.push([
 			"fullname",
 			this.getContainer().getActor().getName()
+		]);
+		vars.push([
+			"title",
+			this.getContainer().getActor().getTitle()
 		]);
 		this.m.Description = this.buildTextFromTemplate(this.m.RawDescription, vars);
 	}
@@ -260,7 +291,7 @@ this.character_background <- this.inherit("scripts/skills/skill", {
 
 	function onUpdate( _properties )
 	{
-		if (this.getContainer().hasSkill("trait.player"))
+		if (this.m.DailyCost == 0 || this.getContainer().hasSkill("trait.player"))
 		{
 			_properties.DailyWage = 0;
 		}
@@ -348,10 +379,24 @@ this.character_background <- this.inherit("scripts/skills/skill", {
 			}
 		}
 
-		if (this.m.Body != null)
+		if (this.m.Ethnicity == 1 && hairColor != "grey")
 		{
-			actor.getSprite("body").setBrush(this.m.Body);
-			actor.getSprite("injury_body").setBrush(this.m.Body + "_injured");
+			local hair = actor.getSprite("hair");
+			hair.Saturation = 0.8;
+			hair.setBrightness(0.4);
+			local beard = actor.getSprite("beard");
+			beard.Color = hair.Color;
+			beard.Saturation = hair.Saturation;
+			local beard_top = actor.getSprite("beard_top");
+			beard_top.Color = hair.Color;
+			beard_top.Saturation = hair.Saturation;
+		}
+
+		if (this.m.Bodies != null)
+		{
+			local body = this.m.Bodies[this.Math.rand(0, this.m.Bodies.len() - 1)];
+			actor.getSprite("body").setBrush(body);
+			actor.getSprite("injury_body").setBrush(body + "_injured");
 		}
 
 		this.onSetAppearance();
@@ -367,13 +412,22 @@ this.character_background <- this.inherit("scripts/skills/skill", {
 
 	function onAdded()
 	{
+		if (this.m.DailyCost > 0)
+		{
 		this.m.DailyCost += 1;
+		}
+
 		local actor = this.getContainer().getActor();
 		actor.m.Background = this;
 
 		if (this.m.IsNew && !(("State" in this.Tactical) && this.Tactical.State != null && this.Tactical.State.isScenarioMode()))
 		{
 			this.m.IsNew = false;
+
+			if (actor.getTitle() == "" && this.m.LastNames.len() != 0 && this.Math.rand(0, 1) == 1)
+			{
+				actor.setTitle(this.m.LastNames[this.Math.rand(0, this.m.LastNames.len() - 1)]);
+			}
 
 			if (actor.getTitle() == "" && this.m.Titles.len() != 0 && this.Math.rand(0, 3) == 3)
 			{

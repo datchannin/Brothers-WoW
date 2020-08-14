@@ -72,6 +72,7 @@ this.medium_mountains_fort <- this.inherit("scripts/entity/world/settlement", {
 		this.m.Sprite = "world_stronghold_02";
 		this.m.Lighting = "world_stronghold_02_light";
 		this.m.Rumors = this.Const.Strings.RumorsMiningSettlement;
+		this.m.Culture = this.Const.World.Culture.Neutral;
 		this.m.IsMilitary = true;
 		this.m.Size = 2;
 		this.m.HousesType = 2;

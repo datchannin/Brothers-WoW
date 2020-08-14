@@ -258,7 +258,7 @@ gt.Const.Tactical.Actor.MercenaryRanged <- {
 	FatigueRecoveryRate = 20
 };
 gt.Const.Tactical.Actor.Swordmaster <- {
-	XP = 400,
+	XP = 450,
 	ActionPoints = 9,
 	Hitpoints = 70,
 	Bravery = 90,
@@ -277,7 +277,7 @@ gt.Const.Tactical.Actor.Swordmaster <- {
 	FatigueRecoveryRate = 20
 };
 gt.Const.Tactical.Actor.HedgeKnight <- {
-	XP = 400,
+	XP = 450,
 	ActionPoints = 9,
 	Hitpoints = 150,
 	Bravery = 90,
@@ -296,7 +296,7 @@ gt.Const.Tactical.Actor.HedgeKnight <- {
 	FatigueRecoveryRate = 25
 };
 gt.Const.Tactical.Actor.MasterArcher <- {
-	XP = 400,
+	XP = 450,
 	ActionPoints = 9,
 	Hitpoints = 80,
 	Bravery = 70,

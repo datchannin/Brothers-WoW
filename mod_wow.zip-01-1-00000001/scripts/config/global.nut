@@ -1,6 +1,6 @@
 local gt = this.getroottable();
 gt.Const.Serialization <- {
-	Version = 49
+	Version = 63
 };
 gt.Const.DLC <- {
 	Mask = 0,
@@ -11,6 +11,8 @@ gt.Const.DLC <- {
 	UnholdSupporter = false,
 	Wildmen = false,
 	WildmenSupporter = false,
+	Desert = false,
+	DesertSupporter = false,
 	function isCompatible( _meta )
 	{
 		local maskInSave = _meta.getInt("dlc");
@@ -45,6 +47,12 @@ this.Const.DLC.Info[4] = {
 	Icon = "ui/images/dlc_4.png",
 	IconDisabled = "ui/images/dlc_4_sw.png",
 	URL = this.isSteamBuild() ? "https://store.steampowered.com/app/1067690/Battle_Brothers__Warriors_of_the_North" : "https://www.gog.com/game/battle_brothers_warriors_of_the_north"
+};
+this.Const.DLC.Info[6] = {
+	Announce = true,
+	Icon = "ui/images/dlc_6.png",
+	IconDisabled = "ui/images/dlc_6_sw.png",
+	URL = this.isSteamBuild() ? "https://store.steampowered.com/app/1361280/Battle_Brothers__Blazing_Deserts" : "https://www.gog.com/game/battle_brothers_blazing_deserts"
 };
 gt.Const.Direction <- {
 	N = 0,
@@ -288,7 +296,32 @@ gt.Const.EntityType <- {
 	Warhound = 78,
 	TricksterGod = 79,
 	BarbarianMadman = 80,
-	Winterwolf = 81,
+	Serpent = 81,
+	SandGolem = 82,
+	Hyena = 83,
+	Conscript = 84,
+	Gunner = 85,
+	Officer = 86,
+	Engineer = 87,
+	Assassin = 88,
+	Slave = 89,
+	Gladiator = 90,
+	Mortar = 91,
+	NomadCutthroat = 92,
+	NomadOutlaw = 93,
+	NomadSlinger = 94,
+	NomadArcher = 95,
+	NomadLeader = 96,
+	DesertStalker = 97,
+	Executioner = 98,
+	DesertDevil = 99,
+	PeasantSouthern = 100,
+	SkeletonLich = 101,
+	SkeletonLichMirrorImage = 102,
+	SkeletonPhylactery = 103,
+	ZombieTreasureHunter = 104,
+	FlyingSkull = 105,
+	Winterwolf = 106,
 	function convertOldToNew( _id )
 	{
 		switch(_id)
@@ -533,6 +566,31 @@ gt.Const.EntityIcon <- [
 	"dog_02_orientation",
 	"thing_orientation",
 	"wildman_06_orientation",
+	"serpent_orientation",
+	"sand_golem_orientation",
+	"hyena_orientation",
+	"conscript_orientation",
+	"gunner_orientation",
+	"officer_orientation",
+	"orientation_engineer",
+	"assassin_orientation",
+	"slave_orientation",
+	"gladiator_orientation",
+	"mortar_orientation",
+	"nomad_01_orientation",
+	"nomad_02_orientation",
+	"nomad_03_orientation",
+	"nomad_04_orientation",
+	"nomad_05_orientation",
+	"desert_stalker_orientation",
+	"executioner_orientation",
+	"desert_devil_orientation",
+	"peasant_orientation",
+	"skeleton_06_orientation",
+	"skeleton_07_orientation",
+	"phylactery_orientation",
+	"zombie_04_orientation",
+	"skeleton_08_orientation",
 	"winterwolf_orientation"
 ];
 

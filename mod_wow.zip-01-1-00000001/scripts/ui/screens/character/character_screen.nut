@@ -156,6 +156,11 @@ this.character_screen <- {
 		}
 	}
 
+	function resetInventoryFilter()
+	{
+		this.m.InventoryFilter = this.Const.Items.ItemFilter.All;
+	}
+
 	function setStashMode()
 	{
 		this.m.InventoryMode = this.Const.CharacterScreen.InventoryMode.Stash;
@@ -303,9 +308,37 @@ this.character_screen <- {
 
 		if (bro != null)
 		{
+			this.World.Statistics.getFlags().increment("BrosDismissed");
+
+			if (bro.getSkills().hasSkillOfType(this.Const.SkillType.PermanentInjury) && bro.getBackground().getID() != "background.slave")
+			{
+				this.World.Statistics.getFlags().increment("BrosWithPermanentInjuryDismissed");
+			}
+
 			if (payCompensation)
 			{
 				this.World.Assets.addMoney(-10 * this.Math.max(1, bro.getDaysWithCompany()));
+
+				if (bro.getBackground().getID() == "background.slave")
+				{
+					local playerRoster = this.World.getPlayerRoster().getAll();
+
+					foreach( other in playerRoster )
+					{
+						if (bro.getID() == other.getID())
+						{
+							continue;
+						}
+
+						if (other.getBackground().getID() == "background.slave")
+						{
+							other.improveMood(this.Const.MoodChange.SlaveCompensated, "Glad to see " + bro.getName() + " get reparations for his time");
+						}
+					}
+				}
+			}
+			else if (bro.getBackground().getID() == "background.slave")
+			{
 			}
 			else if (bro.getLevel() >= 11 && !this.World.Statistics.hasNews("dismiss_legend") && this.World.getPlayerRoster().getSize() > 1)
 			{

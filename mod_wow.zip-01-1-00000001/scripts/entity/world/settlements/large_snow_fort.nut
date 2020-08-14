@@ -93,6 +93,7 @@ this.large_snow_fort <- this.inherit("scripts/entity/world/settlement", {
 		this.m.Sprite = "world_stronghold_03";
 		this.m.Lighting = "world_stronghold_03_light";
 		this.m.Rumors = this.Const.Strings.RumorsSnowSettlement;
+		this.m.Culture = this.Const.World.Culture.Northern;
 		this.m.IsMilitary = true;
 		this.m.Size = 3;
 		this.m.HousesType = 3;

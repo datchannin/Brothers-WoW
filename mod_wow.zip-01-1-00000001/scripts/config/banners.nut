@@ -68,4 +68,9 @@ gt.Const.UndeadBanners <- [
 	"banner_skeletons_05",
 	"banner_skeletons_06"
 ];
+gt.Const.NomadBanners <- [
+	"banner_nomads_01",
+	"banner_nomads_02",
+	"banner_nomads_03"
+];
 

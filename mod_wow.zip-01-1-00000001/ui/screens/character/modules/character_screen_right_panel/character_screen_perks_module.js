@@ -81,9 +81,6 @@ CharacterScreenPerksModule.prototype.createPerkTreeDIV = function (_perkTree, _p
 			perk.Container.append(perk.Image);
 		}
 
-		/*centerDIV.css({ 'height': (5.0 * _perkTree[row].length) + 'rem' }); // css is retarded?
-		centerDIV.css({ 'top': ((422 - centerDIV.height()) / 2) + 'px' }); // css is retarded?*/
-
 		centerDIV.css({ 'width': (5.0 * _perkTree[row].length) + 'rem' }); // css is retarded?
 		centerDIV.css({ 'left': ((660 - centerDIV.width()) / 2) + 'px' }); // css is retarded?
 	}

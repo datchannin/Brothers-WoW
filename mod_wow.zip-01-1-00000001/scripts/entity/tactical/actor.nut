@@ -12,6 +12,7 @@ this.actor <- this.inherit("scripts/entity/tactical/entity", {
 		BloodType = this.Const.BloodType.None,
 		BloodSaturation = 1.0,
 		BloodColor = this.createColor("#ffffff"),
+		ExcludedInjuries = [],
 		MoraleState = this.Const.MoraleState.Steady,
 		MaxMoraleState = this.Const.MoraleState.Confident,
 		ConfidentMoraleBrush = "icon_confident",
@@ -59,6 +60,8 @@ this.actor <- this.inherit("scripts/entity/tactical/entity", {
 		IsDying = false,
 		IsAbleToDie = true,
 		IsUsingZoneOfControl = true,
+		IsUsingZoneOfOccupation = false,
+		IsExertingZoneOfControl = false,
 		IsCorpseFlipped = false,
 		IsRaisingShield = false,
 		IsLoweringShield = false,
@@ -257,12 +260,12 @@ this.actor <- this.inherit("scripts/entity/tactical/entity", {
 
 	function getArmor( _bodyPart )
 	{
-		return this.Math.floor(this.m.CurrentProperties.Armor[_bodyPart]);
+		return this.Math.floor(this.m.CurrentProperties.Armor[_bodyPart] * this.m.CurrentProperties.ArmorMult[_bodyPart]);
 	}
 
 	function getArmorMax( _bodyPart )
 	{
-		return this.Math.floor(this.m.CurrentProperties.ArmorMax[_bodyPart]);
+		return this.Math.floor(this.m.CurrentProperties.ArmorMax[_bodyPart] * this.m.CurrentProperties.ArmorMult[_bodyPart]);
 	}
 
 	function setPreviewActionPoints( _a )
@@ -594,13 +597,16 @@ this.actor <- this.inherit("scripts/entity/tactical/entity", {
 			return;
 		}
 
-		if (this.isPlacedOnMap() && this.m.MoraleState != this.Const.MoraleState.Fleeing && this.m.IsActingEachTurn && this.m.IsUsingZoneOfControl)
-		{
-			this.getTile().removeZoneOfControl(this.getFaction());
-		}
-
 		if (this.isPlacedOnMap())
 		{
+			this.setZoneOfControl(this.getTile(), false);
+
+			if (this.m.IsUsingZoneOfOccupation)
+		{
+				this.getTile().removeZoneOfOccupation(this.getFaction());
+				this.m.IsUsingZoneOfOccupation = false;
+		}
+
 			this.Tactical.Entities.removeInstance(this, true);
 		}
 
@@ -609,11 +615,9 @@ this.actor <- this.inherit("scripts/entity/tactical/entity", {
 		if (this.isPlacedOnMap())
 		{
 			this.Tactical.Entities.addInstance(this);
-		}
-
-		if (this.isPlacedOnMap() && this.m.MoraleState != this.Const.MoraleState.Fleeing && this.m.IsActingEachTurn && this.m.IsUsingZoneOfControl)
-		{
-			this.getTile().addZoneOfControl(_f);
+			this.setZoneOfControl(this.getTile(), this.hasZoneOfControl());
+			this.getTile().addZoneOfOccupation(this.getFaction());
+			this.m.IsUsingZoneOfOccupation = true;
 		}
 
 		if (this.m.Items != null)
@@ -872,7 +876,7 @@ this.actor <- this.inherit("scripts/entity/tactical/entity", {
 			{
 				local next = tile.getNextTile(i);
 
-				if (next.IsOccupiedByActor && this.Math.abs(next.Level - tile.Level) <= 1 && !next.getEntity().isAlliedWith(this))
+				if (next.IsOccupiedByActor && this.Math.abs(next.Level - tile.Level) <= 1 && !next.getEntity().isAlliedWith(this) && !next.getEntity().getCurrentProperties().IsStunned && !next.getEntity().isArmedWithRangedWeapon())
 				{
 					c = ++c;
 				}
@@ -1222,14 +1226,16 @@ this.actor <- this.inherit("scripts/entity/tactical/entity", {
 			if (!this.getTile().hasZoneOfControlOtherThan(this.getAlliedFactions()))
 			{
 				local myTile = this.getTile();
+				local size = this.Tactical.getMapSize();
+				local bonus = !this.Tactical.State.isScenarioMode() && this.Tactical.State.getStrategicProperties().IsArenaMode ? this.Const.Morale.RallyBonusPerRoundArena : 0;
 
-				if (this.isPlayerControlled() && (myTile.SquareCoords.X == 0 || myTile.SquareCoords.Y == 0 || myTile.SquareCoords.X == 31 || myTile.SquareCoords.Y == 31))
+				if (this.isPlayerControlled() && (myTile.SquareCoords.X == 0 || myTile.SquareCoords.Y == 0 || myTile.SquareCoords.X == size.X - 1 || myTile.SquareCoords.Y == size.Y - 1))
 				{
-					this.checkMorale(this.Const.MoraleState.Breaking - this.Const.MoraleState.Fleeing, this.Const.Morale.RallyBaseDifficulty + this.m.FleeingRounds * this.Const.Morale.RallyBonusPerRound);
+					this.checkMorale(this.Const.MoraleState.Breaking - this.Const.MoraleState.Fleeing, this.Const.Morale.RallyBaseDifficulty + this.m.FleeingRounds * (this.Const.Morale.RallyBonusPerRound + bonus));
 				}
 				else
 				{
-					this.checkMorale(this.Const.MoraleState.Wavering - this.Const.MoraleState.Fleeing, this.Const.Morale.RallyBaseDifficulty + this.m.FleeingRounds * this.Const.Morale.RallyBonusPerRound);
+					this.checkMorale(this.Const.MoraleState.Wavering - this.Const.MoraleState.Fleeing, this.Const.Morale.RallyBaseDifficulty + this.m.FleeingRounds * (this.Const.Morale.RallyBonusPerRound + bonus));
 				}
 			}
 
@@ -1283,6 +1289,16 @@ this.actor <- this.inherit("scripts/entity/tactical/entity", {
 
 			this.m.AIAgent.onTurnResumed();
 		}
+	}
+
+	function onRoundEnd()
+	{
+		if (!this.isAlive() || !this.isPlacedOnMap())
+		{
+			return;
+		}
+
+		this.m.Skills.onRoundEnd();
 	}
 
 	function onTurnEnd()
@@ -1466,7 +1482,7 @@ this.actor <- this.inherit("scripts/entity/tactical/entity", {
 		_hitInfo.DamageInflictedHitpoints = damage;
 		this.m.Skills.onDamageReceived(_attacker, _hitInfo.DamageInflictedHitpoints, _hitInfo.DamageInflictedArmor);
 
-		if (armorDamage > 0 && !this.isHiddenToPlayer())
+		if (armorDamage > 0 && !this.isHiddenToPlayer() && _hitInfo.IsPlayingArmorSound)
 		{
 			local armorHitSound = this.m.Items.getAppearance().ImpactSound[_hitInfo.BodyPart];
 
@@ -1499,9 +1515,9 @@ this.actor <- this.inherit("scripts/entity/tactical/entity", {
 
 			if (skill != null && (!skill.isSpent() || skill.getLastFrameUsed() == this.Time.getFrame()))
 			{
+				this.getSkills().removeByType(this.Const.SkillType.DamageOverTime);
 				this.m.Hitpoints = this.Math.rand(5, 10);
 				skill.setSpent(true);
-				skill.spawnIcon("perk_07", this.getTile());
 				this.Tactical.EventLog.logEx(this.Const.UI.getColorizedEntityName(this) + " has nine lives!");
 			}
 		}
@@ -1584,6 +1600,20 @@ this.actor <- this.inherit("scripts/entity/tactical/entity", {
 				this.spawnBloodEffect(this.getTile(), mult);
 			}
 
+			if (this.Tactical.State.getStrategicProperties() != null && this.Tactical.State.getStrategicProperties().IsArenaMode && _attacker != null && _attacker.getID() != this.getID())
+			{
+				local mult = damage / this.getHitpointsMax();
+
+				if (mult >= 0.75)
+				{
+					this.Sound.play(this.Const.Sound.ArenaBigHit[this.Math.rand(0, this.Const.Sound.ArenaBigHit.len() - 1)], this.Const.Sound.Volume.Tactical * this.Const.Sound.Volume.Arena);
+				}
+				else if (mult >= 0.25 || this.Math.rand(1, 100) <= 20)
+				{
+					this.Sound.play(this.Const.Sound.ArenaHit[this.Math.rand(0, this.Const.Sound.ArenaHit.len() - 1)], this.Const.Sound.Volume.Tactical * this.Const.Sound.Volume.Arena);
+				}
+			}
+
 			if (this.m.CurrentProperties.IsAffectedByInjuries && this.m.IsAbleToDie && damage >= this.Const.Combat.InjuryMinDamage && this.m.CurrentProperties.ThresholdToReceiveInjuryMult != 0 && _hitInfo.InjuryThresholdMult != 0 && _hitInfo.Injuries != null)
 			{
 				local potentialInjuries = [];
@@ -1593,7 +1623,7 @@ this.actor <- this.inherit("scripts/entity/tactical/entity", {
 				{
 					if (inj.Threshold * _hitInfo.InjuryThresholdMult * this.Const.Combat.InjuryThresholdMult * this.m.CurrentProperties.ThresholdToReceiveInjuryMult * bonus <= damage / (this.getHitpointsMax() * 1.0))
 					{
-						if (!this.m.Skills.hasSkill(inj.ID))
+						if (!this.m.Skills.hasSkill(inj.ID) && this.m.ExcludedInjuries.find(inj.ID) == null)
 						{
 							potentialInjuries.push(inj.Script);
 						}
@@ -1647,7 +1677,7 @@ this.actor <- this.inherit("scripts/entity/tactical/entity", {
 			{
 				if (!this.isPlayerControlled() || !this.m.Skills.hasSkill("effects.berserker_mushrooms"))
 				{
-					this.checkMorale(-1, this.Const.Morale.OnHitBaseDifficulty * (1.0 - this.getHitpoints() / this.getHitpointsMax()), this.Const.MoraleCheckType.Default, "", true);
+					this.checkMorale(-1, this.Const.Morale.OnHitBaseDifficulty * (1.0 - this.getHitpoints() / this.getHitpointsMax()) - (_attacker != null && _attacker.getID() != this.getID() ? _attacker.getCurrentProperties().ThreatOnHit : 0), this.Const.MoraleCheckType.Default, "", true);
 				}
 			}
 
@@ -1705,6 +1735,16 @@ this.actor <- this.inherit("scripts/entity/tactical/entity", {
 	{
 	}
 
+	function onActorKilled( _actor, _tile, _skill )
+	{
+		if (!this.m.IsAlive || this.m.IsDying)
+		{
+			return;
+		}
+
+		this.m.Skills.onTargetKilled(_actor, _skill);
+	}
+
 	function onOtherActorDeath( _killer, _victim, _skill )
 	{
 		if (!this.m.IsAlive || this.m.IsDying)
@@ -1717,7 +1757,7 @@ this.actor <- this.inherit("scripts/entity/tactical/entity", {
 			return;
 		}
 
-		if (_victim.getFaction() == this.getFaction() && _victim.getCurrentProperties().TargetAttractionMult > 0.5 && this.getCurrentProperties().IsAffectedByDyingAllies)
+		if (_victim.getFaction() == this.getFaction() && _victim.getCurrentProperties().TargetAttractionMult >= 0.5 && this.getCurrentProperties().IsAffectedByDyingAllies)
 		{
 			local difficulty = this.Const.Morale.AllyKilledBaseDifficulty - _victim.getXPValue() * this.Const.Morale.AllyKilledXPMult + this.Math.pow(_victim.getTile().getDistanceTo(this.getTile()), this.Const.Morale.AllyKilledDistancePow);
 			this.checkMorale(-1, difficulty, this.Const.MoraleCheckType.Default, "", true);
@@ -1735,16 +1775,6 @@ this.actor <- this.inherit("scripts/entity/tactical/entity", {
 		}
 	}
 
-	function onActorKilled( _actor, _tile, _skill )
-	{
-		if (!this.m.IsAlive || this.m.IsDying)
-		{
-			return;
-		}
-
-		this.m.Skills.onTargetKilled(_actor, _skill);
-	}
-
 	function onOtherActorFleeing( _actor )
 	{
 		if (!this.m.IsAlive || this.m.IsDying)
@@ -1756,6 +1786,43 @@ this.actor <- this.inherit("scripts/entity/tactical/entity", {
 		{
 			local difficulty = this.Const.Morale.AllyFleeingBaseDifficulty - _actor.getXPValue() * this.Const.Morale.AllyFleeingXPMult + this.Math.pow(_actor.getTile().getDistanceTo(this.getTile()), this.Const.Morale.AllyFleeingDistancePow);
 			this.checkMorale(-1, difficulty);
+		}
+	}
+
+	function hasZoneOfControl()
+	{
+		return !(!this.m.IsAlive || this.m.IsDying || this.m.CurrentProperties.IsStunned || this.m.MoraleState == this.Const.MoraleState.Fleeing || this.m.Skills.getAttackOfOpportunity() == null);
+	}
+
+	function isExertingZoneOfControl()
+	{
+		return this.m.IsExertingZoneOfControl;
+	}
+
+	function setZoneOfControl( _t, _f )
+	{
+		if (!this.isPlacedOnMap() || !this.m.IsActingEachTurn || !this.m.IsUsingZoneOfControl)
+		{
+			return;
+		}
+
+		if (_f && !this.m.IsExertingZoneOfControl && this.hasZoneOfControl())
+		{
+			_t.addZoneOfControl(this.getFaction());
+			this.m.IsExertingZoneOfControl = true;
+		}
+		else if (!_f && this.m.IsExertingZoneOfControl)
+		{
+			_t.removeZoneOfControl(this.getFaction());
+			this.m.IsExertingZoneOfControl = false;
+		}
+	}
+
+	function onSkillsUpdated()
+	{
+		if (this.isPlacedOnMap() && !this.Tactical.getNavigator().isTravelling(this))
+		{
+			this.setZoneOfControl(this.getTile(), this.hasZoneOfControl());
 		}
 	}
 
@@ -2076,6 +2143,7 @@ this.actor <- this.inherit("scripts/entity/tactical/entity", {
 		this.m.IsAlive = true;
 		this.m.IsDying = false;
 		this.m.RiposteSkillCounter = 0;
+		this.m.IsExertingZoneOfControl = false;
 
 		if (this.getFaction() == this.Const.Faction.Player || tile.IsVisibleForPlayer)
 		{
@@ -2084,10 +2152,12 @@ this.actor <- this.inherit("scripts/entity/tactical/entity", {
 
 		this.Tactical.OrientationOverlay.addOverlay(this);
 		this.Tactical.Entities.addInstance(this);
+		this.setZoneOfControl(tile, this.hasZoneOfControl());
 
-		if (this.m.MoraleState != this.Const.MoraleState.Fleeing && this.m.IsActingEachTurn && this.m.IsUsingZoneOfControl)
+		if (!this.m.IsUsingZoneOfOccupation)
 		{
-			tile.addZoneOfControl(this.getFaction());
+			tile.addZoneOfOccupation(this.getFaction());
+			this.m.IsUsingZoneOfOccupation = true;
 		}
 
 		if (this.Const.Tactical.TerrainEffect[tile.Type].len() > 0 && !this.m.Skills.hasSkill(this.Const.Tactical.TerrainEffectID[tile.Type]))
@@ -2146,9 +2216,13 @@ this.actor <- this.inherit("scripts/entity/tactical/entity", {
 	{
 		if (this.isPlacedOnMap())
 		{
-			if (this.m.MoraleState != this.Const.MoraleState.Fleeing && this.m.IsActingEachTurn && this.m.IsUsingZoneOfControl)
+			this.Tactical.getShaker().cancel(this);
+			this.setZoneOfControl(this.getTile(), false);
+
+			if (this.m.IsUsingZoneOfOccupation)
 			{
-				this.getTile().removeZoneOfControl(this.getFaction());
+				this.getTile().removeZoneOfOccupation(this.getFaction());
+				this.m.IsUsingZoneOfOccupation = false;
 			}
 
 			this.Tactical.Entities.removeInstance(this);
@@ -2381,9 +2455,12 @@ this.actor <- this.inherit("scripts/entity/tactical/entity", {
 
 	function onMovementStart( _tile, _numTiles )
 	{
-		if (this.m.MoraleState != this.Const.MoraleState.Fleeing && this.m.IsActingEachTurn && this.m.IsUsingZoneOfControl)
+		this.setZoneOfControl(_tile, false);
+
+		if (this.m.IsUsingZoneOfOccupation)
 		{
-			_tile.removeZoneOfControl(this.getFaction());
+			_tile.removeZoneOfOccupation(this.getFaction());
+			this.m.IsUsingZoneOfOccupation = false;
 		}
 
 		if (this.Const.Tactical.TerrainEffectID[_tile.Type].len() > 0)
@@ -2411,9 +2488,12 @@ this.actor <- this.inherit("scripts/entity/tactical/entity", {
 			this.Tactical.TurnSequenceBar.getActiveEntity().updateVisibilityForFaction();
 		}
 
-		if (this.m.MoraleState != this.Const.MoraleState.Fleeing && this.m.IsActingEachTurn && this.m.IsUsingZoneOfControl)
+		this.setZoneOfControl(_tile, this.hasZoneOfControl());
+
+		if (!this.m.IsUsingZoneOfOccupation)
 		{
-			_tile.addZoneOfControl(this.getFaction());
+			_tile.addZoneOfOccupation(this.getFaction());
+			this.m.IsUsingZoneOfOccupation = true;
 		}
 
 		if (this.Const.Tactical.TerrainEffect[_tile.Type].len() > 0 && !this.m.Skills.hasSkill(this.Const.Tactical.TerrainEffectID[_tile.Type]))
@@ -2452,7 +2532,7 @@ this.actor <- this.inherit("scripts/entity/tactical/entity", {
 							if (otherActor.m.MaxEnemiesThisTurn < numEnemies && !otherActor.isAlliedWith(this))
 							{
 								local difficulty = this.Math.maxf(10.0, 50.0 - this.getXPValue() * 0.1);
-								otherActor.checkMorale(-1, difficulty);
+								otherActor.checkMorale(-1, difficulty - this.getCurrentProperties().ThreatOnHit);
 								otherActor.m.MaxEnemiesThisTurn = numEnemies;
 							}
 						}
@@ -2485,6 +2565,12 @@ this.actor <- this.inherit("scripts/entity/tactical/entity", {
 		}
 
 		this.spawnTerrainDropdownEffect(_tile);
+
+		if (_tile.Properties.Effect != null && _tile.Properties.Effect.IsAppliedOnEnter)
+		{
+			_tile.Properties.Effect.Callback(_tile, this);
+		}
+
 		this.m.Skills.update();
 		this.m.Items.onMovementFinished();
 		this.setDirty(true);
@@ -2497,7 +2583,7 @@ this.actor <- this.inherit("scripts/entity/tactical/entity", {
 			return false;
 		}
 
-		if (!this.m.IsUsingZoneOfControl)
+		if (!this.m.IsUsingZoneOfControl || !this.m.IsExertingZoneOfControl)
 		{
 			return false;
 		}
@@ -2532,7 +2618,7 @@ this.actor <- this.inherit("scripts/entity/tactical/entity", {
 			return false;
 		}
 
-		if (!this.m.IsUsingZoneOfControl)
+		if (!this.m.IsUsingZoneOfControl || !this.m.IsExertingZoneOfControl)
 		{
 			return false;
 		}
@@ -2543,6 +2629,11 @@ this.actor <- this.inherit("scripts/entity/tactical/entity", {
 		}
 
 		if (_isOnEnter && (!this.getCurrentProperties().IsAttackingOnZoneOfControlEnter || !this.getCurrentProperties().IsAttackingOnZoneOfControlAlways && this.getTile().getZoneOfControlCountOtherThan(this.getAlliedFactions()) > 1))
+		{
+			return false;
+		}
+
+		if (_entity.getTile().Properties.Effect != null && _entity.getTile().Properties.Effect.Type == "smoke")
 		{
 			return false;
 		}
@@ -2653,20 +2744,8 @@ this.actor <- this.inherit("scripts/entity/tactical/entity", {
 			return;
 		}
 
-		if (this.m.MoraleState == this.Const.MoraleState.Fleeing)
-		{
-			if (this.isPlacedOnMap() && this.m.IsActingEachTurn && this.m.IsUsingZoneOfControl)
+		if (_m == this.Const.MoraleState.Fleeing)
 			{
-				this.getTile().addZoneOfControl(this.getFaction());
-			}
-		}
-		else if (_m == this.Const.MoraleState.Fleeing)
-		{
-			if (this.isPlacedOnMap() && this.m.IsActingEachTurn && this.m.IsUsingZoneOfControl)
-			{
-				this.getTile().removeZoneOfControl(this.getFaction());
-			}
-
 			this.m.Skills.removeByID("effects.shieldwall");
 			this.m.Skills.removeByID("effects.spearwall");
 			this.m.Skills.removeByID("effects.riposte");
@@ -2784,8 +2863,11 @@ this.actor <- this.inherit("scripts/entity/tactical/entity", {
 		{
 			if (this.Math.rand(1, 100) > this.Math.minf(95, bravery + _difficulty - numOpponentsAdjacent * this.Const.Morale.OpponentsAdjacentMult - threatBonus))
 			{
+				if (this.Math.rand(1, 100) > this.m.CurrentProperties.RerollMoraleChance || this.Math.rand(1, 100) > this.Math.minf(95, bravery + _difficulty - numOpponentsAdjacent * this.Const.Morale.OpponentsAdjacentMult - threatBonus))
+				{
 				return false;
 			}
+		}
 		}
 		else if (_change < 0)
 		{
@@ -2793,8 +2875,17 @@ this.actor <- this.inherit("scripts/entity/tactical/entity", {
 			{
 				return false;
 			}
+
+			if (this.Math.rand(1, 100) <= this.m.CurrentProperties.RerollMoraleChance && this.Math.rand(1, 100) <= this.Math.minf(95, bravery + _difficulty - numOpponentsAdjacent * this.Const.Morale.OpponentsAdjacentMult + numAlliesAdjacent * this.Const.Morale.AlliesAdjacentMult - threatBonus))
+			{
+				return false;
+			}
 		}
 		else if (this.Math.rand(1, 100) <= this.Math.minf(95, bravery + _difficulty - numOpponentsAdjacent * this.Const.Morale.OpponentsAdjacentMult + numAlliesAdjacent * this.Const.Morale.AlliesAdjacentMult - threatBonus))
+		{
+			return true;
+		}
+		else if (this.Math.rand(1, 100) <= this.m.CurrentProperties.RerollMoraleChance && this.Math.rand(1, 100) <= this.Math.minf(95, bravery + _difficulty - numOpponentsAdjacent * this.Const.Morale.OpponentsAdjacentMult + numAlliesAdjacent * this.Const.Morale.AlliesAdjacentMult - threatBonus))
 		{
 			return true;
 		}
@@ -2809,10 +2900,7 @@ this.actor <- this.inherit("scripts/entity/tactical/entity", {
 
 		if (oldMoraleState == this.Const.MoraleState.Fleeing && this.m.IsActingEachTurn)
 		{
-			if (this.m.IsUsingZoneOfControl)
-			{
-				this.getTile().addZoneOfControl(this.getFaction());
-			}
+			this.setZoneOfControl(this.getTile(), this.hasZoneOfControl());
 
 			if (this.isPlayerControlled() || !this.isHiddenToPlayer())
 			{
@@ -2828,11 +2916,7 @@ this.actor <- this.inherit("scripts/entity/tactical/entity", {
 		}
 		else if (this.m.MoraleState == this.Const.MoraleState.Fleeing)
 		{
-			if (this.m.IsActingEachTurn && this.m.IsUsingZoneOfControl)
-			{
-				this.getTile().removeZoneOfControl(this.getFaction());
-			}
-
+			this.setZoneOfControl(this.getTile(), this.hasZoneOfControl());
 			this.m.Skills.removeByID("effects.shieldwall");
 			this.m.Skills.removeByID("effects.spearwall");
 			this.m.Skills.removeByID("effects.riposte");
@@ -3175,6 +3259,16 @@ this.actor <- this.inherit("scripts/entity/tactical/entity", {
 		if (this.m.IsMiniboss && !this.Tactical.State.isScenarioMode() && _killer != null && _killer.isPlayerControlled())
 		{
 			this.updateAchievement("GiveMeThat", 1, 1);
+
+			if (!this.Tactical.State.isScenarioMode() && this.World.Retinue.hasFollower("follower.bounty_hunter"))
+			{
+				this.World.Retinue.getFollower("follower.bounty_hunter").onChampionKilled(this);
+			}
+		}
+
+		if (!this.Tactical.State.isScenarioMode() && _killer != null && _killer.isPlayerControlled() && _skill != null && _skill.getID() == "actives.deathblow")
+		{
+			this.updateAchievement("Assassin", 1, 1);
 		}
 
 		this.m.IsDying = true;
@@ -3252,7 +3346,7 @@ this.actor <- this.inherit("scripts/entity/tactical/entity", {
 				{
 					this.spawnDecapitateSplatters(tile, 1.0 * this.m.DecapitateBloodAmount);
 				}
-				else if (_fatalityType == this.Const.FatalityType.Smashed && (this.getTags().has("human") || this.getTags().has("zombie_minion")))
+				else if (_fatalityType == this.Const.FatalityType.Smashed && (this.getFlags().has("human") || this.getFlags().has("zombie_minion")))
 				{
 					this.spawnSmashSplatters(tile, 1.0);
 				}
@@ -3289,6 +3383,18 @@ this.actor <- this.inherit("scripts/entity/tactical/entity", {
 		{
 			this.World.Contracts.onActorKilled(this, _killer, this.Tactical.State.getStrategicProperties().CombatID);
 			this.World.Events.onActorKilled(this, _killer, this.Tactical.State.getStrategicProperties().CombatID);
+
+			if (this.Tactical.State.getStrategicProperties() != null && this.Tactical.State.getStrategicProperties().IsArenaMode)
+			{
+				if (_killer == null || _killer.getID() == this.getID())
+				{
+					this.Sound.play(this.Const.Sound.ArenaFlee[this.Math.rand(0, this.Const.Sound.ArenaFlee.len() - 1)], this.Const.Sound.Volume.Tactical * this.Const.Sound.Volume.Arena);
+				}
+				else
+				{
+					this.Sound.play(this.Const.Sound.ArenaKill[this.Math.rand(0, this.Const.Sound.ArenaKill.len() - 1)], this.Const.Sound.Volume.Tactical * this.Const.Sound.Volume.Arena);
+				}
+			}
 		}
 
 		if (this.isPlayerControlled())
@@ -3337,9 +3443,12 @@ this.actor <- this.inherit("scripts/entity/tactical/entity", {
 				{
 					if (bro.isAlive() && !bro.isDying() && bro.getCurrentProperties().IsAffectedByDyingAllies)
 					{
+						if (this.World.Assets.getOrigin().getID() != "scenario.manhunters" || this.getBackground().getID() != "background.slave" || bro.getBackground().getID() == "background.slave")
+						{
 						bro.worsenMood(this.Const.MoodChange.BrotherDied, this.getName() + " died in battle");
 					}
 				}
+			}
 			}
 
 			this.die();
@@ -3514,6 +3623,7 @@ this.actor <- this.inherit("scripts/entity/tactical/entity", {
 		divine.Visible = false;
 		local hex = this.addSprite("status_hex");
 		hex.Visible = false;
+		local sweat = this.addSprite("status_sweat");
 		local stunned = this.addSprite("status_stunned");
 		stunned.setBrush(this.Const.Combat.StunnedBrush);
 		stunned.Visible = false;
@@ -3603,7 +3713,11 @@ this.actor <- this.inherit("scripts/entity/tactical/entity", {
 		{
 			if (it.isItemType(this.Const.Items.ItemType.RangedWeapon) && (!_trueRangedOnly || this.Math.min(it.getRangeMax(), this.m.CurrentProperties.getVision()) >= 6 && this.m.CurrentProperties.getRangedSkill() >= 45))
 			{
-				if (it.getAmmoMax() == 0)
+				if (it.getAmmoMax() == 0 && it.getAmmoID() == "")
+				{
+					return true;
+				}
+				else if (it.getAmmoMax() == 0)
 				{
 					local ammo = this.m.Items.getItemAtSlot(this.Const.ItemSlot.Ammo);
 
@@ -3689,15 +3803,15 @@ this.actor <- this.inherit("scripts/entity/tactical/entity", {
 				if (isViable)
 				{
 					result.HasRangedWeapon = true;
-					local range = this.Math.min(it.getRangeMax(), this.m.CurrentProperties.getVision());
+					local range = this.Math.min(it.getRangeEffective() + it.getAdditionalRange(this), this.m.CurrentProperties.getVision());
 
 					if (range >= 6 && this.m.CurrentProperties.getRangedSkill() >= 45)
 					{
 						result.IsTrueRangedWeapon = true;
 					}
 
-					result.Range = range;
-					result.RangeWithLevel = range + this.getTile().Level;
+					result.Range = this.Math.max(result.Range, range);
+					result.RangeWithLevel = this.Math.max(result.RangeWithLevel, range + this.Math.min(it.getRangeMaxBonus(), this.getTile().Level));
 				}
 			}
 		}

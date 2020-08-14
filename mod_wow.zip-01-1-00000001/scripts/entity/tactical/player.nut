@@ -70,11 +70,6 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 		return 100 + (this.m.Level - 1) * 30;
 	}
 
-	function getXPForNextLevel()
-	{
-		return this.m.Level < this.Const.LevelXP.len() ? this.Const.LevelXP[this.m.Level] : this.Const.LevelXP[this.Const.LevelXP.len() - 1];
-	}
-
 	function getLevel()
 	{
 		return this.m.Level;
@@ -127,12 +122,12 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 
 	function getTryoutCost()
 	{
-		return this.Math.max(10, this.Math.min(this.m.HiringCost - 25, 25 + this.m.HiringCost * 0.1));
+		return this.Math.ceil(this.Math.max(10, this.Math.min(this.m.HiringCost - 25, 25 + this.m.HiringCost * 0.1) * this.World.Assets.m.TryoutPriceMult));
 	}
 
 	function getDailyCost()
 	{
-		return this.Math.max(0, this.m.CurrentProperties.DailyWage * this.m.CurrentProperties.DailyWageMult);
+		return this.Math.max(0, this.m.CurrentProperties.DailyWage * this.m.CurrentProperties.DailyWageMult * (("State" in this.World) && this.World.State != null ? this.World.Assets.m.DailyWageMult : 1.0));
 	}
 
 	function getDailyFood()
@@ -597,7 +592,7 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 
 		if (this.getHitpoints() < this.getHitpointsMax())
 		{
-			local ht = this.Math.ceil((this.getHitpointsMax() - this.getHitpoints()) / this.Const.World.Assets.HitpointsPerHour / 24.0);
+			local ht = this.Math.ceil((this.getHitpointsMax() - this.getHitpoints()) / (this.Const.World.Assets.HitpointsPerHour * (("State" in this.World) && this.World.State != null ? this.World.Assets.m.HitpointsPerHourMult : 1.0)) / 24.0);
 
 			if (ht > 1)
 			{
@@ -651,7 +646,7 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 	{
 		if (this.getHitpoints() < this.getHitpointsMax())
 		{
-			return this.Math.ceil((this.getHitpointsMax() - this.getHitpoints()) / this.Const.World.Assets.HitpointsPerHour / 24.0);
+			return this.Math.ceil((this.getHitpointsMax() - this.getHitpoints()) / (this.Const.World.Assets.HitpointsPerHour * (("State" in this.World) && this.World.State != null ? this.World.Assets.m.HitpointsPerHourMult : 1.0)) / 24.0);
 		}
 		else
 		{
@@ -710,9 +705,9 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 		this.m.Type = this.Const.EntityType.Player;
 		this.m.BloodType = this.Const.BloodType.Red;
 		this.human.create();
-		this.getTags().add("human");
-		this.getTags().set("PotionLastUsed", 0.0);
-		this.getTags().set("PotionsUsed", 0);
+		this.getFlags().add("human");
+		this.getFlags().set("PotionLastUsed", 0.0);
+		this.getFlags().set("PotionsUsed", 0);
 		this.m.AIAgent = this.new("scripts/ai/tactical/player_agent");
 		this.m.AIAgent.setActor(this);
 	}
@@ -720,7 +715,16 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 	function onHired()
 	{
 		this.m.HireTime = this.Time.getVirtualTimeF();
+
+		if (this.getBackground().getID() != "background.slave")
+		{
 		this.improveMood(1.5, "Joined a mercenary company");
+		}
+
+		if (("State" in this.World) && this.World.State != null && this.World.Assets.getOrigin().getID() == "scenario.manhunters" && this.getBackground().getID() != "background.slave")
+		{
+			this.getSkills().add(this.new("scripts/skills/actives/whip_slave_skill"));
+		}
 
 		if (this.World.getPlayerRoster().getSize() >= 12)
 		{
@@ -769,10 +773,10 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 
 		this.resetBloodied(false);
 		this.getSprite("dirt").Visible = false;
-		this.getTags().set("Devoured", false);
-		this.getTags().set("Charmed", false);
-		this.getTags().set("Sleeping", false);
-		this.getTags().set("Nightmare", false);
+		this.getFlags().set("Devoured", false);
+		this.getFlags().set("Charmed", false);
+		this.getFlags().set("Sleeping", false);
+		this.getFlags().set("Nightmare", false);
 		this.m.Fatigue = 0;
 		this.m.ActionPoints = 0;
 		this.m.Items.onCombatFinished();
@@ -803,7 +807,7 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 			return true;
 		}
 
-		if (this.Math.rand(1, 100) <= this.Const.Combat.SurviveWithInjuryChance * this.m.CurrentProperties.SurviveWithInjuryChanceMult)
+		if (this.Math.rand(1, 100) <= this.Const.Combat.SurviveWithInjuryChance * this.m.CurrentProperties.SurviveWithInjuryChanceMult || this.World.Assets.m.IsSurvivalGuaranteed && !this.m.Skills.hasSkillOfType(this.Const.SkillType.PermanentInjury) && (this.World.Assets.getOrigin().getID() != "scenario.manhunters" || this.getBackground().getID() != "background.slave"))
 		{
 			local potential = [];
 			local injuries = this.Const.Injury.Permanent;
@@ -840,6 +844,31 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 		}
 
 		return true;
+	}
+
+	function onOtherActorDeath( _killer, _victim, _skill )
+	{
+		if (!this.m.IsAlive || this.m.IsDying)
+		{
+			return;
+		}
+
+		if (_victim.getFaction() == this.getFaction() && ("getBackground" in _victim) && _victim.getBackground().getID() == "background.slave" && this.getBackground().getID() != "background.slave")
+		{
+			return;
+		}
+
+		this.actor.onOtherActorDeath(_killer, _victim, _skill);
+	}
+
+	function kill( _killer = null, _skill = null, _fatalityType = this.Const.FatalityType.None, _silent = false )
+	{
+		if (!this.Tactical.State.isScenarioMode() && this.World.Assets.m.IsSurvivalGuaranteed && !this.m.Skills.hasSkillOfType(this.Const.SkillType.PermanentInjury) && (this.World.Assets.getOrigin().getID() != "scenario.manhunters" || this.getBackground().getID() != "background.slave"))
+		{
+			_fatalityType = this.Const.FatalityType.None;
+		}
+
+		this.actor.kill(_killer, _skill, _fatalityType, _silent);
 	}
 
 	function onDeath( _killer, _skill, _tile, _fatalityType )
@@ -1089,7 +1118,8 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 				TimeWithCompany = this.Math.max(1, this.getDaysWithCompany()),
 				Kills = this.m.LifetimeStats.Kills,
 				Battles = this.m.LifetimeStats.Battles + 1,
-				KilledBy = killedBy
+				KilledBy = killedBy,
+				Expendable = this.getBackground().getID() == "background.slave"
 			};
 			this.World.Statistics.addFallen(fallen);
 		}
@@ -1104,7 +1134,6 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 		this.m.Skills.add(this.new("scripts/skills/special/no_ammo_warning"));
 		this.m.Skills.add(this.new("scripts/skills/effects/battle_standard_effect"));
 		this.m.Skills.add(this.new("scripts/skills/actives/break_ally_free_skill"));
-		this.m.Skills.add(this.new("scripts/skills/effects/realm_of_nightmares_effect"));
 		this.m.Skills.add(this.new("scripts/skills/effects/battleshout_effect"));
 		this.m.Skills.add(this.new("scripts/skills/effects/devoutionaura_effect"));
 		this.m.Skills.add(this.new("scripts/skills/effects/concentrationaura_effect"));
@@ -1172,6 +1201,10 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 		{
 			_difficulty = _difficulty + (this.Math.rand(0, 1) == 0 ? 10 : -10);
 		}
+		else if (this.m.Skills.hasSkill("trait.mad"))
+		{
+			_difficulty = _difficulty + (this.Math.rand(0, 1) == 0 ? 15 : -15);
+		}
 
 		if (_change < 0 && _type == this.Const.MoraleCheckType.MentalAttack && this.m.Skills.hasSkill("trait.superstitious"))
 		{
@@ -1181,9 +1214,23 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 		return this.actor.checkMorale(_change, _difficulty, _type, _showIconBeforeMoraleIcon, _noNewLine);
 	}
 
+	function getXPForNextLevel()
+	{
+		if (this.m.Level >= 7 && ("State" in this.World) && this.World.State != null && this.World.Assets.getOrigin().getID() == "scenario.manhunters" && this.getBackground().getID() == "background.slave")
+		{
+			return this.Const.LevelXP[6];
+		}
+		else
+		{
+			return this.m.Level < this.Const.LevelXP.len() ? this.Const.LevelXP[this.m.Level] : this.Const.LevelXP[this.Const.LevelXP.len() - 1];
+		}
+	}
+
 	function addXP( _xp, _scale = true )
 	{
-		if (this.m.Level >= this.Const.LevelXP.len() || this.isGuest())
+		local isScenarioMode = !(("State" in this.World) && this.World.State != null);
+
+		if (this.m.Level >= this.Const.LevelXP.len() || this.isGuest() || !isScenarioMode && this.World.Assets.getOrigin().getID() == "scenario.manhunters" && this.m.Level >= 7 && this.getBackground().getID() == "background.slave")
 		{
 			return;
 		}
@@ -1198,15 +1245,34 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 			_xp = _xp * this.Const.Combat.GlobalXPVeteranLevelMult;
 		}
 
-		if (("State" in this.World) && this.World.State != null && this.World.getPlayerRoster().getSize() < 3)
+		if (!isScenarioMode)
+		{
+			if (_scale)
+			{
+				_xp = _xp * this.World.Assets.m.XPMult;
+
+				if (this.World.Retinue.hasFollower("follower.drill_sergeant"))
+				{
+					_xp = _xp * this.Math.maxf(1.0, 1.2 - 0.02 * (this.m.Level - 1));
+				}
+			}
+
+			if (this.World.getPlayerRoster().getSize() < 3)
 		{
 			_xp = _xp * (1.0 - (3 - this.World.getPlayerRoster().getSize()) * 0.15);
+		}
 		}
 
 		if (this.m.XP + _xp * this.m.CurrentProperties.XPGainMult >= this.Const.LevelXP[this.Const.LevelXP.len() - 1])
 		{
 			this.m.CombatStats.XPGained += this.Const.LevelXP[this.Const.LevelXP.len() - 1] - this.m.XP;
 			this.m.XP = this.Const.LevelXP[this.Const.LevelXP.len() - 1];
+			return;
+		}
+		else if (!isScenarioMode && this.World.Assets.getOrigin().getID() == "scenario.manhunters" && this.m.XP + _xp * this.m.CurrentProperties.XPGainMult >= this.Const.LevelXP[6] && this.getBackground().getID() == "background.slave")
+		{
+			this.m.CombatStats.XPGained += this.Const.LevelXP[6] - this.m.XP;
+			this.m.XP = this.Const.LevelXP[6];
 			return;
 		}
 
@@ -1237,7 +1303,7 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 		this.m.Skills.add(this.new(perk.Script));
 		this.m.Skills.update();
 
-		if (this.m.Level >= 11 && _id == "perk.student")
+		if ((this.m.Level >= 11 || this.m.Level >= 7 && this.World.Assets.getOrigin().getID() == "scenario.manhunters" && this.getBackground().getID() == "background.slave") && _id == "perk.student")
 		{
 			++this.m.PerkPoints;
 		}
@@ -1301,7 +1367,7 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 				++this.m.PerkPoints;
 			}
 
-			if (this.m.Level == 11 && this.m.Skills.hasSkill("perk.student"))
+			if ((this.m.Level == 11 || this.m.Level == 7 && this.World.Assets.getOrigin().getID() == "scenario.manhunters" && this.getBackground().getID() == "background.slave") && this.m.Skills.hasSkill("perk.student"))
 			{
 				++this.m.PerkPoints;
 			}
@@ -1795,18 +1861,17 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 			_backgrounds = this.Const.CharacterPiracyBackgrounds;
 		}
 
-		if (this.m.Name.len() == 0)
-		{
-			this.m.Name = this.Const.Tactical.Common.getRandomPlayerName();
-		}
-
 		local background = this.new("scripts/skills/backgrounds/" + _backgrounds[this.Math.rand(0, _backgrounds.len() - 1)]);
 		this.m.Skills.add(background);
 		this.m.Background = background;
+		this.m.Ethnicity = this.m.Background.getEthnicity();
 		background.buildAttributes();
 		background.buildDescription();
 
-		background.buildPerkTree();
+		if (this.m.Name.len() == 0)
+		{
+			this.m.Name = background.m.Names[this.Math.rand(0, background.m.Names.len() - 1)];
+		}
 
 		if (_addTraits)
 		{
@@ -2089,7 +2154,7 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 
 	function onSerialize( _out )
 	{
-		this.actor.onSerialize(_out);
+		this.human.onSerialize(_out);
 		_out.writeU8(this.m.Level);
 		_out.writeU8(this.m.PerkPoints);
 		_out.writeU8(this.m.PerkPointsSpent);
@@ -2137,7 +2202,16 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 
 	function onDeserialize( _in )
 	{
+		if (_in.getMetaData().getVersion() >= 59)
+		{
+			this.human.onDeserialize(_in);
+		}
+		else
+		{
 		this.actor.onDeserialize(_in);
+		}
+
+		this.m.Surcoat = null;
 		this.m.Level = _in.readU8();
 		this.m.PerkPoints = _in.readU8();
 		this.m.PerkPointsSpent = _in.readU8();
