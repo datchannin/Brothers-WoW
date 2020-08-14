@@ -27,7 +27,7 @@ this.raider_warrior_background <- this.inherit("scripts/skills/backgrounds/chara
 		this.m.Hairs = this.Const.Hair.UntidyMale;
 		this.m.HairColors = this.Const.HairColors.All;
 		this.m.Beards = this.Const.Beards.Tidy;
-		this.m.Body = "bust_naked_body_01";
+		this.m.Bodies = this.Const.Bodies.Muscular;
 		this.m.Level = this.Math.rand(3, 5);
 	}
 
