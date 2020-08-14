@@ -26,7 +26,7 @@ this.wow_scenario_fire_punch <- this.inherit("scripts/scenarios/world/starting_s
 		bro.getSkills().removeByID("trait.disloyal");
 		bro.getSkills().add(this.new("scripts/skills/traits/player_character_trait"));
 		bro.setPlaceInFormation(4);
-		bro.getTags().set("IsPlayerCharacter", true);
+		bro.getFlags().set("IsPlayerCharacter", true);
 		bro.m.HireTime = this.Time.getVirtualTimeF();
 		bro.m.PerkPoints = 4;
 		bro.m.LevelUps = 4;
@@ -187,7 +187,7 @@ this.wow_scenario_fire_punch <- this.inherit("scripts/scenarios/world/starting_s
 
 		foreach( bro in roster )
 		{
-			if (bro.getTags().get("IsPlayerCharacter"))
+			if (bro.getFlags().get("IsPlayerCharacter"))
 			{
 				return true;
 			}
