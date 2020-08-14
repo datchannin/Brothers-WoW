@@ -7,8 +7,8 @@ local scriptsDLCInitPath = "scripts/dlc/";
 local priorityScriptFiles = [
 	scriptsConfigPath + "global",
 	scriptsConfigPath + "ui",
-	scriptsConfigPath + "wow_strings",
 	scriptsConfigPath + "strings",
+	scriptsConfigPath + "wow_strings",
 	scriptsConfigPath + "character_names",
 	scriptsConfigPath + "spawnlist_master"
 ];
