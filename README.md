@@ -14,7 +14,7 @@ Classes that should be implemented for the addon - alliance classes from World o
 
 ## Workflow
 * ![custom badges](https://img.shields.io/badge/bug%20tracker-yes-green)
-* ![custom badges](https://img.shields.io/badge/extended%20docs-not-red)
+* ![custom badges](https://img.shields.io/badge/release-yes-green) [release link](https://github.com/datchannin/Brothers-WoW/releases)
 * ![custom badges](https://img.shields.io/badge/perk%20calculator-in%20progress-yellow) [perk calculator](https://bbwow.net)
 
 ## Description
@@ -27,14 +27,14 @@ After certain conditions will be executed, Raid Dungeons should be added into th
 For the future the plan is to add WoW-like equipment in addition to standard weapons and equipment of this modification. Also such  equipment should be used by certain character classes and additional bonuses should be added to the user with full sets of equipments, as this is done by using raid sets of World of Warcraft.
 
 ## Requirements
-* Battle Brothers with all DLC installed, version 1.4.0.34
+* Battle Brothers with all DLC installed, version 1.4.0.35
 * mod_wow.zip, the latest version
 
 ## Usage
 To install this mode you should do step-by-step:
-1. Download and install "Battle Brothers".
-2. Download the latest directory from "Brothers-WoW" repo. (for example mod_wow.zip-01-1-00000001)
-3. Put addon into the "data" dir.
+1. Download and install the latest "Battle Brothers" game.
+2. Download the latest directory from "Brothers-WoW" release repo: [release link](https://github.com/datchannin/Brothers-WoW/releases)
+3. Put addon into the "data" dir (you should put zip without unzipping).
 4. Run the game. "bbWoW" addon works by default.
 5. For test or debug this addon, select "WoW debug Company" from the scenario list.
 ![Selection screen](spec/company.png "Brothers WoW repo: Select company for play.")
