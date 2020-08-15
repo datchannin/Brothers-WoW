@@ -1,3 +1,4 @@
+/*BBWOW:This file is part of datchannin bbWoW mod, mod_version = 5.03, game_version = 1.4.0.35*/
 this.raider_rogue_background <- this.inherit("scripts/skills/backgrounds/character_background", {
 	m = {},
 	function create()

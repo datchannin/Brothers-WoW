@@ -1,3 +1,4 @@
+/*BBWOW:This file is part of datchannin bbWoW mod, mod_version = 5.03, game_version = 1.4.0.35*/
 this.rogue_poison_skill <- this.inherit("scripts/skills/skill", {
 	m = {
 		PoisonMaster = 0

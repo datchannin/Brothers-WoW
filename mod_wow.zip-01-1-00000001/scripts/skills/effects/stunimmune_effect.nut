@@ -1,3 +1,4 @@
+/*BBWOW:This file is part of datchannin bbWoW mod, mod_version = 5.03, game_version = 1.4.0.35*/
 this.stunimmune_effect <- this.inherit("scripts/skills/skill", {
 	m = {
 		IsEnabled = true,
