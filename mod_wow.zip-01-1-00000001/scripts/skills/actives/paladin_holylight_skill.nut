@@ -1,4 +1,4 @@
-/*BBWOW:This file is part of datchannin bbWoW mod, mod_version = 5.03, game_version = 1.4.0.35*/
+/*BBWOW:This file is part of datchannin bbWoW mod, mod_version = 5.04, game_version = 1.4.0.36*/
 this.paladin_holylight_skill <- this.inherit("scripts/skills/skill", {
 	m = {
 		IsMasterInLight = 0
