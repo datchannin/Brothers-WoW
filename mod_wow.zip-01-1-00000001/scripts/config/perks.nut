@@ -366,24 +366,22 @@ gt.Const.Perks.PerkTreeMage <- [
 		gt.Const.Perks.PerkDefObjects.RallyTheTroops
 	],
 	[
-		gt.Const.Perks.PerkDefObjects.MasterThrowing
-		gt.Const.Perks.PerkDefObjects.MasterPolearm
-		gt.Const.Perks.PerkDefObjects.MasterMace
-		gt.Const.Perks.PerkDefObjects.MasterDagger
-		gt.Const.Perks.PerkDefObjects.SpecDagger
-		gt.Const.Perks.PerkDefObjects.SpecMace
-		gt.Const.Perks.PerkDefObjects.SpecPolearm
-		gt.Const.Perks.PerkDefObjects.SpecThrowing
+		gt.Const.Perks.PerkDefObjects.MagicFocus1
+		gt.Const.Perks.PerkDefObjects.MagicFocus2
+		gt.Const.Perks.PerkDefObjects.MagicFocus3
+		gt.Const.Perks.PerkDefObjects.Meditation
+		gt.Const.Perks.PerkDefObjects.MagicAbsorption
+		gt.Const.Perks.PerkDefObjects.MagicInstability
 	],
 	[
-		gt.Const.Perks.PerkDefObjects.Overwhelm
 		gt.Const.Perks.PerkDefObjects.LoneWolf
 		gt.Const.Perks.PerkDefObjects.Underdog
 		gt.Const.Perks.PerkDefObjects.Footwork
 	],
 	[
+		gt.Const.Perks.PerkDefObjects.FireAttunement
+		gt.Const.Perks.PerkDefObjects.IceAttunement
 		gt.Const.Perks.PerkDefObjects.Berserk
-		gt.Const.Perks.PerkDefObjects.HeadHunter
 		gt.Const.Perks.PerkDefObjects.Nimble
 	],
 	[
