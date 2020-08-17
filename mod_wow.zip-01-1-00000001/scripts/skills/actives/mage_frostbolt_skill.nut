@@ -50,40 +50,87 @@ this.mage_frostbolt_skill <- this.inherit("scripts/skills/skill", {
 		this.m.ProjectileTimeScale = 1.5;
 	}
 
+	function getTotalFrostMinDamage()
+	{
+		local total_damage_min = 18;
+		if (this.m.arcticreach)
+		{
+			total_damage_min += 5;
+		}
+
+		if (this.m.iceattunement)
+		{
+			total_damage_min += 5;
+		}
+
+		if (this.m.focus1)
+		{
+			total_damage_min += 3;
+		}
+
+		if (this.m.focus2)
+		{
+			total_damage_min += 3;
+		}
+
+		if (this.m.focus3)
+		{
+			total_damage_min += 3;
+		}
+
+		return total_damage_min;
+	}
+
+	function getTotalFrostMaxDamage()
+	{
+		local total_damage_max = 22;
+		if (this.m.arcticreach)
+		{
+			total_damage_max += 5;
+		}
+
+		if (this.m.iceattunement)
+		{
+			total_damage_max += 5;
+		}
+
+		if (this.m.focus1)
+		{
+			total_damage_max += 3;
+		}
+
+		if (this.m.focus2)
+		{
+			total_damage_max += 3;
+		}
+
+		if (this.m.focus3)
+		{
+			total_damage_max += 3;
+		}
+
+		return total_damage_max;
+	}
+
 	function getTooltip()
 	{
 		local ret = this.getDefaultUtilityTooltip();
-		
-		if (this.m.arcticreach)
-		{		
-			ret.push({
-				id = 6,
-				type = "text",
-				icon = "ui/icons/regular_damage.png",
-				text = "Inflicts [color=" + this.Const.UI.Color.DamageValue + "] 23 [/color]-[color=" + this.Const.UI.Color.DamageValue + "] 28 [/color] damage to hitpoints."
-			});
-			ret.push({
-				id = 6,
-				type = "text",
-				icon = "ui/icons/armor_damage.png",
-				text = "Inflicts [color=" + this.Const.UI.Color.DamageValue + "] 23 [/color]-[color=" + this.Const.UI.Color.DamageValue + "] 28 [/color] damage to armor."
-			});
-		}
-		else
-		{
-			ret.push({
-				id = 6,
-				type = "text",
-				icon = "ui/icons/regular_damage.png",
-				text = "Inflicts [color=" + this.Const.UI.Color.DamageValue + "] 18 [/color]-[color=" + this.Const.UI.Color.DamageValue + "] 22 [/color] damage to hitpoints."
-			});
-			ret.push({
-				id = 6,
-				type = "text",
-				icon = "ui/icons/armor_damage.png",
-				text = "Inflicts [color=" + this.Const.UI.Color.DamageValue + "] 18 [/color]-[color=" + this.Const.UI.Color.DamageValue + "] 22 [/color] damage to armor."
-			});
-		}
+		local total_frost_min = getTotalFrostMinDamage();
+		local total_frost_max = getTotalFrostMaxDamage();
+
+		ret.push({
+			id = 6,
+			type = "text",
+			icon = "ui/icons/regular_damage.png",
+			text = "Inflicts [color=" + this.Const.UI.Color.DamageValue + "]" + total_frost_min + "[/color] - [color=" + this.Const.UI.Color.DamageValue + "]" + total_frost_max + "[/color] damage to hitpoints."
+		});
+
+		ret.push({
+			id = 6,
+			type = "text",
+			icon = "ui/icons/armor_damage.png",
+			text = "Inflicts [color=" + this.Const.UI.Color.DamageValue + "]" + total_frost_min + "[/color] - [color=" + this.Const.UI.Color.DamageValue + "]" + total_frost_max + "[/color] damage to armor."
+		});
 
 		ret.push({
 			id = 6,
@@ -163,11 +210,8 @@ this.mage_frostbolt_skill <- this.inherit("scripts/skills/skill", {
 	{
 		if (_skill == this)
 		{
-			if (this.m.arcticreach)
-			{
-				this.m.damage_min = 23;
-				this.m.damage_max = 28;
-			}
+			this.m.damage_min = getTotalFrostMinDamage();
+			this.m.damage_max = getTotalFrostMaxDamage();
 		
 			_properties.DamageRegularMin = this.m.damage_min;
 			_properties.DamageRegularMax = this.m.damage_max;
