@@ -9,7 +9,7 @@ Classes that should be implemented for the addon - alliance classes from World o
 * ![custom badges](https://img.shields.io/badge/status-to%20do-blue) druid
 * ![custom badges](https://img.shields.io/badge/status-done-green) [rogue](https://github.com/datchannin/Brothers-WoW/blob/master/spec/rogue.md)
 * ![custom badges](https://img.shields.io/badge/status-to%20do-blue) warlock
-* ![custom badges](https://img.shields.io/badge/status-in%20progress-yellow) [mage](https://github.com/datchannin/Brothers-WoW/blob/master/spec/mage.md)
+* ![custom badges](https://img.shields.io/badge/status-done-green) [mage](https://github.com/datchannin/Brothers-WoW/blob/master/spec/mage.md)
 * ![custom badges](https://img.shields.io/badge/status-to%20do-blue) priest
 
 ## Workflow
@@ -27,7 +27,7 @@ After certain conditions will be executed, Raid Dungeons should be added into th
 For the future the plan is to add WoW-like equipment in addition to standard weapons and equipment of this modification. Also such  equipment should be used by certain character classes and additional bonuses should be added to the user with full sets of equipments, as this is done by using raid sets of World of Warcraft.
 
 ## Requirements
-* Battle Brothers with all DLC installed, version 1.4.0.35
+* Battle Brothers with all DLC installed, version 1.4.0.37
 * mod_wow.zip, the latest version
 
 ## Usage
