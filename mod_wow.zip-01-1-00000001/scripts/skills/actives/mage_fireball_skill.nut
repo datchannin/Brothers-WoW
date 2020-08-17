@@ -157,6 +157,11 @@ this.mage_fireball_skill <- this.inherit("scripts/skills/skill", {
 				this.m.MaxRange = 6;
 			}
 		}
+		
+		if (this.m.magicabsorption)
+		{
+			this.m.FatigueCost = 18;
+		}
 	}
 
 	function onAnySkillUsed( _skill, _targetEntity, _properties )

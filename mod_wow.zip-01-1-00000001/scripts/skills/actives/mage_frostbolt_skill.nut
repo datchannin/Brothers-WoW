@@ -157,6 +157,11 @@ this.mage_frostbolt_skill <- this.inherit("scripts/skills/skill", {
 				this.m.MaxRange = 5;
 			}
 		}
+		
+		if (this.m.magicabsorption)
+		{
+			this.m.FatigueCost = 13;
+		}
 	}
 
 	function onAnySkillUsed( _skill, _targetEntity, _properties )
