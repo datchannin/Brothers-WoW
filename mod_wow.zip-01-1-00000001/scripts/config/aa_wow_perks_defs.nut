@@ -1279,3 +1279,83 @@ gt.Const.Perks.PerkDefObjects.WintersChill <- {
 	IconDisabled = "ui/perks/perk_mage_winterschill_sw.png",
 	Const = "WintersChill"
 }
+
+gt.Const.Perks.PerkDefObjects.MagicFocus1 <- {
+	ID = "perk.wow.mage.magicfocus1",
+	Script = "scripts/skills/perks/perk_wow_magicfocus1",
+	Name = this.Const.Wow_strings.PerkName.MagicFocus1,
+	Tooltip = this.Const.Wow_strings.PerkDescription.MagicFocus1,
+	Icon = "ui/perks/perk_mage_magicfocus1.png",
+	IconDisabled = "ui/perks/perk_mage_magicfocus1_sw.png",
+	Const = "MagicFocus1"
+}
+
+gt.Const.Perks.PerkDefObjects.MagicFocus2 <- {
+	ID = "perk.wow.mage.magicfocus2",
+	Script = "scripts/skills/perks/perk_wow_magicfocus2",
+	Name = this.Const.Wow_strings.PerkName.MagicFocus2,
+	Tooltip = this.Const.Wow_strings.PerkDescription.MagicFocus2,
+	Icon = "ui/perks/perk_mage_magicfocus2.png",
+	IconDisabled = "ui/perks/perk_mage_magicfocus2_sw.png",
+	Const = "MagicFocus2"
+}
+
+gt.Const.Perks.PerkDefObjects.MagicFocus3 <- {
+	ID = "perk.wow.mage.magicfocus3",
+	Script = "scripts/skills/perks/perk_wow_magicfocus3",
+	Name = this.Const.Wow_strings.PerkName.MagicFocus3,
+	Tooltip = this.Const.Wow_strings.PerkDescription.MagicFocus3,
+	Icon = "ui/perks/perk_mage_magicfocus3.png",
+	IconDisabled = "ui/perks/perk_mage_magicfocus3_sw.png",
+	Const = "MagicFocus3"
+}
+
+gt.Const.Perks.PerkDefObjects.Meditation <- {
+	ID = "perk.wow.mage.meditation",
+	Script = "scripts/skills/perks/perk_wow_meditation",
+	Name = this.Const.Wow_strings.PerkName.Meditation,
+	Tooltip = this.Const.Wow_strings.PerkDescription.Meditation,
+	Icon = "ui/perks/perk_mage_meditation.png",
+	IconDisabled = "ui/perks/perk_mage_meditation_sw.png",
+	Const = "Meditation"
+}
+
+gt.Const.Perks.PerkDefObjects.MagicAbsorption <- {
+	ID = "perk.wow.mage.magicabsorption",
+	Script = "scripts/skills/perks/perk_wow_magicabsorption",
+	Name = this.Const.Wow_strings.PerkName.MagicAbsorption,
+	Tooltip = this.Const.Wow_strings.PerkDescription.MagicAbsorption,
+	Icon = "ui/perks/perk_mage_magicabsorption.png",
+	IconDisabled = "ui/perks/perk_mage_magicabsorption_sw.png",
+	Const = "MagicAbsorption"
+}
+
+gt.Const.Perks.PerkDefObjects.MagicInstability <- {
+	ID = "perk.wow.mage.magicinstability",
+	Script = "scripts/skills/perks/perk_wow_magicinstability",
+	Name = this.Const.Wow_strings.PerkName.MagicInstability,
+	Tooltip = this.Const.Wow_strings.PerkDescription.MagicInstability,
+	Icon = "ui/perks/perk_mage_magicinstability.png",
+	IconDisabled = "ui/perks/perk_mage_magicinstability_sw.png",
+	Const = "MagicInstability"
+}
+
+gt.Const.Perks.PerkDefObjects.FireAttunement <- {
+	ID = "perk.wow.mage.fireattunement",
+	Script = "scripts/skills/perks/perk_wow_fireattunement",
+	Name = this.Const.Wow_strings.PerkName.FireAttunement,
+	Tooltip = this.Const.Wow_strings.PerkDescription.FireAttunement,
+	Icon = "ui/perks/perk_mage_fireattunement.png",
+	IconDisabled = "ui/perks/perk_mage_fireattunement_sw.png",
+	Const = "FireAttunement"
+}
+
+gt.Const.Perks.PerkDefObjects.IceAttunement <- {
+	ID = "perk.wow.mage.iceattunement",
+	Script = "scripts/skills/perks/perk_wow_iceattunement",
+	Name = this.Const.Wow_strings.PerkName.IceAttunement,
+	Tooltip = this.Const.Wow_strings.PerkDescription.IceAttunement,
+	Icon = "ui/perks/perk_mage_iceattunement.png",
+	IconDisabled = "ui/perks/perk_mage_iceattunement_sw.png",
+	Const = "IceAttunement"
+}
