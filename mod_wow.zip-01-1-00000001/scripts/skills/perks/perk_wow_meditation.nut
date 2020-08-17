@@ -13,4 +13,14 @@ this.perk_wow_meditation <- this.inherit("scripts/skills/skill", {
 		this.m.IsStacking = false;
 		this.m.IsHidden = false;
 	}
+	
+	function onCombatStarted()
+	{
+		this.getContainer().add(this.new("scripts/skills/effects/meditation_effect"));
+	}
+
+	function onRemoved()
+	{
+		this.getContainer().removeByID("effects.meditation");
+	}
 });
