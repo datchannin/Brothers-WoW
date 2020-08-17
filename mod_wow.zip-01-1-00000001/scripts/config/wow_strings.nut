@@ -1,4 +1,4 @@
-/*BBWOW:This file is part of datchannin bbWoW mod, mod_version = 5.04, game_version = 1.4.0.36*/
+/*BBWOW:This file is part of datchannin bbWoW mod, mod_version = 5.05, game_version = 1.4.0.37*/
 local gt = this.getroottable();
 
 if (!("Wow_strings" in gt.Const))
@@ -166,7 +166,15 @@ gt.Const.Wow_strings.PerkName <- {
 	FrostArmor = "Frost Armor",
 	MasterPolearm = "Polearm Specialization",
 	Ignite = "Ignite",
-	WintersChill = "Winter\'s Chill"
+	WintersChill = "Winter\'s Chill",
+	MagicFocus1 = "Magic Focus: Peace",
+	MagicFocus2 = "Magic Focus: Angry",
+	MagicFocus3 = "Magic Focus: Arcane",
+	Meditation = "Meditation",
+	MagicAbsorption = "Magic Absorption",
+	MagicInstability = "Magic Instability",
+	FireAttunement = "Fire Attunement",
+	IceAttunement = "Ice Attunement"
 	
 };
 
