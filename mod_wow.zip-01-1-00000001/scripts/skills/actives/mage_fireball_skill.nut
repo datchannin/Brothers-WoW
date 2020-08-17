@@ -5,6 +5,12 @@ this.mage_fireball_skill <- this.inherit("scripts/skills/skill", {
 		damage_max = 25,
 		blastwave = false,
 		ignite = false,
+		focus1 = false,
+		focus2 = false,
+		focus3 = false,
+		magicabsorption = false,
+		magicinstability = false,
+		fireattunement = false
 	},
 	function create()
 	{
@@ -68,12 +74,6 @@ this.mage_fireball_skill <- this.inherit("scripts/skills/skill", {
 				icon = "ui/icons/hitchance.png",
 				text = "Has [color=" + this.Const.UI.Color.DamageValue + "] 100% [/color] chance to hit."
 			});
-			ret.push({
-				id = 6,
-				type = "text",
-				icon = "ui/icons/vision.png",
-				text = "Has a range of [color=" + this.Const.UI.Color.PositiveValue + "] 7 [/color] tiles."
-			});
 		}
 		else
 		{
@@ -95,13 +95,14 @@ this.mage_fireball_skill <- this.inherit("scripts/skills/skill", {
 				icon = "ui/icons/hitchance.png",
 				text = "Has [color=" + this.Const.UI.Color.DamageValue + "] 100% [/color] chance to hit."
 			});
-			ret.push({
-				id = 6,
-				type = "text",
-				icon = "ui/icons/vision.png",
-				text = "Has a range of [color=" + this.Const.UI.Color.PositiveValue + "] 5 [/color] tiles."
-			});
 		}
+
+		ret.push({
+			id = 6,
+			type = "text",
+			icon = "ui/icons/vision.png",
+			text = "Has a range of [color=" + this.Const.UI.Color.PositiveValue + "]" + this.m.MaxRange + "[/color] tiles."
+		});
 
 		if (this.m.ignite)
 		{
@@ -131,13 +132,30 @@ this.mage_fireball_skill <- this.inherit("scripts/skills/skill", {
 		local user = this.getContainer().getActor();
 		this.m.blastwave = user.getSkills().hasSkill("perk.wow.mage.blastwave");
 		this.m.ignite = user.getSkills().hasSkill("perk.wow.mage.ignite");
+		this.m.focus1 = user.getSkills().hasSkill("perk.wow.mage.magicfocus1");
+		this.m.focus2 = user.getSkills().hasSkill("perk.wow.mage.magicfocus2");
+		this.m.focus3 = user.getSkills().hasSkill("perk.wow.mage.magicfocus3");
+		this.m.magicabsorption = user.getSkills().hasSkill("perk.wow.mage.magicabsorption");
+		this.m.magicinstability = user.getSkills().hasSkill("perk.wow.mage.magicinstability");
+		this.m.fireattunement = user.getSkills().hasSkill("perk.wow.mage.fireattunement");
 	}
 
 	function onAfterUpdate( _properties )
 	{
-		if (this.m.blastwave)
+		if ((this.m.blastwave) && (this.m.magicinstability))
 		{
-			this.m.MaxRange = 7;
+			this.m.MaxRange = 8;
+		}
+		else
+		{
+			if (this.m.blastwave)
+			{
+				this.m.MaxRange = 7;
+			}
+			if (this.m.magicinstability)
+			{
+				this.m.MaxRange = 6;
+			}
 		}
 	}
 

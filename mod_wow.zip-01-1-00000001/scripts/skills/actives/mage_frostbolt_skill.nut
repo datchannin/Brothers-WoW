@@ -5,6 +5,12 @@ this.mage_frostbolt_skill <- this.inherit("scripts/skills/skill", {
 		damage_max = 22,
 		arcticreach = false,
 		winterschill = false,
+		focus1 = false,
+		focus2 = false,
+		focus3 = false,
+		magicabsorption = false,
+		magicinstability = false,
+		iceattunement = false
 	},
 	function create()
 	{
@@ -68,12 +74,6 @@ this.mage_frostbolt_skill <- this.inherit("scripts/skills/skill", {
 				icon = "ui/icons/hitchance.png",
 				text = "Has [color=" + this.Const.UI.Color.DamageValue + "] 100% [/color] chance to hit."
 			});
-			ret.push({
-				id = 6,
-				type = "text",
-				icon = "ui/icons/vision.png",
-				text = "Has a range of [color=" + this.Const.UI.Color.PositiveValue + "] 6 [/color] tiles."
-			});
 		}
 		else
 		{
@@ -95,13 +95,14 @@ this.mage_frostbolt_skill <- this.inherit("scripts/skills/skill", {
 				icon = "ui/icons/hitchance.png",
 				text = "Has [color=" + this.Const.UI.Color.DamageValue + "] 100% [/color] chance to hit."
 			});
-			ret.push({
-				id = 6,
-				type = "text",
-				icon = "ui/icons/vision.png",
-				text = "Has a range of [color=" + this.Const.UI.Color.PositiveValue + "] 4 [/color] tiles."
-			});
 		}
+
+		ret.push({
+			id = 6,
+			type = "text",
+			icon = "ui/icons/vision.png",
+			text = "Has a range of [color=" + this.Const.UI.Color.PositiveValue + "]" + this.m.MaxRange + "[/color] tiles."
+		});
 
 		if (this.m.winterschill)
 		{
@@ -131,13 +132,30 @@ this.mage_frostbolt_skill <- this.inherit("scripts/skills/skill", {
 		local user = this.getContainer().getActor();
 		this.m.arcticreach = user.getSkills().hasSkill("perk.wow.mage.arcticreach");
 		this.m.winterschill = user.getSkills().hasSkill("perk.wow.mage.winterschill");
+		this.m.focus1 = user.getSkills().hasSkill("perk.wow.mage.magicfocus1");
+		this.m.focus2 = user.getSkills().hasSkill("perk.wow.mage.magicfocus2");
+		this.m.focus3 = user.getSkills().hasSkill("perk.wow.mage.magicfocus3");
+		this.m.magicabsorption = user.getSkills().hasSkill("perk.wow.mage.magicabsorption");
+		this.m.magicinstability = user.getSkills().hasSkill("perk.wow.mage.magicinstability");
+		this.m.iceattunement = user.getSkills().hasSkill("perk.wow.mage.iceattunement");
 	}
 
 	function onAfterUpdate( _properties )
 	{
-		if (this.m.arcticreach)
+		if ((this.m.arcticreach) && (this.m.magicinstability))
 		{
-			this.m.MaxRange = 6;
+			this.m.MaxRange = 7;
+		}
+		else
+		{
+			if (this.m.arcticreach)
+			{
+				this.m.MaxRange = 6;
+			}
+			if (this.m.magicinstability)
+			{
+				this.m.MaxRange = 5;
+			}
 		}
 	}
 
