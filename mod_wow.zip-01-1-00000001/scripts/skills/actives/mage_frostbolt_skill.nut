@@ -68,12 +68,6 @@ this.mage_frostbolt_skill <- this.inherit("scripts/skills/skill", {
 				icon = "ui/icons/armor_damage.png",
 				text = "Inflicts [color=" + this.Const.UI.Color.DamageValue + "] 23 [/color]-[color=" + this.Const.UI.Color.DamageValue + "] 28 [/color] damage to armor."
 			});
-			ret.push({
-				id = 6,
-				type = "text",
-				icon = "ui/icons/hitchance.png",
-				text = "Has [color=" + this.Const.UI.Color.DamageValue + "] 100% [/color] chance to hit."
-			});
 		}
 		else
 		{
@@ -89,13 +83,14 @@ this.mage_frostbolt_skill <- this.inherit("scripts/skills/skill", {
 				icon = "ui/icons/armor_damage.png",
 				text = "Inflicts [color=" + this.Const.UI.Color.DamageValue + "] 18 [/color]-[color=" + this.Const.UI.Color.DamageValue + "] 22 [/color] damage to armor."
 			});
-			ret.push({
-				id = 6,
-				type = "text",
-				icon = "ui/icons/hitchance.png",
-				text = "Has [color=" + this.Const.UI.Color.DamageValue + "] 100% [/color] chance to hit."
-			});
 		}
+
+		ret.push({
+			id = 6,
+			type = "text",
+			icon = "ui/icons/hitchance.png",
+			text = "Has [color=" + this.Const.UI.Color.DamageValue + "] 100% [/color] chance to hit."
+		});
 
 		ret.push({
 			id = 6,

@@ -253,7 +253,7 @@ gt.Const.Wow_strings.PerkDescription <- {
 	WintersChill = "Now your \'Frostbolt\' is able to freeze target. Target will be chained by this effect.",
 	MagicFocus1 = "Peace of your mind is under control now. Increases \'Frostbolt\' and \'Fireball\' spell damage by 3 points.",
 	MagicFocus2 = "Angry of your mind is under control now. Increases \'Frostbolt\' and \'Fireball\' spell damage by 3 points.",
-	MagicFocus3 = "Arcane channel in your mind is under control now. Increases \'Frostbolt\' and \'Fireball\' spell damage by 3 points.",
+	MagicFocus3 = "Arcane channel in your mind is under control now. Increases \'Frostbolt\' and \'Fireball\' spell damage by [color=" + this.Const.UI.Color.PositiveValue + "]3[/color] points.",
 	Meditation = "Learn how to meditate even while combat is in progress. You are as a stone now. Increases your Fatigue recover for [color=" + this.Const.UI.Color.PositiveValue + "]3[/color] per turn.",
 	MagicAbsorption = "You know how to increase efficiency of your damage spells and this ability reduces \'Frostbolt\' and \'Fireball\' Fatigue cost by 2.",
 	MagicInstability = "Small lightning flies away from you when you are casting spells. Increase range of \'Frostbolt\' and \'Fireball\' by [color=" + this.Const.UI.Color.PositiveValue + "]1[/color].",

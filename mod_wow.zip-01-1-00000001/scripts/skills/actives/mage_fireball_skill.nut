@@ -50,52 +50,94 @@ this.mage_fireball_skill <- this.inherit("scripts/skills/skill", {
 		this.m.ProjectileTimeScale = 1.5;
 	}
 
+	function getTotalFireMinDamage()
+	{
+		local total_damage_min = 15;
+		if (this.m.blastwave)
+		{
+			total_damage_min += 5;
+		}
+
+		if (this.m.fireattunement)
+		{
+			total_damage_min += 5;
+		}
+
+		if (this.m.focus1)
+		{
+			total_damage_min += 3;
+		}
+
+		if (this.m.focus2)
+		{
+			total_damage_min += 3;
+		}
+
+		if (this.m.focus3)
+		{
+			total_damage_min += 3;
+		}
+
+		return total_damage_min;
+	}
+
+	function getTotalFireMaxDamage()
+	{
+		local total_damage_max = 25;
+		if (this.m.blastwave)
+		{
+			total_damage_max += 5;
+		}
+
+		if (this.m.fireattunement)
+		{
+			total_damage_max += 5;
+		}
+
+		if (this.m.focus1)
+		{
+			total_damage_max += 3;
+		}
+
+		if (this.m.focus2)
+		{
+			total_damage_max += 3;
+		}
+
+		if (this.m.focus3)
+		{
+			total_damage_max += 3;
+		}
+
+		return total_damage_max;
+	}
+
 	function getTooltip()
 	{
 		local ret = this.getDefaultUtilityTooltip();
-		
-		if (this.m.blastwave)
-		{		
-			ret.push({
-				id = 6,
-				type = "text",
-				icon = "ui/icons/regular_damage.png",
-				text = "Inflicts [color=" + this.Const.UI.Color.DamageValue + "] 20 [/color]-[color=" + this.Const.UI.Color.DamageValue + "] 30 [/color] damage to hitpoints."
-			});
-			ret.push({
-				id = 6,
-				type = "text",
-				icon = "ui/icons/armor_damage.png",
-				text = "Inflicts [color=" + this.Const.UI.Color.DamageValue + "] 20 [/color]-[color=" + this.Const.UI.Color.DamageValue + "] 30 [/color] damage to armor."
-			});
-			ret.push({
-				id = 6,
-				type = "text",
-				icon = "ui/icons/hitchance.png",
-				text = "Has [color=" + this.Const.UI.Color.DamageValue + "] 100% [/color] chance to hit."
-			});
-		}
-		else
-		{
-			ret.push({
-				id = 6,
-				type = "text",
-				icon = "ui/icons/regular_damage.png",
-				text = "Inflicts [color=" + this.Const.UI.Color.DamageValue + "] 15 [/color]-[color=" + this.Const.UI.Color.DamageValue + "] 25 [/color] damage to hitpoints."
-			});
-			ret.push({
-				id = 6,
-				type = "text",
-				icon = "ui/icons/armor_damage.png",
-				text = "Inflicts [color=" + this.Const.UI.Color.DamageValue + "] 15 [/color]-[color=" + this.Const.UI.Color.DamageValue + "] 25 [/color] damage to armor."
-			});
-			ret.push({
-				id = 6,
-				type = "text",
-				icon = "ui/icons/hitchance.png",
-				text = "Has [color=" + this.Const.UI.Color.DamageValue + "] 100% [/color] chance to hit."
-			});
-		}
+		local total_fire_min = getTotalFireMinDamage();
+		local total_fire_max = getTotalFireMaxDamage();
+
+		ret.push({
+			id = 6,
+			type = "text",
+			icon = "ui/icons/regular_damage.png",
+			text = "Inflicts [color=" + this.Const.UI.Color.DamageValue + "]" + total_fire_min + "[/color] - [color=" + this.Const.UI.Color.DamageValue + "]" + total_fire_max + "[/color] damage to hitpoints."
+		});
+
+		ret.push({
+			id = 6,
+			type = "text",
+			icon = "ui/icons/armor_damage.png",
+			text = "Inflicts [color=" + this.Const.UI.Color.DamageValue + "]" + total_fire_min + "[/color] - [color=" + this.Const.UI.Color.DamageValue + "]" + total_fire_max + "[/color] damage to armor."
+		});
+
+		ret.push({
+			id = 6,
+			type = "text",
+			icon = "ui/icons/hitchance.png",
+			text = "Has [color=" + this.Const.UI.Color.DamageValue + "] 100% [/color] chance to hit."
+		});
 
 		ret.push({
 			id = 6,
@@ -168,11 +210,8 @@ this.mage_fireball_skill <- this.inherit("scripts/skills/skill", {
 	{
 		if (_skill == this)
 		{
-			if (this.m.blastwave)
-			{
-				this.m.damage_min = 20;
-				this.m.damage_max = 30;
-			}
+			this.m.damage_min = getTotalFireMinDamage();
+			this.m.damage_max = getTotalFireMaxDamage();
 
 			_properties.DamageRegularMin = this.m.damage_min;
 			_properties.DamageRegularMax = this.m.damage_max;
