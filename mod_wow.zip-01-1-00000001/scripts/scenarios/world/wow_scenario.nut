@@ -15,7 +15,7 @@ this.wow_scenario <- this.inherit("scripts/scenarios/world/starting_scenario", {
 		local roster = this.World.getPlayerRoster();
 		local names = [];
 
-		for( local i = 0; i < 7; i = ++i )
+		for( local i = 0; i < 8; i = ++i )
 		{
 			local bro;
 			bro = roster.create("scripts/entity/tactical/player");
@@ -145,14 +145,21 @@ this.wow_scenario <- this.inherit("scripts/scenarios/world/starting_scenario", {
 		bros[6].getSkills().add(this.new("scripts/skills/injury_permanent/missing_nose_injury"));
 		bros[6].getSkills().add(this.new("scripts/skills/injury_permanent/traumatized_injury"));
 		bros[6].getSkills().add(this.new("scripts/skills/injury_permanent/weakened_heart_injury"));
-		
 
 		this.World.Assets.getStash().add(this.new("scripts/items/supplies/ground_grains_item"));
 		this.World.Assets.getStash().add(this.new("scripts/items/supplies/ground_grains_item"));
 		this.World.Assets.getStash().add(this.new("scripts/items/misc/wardog_armor_upgrade_item"));
 		this.World.Assets.getStash().add(this.new("scripts/items/misc/wardog_armor_upgrade_item"));
 		this.World.Assets.getStash().add(this.new("scripts/items/misc/wardog_armor_upgrade_item"));
-		
+
+		bros[7].setStartValuesEx([
+			"raider_developer_background"
+		]);
+		bros[7].setPlaceInFormation(1);
+		bros[7].m.PerkPoints = 50;
+		bros[7].m.LevelUps = 0;
+		bros[7].m.Level = 1;
+
 		for (local i = 0; i < 10; i=++i)
 		{
 			this.World.Assets.getStash().add(this.new("scripts/items/misc/potion_of_oblivion_item"));
