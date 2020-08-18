@@ -396,12 +396,35 @@ gt.Const.Perks.PerkTreeMage <- [
 	[]
 ];
 
+gt.Const.Perks.PerkTreeDev <- [
+	[
+		gt.Const.Perks.PerkDefObjects.GameDev
+	],
+	[
+	],
+	[
+	],
+	[
+	],
+	[
+	],
+	[
+	],
+	[
+	],
+	[],
+	[],
+	[],
+	[]
+];
+
 gt.Const.Perks.TreesArray.push(gt.Const.Perks.PerkTreeVanilla);
 gt.Const.Perks.TreesArray.push(gt.Const.Perks.PerkTreeWarrior);
 gt.Const.Perks.TreesArray.push(gt.Const.Perks.PerkTreeRogue);
 gt.Const.Perks.TreesArray.push(gt.Const.Perks.PerkTreePaladin);
 gt.Const.Perks.TreesArray.push(gt.Const.Perks.PerkTreeHunter);
 gt.Const.Perks.TreesArray.push(gt.Const.Perks.PerkTreeMage);
+gt.Const.Perks.TreesArray.push(gt.Const.Perks.PerkTreeDev);
 
 gt.Const.Perks.LookupMap <- {};
 for (local tree_number = 0; tree_number < this.Const.Perks.TreesArray.len(); tree_number = ++tree_number)
@@ -468,6 +491,10 @@ gt.Const.Perks.getPerksTree <- function ( _background )
 
 	case "background.raider_mage":
 		return gt.Const.Perks.PerkTreeMage;
+		break;
+
+	case "background.raider_developer":
+		return gt.Const.Perks.PerkTreeDev;
 		break;
 
 	default:
