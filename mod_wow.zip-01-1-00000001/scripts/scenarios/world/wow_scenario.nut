@@ -15,7 +15,7 @@ this.wow_scenario <- this.inherit("scripts/scenarios/world/starting_scenario", {
 		local roster = this.World.getPlayerRoster();
 		local names = [];
 
-		for( local i = 0; i < 5; i = ++i )
+		for( local i = 0; i < 7; i = ++i )
 		{
 			local bro;
 			bro = roster.create("scripts/entity/tactical/player");
@@ -71,11 +71,88 @@ this.wow_scenario <- this.inherit("scripts/scenarios/world/starting_scenario", {
 		bros[4].m.LevelUps = 6;
 		bros[4].m.Level = 5;
 
+		bros[5].setStartValuesEx([
+			"raider_paladin_background"
+		]);
+		bros[5].setPlaceInFormation(15);
+		bros[5].m.PerkPoints = 12;
+		bros[5].m.LevelUps = 6;
+		bros[5].m.Level = 5;
+		bros[5].getSkills().add(this.new("scripts/skills/injury/broken_arm_injury"));
+		bros[5].getSkills().add(this.new("scripts/skills/injury/broken_leg_injury"));
+		bros[5].getSkills().add(this.new("scripts/skills/injury/broken_nose_injury"));
+		bros[5].getSkills().add(this.new("scripts/skills/injury/broken_ribs_injury"));
+		bros[5].getSkills().add(this.new("scripts/skills/injury/bruised_leg_injury"));
+		bros[5].getSkills().add(this.new("scripts/skills/injury/burnt_face_injury"));
+		bros[5].getSkills().add(this.new("scripts/skills/injury/burnt_hands_injury"));
+		bros[5].getSkills().add(this.new("scripts/skills/injury/burnt_legs_injury"));
+		bros[5].getSkills().add(this.new("scripts/skills/injury/crushed_finger_injury"));
+		bros[5].getSkills().add(this.new("scripts/skills/injury/crushed_windpipe_injury"));		
+		bros[5].getSkills().add(this.new("scripts/skills/injury/cut_achilles_tendon_injury"));
+		bros[5].getSkills().add(this.new("scripts/skills/injury/cut_arm_injury"));
+		bros[5].getSkills().add(this.new("scripts/skills/injury/cut_arm_sinew_injury"));
+		bros[5].getSkills().add(this.new("scripts/skills/injury/cut_artery_injury"));
+		bros[5].getSkills().add(this.new("scripts/skills/injury/cut_leg_muscles_injury"));
+		bros[5].getSkills().add(this.new("scripts/skills/injury/cut_throat_injury"));
+		bros[5].getSkills().add(this.new("scripts/skills/injury/deep_abdominal_cut_injury"));
+		bros[5].getSkills().add(this.new("scripts/skills/injury/deep_chest_cut_injury"));
+		bros[5].getSkills().add(this.new("scripts/skills/injury/deep_face_cut_injury"));
+		bros[5].getSkills().add(this.new("scripts/skills/injury/dislocated_shoulder_injury"));
+		bros[5].getSkills().add(this.new("scripts/skills/injury/exposed_ribs_injury"));
+		bros[5].getSkills().add(this.new("scripts/skills/injury/fractured_elbow_injury"));
+		bros[5].getSkills().add(this.new("scripts/skills/injury/fractured_hand_injury"));
+		bros[5].getSkills().add(this.new("scripts/skills/injury/fractured_ribs_injury"));
+		bros[5].getSkills().add(this.new("scripts/skills/injury/fractured_skull_injury"));
+		bros[5].getSkills().add(this.new("scripts/skills/injury/grazed_eye_socket_injury"));
+		bros[5].getSkills().add(this.new("scripts/skills/injury/grazed_kidney_injury"));
+		bros[5].getSkills().add(this.new("scripts/skills/injury/grazed_neck_injury"));
+		bros[5].getSkills().add(this.new("scripts/skills/injury/infected_wound_injury"));
+		bros[5].getSkills().add(this.new("scripts/skills/injury/inhaled_flames_injury"));		
+		bros[5].getSkills().add(this.new("scripts/skills/injury/injured_knee_cap_injury"));
+		bros[5].getSkills().add(this.new("scripts/skills/injury/injured_shoulder_injury"));
+		bros[5].getSkills().add(this.new("scripts/skills/injury/pierced_arm_muscles_injury"));
+		bros[5].getSkills().add(this.new("scripts/skills/injury/pierced_cheek_injury"));
+		bros[5].getSkills().add(this.new("scripts/skills/injury/pierced_chest_injury"));
+		bros[5].getSkills().add(this.new("scripts/skills/injury/pierced_hand_injury"));
+		bros[5].getSkills().add(this.new("scripts/skills/injury/pierced_leg_muscles_injury"));
+		bros[5].getSkills().add(this.new("scripts/skills/injury/pierced_lung_injury"));
+		bros[5].getSkills().add(this.new("scripts/skills/injury/pierced_side_injury"));
+		bros[5].getSkills().add(this.new("scripts/skills/injury/ripped_ear_injury"));
+		bros[5].getSkills().add(this.new("scripts/skills/injury/severe_concussion_injury"));
+		bros[5].getSkills().add(this.new("scripts/skills/injury/sickness_injury"));
+		bros[5].getSkills().add(this.new("scripts/skills/injury/smashed_hand_injury"));
+		bros[5].getSkills().add(this.new("scripts/skills/injury/split_hand_injury"));
+		bros[5].getSkills().add(this.new("scripts/skills/injury/split_nose_injury"));
+		bros[5].getSkills().add(this.new("scripts/skills/injury/split_shoulder_injury"));
+		bros[5].getSkills().add(this.new("scripts/skills/injury/sprained_ankle_injury"));
+		bros[5].getSkills().add(this.new("scripts/skills/injury/stabbed_guts_injury"));
+
+		bros[6].setStartValuesEx([
+			"raider_paladin_background"
+		]);
+		bros[6].setPlaceInFormation(12);
+		bros[6].m.PerkPoints = 12;
+		bros[6].m.LevelUps = 6;
+		bros[6].m.Level = 5;
+		bros[6].getSkills().add(this.new("scripts/skills/injury_permanent/brain_damage_injury"));
+		bros[6].getSkills().add(this.new("scripts/skills/injury_permanent/broken_elbow_joint_injury"));
+		bros[6].getSkills().add(this.new("scripts/skills/injury_permanent/broken_knee_injury"));
+		bros[6].getSkills().add(this.new("scripts/skills/injury_permanent/collapsed_lung_part_injury"));
+		bros[6].getSkills().add(this.new("scripts/skills/injury_permanent/maimed_foot_injury"));
+		bros[6].getSkills().add(this.new("scripts/skills/injury_permanent/missing_ear_injury"));
+		bros[6].getSkills().add(this.new("scripts/skills/injury_permanent/missing_eye_injury"));
+		bros[6].getSkills().add(this.new("scripts/skills/injury_permanent/missing_finger_injury"));
+		bros[6].getSkills().add(this.new("scripts/skills/injury_permanent/missing_nose_injury"));
+		bros[6].getSkills().add(this.new("scripts/skills/injury_permanent/traumatized_injury"));
+		bros[6].getSkills().add(this.new("scripts/skills/injury_permanent/weakened_heart_injury"));
+		
+
 		this.World.Assets.getStash().add(this.new("scripts/items/supplies/ground_grains_item"));
 		this.World.Assets.getStash().add(this.new("scripts/items/supplies/ground_grains_item"));
 		this.World.Assets.getStash().add(this.new("scripts/items/misc/wardog_armor_upgrade_item"));
 		this.World.Assets.getStash().add(this.new("scripts/items/misc/wardog_armor_upgrade_item"));
 		this.World.Assets.getStash().add(this.new("scripts/items/misc/wardog_armor_upgrade_item"));
+		
 		for (local i = 0; i < 10; i=++i)
 		{
 			this.World.Assets.getStash().add(this.new("scripts/items/misc/potion_of_oblivion_item"));
