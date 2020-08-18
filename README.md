@@ -10,7 +10,7 @@ Classes that should be implemented for the addon - alliance classes from World o
 * ![custom badges](https://img.shields.io/badge/status-done-green) [rogue](https://github.com/datchannin/Brothers-WoW/blob/master/spec/rogue.md)
 * ![custom badges](https://img.shields.io/badge/status-to%20do-blue) warlock
 * ![custom badges](https://img.shields.io/badge/status-done-green) [mage](https://github.com/datchannin/Brothers-WoW/blob/master/spec/mage.md)
-* ![custom badges](https://img.shields.io/badge/status-to%20do-blue) priest
+* ![custom badges](https://img.shields.io/badge/status-in%20progress-yellow) priest
 
 ## Workflow
 * ![custom badges](https://img.shields.io/badge/bug%20tracker-yes-green)
