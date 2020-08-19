@@ -1,6 +1,13 @@
 /*BBWOW:This file is part of datchannin bbWoW mod, mod_version = 5.06, game_version = 1.4.0.38*/
 this.priest_blessedrecover_skill <- this.inherit("scripts/skills/skill", {
-	m = {},
+	m = {
+		cut_injuries = true,
+		break_injuries = true,
+		fracture_injuries = true,
+		pierce_injuries = true,
+		split_injuries = true,
+		permanent_injuries = true,		
+	},
 	function create()
 	{
 		this.m.ID = "actives.blessedrecover_skill";
@@ -32,6 +39,66 @@ this.priest_blessedrecover_skill <- this.inherit("scripts/skills/skill", {
 	function getTooltip()
 	{
 		local ret = this.getDefaultUtilityTooltip();
+
+		if (this.m.cut_injuries)
+		{
+			ret.push({
+				id = 6,
+				type = "text",
+				icon = "ui/icons/special.png",
+				text = "You are able to recover [color=" + this.Const.UI.Color.DamageValue + "] \'Cut\' [/color] and [color=" + this.Const.UI.Color.DamageValue + "] \'Deep Cut\' [/color] injuries."
+			});
+		}
+		
+		if (this.m.break_injuries)
+		{
+			ret.push({
+				id = 6,
+				type = "text",
+				icon = "ui/icons/special.png",
+				text = "You are able to recover [color=" + this.Const.UI.Color.DamageValue + "] \'Break\' [/color] injuries."
+			});
+		}
+		
+		if (this.m.fracture_injuries)
+		{
+			ret.push({
+				id = 6,
+				type = "text",
+				icon = "ui/icons/special.png",
+				text = "You are able to recover [color=" + this.Const.UI.Color.DamageValue + "] \'Fracture\' [/color] injuries."
+			});
+		}
+
+		if (this.m.pierce_injuries)
+		{
+			ret.push({
+				id = 6,
+				type = "text",
+				icon = "ui/icons/special.png",
+				text = "You are able to recover [color=" + this.Const.UI.Color.DamageValue + "] \'Pierce\' [/color] injuries."
+			});
+		}
+
+		if (this.m.split_injuries)
+		{
+			ret.push({
+				id = 6,
+				type = "text",
+				icon = "ui/icons/special.png",
+				text = "You are able to recover [color=" + this.Const.UI.Color.DamageValue + "] \'Split\' [/color] injuries."
+			});
+		}
+
+		if (this.m.permanent_injuries)
+		{
+			ret.push({
+				id = 6,
+				type = "text",
+				icon = "ui/icons/special.png",
+				text = "You are able to recover some [color=" + this.Const.UI.Color.DamageValue + "] \'Permanent\' [/color] injuries."
+			});
+		}
 
 		return ret;
 	}
@@ -82,6 +149,9 @@ this.priest_blessedrecover_skill <- this.inherit("scripts/skills/skill", {
 
 		local skills = target.getSkills();
 		local brain_damage_injury = (skills.hasSkill("injury.brain_damage"));
+		
+		
+		
 		if (brain_damage_injury)
 		{
 			skills.removeByID("injury.brain_damage");
