@@ -8,7 +8,7 @@ this.priest_blessedrecover_skill <- this.inherit("scripts/skills/skill", {
 		this.m.Description = "Gives you possibility to recover injuries from you target.";
 		this.m.Icon = "ui/perks/skill_priest_blessedrecovery.png";
 		this.m.IconDisabled = "ui/perks/skill_priest_blessedrecovery_sw.png";
-		this.m.Overlay = "skill_rogue_kick";
+		this.m.Overlay = "skill_priest_blessedrecovery";
 		this.m.SoundOnUse = [
 			//"sounds/combat/rogue_kick1.wav",
 			//"sounds/combat/rogue_kick2.wav",
