@@ -4,15 +4,15 @@ this.priest_blessedrecover_skill <- this.inherit("scripts/skills/skill", {
 	function create()
 	{
 		this.m.ID = "actives.blessedrecover_skill";
-		this.m.Name = "injuries Recover";
+		this.m.Name = "Injuries Recover";
 		this.m.Description = "Gives you possibility to recover injuries from you target.";
-		this.m.Icon = "ui/perks/skill_rogue_kick.png";
-		this.m.IconDisabled = "ui/perks/skill_rogue_kick_sw.png";
+		this.m.Icon = "ui/perks/skill_priest_blessedrecovery.png";
+		this.m.IconDisabled = "ui/perks/skill_priest_blessedrecovery_sw.png";
 		this.m.Overlay = "skill_rogue_kick";
 		this.m.SoundOnUse = [
-			"sounds/combat/rogue_kick1.wav",
-			"sounds/combat/rogue_kick2.wav",
-			"sounds/combat/rogue_kick3.wav"
+			//"sounds/combat/rogue_kick1.wav",
+			//"sounds/combat/rogue_kick2.wav",
+			//"sounds/combat/rogue_kick3.wav"
 		];
 		this.m.Type = this.Const.SkillType.Active;
 		this.m.Order = this.Const.SkillOrder.Any;
@@ -20,49 +20,50 @@ this.priest_blessedrecover_skill <- this.inherit("scripts/skills/skill", {
 		this.m.IsActive = true;
 		this.m.IsTargeted = true;
 		this.m.IsStacking = false;
-		this.m.IsAttack = true;
+		this.m.IsAttack = false;
 		this.m.IsIgnoredAsAOO = true;
 		this.m.IsUsingHitchance = false;
-		this.m.ActionPointCost = 4;
-		this.m.FatigueCost = 25;
+		this.m.ActionPointCost = 1;
+		this.m.FatigueCost = 1;
 		this.m.MinRange = 1;
-		this.m.MaxRange = 1;
+		this.m.MaxRange = 7;
 	}
 
 	function getTooltip()
 	{
-		local ret = [
-			{
-				id = 1,
-				type = "title",
-				text = this.getName()
-			},
-			{
-				id = 2,
-				type = "description",
-				text = this.getDescription()
-			},
-			{
-				id = 3,
-				type = "text",
-				text = this.getCostString()
-			}
-		];
+		local ret = this.getDefaultUtilityTooltip();
 
 		return ret;
+	}
+
+	function isUsable()
+	{
+		if (!this.skill.isUsable())
+		{
+			return false;
+		}
+
+		return true;
 	}
 
 	function onVerifyTarget( _originTile, _targetTile )
 	{
 		local target = _targetTile.getEntity();
-		local actor = _originTile.getEntity();
-	
+		
 		if (!this.skill.onVerifyTarget(_originTile, _targetTile))
 		{
 			return false;
 		}
 
-		if (_targetTile.getEntity().getCurrentProperties().IsRooted)
+		if (target == null)
+		{
+			return false;
+		}
+
+		local skills = target.getSkills();
+		local brain_damage_injury = (skills.hasSkill("injury.brain_damage"));
+		
+		if (!this.m.Container.getActor().isAlliedWith(target))
 		{
 			return false;
 		}
@@ -79,53 +80,11 @@ this.priest_blessedrecover_skill <- this.inherit("scripts/skills/skill", {
 			this.Sound.play(this.m.SoundOnUse[this.Math.rand(0, this.m.SoundOnUse.len() - 1)], this.Const.Sound.Volume.Skill, _user.getPos());
 		}
 
-		local knockToTile = this.findTileToKnockBackTo(_user.getTile(), _targetTile);
-
-		if (knockToTile == null)
-		{
-			return false;
-		}
-
-		if (target.getCurrentProperties().IsImmuneToKnockBackAndGrab)
-		{
-			return false;
-		}
-
-		if (!_user.isHiddenToPlayer() && (_targetTile.IsVisibleForPlayer || knockToTile.IsVisibleForPlayer))
-		{
-			this.Tactical.EventLog.log(this.Const.UI.getColorizedEntityName(_user) + " has kicked back " + this.Const.UI.getColorizedEntityName(target));
-		}
-
 		local skills = target.getSkills();
-		skills.removeByID("effects.shieldwall");
-		skills.removeByID("effects.spearwall");
-		skills.removeByID("effects.riposte");
-
-		target.setCurrentMovementType(this.Const.Tactical.MovementType.Involuntary);
-
-		local damage = this.Math.max(0, this.Math.abs(knockToTile.Level - _targetTile.Level) - 1) * this.Const.Combat.FallingDamage;
-
-		if (damage == 0)
+		local brain_damage_injury = (skills.hasSkill("injury.brain_damage"));
+		if (brain_damage_injury)
 		{
-			this.Tactical.getNavigator().teleport(target, knockToTile, null, null, true);
-		}
-		else
-		{
-			local p = this.getContainer().getActor().getCurrentProperties();
-			local tag = {
-				Attacker = _user,
-				Skill = this,
-				HitInfo = clone this.Const.Tactical.HitInfo,
-				HitInfoBash = null
-			};
-			tag.HitInfo.DamageRegular = damage;
-			tag.HitInfo.DamageFatigue = 0;
-			tag.HitInfo.DamageDirect = 1.0;
-			tag.HitInfo.BodyPart = this.Const.BodyPart.Body;
-			tag.HitInfo.BodyDamageMult = 1.0;
-			tag.HitInfo.FatalityChanceMult = 1.0;
-
-			this.Tactical.getNavigator().teleport(target, knockToTile, this.onKnockedDown, tag, true);
+			skills.removeByID("injury.brain_damage");
 		}
 
 		return true;

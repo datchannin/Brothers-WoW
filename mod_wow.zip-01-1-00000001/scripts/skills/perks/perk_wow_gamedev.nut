@@ -16,19 +16,14 @@ this.perk_wow_gamedev <- this.inherit("scripts/skills/skill", {
 
 	function onAdded()
 	{
-		if (!this.m.Container.hasSkill("actives.fireball_skill"))
+		if (!this.m.Container.hasSkill("actives.blessedrecover_skill"))
 		{
-			this.m.Container.add(this.new("scripts/skills/actives/mage_fireball_skill"));
-		}
-		if (!this.m.Container.hasSkill("actives.frostbolt_skill"))
-		{
-			this.m.Container.add(this.new("scripts/skills/actives/mage_frostbolt_skill"));
+			this.m.Container.add(this.new("scripts/skills/actives/priest_blessedrecover_skill"));
 		}
 	}
 
 	function onRemoved()
 	{
-		this.m.Container.removeByID("actives.fireball_skill");
-		this.m.Container.removeByID("actives.frostbolt_skill");
+		this.m.Container.removeByID("actives.blessedrecover_skill");
 	}
 });
