@@ -16,13 +16,13 @@ this.paladin_blessingofmight_skill <- this.inherit("scripts/skills/skill", {
 		this.m.Order = this.Const.SkillOrder.Any;
 		this.m.IsSerialized = false;
 		this.m.IsActive = true;
-		this.m.IsTargeted = false;
+		this.m.IsTargeted = true;
 		this.m.IsStacking = false;
 		this.m.IsAttack = false;
 		this.m.ActionPointCost = 3;
-		this.m.FatigueCost = 20;
+		this.m.FatigueCost = 12;
 		this.m.MinRange = 0;
-		this.m.MaxRange = 0;
+		this.m.MaxRange = 4;
 	}
 
 	function getTooltip()
@@ -59,12 +59,32 @@ this.paladin_blessingofmight_skill <- this.inherit("scripts/skills/skill", {
 
 	function onVerifyTarget( _originTile, _targetTile )
 	{
+		local targetEntity = _targetTile.getEntity();
+
+		if (!this.skill.onVerifyTarget(_originTile, _targetTile))
+		{
+			return false;
+		}
+
+		if (targetEntity == null)
+		{
+			return false;
+		}
+
+		if (!this.m.Container.getActor().isAlliedWith(targetEntity))
+		{
+			return false;
+		}
+
 		return true;
 	}
 
 	function onUse( _user, _targetTile )
 	{
-		local effect = this.getContainer().getActor().getSkills().getSkillByID("effects.blessingofmight");
+		local targetEntity = _targetTile.getEntity();
+
+		local effect = targetEntity.getSkills().getSkillByID("effects.blessingofmight");
+		this.spawnIcon("effect_paladin_blessingofmight", targetEntity.getTile());
 
 		if (effect != null)
 		{
@@ -72,7 +92,7 @@ this.paladin_blessingofmight_skill <- this.inherit("scripts/skills/skill", {
 		}
 		else
 		{
-			this.m.Container.add(this.new("scripts/skills/effects/blessingofmight_effect"));
+			targetEntity.getSkills().add(this.new("scripts/skills/effects/blessingofmight_effect"));
 		}
 
 		return true;
