@@ -15,7 +15,7 @@ this.wow_scenario <- this.inherit("scripts/scenarios/world/starting_scenario", {
 		local roster = this.World.getPlayerRoster();
 		local names = [];
 
-		for( local i = 0; i < 8; i = ++i )
+		for( local i = 0; i < 9; i = ++i )
 		{
 			local bro;
 			bro = roster.create("scripts/entity/tactical/player");
@@ -159,6 +159,14 @@ this.wow_scenario <- this.inherit("scripts/scenarios/world/starting_scenario", {
 		bros[7].m.PerkPoints = 50;
 		bros[7].m.LevelUps = 0;
 		bros[7].m.Level = 1;
+
+		bros[8].setStartValuesEx([
+			"raider_priest_background"
+		]);
+		bros[8].setPlaceInFormation(2);
+		bros[8].m.PerkPoints = 12;
+		bros[8].m.LevelUps = 6;
+		bros[8].m.Level = 5;
 
 		for (local i = 0; i < 10; i=++i)
 		{
