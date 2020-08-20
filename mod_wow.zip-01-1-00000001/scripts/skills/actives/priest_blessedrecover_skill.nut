@@ -127,9 +127,6 @@ this.priest_blessedrecover_skill <- this.inherit("scripts/skills/skill", {
 			return false;
 		}
 
-		local skills = target.getSkills();
-		local brain_damage_injury = (skills.hasSkill("injury.brain_damage"));
-		
 		if (!this.m.Container.getActor().isAlliedWith(target))
 		{
 			return false;
@@ -148,13 +145,64 @@ this.priest_blessedrecover_skill <- this.inherit("scripts/skills/skill", {
 		}
 
 		local skills = target.getSkills();
-		local brain_damage_injury = (skills.hasSkill("injury.brain_damage"));
-		
-		
-		
-		if (brain_damage_injury)
+
+		if (this.m.cut_injuries)
 		{
+			//(skills.hasSkill("injury.cut_achilles_tendon"));
+			skills.removeByID("injury.cut_achilles_tendon");
+			skills.removeByID("injury.cut_arm");
+			skills.removeByID("injury.cut_arm_sinew");
+			skills.removeByID("injury.cut_artery");
+			skills.removeByID("injury.cut_leg_muscles");
+			skills.removeByID("injury.cut_throat_injury");
+			skills.removeByID("injury.deep_abdominal_cut");
+			skills.removeByID("injury.deep_chest_cut");
+			skills.removeByID("injury.deep_face_cut");
+		}
+
+		if (this.m.break_injuries)
+		{
+			skills.removeByID("injury.broken_arm");
+			skills.removeByID("injury.broken_leg");
+			skills.removeByID("injury.broken_nose");
+			skills.removeByID("injury.broken_ribs");
+		}
+
+		if (this.m.fracture_injuries)
+		{
+			skills.removeByID("injury.fractured_elbow");
+			skills.removeByID("injury.fractured_hand");
+			skills.removeByID("injury.fractured_ribs");
+			skills.removeByID("injury.fractured_skull");
+		}
+
+		if (this.m.pierce_injuries)
+		{
+			skills.removeByID("injury.pierced_arm_muscles");
+			skills.removeByID("injury.pierced_cheek");
+			skills.removeByID("injury.pierced_chest");
+			skills.removeByID("injury.pierced_hand");
+			skills.removeByID("injury.pierced_leg_muscles");
+			skills.removeByID("injury.pierced_lung");
+			skills.removeByID("injury.pierced_side");
+		}
+
+		if (this.m.split_injuries)
+		{
+			skills.removeByID("injury.split_hand");
+			skills.removeByID("injury.split_nose");
+			skills.removeByID("injury.split_shoulder");
+		}
+
+		if (this.m.permanent_injuries)
+		{
+			skills.removeByID("injury.broken_elbow_joint");
+			skills.removeByID("injury.broken_knee");
+			skills.removeByID("injury.collapsed_lung_part");
+			skills.removeByID("injury.traumatized");
+			skills.removeByID("injury.weakened_heart");
 			skills.removeByID("injury.brain_damage");
+			skills.removeByID("injury.maimed_foot");
 		}
 
 		return true;
