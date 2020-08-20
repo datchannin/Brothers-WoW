@@ -27,7 +27,7 @@ this.paladin_hammerofjustice_skill <- this.inherit("scripts/skills/skill", {
 		this.m.ActionPointCost = 4;
 		this.m.FatigueCost = 30;
 		this.m.MinRange = 1;
-		this.m.MaxRange = 2;
+		this.m.MaxRange = 3;
 	}
 
 	function getTooltip()
