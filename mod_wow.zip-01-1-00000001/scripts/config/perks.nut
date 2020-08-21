@@ -396,6 +396,67 @@ gt.Const.Perks.PerkTreeMage <- [
 	[]
 ];
 
+gt.Const.Perks.PerkTreePriest <- [
+	[
+		gt.Const.Perks.PerkDefObjects.Heal
+		gt.Const.Perks.PerkDefObjects.Shield
+		gt.Const.Perks.PerkDefObjects.BlessedRecovery
+		gt.Const.Perks.PerkDefObjects.Colossus
+		gt.Const.Perks.PerkDefObjects.NineLives
+		gt.Const.Perks.PerkDefObjects.Pathfinder
+		gt.Const.Perks.PerkDefObjects.Recover
+		gt.Const.Perks.PerkDefObjects.Student
+	],
+	[
+		gt.Const.Perks.PerkDefObjects.Fortitude
+		gt.Const.Perks.PerkDefObjects.DivineSpirit
+		gt.Const.Perks.PerkDefObjects.InnerFire
+		gt.Const.Perks.PerkDefObjects.InnerFocus
+		gt.Const.Perks.PerkDefObjects.Dodge
+		gt.Const.Perks.PerkDefObjects.FortifiedMind
+		gt.Const.Perks.PerkDefObjects.HoldOut
+		gt.Const.Perks.PerkDefObjects.SteelBrow
+	],
+	[
+		gt.Const.Perks.PerkDefObjects.HolyReach
+		gt.Const.Perks.PerkDefObjects.Inspiration
+		gt.Const.Perks.PerkDefObjects.HealingFocus
+		gt.Const.Perks.PerkDefObjects.MentalStrength
+		gt.Const.Perks.PerkDefObjects.ShieldExpert
+		gt.Const.Perks.PerkDefObjects.Brawny
+		gt.Const.Perks.PerkDefObjects.Rotation
+		gt.Const.Perks.PerkDefObjects.RallyTheTroops
+	],
+	[
+		gt.Const.Perks.PerkDefObjects.SpiritalHealing
+		gt.Const.Perks.PerkDefObjects.MentalAgility
+		gt.Const.Perks.PerkDefObjects.Meditation
+		gt.Const.Perks.PerkDefObjects.RecoveryBroke
+		gt.Const.Perks.PerkDefObjects.RecoveryFracture
+		gt.Const.Perks.PerkDefObjects.RecoveryPierce
+		gt.Const.Perks.PerkDefObjects.RecoverySplit
+	],
+	[
+		gt.Const.Perks.PerkDefObjects.LoneWolf
+		gt.Const.Perks.PerkDefObjects.Underdog
+		gt.Const.Perks.PerkDefObjects.Footwork
+	],
+	[
+		gt.Const.Perks.PerkDefObjects.Nimble
+		gt.Const.Perks.PerkDefObjects.BattleForged
+	],
+	[
+		gt.Const.Perks.PerkDefObjects.Renew
+		gt.Const.Perks.PerkDefObjects.RepairMaster
+		gt.Const.Perks.PerkDefObjects.RecoveryMaximum
+		gt.Const.Perks.PerkDefObjects.Indomitable
+	],
+	[],
+	[],
+	[],
+	[]
+];
+
 gt.Const.Perks.PerkTreeDev <- [
 	[
 		gt.Const.Perks.PerkDefObjects.GameDev
@@ -424,6 +485,7 @@ gt.Const.Perks.TreesArray.push(gt.Const.Perks.PerkTreeRogue);
 gt.Const.Perks.TreesArray.push(gt.Const.Perks.PerkTreePaladin);
 gt.Const.Perks.TreesArray.push(gt.Const.Perks.PerkTreeHunter);
 gt.Const.Perks.TreesArray.push(gt.Const.Perks.PerkTreeMage);
+gt.Const.Perks.TreesArray.push(gt.Const.Perks.PerkTreePriest);
 gt.Const.Perks.TreesArray.push(gt.Const.Perks.PerkTreeDev);
 
 gt.Const.Perks.LookupMap <- {};
@@ -492,6 +554,10 @@ gt.Const.Perks.getPerksTree <- function ( _background )
 	case "background.raider_mage":
 		return gt.Const.Perks.PerkTreeMage;
 		break;
+		
+	case "background.raider_priest":
+		return gt.Const.Perks.PerkTreePriest;
+		break;		
 
 	case "background.raider_developer":
 		return gt.Const.Perks.PerkTreeDev;

@@ -1499,8 +1499,8 @@ gt.Const.Perks.PerkDefObjects.RecoveryBroke <- {
 	Script = "scripts/skills/perks/perk_wow_recoverybroke",
 	Name = this.Const.Wow_strings.PerkName.RecoveryBroke,
 	Tooltip = this.Const.Wow_strings.PerkDescription.RecoveryBroke,
-	Icon = "ui/perks/perk_priest_recoverybroke.png",
-	IconDisabled = "ui/perks/perk_priest_recoverybroke_sw.png",
+	Icon = "ui/perks/perk_priest_recoveryrank.png",
+	IconDisabled = "ui/perks/perk_priest_recoveryrank_sw.png",
 	Const = "RecoveryBroke"
 }
 
@@ -1509,8 +1509,8 @@ gt.Const.Perks.PerkDefObjects.RecoveryFracture <- {
 	Script = "scripts/skills/perks/perk_wow_recoveryfracture",
 	Name = this.Const.Wow_strings.PerkName.RecoveryFracture,
 	Tooltip = this.Const.Wow_strings.PerkDescription.RecoveryFracture,
-	Icon = "ui/perks/perk_priest_recoveryfracture.png",
-	IconDisabled = "ui/perks/perk_priest_recoveryfracture_sw.png",
+	Icon = "ui/perks/perk_priest_recoveryrank.png",
+	IconDisabled = "ui/perks/perk_priest_recoveryrank_sw.png",
 	Const = "RecoveryFracture"
 }
 
@@ -1519,8 +1519,8 @@ gt.Const.Perks.PerkDefObjects.RecoveryPierce <- {
 	Script = "scripts/skills/perks/perk_wow_recoverypierce",
 	Name = this.Const.Wow_strings.PerkName.RecoveryPierce,
 	Tooltip = this.Const.Wow_strings.PerkDescription.RecoveryPierce,
-	Icon = "ui/perks/perk_priest_recoverypierce.png",
-	IconDisabled = "ui/perks/perk_priest_recoverypierce_sw.png",
+	Icon = "ui/perks/perk_priest_recoveryrank.png",
+	IconDisabled = "ui/perks/perk_priest_recoveryrank_sw.png",
 	Const = "RecoveryPierce"
 }
 
@@ -1529,8 +1529,8 @@ gt.Const.Perks.PerkDefObjects.RecoverySplit <- {
 	Script = "scripts/skills/perks/perk_wow_recoverysplit",
 	Name = this.Const.Wow_strings.PerkName.RecoverySplit,
 	Tooltip = this.Const.Wow_strings.PerkDescription.RecoverySplit,
-	Icon = "ui/perks/perk_priest_recoverysplit.png",
-	IconDisabled = "ui/perks/perk_priest_recoverysplit_sw.png",
+	Icon = "ui/perks/perk_priest_recoveryrank.png",
+	IconDisabled = "ui/perks/perk_priest_recoveryrank_sw.png",
 	Const = "RecoverySplit"
 }
 
