@@ -1359,3 +1359,207 @@ gt.Const.Perks.PerkDefObjects.IceAttunement <- {
 	IconDisabled = "ui/perks/perk_mage_iceattunement_sw.png",
 	Const = "IceAttunement"
 }
+
+// ---------------------------------------------|
+// ----------------  WOW PRIEST ----------------|
+// ---------------------------------------------|
+
+gt.Const.Perks.PerkDefObjects.Heal <- {
+	ID = "perk.wow.priest.heal",
+	Script = "scripts/skills/perks/perk_wow_heal",
+	Name = this.Const.Wow_strings.PerkName.Heal,
+	Tooltip = this.Const.Wow_strings.PerkDescription.Heal,
+	Icon = "ui/perks/perk_priest_heal.png",
+	IconDisabled = "ui/perks/perk_priest_heal_sw.png",
+	Const = "Heal"
+}
+
+gt.Const.Perks.PerkDefObjects.Shield <- {
+	ID = "perk.wow.priest.shield",
+	Script = "scripts/skills/perks/perk_wow_shield",
+	Name = this.Const.Wow_strings.PerkName.Shield,
+	Tooltip = this.Const.Wow_strings.PerkDescription.Shield,
+	Icon = "ui/perks/perk_priest_shield.png",
+	IconDisabled = "ui/perks/perk_priest_shield_sw.png",
+	Const = "Shield"
+}
+
+gt.Const.Perks.PerkDefObjects.BlessedRecovery <- {
+	ID = "perk.wow.priest.blessedrecovery",
+	Script = "scripts/skills/perks/perk_wow_blessedrecovery",
+	Name = this.Const.Wow_strings.PerkName.BlessedRecovery,
+	Tooltip = this.Const.Wow_strings.PerkDescription.BlessedRecovery,
+	Icon = "ui/perks/perk_priest_blessedrecovery.png",
+	IconDisabled = "ui/perks/perk_priest_blessedrecovery_sw.png",
+	Const = "BlessedRecovery"
+}
+
+gt.Const.Perks.PerkDefObjects.Fortitude <- {
+	ID = "perk.wow.priest.fortitude",
+	Script = "scripts/skills/perks/perk_wow_fortitude",
+	Name = this.Const.Wow_strings.PerkName.Fortitude,
+	Tooltip = this.Const.Wow_strings.PerkDescription.Fortitude,
+	Icon = "ui/perks/perk_priest_fortitude.png",
+	IconDisabled = "ui/perks/perk_priest_fortitude_sw.png",
+	Const = "Fortitude"
+}
+
+gt.Const.Perks.PerkDefObjects.DivineSpirit <- {
+	ID = "perk.wow.priest.divinespirit",
+	Script = "scripts/skills/perks/perk_wow_divinespirit",
+	Name = this.Const.Wow_strings.PerkName.DivineSpirit,
+	Tooltip = this.Const.Wow_strings.PerkDescription.DivineSpirit,
+	Icon = "ui/perks/perk_priest_divinespirit.png",
+	IconDisabled = "ui/perks/perk_priest_divinespirit_sw.png",
+	Const = "DivineSpirit"
+}
+
+gt.Const.Perks.PerkDefObjects.InnerFire <- {
+	ID = "perk.wow.priest.innerfire",
+	Script = "scripts/skills/perks/perk_wow_innerfire",
+	Name = this.Const.Wow_strings.PerkName.InnerFire,
+	Tooltip = this.Const.Wow_strings.PerkDescription.InnerFire,
+	Icon = "ui/perks/perk_priest_innerfire.png",
+	IconDisabled = "ui/perks/perk_priest_innerfire_sw.png",
+	Const = "InnerFire"
+}
+
+gt.Const.Perks.PerkDefObjects.InnerFocus <- {
+	ID = "perk.wow.priest.innerfocus",
+	Script = "scripts/skills/perks/perk_wow_innerfocus",
+	Name = this.Const.Wow_strings.PerkName.InnerFocus,
+	Tooltip = this.Const.Wow_strings.PerkDescription.InnerFocus,
+	Icon = "ui/perks/perk_priest_innerfocus.png",
+	IconDisabled = "ui/perks/perk_priest_innerfocus_sw.png",
+	Const = "InnerFocus"
+}
+
+gt.Const.Perks.PerkDefObjects.HolyReach <- {
+	ID = "perk.wow.priest.holyreach",
+	Script = "scripts/skills/perks/perk_wow_holyreach",
+	Name = this.Const.Wow_strings.PerkName.HolyReach,
+	Tooltip = this.Const.Wow_strings.PerkDescription.HolyReach,
+	Icon = "ui/perks/perk_priest_holyreach.png",
+	IconDisabled = "ui/perks/perk_priest_holyreach_sw.png",
+	Const = "HolyReach"
+}
+
+gt.Const.Perks.PerkDefObjects.Inspiration <- {
+	ID = "perk.wow.priest.inspiration",
+	Script = "scripts/skills/perks/perk_wow_inspiration",
+	Name = this.Const.Wow_strings.PerkName.Inspiration,
+	Tooltip = this.Const.Wow_strings.PerkDescription.Inspiration,
+	Icon = "ui/perks/perk_priest_inspiration.png",
+	IconDisabled = "ui/perks/perk_priest_inspiration_sw.png",
+	Const = "Inspiration"
+}
+
+gt.Const.Perks.PerkDefObjects.HealingFocus <- {
+	ID = "perk.wow.priest.healingfocus",
+	Script = "scripts/skills/perks/perk_wow_healingfocus",
+	Name = this.Const.Wow_strings.PerkName.HealingFocus,
+	Tooltip = this.Const.Wow_strings.PerkDescription.HealingFocus,
+	Icon = "ui/perks/perk_priest_healingfocus.png",
+	IconDisabled = "ui/perks/perk_priest_healingfocus_sw.png",
+	Const = "HealingFocus"
+}
+
+gt.Const.Perks.PerkDefObjects.MentalStrength <- {
+	ID = "perk.wow.priest.mentalstrength",
+	Script = "scripts/skills/perks/perk_wow_mentalstrength",
+	Name = this.Const.Wow_strings.PerkName.MentalStrength,
+	Tooltip = this.Const.Wow_strings.PerkDescription.MentalStrength,
+	Icon = "ui/perks/perk_priest_mentalstrength.png",
+	IconDisabled = "ui/perks/perk_priest_mentalstrength_sw.png",
+	Const = "MentalStrength"
+}
+
+gt.Const.Perks.PerkDefObjects.SpiritalHealing <- {
+	ID = "perk.wow.priest.spiritalhealing",
+	Script = "scripts/skills/perks/perk_wow_spiritalhealing",
+	Name = this.Const.Wow_strings.PerkName.SpiritalHealing,
+	Tooltip = this.Const.Wow_strings.PerkDescription.SpiritalHealing,
+	Icon = "ui/perks/perk_priest_spiritalhealing.png",
+	IconDisabled = "ui/perks/perk_priest_spiritalhealing_sw.png",
+	Const = "SpiritalHealing"
+}
+
+gt.Const.Perks.PerkDefObjects.MentalAgility <- {
+	ID = "perk.wow.priest.mentalagility",
+	Script = "scripts/skills/perks/perk_wow_mentalagility",
+	Name = this.Const.Wow_strings.PerkName.MentalAgility,
+	Tooltip = this.Const.Wow_strings.PerkDescription.MentalAgility,
+	Icon = "ui/perks/perk_priest_mentalagility.png",
+	IconDisabled = "ui/perks/perk_priest_mentalagility_sw.png",
+	Const = "MentalAgility"
+}
+
+gt.Const.Perks.PerkDefObjects.RecoveryBroke <- {
+	ID = "perk.wow.priest.recoverybroke",
+	Script = "scripts/skills/perks/perk_wow_recoverybroke",
+	Name = this.Const.Wow_strings.PerkName.RecoveryBroke,
+	Tooltip = this.Const.Wow_strings.PerkDescription.RecoveryBroke,
+	Icon = "ui/perks/perk_priest_recoverybroke.png",
+	IconDisabled = "ui/perks/perk_priest_recoverybroke_sw.png",
+	Const = "RecoveryBroke"
+}
+
+gt.Const.Perks.PerkDefObjects.RecoveryFracture <- {
+	ID = "perk.wow.priest.recoveryfracture",
+	Script = "scripts/skills/perks/perk_wow_recoveryfracture",
+	Name = this.Const.Wow_strings.PerkName.RecoveryFracture,
+	Tooltip = this.Const.Wow_strings.PerkDescription.RecoveryFracture,
+	Icon = "ui/perks/perk_priest_recoveryfracture.png",
+	IconDisabled = "ui/perks/perk_priest_recoveryfracture_sw.png",
+	Const = "RecoveryFracture"
+}
+
+gt.Const.Perks.PerkDefObjects.RecoveryPierce <- {
+	ID = "perk.wow.priest.recoverypierce",
+	Script = "scripts/skills/perks/perk_wow_recoverypierce",
+	Name = this.Const.Wow_strings.PerkName.RecoveryPierce,
+	Tooltip = this.Const.Wow_strings.PerkDescription.RecoveryPierce,
+	Icon = "ui/perks/perk_priest_recoverypierce.png",
+	IconDisabled = "ui/perks/perk_priest_recoverypierce_sw.png",
+	Const = "RecoveryPierce"
+}
+
+gt.Const.Perks.PerkDefObjects.RecoverySplit <- {
+	ID = "perk.wow.priest.recoverysplit",
+	Script = "scripts/skills/perks/perk_wow_recoverysplit",
+	Name = this.Const.Wow_strings.PerkName.RecoverySplit,
+	Tooltip = this.Const.Wow_strings.PerkDescription.RecoverySplit,
+	Icon = "ui/perks/perk_priest_recoverysplit.png",
+	IconDisabled = "ui/perks/perk_priest_recoverysplit_sw.png",
+	Const = "RecoverySplit"
+}
+
+gt.Const.Perks.PerkDefObjects.Renew <- {
+	ID = "perk.wow.priest.renew",
+	Script = "scripts/skills/perks/perk_wow_renew",
+	Name = this.Const.Wow_strings.PerkName.Renew,
+	Tooltip = this.Const.Wow_strings.PerkDescription.Renew,
+	Icon = "ui/perks/perk_priest_renew.png",
+	IconDisabled = "ui/perks/perk_priest_renew_sw.png",
+	Const = "Renew"
+}
+
+gt.Const.Perks.PerkDefObjects.RepairMaster <- {
+	ID = "perk.wow.priest.repairmaster",
+	Script = "scripts/skills/perks/perk_wow_repairmaster",
+	Name = this.Const.Wow_strings.PerkName.RepairMaster,
+	Tooltip = this.Const.Wow_strings.PerkDescription.RepairMaster,
+	Icon = "ui/perks/perk_priest_repairmaster.png",
+	IconDisabled = "ui/perks/perk_priest_repairmaster_sw.png",
+	Const = "RepairMaster"
+}
+
+gt.Const.Perks.PerkDefObjects.RecoveryMaximum <- {
+	ID = "perk.wow.priest.recoverymaximum",
+	Script = "scripts/skills/perks/perk_wow_recoverymaximum",
+	Name = this.Const.Wow_strings.PerkName.RecoveryMaximum,
+	Tooltip = this.Const.Wow_strings.PerkDescription.RecoveryMaximum,
+	Icon = "ui/perks/perk_priest_recoverymaximum.png",
+	IconDisabled = "ui/perks/perk_priest_recoverymaximum_sw.png",
+	Const = "RecoveryMaximum"
+}
