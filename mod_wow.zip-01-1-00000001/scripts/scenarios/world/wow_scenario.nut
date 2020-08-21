@@ -146,6 +146,11 @@ this.wow_scenario <- this.inherit("scripts/scenarios/world/starting_scenario", {
 		bros[6].getSkills().add(this.new("scripts/skills/injury_permanent/traumatized_injury"));
 		bros[6].getSkills().add(this.new("scripts/skills/injury_permanent/weakened_heart_injury"));
 
+		local body = bros[6].getItems().getItemAtSlot(this.Const.ItemSlot.Body);
+		local head = bros[6].getItems().getItemAtSlot(this.Const.ItemSlot.Head);
+		body.setArmor(1);
+		head.setArmor(1);
+
 		this.World.Assets.getStash().add(this.new("scripts/items/supplies/ground_grains_item"));
 		this.World.Assets.getStash().add(this.new("scripts/items/supplies/ground_grains_item"));
 		this.World.Assets.getStash().add(this.new("scripts/items/misc/wardog_armor_upgrade_item"));
