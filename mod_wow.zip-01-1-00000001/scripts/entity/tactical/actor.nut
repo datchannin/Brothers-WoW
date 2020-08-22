@@ -1,4 +1,4 @@
-/*BBWOW:This file is part of datchannin bbWoW mod, mod_version = 5.07, game_version = 1.4.0.39*/
+/*BBWOW:This file is part of datchannin bbWoW mod, mod_version = 5.08, game_version = 1.4.0.39*/
 this.actor <- this.inherit("scripts/entity/tactical/entity", {
 	m = {
 		Type = 0,

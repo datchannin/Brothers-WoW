@@ -1,4 +1,4 @@
-/*BBWOW:This file is part of datchannin bbWoW mod, mod_version = 5.07, game_version = 1.4.0.39*/
+/*BBWOW:This file is part of datchannin bbWoW mod, mod_version = 5.08, game_version = 1.4.0.39*/
 this.rogue_poison_skill <- this.inherit("scripts/skills/skill", {
 	m = {
 		PoisonMaster = 0
@@ -121,7 +121,7 @@ this.rogue_poison_skill <- this.inherit("scripts/skills/skill", {
 			return false;
 		}
 
-		if (targetEntity.getTags().has("undead"))
+		if (targetEntity.getFlags().has("undead"))
 		{
 			return false;
 		}
