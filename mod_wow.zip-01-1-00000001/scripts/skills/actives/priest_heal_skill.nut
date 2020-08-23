@@ -1,6 +1,8 @@
 /*BBWOW:This file is part of datchannin bbWoW mod, mod_version = 5.08, game_version = 1.4.0.39*/
 this.priest_heal_skill <- this.inherit("scripts/skills/skill", {
 	m = {
+		heal_base_min = 12,
+		heal_base_max = 25,
 	},
 	function create()
 	{
@@ -35,14 +37,14 @@ this.priest_heal_skill <- this.inherit("scripts/skills/skill", {
 
 	function getTotalMinHeal()
 	{
-		local total_heal_min = 12;
+		local total_heal_min = this.m.heal_base_min;
 
 		return total_heal_min;
 	}
 
 	function getTotalMaxHeal()
 	{
-		local total_heal_max = 25;
+		local total_heal_max = this.m.heal_base_max;
 
 		return total_heal_max;
 	}
@@ -100,7 +102,10 @@ this.priest_heal_skill <- this.inherit("scripts/skills/skill", {
 	function onUse( _user, _targetTile )
 	{
 		local targetEntity = _targetTile.getEntity();
-		local healnumber = this.Math.rand(12, 25);
+		local total_heal_min = getTotalMinHeal();
+		local total_heal_max = getTotalMaxHeal();
+
+		local healnumber = this.Math.rand(total_heal_min, total_heal_max);
 
 		this.getContainer().setBusy(true);
 
@@ -132,7 +137,7 @@ this.priest_heal_skill <- this.inherit("scripts/skills/skill", {
 
 		if (!targetEntity.isHiddenToPlayer())
 		{
-			this.Tactical.EventLog.log(this.Const.UI.getColorizedEntityName(targetEntity) + "was healed for " + this.Math.min(targetEntity.getHitpointsMax() - targetEntity.getHitpoints(), healnumber) + " hitpoints");
+			this.Tactical.EventLog.log(this.Const.UI.getColorizedEntityName(targetEntity) + " was healed for " + this.Math.min(targetEntity.getHitpointsMax() - targetEntity.getHitpoints(), healnumber) + " hitpoints");
 		}
 		targetEntity.setHitpoints(this.Math.min(targetEntity.getHitpointsMax(), targetEntity.getHitpoints() + healnumber));
 
