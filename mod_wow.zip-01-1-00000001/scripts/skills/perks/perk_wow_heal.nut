@@ -13,4 +13,17 @@ this.perk_wow_heal <- this.inherit("scripts/skills/skill", {
 		this.m.IsStacking = false;
 		this.m.IsHidden = false;
 	}
+
+	function onAdded()
+	{
+		if (!this.m.Container.hasSkill("actives.heal_skill"))
+		{
+			this.m.Container.add(this.new("scripts/skills/actives/priest_heal_skill"));
+		}
+	}
+
+	function onRemoved()
+	{
+		this.m.Container.removeByID("actives.heal_skill");
+	}
 });
