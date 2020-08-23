@@ -11,10 +11,10 @@ this.priest_heal_skill <- this.inherit("scripts/skills/skill", {
 		this.m.IconDisabled = "ui/perks/skill_priest_heal_sw.png";
 		this.m.Overlay = "skill_priest_heal";
 		this.m.SoundOnUse = [
-			//"sounds/combat/priest_heal_precast.wav"
+			"sounds/combat/priest_heal_precast.wav"
 		];
 		this.m.SoundOnHit = [
-			//"sounds/combat/priest_heal_cast.wav"
+			"sounds/combat/priest_heal_cast.wav"
 		];
 		this.m.Type = this.Const.SkillType.Active;
 		this.m.Order = this.Const.SkillOrder.Any;
@@ -117,7 +117,11 @@ this.priest_heal_skill <- this.inherit("scripts/skills/skill", {
 		local healnumber = _data.Healnumber;
 
 		this.spawnIcon("effect_priest_heal", targetEntity.getTile());
-		//this.Sound.play(this.m.SoundOnHit[0], this.Const.Sound.Volume.Skill, targetEntity.getPos());
+
+		if (_data.Skill.m.SoundOnHit.len() != 0)
+		{
+			this.Sound.play(this.m.SoundOnHit[0], this.Const.Sound.Volume.Skill, targetEntity.getPos());
+		}
 
 		if (targetEntity.getHitpoints() == targetEntity.getHitpointsMax())
 		{
