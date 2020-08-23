@@ -3,6 +3,10 @@ this.priest_heal_skill <- this.inherit("scripts/skills/skill", {
 	m = {
 		heal_base_min = 12,
 		heal_base_max = 25,
+		holyreach = false,
+		healingfocus = false,
+		spiritalhealing = false,
+		renew = false
 	},
 	function create()
 	{
@@ -39,12 +43,30 @@ this.priest_heal_skill <- this.inherit("scripts/skills/skill", {
 	{
 		local total_heal_min = this.m.heal_base_min;
 
+		if (this.m.healingfocus)
+		{
+			total_heal_min += 10;
+		}
+		if (this.m.spiritalhealing)
+		{
+			total_heal_min += 10;
+		}
+
 		return total_heal_min;
 	}
 
 	function getTotalMaxHeal()
 	{
 		local total_heal_max = this.m.heal_base_max;
+
+		if (this.m.healingfocus)
+		{
+			total_heal_max += 10;
+		}
+		if (this.m.spiritalhealing)
+		{
+			total_heal_max += 10;
+		}
 
 		return total_heal_max;
 	}
@@ -70,6 +92,23 @@ this.priest_heal_skill <- this.inherit("scripts/skills/skill", {
 		});
 
 		return ret;
+	}
+
+	function onUpdate( _properties )
+	{
+		local user = this.getContainer().getActor();
+		this.m.holyreach = user.getSkills().hasSkill("perk.wow.priest.holyreach");
+		this.m.healingfocus = user.getSkills().hasSkill("perk.wow.priest.healingfocus");
+		this.m.spiritalhealing = user.getSkills().hasSkill("perk.wow.priest.spiritalhealing");
+		this.m.renew = user.getSkills().hasSkill("perk.wow.priest.renew");
+	}
+
+	function onAfterUpdate( _properties )
+	{
+		if (this.m.holyreach)
+		{
+			this.m.MaxRange = 7;
+		}
 	}
 
 	function onVerifyTarget( _originTile, _targetTile )
