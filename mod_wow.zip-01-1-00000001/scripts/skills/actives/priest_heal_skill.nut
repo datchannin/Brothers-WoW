@@ -207,7 +207,7 @@ this.priest_heal_skill <- this.inherit("scripts/skills/skill", {
 					//renew.resetTime();
 				}
 				
-				//this.spawnIcon("effect_priest_renew_apply", _data.TargetTile);
+				this.spawnIcon("effect_priest_renew_apply", _data.TargetTile);
 			}
 		}
 
