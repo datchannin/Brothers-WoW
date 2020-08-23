@@ -179,6 +179,25 @@ this.priest_heal_skill <- this.inherit("scripts/skills/skill", {
 			this.Sound.play(this.m.SoundOnHit[0], this.Const.Sound.Volume.Skill, targetEntity.getPos());
 		}
 
+		if (this.m.renew)
+		{
+			if (targetEntity)
+			{
+				local renew = targetEntity.getSkills().getSkillByID("effects.renew");
+
+				if (renew == null)
+				{
+					targetEntity.getSkills().add(this.new("scripts/skills/effects/renew_effect"));
+				}
+				else
+				{
+					renew.resetTime();
+				}
+
+				this.spawnIcon("effect_priest_renew_apply", targetEntity.getTile());
+			}
+		}
+
 		if (targetEntity.getHitpoints() == targetEntity.getHitpointsMax())
 		{
 			return;
@@ -191,25 +210,6 @@ this.priest_heal_skill <- this.inherit("scripts/skills/skill", {
 		targetEntity.setHitpoints(this.Math.min(targetEntity.getHitpointsMax(), targetEntity.getHitpoints() + healnumber));
 
 		targetEntity.onUpdateInjuryLayer();
-
-		if (this.m.renew)
-		{
-			if (targetEntity)
-			{
-				//local renew = targetEntity.getSkills().getSkillByID("effects.renew");
-
-				if (renew == null)
-				{
-					//targetEntity.getSkills().add(this.new("scripts/skills/effects/renew_effect"));
-				}
-				else
-				{
-					//renew.resetTime();
-				}
-				
-				this.spawnIcon("effect_priest_renew_apply", _data.TargetTile);
-			}
-		}
 
 		_data.Skill.getContainer().setBusy(false);
 	}
