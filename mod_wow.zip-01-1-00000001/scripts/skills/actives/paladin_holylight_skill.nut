@@ -149,7 +149,11 @@ this.paladin_holylight_skill <- this.inherit("scripts/skills/skill", {
 		local healnumber = _data.Healnumber;
 
 		this.spawnIcon("effect_paladin_holylight", targetEntity.getTile());
-		this.Sound.play(this.m.SoundOnHit[0], this.Const.Sound.Volume.Skill, targetEntity.getPos());
+
+		if (_data.Skill.m.SoundOnHit.len() != 0)
+		{
+			this.Sound.play(this.m.SoundOnHit[0], this.Const.Sound.Volume.Skill, targetEntity.getPos());
+		}
 
 		if (targetEntity.getHitpoints() == targetEntity.getHitpointsMax())
 		{
