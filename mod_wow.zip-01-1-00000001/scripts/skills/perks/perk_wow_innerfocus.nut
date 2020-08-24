@@ -13,4 +13,12 @@ this.perk_wow_innerfocus <- this.inherit("scripts/skills/skill", {
 		this.m.IsStacking = false;
 		this.m.IsHidden = false;
 	}
+	
+	function onUpdate( _properties )
+	{
+		_properties.MeleeSkill -= 10;
+		_properties.RangedSkill -= 10;
+		_properties.MeleeDefense += 10;
+		_properties.RangedDefense += 10;
+	}
 });

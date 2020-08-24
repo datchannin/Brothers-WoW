@@ -13,4 +13,19 @@ this.perk_wow_fortitude <- this.inherit("scripts/skills/skill", {
 		this.m.IsStacking = false;
 		this.m.IsHidden = false;
 	}
+	
+	function onAdded()
+	{
+		local actor = this.getContainer().getActor();
+
+		if (actor.getHitpoints() == actor.getHitpointsMax())
+		{
+			actor.setHitpoints(this.Math.floor(actor.getHitpoints() * 1.33));
+		}
+	}
+
+	function onUpdate( _properties )
+	{
+		_properties.HitpointsMult *= 1.33;
+	}
 });
