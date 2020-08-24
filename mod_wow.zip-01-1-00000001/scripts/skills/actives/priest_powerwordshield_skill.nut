@@ -41,12 +41,38 @@ this.priest_powerwordshield_skill <- this.inherit("scripts/skills/skill", {
 	{
 		local repair_total_min = this.m.repair_base_min;
 
+		if (this.m.mentalstrength)
+		{
+			repair_total_min += 15;
+		}
+		if (this.m.mentalagility)
+		{
+			repair_total_min += 20;
+		}
+		if (this.m.repairmaster)
+		{
+			repair_total_min += 10;
+		}
+
 		return repair_total_min;
 	}
 
 	function getTotalMaxRepair()
 	{
 		local repair_total_max = this.m.repair_base_max;
+
+		if (this.m.mentalstrength)
+		{
+			repair_total_max += 15;
+		}
+		if (this.m.mentalagility)
+		{
+			repair_total_max += 20;
+		}
+		if (this.m.repairmaster)
+		{
+			repair_total_max += 10;
+		}
 
 		return repair_total_max;
 	}
@@ -88,6 +114,27 @@ this.priest_powerwordshield_skill <- this.inherit("scripts/skills/skill", {
 		if (this.m.repairmaster)
 		{
 			this.m.MaxRange = 3;
+		}
+		
+		if (this.m.repairmaster)
+		{
+			this.m.FatigueCost = 25;
+		}
+		
+		if ((this.m.mentalstrength) && (this.m.mentalagility))
+		{
+			this.m.ActionPointCost = 9;
+		}
+		else
+		{
+			if (this.m.mentalstrength)
+			{
+				this.m.ActionPointCost = 7;
+			}
+			if (this.m.mentalagility)
+			{
+				this.m.ActionPointCost = 8;
+			}
 		}
 	}
 
