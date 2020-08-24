@@ -21,7 +21,7 @@ this.warrior_berserkerrage_skill <- this.inherit("scripts/skills/skill", {
 		this.m.IsStacking = false;
 		this.m.IsAttack = false;
 		this.m.ActionPointCost = 0;
-		this.m.FatigueCost = 25;
+		this.m.FatigueCost = 10;
 		this.m.MinRange = 0;
 		this.m.MaxRange = 0;
 	}
