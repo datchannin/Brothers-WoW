@@ -1,6 +1,8 @@
 /*BBWOW:This file is part of datchannin bbWoW mod, mod_version = 5.09, game_version = 1.4.0.40*/
 this.hemorrhage_effect <- this.inherit("scripts/skills/skill", {
-	m = {},
+	m = {
+		TurnsLeft = 2
+	},
 	function create()
 	{
 		this.m.ID = "effects.hemorrhage";
@@ -15,7 +17,7 @@ this.hemorrhage_effect <- this.inherit("scripts/skills/skill", {
 
 	function getDescription()
 	{
-		return "Damage taken by this character is increased by [color=" + this.Const.UI.Color.NegativeValue + "]10%[/color] for this turn.";
+		return "Damage taken by this character is increased by [color=" + this.Const.UI.Color.NegativeValue + "]10%[/color] for " + this.m.TurnsLeft + "[/color] more turn(s).";
 	}
 
 	function getTooltip()
@@ -40,6 +42,16 @@ this.hemorrhage_effect <- this.inherit("scripts/skills/skill", {
 		];
 	}
 
+	function onAdded()
+	{
+		this.m.TurnsLeft = 2;
+	}
+
+	function reset()
+	{
+		this.m.TurnsLeft = 2;
+	}
+
 	function onBeforeDamageReceived( _attacker, _skill, _hitInfo, _properties )
 	{
 		if (_attacker != null && _attacker.getID() == this.getContainer().getActor().getID() || _skill == null || !_skill.isAttack() || !_skill.isUsingHitchance())
@@ -49,9 +61,12 @@ this.hemorrhage_effect <- this.inherit("scripts/skills/skill", {
 		_properties.DamageReceivedTotalMult *= 1.1;
 	}
 
-	function onTurnStart()
+	function onTurnEnd()
 	{
-		this.removeSelf();
+		if (--this.m.TurnsLeft <= 0)
+		{
+			this.removeSelf();
+		}
 	}
 
 });

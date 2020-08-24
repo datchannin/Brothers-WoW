@@ -5,7 +5,7 @@ this.rogue_hemorrhage_skill <- this.inherit("scripts/skills/skill", {
 	{
 		this.m.ID = "actives.hemorrhage_skill";
 		this.m.Name = "Hemorrhage";
-		this.m.Description = " Debuff target for this turn and increase his damage taken by [color=" + this.Const.UI.Color.NegativeValue + "]10%[/color].";
+		this.m.Description = "Debuff target for [color=" + this.Const.UI.Color.PositiveValue + "]2[/color] turns, this increases damage taken by [color=" + this.Const.UI.Color.NegativeValue + "]10%[/color].";
 		this.m.Icon = "ui/perks/skill_rogue_hemorrhage.png";
 		this.m.IconDisabled = "ui/perks/skill_rogue_hemorrhage_sw.png";
 		this.m.Overlay = "skill_rogue_hemorrhage";
@@ -66,8 +66,17 @@ this.rogue_hemorrhage_skill <- this.inherit("scripts/skills/skill", {
 	function onUse( _user, _targetTile )
 	{
 		local targetEntity = _targetTile.getEntity();
-	
-		targetEntity.getSkills().add(this.new("scripts/skills/effects/hemorrhage_effect"));
+		local effect = targetEntity.getSkills().getSkillByID("effects.hemorrhage");
+
+		if (effect != null)
+		{
+			effect.reset();
+		}
+		else
+		{
+			targetEntity.getSkills().add(this.new("scripts/skills/effects/hemorrhage_effect"));
+		}
+
 		return true;
 	}
 });

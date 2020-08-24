@@ -5,7 +5,7 @@ this.rogue_camouflage_skill <- this.inherit("scripts/skills/skill", {
 	{
 		this.m.ID = "actives.camouflage_skill";
 		this.m.Name = "Camouflage";
-		this.m.Description = "Increase character\'s Melee Defense for this turn and allows to ignore hostile zone of control.";
+		this.m.Description = "Increase character\'s Melee Defense for [color=" + this.Const.UI.Color.PositiveValue + "]2[/color] turns and allow to ignore hostile zone of control.";
 		this.m.Icon = "ui/perks/skill_rogue_camouflage.png";
 		this.m.IconDisabled = "ui/perks/skill_rogue_camouflage_sw.png";
 		this.m.Overlay = "skill_rogue_camouflage";
