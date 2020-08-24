@@ -1,6 +1,8 @@
 /*BBWOW:This file is part of datchannin bbWoW mod, mod_version = 5.09, game_version = 1.4.0.40*/
 this.camouflage_effect <- this.inherit("scripts/skills/skill", {
-	m = {},
+	m = {
+		TurnsLeft = 2
+	},
 	function create()
 	{
 		this.m.ID = "effects.camouflage";
@@ -9,12 +11,13 @@ this.camouflage_effect <- this.inherit("scripts/skills/skill", {
 		this.m.IconMini = "effect_mini_camouflage";
 		this.m.Type = this.Const.SkillType.StatusEffect;
 		this.m.IsActive = false;
+		this.m.IsStacking = false;
 		this.m.IsRemovedAfterBattle = true;
 	}
 
 	function getDescription()
 	{
-		return "This character sneaked around for this turn.";
+		return "This character sneaked around for [color=" + this.Const.UI.Color.PositiveValue + "]" + this.m.TurnsLeft + "[/color] more turn(s).";
 	}
 
 	function getTooltip()
@@ -45,14 +48,27 @@ this.camouflage_effect <- this.inherit("scripts/skills/skill", {
 		];
 	}
 
+	function onAdded()
+	{
+		this.m.TurnsLeft = 2;
+	}
+
+	function reset()
+	{
+		this.m.TurnsLeft = 2;
+	}
+
 	function onUpdate( _properties )
 	{
 		_properties.MeleeDefense += 20;
 		_properties.IsImmuneToZoneOfControl = true;
 	}
 
-	function onTurnStart()
+	function onTurnEnd()
 	{
-		this.removeSelf();
+		if (--this.m.TurnsLeft <= 0)
+		{
+			this.removeSelf();
+		}
 	}
 });

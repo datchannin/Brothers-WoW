@@ -20,7 +20,7 @@ this.rogue_camouflage_skill <- this.inherit("scripts/skills/skill", {
 		this.m.IsStacking = false;
 		this.m.IsAttack = false;
 		this.m.ActionPointCost = 3;
-		this.m.FatigueCost = 25;
+		this.m.FatigueCost = 20;
 		this.m.MinRange = 0;
 		this.m.MaxRange = 0;
 	}
@@ -54,12 +54,17 @@ this.rogue_camouflage_skill <- this.inherit("scripts/skills/skill", {
 
 	function onUse( _user, _targetTile )
 	{
-		if (!this.getContainer().hasSkill("effects.camouflage"))
+		local effect = _user.getSkills().getSkillByID("effects.camouflage");
+
+		if (effect != null)
 		{
-			this.m.Container.add(this.new("scripts/skills/effects/camouflage_effect"));
-			return true;
+			effect.reset();
+		}
+		else
+		{
+			_user.getSkills().add(this.new("scripts/skills/effects/camouflage_effect"));
 		}
 
-		return false;
+		return true;
 	}
 });
