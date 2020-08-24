@@ -1,4 +1,4 @@
-/*BBWOW:This file is part of datchannin bbWoW mod, mod_version = 5.08, game_version = 1.4.0.39*/
+/*BBWOW:This file is part of datchannin bbWoW mod, mod_version = 5.09, game_version = 1.4.0.40*/
 this.priest_powerwordshield_skill <- this.inherit("scripts/skills/skill", {
 	m = {
 		repair_base_min = 10,
@@ -89,6 +89,23 @@ this.priest_powerwordshield_skill <- this.inherit("scripts/skills/skill", {
 			icon = "ui/icons/repair_item.png",
 			text = "Repair target\'s Body Armor for [color=" + this.Const.UI.Color.PositiveValue + "]" + repair_total_min + "[/color] - [color=" + this.Const.UI.Color.PositiveValue + "]" + repair_total_max + "[/color] points."
 		});
+
+		if (this.m.inspiration)
+		{
+			ret.push({
+				id = 6,
+				type = "text",
+				icon = "ui/icons/repair_item.png",
+				text = "Target\'s Head Armor now also can be repaired."
+			});
+			
+			ret.push({
+				id = 6,
+				type = "text",
+				icon = "ui/icons/repair_item.png",
+				text = "Body Armor has a repair priority over Head Armor."
+			});
+		}
 
 		ret.push({
 			id = 6,
@@ -234,23 +251,26 @@ this.priest_powerwordshield_skill <- this.inherit("scripts/skills/skill", {
 			this.Tactical.EventLog.log(this.Const.UI.getColorizedEntityName(targetEntity) + " Body Armor was restored for " + repairBody + " points");
 		}
 
-		if (headitem)
+		if (this.m.inspiration)
 		{
-			if (missingHead)
+			if (headitem)
 			{
-				if (missingHead >= repairnumber)
+				if (missingHead)
 				{
-					repairHead = repairnumber;
-					repairnumber = repairnumber - repairHead;
+					if (missingHead >= repairnumber)
+					{
+						repairHead = repairnumber;
+						repairnumber = repairnumber - repairHead;
+					}
+					else
+					{
+						repairHead = missingHead;
+						repairnumber = repairnumber - repairHead;
+					}
 				}
-				else
-				{
-					repairHead = missingHead;
-					repairnumber = repairnumber - repairHead;
-				}
+				headitem.setArmor(currentHead + repairHead);
+				this.Tactical.EventLog.log(this.Const.UI.getColorizedEntityName(targetEntity) + " Head Armor was restored for " + repairHead + " points");
 			}
-			headitem.setArmor(currentHead + repairHead);
-			this.Tactical.EventLog.log(this.Const.UI.getColorizedEntityName(targetEntity) + " Head Armor was restored for " + repairHead + " points");
 		}
 
 		targetEntity.getSkills().update();

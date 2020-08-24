@@ -1,4 +1,4 @@
-/*BBWOW:This file is part of datchannin bbWoW mod, mod_version = 5.08, game_version = 1.4.0.39*/
+/*BBWOW:This file is part of datchannin bbWoW mod, mod_version = 5.09, game_version = 1.4.0.40*/
 this.raider_hunter_background <- this.inherit("scripts/skills/backgrounds/character_background", {
 	m = {},
 	function create()
