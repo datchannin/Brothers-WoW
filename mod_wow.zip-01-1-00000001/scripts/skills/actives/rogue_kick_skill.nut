@@ -23,8 +23,8 @@ this.rogue_kick_skill <- this.inherit("scripts/skills/skill", {
 		this.m.IsAttack = true;
 		this.m.IsIgnoredAsAOO = true;
 		this.m.IsUsingHitchance = false;
-		this.m.ActionPointCost = 4;
-		this.m.FatigueCost = 25;
+		this.m.ActionPointCost = 5;
+		this.m.FatigueCost = 15;
 		this.m.MinRange = 1;
 		this.m.MaxRange = 1;
 	}
