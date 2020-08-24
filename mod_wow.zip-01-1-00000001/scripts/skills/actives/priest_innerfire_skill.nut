@@ -10,7 +10,7 @@ this.priest_innerfire_skill <- this.inherit("scripts/skills/skill", {
 		this.m.IconDisabled = "ui/perks/skill_priest_innerfire_sw.png";
 		this.m.Overlay = "skill_priest_innerfire";
 		this.m.SoundOnUse = [
-			//"sounds/combat/rogue_camouflage.wav"
+			"sounds/combat/priest_innerfire.wav"
 		];
 		this.m.Type = this.Const.SkillType.Active;
 		this.m.Order = this.Const.SkillOrder.Any;
