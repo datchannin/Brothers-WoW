@@ -36,8 +36,8 @@ this.renew_effect <- this.inherit("scripts/skills/skill", {
 			{
 				id = 6,
 				type = "text",
-				icon = "ui/icons/special.png",
-				text = "Received for [color=" + this.Const.UI.Color.PositiveValue + "]10[/color] Hitpoints."
+				icon = "ui/icons/heal.png",
+				text = "Received for [color=" + this.Const.UI.Color.PositiveValue + "]10[/color] Hitpoints until effect is applied."
 			},
 		];
 	}

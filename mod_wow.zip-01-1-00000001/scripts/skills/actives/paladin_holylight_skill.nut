@@ -57,7 +57,7 @@ this.paladin_holylight_skill <- this.inherit("scripts/skills/skill", {
 				{
 					id = 7,
 					type = "text",
-					icon = "ui/icons/special.png",
+					icon = "ui/icons/heal.png",
 					text = "Heal the target for [color=" + this.Const.UI.Color.PositiveValue + "]7[/color] - [color=" + this.Const.UI.Color.PositiveValue + "]14[/color] Hitpoints."
 				},
 			];
@@ -83,7 +83,7 @@ this.paladin_holylight_skill <- this.inherit("scripts/skills/skill", {
 				{
 					id = 7,
 					type = "text",
-					icon = "ui/icons/special.png",
+					icon = "ui/icons/heal.png",
 					text = "Heal the target for [color=" + this.Const.UI.Color.PositiveValue + "]17[/color] - [color=" + this.Const.UI.Color.PositiveValue + "]24[/color] Hitpoints."
 				},
 			];

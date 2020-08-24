@@ -80,7 +80,7 @@ this.priest_heal_skill <- this.inherit("scripts/skills/skill", {
 		ret.push({
 			id = 6,
 			type = "text",
-			icon = "ui/icons/special.png",
+			icon = "ui/icons/heal.png",
 			text = "Heal the target for [color=" + this.Const.UI.Color.PositiveValue + "]" + total_heal_min + "[/color] - [color=" + this.Const.UI.Color.PositiveValue + "]" + total_heal_max + "[/color] Hitpoints."
 		});
 
