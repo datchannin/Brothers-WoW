@@ -60,12 +60,17 @@ this.priest_innerfire_skill <- this.inherit("scripts/skills/skill", {
 
 	function onUse( _user, _targetTile )
 	{
-		if (!this.getContainer().hasSkill("effects.innerfire"))
+		local effect = _user.getSkills().getSkillByID("effects.innerfire");
+
+		if (effect != null)
 		{
-			//this.m.Container.add(this.new("scripts/skills/effects/innerfire_effect"));
-			return true;
+			effect.reset();
+		}
+		else
+		{
+			_user.getSkills().add(this.new("scripts/skills/effects/innerfire_effect"));
 		}
 
-		return false;
+		return true;
 	}
 });
