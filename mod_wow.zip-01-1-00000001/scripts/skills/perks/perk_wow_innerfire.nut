@@ -13,4 +13,17 @@ this.perk_wow_innerfire <- this.inherit("scripts/skills/skill", {
 		this.m.IsStacking = false;
 		this.m.IsHidden = false;
 	}
+	
+	function onAdded()
+	{
+		if (!this.m.Container.hasSkill("actives.innerfire_skill"))
+		{
+			this.m.Container.add(this.new("scripts/skills/actives/priest_innerfire_skill"));
+		}
+	}
+
+	function onRemoved()
+	{
+		this.m.Container.removeByID("actives.innerfire_skill");
+	}
 });
