@@ -2,11 +2,11 @@
 this.priest_blessedrecover_skill <- this.inherit("scripts/skills/skill", {
 	m = {
 		cut_injuries = true,
-		break_injuries = true,
-		fracture_injuries = true,
-		pierce_injuries = true,
-		split_injuries = true,
-		permanent_injuries = true,		
+		break_injuries = false,
+		fracture_injuries = false,
+		pierce_injuries = false,
+		split_injuries = false,
+		permanent_injuries = false,		
 	},
 	function create()
 	{
@@ -17,9 +17,7 @@ this.priest_blessedrecover_skill <- this.inherit("scripts/skills/skill", {
 		this.m.IconDisabled = "ui/perks/skill_priest_blessedrecovery_sw.png";
 		this.m.Overlay = "skill_priest_blessedrecovery";
 		this.m.SoundOnUse = [
-			//"sounds/combat/rogue_kick1.wav",
-			//"sounds/combat/rogue_kick2.wav",
-			//"sounds/combat/rogue_kick3.wav"
+			//"sounds/combat/rogue_kick1.wav"
 		];
 		this.m.Type = this.Const.SkillType.Active;
 		this.m.Order = this.Const.SkillOrder.Any;
@@ -30,10 +28,10 @@ this.priest_blessedrecover_skill <- this.inherit("scripts/skills/skill", {
 		this.m.IsAttack = false;
 		this.m.IsIgnoredAsAOO = true;
 		this.m.IsUsingHitchance = false;
-		this.m.ActionPointCost = 1;
-		this.m.FatigueCost = 1;
-		this.m.MinRange = 1;
-		this.m.MaxRange = 7;
+		this.m.ActionPointCost = 9;
+		this.m.FatigueCost = 100;
+		this.m.MinRange = 0;
+		this.m.MaxRange = 1;
 	}
 
 	function getTooltip()
@@ -135,20 +133,24 @@ this.priest_blessedrecover_skill <- this.inherit("scripts/skills/skill", {
 		return true;
 	}
 
+	function onUpdate( _properties )
+	{
+		local user = this.getContainer().getActor();
+		this.m.break_injuries = user.getSkills().hasSkill("perk.wow.priest.recoverybroke");
+		this.m.fracture_injuries = user.getSkills().hasSkill("perk.wow.priest.recoveryfracture");
+		this.m.pierce_injuries = user.getSkills().hasSkill("perk.wow.priest.recoverypierce");
+		this.m.split_injuries = user.getSkills().hasSkill("perk.wow.priest.recoverysplit");
+		this.m.permanent_injuries = user.getSkills().hasSkill("perk.wow.priest.recoverymaximum");
+	}
+
 	function onUse( _user, _targetTile )
 	{
 		local target = _targetTile.getEntity();
-
-		if (this.m.SoundOnUse.len() != 0)
-		{
-			this.Sound.play(this.m.SoundOnUse[this.Math.rand(0, this.m.SoundOnUse.len() - 1)], this.Const.Sound.Volume.Skill, _user.getPos());
-		}
 
 		local skills = target.getSkills();
 
 		if (this.m.cut_injuries)
 		{
-			//(skills.hasSkill("injury.cut_achilles_tendon"));
 			skills.removeByID("injury.cut_achilles_tendon");
 			skills.removeByID("injury.cut_arm");
 			skills.removeByID("injury.cut_arm_sinew");
