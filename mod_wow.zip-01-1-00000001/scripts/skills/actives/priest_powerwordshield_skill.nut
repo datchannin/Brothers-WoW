@@ -17,7 +17,7 @@ this.priest_powerwordshield_skill <- this.inherit("scripts/skills/skill", {
 		this.m.IconDisabled = "ui/perks/skill_priest_shield_sw.png";
 		this.m.Overlay = "skill_priest_shield";
 		this.m.SoundOnUse = [
-			//"sounds/combat/priest_heal_precast.wav"
+			"sounds/combat/priest_powerwordshield.wav"
 		];
 		this.m.SoundOnHit = [];
 		this.m.Type = this.Const.SkillType.Active;
