@@ -13,4 +13,17 @@ this.perk_wow_shield <- this.inherit("scripts/skills/skill", {
 		this.m.IsStacking = false;
 		this.m.IsHidden = false;
 	}
+	
+	function onAdded()
+	{
+		if (!this.m.Container.hasSkill("actives.powerwordshield_skill"))
+		{
+			this.m.Container.add(this.new("scripts/skills/actives/priest_powerwordshield_skill"));
+		}
+	}
+
+	function onRemoved()
+	{
+		this.m.Container.removeByID("actives.powerwordshield_skill");
+	}
 });
