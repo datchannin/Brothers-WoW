@@ -31,8 +31,8 @@ this.priest_powerwordshield_skill <- this.inherit("scripts/skills/skill", {
 		this.m.IsIgnoredAsAOO = true;
 		this.m.IsShowingProjectile = false;
 		this.m.IsUsingHitchance = false;
-		this.m.ActionPointCost = 1;//6;
-		this.m.FatigueCost = 1;//30;
+		this.m.ActionPointCost = 6;
+		this.m.FatigueCost = 30;
 		this.m.MinRange = 0;
 		this.m.MaxRange = 2;
 	}
