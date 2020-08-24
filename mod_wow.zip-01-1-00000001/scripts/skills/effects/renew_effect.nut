@@ -8,7 +8,7 @@ this.renew_effect <- this.inherit("scripts/skills/skill", {
 		this.m.ID = "effects.renew";
 		this.m.Name = "Renew";
 		this.m.Icon = "ui/perks/perk_priest_renew.png";
-		this.m.IconMini = "effect_mini_huntersmark";
+		this.m.IconMini = "effect_mini_renew";
 		this.m.Overlay = "";
 		this.m.Type = this.Const.SkillType.StatusEffect;
 		this.m.IsActive = false;
