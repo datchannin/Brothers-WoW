@@ -20,7 +20,7 @@ this.mobility_skill <- this.inherit("scripts/skills/skill", {
 		this.m.IsStacking = false;
 		this.m.IsAttack = false;
 		this.m.ActionPointCost = 0;
-		this.m.FatigueCost = 30;
+		this.m.FatigueCost = 7;
 		this.m.MinRange = 0;
 		this.m.MaxRange = 0;
 	}
