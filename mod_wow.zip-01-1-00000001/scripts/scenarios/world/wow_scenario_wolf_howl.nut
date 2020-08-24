@@ -7,7 +7,7 @@ this.wow_scenario_wolf_howl <- this.inherit("scripts/scenarios/world/starting_sc
 		this.m.Name = "Wolf Howl";
 		this.m.Description = "[p=c][img]gfx/ui/events/event_wow_wolf_howl.png[/img][/p][p]Your band consists of two hunters who are able to call Winter Wolf during the battle. Use them to destroy enemies!\n\n[color=#bcad8c]Hunter:[/color] Start with a hunter who is gifted in range battle and pet summon.\n[color=#bcad8c]Pet system:[/color] Hunter can summon Winter Wolf. If pet was killed during the battle, hunter will able to summon new one when new battle starts.\n[color=#bcad8c]Pet progress:[/color] Your pet can be strengthened by Hunter Perks.\n[color=#bcad8c]Perk Tree:[/color] Hunter characters use separate perk tree.[/p]";
 		this.m.Difficulty = 2;
-		this.m.Order = 14;
+		this.m.Order = 461;
 	}
 
 	function onSpawnAssets()

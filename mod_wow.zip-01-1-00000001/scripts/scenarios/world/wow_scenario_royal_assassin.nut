@@ -7,7 +7,7 @@ this.wow_scenario_royal_assassin <- this.inherit("scripts/scenarios/world/starti
 		this.m.Name = "Royal Assassin";
 		this.m.Description = "[p=c][img]gfx/ui/events/event_wow_royal_assassin.png[/img][/p][p]You are wandering rogue who have been royal assasin ages ago. You know how use vile poison and dagger is your power.\n\n[color=#bcad8c]Rogue:[/color] Start with a rogue who is gifted in poison and dagger.\n[color=#bcad8c]Perk Tree:[/color] Rogue character uses separate perk tree.\n[color=#bcad8c]Elite Few:[/color] Can never have more than 12 men in your roster.\n[color=#bcad8c]Avatar:[/color] If your royal assasin dies, the campaign ends.[/p]";
 		this.m.Difficulty = 3;
-		this.m.Order = 12;
+		this.m.Order = 471;
 	}
 
 	function onSpawnAssets()

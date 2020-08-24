@@ -1,13 +1,13 @@
 /*BBWOW:This file is part of datchannin bbWoW mod, mod_version = 5.09, game_version = 1.4.0.40*/
-this.wow_scenario_brothers_in_arms <- this.inherit("scripts/scenarios/world/starting_scenario", {
+this.wow_scenario_spirit_of_redemption <- this.inherit("scripts/scenarios/world/starting_scenario", {
 	m = {},
 	function create()
 	{
-		this.m.ID = "scenario.brothers_in_arms";
-		this.m.Name = "Brothers in Arms";
-		this.m.Description = "[p=c][img]gfx/ui/events/event_wow_battle_in_brothers.png[/img][/p][p]Two wandering warriors came from a distant land: Azeroth. Defend and attack, might and power, strength and honor. They can become the basis of your army.\n\n[color=#bcad8c]Protection Warrior:[/color] Start with a warrior who is gifted in protection with great equipment.\n[color=#bcad8c]Arms Warrior:[/color] Start with a warrior who is gifted in arms with great equipment.\n[color=#bcad8c]Perk Tree:[/color] Warrior characters use separate perk tree.[/p]";
-		this.m.Difficulty = 1;
-		this.m.Order = 451;
+		this.m.ID = "scenario.spirit_of_redemption";
+		this.m.Name = "Spirit of Redemption";
+		this.m.Description = "[p=c][img]gfx/ui/events/event_wow_spirit_of_redemption.png[/img][/p][p]Your band consists is two survive characters, who are stayed alive after bloody battle. Try to redempt of your defeat and restore your band!\n\n[color=#bcad8c]Priest:[/color] Start with a priest who is gifted in Holy Art.\n[color=#bcad8c]Healing Mastery:[/color] Priests are able to heal allies with a great mastery. Some of them even able to remove different injuries.\n[color=#bcad8c]Repair Mastery:[/color] Your priest can be leveled as Repair Master and then he will be able to repair Body and Head armor.\n[color=#bcad8c]Perk Tree:[/color] Priest characters use separate perk tree.[/p]";
+		this.m.Difficulty = 2;
+		this.m.Order = 462;
 	}
 
 	function onSpawnAssets()
@@ -20,11 +20,16 @@ this.wow_scenario_brothers_in_arms <- this.inherit("scripts/scenarios/world/star
 			local bro;
 			bro = roster.create("scripts/entity/tactical/player");
 			bro.m.HireTime = this.Time.getVirtualTimeF();
-			bro.improveMood(1.5, "Joined a mercenary company");
+			bro.worsenMood(1.0, "Lost all allies in battle.");
 
 			while (names.find(bro.getNameOnly()) != null)
 			{
 				bro.setName(this.Const.Strings.CharacterNames[this.Math.rand(0, this.Const.Strings.CharacterNames.len() - 1)]);
+			}
+
+			if (this.Math.rand(1, 100) <= 50)
+			{
+				bro.addLightInjury();
 			}
 
 			names.push(bro.getNameOnly());
@@ -34,7 +39,7 @@ this.wow_scenario_brothers_in_arms <- this.inherit("scripts/scenarios/world/star
 		bros[0].setStartValuesEx([
 			"raider_warrior_background"
 		]);
-		bros[0].setTitle("Protection");
+		bros[0].setTitle("Survivor");
 		bros[0].setPlaceInFormation(3);
 		bros[0].m.PerkPoints = 0;
 		bros[0].m.LevelUps = 0;
@@ -43,14 +48,14 @@ this.wow_scenario_brothers_in_arms <- this.inherit("scripts/scenarios/world/star
 		bros[0].m.Attributes = [];
 		local talents = bros[0].getTalents();
 		talents.resize(this.Const.Attributes.COUNT, 0);
-		talents[this.Const.Attributes.MeleeDefense] = 3;
-		talents[this.Const.Attributes.Bravery] = 2;
-		talents[this.Const.Attributes.Fatigue] = 3;
+		talents[this.Const.Attributes.MeleeDefense] = 2;
+		talents[this.Const.Attributes.MeleeSkill] = 2;
+		talents[this.Const.Attributes.Fatigue] = 2;
 
 		bros[1].setStartValuesEx([
-			"raider_warrior_background"
+			"raider_priest_background"
 		]);
-		bros[1].setTitle("Arms");
+		bros[1].setTitle("Survivor");
 		bros[1].setPlaceInFormation(4);
 		bros[1].m.PerkPoints = 0;
 		bros[1].m.LevelUps = 0;
@@ -59,9 +64,9 @@ this.wow_scenario_brothers_in_arms <- this.inherit("scripts/scenarios/world/star
 		bros[1].m.Attributes = [];
 		local talents = bros[1].getTalents();
 		talents.resize(this.Const.Attributes.COUNT, 0);
-		talents[this.Const.Attributes.MeleeDefense] = 2;
-		talents[this.Const.Attributes.MeleeSkill] = 3;
 		talents[this.Const.Attributes.Fatigue] = 3;
+		talents[this.Const.Attributes.Hitpoints] = 3;
+		talents[this.Const.Attributes.Initiative] = 2;
 
 		this.World.Assets.getStash().add(this.new("scripts/items/supplies/ground_grains_item"));
 		this.World.Assets.getStash().add(this.new("scripts/items/supplies/ground_grains_item"));
@@ -123,7 +128,7 @@ this.wow_scenario_brothers_in_arms <- this.inherit("scripts/scenarios/world/star
 		this.Time.scheduleEvent(this.TimeUnit.Real, 1000, function ( _tag )
 		{
 			this.Music.setTrackList(this.Const.Music.IntroTracks, this.Const.Music.CrossFadeTime);
-			this.World.Events.fire("event.brothers_in_arms_intro_event");
+			this.World.Events.fire("event.wolf_howl_intro_event");
 		}, null);
 	}
 

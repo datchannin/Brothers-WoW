@@ -7,7 +7,7 @@ this.wow_scenario_fire_punch <- this.inherit("scripts/scenarios/world/starting_s
 		this.m.Name = "Fire Punch";
 		this.m.Description = "[p=c][img]gfx/ui/events/event_wow_fire_punch.png[/img][/p][p]Your character is an apostate Mage. Most human factions are already know about your bad reputation among other magicians. Your desire is to start all over again.\n\n[color=#bcad8c]Mage:[/color] Start with a mage who is gifted in fire and frost arts.\n[color=#bcad8c]Perk Tree:[/color] Mage character uses separate perk tree.\n[color=#bcad8c]Elite Few:[/color] Can never have more than 12 men in your roster.\n[color=#bcad8c]Avatar:[/color] If your mage dies, the campaign ends.\n[color=#bcad8c]Outlaws:[/color] Start with bad relations to most human factions.[/p]";
 		this.m.Difficulty = 3;
-		this.m.Order = 15;
+		this.m.Order = 472;
 	}
 
 	function onSpawnAssets()

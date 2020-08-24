@@ -7,7 +7,7 @@ this.wow_scenario_holy_power <- this.inherit("scripts/scenarios/world/starting_s
 		this.m.Name = "Holy Power";
 		this.m.Description = "[p=c][img]gfx/ui/events/event_wow_holy_power.png[/img][/p][p] Soldier who previous was warrior became a strong paladin. Now he is able to turn to the 'Light' and help his brothers on the battlefield, as well as defeat all the allies of 'Darkness'.\n\n[color=#bcad8c]Paladin:[/color] Start with a paladin who is gifted in holy power and auras.\n[color=#bcad8c]Aura system:[/color] Use one of four strong auras.\n[color=#bcad8c]Healer:[/color] Use paladin's Holy power to heal your friend.\n[color=#bcad8c]Perk Tree:[/color] Paladin characters use separate perk tree.[/p]";
 		this.m.Difficulty = 1;
-		this.m.Order = 13;
+		this.m.Order = 452;
 	}
 
 	function onSpawnAssets()

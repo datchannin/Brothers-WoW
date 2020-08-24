@@ -284,7 +284,7 @@ gt.Const.Wow_strings.PerkDescription <- {
 	Fortitude = "Hitpoints are increased by [color=" + this.Const.UI.Color.PositiveValue + "]33%[/color]. Do you want to stay alive?",
 	DivineSpirit = "You know how to heal more effectively. Fatigue value is increased by [color=" + this.Const.UI.Color.PositiveValue + "]15[/color] points.",
 	InnerFire = "Unlocks the \'Inner Fire\' skill which gives you defensive buff. Increases your Ranged and Melee Defense by [color=" + this.Const.UI.Color.PositiveValue + "]15[/color] points for [color=" + this.Const.UI.Color.PositiveValue + "]2[/color] turns.",
-	InnerFocus = "Now you can to focus only on spell casting. You can increase your Ranged and Melee Defense by [color=" + this.Const.UI.Color.PositiveValue + "]10[/color] points instead of decrease your Ranged and Melee Skill by [color=" + this.Const.UI.Color.PositiveValue + "]10[/color] points.",
+	InnerFocus = "Now you can focus only on spell casting. You can increase your Ranged and Melee Defense by [color=" + this.Const.UI.Color.PositiveValue + "]10[/color] points instead of decrease your Ranged and Melee Skill by [color=" + this.Const.UI.Color.PositiveValue + "]10[/color] points.",
 	HolyReach = "Increases range of \'Heal\' by [color=" + this.Const.UI.Color.PositiveValue + "]3[/color]. Distance doesn\'t matter more.",
 	Inspiration = "Upps your \'Power Word: Shield\' skill. Now this skill can be used for repair Head Armor.",
 	HealingFocus = "Heal more Hitpoints for the same efforts. This enhances your [color=" + this.Const.UI.Color.PositiveValue + "]\'Heal\'[/color] skill. Increases the number of Hitpoints healing for [color=" + this.Const.UI.Color.PositiveValue + "]10[/color] points.",
