@@ -16,14 +16,14 @@ this.perk_wow_gamedev <- this.inherit("scripts/skills/skill", {
 
 	function onAdded()
 	{
-		if (!this.m.Container.hasSkill("actives.blessedrecover_skill"))
+		if (!this.m.Container.hasSkill("actives.catform_skill"))
 		{
-			this.m.Container.add(this.new("scripts/skills/actives/priest_blessedrecover_skill"));
+			this.m.Container.add(this.new("scripts/skills/actives/druid_catform_skill"));
 		}
 	}
 
 	function onRemoved()
 	{
-		this.m.Container.removeByID("actives.blessedrecover_skill");
+		this.m.Container.removeByID("actives.catform_skill");
 	}
 });
