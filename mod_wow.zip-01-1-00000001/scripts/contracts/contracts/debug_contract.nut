@@ -1,3 +1,4 @@
+/*BBWOW:This file is part of datchannin bbWoW mod, mod_version = 6.02, game_version = 1.4.0.40*/
 this.debug_contract <- this.inherit("scripts/contracts/contract", {
 	m = {
 		Location = null,

@@ -1,4 +1,4 @@
-/*BBWOW:This file is part of datchannin bbWoW mod, mod_version = 6.01, game_version = 1.4.0.40*/
+/*BBWOW:This file is part of datchannin bbWoW mod, mod_version = 6.02, game_version = 1.4.0.40*/
 this.wow_scenario_holy_power <- this.inherit("scripts/scenarios/world/starting_scenario", {
 	m = {},
 	function create()
