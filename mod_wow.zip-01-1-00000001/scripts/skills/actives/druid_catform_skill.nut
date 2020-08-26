@@ -6,7 +6,7 @@ this.druid_catform_skill <- this.inherit("scripts/skills/skill", {
 		this.m.Name = "Shapeshift into cat form";
 		this.m.Description = "Enables the druid to shapeshift into a cat, this skill requires free hands";
 		this.m.Icon = "ui/perks/skill_druid_catform.png";
-		this.m.IconDisabled = "ui/perks/skill_druid_catform_bw.png";
+		this.m.IconDisabled = "ui/perks/skill_druid_catform_sw.png";
 		this.m.Overlay = "skill_druid_catform";
 		this.m.SoundOnUse = [
 			"sounds/combat/druid_shapeshift.wav"
@@ -49,7 +49,7 @@ this.druid_catform_skill <- this.inherit("scripts/skills/skill", {
 	{
 		if (this.skill.isUsable())
 		{
-			if (!this.m.Container.hasSkill("effect.catform"))
+			if (!this.m.Container.hasSkill("effects.catform"))
 			{
 				return true;
 			}
