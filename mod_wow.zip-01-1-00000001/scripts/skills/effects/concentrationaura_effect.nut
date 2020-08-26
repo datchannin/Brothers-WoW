@@ -59,7 +59,7 @@ this.concentrationaura_effect <- this.inherit("scripts/skills/skill", {
 				continue;
 			}
 
-			if (ally.hasPerk("perk.wow.paladin.concentrationaura"))
+			if (ally.getSkills().hasSkill("perk.wow.paladin.concentrationaura"))
 			{
 				if (ally.getCurrentProperties().IsConcentrationAuraActive)
 				{

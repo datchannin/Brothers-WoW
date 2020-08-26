@@ -59,7 +59,7 @@ this.retributionaura_effect <- this.inherit("scripts/skills/skill", {
 				continue;
 			}
 
-			if (ally.hasPerk("perk.wow.paladin.retributionaura"))
+			if (ally.getSkills().hasSkill("perk.wow.paladin.retributionaura"))
 			{
 				if (ally.getCurrentProperties().IsRetributionAuraActive)
 				{

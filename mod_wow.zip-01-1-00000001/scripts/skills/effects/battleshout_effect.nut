@@ -68,7 +68,7 @@ this.battleshout_effect <- this.inherit("scripts/skills/skill", {
 				continue;
 			}
 
-			if (ally.hasPerk("perk.wow.warrior.battle_shout"))
+			if (ally.getSkills().hasSkill("perk.wow.warrior.battle_shout"))
 			{
 				if ((ally.m.CurrentProperties.MeleeSkill * ally.m.CurrentProperties.MeleeSkillMult) > bonus)
 				{

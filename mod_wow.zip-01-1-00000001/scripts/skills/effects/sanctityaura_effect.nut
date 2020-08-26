@@ -59,7 +59,7 @@ this.sanctityaura_effect <- this.inherit("scripts/skills/skill", {
 				continue;
 			}
 
-			if (ally.hasPerk("perk.wow.paladin.sanctityaura"))
+			if (ally.getSkills().hasSkill("perk.wow.paladin.sanctityaura"))
 			{
 				if (ally.getCurrentProperties().IsSanctityAuraActive)
 				{

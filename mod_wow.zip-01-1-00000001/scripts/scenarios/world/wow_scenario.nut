@@ -242,6 +242,16 @@ this.wow_scenario <- this.inherit("scripts/scenarios/world/starting_scenario", {
 			this.Music.setTrackList(this.Const.Music.IntroTracks, this.Const.Music.CrossFadeTime);
 			this.World.Events.fire("event.early_access_scenario_intro");
 		}, null);
+		/*
+		local c = this.new("scripts/contracts/contracts/debug_contract");
+		c.start();
+		this.World.Contracts.addContract(c);
+		this.World.Contracts.setActiveContract(c, true);
+		this.Time.scheduleEvent(this.TimeUnit.Real, 1000, function ( _tag )
+		{
+			this.Music.setTrackList(this.Const.Music.CivilianTracks, this.Const.Music.CrossFadeTime);
+			this.World.Contracts.update(true);
+		}, null);*/
 	}
 
 });

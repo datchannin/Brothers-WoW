@@ -59,7 +59,7 @@ this.devoutionaura_effect <- this.inherit("scripts/skills/skill", {
 				continue;
 			}
 
-			if (ally.hasPerk("perk.wow.paladin.devoutionaura"))
+			if (ally.getSkills().hasSkill("perk.wow.paladin.devoutionaura"))
 			{
 				if (ally.getCurrentProperties().IsDevoutionAuraActive)
 				{
