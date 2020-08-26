@@ -1,6 +1,9 @@
 /*BBWOW:This file is part of datchannin bbWoW mod, mod_version = 6.02, game_version = 1.4.0.40*/
 this.catform_effect <- this.inherit("scripts/skills/skill", {
-	m = {},
+	m = {
+		initBody = "",
+		initHead = ""
+	},
 	function create()
 	{
 		this.m.ID = "effects.catform";
@@ -54,11 +57,53 @@ this.catform_effect <- this.inherit("scripts/skills/skill", {
 	function onAdded()
 	{
 		toDropWeapons();
+		local actor = this.getContainer().getActor();
+		this.m.initBody = actor.getSprite("body").getBrush().Name;
+		this.m.initHead = actor.getSprite("head").getBrush().Name;
+
+		actor.setDirty(true);
+
+		actor.getSprite("body").setBrush("druid_cat_body");
+		actor.getSprite("head").setBrush("druid_cat_head_01");
+
+		actor.getSprite("armor").Alpha = 10;
+		actor.getSprite("helmet").Alpha = 10;
+		actor.getSprite("shield_icon").Alpha = 10;
+		actor.getSprite("armor_layer_plate").Alpha = 10;
+		actor.getSprite("armor_layer_tabbard").Alpha = 10;
+		actor.getSprite("hair").Alpha = 10;
+		actor.getSprite("beard").Alpha = 10;
+		actor.getSprite("tattoo_head").Alpha = 10;
+		actor.getSprite("tattoo_body").Alpha = 10;
+		actor.getSprite("quiver").Alpha = 10;
+		actor.getSprite("arms_icon").Alpha = 10;
+		actor.getSprite("dirt").Alpha = 10;
+		actor.getSprite("accessory").Alpha = 10;
+		actor.getSprite("surcoat").Alpha = 10;
+		actor.getSprite("armor_upgrade_back").Alpha = 10;
+		actor.getSprite("armor_upgrade_front").Alpha = 10;
 	}
 
 	function onUpdate( _properties )
 	{
 		toDropWeapons();
+		local actor = this.getContainer().getActor();
+		actor.getSprite("armor").Alpha = 10;
+		actor.getSprite("helmet").Alpha = 10;
+		actor.getSprite("shield_icon").Alpha = 10;
+		actor.getSprite("armor_layer_plate").Alpha = 10;
+		actor.getSprite("armor_layer_tabbard").Alpha = 10;
+		actor.getSprite("hair").Alpha = 10;
+		actor.getSprite("beard").Alpha = 10;
+		actor.getSprite("tattoo_head").Alpha = 10;
+		actor.getSprite("tattoo_body").Alpha = 10;
+		actor.getSprite("quiver").Alpha = 10;
+		actor.getSprite("arms_icon").Alpha = 10;
+		actor.getSprite("dirt").Alpha = 10;
+		actor.getSprite("accessory").Alpha = 10;
+		actor.getSprite("surcoat").Alpha = 10;
+		actor.getSprite("armor_upgrade_back").Alpha = 10;
+		actor.getSprite("armor_upgrade_front").Alpha = 10;
 	}
 
 	function onRemoved()

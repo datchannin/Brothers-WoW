@@ -3622,6 +3622,8 @@ this.actor <- this.inherit("scripts/entity/tactical/entity", {
 		aura4.Visible = false;
 		local divine = this.addSprite("divineshield");
 		divine.Visible = false;
+		local catform = this.addSprite("catform");
+		catform.Visible = false;
 		local hex = this.addSprite("status_hex");
 		hex.Visible = false;
 		local sweat = this.addSprite("status_sweat");
