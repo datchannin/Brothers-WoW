@@ -7,7 +7,10 @@ this.druid_catform_skill <- this.inherit("scripts/skills/skill", {
 		this.m.Description = "Enables the druid to shapeshift into a cat, this skill requires free hands";
 		this.m.Icon = "ui/perks/skill_druid_catform.png";
 		this.m.IconDisabled = "ui/perks/skill_druid_catform_bw.png";
-		this.m.Overlay = "";
+		this.m.Overlay = "skill_druid_catform";
+		this.m.SoundOnUse = [
+			"sounds/combat/druid_shapeshift.wav"
+		];
 		this.m.Type = this.Const.SkillType.Active;
 		this.m.Order = this.Const.SkillOrder.NonTargeted;
 		this.m.IsSerialized = false;
@@ -46,10 +49,10 @@ this.druid_catform_skill <- this.inherit("scripts/skills/skill", {
 	{
 		if (this.skill.isUsable())
 		{
-//			if (!this.m.Container.hasSkill("effect.catform_effect"))
-//			{
+			if (!this.m.Container.hasSkill("effect.catform"))
+			{
 				return true;
-//			}
+			}
 		}
 		
 		return false;
@@ -81,12 +84,12 @@ this.druid_catform_skill <- this.inherit("scripts/skills/skill", {
 
 	function onUse( _user, _targetTile )
 	{
-//		this.m.Container.add(this.new("scripts/skills/effects/catform_effect"));
+		this.m.Container.add(this.new("scripts/skills/effects/catform_effect"));
 	}
 
 //	function onRemoved()
 //	{
-//		this.m.Container.removeByID("effects.catform_effect");
+//		this.m.Container.removeByID("effects.catform");
 //	}
 
 });
