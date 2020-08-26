@@ -34,7 +34,48 @@ this.catform_effect <- this.inherit("scripts/skills/skill", {
 		];
 	}
 
-	function onTurnEnd()
+	function toDropWeapons()
 	{
+		local actor = this.getContainer().getActor();
+
+		local items = actor.getItems();
+		if (items.getItemAtSlot(this.Const.ItemSlot.Mainhand))
+		{
+			local item = items.getItemAtSlot(this.Const.ItemSlot.Mainhand);
+			item.drop();
+		}
+		if (items.getItemAtSlot(this.Const.ItemSlot.Offhand))
+		{
+			local item = items.getItemAtSlot(this.Const.ItemSlot.Offhand);
+			item.drop();
+		}
+	}
+
+	function onAdded()
+	{
+		toDropWeapons();
+	}
+
+	function onUpdate( _properties )
+	{
+		toDropWeapons();
+	}
+
+	function onRemoved()
+	{
+		local actor = this.getContainer().getActor();
+	
+		local items = actor.getItems();
+		items.getData()[this.Const.ItemSlot.Offhand][0] = null;
+		items.getData()[this.Const.ItemSlot.Mainhand][0] = null;
+	}
+
+	function onCombatFinished()
+	{
+		local actor = this.getContainer().getActor();
+		
+		local items = actor.getItems();
+		items.getData()[this.Const.ItemSlot.Offhand][0] = null;
+		items.getData()[this.Const.ItemSlot.Mainhand][0] = null;
 	}
 });

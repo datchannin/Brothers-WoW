@@ -41,7 +41,17 @@ this.druid_catform_skill <- this.inherit("scripts/skills/skill", {
 			icon = "ui/icons/special.png",
 			text = "Requires free hands."
 		});
-		
+
+		if (this.m.Container.hasSkill("effects.catform"))
+		{
+			ret.push({
+				id = 6,
+				type = "text",
+				icon = "ui/icons/special.png",
+				text = "You are already under shapeshift effect. You can not use this ability again."
+			});
+		}
+
 		return ret;
 	}
 
@@ -66,7 +76,7 @@ this.druid_catform_skill <- this.inherit("scripts/skills/skill", {
 		}
 		else
 		{
-			if (!this.getContainer().getActor().getItems().hasEmptySlot(this.Const.ItemSlot.Mainhand))
+			if (!this.getContainer().getActor().getItems().hasEmptySlot(this.Const.ItemSlot.Mainhand) || !this.getContainer().getActor().getItems().hasEmptySlot(this.Const.ItemSlot.Offhand))
 			{
 				return true;
 			}
@@ -84,13 +94,14 @@ this.druid_catform_skill <- this.inherit("scripts/skills/skill", {
 
 	function onUse( _user, _targetTile )
 	{
-		this.m.Container.add(this.new("scripts/skills/effects/catform_effect"));
+		if (!this.m.Container.hasSkill("effects.catform"))
+		{
+			this.m.Container.add(this.new("scripts/skills/effects/catform_effect"));
+		}
+		else
+		{
+			this.m.Container.removeByID("effects.catform");
+		}
 	}
-
-//	function onRemoved()
-//	{
-//		this.m.Container.removeByID("effects.catform");
-//	}
-
 });
 
