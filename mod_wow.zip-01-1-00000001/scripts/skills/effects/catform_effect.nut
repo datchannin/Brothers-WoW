@@ -69,8 +69,6 @@ this.catform_effect <- this.inherit("scripts/skills/skill", {
 		actor.getSprite("armor").Alpha = 10;
 		actor.getSprite("helmet").Alpha = 10;
 		actor.getSprite("shield_icon").Alpha = 10;
-		actor.getSprite("armor_layer_plate").Alpha = 10;
-		actor.getSprite("armor_layer_tabbard").Alpha = 10;
 		actor.getSprite("hair").Alpha = 10;
 		actor.getSprite("beard").Alpha = 10;
 		actor.getSprite("tattoo_head").Alpha = 10;
@@ -91,8 +89,6 @@ this.catform_effect <- this.inherit("scripts/skills/skill", {
 		actor.getSprite("armor").Alpha = 10;
 		actor.getSprite("helmet").Alpha = 10;
 		actor.getSprite("shield_icon").Alpha = 10;
-		actor.getSprite("armor_layer_plate").Alpha = 10;
-		actor.getSprite("armor_layer_tabbard").Alpha = 10;
 		actor.getSprite("hair").Alpha = 10;
 		actor.getSprite("beard").Alpha = 10;
 		actor.getSprite("tattoo_head").Alpha = 10;
