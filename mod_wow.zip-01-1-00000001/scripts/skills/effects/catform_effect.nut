@@ -53,6 +53,53 @@ this.catform_effect <- this.inherit("scripts/skills/skill", {
 			item.drop();
 		}
 	}
+	
+	function toDropArmor()
+	{
+		local actor = this.getContainer().getActor();
+
+		local items = actor.getItems();
+		if (items.getItemAtSlot(this.Const.ItemSlot.Body))
+		{
+			local item = items.getItemAtSlot(this.Const.ItemSlot.Body);
+			item.drop();
+		}
+		if (items.getItemAtSlot(this.Const.ItemSlot.Head))
+		{
+			local item = items.getItemAtSlot(this.Const.ItemSlot.Head);
+			item.drop();
+		}
+	}
+
+	function toSetVisibleBrush(value)
+	{
+		local setvalue = true;
+		local actor = this.getContainer().getActor();
+
+		if (value == 0)
+		{
+			setvalue = false;
+		}
+		else
+		{
+			setvalue = true;
+		}
+		
+		actor.getSprite("armor").Visible = setvalue;
+		actor.getSprite("helmet").Visible = setvalue;
+		actor.getSprite("shield_icon").Visible = setvalue;
+		actor.getSprite("hair").Visible = setvalue;
+		actor.getSprite("beard").Visible = setvalue;
+		actor.getSprite("tattoo_head").Visible = setvalue;
+		actor.getSprite("tattoo_body").Visible = setvalue;
+		actor.getSprite("quiver").Visible = setvalue;
+		actor.getSprite("arms_icon").Visible = setvalue;
+		actor.getSprite("dirt").Visible = setvalue;
+		actor.getSprite("accessory").Visible = setvalue;
+		actor.getSprite("surcoat").Visible = setvalue;
+		actor.getSprite("armor_upgrade_back").Visible = setvalue;
+		actor.getSprite("armor_upgrade_front").Visible = setvalue;
+	}
 
 	function onAdded()
 	{
@@ -62,61 +109,32 @@ this.catform_effect <- this.inherit("scripts/skills/skill", {
 		this.m.initHead = actor.getSprite("head").getBrush().Name;
 
 		actor.setDirty(true);
-
 		actor.getSprite("body").setBrush("druid_cat_body");
 		actor.getSprite("head").setBrush("druid_cat_head_01");
 
-		actor.getSprite("armor").Alpha = 10;
-		actor.getSprite("helmet").Alpha = 10;
-		actor.getSprite("shield_icon").Alpha = 10;
-		actor.getSprite("hair").Alpha = 10;
-		actor.getSprite("beard").Alpha = 10;
-		actor.getSprite("tattoo_head").Alpha = 10;
-		actor.getSprite("tattoo_body").Alpha = 10;
-		actor.getSprite("quiver").Alpha = 10;
-		actor.getSprite("arms_icon").Alpha = 10;
-		actor.getSprite("dirt").Alpha = 10;
-		actor.getSprite("accessory").Alpha = 10;
-		actor.getSprite("surcoat").Alpha = 10;
-		actor.getSprite("armor_upgrade_back").Alpha = 10;
-		actor.getSprite("armor_upgrade_front").Alpha = 10;
+		toSetVisibleBrush(0);
 	}
 
 	function onUpdate( _properties )
 	{
 		toDropWeapons();
 		local actor = this.getContainer().getActor();
-		actor.getSprite("armor").Alpha = 10;
-		actor.getSprite("helmet").Alpha = 10;
-		actor.getSprite("shield_icon").Alpha = 10;
-		actor.getSprite("hair").Alpha = 10;
-		actor.getSprite("beard").Alpha = 10;
-		actor.getSprite("tattoo_head").Alpha = 10;
-		actor.getSprite("tattoo_body").Alpha = 10;
-		actor.getSprite("quiver").Alpha = 10;
-		actor.getSprite("arms_icon").Alpha = 10;
-		actor.getSprite("dirt").Alpha = 10;
-		actor.getSprite("accessory").Alpha = 10;
-		actor.getSprite("surcoat").Alpha = 10;
-		actor.getSprite("armor_upgrade_back").Alpha = 10;
-		actor.getSprite("armor_upgrade_front").Alpha = 10;
+		toSetVisibleBrush(0);
 	}
 
 	function onRemoved()
 	{
 		local actor = this.getContainer().getActor();
-	
-		local items = actor.getItems();
-		items.getData()[this.Const.ItemSlot.Offhand][0] = null;
-		items.getData()[this.Const.ItemSlot.Mainhand][0] = null;
+		actor.getSprite("body").setBrush(this.m.initBody);
+		actor.getSprite("head").setBrush(this.m.initHead);		
+		toSetVisibleBrush(1);
 	}
 
 	function onCombatFinished()
 	{
 		local actor = this.getContainer().getActor();
-		
-		local items = actor.getItems();
-		items.getData()[this.Const.ItemSlot.Offhand][0] = null;
-		items.getData()[this.Const.ItemSlot.Mainhand][0] = null;
+		actor.getSprite("body").setBrush(this.m.initBody);
+		actor.getSprite("head").setBrush(this.m.initHead);
+		toSetVisibleBrush(1);
 	}
 });

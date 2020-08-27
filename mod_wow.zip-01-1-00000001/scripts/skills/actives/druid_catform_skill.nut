@@ -49,7 +49,7 @@ this.druid_catform_skill <- this.inherit("scripts/skills/skill", {
 				id = 6,
 				type = "text",
 				icon = "ui/icons/special.png",
-				text = "You are already under shapeshift effect. You can not use this ability again."
+				text = "You are already is under shapeshift effect. Use this again to become human."
 			});
 		}
 
@@ -60,10 +60,7 @@ this.druid_catform_skill <- this.inherit("scripts/skills/skill", {
 	{
 		if (this.skill.isUsable())
 		{
-			if (!this.m.Container.hasSkill("effects.catform"))
-			{
-				return true;
-			}
+			return true;
 		}
 		
 		return false;
