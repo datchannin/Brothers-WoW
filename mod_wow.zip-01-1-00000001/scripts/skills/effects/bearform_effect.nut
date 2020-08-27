@@ -1,15 +1,15 @@
 /*BBWOW:This file is part of datchannin bbWoW mod, mod_version = 6.02, game_version = 1.4.0.40*/
-this.catform_effect <- this.inherit("scripts/skills/skill", {
+this.bearform_effect <- this.inherit("scripts/skills/skill", {
 	m = {
 		initBody = "",
 		initHead = ""
 	},
 	function create()
 	{
-		this.m.ID = "effects.catform";
-		this.m.Name = "Cat Form";
-		this.m.Icon = "ui/perks/perk_druid_catform.png";
-		this.m.IconMini = "effect_mini_catform";
+		this.m.ID = "effects.bearform";
+		this.m.Name = "Bear Form";
+		this.m.Icon = "ui/perks/perk_druid_bearform.png";
+		this.m.IconMini = "effect_mini_bearform";
 		this.m.Overlay = "";
 		this.m.Type = this.Const.SkillType.StatusEffect;
 		this.m.IsActive = false;
@@ -18,7 +18,7 @@ this.catform_effect <- this.inherit("scripts/skills/skill", {
 
 	function getDescription()
 	{
-		return "You are under shapeshift effect now. Big bad cat.";
+		return "You are under shapeshift effect now. Big strong bear.";
 	}
 
 	function getTooltip()
@@ -120,8 +120,8 @@ this.catform_effect <- this.inherit("scripts/skills/skill", {
 		this.m.initHead = actor.getSprite("head").getBrush().Name;
 
 		actor.setDirty(true);
-		actor.getSprite("body").setBrush("druid_cat_body");
-		actor.getSprite("head").setBrush("druid_cat_head_01");
+		actor.getSprite("body").setBrush("druid_bear_body");
+		actor.getSprite("head").setBrush("druid_bear_head_01");
 
 		toSetVisibleBrush(0);
 	}

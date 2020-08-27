@@ -1,14 +1,14 @@
 /*BBWOW:This file is part of datchannin bbWoW mod, mod_version = 6.02, game_version = 1.4.0.40*/
-this.druid_catform_skill <- this.inherit("scripts/skills/skill", {
+this.druid_bearform_skill <- this.inherit("scripts/skills/skill", {
 	m = {},
 	function create()
 	{
-		this.m.ID = "actives.catform_skill";
-		this.m.Name = "Shapeshift into cat form";
-		this.m.Description = "Enables the druid to shapeshift into a cat, this skill requires free hands";
-		this.m.Icon = "ui/perks/skill_druid_catform.png";
-		this.m.IconDisabled = "ui/perks/skill_druid_catform_sw.png";
-		this.m.Overlay = "skill_druid_catform";
+		this.m.ID = "actives.bearform_skill";
+		this.m.Name = "Shapeshift into bear form";
+		this.m.Description = "Enables the druid to shapeshift into a bear, this skill requires free hands";
+		this.m.Icon = "ui/perks/skill_druid_bearform.png";
+		this.m.IconDisabled = "ui/perks/skill_druid_bearform_sw.png";
+		this.m.Overlay = "skill_druid_bearform";
 		this.m.SoundOnUse = [
 			"sounds/combat/druid_shapeshift.wav"
 		];
@@ -33,7 +33,7 @@ this.druid_catform_skill <- this.inherit("scripts/skills/skill", {
 			id = 6,
 			type = "text",
 			icon = "ui/icons/special.png",
-			text = "Shapeshift into a cat. Your mind should stay under your control."
+			text = "Shapeshift into a bear. Your mind should stay under your control."
 		});
 
 		ret.push({
@@ -43,7 +43,7 @@ this.druid_catform_skill <- this.inherit("scripts/skills/skill", {
 			text = "Requires free hands."
 		});
 
-		if (this.m.Container.hasSkill("effects.catform"))
+		if (this.m.Container.hasSkill("effects.bearform"))
 		{
 			ret.push({
 				id = 6,
@@ -60,7 +60,7 @@ this.druid_catform_skill <- this.inherit("scripts/skills/skill", {
 	{
 		if (this.skill.isUsable())
 		{
-			if (!this.m.Container.hasSkill("effects.bearform"))
+			if (!this.m.Container.hasSkill("effects.catform"))
 			{
 				return true;
 			}
@@ -95,13 +95,13 @@ this.druid_catform_skill <- this.inherit("scripts/skills/skill", {
 
 	function onUse( _user, _targetTile )
 	{
-		if (!this.m.Container.hasSkill("effects.catform"))
+		if (!this.m.Container.hasSkill("effects.bearform"))
 		{
-			this.m.Container.add(this.new("scripts/skills/effects/catform_effect"));
+			this.m.Container.add(this.new("scripts/skills/effects/bearform_effect"));
 		}
 		else
 		{
-			this.m.Container.removeByID("effects.catform");
+			this.m.Container.removeByID("effects.bearform");
 		}
 	}
 });
