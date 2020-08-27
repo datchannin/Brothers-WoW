@@ -69,12 +69,12 @@ this.raider_developer_background <- this.inherit("scripts/skills/backgrounds/cha
 				250
 			],
 			MeleeDefense = [
-				250,
-				250
+				0,
+				0
 			],
 			RangedDefense = [
-				250,
-				250
+				0,
+				0
 			],
 			Initiative = [
 				250,

@@ -84,21 +84,29 @@ this.catform_effect <- this.inherit("scripts/skills/skill", {
 		{
 			setvalue = true;
 		}
-		
+
 		actor.getSprite("armor").Visible = setvalue;
 		actor.getSprite("helmet").Visible = setvalue;
+		actor.getSprite("helmet_damage").Visible = setvalue;
 		actor.getSprite("shield_icon").Visible = setvalue;
+		actor.getSprite("arms_icon").Visible = setvalue;
 		actor.getSprite("hair").Visible = setvalue;
 		actor.getSprite("beard").Visible = setvalue;
+		actor.getSprite("beard_top").Visible = setvalue;
 		actor.getSprite("tattoo_head").Visible = setvalue;
 		actor.getSprite("tattoo_body").Visible = setvalue;
 		actor.getSprite("quiver").Visible = setvalue;
-		actor.getSprite("arms_icon").Visible = setvalue;
 		actor.getSprite("dirt").Visible = setvalue;
 		actor.getSprite("accessory").Visible = setvalue;
 		actor.getSprite("surcoat").Visible = setvalue;
 		actor.getSprite("armor_upgrade_back").Visible = setvalue;
 		actor.getSprite("armor_upgrade_front").Visible = setvalue;
+		actor.getSprite("permanent_injury_1").Visible = setvalue;
+		actor.getSprite("permanent_injury_2").Visible = setvalue;
+		actor.getSprite("permanent_injury_3").Visible = setvalue;
+		actor.getSprite("permanent_injury_4").Visible = setvalue;
+		actor.getSprite("injury_body").Visible = setvalue;
+		actor.getSprite("injury").Visible = setvalue;
 	}
 
 	function onAdded()
