@@ -75,6 +75,7 @@ this.catform_effect <- this.inherit("scripts/skills/skill", {
 	{
 		local setvalue = true;
 		local actor = this.getContainer().getActor();
+		local appearance = actor.getItems().getAppearance();
 
 		if (value == 0)
 		{
@@ -107,6 +108,8 @@ this.catform_effect <- this.inherit("scripts/skills/skill", {
 		actor.getSprite("permanent_injury_4").Visible = setvalue;
 		actor.getSprite("injury_body").Visible = setvalue;
 		actor.getSprite("injury").Visible = setvalue;
+		appearance.HideBeard = !setvalue;
+		appearance.HideHair = !setvalue;
 	}
 
 	function onAdded()
@@ -123,6 +126,14 @@ this.catform_effect <- this.inherit("scripts/skills/skill", {
 		toSetVisibleBrush(0);
 	}
 
+	function onDeath()
+	{
+		local actor = this.getContainer().getActor();
+		local appearance = actor.getItems().getAppearance();
+		appearance.CorpseArmor = "";
+		appearance.HelmetCorpse = "";
+	}
+
 	function onUpdate( _properties )
 	{
 		toDropWeapons();
@@ -133,16 +144,22 @@ this.catform_effect <- this.inherit("scripts/skills/skill", {
 	function onRemoved()
 	{
 		local actor = this.getContainer().getActor();
-		actor.getSprite("body").setBrush(this.m.initBody);
-		actor.getSprite("head").setBrush(this.m.initHead);		
-		toSetVisibleBrush(1);
+		if (actor.isAlive())
+		{
+			actor.getSprite("body").setBrush(this.m.initBody);
+			actor.getSprite("head").setBrush(this.m.initHead);		
+			toSetVisibleBrush(1);
+		}
 	}
 
 	function onCombatFinished()
 	{
 		local actor = this.getContainer().getActor();
-		actor.getSprite("body").setBrush(this.m.initBody);
-		actor.getSprite("head").setBrush(this.m.initHead);
-		toSetVisibleBrush(1);
+		if (actor.isAlive())
+		{
+			actor.getSprite("body").setBrush(this.m.initBody);
+			actor.getSprite("head").setBrush(this.m.initHead);
+			toSetVisibleBrush(1);
+		}
 	}
 });
