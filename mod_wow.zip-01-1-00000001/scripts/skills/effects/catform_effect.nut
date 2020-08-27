@@ -120,8 +120,10 @@ this.catform_effect <- this.inherit("scripts/skills/skill", {
 		this.m.initHead = actor.getSprite("head").getBrush().Name;
 
 		actor.setDirty(true);
-		actor.getSprite("body").setBrush("druid_cat_body");
-		actor.getSprite("head").setBrush("druid_cat_head_01");
+		//actor.getSprite("body").setBrush("druid_cat_body");
+		//actor.getSprite("head").setBrush("druid_cat_head_01");
+		actor.getSprite("body").setBrush("druid_bear_body");
+		actor.getSprite("head").setBrush("druid_bear_head_01");
 
 		toSetVisibleBrush(0);
 	}
