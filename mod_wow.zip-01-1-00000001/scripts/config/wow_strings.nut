@@ -194,7 +194,26 @@ gt.Const.Wow_strings.PerkName <- {
 	RecoverySplit = "Recovery: Split",
 	Renew = "Renew",
 	RepairMaster = "Repair Master",
-	RecoveryMaximum = "Recovery: Maximum"
+	RecoveryMaximum = "Recovery: Maximum",
+	Moonfury = "Moonfury",
+	Firocity = "Firocity",
+	FaerieFire = "Faerie Fire",
+	AbolishPoison = "Abolish Poison",
+	Barkskin = "Barkskin",
+	GiftofNature = "Gift of Nature",
+	FerociousBite = "Ferocious Bite",
+	DemoralizingRoar = "Demoralizing Roar",
+	Swipe = "Swipe",
+	FeralCharge = "Feral Charge",
+	Swiftmend = "Swiftmend",
+	SharpenedClaws = "Sharpened Claws",
+	PrimalFury = "Primal Fury",
+	Clarity = "Clarity",
+	HeartofWild = "Heart of Wild",
+	Furor = "Furor",
+	MarkofWild = "Mark of Wild",
+	Tiger = "Tiger",
+	DireBear = "Dire Bear"
 };
 
 gt.Const.Wow_strings.PerkDescription <- {
@@ -297,5 +316,24 @@ gt.Const.Wow_strings.PerkDescription <- {
 	RecoverySplit = "Increases efficiency of your \'Blessed Recovery\' skill. Now you know how to recover some kind of \'Split\' injuries.",
 	Renew = "Now your \'Heal\' spell is able to apply a healing buff to your target. Target will be healed for every turn under this effect.",
 	RepairMaster = "Become Master of armor repair. Increases power of your \'Power Word: Shield\' skill by [color=" + this.Const.UI.Color.PositiveValue + "]10[/color] points, reduces Fatigue cost of this spell will by [color=" + this.Const.UI.Color.PositiveValue + "]5[/color]. Also increases range of this spell by [color=" + this.Const.UI.Color.PositiveValue + "]1[/color].",
-	RecoveryMaximum = "Gives maximum power to your \'Blessed Recovery\' skill. Some \'Permanent\' injuries now also can be healed."
+	RecoveryMaximum = "Gives maximum power to your \'Blessed Recovery\' skill. Some \'Permanent\' injuries now also can be healed.",
+	Moonfury = "Moonfury",
+	Firocity = "",
+	FaerieFire = "",
+	AbolishPoison = "",
+	Barkskin = "",
+	GiftofNature = "",
+	FerociousBite = "",
+	DemoralizingRoar = "",
+	Swipe = "",
+	FeralCharge = "",
+	Swiftmend = "",
+	SharpenedClaws = "",
+	PrimalFury = "",
+	Clarity = "",
+	HeartofWild = "",
+	Furor = "",
+	MarkofWild = "",
+	Tiger = "",
+	DireBear = ""
 };
