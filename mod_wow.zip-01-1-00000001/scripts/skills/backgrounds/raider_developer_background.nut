@@ -16,11 +16,11 @@ this.raider_developer_background <- this.inherit("scripts/skills/backgrounds/cha
 		];
 		this.m.Titles = [
 		];
-		this.m.Faces = this.Const.Faces.AllMale;
-		this.m.Hairs = this.Const.Hair.UntidyMale;
-		this.m.HairColors = this.Const.HairColors.All;
-		this.m.Beards = this.Const.Beards.Tidy;
-		this.m.Bodies = this.Const.Bodies.Muscular;
+		this.m.Faces = this.Const.Faces.ElfMale;
+		this.m.Hairs = this.Const.Hair.ElfMale;
+		this.m.HairColors = this.Const.HairColors.Elf;
+		this.m.Beards = null;
+		this.m.Bodies = this.Const.Bodies.ElfMale;
 		this.m.Level = this.Math.rand(3, 5);
 	}
 
