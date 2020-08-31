@@ -129,9 +129,12 @@ this.bearform_effect <- this.inherit("scripts/skills/skill", {
 	function onDeath()
 	{
 		local actor = this.getContainer().getActor();
-		local appearance = actor.getItems().getAppearance();
-		appearance.CorpseArmor = "";
-		appearance.HelmetCorpse = "";
+		//local appearance = actor.getItems().getAppearance();
+		//appearance.CorpseArmor = "";
+		//appearance.HelmetCorpse = "";
+		actor.getSprite("body").setBrush(this.m.initBody);
+		actor.getSprite("head").setBrush(this.m.initHead);
+		toSetVisibleBrush(1);
 	}
 
 	function onUpdate( _properties )
