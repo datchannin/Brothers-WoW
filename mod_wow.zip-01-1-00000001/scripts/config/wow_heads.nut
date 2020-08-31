@@ -21,7 +21,10 @@ if (!("Bodies" in gt.Const))
 }
 
 gt.Const.HairColors.Elf <- [
-	"elf",
+	"elf1",
+	"elf2",
+	"elf3",
+	"elf4"
 ];
 
 gt.Const.Faces.ElfMale <- [
@@ -29,6 +32,9 @@ gt.Const.Faces.ElfMale <- [
 ];
 
 gt.Const.Hair.ElfMale <- [
+	"01",
+	"01",
+	"01",
 	"01"
 ];
 
