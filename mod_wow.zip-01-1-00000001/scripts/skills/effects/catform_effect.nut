@@ -135,6 +135,8 @@ this.catform_effect <- this.inherit("scripts/skills/skill", {
 		actor.getSprite("body").setBrush(this.m.initBody);
 		actor.getSprite("head").setBrush(this.m.initHead);
 		toSetVisibleBrush(1);
+		
+		this.removeSelf();
 	}
 
 	function onUpdate( _properties )
