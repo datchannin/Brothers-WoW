@@ -84,6 +84,7 @@ this.wow_scenario <- this.inherit("scripts/scenarios/world/starting_scenario", {
 		bros[5].m.PerkPoints = 12;
 		bros[5].m.LevelUps = 6;
 		bros[5].m.Level = 5;
+		/*
 		bros[5].getSkills().add(this.new("scripts/skills/injury/broken_arm_injury"));
 		bros[5].getSkills().add(this.new("scripts/skills/injury/broken_leg_injury"));
 		bros[5].getSkills().add(this.new("scripts/skills/injury/broken_nose_injury"));
@@ -132,7 +133,7 @@ this.wow_scenario <- this.inherit("scripts/scenarios/world/starting_scenario", {
 		bros[5].getSkills().add(this.new("scripts/skills/injury/split_shoulder_injury"));
 		bros[5].getSkills().add(this.new("scripts/skills/injury/sprained_ankle_injury"));
 		bros[5].getSkills().add(this.new("scripts/skills/injury/stabbed_guts_injury"));
-
+*/
 		bros[6].setStartValuesEx([
 			//"raider_developer_background"
 			"raider_paladin_background"
@@ -141,6 +142,7 @@ this.wow_scenario <- this.inherit("scripts/scenarios/world/starting_scenario", {
 		bros[6].m.PerkPoints = 12;
 		bros[6].m.LevelUps = 6;
 		bros[6].m.Level = 5;
+		/*
 		bros[6].getSkills().add(this.new("scripts/skills/injury_permanent/brain_damage_injury"));
 		bros[6].getSkills().add(this.new("scripts/skills/injury_permanent/broken_elbow_joint_injury"));
 		bros[6].getSkills().add(this.new("scripts/skills/injury_permanent/broken_knee_injury"));
@@ -152,7 +154,7 @@ this.wow_scenario <- this.inherit("scripts/scenarios/world/starting_scenario", {
 		bros[6].getSkills().add(this.new("scripts/skills/injury_permanent/missing_nose_injury"));
 		bros[6].getSkills().add(this.new("scripts/skills/injury_permanent/traumatized_injury"));
 		bros[6].getSkills().add(this.new("scripts/skills/injury_permanent/weakened_heart_injury"));
-
+		*/
 		local body = bros[6].getItems().getItemAtSlot(this.Const.ItemSlot.Body);
 		local head = bros[6].getItems().getItemAtSlot(this.Const.ItemSlot.Head);
 		body.setArmor(1);
