@@ -15,7 +15,7 @@ this.wow_scenario <- this.inherit("scripts/scenarios/world/starting_scenario", {
 		local roster = this.World.getPlayerRoster();
 		local names = [];
 
-		for( local i = 0; i < 9; i = ++i )
+		for( local i = 0; i < 10; i = ++i )
 		{
 			local bro;
 			bro = roster.create("scripts/entity/tactical/player");
@@ -33,7 +33,6 @@ this.wow_scenario <- this.inherit("scripts/scenarios/world/starting_scenario", {
 		local bros = roster.getAll();
 		bros[0].setStartValuesEx([
 			"raider_warrior_background"
-			//"raider_developer_background"
 		]);
 		bros[0].setPlaceInFormation(3);
 		bros[0].m.PerkPoints = 12;
@@ -42,7 +41,6 @@ this.wow_scenario <- this.inherit("scripts/scenarios/world/starting_scenario", {
 
 		bros[1].setStartValuesEx([
 			"raider_rogue_background"
-			//"raider_developer_background"
 		]);
 		bros[1].setPlaceInFormation(4);
 		bros[1].m.PerkPoints = 12;
@@ -51,7 +49,6 @@ this.wow_scenario <- this.inherit("scripts/scenarios/world/starting_scenario", {
 
 		bros[2].setStartValuesEx([
 			"raider_mage_background"
-			//"raider_developer_background"
 		]);
 		bros[2].setPlaceInFormation(5);
 		bros[2].m.PerkPoints = 12;
@@ -60,7 +57,6 @@ this.wow_scenario <- this.inherit("scripts/scenarios/world/starting_scenario", {
 
 		bros[3].setStartValuesEx([
 			"raider_hunter_background"
-			//"raider_developer_background"
 		]);
 		bros[3].setPlaceInFormation(13);
 		bros[3].m.PerkPoints = 12;
@@ -69,7 +65,6 @@ this.wow_scenario <- this.inherit("scripts/scenarios/world/starting_scenario", {
 
 		bros[4].setStartValuesEx([
 			"raider_paladin_background"
-			//"raider_developer_background"
 		]);
 		bros[4].setPlaceInFormation(14);
 		bros[4].m.PerkPoints = 12;
@@ -78,7 +73,6 @@ this.wow_scenario <- this.inherit("scripts/scenarios/world/starting_scenario", {
 
 		bros[5].setStartValuesEx([
 			"raider_paladin_background"
-			//"raider_developer_background"
 		]);
 		bros[5].setPlaceInFormation(15);
 		bros[5].m.PerkPoints = 12;
@@ -135,7 +129,6 @@ this.wow_scenario <- this.inherit("scripts/scenarios/world/starting_scenario", {
 		bros[5].getSkills().add(this.new("scripts/skills/injury/stabbed_guts_injury"));
 */
 		bros[6].setStartValuesEx([
-			//"raider_developer_background"
 			"raider_paladin_background"
 		]);
 		bros[6].setPlaceInFormation(12);
@@ -155,11 +148,11 @@ this.wow_scenario <- this.inherit("scripts/scenarios/world/starting_scenario", {
 		bros[6].getSkills().add(this.new("scripts/skills/injury_permanent/traumatized_injury"));
 		bros[6].getSkills().add(this.new("scripts/skills/injury_permanent/weakened_heart_injury"));
 		*/
-		local body = bros[6].getItems().getItemAtSlot(this.Const.ItemSlot.Body);
-		local head = bros[6].getItems().getItemAtSlot(this.Const.ItemSlot.Head);
-		body.setArmor(1);
-		head.setArmor(1);
-		bros[6].setHitpoints(5);
+		//local body = bros[6].getItems().getItemAtSlot(this.Const.ItemSlot.Body);
+		//local head = bros[6].getItems().getItemAtSlot(this.Const.ItemSlot.Head);
+		//body.setArmor(1);
+		//head.setArmor(1);
+		//bros[6].setHitpoints(5);
 
 		this.World.Assets.getStash().add(this.new("scripts/items/supplies/ground_grains_item"));
 		this.World.Assets.getStash().add(this.new("scripts/items/supplies/ground_grains_item"));
@@ -177,14 +170,21 @@ this.wow_scenario <- this.inherit("scripts/scenarios/world/starting_scenario", {
 
 		bros[8].setStartValuesEx([
 			"raider_priest_background"
-			//"raider_developer_background"
 		]);
 		bros[8].setPlaceInFormation(2);
 		bros[8].m.PerkPoints = 12;
 		bros[8].m.LevelUps = 6;
 		bros[8].m.Level = 5;
 
-		for (local i = 0; i < 9; i=++i)
+		bros[9].setStartValuesEx([
+			"raider_druid_background"
+		]);
+		bros[9].setPlaceInFormation(16);
+		bros[9].m.PerkPoints = 12;
+		bros[9].m.LevelUps = 6;
+		bros[9].m.Level = 5;
+
+		for (local i = 0; i < 10; i=++i)
 		{
 			//bros[i].getSkills().add(this.new("scripts/skills/actives/druid_catform_skill"));
 			//bros[i].getSkills().add(this.new("scripts/skills/actives/druid_bearform_skill"));

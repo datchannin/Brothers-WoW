@@ -56,6 +56,8 @@ gt.Const.CharacterBackgrounds <- [
 	"raider_paladin_background",
 	"raider_hunter_background",
 	"raider_mage_background",
+	"raider_priest_background",
+	"raider_druid_background",
 	"raider_developer_background"
 ];
 gt.Const.CharacterLaborerBackgrounds <- [
@@ -97,11 +99,11 @@ gt.Const.CharacterWowBackgrounds <- [
 	"raider_paladin_background",
 	"raider_warrior_background",
 	"raider_hunter_background",
-	//"raider_druid_background",
+	"raider_druid_background",
 	"raider_rogue_background",
 	//"raider_warlock_background",
 	"raider_mage_background",
-	//"raider_priest_background",
+	"raider_priest_background",
 	"raider_developer_background"
 ];
 
