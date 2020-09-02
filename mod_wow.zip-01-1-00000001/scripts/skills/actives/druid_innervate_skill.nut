@@ -91,7 +91,7 @@ this.druid_innervate_skill <- this.inherit("scripts/skills/skill", {
 	{
 		local targetEntity = _targetTile.getEntity();
 
-		//this.spawnIcon("effect_druid_innervate", targetEntity.getTile());
+		this.spawnIcon("effect_druid_innervate", _targetTile);
 		targetEntity.setFatigue(targetEntity.getFatigue() - 30);
 		
 		return true;
