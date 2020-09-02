@@ -60,7 +60,7 @@ this.druid_catform_skill <- this.inherit("scripts/skills/skill", {
 	{
 		if (this.skill.isUsable())
 		{
-			if (!this.m.Container.hasSkill("effects.bearform"))
+			if ((!this.m.Container.hasSkill("effects.bearform")) && (!this.m.Container.hasSkill("effects.moonfury")))
 			{
 				return true;
 			}

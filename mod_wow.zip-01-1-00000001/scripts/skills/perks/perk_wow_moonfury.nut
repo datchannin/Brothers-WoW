@@ -13,4 +13,17 @@ this.perk_wow_moonfury <- this.inherit("scripts/skills/skill", {
 		this.m.IsStacking = false;
 		this.m.IsHidden = false;
 	}
+	
+	function onAdded()
+	{
+		if (!this.m.Container.hasSkill("actives.moonfury_skill"))
+		{
+			this.m.Container.add(this.new("scripts/skills/actives/druid_moonfury_skill"));
+		}
+	}
+
+	function onRemoved()
+	{
+		this.m.Container.removeByID("actives.moonfury_skill");
+	}
 });
