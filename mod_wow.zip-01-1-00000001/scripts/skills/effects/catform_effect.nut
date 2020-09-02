@@ -23,7 +23,7 @@ this.catform_effect <- this.inherit("scripts/skills/skill", {
 
 	function getTooltip()
 	{
-		return [
+		local ret = [
 			{
 				id = 1,
 				type = "title",
@@ -35,6 +35,22 @@ this.catform_effect <- this.inherit("scripts/skills/skill", {
 				text = this.getDescription()
 			}
 		];
+
+		ret.push({
+			id = 10,
+			type = "text",
+			icon = "ui/icons/health.png",
+			text = "Melee Skill is increased by [color=" + this.Const.UI.Color.PositiveValue + "]20%[/color]."
+		});
+
+		ret.push({
+			id = 10,
+			type = "text",
+			icon = "ui/icons/damage_received.png",
+			text = "Initiative is increased by [color=" + this.Const.UI.Color.PositiveValue + "]20%[/color]."
+		});
+
+		return ret;
 	}
 
 	function toDropWeapons()

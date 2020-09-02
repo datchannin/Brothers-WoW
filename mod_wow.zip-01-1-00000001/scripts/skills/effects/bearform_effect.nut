@@ -23,7 +23,7 @@ this.bearform_effect <- this.inherit("scripts/skills/skill", {
 
 	function getTooltip()
 	{
-		return [
+		local ret = [
 			{
 				id = 1,
 				type = "title",
@@ -35,6 +35,22 @@ this.bearform_effect <- this.inherit("scripts/skills/skill", {
 				text = this.getDescription()
 			}
 		];
+
+		ret.push({
+			id = 10,
+			type = "text",
+			icon = "ui/icons/health.png",
+			text = "Hitpoints are increased by [color=" + this.Const.UI.Color.PositiveValue + "]30%[/color]."
+		});
+
+		ret.push({
+			id = 10,
+			type = "text",
+			icon = "ui/icons/damage_received.png",
+			text = "Damage taken is reduced by [color=" + this.Const.UI.Color.PositiveValue + "]10%[/color]."
+		});
+
+		return ret;
 	}
 
 	function toDropWeapons()
