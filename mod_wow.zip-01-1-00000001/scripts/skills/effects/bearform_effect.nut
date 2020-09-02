@@ -86,6 +86,9 @@ this.bearform_effect <- this.inherit("scripts/skills/skill", {
 			setvalue = true;
 		}
 
+		appearance.HideBeard = !setvalue;
+		appearance.HideHair = !setvalue;
+
 		actor.getSprite("armor").Visible = setvalue;
 		actor.getSprite("helmet").Visible = setvalue;
 		actor.getSprite("helmet_damage").Visible = setvalue;
@@ -108,8 +111,6 @@ this.bearform_effect <- this.inherit("scripts/skills/skill", {
 		actor.getSprite("permanent_injury_4").Visible = setvalue;
 		actor.getSprite("injury_body").Visible = setvalue;
 		actor.getSprite("injury").Visible = setvalue;
-		appearance.HideBeard = !setvalue;
-		appearance.HideHair = !setvalue;
 	}
 
 	function onAdded()
@@ -135,7 +136,7 @@ this.bearform_effect <- this.inherit("scripts/skills/skill", {
 		actor.getSprite("body").setBrush(this.m.initBody);
 		actor.getSprite("head").setBrush(this.m.initHead);
 		toSetVisibleBrush(1);
-		
+
 		this.removeSelf();
 	}
 
@@ -144,6 +145,9 @@ this.bearform_effect <- this.inherit("scripts/skills/skill", {
 		toDropWeapons();
 		local actor = this.getContainer().getActor();
 		toSetVisibleBrush(0);
+
+		_properties.HitpointsMult *= 1.3;
+		_properties.DamageReceivedTotalMult *= 0.9;
 	}
 
 	function onRemoved()
@@ -155,6 +159,14 @@ this.bearform_effect <- this.inherit("scripts/skills/skill", {
 			actor.getSprite("head").setBrush(this.m.initHead);		
 			toSetVisibleBrush(1);
 		}
+
+		local items = actor.getItems();
+		if (items.getItemAtSlot(this.Const.ItemSlot.Head))
+		{
+			local helm = items.getItemAtSlot(this.Const.ItemSlot.Head);
+			items.unequip(helm);
+			items.equip(helm);
+		}	
 	}
 
 	function onCombatFinished()

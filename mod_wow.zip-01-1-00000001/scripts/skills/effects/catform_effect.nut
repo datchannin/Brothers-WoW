@@ -135,7 +135,7 @@ this.catform_effect <- this.inherit("scripts/skills/skill", {
 		actor.getSprite("body").setBrush(this.m.initBody);
 		actor.getSprite("head").setBrush(this.m.initHead);
 		toSetVisibleBrush(1);
-		
+
 		this.removeSelf();
 	}
 
@@ -144,6 +144,9 @@ this.catform_effect <- this.inherit("scripts/skills/skill", {
 		toDropWeapons();
 		local actor = this.getContainer().getActor();
 		toSetVisibleBrush(0);
+
+		_properties.MeleeSkillMult *= 1.2;
+		_properties.InitiativeMult *= 1.2;
 	}
 
 	function onRemoved()
@@ -155,6 +158,14 @@ this.catform_effect <- this.inherit("scripts/skills/skill", {
 			actor.getSprite("head").setBrush(this.m.initHead);		
 			toSetVisibleBrush(1);
 		}
+		
+		local items = actor.getItems();
+		if (items.getItemAtSlot(this.Const.ItemSlot.Head))
+		{
+			local helm = items.getItemAtSlot(this.Const.ItemSlot.Head);
+			items.unequip(helm);
+			items.equip(helm);
+		}		
 	}
 
 	function onCombatFinished()

@@ -13,4 +13,22 @@ this.perk_wow_ferocity <- this.inherit("scripts/skills/skill", {
 		this.m.IsStacking = false;
 		this.m.IsHidden = false;
 	}
+	
+	function onAdded()
+	{
+		if (!this.m.Container.hasSkill("actives.catform_skill"))
+		{
+			this.m.Container.add(this.new("scripts/skills/actives/druid_catform_skill"));
+		}
+		if (!this.m.Container.hasSkill("actives.bearform_skill"))
+		{
+			this.m.Container.add(this.new("scripts/skills/actives/druid_bearform_skill"));
+		}
+	}
+
+	function onRemoved()
+	{
+		this.m.Container.removeByID("actives.catform_skill");
+		this.m.Container.removeByID("actives.bearform_skill");
+	}
 });
