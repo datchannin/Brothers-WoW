@@ -18,7 +18,7 @@ this.perk_wow_mobility <- this.inherit("scripts/skills/skill", {
 	{
 		if (!this.m.Container.hasSkill("actives.mobility"))
 		{
-			this.m.Container.add(this.new("scripts/skills/actives/mobility_skill"));
+			this.m.Container.add(this.new("scripts/skills/actives/warrior_mobility_skill"));
 		}
 	}
 
