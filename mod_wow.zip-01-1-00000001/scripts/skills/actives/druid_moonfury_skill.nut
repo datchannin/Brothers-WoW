@@ -75,6 +75,17 @@ this.druid_moonfury_skill <- this.inherit("scripts/skills/skill", {
 		{
 			return true;
 		}
+		else
+		{
+			if (this.m.Container.hasSkill("effects.catform") || (this.m.Container.hasSkill("effects.bearform")))
+			{
+				return true;
+			}
+			else
+			{
+				return false;
+			}
+		}
 	}
 
 	function onVerifyTarget( _originTile, _targetTile )
@@ -83,7 +94,12 @@ this.druid_moonfury_skill <- this.inherit("scripts/skills/skill", {
 	}
 
 	function onUse( _user, _targetTile )
-	{
+	{			
+		if (!this.m.Container.hasSkill("actives.innervate_skill"))
+		{
+			this.m.Container.add(this.new("scripts/skills/actives/druid_innervate_skill"));
+		}
+	
 		if (!this.m.Container.hasSkill("effects.moonfury"))
 		{
 			this.m.Container.add(this.new("scripts/skills/effects/moonfury_effect"));
@@ -91,6 +107,7 @@ this.druid_moonfury_skill <- this.inherit("scripts/skills/skill", {
 		else
 		{
 			this.m.Container.removeByID("effects.moonfury");
+			this.m.Container.removeByID("actives.innervate_skill");
 		}
 	}
 });
