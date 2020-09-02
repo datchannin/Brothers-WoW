@@ -91,6 +91,7 @@ this.bearform_effect <- this.inherit("scripts/skills/skill", {
 	{
 		local setvalue = true;
 		local actor = this.getContainer().getActor();
+		local items = actor.getItems();
 		local appearance = actor.getItems().getAppearance();
 
 		if (value == 0)
@@ -104,10 +105,16 @@ this.bearform_effect <- this.inherit("scripts/skills/skill", {
 
 		appearance.HideBeard = !setvalue;
 		appearance.HideHair = !setvalue;
-
-		actor.getSprite("armor").Visible = setvalue;
-		actor.getSprite("helmet").Visible = setvalue;
-		actor.getSprite("helmet_damage").Visible = setvalue;
+		
+		if (items.getItemAtSlot(this.Const.ItemSlot.Body))
+		{
+			actor.getSprite("armor").Visible = setvalue;
+		}
+		if (items.getItemAtSlot(this.Const.ItemSlot.Head))
+		{
+			actor.getSprite("helmet").Visible = setvalue;
+			actor.getSprite("helmet_damage").Visible = setvalue;
+		}
 		actor.getSprite("shield_icon").Visible = setvalue;
 		actor.getSprite("arms_icon").Visible = setvalue;
 		actor.getSprite("hair").Visible = setvalue;
@@ -146,9 +153,6 @@ this.bearform_effect <- this.inherit("scripts/skills/skill", {
 	function onDeath()
 	{
 		local actor = this.getContainer().getActor();
-		//local appearance = actor.getItems().getAppearance();
-		//appearance.CorpseArmor = "";
-		//appearance.HelmetCorpse = "";
 		actor.getSprite("body").setBrush(this.m.initBody);
 		actor.getSprite("head").setBrush(this.m.initHead);
 		toSetVisibleBrush(1);

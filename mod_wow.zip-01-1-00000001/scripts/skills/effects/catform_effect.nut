@@ -39,15 +39,15 @@ this.catform_effect <- this.inherit("scripts/skills/skill", {
 		ret.push({
 			id = 10,
 			type = "text",
-			icon = "ui/icons/health.png",
+			icon = "ui/icons/melee_skill.png",
 			text = "Melee Skill is increased by [color=" + this.Const.UI.Color.PositiveValue + "]20%[/color]."
 		});
 
 		ret.push({
 			id = 10,
 			type = "text",
-			icon = "ui/icons/damage_received.png",
-			text = "Initiative is increased by [color=" + this.Const.UI.Color.PositiveValue + "]20%[/color]."
+			icon = "ui/icons/melee_defense.png",
+			text = "Melee Defense is increased by [color=" + this.Const.UI.Color.PositiveValue + "]20%[/color]."
 		});
 
 		return ret;
@@ -91,6 +91,7 @@ this.catform_effect <- this.inherit("scripts/skills/skill", {
 	{
 		local setvalue = true;
 		local actor = this.getContainer().getActor();
+		local items = actor.getItems();
 		local appearance = actor.getItems().getAppearance();
 
 		if (value == 0)
@@ -102,9 +103,18 @@ this.catform_effect <- this.inherit("scripts/skills/skill", {
 			setvalue = true;
 		}
 
-		actor.getSprite("armor").Visible = setvalue;
-		actor.getSprite("helmet").Visible = setvalue;
-		actor.getSprite("helmet_damage").Visible = setvalue;
+		appearance.HideBeard = !setvalue;
+		appearance.HideHair = !setvalue;
+
+		if (items.getItemAtSlot(this.Const.ItemSlot.Body))
+		{
+			actor.getSprite("armor").Visible = setvalue;
+		}
+		if (items.getItemAtSlot(this.Const.ItemSlot.Head))
+		{
+			actor.getSprite("helmet").Visible = setvalue;
+			actor.getSprite("helmet_damage").Visible = setvalue;
+		}
 		actor.getSprite("shield_icon").Visible = setvalue;
 		actor.getSprite("arms_icon").Visible = setvalue;
 		actor.getSprite("hair").Visible = setvalue;
@@ -124,8 +134,6 @@ this.catform_effect <- this.inherit("scripts/skills/skill", {
 		actor.getSprite("permanent_injury_4").Visible = setvalue;
 		actor.getSprite("injury_body").Visible = setvalue;
 		actor.getSprite("injury").Visible = setvalue;
-		appearance.HideBeard = !setvalue;
-		appearance.HideHair = !setvalue;
 	}
 
 	function onAdded()
@@ -145,9 +153,6 @@ this.catform_effect <- this.inherit("scripts/skills/skill", {
 	function onDeath()
 	{
 		local actor = this.getContainer().getActor();
-		//local appearance = actor.getItems().getAppearance();
-		//appearance.CorpseArmor = "";
-		//appearance.HelmetCorpse = "";
 		actor.getSprite("body").setBrush(this.m.initBody);
 		actor.getSprite("head").setBrush(this.m.initHead);
 		toSetVisibleBrush(1);
@@ -162,7 +167,7 @@ this.catform_effect <- this.inherit("scripts/skills/skill", {
 		toSetVisibleBrush(0);
 
 		_properties.MeleeSkillMult *= 1.2;
-		_properties.InitiativeMult *= 1.2;
+		_properties.MeleeDefenseMult *= 1.2;
 	}
 
 	function onRemoved()
