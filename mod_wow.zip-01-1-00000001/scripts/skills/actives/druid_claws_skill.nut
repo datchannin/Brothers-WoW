@@ -10,7 +10,11 @@ this.druid_claws_skill <- this.inherit("scripts/skills/skill", {
 		this.m.IconDisabled = "ui/perks/skill_druid_claws_sw.png";
 		this.m.Overlay = "skill_druid_claws";
 		this.m.SoundOnUse = [
-			//"sounds/.wav"
+			"sounds/combat/druid_claws1.wav",
+			"sounds/combat/druid_claws2.wav",
+			"sounds/combat/druid_claws3.wav",
+			"sounds/combat/druid_claws4.wav",
+			"sounds/combat/druid_claws5.wav"
 		];
 		this.m.Type = this.Const.SkillType.Active;
 		this.m.Order = this.Const.SkillOrder.OffensiveTargeted;
