@@ -1563,3 +1563,200 @@ gt.Const.Perks.PerkDefObjects.RecoveryMaximum <- {
 	IconDisabled = "ui/perks/perk_priest_recoverymaximum_sw.png",
 	Const = "RecoveryMaximum"
 }
+
+// ---------------------------------------------|
+// ----------------  WOW DRUID -----------------|
+// ---------------------------------------------|
+gt.Const.Perks.PerkDefObjects.Moonfury <- {
+	ID = "perk.wow.druid.moonfury",
+	Script = "scripts/skills/perks/perk_wow_moonfury",
+	Name = this.Const.Wow_strings.PerkName.Moonfury,
+	Tooltip = this.Const.Wow_strings.PerkDescription.Moonfury,
+	Icon = "ui/perks/perk_druid_moonfury.png",
+	IconDisabled = "ui/perks/perk_druid_moonfury_sw.png",
+	Const = "Moonfury"
+}
+
+gt.Const.Perks.PerkDefObjects.Ferocity <- {
+	ID = "perk.wow.druid.ferocity",
+	Script = "scripts/skills/perks/perk_wow_ferocity",
+	Name = this.Const.Wow_strings.PerkName.Ferocity,
+	Tooltip = this.Const.Wow_strings.PerkDescription.Ferocity,
+	Icon = "ui/perks/perk_druid_ferocity.png",
+	IconDisabled = "ui/perks/perk_druid_ferocity_sw.png",
+	Const = "Ferocity"
+}
+
+gt.Const.Perks.PerkDefObjects.FaerieFire <- {
+	ID = "perk.wow.druid.faeriefire",
+	Script = "scripts/skills/perks/perk_wow_faeriefire",
+	Name = this.Const.Wow_strings.PerkName.FaerieFire,
+	Tooltip = this.Const.Wow_strings.PerkDescription.FaerieFire,
+	Icon = "ui/perks/perk_druid_faeriefire.png",
+	IconDisabled = "ui/perks/perk_druid_faeriefire_sw.png",
+	Const = "FaerieFire"
+}
+
+gt.Const.Perks.PerkDefObjects.AbolishPoison <- {
+	ID = "perk.wow.druid.abolishpoison",
+	Script = "scripts/skills/perks/perk_wow_abolishpoison",
+	Name = this.Const.Wow_strings.PerkName.AbolishPoison,
+	Tooltip = this.Const.Wow_strings.PerkDescription.AbolishPoison,
+	Icon = "ui/perks/perk_druid_abolishpoison.png",
+	IconDisabled = "ui/perks/perk_druid_abolishpoison_sw.png",
+	Const = "AbolishPoison"
+}
+
+gt.Const.Perks.PerkDefObjects.Barkskin <- {
+	ID = "perk.wow.druid.barkskin",
+	Script = "scripts/skills/perks/perk_wow_barkskin",
+	Name = this.Const.Wow_strings.PerkName.Barkskin,
+	Tooltip = this.Const.Wow_strings.PerkDescription.Barkskin,
+	Icon = "ui/perks/perk_druid_barkskin.png",
+	IconDisabled = "ui/perks/perk_druid_barkskin_sw.png",
+	Const = "Barkskin"
+}
+
+gt.Const.Perks.PerkDefObjects.GiftofNature <- {
+	ID = "perk.wow.druid.giftofnature",
+	Script = "scripts/skills/perks/perk_wow_giftofnature",
+	Name = this.Const.Wow_strings.PerkName.GiftofNature,
+	Tooltip = this.Const.Wow_strings.PerkDescription.GiftofNature,
+	Icon = "ui/perks/perk_druid_giftofnature.png",
+	IconDisabled = "ui/perks/perk_druid_giftofnature_sw.png",
+	Const = "GiftofNature"
+}
+
+gt.Const.Perks.PerkDefObjects.FerociousBite <- {
+	ID = "perk.wow.druid.ferociousbite",
+	Script = "scripts/skills/perks/perk_wow_ferociousbite",
+	Name = this.Const.Wow_strings.PerkName.FerociousBite,
+	Tooltip = this.Const.Wow_strings.PerkDescription.FerociousBite,
+	Icon = "ui/perks/perk_druid_ferociousbite.png",
+	IconDisabled = "ui/perks/perk_druid_ferociousbite_sw.png",
+	Const = "FerociousBite"
+}
+	
+gt.Const.Perks.PerkDefObjects.DemoralizingRoar <- {
+	ID = "perk.wow.druid.demoralizingroar",
+	Script = "scripts/skills/perks/perk_wow_demoralizingroar",
+	Name = this.Const.Wow_strings.PerkName.DemoralizingRoar,
+	Tooltip = this.Const.Wow_strings.PerkDescription.DemoralizingRoar,
+	Icon = "ui/perks/perk_druid_demoralizingroar.png",
+	IconDisabled = "ui/perks/perk_druid_demoralizingroar_sw.png",
+	Const = "DemoralizingRoar"
+}
+
+gt.Const.Perks.PerkDefObjects.Swipe <- {
+	ID = "perk.wow.druid.swipe",
+	Script = "scripts/skills/perks/perk_wow_swipe",
+	Name = this.Const.Wow_strings.PerkName.Swipe,
+	Tooltip = this.Const.Wow_strings.PerkDescription.Swipe,
+	Icon = "ui/perks/perk_druid_swipe.png",
+	IconDisabled = "ui/perks/perk_druid_swipe_sw.png",
+	Const = "Swipe"
+}
+
+gt.Const.Perks.PerkDefObjects.FeralCharge <- {
+	ID = "perk.wow.druid.feralcharge",
+	Script = "scripts/skills/perks/perk_wow_feralcharge",
+	Name = this.Const.Wow_strings.PerkName.FeralCharge,
+	Tooltip = this.Const.Wow_strings.PerkDescription.FeralCharge,
+	Icon = "ui/perks/perk_druid_feralcharge.png",
+	IconDisabled = "ui/perks/perk_druid_feralcharge_sw.png",
+	Const = "FeralCharge"
+}
+
+gt.Const.Perks.PerkDefObjects.Swiftmend <- {
+	ID = "perk.wow.druid.swiftmend",
+	Script = "scripts/skills/perks/perk_wow_swiftmend",
+	Name = this.Const.Wow_strings.PerkName.Swiftmend,
+	Tooltip = this.Const.Wow_strings.PerkDescription.Swiftmend,
+	Icon = "ui/perks/perk_druid_swiftmend.png",
+	IconDisabled = "ui/perks/perk_druid_swiftmend_sw.png",
+	Const = "Swiftmend"
+}
+
+gt.Const.Perks.PerkDefObjects.SharpenedClaws <- {
+	ID = "perk.wow.druid.sharpenedclaws",
+	Script = "scripts/skills/perks/perk_wow_sharpenedclaws",
+	Name = this.Const.Wow_strings.PerkName.SharpenedClaws,
+	Tooltip = this.Const.Wow_strings.PerkDescription.SharpenedClaws,
+	Icon = "ui/perks/perk_druid_sharpenedclaws.png",
+	IconDisabled = "ui/perks/perk_druid_sharpenedclaws_sw.png",
+	Const = "SharpenedClaws"
+}
+
+gt.Const.Perks.PerkDefObjects.PrimalFury <- {
+	ID = "perk.wow.druid.primalfury",
+	Script = "scripts/skills/perks/perk_wow_primalfury",
+	Name = this.Const.Wow_strings.PerkName.PrimalFury,
+	Tooltip = this.Const.Wow_strings.PerkDescription.PrimalFury,
+	Icon = "ui/perks/perk_druid_primalfury.png",
+	IconDisabled = "ui/perks/perk_druid_primalfury_sw.png",
+	Const = "PrimalFury"
+}
+
+gt.Const.Perks.PerkDefObjects.Clarity <- {
+	ID = "perk.wow.druid.clarity",
+	Script = "scripts/skills/perks/perk_wow_clarity",
+	Name = this.Const.Wow_strings.PerkName.Clarity,
+	Tooltip = this.Const.Wow_strings.PerkDescription.Clarity,
+	Icon = "ui/perks/perk_druid_clarity.png",
+	IconDisabled = "ui/perks/perk_druid_clarity_sw.png",
+	Const = "Clarity"
+}
+
+gt.Const.Perks.PerkDefObjects.HeartofWild <- {
+	ID = "perk.wow.druid.heartofwild",
+	Script = "scripts/skills/perks/perk_wow_heartofwild",
+	Name = this.Const.Wow_strings.PerkName.HeartofWild,
+	Tooltip = this.Const.Wow_strings.PerkDescription.HeartofWild,
+	Icon = "ui/perks/perk_druid_heartofwild.png",
+	IconDisabled = "ui/perks/perk_druid_heartofwild_sw.png",
+	Const = "HeartofWild"
+}
+
+gt.Const.Perks.PerkDefObjects.Furor <- {
+	ID = "perk.wow.druid.furor",
+	Script = "scripts/skills/perks/perk_wow_furor",
+	Name = this.Const.Wow_strings.PerkName.Furor,
+	Tooltip = this.Const.Wow_strings.PerkDescription.Furor,
+	Icon = "ui/perks/perk_druid_furor.png",
+	IconDisabled = "ui/perks/perk_druid_furor_sw.png",
+	Const = "Furor"
+}
+
+gt.Const.Perks.PerkDefObjects.MarkofWild <- {
+	ID = "perk.wow.druid.markofwild",
+	Script = "scripts/skills/perks/perk_wow_markofwild",
+	Name = this.Const.Wow_strings.PerkName.MarkofWild,
+	Tooltip = this.Const.Wow_strings.PerkDescription.MarkofWild,
+	Icon = "ui/perks/perk_druid_markofwild.png",
+	IconDisabled = "ui/perks/perk_druid_markofwild_sw.png",
+	Const = "MarkofWild"
+}
+
+gt.Const.Perks.PerkDefObjects.Tiger <- {
+	ID = "perk.wow.druid.tiger",
+	Script = "scripts/skills/perks/perk_wow_tiger",
+	Name = this.Const.Wow_strings.PerkName.Tiger,
+	Tooltip = this.Const.Wow_strings.PerkDescription.Tiger,
+	Icon = "ui/perks/perk_druid_tiger.png",
+	IconDisabled = "ui/perks/perk_druid_tiger_sw.png",
+	Const = "Tiger"
+}
+
+gt.Const.Perks.PerkDefObjects.DireBear <- {
+	ID = "perk.wow.druid.direbear",
+	Script = "scripts/skills/perks/perk_wow_direbear",
+	Name = this.Const.Wow_strings.PerkName.DireBear,
+	Tooltip = this.Const.Wow_strings.PerkDescription.DireBear,
+	Icon = "ui/perks/perk_druid_direbear.png",
+	IconDisabled = "ui/perks/perk_druid_direbear_sw.png",
+	Const = "DireBear"
+}
+
+// ---------------------------------------------|
+// ----------------  WOW WARLOCK ---------------|
+// ---------------------------------------------|

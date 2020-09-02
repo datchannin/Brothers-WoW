@@ -457,6 +457,69 @@ gt.Const.Perks.PerkTreePriest <- [
 	[]
 ];
 
+gt.Const.Perks.PerkTreeDruid <- [
+	[
+		gt.Const.Perks.PerkDefObjects.Moonfury
+		gt.Const.Perks.PerkDefObjects.Ferocity
+		gt.Const.Perks.PerkDefObjects.CripplingStrikes
+		gt.Const.Perks.PerkDefObjects.Colossus
+		gt.Const.Perks.PerkDefObjects.NineLives
+		gt.Const.Perks.PerkDefObjects.Pathfinder
+		gt.Const.Perks.PerkDefObjects.Recover
+		gt.Const.Perks.PerkDefObjects.Student
+	],
+	[
+		gt.Const.Perks.PerkDefObjects.FaerieFire
+		gt.Const.Perks.PerkDefObjects.AbolishPoison
+		gt.Const.Perks.PerkDefObjects.Barkskin
+		gt.Const.Perks.PerkDefObjects.GiftofNature
+		gt.Const.Perks.PerkDefObjects.Dodge
+		gt.Const.Perks.PerkDefObjects.FortifiedMind
+		gt.Const.Perks.PerkDefObjects.HoldOut
+		gt.Const.Perks.PerkDefObjects.SteelBrow
+	],
+	[
+		gt.Const.Perks.PerkDefObjects.FerociousBite
+		gt.Const.Perks.PerkDefObjects.DemoralizingRoar
+		gt.Const.Perks.PerkDefObjects.Swipe
+		gt.Const.Perks.PerkDefObjects.FeralCharge
+		gt.Const.Perks.PerkDefObjects.Anticipation
+		gt.Const.Perks.PerkDefObjects.Brawny
+		gt.Const.Perks.PerkDefObjects.Rotation
+		gt.Const.Perks.PerkDefObjects.Taunt
+	],
+	[
+		gt.Const.Perks.PerkDefObjects.Swiftmend
+		gt.Const.Perks.PerkDefObjects.SharpenedClaws
+		gt.Const.Perks.PerkDefObjects.PrimalFury
+		gt.Const.Perks.PerkDefObjects.Clarity
+		gt.Const.Perks.PerkDefObjects.MasterPolearm
+		gt.Const.Perks.PerkDefObjects.SpecPolearm
+		gt.Const.Perks.PerkDefObjects.HeartofWild
+		gt.Const.Perks.PerkDefObjects.Furor
+	],
+	[
+		gt.Const.Perks.PerkDefObjects.LoneWolf
+		gt.Const.Perks.PerkDefObjects.Underdog
+		gt.Const.Perks.PerkDefObjects.Footwork
+	],
+	[
+		gt.Const.Perks.PerkDefObjects.Berserk
+		gt.Const.Perks.PerkDefObjects.Nimble
+		gt.Const.Perks.PerkDefObjects.BattleForged
+	],
+	[
+		gt.Const.Perks.PerkDefObjects.MarkofWild
+		gt.Const.Perks.PerkDefObjects.Tiger
+		gt.Const.Perks.PerkDefObjects.DireBear
+		gt.Const.Perks.PerkDefObjects.KillingFrenzy
+	],
+	[],
+	[],
+	[],
+	[]
+];
+
 gt.Const.Perks.PerkTreeDev <- [
 	[
 		gt.Const.Perks.PerkDefObjects.GameDev
@@ -486,6 +549,7 @@ gt.Const.Perks.TreesArray.push(gt.Const.Perks.PerkTreePaladin);
 gt.Const.Perks.TreesArray.push(gt.Const.Perks.PerkTreeHunter);
 gt.Const.Perks.TreesArray.push(gt.Const.Perks.PerkTreeMage);
 gt.Const.Perks.TreesArray.push(gt.Const.Perks.PerkTreePriest);
+gt.Const.Perks.TreesArray.push(gt.Const.Perks.PerkTreeDruid);
 gt.Const.Perks.TreesArray.push(gt.Const.Perks.PerkTreeDev);
 
 gt.Const.Perks.LookupMap <- {};
@@ -558,6 +622,10 @@ gt.Const.Perks.getPerksTree <- function ( _background )
 	case "background.raider_priest":
 		return gt.Const.Perks.PerkTreePriest;
 		break;		
+
+	case "background.raider_druid":
+		return gt.Const.Perks.PerkTreeDruid;
+		break;
 
 	case "background.raider_developer":
 		return gt.Const.Perks.PerkTreeDev;
