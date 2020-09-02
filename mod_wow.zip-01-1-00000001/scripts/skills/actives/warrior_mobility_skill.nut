@@ -2,7 +2,7 @@
 this.warrior_mobility_skill <- this.inherit("scripts/skills/skill", {
 	m = {
 		ChargeMax = 4,
-		ChargeCurrent = 4
+		ChargeCurrent = 0
 	},
 	function create()
 	{
@@ -50,15 +50,29 @@ this.warrior_mobility_skill <- this.inherit("scripts/skills/skill", {
 				id = 7,
 				type = "text",
 				icon = "ui/icons/action_points.png",
-				text = "Using this gives you 2 additional Action Points. You can use it maximum for [color=" + this.Const.UI.Color.PositiveValue + "]" + this.m.ChargeMax + "[/color] times per turn."
-			},
-			{
+				text = "Using this gives you 2 additional Action Points. You can use it no more than [color=" + this.Const.UI.Color.PositiveValue + "]" + this.m.ChargeMax + "[/color] times per turn."
+			}
+		];
+		
+		if (this.m.ChargeCurrent)
+		{
+			ret.push({
 				id = 7,
 				type = "text",
 				icon = "ui/icons/special.png",
-				text = "You have " + this.m.ChargeCurrent + " more charges to use it on this turn."
-			}
-		];
+				text = "You have [color=" + this.Const.UI.Color.PositiveValue + "]" + this.m.ChargeCurrent + "[/color] more charges to use it on this turn."
+			});
+		}
+		else
+		{
+			ret.push({
+				id = 7,
+				type = "text",
+				icon = "ui/icons/special.png",
+				text = "You can not use it now."
+			});
+		}
+		
 		return ret;
 	}
 
