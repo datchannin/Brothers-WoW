@@ -5,12 +5,12 @@ this.druid_moonfury_skill <- this.inherit("scripts/skills/skill", {
 	{
 		this.m.ID = "actives.moonfury_skill";
 		this.m.Name = "Moonfury";
-		this.m.Description = "Enables the druid to get into moonfury state. This state helps him to use Nature abilities and grants Innervate skill.";
+		this.m.Description = "Enables the druid to get into moonfury state. This state helps him to use Nature abilities and grants \'Innervate\' skill.";
 		this.m.Icon = "ui/perks/skill_druid_moonfury.png";
 		this.m.IconDisabled = "ui/perks/skill_druid_moonfury_sw.png";
 		this.m.Overlay = "skill_druid_moonfury";
 		this.m.SoundOnUse = [
-			//"sounds/combat/druid_shapeshift.wav"
+			"sounds/combat/druid_moonfury.wav"
 		];
 		this.m.Type = this.Const.SkillType.Active;
 		this.m.Order = this.Const.SkillOrder.NonTargeted;

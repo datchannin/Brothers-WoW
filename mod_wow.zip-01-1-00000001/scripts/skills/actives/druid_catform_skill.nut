@@ -10,7 +10,7 @@ this.druid_catform_skill <- this.inherit("scripts/skills/skill", {
 		this.m.IconDisabled = "ui/perks/skill_druid_catform_sw.png";
 		this.m.Overlay = "skill_druid_catform";
 		this.m.SoundOnUse = [
-			"sounds/combat/druid_shapeshift.wav"
+			"sounds/combat/druid_catform.wav"
 		];
 		this.m.Type = this.Const.SkillType.Active;
 		this.m.Order = this.Const.SkillOrder.NonTargeted;
