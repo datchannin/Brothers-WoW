@@ -1,8 +1,8 @@
 /*BBWOW:This file is part of datchannin bbWoW mod, mod_version = 6.02, game_version = 1.4.0.41*/
-this.mobility_skill <- this.inherit("scripts/skills/skill", {
+this.warrior_mobility_skill <- this.inherit("scripts/skills/skill", {
 	m = {
 		ChargeMax = 4,
-		ChargeCurrent = 0
+		ChargeCurrent = 4
 	},
 	function create()
 	{
@@ -50,21 +50,34 @@ this.mobility_skill <- this.inherit("scripts/skills/skill", {
 				id = 7,
 				type = "text",
 				icon = "ui/icons/action_points.png",
-				text = "Using this gives you 2 additional Action Points. You can use it maximum for [color=" + this.Const.UI.Color.PositiveValue + "]4[/color] times per turn."
-			}
+				text = "Using this gives you 2 additional Action Points. You can use it maximum for [color=" + this.Const.UI.Color.PositiveValue + "]" + this.m.ChargeMax + "[/color] times per turn."
+			},
 			{
 				id = 7,
 				type = "text",
 				icon = "ui/icons/special.png",
-				text = "You have " + this.m.ChargeCurrent + " more charge/s to use it while this turn."
+				text = "You have " + this.m.ChargeCurrent + " more charges to use it on this turn."
 			}
 		];
 		return ret;
 	}
 
+	function isUsable()
+	{
+		if (this.skill.isUsable())
+		{
+			if (this.m.ChargeCurrent > 0)
+			{
+				return true;
+			}
+		}
+		
+		return false;
+	}
+
 	function onTurnStart()
 	{
-		this.m.ChargeCurrent = 4;
+		this.m.ChargeCurrent = this.m.ChargeMax;
 	}
 
 	function onUse( _user, _targetTile )
