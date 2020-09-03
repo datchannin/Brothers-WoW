@@ -10,7 +10,7 @@ this.druid_faeriefire_skill <- this.inherit("scripts/skills/skill", {
 		this.m.IconDisabled = "ui/perks/skill_druid_faeriefire_sw.png";
 		this.m.Overlay = "skill_druid_faeriefire";
 		this.m.SoundOnUse = [
-			//"sounds/combat/.wav"
+			"sounds/combat/druid_faeriefire.wav"
 		];
 		this.m.Type = this.Const.SkillType.Active;
 		this.m.Order = this.Const.SkillOrder.OtherTargeted;
