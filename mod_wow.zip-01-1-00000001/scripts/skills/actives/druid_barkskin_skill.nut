@@ -10,7 +10,7 @@ this.druid_barkskin_skill <- this.inherit("scripts/skills/skill", {
 		this.m.IconDisabled = "ui/perks/skill_druid_barkskin_sw.png";
 		this.m.Overlay = "skill_druid_barkskin";
 		this.m.SoundOnUse = [
-			//"sounds/combat/"
+			"sounds/combat/druid_barkskin.wav"
 		];
 		this.m.Type = this.Const.SkillType.Active;
 		this.m.Order = this.Const.SkillOrder.NonTargeted;
