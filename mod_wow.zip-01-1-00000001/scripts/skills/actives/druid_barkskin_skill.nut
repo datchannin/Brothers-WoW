@@ -28,14 +28,44 @@ this.druid_barkskin_skill <- this.inherit("scripts/skills/skill", {
 	function getTooltip()
 	{
 		local ret = this.getDefaultUtilityTooltip();
-/*
-		ret.push({
-			id = 6,
-			type = "text",
-			icon = "ui/icons/damage_dealt.png",
-			text = "Damage dealt will be increased by [color=" + this.Const.UI.Color.PositiveValue + "]20%[/color]"
-		});
-*/
+
+		if (this.m.Container.hasSkill("effects.bearform"))
+		{
+			ret.push({
+				id = 6,
+				type = "text",
+				icon = "ui/icons/damage_received.png",
+				text = "Damage taken will be reduced by [color=" + this.Const.UI.Color.PositiveValue + "]10%[/color]."
+			});
+			
+			ret.push({
+				id = 6,
+				type = "text",
+				icon = "ui/icons/melee_defense.png",
+				text = "Melee Defense will be increased by [color=" + this.Const.UI.Color.PositiveValue + "]5[/color] points."
+			});
+		}
+
+		if (this.m.Container.hasSkill("effects.catform"))
+		{
+			ret.push({
+				id = 6,
+				type = "text",
+				icon = "ui/icons/melee_defense.png",
+				text = "Melee Defense will be increased by [color=" + this.Const.UI.Color.PositiveValue + "]10%[/color]."
+			});
+		}
+
+		if (this.m.Container.hasSkill("effects.moonfury"))
+		{
+			ret.push({
+				id = 6,
+				type = "text",
+				icon = "ui/icons/ranged_defense.png",
+				text = "Ranged Defense will be increased by [color=" + this.Const.UI.Color.PositiveValue + "]10[/color] points."
+			});
+		}
+
 		return ret;
 	}
 
@@ -43,7 +73,14 @@ this.druid_barkskin_skill <- this.inherit("scripts/skills/skill", {
 	{
 		if (this.skill.isUsable())
 		{
-			return true;
+			if (this.m.Container.hasSkill("effects.bearform") || this.m.Container.hasSkill("effects.catform") || this.m.Container.hasSkill("effects.moonfury"))
+			{
+				return true;
+			}
+			else
+			{
+				return false;
+			}
 		}
 	}
 
