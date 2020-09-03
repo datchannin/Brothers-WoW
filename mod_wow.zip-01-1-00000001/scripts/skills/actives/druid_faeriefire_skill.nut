@@ -96,16 +96,29 @@ this.druid_faeriefire_skill <- this.inherit("scripts/skills/skill", {
 	function onUse( _user, _targetTile )
 	{
 		local targetEntity = _targetTile.getEntity();
-		local effect = targetEntity.getSkills().getSkillByID("effects.faeriefire");
-	
-		if (effect != null)
+		local effect_cat = targetEntity.getSkills().getSkillByID("effects.faeriefire_cat");
+		local effect_bear = targetEntity.getSkills().getSkillByID("effects.faeriefire_bear");
+		local effect_moonfury = targetEntity.getSkills().getSkillByID("effects.faeriefire_moonfury");
+
+		if (this.m.Container.hasSkill("effects.catform"))
 		{
-			//effect.reset();
+			//effect_bear.removeSelf();
+			//effect_moonfury.removeSelf();
+			if (effect_cat != null)
+			{
+				effect_cat.reset();
+			}
+			else
+			{
+				targetEntity.getSkills().add(this.new("scripts/skills/effects/faeriefire_cat_effect"));
+			}
+			this.spawnIcon("effect_druid_faeriefire", _targetTile);
 		}
-		else
-		{
-			//this.m.Container.add(this.new("scripts/skills/effects/faeriefire_effect"));
-		}
+
+		//effect_cat.removeSelf();
+		//effect_bear.removeSelf();
+		//effect_moonfury.removeSelf();
+		//this.m.Container.add(this.new("scripts/skills/effects/faeriefire_effect"));
 
 		return true;
 	}
