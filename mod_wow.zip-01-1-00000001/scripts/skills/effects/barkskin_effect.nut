@@ -70,6 +70,22 @@ this.barkskin_effect <- this.inherit("scripts/skills/skill", {
 
 	function onUpdate( _properties )
 	{
+		if (this.m.Container.hasSkill("effects.catform"))
+		{
+			_properties.MeleeDefenseMult *= 1.1;
+		}
+
+		if (this.m.Container.hasSkill("effects.bearform"))
+		{
+			_properties.MeleeDefense += 5;
+			_properties.DamageReceivedTotalMult *= 0.9;
+		}
+
+		if (this.m.Container.hasSkill("effects.moonfury"))
+		{
+			_properties.RangedDefense += 10;
+		}
+
 		if (!this.m.Container.hasSkill("effects.catform") && !this.m.Container.hasSkill("effects.bearform") && !this.m.Container.hasSkill("effects.moonfury"))
 		{
 			this.removeSelf();
