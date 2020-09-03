@@ -102,6 +102,11 @@ this.druid_bearform_skill <- this.inherit("scripts/skills/skill", {
 
 	function onUse( _user, _targetTile )
 	{
+		if (!this.m.Container.hasSkill("actives.druid_maul_skill"))
+		{
+			this.m.Container.add(this.new("scripts/skills/actives/druid_maul_skill"));
+		}
+	
 		if (!this.m.Container.hasSkill("actives.hand_to_hand"))
 		{
 			this.m.Container.add(this.new("scripts/skills/actives/hand_to_hand"));
@@ -115,6 +120,7 @@ this.druid_bearform_skill <- this.inherit("scripts/skills/skill", {
 		else
 		{
 			this.m.Container.removeByID("effects.bearform");
+			this.m.Container.removeByID("actives.maul_skill");
 		}
 	}
 });
