@@ -6,7 +6,7 @@ Classes that should be implemented for the addon - alliance classes from World o
 * ![custom badges](https://img.shields.io/badge/status-done-green) [paladin](https://github.com/datchannin/Brothers-WoW/blob/master/spec/paladin.md)
 * ![custom badges](https://img.shields.io/badge/status-done-green) [warrior](https://github.com/datchannin/Brothers-WoW/blob/master/spec/warrior.md)
 * ![custom badges](https://img.shields.io/badge/status-done-green) [hunter](https://github.com/datchannin/Brothers-WoW/blob/master/spec/hunter.md)
-* ![custom badges](https://img.shields.io/badge/status-to%20do-blue) druid
+* ![custom badges](https://img.shields.io/badge/status-in%20progress-yellow) druid
 * ![custom badges](https://img.shields.io/badge/status-done-green) [rogue](https://github.com/datchannin/Brothers-WoW/blob/master/spec/rogue.md)
 * ![custom badges](https://img.shields.io/badge/status-to%20do-blue) warlock
 * ![custom badges](https://img.shields.io/badge/status-done-green) [mage](https://github.com/datchannin/Brothers-WoW/blob/master/spec/mage.md)
@@ -27,7 +27,7 @@ After certain conditions will be executed, Raid Dungeons should be added into th
 For the future the plan is to add WoW-like equipment in addition to standard weapons and equipment of this modification. Also such  equipment should be used by certain character classes and additional bonuses should be added to the user with full sets of equipments, as this is done by using raid sets of World of Warcraft.
 
 ## Requirements
-* Battle Brothers with all DLC installed, version 1.4.0.40
+* Battle Brothers with all DLC installed, version 1.4.0.41
 * mod_wow.zip, the latest version
 
 ## Usage
