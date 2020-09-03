@@ -168,6 +168,7 @@ this.bearform_effect <- this.inherit("scripts/skills/skill", {
 
 		_properties.HitpointsMult *= 1.3;
 		_properties.DamageReceivedTotalMult *= 0.9;
+		_properties.Bravery += 20;
 	}
 
 	function onRemoved()

@@ -117,6 +117,14 @@ this.druid_bearform_skill <- this.inherit("scripts/skills/skill", {
 			this.m.Container.add(this.new("scripts/skills/actives/hand_to_hand"));
 		}
 
+		if (this.m.Container.hasSkill("perk.wow.druid.giftofnature"))
+		{
+			if (!this.m.Container.hasSkill("actives.frenziedregeneration_skill"))
+			{
+				this.m.Container.add(this.new("scripts/skills/actives/druid_frenziedregeneration_skill"));
+			}
+		}
+
 		if (!this.m.Container.hasSkill("effects.bearform"))
 		{
 			this.m.Container.add(this.new("scripts/skills/effects/bearform_effect"));
@@ -128,6 +136,7 @@ this.druid_bearform_skill <- this.inherit("scripts/skills/skill", {
 			this.m.Container.removeByID("effects.barkskin");
 			this.m.Container.removeByID("actives.maul_skill");
 			this.m.Container.removeByID("actives.bash_skill");
+			this.m.Container.removeByID("actives.frenziedregeneration_skill");
 		}
 	}
 });
