@@ -13,7 +13,7 @@ this.druid_moonfury_skill <- this.inherit("scripts/skills/skill", {
 			"sounds/combat/druid_moonfury.wav"
 		];
 		this.m.Type = this.Const.SkillType.Active;
-		this.m.Order = this.Const.SkillOrder.NonTargeted;
+		this.m.Order = this.Const.SkillOrder.Any;
 		this.m.IsSerialized = false;
 		this.m.IsActive = true;
 		this.m.IsTargeted = false;
