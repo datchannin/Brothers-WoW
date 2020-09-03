@@ -1,11 +1,11 @@
 /*BBWOW:This file is part of datchannin bbWoW mod, mod_version = 6.03, game_version = 1.4.0.41*/
-this.faeriefire_bear_effect <- this.inherit("scripts/skills/skill", {
+this.faeriefire_moonfury_effect <- this.inherit("scripts/skills/skill", {
 	m = {
 		TurnsLeft = 2
 	},
 	function create()
 	{
-		this.m.ID = "effects.faeriefire_bear";
+		this.m.ID = "effects.faeriefire_moonfury";
 		this.m.Name = "Faerie Fire";
 		this.m.Description = "This effect can changes depending on druid form or state when he used it.";
 		this.m.Icon = "ui/perks/effect_druid_faeriefire.png";
@@ -33,8 +33,8 @@ this.faeriefire_bear_effect <- this.inherit("scripts/skills/skill", {
 		ret.push({
 			id = 6,
 			type = "text",
-			icon = "ui/icons/melee_skill.png",
-			text = "Melee Skill is reduced by [color=" + this.Const.UI.Color.PositiveValue + "]10[/color] points."
+			icon = "ui/icons/bravery.png",
+			text = "Bravery is reduced by [color=" + this.Const.UI.Color.PositiveValue + "]10[/color] points."
 		});
 		
 		ret.push({
@@ -49,7 +49,7 @@ this.faeriefire_bear_effect <- this.inherit("scripts/skills/skill", {
 
 	function onUpdate( _properties )
 	{
-		_properties.MeleeSkill -= 10;
+		_properties.Bravery -= 10;
 	}
 
 	function reset()

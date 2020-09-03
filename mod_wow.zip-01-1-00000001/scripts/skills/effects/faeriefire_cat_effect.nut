@@ -49,10 +49,7 @@ this.faeriefire_cat_effect <- this.inherit("scripts/skills/skill", {
 
 	function onUpdate( _properties )
 	{
-		if (this.m.Container.hasSkill("effects.catform"))
-		{
-			_properties.MeleeDefense -= 10;
-		}
+		_properties.MeleeDefense -= 10;
 	}
 
 	function reset()

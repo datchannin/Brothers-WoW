@@ -113,7 +113,6 @@ this.druid_faeriefire_skill <- this.inherit("scripts/skills/skill", {
 			{
 				targetEntity.getSkills().add(this.new("scripts/skills/effects/faeriefire_cat_effect"));
 			}
-			this.spawnIcon("effect_druid_faeriefire", _targetTile);
 		}
 
 		if (this.m.Container.hasSkill("effects.bearform"))
@@ -128,7 +127,6 @@ this.druid_faeriefire_skill <- this.inherit("scripts/skills/skill", {
 			{
 				targetEntity.getSkills().add(this.new("scripts/skills/effects/faeriefire_bear_effect"));
 			}
-			this.spawnIcon("effect_druid_faeriefire", _targetTile);
 		}
 
 		if (this.m.Container.hasSkill("effects.moonfury"))
@@ -141,10 +139,11 @@ this.druid_faeriefire_skill <- this.inherit("scripts/skills/skill", {
 			}
 			else
 			{
-				//targetEntity.getSkills().add(this.new("scripts/skills/effects/faeriefire_moonfury_effect"));
+				targetEntity.getSkills().add(this.new("scripts/skills/effects/faeriefire_moonfury_effect"));
 			}
-			this.spawnIcon("effect_druid_faeriefire", _targetTile);
 		}
+
+		this.spawnIcon("effect_druid_faeriefire", _targetTile);
 
 		return true;
 	}
