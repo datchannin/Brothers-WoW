@@ -125,6 +125,7 @@ this.druid_catform_skill <- this.inherit("scripts/skills/skill", {
 		else
 		{
 			this.m.Container.removeByID("effects.catform");
+			this.m.Container.removeByID("effects.barkskin");
 			this.m.Container.removeByID("actives.druid_claws_skill");
 			this.m.Container.removeByID("actives.tigersfury_skill");
 		}

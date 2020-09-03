@@ -70,6 +70,10 @@ this.barkskin_effect <- this.inherit("scripts/skills/skill", {
 
 	function onUpdate( _properties )
 	{
+		if (!this.m.Container.hasSkill("effects.catform") && !this.m.Container.hasSkill("effects.bearform") && !this.m.Container.hasSkill("effects.moonfury"))
+		{
+			this.removeSelf();
+		}
 	}
 
 	function onTurnStart()

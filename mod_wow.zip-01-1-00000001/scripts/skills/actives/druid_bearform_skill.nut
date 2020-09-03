@@ -125,6 +125,7 @@ this.druid_bearform_skill <- this.inherit("scripts/skills/skill", {
 		else
 		{
 			this.m.Container.removeByID("effects.bearform");
+			this.m.Container.removeByID("effects.barkskin");
 			this.m.Container.removeByID("actives.maul_skill");
 			this.m.Container.removeByID("actives.bash_skill");
 		}

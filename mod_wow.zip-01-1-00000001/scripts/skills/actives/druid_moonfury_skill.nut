@@ -107,6 +107,7 @@ this.druid_moonfury_skill <- this.inherit("scripts/skills/skill", {
 		else
 		{
 			this.m.Container.removeByID("effects.moonfury");
+			this.m.Container.removeByID("effects.barkskin");
 			this.m.Container.removeByID("actives.innervate_skill");
 		}
 	}
