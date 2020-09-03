@@ -93,7 +93,7 @@ this.druid_barkskin_skill <- this.inherit("scripts/skills/skill", {
 	{
 		if (!this.getContainer().hasSkill("effects.barkskin"))
 		{
-			//this.m.Container.add(this.new("scripts/skills/effects/barkskin_effect"));
+			this.m.Container.add(this.new("scripts/skills/effects/barkskin_effect"));
 			return true;
 		}
 
