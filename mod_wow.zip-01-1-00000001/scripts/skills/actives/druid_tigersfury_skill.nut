@@ -53,7 +53,7 @@ this.druid_tigersfury_skill <- this.inherit("scripts/skills/skill", {
 	{
 		if (!this.getContainer().hasSkill("effects.tigersfury"))
 		{
-			//this.m.Container.add(this.new("scripts/skills/effects/tigersfury_effect"));
+			this.m.Container.add(this.new("scripts/skills/effects/tigersfury_effect"));
 			return true;
 		}
 
