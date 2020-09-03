@@ -91,13 +91,18 @@ this.druid_barkskin_skill <- this.inherit("scripts/skills/skill", {
 
 	function onUse( _user, _targetTile )
 	{
-		if (!this.getContainer().hasSkill("effects.barkskin"))
+		local effect = _user.getSkills().getSkillByID("effects.barkskin");
+	
+		if (effect != null)
+		{
+			effect.reset();
+		}
+		else
 		{
 			this.m.Container.add(this.new("scripts/skills/effects/barkskin_effect"));
-			return true;
 		}
 
-		return false;
+		return true;
 	}
 
 });

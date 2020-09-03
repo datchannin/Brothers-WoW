@@ -1,6 +1,8 @@
 /*BBWOW:This file is part of datchannin bbWoW mod, mod_version = 6.03, game_version = 1.4.0.41*/
 this.barkskin_effect <- this.inherit("scripts/skills/skill", {
-	m = {},
+	m = {
+		TurnsLeft = 2
+	},
 	function create()
 	{
 		this.m.ID = "effects.barkskin";
@@ -43,6 +45,13 @@ this.barkskin_effect <- this.inherit("scripts/skills/skill", {
 				icon = "ui/icons/melee_defense.png",
 				text = "Melee Defense increased by [color=" + this.Const.UI.Color.PositiveValue + "]5[/color] points."
 			});
+			
+			ret.push({
+				id = 6,
+				type = "text",
+				icon = "ui/icons/special.png",
+				text = "This effect will be applied for [color=" + this.Const.UI.Color.PositiveValue + "]" + this.m.TurnsLeft + "[/color] more turn(s)."
+			});
 		}
 
 		if (this.m.Container.hasSkill("effects.catform"))
@@ -53,6 +62,13 @@ this.barkskin_effect <- this.inherit("scripts/skills/skill", {
 				icon = "ui/icons/melee_defense.png",
 				text = "Melee Defense increased by [color=" + this.Const.UI.Color.PositiveValue + "]10%[/color]."
 			});
+			
+			ret.push({
+				id = 6,
+				type = "text",
+				icon = "ui/icons/special.png",
+				text = "This effect will be applied for [color=" + this.Const.UI.Color.PositiveValue + "]" + this.m.TurnsLeft + "[/color] more turn(s)."
+			});
 		}
 
 		if (this.m.Container.hasSkill("effects.moonfury"))
@@ -62,6 +78,13 @@ this.barkskin_effect <- this.inherit("scripts/skills/skill", {
 				type = "text",
 				icon = "ui/icons/ranged_defense.png",
 				text = "Ranged Defense increased by [color=" + this.Const.UI.Color.PositiveValue + "]10[/color] points."
+			});
+			
+			ret.push({
+				id = 6,
+				type = "text",
+				icon = "ui/icons/special.png",
+				text = "This effect will be applied for [color=" + this.Const.UI.Color.PositiveValue + "]" + this.m.TurnsLeft + "[/color] more turn(s)."
 			});
 		}
 		
@@ -92,8 +115,16 @@ this.barkskin_effect <- this.inherit("scripts/skills/skill", {
 		}
 	}
 
-	function onTurnStart()
+	function reset()
 	{
-		this.removeSelf();
+		this.m.TurnsLeft = 2;
+	}
+
+	function onTurnEnd()
+	{
+		if (--this.m.TurnsLeft <= 0)
+		{
+			this.removeSelf();
+		}
 	}
 });
