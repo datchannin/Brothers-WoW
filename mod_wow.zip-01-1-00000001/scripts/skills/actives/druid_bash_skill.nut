@@ -10,7 +10,7 @@ this.druid_bash_skill <- this.inherit("scripts/skills/skill", {
 		this.m.IconDisabled = "ui/perks/skill_druid_bash_sw.png";
 		this.m.Overlay = "skill_druid_bash";
 		this.m.SoundOnUse = [
-			//"sounds/combat/.wav"
+			"sounds/combat/druid_bash.wav"
 		];
 		this.m.Type = this.Const.SkillType.Active;
 		this.m.Order = this.Const.SkillOrder.UtilityTargeted;
