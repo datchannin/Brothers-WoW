@@ -10,7 +10,7 @@ this.druid_tigersfury_skill <- this.inherit("scripts/skills/skill", {
 		this.m.IconDisabled = "ui/perks/skill_druid_tigersfury_sw.png";
 		this.m.Overlay = "skill_druid_tigersfury";
 		this.m.SoundOnUse = [
-			//"sounds/combat/"
+			"sounds/combat/druid_tigersfury.wav"
 		];
 		this.m.Type = this.Const.SkillType.Active;
 		this.m.Order = this.Const.SkillOrder.NonTargeted;
