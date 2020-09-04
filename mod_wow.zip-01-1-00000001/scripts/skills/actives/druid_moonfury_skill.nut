@@ -99,7 +99,15 @@ this.druid_moonfury_skill <- this.inherit("scripts/skills/skill", {
 		{
 			this.m.Container.add(this.new("scripts/skills/actives/druid_innervate_skill"));
 		}
-	
+
+		if (this.m.Container.hasSkill("perk.wow.druid.giftofnature"))
+		{
+			if (!this.m.Container.hasSkill("actives.rejuvenation_skill"))
+			{
+				this.m.Container.add(this.new("scripts/skills/actives/druid_rejuvenation_skill"));
+			}
+		}
+
 		if (!this.m.Container.hasSkill("effects.moonfury"))
 		{
 			this.m.Container.add(this.new("scripts/skills/effects/moonfury_effect"));
@@ -109,6 +117,7 @@ this.druid_moonfury_skill <- this.inherit("scripts/skills/skill", {
 			this.m.Container.removeByID("effects.moonfury");
 			this.m.Container.removeByID("effects.barkskin");
 			this.m.Container.removeByID("actives.innervate_skill");
+			this.m.Container.removeByID("actives.rejuvenation_skill");
 		}
 	}
 });

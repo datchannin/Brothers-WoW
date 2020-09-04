@@ -50,8 +50,6 @@ this.prowl_effect <- this.inherit("scripts/skills/skill", {
 
 	function onTurnEnd()
 	{
-
 		this.removeSelf();
-
 	}
 });
