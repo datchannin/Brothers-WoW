@@ -9,7 +9,7 @@ this.druid_demoralizingroar_skill <- this.inherit("scripts/skills/skill", {
 		this.m.IconDisabled = "ui/perks/skill_druid_demoralizingroar_sw.png";
 		this.m.Overlay = "skill_druid_demoralizationroar";
 		this.m.SoundOnUse = [
-			//"sounds/combat/"
+			"sounds/combat/druid_demorazilingroar.wav"
 		];
 		this.m.Type = this.Const.SkillType.Active;
 		this.m.Order = this.Const.SkillOrder.OtherTargeted;
