@@ -98,7 +98,7 @@ this.druid_rejuvenation_skill <- this.inherit("scripts/skills/skill", {
 		}
 		else
 		{
-			//targetEntity.getSkills().add(this.new("scripts/skills/effects/rejuvenation_effect"));
+			targetEntity.getSkills().add(this.new("scripts/skills/effects/rejuvenation_effect"));
 		}
 
 		this.spawnIcon("effect_druid_rejuvenation", _targetTile);
