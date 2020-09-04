@@ -192,11 +192,12 @@ this.catform_effect <- this.inherit("scripts/skills/skill", {
 	function onCombatFinished()
 	{
 		local actor = this.getContainer().getActor();
-		if (actor.isAlive())
-		{
-			actor.getSprite("body").setBrush(this.m.initBody);
-			actor.getSprite("head").setBrush(this.m.initHead);
-			toSetVisibleBrush(1);
-		}
+
+		actor.getSprite("body").setBrush(this.m.initBody);
+		actor.getSprite("head").setBrush(this.m.initHead);
+		toSetVisibleBrush(1);
+		
+		this.removeSelf();
+
 	}
 });
