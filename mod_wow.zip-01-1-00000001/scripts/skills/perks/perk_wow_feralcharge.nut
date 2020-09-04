@@ -13,4 +13,17 @@ this.perk_wow_feralcharge <- this.inherit("scripts/skills/skill", {
 		this.m.IsStacking = false;
 		this.m.IsHidden = false;
 	}
+	
+	function onAdded()
+	{
+		if (!this.m.Container.hasSkill("actives.feralcharge_skill"))
+		{
+			this.m.Container.add(this.new("scripts/skills/actives/druid_feralcharge_skill"));
+		}
+	}
+
+	function onRemoved()
+	{
+		this.m.Container.removeByID("actives.feralcharge_skill");
+	}
 });
