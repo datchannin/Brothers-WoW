@@ -10,7 +10,7 @@ this.druid_prowl_skill <- this.inherit("scripts/skills/skill", {
 		this.m.IconDisabled = "ui/perks/skill_druid_prowl_sw.png";
 		this.m.Overlay = "skill_druid_prowl";
 		this.m.SoundOnUse = [
-			//"sounds/combat/.wav"
+			"sounds/combat/druid_prowl.wav"
 		];
 		this.m.Type = this.Const.SkillType.Active;
 		this.m.Order = this.Const.SkillOrder.NonTargeted;
