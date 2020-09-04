@@ -43,7 +43,7 @@ this.rejuvenation_effect <- this.inherit("scripts/skills/skill", {
 			id = 6,
 			type = "text",
 			icon = "ui/icons/heal.png",
-			text = "Received for [color=" + this.Const.UI.Color.PositiveValue + "]7[/color] Hitpoints until effect is applied."
+			text = "Received for [color=" + this.Const.UI.Color.PositiveValue + "]" + this.m.HealValue + "[/color] Hitpoints until effect is applied."
 		});
 
 		return ret;
@@ -52,6 +52,11 @@ this.rejuvenation_effect <- this.inherit("scripts/skills/skill", {
 	function reset()
 	{
 		this.m.TurnsLeft = 2;
+	}
+
+	function setpower(healpower)
+	{
+		this.m.HealValue = healpower;
 	}
 
 	function onAdded()
