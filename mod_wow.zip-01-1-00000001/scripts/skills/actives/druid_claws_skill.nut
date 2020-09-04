@@ -34,7 +34,6 @@ this.druid_claws_skill <- this.inherit("scripts/skills/skill", {
 
 	function getTooltip()
 	{
-		local p = this.getContainer().getActor().getCurrentProperties();
 		local ret = this.getDefaultTooltip();
 		
 		return ret;
