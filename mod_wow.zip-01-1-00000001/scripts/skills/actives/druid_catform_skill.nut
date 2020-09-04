@@ -117,6 +117,14 @@ this.druid_catform_skill <- this.inherit("scripts/skills/skill", {
 			this.m.Container.add(this.new("scripts/skills/actives/druid_tigersfury_skill"));
 		}
 
+		if (this.m.Container.hasSkill("perk.wow.druid.giftofnature"))
+		{
+			if (!this.m.Container.hasSkill("actives.prowl_skill"))
+			{
+				this.m.Container.add(this.new("scripts/skills/actives/druid_prowl_skill"));
+			}
+		}
+
 		if (!this.m.Container.hasSkill("effects.catform"))
 		{
 			this.m.Container.add(this.new("scripts/skills/effects/catform_effect"));
@@ -126,8 +134,10 @@ this.druid_catform_skill <- this.inherit("scripts/skills/skill", {
 		{
 			this.m.Container.removeByID("effects.catform");
 			this.m.Container.removeByID("effects.barkskin");
+			this.m.Container.removeByID("effects.prowl");
 			this.m.Container.removeByID("actives.druid_claws_skill");
 			this.m.Container.removeByID("actives.tigersfury_skill");
+			this.m.Container.removeByID("actives.prowl_skill");
 		}
 	}
 });
