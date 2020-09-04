@@ -1,6 +1,9 @@
 this.druid_ferociousbite_skill <- this.inherit("scripts/skills/skill", {
 	m = {
-		Recharge = 0
+		Recharge = 0,
+		damage_min = 40,
+		damage_max = 50,
+		damage_armor_mult = 0.1
 	},
 	function create()
 	{
@@ -34,7 +37,28 @@ this.druid_ferociousbite_skill <- this.inherit("scripts/skills/skill", {
 	function getTooltip()
 	{
 		local p = this.getContainer().getActor().getCurrentProperties();
-		local ret = this.getDefaultTooltip();
+		local damage_armor_min = this.Math.floor(this.m.damage_min * this.m.damage_armor_mult * p.DamageTotalMult * p.MeleeDamageMult);
+		local damage_armor_max = this.Math.floor(this.m.damage_max * this.m.damage_armor_mult * p.DamageTotalMult * p.MeleeDamageMult);
+		local damage_min = this.Math.floor(this.m.damage_min * p.DamageTotalMult * p.MeleeDamageMult);
+		local damage_max = this.Math.floor(this.m.damage_max * p.DamageTotalMult * p.MeleeDamageMult);
+		local direct_damage_min = this.Math.floor(this.m.DirectDamageMult * damage_min);
+		local direct_damage_max = this.Math.floor(this.m.DirectDamageMult * damage_max);
+
+		local ret = this.getDefaultUtilityTooltip();
+
+		ret.push({
+			id = 6,
+			type = "text",
+			icon = "ui/icons/regular_damage.png",
+			text = "Inflicts [color=" + this.Const.UI.Color.DamageValue + "]" + damage_min + "[/color] - [color=" + this.Const.UI.Color.DamageValue + "]" + damage_max + "[/color] damage to hitpoints, of which [color=" + this.Const.UI.Color.DamageValue + "]" + direct_damage_min + "[/color] - [color=" + this.Const.UI.Color.DamageValue + "]" + direct_damage_max + "[/color] can ignore armor"
+		});
+
+		ret.push({
+			id = 6,
+			type = "text",
+			icon = "ui/icons/armor_damage.png",
+			text = "Inflicts [color=" + this.Const.UI.Color.DamageValue + "]" + damage_armor_min + "[/color] - [color=" + this.Const.UI.Color.DamageValue + "]" + damage_armor_max + "[/color] damage to armor"
+		});
 
 		ret.push({
 			id = 6,
@@ -92,9 +116,9 @@ this.druid_ferociousbite_skill <- this.inherit("scripts/skills/skill", {
 
 	function onUpdate( _properties )
 	{
-		_properties.DamageRegularMin += 40;
-		_properties.DamageRegularMax += 50;
-		_properties.DamageArmorMult *= 0.1;
+		_properties.DamageRegularMin += this.m.damage_min;
+		_properties.DamageRegularMax += this.m.damage_max;
+		_properties.DamageArmorMult *= this.m.damage_armor_mult;
 	}
 
 	function onTurnEnd()
