@@ -88,11 +88,11 @@ this.druid_demoralizingroar_skill <- this.inherit("scripts/skills/skill", {
 					
 					if (effect != null)
 					{
-					//	effect.reset();
+						effect.reset();
 					}
 					else
 					{
-					//	targetEntity.getSkills().add(this.new("scripts/skills/effects/demoralizingroar_effect"));
+						targetEntity.getSkills().add(this.new("scripts/skills/effects/demoralizingroar_effect"));
 					}
 
 					if (!_user.isAlive() || _user.isDying())
