@@ -67,14 +67,11 @@ this.druid_prowl_skill <- this.inherit("scripts/skills/skill", {
 	{
 		local effect = _user.getSkills().getSkillByID("effects.prowl");
 
-		if (effect != null)
+		if (effect == null)
 		{
-			effect.reset();
+			_user.getSkills().add(this.new("scripts/skills/effects/prowl_effect"));
 		}
-		else
-		{
-			//_user.getSkills().add(this.new("scripts/skills/effects/prowl_effect"));
-		}
+
 		return true;
 	}
 });
