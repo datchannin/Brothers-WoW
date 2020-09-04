@@ -166,6 +166,11 @@ this.bearform_effect <- this.inherit("scripts/skills/skill", {
 		local actor = this.getContainer().getActor();
 		toSetVisibleBrush(0);
 
+		if (actor.getSkills().hasSkill("perk.wow.druid.abolishpoison"))
+		{
+			_properties.IsImmuneToPoison = true;
+		}
+
 		_properties.HitpointsMult *= 1.3;
 		_properties.DamageReceivedTotalMult *= 0.9;
 		_properties.Bravery += 20;

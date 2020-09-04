@@ -166,6 +166,11 @@ this.catform_effect <- this.inherit("scripts/skills/skill", {
 		local actor = this.getContainer().getActor();
 		toSetVisibleBrush(0);
 
+		if (actor.getSkills().hasSkill("perk.wow.druid.abolishpoison"))
+		{
+			_properties.IsImmuneToPoison = true;
+		}
+
 		_properties.MeleeSkillMult *= 1.2;
 		_properties.MeleeDefenseMult *= 1.2;
 	}
