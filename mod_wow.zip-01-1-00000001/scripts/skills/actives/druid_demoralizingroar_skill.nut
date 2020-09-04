@@ -94,6 +94,7 @@ this.druid_demoralizingroar_skill <- this.inherit("scripts/skills/skill", {
 					{
 						targetEntity.getSkills().add(this.new("scripts/skills/effects/demoralizingroar_effect"));
 					}
+					this.spawnIcon("effect_druid_demoralizingroar", tile);
 
 					if (!_user.isAlive() || _user.isDying())
 					{
