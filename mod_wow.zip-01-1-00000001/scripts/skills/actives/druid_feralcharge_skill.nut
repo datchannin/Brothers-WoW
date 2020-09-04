@@ -10,7 +10,7 @@ this.druid_feralcharge_skill <- this.inherit("scripts/skills/skill", {
 		this.m.IconDisabled = "ui/perks/skill_druid_feralcharge_sw.png";
 		this.m.Overlay = "skill_druid_feralcharge";
 		this.m.SoundOnUse = [
-			//"sounds/combat/"
+			"sounds/combat/druid_feralcharge.wav"
 		];
 		this.m.Type = this.Const.SkillType.Active;
 		this.m.Order = this.Const.SkillOrder.UtilityTargeted;
