@@ -10,7 +10,7 @@ this.druid_abolishpoison_skill <- this.inherit("scripts/skills/skill", {
 		this.m.IconDisabled = "ui/perks/skill_druid_abolishpoison_sw.png";
 		this.m.Overlay = "skill_druid_abolishpoison";
 		this.m.SoundOnUse = [
-			//"sounds/combat/"
+			"sounds/combat/druid_abolishpoison.wav"
 		];
 		this.m.Type = this.Const.SkillType.Active;
 		this.m.Order = this.Const.SkillOrder.OtherTargeted;
