@@ -101,7 +101,7 @@ this.druid_markofwild_skill <- this.inherit("scripts/skills/skill", {
 			//targetEntity.getSkills().add(this.new("scripts/skills/effects/markofwild_effect"));
 		}
 
-		//this.spawnIcon("effect_druid_markofwild", _targetTile);
+		this.spawnIcon("effect_druid_markofwild", _targetTile);
 
 		return true;
 	}
