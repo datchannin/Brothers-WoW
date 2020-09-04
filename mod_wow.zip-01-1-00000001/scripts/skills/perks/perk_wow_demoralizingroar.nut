@@ -13,4 +13,17 @@ this.perk_wow_demoralizingroar <- this.inherit("scripts/skills/skill", {
 		this.m.IsStacking = false;
 		this.m.IsHidden = false;
 	}
+	
+	function onAdded()
+	{
+		if (!this.m.Container.hasSkill("actives.demoralizingroar_skill"))
+		{
+			this.m.Container.add(this.new("scripts/skills/actives/druid_demoralizingroar_skill"));
+		}
+	}
+
+	function onRemoved()
+	{
+		this.m.Container.removeByID("actives.demoralizingroar_skill");
+	}
 });
