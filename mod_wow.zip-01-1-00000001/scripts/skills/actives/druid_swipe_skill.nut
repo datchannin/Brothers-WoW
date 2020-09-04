@@ -13,10 +13,7 @@ this.druid_swipe_skill <- this.inherit("scripts/skills/skill", {
 		this.m.IconDisabled = "ui/perks/skill_druid_swipe_sw.png";
 		this.m.Overlay = "skill_druid_swipe";
 		this.m.SoundOnUse = [
-			//"sounds/combat/.wav"
-		];
-		this.m.SoundOnHitHitpoints = [
-			//"sounds/combat/.wav"
+			"sounds/combat/druid_swipe.wav"
 		];
 		this.m.Type = this.Const.SkillType.Active;
 		this.m.Order = this.Const.SkillOrder.OffensiveTargeted;
