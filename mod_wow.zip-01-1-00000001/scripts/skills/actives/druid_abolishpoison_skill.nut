@@ -88,7 +88,7 @@ this.druid_abolishpoison_skill <- this.inherit("scripts/skills/skill", {
 	function onUse( _user, _targetTile )
 	{
 		local user = _targetTile.getEntity();
-		//this.spawnIcon("", _targetTile);
+		this.spawnIcon("effect_druid_abolishpoison", _targetTile);
 
 		while (user.getSkills().hasSkill("effects.goblin_poison"))
 		{
