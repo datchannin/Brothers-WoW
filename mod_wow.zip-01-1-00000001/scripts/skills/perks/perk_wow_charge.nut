@@ -12,7 +12,7 @@ this.perk_wow_charge <- this.inherit("scripts/skills/skill", {
 		this.m.IsActive = false;
 		this.m.IsStacking = false;
 		this.m.IsHidden = false;
-	}
+	}	
 	
 	function onAdded()
 	{

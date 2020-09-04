@@ -13,4 +13,17 @@ this.perk_wow_abolishpoison <- this.inherit("scripts/skills/skill", {
 		this.m.IsStacking = false;
 		this.m.IsHidden = false;
 	}
+
+	function onAdded()
+	{
+		if (!this.m.Container.hasSkill("actives.abolishpoison_skill"))
+		{
+			this.m.Container.add(this.new("scripts/skills/actives/druid_abolishpoison_skill"));
+		}
+	}
+
+	function onRemoved()
+	{
+		this.m.Container.removeByID("actives.abolishpoison_skill");
+	}
 });
