@@ -7,7 +7,7 @@ this.meditation_effect <- this.inherit("scripts/skills/skill", {
 		this.m.Name = "Meditation";
 		this.m.Description = "Meditation even while combat helps to restore part of your Fatigue.";
 		this.m.Icon = "ui/perks/perk_mage_meditation.png";
-		this.m.IconMini = "effect_mini_adrenalinerush";
+		this.m.IconMini = "effect_mini_meditation";
 		this.m.Type = this.Const.SkillType.StatusEffect;
 		this.m.IsActive = false;
 		this.m.IsRemovedAfterBattle = true;
