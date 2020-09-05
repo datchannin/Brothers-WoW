@@ -38,12 +38,24 @@ this.catform_effect <- this.inherit("scripts/skills/skill", {
 			}
 		];
 
-		ret.push({
-			id = 10,
-			type = "text",
-			icon = "ui/icons/melee_skill.png",
-			text = "Melee Skill is increased by [color=" + this.Const.UI.Color.PositiveValue + "]20%[/color]."
-		});
+		if (!this.m.tiger)
+		{
+			ret.push({
+				id = 10,
+				type = "text",
+				icon = "ui/icons/melee_skill.png",
+				text = "Melee Skill is increased by [color=" + this.Const.UI.Color.PositiveValue + "]20%[/color]."
+			});
+		}
+		else
+		{
+			ret.push({
+				id = 10,
+				type = "text",
+				icon = "ui/icons/melee_skill.png",
+				text = "Melee Skill is increased by [color=" + this.Const.UI.Color.PositiveValue + "]20%[/color] and an additional [color=" + this.Const.UI.Color.PositiveValue + "]10[/color] points."
+			});
+		}
 
 		ret.push({
 			id = 10,
