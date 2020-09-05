@@ -3,7 +3,8 @@ this.druid_claws_skill <- this.inherit("scripts/skills/skill", {
 		damage_min = 30,
 		damage_max = 35,
 		damage_armor_mult = 0.4,
-		heartofwild = false
+		heartofwild = false,
+		sharpenedclaws = false
 	},
 	function create()
 	{
@@ -46,6 +47,11 @@ this.druid_claws_skill <- this.inherit("scripts/skills/skill", {
 			total_damage_min += 6;
 		}
 
+		if (this.m.sharpenedclaws)
+		{
+			total_damage_min += 6;
+		}
+
 		return total_damage_min;
 	}
 
@@ -54,6 +60,11 @@ this.druid_claws_skill <- this.inherit("scripts/skills/skill", {
 		local total_damage_max = 35;
 
 		if (this.m.heartofwild)
+		{
+			total_damage_max += 7;
+		}
+
+		if (this.m.sharpenedclaws)
 		{
 			total_damage_max += 7;
 		}
@@ -117,6 +128,7 @@ this.druid_claws_skill <- this.inherit("scripts/skills/skill", {
 	{
 		local user = this.getContainer().getActor();
 		this.m.heartofwild = user.getSkills().hasSkill("perk.wow.druid.heartofwild");
+		this.m.sharpenedclaws = user.getSkills().hasSkill("perk.wow.druid.sharpenedclaws");
 	}
 
 	function onAnySkillUsed( _skill, _targetEntity, _properties )
