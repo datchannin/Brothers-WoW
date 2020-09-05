@@ -54,10 +54,10 @@ this.catform_effect <- this.inherit("scripts/skills/skill", {
 		if (this.m.abolishpoison)
 		{
 			ret.push({
-			id = 10,
-			type = "text",
-			icon = "ui/icons/special.png",
-			text = "You are immune to the \'Poison\' effect while Cat form is applied."
+				id = 10,
+				type = "text",
+				icon = "ui/icons/special.png",
+				text = "You are immune to the \'Poison\' effect while Cat form is applied."
 			});
 		}
 

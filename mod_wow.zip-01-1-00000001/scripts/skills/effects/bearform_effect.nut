@@ -24,6 +24,22 @@ this.bearform_effect <- this.inherit("scripts/skills/skill", {
 		return "You are under shapeshift effect now. Big strong bear.";
 	}
 
+	function getHealthMult()
+	{
+		local healthmult = 0.3;
+
+		if (this.m.heartofwild)
+		{
+			healthmult += 0.3;
+		}
+		if (this.m.direbear)
+		{
+			healthmult += 0.25;
+		}
+
+		return healthmult;
+	}
+
 	function getTooltip()
 	{
 		local ret = [
@@ -38,12 +54,13 @@ this.bearform_effect <- this.inherit("scripts/skills/skill", {
 				text = this.getDescription()
 			}
 		];
+		local healthmult = getHealthMult() * 100;
 
 		ret.push({
 			id = 10,
 			type = "text",
 			icon = "ui/icons/health.png",
-			text = "Hitpoints are increased by [color=" + this.Const.UI.Color.PositiveValue + "]30%[/color]."
+			text = "Hitpoints are increased by [color=" + this.Const.UI.Color.PositiveValue + "]" + healthmult + "%[/color]."
 		});
 
 		ret.push({
@@ -63,10 +80,10 @@ this.bearform_effect <- this.inherit("scripts/skills/skill", {
 		if (this.m.abolishpoison)
 		{
 			ret.push({
-			id = 10,
-			type = "text",
-			icon = "ui/icons/special.png",
-			text = "You are immune to the \'Poison\' effect while Bear form is applied."
+				id = 10,
+				type = "text",
+				icon = "ui/icons/special.png",
+				text = "You are immune to the \'Poison\' effect while Bear form is applied."
 			});
 		}
 
@@ -190,25 +207,21 @@ this.bearform_effect <- this.inherit("scripts/skills/skill", {
 		this.m.direbear = actor.getSkills().hasSkill("perk.wow.druid.direbear");
 		this.m.heartofwild = actor.getSkills().hasSkill("perk.wow.druid.heartofwild");
 
+		local healthmult = getHealthMult();
+
+		_properties.HitpointsMult *= (1 + healthmult);
+
 		if (actor.getSkills().hasSkill("perk.wow.druid.abolishpoison"))
 		{
 			_properties.IsImmuneToPoison = true;
 		}
-
-		_properties.HitpointsMult *= 1.3;
-		_properties.DamageReceivedTotalMult *= 0.9;
-		_properties.Bravery += 20;
-		
-		if (actor.getSkills().hasSkill("perk.wow.druid.heartofwild"))
-		{
-			_properties.HitpointsMult *= 1.3;
-		}
-		
 		if (actor.getSkills().hasSkill("perk.wow.druid.direbear"))
 		{
-			_properties.HitpointsMult *= 1.25;
 			_properties.BraveryMult *= 1.1;
 		}
+
+		_properties.DamageReceivedTotalMult *= 0.9;
+		_properties.Bravery += 20;
 	}
 
 	function onRemoved()
