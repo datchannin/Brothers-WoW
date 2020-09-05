@@ -171,6 +171,12 @@ this.catform_effect <- this.inherit("scripts/skills/skill", {
 			_properties.IsImmuneToPoison = true;
 		}
 
+		if (actor.getSkills().hasSkill("perk.wow.druid.tiger"))
+		{
+			_properties.MeleeSkill += 10;
+			_properties.ActionPointsBonus = 2;
+		}
+
 		_properties.MeleeSkillMult *= 1.2;
 		_properties.MeleeDefenseMult *= 1.2;
 	}
