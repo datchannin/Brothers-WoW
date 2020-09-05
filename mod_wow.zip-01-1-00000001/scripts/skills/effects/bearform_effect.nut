@@ -179,6 +179,12 @@ this.bearform_effect <- this.inherit("scripts/skills/skill", {
 		{
 			_properties.HitpointsMult *= 1.3;
 		}
+		
+		if (actor.getSkills().hasSkill("perk.wow.druid.direbear"))
+		{
+			_properties.HitpointsMult *= 1.25;
+			_properties.BraveryMult *= 1.1;
+		}
 	}
 
 	function onRemoved()
