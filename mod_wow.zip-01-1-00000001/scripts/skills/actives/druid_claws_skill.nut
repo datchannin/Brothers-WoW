@@ -2,7 +2,8 @@ this.druid_claws_skill <- this.inherit("scripts/skills/skill", {
 	m = {
 		damage_min = 30,
 		damage_max = 35,
-		damage_armor_mult = 0.4
+		damage_armor_mult = 0.4,
+		heartofwild = false
 	},
 	function create()
 	{
@@ -36,15 +37,43 @@ this.druid_claws_skill <- this.inherit("scripts/skills/skill", {
 		this.m.MaxRange = 1;
 	}
 
+	function getTotalMinDamage()
+	{
+		local total_damage_min = 30;
+
+		if (this.m.heartofwild)
+		{
+			total_damage_min += 6;
+		}
+
+		return total_damage_min;
+	}
+
+	function getTotalMaxDamage()
+	{
+		local total_damage_max = 35;
+
+		if (this.m.heartofwild)
+		{
+			total_damage_max += 7;
+		}
+
+		return total_damage_max;
+	}
+
 	function getTooltip()
 	{
 		local p = this.getContainer().getActor().getCurrentProperties();
-		local damage_armor_min = this.Math.floor(this.m.damage_min * this.m.damage_armor_mult * p.DamageTotalMult * p.MeleeDamageMult);
-		local damage_armor_max = this.Math.floor(this.m.damage_max * this.m.damage_armor_mult * p.DamageTotalMult * p.MeleeDamageMult);
-		local damage_min = this.Math.floor(this.m.damage_min * p.DamageTotalMult * p.MeleeDamageMult);
-		local damage_max = this.Math.floor(this.m.damage_max * p.DamageTotalMult * p.MeleeDamageMult);
-		local direct_damage_min = this.Math.floor(this.m.DirectDamageMult * damage_min);
-		local direct_damage_max = this.Math.floor(this.m.DirectDamageMult * damage_max);
+		
+		local damage_min_st = getTotalMinDamage();
+		local damage_max_st = getTotalMaxDamage();
+		
+		local damage_armor_min = this.Math.floor(damage_min_st * this.m.damage_armor_mult * p.DamageTotalMult * p.MeleeDamageMult);
+		local damage_armor_max = this.Math.floor(damage_max_st * this.m.damage_armor_mult * p.DamageTotalMult * p.MeleeDamageMult);
+		local damage_min = this.Math.floor(damage_min_st * p.DamageTotalMult * p.MeleeDamageMult);
+		local damage_max = this.Math.floor(damage_max_st * p.DamageTotalMult * p.MeleeDamageMult);
+		local direct_damage_min = this.Math.floor(this.m.DirectDamageMult * damage_min_st);
+		local direct_damage_max = this.Math.floor(this.m.DirectDamageMult * damage_max_st);
 
 		local ret = this.getDefaultUtilityTooltip();
 
@@ -86,9 +115,21 @@ this.druid_claws_skill <- this.inherit("scripts/skills/skill", {
 
 	function onUpdate( _properties )
 	{
-		_properties.DamageRegularMin += this.m.damage_min;
-		_properties.DamageRegularMax += this.m.damage_max;
-		_properties.DamageArmorMult *= this.m.damage_armor_mult;
+		local user = this.getContainer().getActor();
+		this.m.heartofwild = user.getSkills().hasSkill("perk.wow.druid.heartofwild");
+	}
+
+	function onAnySkillUsed( _skill, _targetEntity, _properties )
+	{
+		if (_skill == this)
+		{
+			this.m.damage_min = getTotalMinDamage();
+			this.m.damage_max = getTotalMaxDamage();
+
+			_properties.DamageRegularMin = this.m.damage_min;
+			_properties.DamageRegularMax = this.m.damage_max;
+			_properties.DamageArmorMult *= this.m.damage_armor_mult;
+		}
 	}
 
 	function onUse( _user, _targetTile )
