@@ -1,7 +1,8 @@
 /*BBWOW:This file is part of datchannin bbWoW mod, mod_version = 6.03, game_version = 1.4.0.41*/
 this.druid_innervate_skill <- this.inherit("scripts/skills/skill", {
 	m = {
-		FatigueValue = 30,
+		BaseFatigueValue = 30,
+		clarity = false
 	},
 	function create()
 	{
@@ -27,15 +28,27 @@ this.druid_innervate_skill <- this.inherit("scripts/skills/skill", {
 		this.m.MaxRange = 3;
 	}
 
+	function getInnervatePower()
+	{
+		local innervatepower = this.m.BaseFatigueValue;
+		if (this.m.clarity)
+		{
+			innervatepower += 5;
+		}
+
+		return innervatepower;
+	}
+
 	function getTooltip()
 	{
 		local ret = this.getDefaultUtilityTooltip();
+		local innervatepower = getInnervatePower();
 		
 		ret.push({
 			id = 6,
 			type = "text",
 			icon = "ui/icons/special.png",
-			text = "Reduces part of target Fatigue. You add for [color=" + this.Const.UI.Color.PositiveValue + "]" + this.m.FatigueCost + "[/color] points to your fatigue and your target reduces for [color=" + this.Const.UI.Color.PositiveValue + "]" + this.m.FatigueValue + "[/color] points of his fatigue."
+			text = "Reduces part of target Fatigue. You add for [color=" + this.Const.UI.Color.PositiveValue + "]" + this.m.FatigueCost + "[/color] points to your fatigue and your target reduces for [color=" + this.Const.UI.Color.PositiveValue + "]" + innervatepower + "[/color] points of his fatigue."
 		});
 
 		return ret;
@@ -87,12 +100,19 @@ this.druid_innervate_skill <- this.inherit("scripts/skills/skill", {
 		return true;
 	}
 
+	function onUpdate( _properties )
+	{
+		local user = this.getContainer().getActor();
+		this.m.clarity = user.getSkills().hasSkill("perk.wow.druid.clarity");
+	}
+
 	function onUse( _user, _targetTile )
 	{
 		local targetEntity = _targetTile.getEntity();
+		local innervatepower = getInnervatePower();
 
 		this.spawnIcon("effect_druid_innervate", _targetTile);
-		targetEntity.setFatigue(targetEntity.getFatigue() - 30);
+		targetEntity.setFatigue(targetEntity.getFatigue() - innervatepower);
 		
 		return true;
 	}
