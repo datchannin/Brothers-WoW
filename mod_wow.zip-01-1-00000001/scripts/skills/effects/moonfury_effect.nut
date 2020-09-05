@@ -42,6 +42,13 @@ this.moonfury_effect <- this.inherit("scripts/skills/skill", {
 
 	function onUpdate( _properties )
 	{
+		local actor = this.getContainer().getActor();
+
+		if (actor.getSkills().hasSkill("perk.wow.druid.heartofwild"))
+		{
+			_properties.FatigueRecoveryRate += 3;
+			_properties.Stamina +=10;
+		}
 	}
 
 	function onRemoved()
