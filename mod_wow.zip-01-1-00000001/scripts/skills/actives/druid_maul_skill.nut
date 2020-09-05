@@ -2,7 +2,8 @@ this.druid_maul_skill <- this.inherit("scripts/skills/skill", {
 	m = {
 		damage_min = 25,
 		damage_max = 30,
-		damage_armor_mult = 0.8
+		damage_armor_mult = 0.8,
+		primalfury = false
 	},
 	function create()
 	{
@@ -35,11 +36,25 @@ this.druid_maul_skill <- this.inherit("scripts/skills/skill", {
 		this.m.MaxRange = 1;
 	}
 
+	function getTotalArmorMult()
+	{
+		local total_armor_mult = 0.8;
+
+		if (this.m.primalfury)
+		{
+			total_armor_mult *= 2;
+		}
+
+		return total_armor_mult;
+	}
+
 	function getTooltip()
 	{
 		local p = this.getContainer().getActor().getCurrentProperties();
-		local damage_armor_min = this.Math.floor(this.m.damage_min * this.m.damage_armor_mult * p.DamageTotalMult * p.MeleeDamageMult);
-		local damage_armor_max = this.Math.floor(this.m.damage_max * this.m.damage_armor_mult * p.DamageTotalMult * p.MeleeDamageMult);
+		local damage_armor_mult = getTotalArmorMult();		
+
+		local damage_armor_min = this.Math.floor(this.m.damage_min * damage_armor_mult * p.DamageTotalMult * p.MeleeDamageMult);
+		local damage_armor_max = this.Math.floor(this.m.damage_max * damage_armor_mult * p.DamageTotalMult * p.MeleeDamageMult);
 		local damage_min = this.Math.floor(this.m.damage_min * p.DamageTotalMult * p.MeleeDamageMult);
 		local damage_max = this.Math.floor(this.m.damage_max * p.DamageTotalMult * p.MeleeDamageMult);
 		local direct_damage_min = this.Math.floor(this.m.DirectDamageMult * damage_min);
@@ -85,9 +100,20 @@ this.druid_maul_skill <- this.inherit("scripts/skills/skill", {
 
 	function onUpdate( _properties )
 	{
-		_properties.DamageRegularMin += this.m.damage_min;
-		_properties.DamageRegularMax += this.m.damage_max;
-		_properties.DamageArmorMult *= this.m.damage_armor_mult;
+		local user = this.getContainer().getActor();
+		this.m.primalfury = user.getSkills().hasSkill("perk.wow.druid.primalfury");
+	}
+
+	function onAnySkillUsed( _skill, _targetEntity, _properties )
+	{
+		if (_skill == this)
+		{
+			this.m.damage_armor_mult = getTotalArmorMult();
+
+			_properties.DamageRegularMin = this.m.damage_min;
+			_properties.DamageRegularMax = this.m.damage_max;
+			_properties.DamageArmorMult *= this.m.damage_armor_mult;
+		}
 	}
 
 	function onUse( _user, _targetTile )
