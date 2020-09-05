@@ -4,6 +4,7 @@ this.catform_effect <- this.inherit("scripts/skills/skill", {
 		initBody = "",
 		initHead = "",
 		abolishpoison = false,
+		tiger = false
 	},
 	function create()
 	{
@@ -50,6 +51,16 @@ this.catform_effect <- this.inherit("scripts/skills/skill", {
 			icon = "ui/icons/melee_defense.png",
 			text = "Melee Defense is increased by [color=" + this.Const.UI.Color.PositiveValue + "]20%[/color]."
 		});
+
+		if (this.m.tiger)
+		{
+			ret.push({
+				id = 10,
+				type = "text",
+				icon = "ui/icons/action_points.png",
+				text = "Your Action Points are increased by [color=" + this.Const.UI.Color.PositiveValue + "]2[/color] points."
+			});
+		}
 
 		if (this.m.abolishpoison)
 		{
@@ -178,6 +189,7 @@ this.catform_effect <- this.inherit("scripts/skills/skill", {
 		toSetVisibleBrush(0);
 
 		this.m.abolishpoison = actor.getSkills().hasSkill("perk.wow.druid.abolishpoison");
+		this.m.tiger = actor.getSkills().hasSkill("perk.wow.druid.tiger");
 
 		if (actor.getSkills().hasSkill("perk.wow.druid.abolishpoison"))
 		{
