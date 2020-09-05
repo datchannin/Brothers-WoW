@@ -1,6 +1,8 @@
 /*BBWOW:This file is part of datchannin bbWoW mod, mod_version = 6.03, game_version = 1.4.0.41*/
 this.druid_bash_skill <- this.inherit("scripts/skills/skill", {
-	m = {},
+	m = {
+		heartofwild = false
+	},
 	function create()
 	{
 		this.m.ID = "actives.bash_skill";
@@ -78,15 +80,33 @@ this.druid_bash_skill <- this.inherit("scripts/skills/skill", {
 		return true;
 	}
 
+	function onUpdate( _properties )
+	{
+		local user = this.getContainer().getActor();
+		this.m.heartofwild = user.getSkills().hasSkill("perk.wow.druid.heartofwild");
+	}
+
 	function onUse( _user, _targetTile )
 	{
 		local target = _targetTile.getEntity();
 
 		target.getSkills().add(this.new("scripts/skills/effects/stunned_effect"));
 
-		if (!_user.isHiddenToPlayer() && _targetTile.IsVisibleForPlayer)
+		if (this.m.heartofwild)
 		{
-			this.Tactical.EventLog.log(this.Const.UI.getColorizedEntityName(_user) + " stunned " + this.Const.UI.getColorizedEntityName(target) + " for one turn");
+			local effect = target.getSkills().getSkillByID("effects.stunned");
+			effect.addTurns(1);
+			if (!_user.isHiddenToPlayer() && _targetTile.IsVisibleForPlayer)
+			{
+				this.Tactical.EventLog.log(this.Const.UI.getColorizedEntityName(_user) + " stunned " + this.Const.UI.getColorizedEntityName(target) + " for two turns");
+			}
+		}
+		else
+		{
+			if (!_user.isHiddenToPlayer() && _targetTile.IsVisibleForPlayer)
+			{
+				this.Tactical.EventLog.log(this.Const.UI.getColorizedEntityName(_user) + " stunned " + this.Const.UI.getColorizedEntityName(target) + " for one turn");
+			}
 		}
 
 		return true;
