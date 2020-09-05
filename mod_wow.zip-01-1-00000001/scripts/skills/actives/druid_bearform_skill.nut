@@ -1,6 +1,8 @@
 /*BBWOW:This file is part of datchannin bbWoW mod, mod_version = 6.03, game_version = 1.4.0.41*/
 this.druid_bearform_skill <- this.inherit("scripts/skills/skill", {
-	m = {},
+	m = {
+		furor = false
+	},
 	function create()
 	{
 		this.m.ID = "actives.bearform_skill";
@@ -20,7 +22,7 @@ this.druid_bearform_skill <- this.inherit("scripts/skills/skill", {
 		this.m.IsStacking = false;
 		this.m.IsAttack = false;
 		this.m.ActionPointCost = 0;
-		this.m.FatigueCost = 0;
+		this.m.FatigueCost = 30;
 		this.m.MinRange = 0;
 		this.m.MaxRange = 0;
 	}
@@ -98,6 +100,20 @@ this.druid_bearform_skill <- this.inherit("scripts/skills/skill", {
 	function onVerifyTarget( _originTile, _targetTile )
 	{
 		return true;
+	}
+
+	function onUpdate( _properties )
+	{
+		local user = this.getContainer().getActor();
+		this.m.furor = user.getSkills().hasSkill("perk.wow.druid.furor");
+	}
+
+	function onAfterUpdate( _properties )
+	{
+		if (this.m.furor)
+		{
+			this.m.FatigueCost = 15;
+		}
 	}
 
 	function onUse( _user, _targetTile )
