@@ -77,6 +77,16 @@ this.bearform_effect <- this.inherit("scripts/skills/skill", {
 			text = "Bravery is increased by [color=" + this.Const.UI.Color.PositiveValue + "]20[/color] points."
 		});
 
+		if (this.m.direbear)
+		{
+			ret.push({
+				id = 10,
+				type = "text",
+				icon = "ui/icons/bravery.png",
+				text = "Bravery is increased by [color=" + this.Const.UI.Color.PositiveValue + "]10%[/color]."
+			});
+		}
+
 		if (this.m.abolishpoison)
 		{
 			ret.push({
