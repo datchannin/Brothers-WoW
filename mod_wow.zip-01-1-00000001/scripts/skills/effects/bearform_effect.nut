@@ -2,7 +2,10 @@
 this.bearform_effect <- this.inherit("scripts/skills/skill", {
 	m = {
 		initBody = "",
-		initHead = ""
+		initHead = "",
+		abolishpoison = false,
+		heartofwild = false,
+		direbear = false
 	},
 	function create()
 	{
@@ -49,6 +52,23 @@ this.bearform_effect <- this.inherit("scripts/skills/skill", {
 			icon = "ui/icons/damage_received.png",
 			text = "Damage taken is reduced by [color=" + this.Const.UI.Color.PositiveValue + "]10%[/color]."
 		});
+
+		ret.push({
+			id = 10,
+			type = "text",
+			icon = "ui/icons/bravery.png",
+			text = "Bravery is increased by [color=" + this.Const.UI.Color.PositiveValue + "]20[/color] points."
+		});
+
+		if (this.m.abolishpoison)
+		{
+			ret.push({
+			id = 10,
+			type = "text",
+			icon = "ui/icons/special.png",
+			text = "You are immune to the \'Poison\' effect while Bear form is applied."
+			});
+		}
 
 		return ret;
 	}
@@ -165,6 +185,10 @@ this.bearform_effect <- this.inherit("scripts/skills/skill", {
 		toDropWeapons();
 		local actor = this.getContainer().getActor();
 		toSetVisibleBrush(0);
+
+		this.m.abolishpoison = actor.getSkills().hasSkill("perk.wow.druid.abolishpoison");
+		this.m.direbear = actor.getSkills().hasSkill("perk.wow.druid.direbear");
+		this.m.heartofwild = actor.getSkills().hasSkill("perk.wow.druid.heartofwild");
 
 		if (actor.getSkills().hasSkill("perk.wow.druid.abolishpoison"))
 		{

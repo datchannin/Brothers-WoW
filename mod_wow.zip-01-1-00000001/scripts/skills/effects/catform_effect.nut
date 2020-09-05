@@ -2,7 +2,8 @@
 this.catform_effect <- this.inherit("scripts/skills/skill", {
 	m = {
 		initBody = "",
-		initHead = ""
+		initHead = "",
+		abolishpoison = false,
 	},
 	function create()
 	{
@@ -49,6 +50,16 @@ this.catform_effect <- this.inherit("scripts/skills/skill", {
 			icon = "ui/icons/melee_defense.png",
 			text = "Melee Defense is increased by [color=" + this.Const.UI.Color.PositiveValue + "]20%[/color]."
 		});
+
+		if (this.m.abolishpoison)
+		{
+			ret.push({
+			id = 10,
+			type = "text",
+			icon = "ui/icons/special.png",
+			text = "You are immune to the \'Poison\' effect while Cat form is applied."
+			});
+		}
 
 		return ret;
 	}
@@ -165,6 +176,8 @@ this.catform_effect <- this.inherit("scripts/skills/skill", {
 		toDropWeapons();
 		local actor = this.getContainer().getActor();
 		toSetVisibleBrush(0);
+
+		this.m.abolishpoison = actor.getSkills().hasSkill("perk.wow.druid.abolishpoison");
 
 		if (actor.getSkills().hasSkill("perk.wow.druid.abolishpoison"))
 		{
