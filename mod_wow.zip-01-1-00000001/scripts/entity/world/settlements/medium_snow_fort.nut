@@ -63,6 +63,7 @@ this.medium_snow_fort <- this.inherit("scripts/entity/world/settlement", {
 			"disowned_noble_background",
 			"raider_rogue_background",
 			"raider_mage_background",
+			"raider_priest_background",
 			"raider_hunter_background",
 			"raider_hunter_background",
 			"raider_background",

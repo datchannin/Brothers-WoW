@@ -57,6 +57,7 @@ this.medium_forest_fort <- this.inherit("scripts/entity/world/settlement", {
 			"retired_soldier_background",
 			"raider_rogue_background",
 			"raider_mage_background",
+			"raider_priest_background",
 			"raider_hunter_background",
 			"raider_hunter_background",
 			"squire_background"
