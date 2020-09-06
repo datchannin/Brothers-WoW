@@ -1,3 +1,4 @@
+/*BBWOW:This file is part of datchannin bbWoW mod, mod_version = 7.01, game_version = 1.4.0.41*/
 this.druid_demoralizingroar_skill <- this.inherit("scripts/skills/skill", {
 	m = {},
 	function create()
