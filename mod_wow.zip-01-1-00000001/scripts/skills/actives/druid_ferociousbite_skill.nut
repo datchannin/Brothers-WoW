@@ -115,11 +115,14 @@ this.druid_ferociousbite_skill <- this.inherit("scripts/skills/skill", {
 		}
 	}
 
-	function onUpdate( _properties )
+	function onAnySkillUsed( _skill, _targetEntity, _properties )
 	{
-		_properties.DamageRegularMin += this.m.damage_min;
-		_properties.DamageRegularMax += this.m.damage_max;
-		_properties.DamageArmorMult *= this.m.damage_armor_mult;
+		if (_skill == this)
+		{
+			_properties.DamageRegularMin = this.m.damage_min;
+			_properties.DamageRegularMax = this.m.damage_max;
+			_properties.DamageArmorMult *= this.m.damage_armor_mult;
+		}
 	}
 
 	function onTurnEnd()
