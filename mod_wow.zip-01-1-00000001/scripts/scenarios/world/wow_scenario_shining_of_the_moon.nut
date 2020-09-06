@@ -125,7 +125,7 @@ this.wow_scenario_shining_of_the_moon <- this.inherit("scripts/scenarios/world/s
 		this.Time.scheduleEvent(this.TimeUnit.Real, 1000, function ( _tag )
 		{
 			this.Music.setTrackList(this.Const.Music.IntroTracks, this.Const.Music.CrossFadeTime);
-			this.World.Events.fire("event.holy_power_intro_event");
+			this.World.Events.fire("event.shining_of_the_moon_intro_event");
 		}, null);
 	}
 
