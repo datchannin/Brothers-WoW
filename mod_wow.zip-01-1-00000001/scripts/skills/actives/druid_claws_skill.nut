@@ -4,6 +4,7 @@ this.druid_claws_skill <- this.inherit("scripts/skills/skill", {
 		damage_min = 30,
 		damage_max = 35,
 		damage_armor_mult = 0.4,
+		damage_direct_mult = 0.3,
 		heartofwild = false,
 		sharpenedclaws = false
 	},
@@ -84,8 +85,7 @@ this.druid_claws_skill <- this.inherit("scripts/skills/skill", {
 		local damage_armor_max = this.Math.floor(damage_max_st * this.m.damage_armor_mult * p.DamageTotalMult * p.MeleeDamageMult);
 		local damage_min = this.Math.floor(damage_min_st * p.DamageTotalMult * p.MeleeDamageMult);
 		local damage_max = this.Math.floor(damage_max_st * p.DamageTotalMult * p.MeleeDamageMult);
-		local direct_damage_min = this.Math.floor(this.m.DirectDamageMult * damage_min_st);
-		local direct_damage_max = this.Math.floor(this.m.DirectDamageMult * damage_max_st);
+		local direct_damage_max = this.Math.floor(this.m.damage_direct_mult * damage_max_st);
 
 		local ret = this.getDefaultUtilityTooltip();
 
@@ -93,7 +93,7 @@ this.druid_claws_skill <- this.inherit("scripts/skills/skill", {
 			id = 6,
 			type = "text",
 			icon = "ui/icons/regular_damage.png",
-			text = "Inflicts [color=" + this.Const.UI.Color.DamageValue + "]" + damage_min + "[/color] - [color=" + this.Const.UI.Color.DamageValue + "]" + damage_max + "[/color] damage to hitpoints, of which [color=" + this.Const.UI.Color.DamageValue + "]" + direct_damage_min + "[/color] - [color=" + this.Const.UI.Color.DamageValue + "]" + direct_damage_max + "[/color] can ignore armor"
+			text = "Inflicts [color=" + this.Const.UI.Color.DamageValue + "]" + damage_min + "[/color] - [color=" + this.Const.UI.Color.DamageValue + "]" + damage_max + "[/color] damage to hitpoints, of which [color=" + this.Const.UI.Color.DamageValue + "]" + 0 + "[/color] - [color=" + this.Const.UI.Color.DamageValue + "]" + direct_damage_max + "[/color] can ignore armor"
 		});
 
 		ret.push({
