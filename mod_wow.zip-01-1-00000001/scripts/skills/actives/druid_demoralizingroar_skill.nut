@@ -23,7 +23,7 @@ this.druid_demoralizingroar_skill <- this.inherit("scripts/skills/skill", {
 		this.m.IsIgnoredAsAOO = true;
 		this.m.IsAOE = true;
 		this.m.IsWeaponSkill = false;
-		this.m.ActionPointCost = 6;
+		this.m.ActionPointCost = 5;
 		this.m.FatigueCost = 35;
 		this.m.MinRange = 1;
 		this.m.MaxRange = 1;
