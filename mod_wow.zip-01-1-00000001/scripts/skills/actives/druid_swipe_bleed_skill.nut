@@ -1,9 +1,6 @@
 /*BBWOW:This file is part of datchannin bbWoW mod, mod_version = 7.01, game_version = 1.4.0.41*/
-this.druid_swipe_skill <- this.inherit("scripts/skills/skill", {
+this.druid_swipe_bleed_skill <- this.inherit("scripts/skills/skill", {
 	m = {
-		damage_min = 30,
-		damage_max = 35,
-		damage_armor_mult = 0.4,
 		BleedingSounds = [
 			"sounds/combat/rupture_blood_01.wav",
 			"sounds/combat/rupture_blood_02.wav",
@@ -12,9 +9,9 @@ this.druid_swipe_skill <- this.inherit("scripts/skills/skill", {
 	},
 	function create()
 	{
-		this.m.ID = "actives.swipe_skill";
+		this.m.ID = "actives.swipe_bleed_skill";
 		this.m.Name = "Swipe";
-		this.m.Description = "Swipe with your claws that hips three tiles in counter-clockwise order. Be careful around your own men unless you want to relieve your payroll!";
+		this.m.Description = "Swipe with your claws that hits three tiles in counter-clockwise order and apply bleed effect on targets. Be careful around your own men unless you want to relieve your payroll!";
 		this.m.Icon = "ui/perks/skill_druid_swipe.png";
 		this.m.IconDisabled = "ui/perks/skill_druid_swipe_sw.png";
 		this.m.Overlay = "skill_druid_swipe";
@@ -33,9 +30,9 @@ this.druid_swipe_skill <- this.inherit("scripts/skills/skill", {
 		this.m.IsWeaponSkill = false;
 		this.m.InjuriesOnBody = this.Const.Injury.CuttingBody;
 		this.m.InjuriesOnHead = this.Const.Injury.CuttingHead;
-		this.m.DirectDamageMult = 0.25;
-		this.m.ActionPointCost = 6;
-		this.m.FatigueCost = 30;
+		this.m.DirectDamageMult = 0;
+		this.m.ActionPointCost = 5;
+		this.m.FatigueCost = 25;
 		this.m.MinRange = 1;
 		this.m.MaxRange = 1;
 	}
@@ -52,27 +49,13 @@ this.druid_swipe_skill <- this.inherit("scripts/skills/skill", {
 
 	function getTooltip()
 	{
-		local p = this.getContainer().getActor().getCurrentProperties();
-		local damage_armor_min = this.Math.floor(this.m.damage_min * this.m.damage_armor_mult * p.DamageTotalMult * p.MeleeDamageMult);
-		local damage_armor_max = this.Math.floor(this.m.damage_max * this.m.damage_armor_mult * p.DamageTotalMult * p.MeleeDamageMult);
-		local damage_min = this.Math.floor(this.m.damage_min * p.DamageTotalMult * p.MeleeDamageMult);
-		local damage_max = this.Math.floor(this.m.damage_max * p.DamageTotalMult * p.MeleeDamageMult);
-		local direct_damage_max = this.Math.floor(this.m.DirectDamageMult * damage_max);
-
 		local ret = this.getDefaultUtilityTooltip();
 
 		ret.push({
 			id = 6,
 			type = "text",
-			icon = "ui/icons/regular_damage.png",
-			text = "Inflicts [color=" + this.Const.UI.Color.DamageValue + "]" + damage_min + "[/color] - [color=" + this.Const.UI.Color.DamageValue + "]" + damage_max + "[/color] damage to hitpoints, of which [color=" + this.Const.UI.Color.DamageValue + "]" + 0 + "[/color] - [color=" + this.Const.UI.Color.DamageValue + "]" + direct_damage_max + "[/color] can ignore armor"
-		});
-
-		ret.push({
-			id = 6,
-			type = "text",
-			icon = "ui/icons/armor_damage.png",
-			text = "Inflicts [color=" + this.Const.UI.Color.DamageValue + "]" + damage_armor_min + "[/color] - [color=" + this.Const.UI.Color.DamageValue + "]" + damage_armor_max + "[/color] damage to armor"
+			icon = "ui/icons/special.png",
+			text = "This skill does not inflict any damage, but can apply on target bleed effect."
 		});
 
 		ret.push({
@@ -105,23 +88,22 @@ this.druid_swipe_skill <- this.inherit("scripts/skills/skill", {
 	}
 
 
-	function onAnySkillUsed( _skill, _targetEntity, _properties )
-	{
-		if (_skill == this)
-		{
-			_properties.DamageRegularMin = this.m.damage_min;
-			_properties.DamageRegularMax = this.m.damage_max;
-			_properties.DamageArmorMult *= this.m.damage_armor_mult;
-		}
-	}
-
 	function onUse( _user, _targetTile )
 	{
 		this.spawnAttackEffect(_targetTile, this.Const.Tactical.AttackEffectSwing);
-		local ret = false;
+		local target = _targetTile.getEntity();
+		local ret = true;
 		local ownTile = _user.getTile();
 		local dir = ownTile.getDirectionTo(_targetTile);
-		ret = this.attackEntity(_user, _targetTile.getEntity());
+
+		if (target.isAlive() && !target.isDying())
+		{
+			if (!target.getCurrentProperties().IsImmuneToBleeding)
+			{
+				target.getSkills().add(this.new("scripts/skills/effects/bleeding_effect"));
+				this.Sound.play(this.m.BleedingSounds[this.Math.rand(0, this.m.BleedingSounds.len() - 1)], this.Const.Sound.Volume.Skill, _user.getPos());
+			}
+		}
 
 		if (!_user.isAlive() || _user.isDying())
 		{
@@ -136,7 +118,15 @@ this.druid_swipe_skill <- this.inherit("scripts/skills/skill", {
 
 			if (nextTile.IsOccupiedByActor && nextTile.getEntity().isAttackable() && this.Math.abs(nextTile.Level - ownTile.Level) <= 1)
 			{
-				ret = this.attackEntity(_user, nextTile.getEntity()) || ret;
+				target = nextTile.getEntity();
+				if (target.isAlive() && !target.isDying())
+				{
+					if (!target.getCurrentProperties().IsImmuneToBleeding)
+					{
+						target.getSkills().add(this.new("scripts/skills/effects/bleeding_effect"));
+						this.Sound.play(this.m.BleedingSounds[this.Math.rand(0, this.m.BleedingSounds.len() - 1)], this.Const.Sound.Volume.Skill, _user.getPos());
+					}
+				}
 			}
 		}
 
@@ -153,7 +143,15 @@ this.druid_swipe_skill <- this.inherit("scripts/skills/skill", {
 
 			if (nextTile.IsOccupiedByActor && nextTile.getEntity().isAttackable() && this.Math.abs(nextTile.Level - ownTile.Level) <= 1)
 			{
-				ret = this.attackEntity(_user, nextTile.getEntity()) || ret;
+				target = nextTile.getEntity();
+				if (target.isAlive() && !target.isDying())
+				{
+					if (!target.getCurrentProperties().IsImmuneToBleeding)
+					{
+						target.getSkills().add(this.new("scripts/skills/effects/bleeding_effect"));
+						this.Sound.play(this.m.BleedingSounds[this.Math.rand(0, this.m.BleedingSounds.len() - 1)], this.Const.Sound.Volume.Skill, _user.getPos());
+					}
+				}
 			}
 		}
 
