@@ -16,19 +16,24 @@ this.perk_wow_gamedev <- this.inherit("scripts/skills/skill", {
 
 	function onAdded()
 	{
-		if (!this.m.Container.hasSkill("actives.catform_skill"))
+		if (!this.m.Container.hasSkill("actives.drainsoul_skill"))
 		{
-			this.m.Container.add(this.new("scripts/skills/actives/druid_catform_skill"));
+			this.m.Container.add(this.new("scripts/skills/actives/warlock_drainsoul_skill"));
 		}
-		if (!this.m.Container.hasSkill("actives.bearform_skill"))
+		if (!this.m.Container.hasSkill("actives.warlock_charge_skill"))
 		{
-			this.m.Container.add(this.new("scripts/skills/actives/druid_bearform_skill"));
+			this.m.Container.add(this.new("scripts/skills/actives/warlock_charge_skill"));
 		}
 	}
 
 	function onRemoved()
 	{
-		this.m.Container.removeByID("actives.catform_skill");
-		this.m.Container.removeByID("actives.bearform_skill");
+		this.m.Container.removeByID("actives.drainsoul_skill");
+		this.m.Container.removeByID("actives.warlock_charge_skill");
+	}
+	
+	function onUpdate( _properties )
+	{
+		_properties.ActionPointsBonus = 200;
 	}
 });
