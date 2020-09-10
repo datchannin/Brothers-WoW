@@ -213,7 +213,27 @@ gt.Const.Wow_strings.PerkName <- {
 	Furor = "Furor",
 	MarkofWild = "Mark of Wild",
 	Tiger = "Tiger",
-	DireBear = "Dire Bear"
+	DireBear = "Dire Bear",
+	Shadowbolt = "Shadowbolt",
+	DrainSoul = "Drain Soul",
+	DrainLife = "Drain Life",
+	DrainStamina = "Drain Stamina",
+	LifeTap = "Life Tap",
+	DemonArmor = "Demon Armor",
+	DestructiveReach = "Destructive Reach",
+	Devastation = "Devastation",
+	CurseofAgony = "Curse of Agony",
+	DrainFunnel = "Drain Funnel",
+	Shadowburn = "Shadowburn",
+	GrimReach = "Grim Reach",
+	FelDomination = "Fel Domination",
+	DemonSkin = "Demon Skin",
+	DemonicEmbrace = "Demonic Embrace",
+	FelIntellect = "Fel Intellect",
+	ShadowMastery = "Shadow Mastery",
+	MasterDemonologist = "Master Demonologist",
+	Ruin = "Ruin",
+	CurseofDoom = "Curse of Doom"
 };
 
 gt.Const.Wow_strings.PerkDescription <- {
