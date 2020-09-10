@@ -39,11 +39,14 @@ this.rogue_poison_skill <- this.inherit("scripts/skills/skill", {
 	function getTotalPoisonDamage()
 	{
 		local poison_damage = this.m.BasePoisonDamage;
+		local scale_damage = 0;
 
 		if (this.m.vilepoison)
 		{
 			poison_damage += 10;
 		}
+
+		poison_damage += scale_damage;
 
 		return poison_damage;
 	}
@@ -51,11 +54,14 @@ this.rogue_poison_skill <- this.inherit("scripts/skills/skill", {
 	function getTotalPoisonDuration()
 	{
 		local poison_duration = this.m.BaseTurnsDuration;
+		local scale_duration = 0;
 
 		if (this.m.vilepoison)
 		{
 			poison_duration += 1;
 		}
+
+		poison_duration += scale_duration;
 
 		return poison_duration;
 	}
@@ -71,13 +77,6 @@ this.rogue_poison_skill <- this.inherit("scripts/skills/skill", {
 			type = "text",
 			icon = "ui/icons/damage_poison.png",
 			text = "Damage target for [color=" + this.Const.UI.Color.DamageValue + "]" + poison_damage + "[/color] hitpoints by deadly toxin, duration is [color=" + this.Const.UI.Color.PositiveValue + "]" + poison_duration + "[/color] turn(s)."
-		});
-		
-		ret.push({
-			id = 6,
-			type = "text",
-			icon = "ui/icons/special.png",
-			text = "Your level is [color=" + this.Const.UI.Color.PositiveValue + "]" + this.m.CurrentLevel + "[/color]."
 		});
 		
 		return ret;
