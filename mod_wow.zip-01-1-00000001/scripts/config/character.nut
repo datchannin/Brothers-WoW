@@ -647,7 +647,7 @@ gt.Const.ProjectileSprite <- [
 	"projectile_08",
 	"projectile_09",
 	"projectile_10",
-	"projectile_fireball2",
+	"projectile_fireball",
 	"projectile_frostbolt"
 ];
 gt.Const.FliesDecals <- [
