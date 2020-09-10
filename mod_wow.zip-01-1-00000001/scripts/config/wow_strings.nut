@@ -359,7 +359,7 @@ gt.Const.Wow_strings.PerkDescription <- {
 	Shadowbolt = "Unlocks the \'Shadowbolt\' skill. Summons a shadow bolt, which deals heavy damage, but cost lot of Fatigue. Not every Warlock can use this spell.",
 	DrainSoul = "Unlocks the \'Drain Soul\' skill. Warlock is able to deal damage to target\'s soul. If target dies from this spell, Warlock consume the soul and create soulshard.\n\nSoul from the \'Soul Shard\' breaks free at the end of the turn.",
 	DrainLife = "Unlocks the \'Drain Life\' skill. This skill can be used for drain target\'s hitpoins. Hitpoints can not be drunk, if spell damages only Armor.",
-	DrainStamina = "Unlocks the \'Drain Stamina\' skill. Using this skill you can drain target\'s stamina. This effect increases enemy'\s Fatigue and decreases your Fatigue.",
+	DrainStamina = "Unlocks the \'Drain Stamina\' skill. Using this skill you can drain target\'s stamina. This effect increases enemy\'s Fatigue and decreases your Fatigue.",
 	LifeTap = "Unlocks the \'Life Tap\' skill. This skill allows you to reduce Fatigue using your Hitpoints.",
 	DemonArmor = "Unlocks the \'Demon Armor\' skill which buffs you with additional Ranged and Melee Defense for [color=" + this.Const.UI.Color.PositiveValue + "]2[/color] turns.\n\n\'Soul Shard\': Skill uses \'Soul Shard\' if you have it. If soul shard was used, \'Demon Armor\' gives you additional Hitpoints regeneration until buff is active.",
 	DestructiveReach = "Increases range of \'Shadowbolt\' by [color=" + this.Const.UI.Color.PositiveValue + "]3[/color]. Kill your enemies before they close in you.",
@@ -375,5 +375,5 @@ gt.Const.Wow_strings.PerkDescription <- {
 	ShadowMastery = "Enhances the \'Devastation\' effect: increases \'Shadowbolt\' critical damage chance by additional [color=" + this.Const.UI.Color.PositiveValue + "]20%[/color]. Does not have any effect if you don\'t have [color=" + this.Const.UI.Color.PositiveValue + "]\'Devastation\'[/color] perk.",
 	MasterDemonologist = "If you learn this perk, soul from the \'Soul Shard\' will not be able to break free at the turn end. Consume the shard for spells casting only!",
 	Ruin = "Enhances the \'Devastation\' effect: increases \'Shadowbolt\' critical damage value by additional [color=" + this.Const.UI.Color.PositiveValue + "]100%[/color]. Does not have any effect if you don\'t have [color=" + this.Const.UI.Color.PositiveValue + "]\'Devastation\'[/color] perk.",
-	CurseofDoom = "Unlocks the \'Curse of Doom\' skill which is used to deal massive damage to your enemy.\n\n\'Soul Shard\': This skill can be used only if Warlock has \'Soul Shard\'. Using \'Curse of Doom\' cousumes soul."
+	CurseofDoom = "Unlocks the \'Curse of Doom\' skill which is used to deal massive damage to your enemy.\n\n\'Soul Shard\': This skill can be used only if Warlock has \'Soul Shard\'. Using \'Curse of Doom\' consumes soul."
 };
