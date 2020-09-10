@@ -46,6 +46,7 @@ this.rogue_poison_skill <- this.inherit("scripts/skills/skill", {
 			poison_damage += 10;
 		}
 
+		scale_damage = this.Math.floor(poison_damage * this.m.CurrentLevel * 0.05);
 		poison_damage += scale_damage;
 
 		return poison_damage;
@@ -61,6 +62,7 @@ this.rogue_poison_skill <- this.inherit("scripts/skills/skill", {
 			poison_duration += 1;
 		}
 
+		scale_duration = this.Math.floor(this.m.CurrentLevel/15);
 		poison_duration += scale_duration;
 
 		return poison_duration;
