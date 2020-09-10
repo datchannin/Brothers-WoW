@@ -4,16 +4,7 @@ this.rogue_poison_effect <- this.inherit("scripts/skills/skill", {
 		TurnsLeft = 1,
 		Damage = 10
 	},	
-	function getDamage()
-	{
-		return this.m.Damage;
-	}
 
-	function setDamage( _d )
-	{
-		this.m.Damage = _d;
-	}
-	
 	function create()
 	{
 		this.m.ID = "effects.rogue_poison";
@@ -22,13 +13,23 @@ this.rogue_poison_effect <- this.inherit("scripts/skills/skill", {
 		this.m.Icon = "skills/status_effect_54.png";
 		this.m.IconMini = "status_effect_54_mini";
 		this.m.SoundOnUse = [
-			//"sounds/enemies/dlc2/giant_spider_poison_01.wav",
-			//"sounds/enemies/dlc2/giant_spider_poison_02.wav"
+			"sounds/enemies/dlc2/giant_spider_poison_01.wav",
+			"sounds/enemies/dlc2/giant_spider_poison_02.wav"
 		];
 		this.m.Type = this.Const.SkillType.StatusEffect | this.Const.SkillType.DamageOverTime;
 		this.m.IsActive = false;
 		this.m.IsStacking = true;
 		this.m.IsRemovedAfterBattle = true;
+	}
+
+	function getDamage()
+	{
+		return this.m.Damage;
+	}
+
+	function setDamage( _d )
+	{
+		this.m.Damage = _d;
 	}
 
 	function getDescription()
@@ -54,20 +55,18 @@ this.rogue_poison_effect <- this.inherit("scripts/skills/skill", {
 		this.getContainer().getActor().onDamageReceived(this.getContainer().getActor(), this, hitInfo);
 	}
 
-	function resetTime()
+	function resetTime( _t )
 	{
-		this.m.TurnsLeft = 1;
+		this.m.TurnsLeft = _t;
+	}
 
-		if (this.getContainer().hasSkill("trait.ailing"))
-		{
-			++this.m.TurnsLeft;
-		}
+	function setDamage( _d )
+	{
+		this.m.Damage = _d;
 	}
 
 	function onAdded()
 	{
-		this.m.TurnsLeft = 1;
-
 		if (this.getContainer().hasSkill("trait.ailing"))
 		{
 			++this.m.TurnsLeft;

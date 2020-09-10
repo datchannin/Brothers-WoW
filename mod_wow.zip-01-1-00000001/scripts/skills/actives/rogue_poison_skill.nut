@@ -1,7 +1,10 @@
 /*BBWOW:This file is part of datchannin bbWoW mod, mod_version = 7.02, game_version = 1.4.0.41*/
 this.rogue_poison_skill <- this.inherit("scripts/skills/skill", {
 	m = {
-		PoisonMaster = 0
+		BasePoisonDamage = 10,
+		BaseTurnsDuration = 1,
+		vilepoison = false,
+		CurrentLevel = 1
 	},
 	function create()
 	{
@@ -17,7 +20,7 @@ this.rogue_poison_skill <- this.inherit("scripts/skills/skill", {
 			"sounds/combat/rogue_poison3.wav"
 		];
 		this.m.Type = this.Const.SkillType.Active;
-		this.m.Order = this.Const.SkillOrder.Any;
+		this.m.Order = this.Const.SkillOrder.UtilityTargeted;
 		this.m.Delay = 0;
 		this.m.IsSerialized = false;
 		this.m.IsActive = true;
@@ -26,7 +29,6 @@ this.rogue_poison_skill <- this.inherit("scripts/skills/skill", {
 		this.m.IsAttack = true;
 		this.m.IsRanged = false;
 		this.m.IsIgnoredAsAOO = true;
-		this.m.IsShowingProjectile = false;
 		this.m.IsUsingHitchance = false;
 		this.m.ActionPointCost = 4;
 		this.m.FatigueCost = 25;
@@ -34,72 +36,58 @@ this.rogue_poison_skill <- this.inherit("scripts/skills/skill", {
 		this.m.MaxRange = 1;
 	}
 
-	function getTooltip()
+	function getTotalPoisonDamage()
 	{
-		if (this.m.PoisonMaster == 0)
+		local poison_damage = this.m.BasePoisonDamage;
+
+		if (this.m.vilepoison)
 		{
-			return [
-				{
-					id = 1,
-					type = "title",
-					text = "Poison"
-				},
-				{
-					id = 2,
-					type = "description",
-					text = "Poison the enemy with deadly toxin."
-				},
-				{
-					id = 3,
-					type = "text",
-					text = this.getCostString()
-				},
-				{
-					id = 7,
-					type = "text",
-					icon = "ui/icons/special.png",
-					text = "Damage target for [color=" + this.Const.UI.Color.PositiveValue + "]10[/color] hitpoints, duration is [color=" + this.Const.UI.Color.PositiveValue + "]1[/color] turn."
-				},
-			];
+			poison_damage += 10;
 		}
-		else
-		{
-			return [
-				{
-					id = 1,
-					type = "title",
-					text = "Vile Poison"
-				},
-				{
-					id = 2,
-					type = "description",
-					text = "You know how to increase poison effency. Poison the enemy with deadly vile toxin."
-				},
-				{
-					id = 3,
-					type = "text",
-					text = this.getCostString()
-				},
-				{
-					id = 7,
-					type = "text",
-					icon = "ui/icons/special.png",
-					text = "Damage target for [color=" + this.Const.UI.Color.PositiveValue + "]20[/color] hitpoints, duration is [color=" + this.Const.UI.Color.PositiveValue + "]2[/color] turns."
-				},
-			];
-		}
+
+		return poison_damage;
 	}
 
-	function onAfterUpdate( _properties )
+	function getTotalPoisonDuration()
 	{
-		if (_properties.IsMasterInPoison)
+		local poison_duration = this.m.BaseTurnsDuration;
+
+		if (this.m.vilepoison)
 		{
-			this.m.PoisonMaster = 1;
+			poison_duration += 1;
 		}
-		else
-		{
-			this.m.PoisonMaster = 0;
-		}
+
+		return poison_duration;
+	}
+
+	function getTooltip()
+	{
+		local ret = this.getDefaultUtilityTooltip();
+		local poison_damage = getTotalPoisonDamage();
+		local poison_duration = getTotalPoisonDuration();
+
+		ret.push({
+			id = 6,
+			type = "text",
+			icon = "ui/icons/damage_poison.png",
+			text = "Damage target for [color=" + this.Const.UI.Color.DamageValue + "]" + poison_damage + "[/color] hitpoints by deadly toxin, duration is [color=" + this.Const.UI.Color.PositiveValue + "]" + poison_duration + "[/color] turn(s)."
+		});
+		
+		ret.push({
+			id = 6,
+			type = "text",
+			icon = "ui/icons/special.png",
+			text = "Your level is [color=" + this.Const.UI.Color.PositiveValue + "]" + this.m.CurrentLevel + "[/color]."
+		});
+		
+		return ret;
+	}
+
+	function onUpdate( _properties )
+	{
+		local user = this.getContainer().getActor();
+		this.m.vilepoison = user.getSkills().hasSkill("perk.wow.rogue.vilepoison");
+		this.m.CurrentLevel = user.getLevel();
 	}
 
 	function onVerifyTarget( _originTile, _targetTile )
@@ -132,34 +120,24 @@ this.rogue_poison_skill <- this.inherit("scripts/skills/skill", {
 	function onUse( _user, _targetTile )
 	{
 		local targetEntity = _targetTile.getEntity();
+		local poison_damage = getTotalPoisonDamage();
+		local poison_duration = getTotalPoisonDuration();
+		local poison = targetEntity.getSkills().getSkillByID("effects.rogue_poison");
 
-		this.spawnIcon("status_effect_54", targetEntity.getTile());
-
-		if (this.m.PoisonMaster == 0)
+		if (poison == null)
 		{
-			local poison = targetEntity.getSkills().getSkillByID("effects.rogue_poison");
-			if (poison == null)
-			{
-				targetEntity.getSkills().add(this.new("scripts/skills/effects/rogue_poison_effect"));
-			}
-			else
-			{
-				poison.resetTime();
-			}
+			local effect = this.new("scripts/skills/effects/rogue_poison_effect");
+			effect.resetTime(poison_duration);
+			effect.setDamage(poison_damage);
+			targetEntity.getSkills().add(effect);
 		}
 		else
 		{
-			local poison = targetEntity.getSkills().getSkillByID("effects.rogue_vilepoison");
-			if (poison == null)
-			{
-				targetEntity.getSkills().add(this.new("scripts/skills/effects/rogue_vilepoison_effect"));
-			}
-			else
-			{
-				poison.resetTime();
-			}
+			poison.resetTime(poison_duration);
+			poison.setDamage(poison_damage);
 		}
-		
+
+		this.spawnIcon("status_effect_54", _targetTile);
 		this.Tactical.EventLog.log(this.Const.UI.getColorizedEntityName(targetEntity) + " is poisoned");
 
 		return true;
