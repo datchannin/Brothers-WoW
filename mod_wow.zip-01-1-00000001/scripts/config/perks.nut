@@ -519,7 +519,67 @@ gt.Const.Perks.PerkTreeDruid <- [
 	[],
 	[]
 ];
-
+/*
+gt.Const.Perks.PerkTreeWarlock <- [
+	[
+		gt.Const.Perks.PerkDefObjects.Shadowbolt
+		gt.Const.Perks.PerkDefObjects.DrainSoul
+		gt.Const.Perks.PerkDefObjects.Colossus
+		gt.Const.Perks.PerkDefObjects.NineLives
+		gt.Const.Perks.PerkDefObjects.Pathfinder
+		gt.Const.Perks.PerkDefObjects.Recover
+		gt.Const.Perks.PerkDefObjects.Student
+	],
+	[
+		gt.Const.Perks.PerkDefObjects.DrainLife
+		gt.Const.Perks.PerkDefObjects.DrainStamina
+		gt.Const.Perks.PerkDefObjects.LifeTap
+		gt.Const.Perks.PerkDefObjects.DemonArmor
+		gt.Const.Perks.PerkDefObjects.Dodge
+		gt.Const.Perks.PerkDefObjects.FortifiedMind
+		gt.Const.Perks.PerkDefObjects.HoldOut
+		gt.Const.Perks.PerkDefObjects.SteelBrow
+	],
+	[
+		gt.Const.Perks.PerkDefObjects.DestructiveReach
+		gt.Const.Perks.PerkDefObjects.Devastation
+		gt.Const.Perks.PerkDefObjects.CurseofAgony
+		gt.Const.Perks.PerkDefObjects.DrainFunnel
+		gt.Const.Perks.PerkDefObjects.Anticipation
+		gt.Const.Perks.PerkDefObjects.Brawny
+		gt.Const.Perks.PerkDefObjects.Relentless
+		gt.Const.Perks.PerkDefObjects.Rotation
+	],
+	[
+		gt.Const.Perks.PerkDefObjects.Shadowburn
+		gt.Const.Perks.PerkDefObjects.GrimReach
+		gt.Const.Perks.PerkDefObjects.FelDomination
+		gt.Const.Perks.PerkDefObjects.DemonSkin
+		gt.Const.Perks.PerkDefObjects.DemonicEmbrace
+		gt.Const.Perks.PerkDefObjects.FelIntellect
+		gt.Const.Perks.PerkDefObjects.ShadowMastery
+		gt.Const.Perks.PerkDefObjects.MasterDemonologist
+	],
+	[
+		gt.Const.Perks.PerkDefObjects.LoneWolf
+		gt.Const.Perks.PerkDefObjects.Underdog
+		gt.Const.Perks.PerkDefObjects.Footwork
+	],
+	[
+		gt.Const.Perks.PerkDefObjects.Nimble
+		gt.Const.Perks.PerkDefObjects.BattleForged
+	],
+	[
+		gt.Const.Perks.PerkDefObjects.Ruin
+		gt.Const.Perks.PerkDefObjects.CurseofDoom
+		gt.Const.Perks.PerkDefObjects.Indomitable
+	],
+	[],
+	[],
+	[],
+	[]
+];
+*/
 gt.Const.Perks.PerkTreeDev <- [
 	[
 		gt.Const.Perks.PerkDefObjects.GameDev
