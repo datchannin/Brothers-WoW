@@ -72,7 +72,7 @@ this.wow_scenario <- this.inherit("scripts/scenarios/world/starting_scenario", {
 		bros[4].m.Level = 5;
 
 		bros[5].setStartValuesEx([
-			"raider_paladin_background"
+			"raider_warlock_background"
 		]);
 		bros[5].setPlaceInFormation(15);
 		bros[5].m.PerkPoints = 12;

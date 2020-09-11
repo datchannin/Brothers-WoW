@@ -519,7 +519,7 @@ gt.Const.Perks.PerkTreeDruid <- [
 	[],
 	[]
 ];
-/*
+
 gt.Const.Perks.PerkTreeWarlock <- [
 	[
 		gt.Const.Perks.PerkDefObjects.Shadowbolt
@@ -579,7 +579,7 @@ gt.Const.Perks.PerkTreeWarlock <- [
 	[],
 	[]
 ];
-*/
+
 gt.Const.Perks.PerkTreeDev <- [
 	[
 		gt.Const.Perks.PerkDefObjects.GameDev
@@ -610,6 +610,7 @@ gt.Const.Perks.TreesArray.push(gt.Const.Perks.PerkTreeHunter);
 gt.Const.Perks.TreesArray.push(gt.Const.Perks.PerkTreeMage);
 gt.Const.Perks.TreesArray.push(gt.Const.Perks.PerkTreePriest);
 gt.Const.Perks.TreesArray.push(gt.Const.Perks.PerkTreeDruid);
+gt.Const.Perks.TreesArray.push(gt.Const.Perks.PerkTreeWarlock);
 gt.Const.Perks.TreesArray.push(gt.Const.Perks.PerkTreeDev);
 
 gt.Const.Perks.LookupMap <- {};
@@ -685,6 +686,10 @@ gt.Const.Perks.getPerksTree <- function ( _background )
 
 	case "background.raider_druid":
 		return gt.Const.Perks.PerkTreeDruid;
+		break;
+
+	case "background.raider_warlock":
+		return gt.Const.Perks.PerkTreeWarlock;
 		break;
 
 	case "background.raider_developer":
