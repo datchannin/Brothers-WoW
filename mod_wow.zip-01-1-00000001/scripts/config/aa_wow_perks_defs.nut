@@ -537,6 +537,10 @@ gt.Const.Perks.PerkDefObjects.Indomitable <- {
 }
 
 // ---------------------------------------------|
+// -----------  WOW START PERKS DEFINITION -----|
+// ---------------------------------------------|
+
+// ---------------------------------------------|
 // ----------------  WOW GAMEDEV ---------------|
 // ---------------------------------------------|
 
@@ -1759,4 +1763,208 @@ gt.Const.Perks.PerkDefObjects.DireBear <- {
 
 // ---------------------------------------------|
 // ----------------  WOW WARLOCK ---------------|
+// ---------------------------------------------|
+
+gt.Const.Perks.PerkDefObjects.Shadowbolt <- {
+	ID = "perk.wow.warlock.shadowbolt",
+	Script = "scripts/skills/perks/perk_wow_shadowbolt",
+	Name = this.Const.Wow_strings.PerkName.Shadowbolt,
+	Tooltip = this.Const.Wow_strings.PerkDescription.Shadowbolt,
+	Icon = "ui/perks/perk_warlock_shadowbolt.png",
+	IconDisabled = "ui/perks/perk_warlock_shadowbolt_sw.png",
+	Const = "Shadowbolt"
+}
+
+gt.Const.Perks.PerkDefObjects.DrainSoul <- {
+	ID = "perk.wow.warlock.drainsoul",
+	Script = "scripts/skills/perks/perk_wow_drainsoul",
+	Name = this.Const.Wow_strings.PerkName.DrainSoul,
+	Tooltip = this.Const.Wow_strings.PerkDescription.DrainSoul,
+	Icon = "ui/perks/perk_warlock_drainsoul.png",
+	IconDisabled = "ui/perks/perk_warlock_drainsoul_sw.png",
+	Const = "DrainSoul"
+}
+
+gt.Const.Perks.PerkDefObjects.DrainLife <- {
+	ID = "perk.wow.warlock.drainlife",
+	Script = "scripts/skills/perks/perk_wow_drainlife",
+	Name = this.Const.Wow_strings.PerkName.DrainLife,
+	Tooltip = this.Const.Wow_strings.PerkDescription.DrainLife,
+	Icon = "ui/perks/perk_warlock_drainlife.png",
+	IconDisabled = "ui/perks/perk_warlock_drainlife_sw.png",
+	Const = "DrainLife"
+}
+
+gt.Const.Perks.PerkDefObjects.DrainStamina <- {
+	ID = "perk.wow.warlock.drainstamina",
+	Script = "scripts/skills/perks/perk_wow_drainstamina",
+	Name = this.Const.Wow_strings.PerkName.DrainStamina,
+	Tooltip = this.Const.Wow_strings.PerkDescription.DrainStamina,
+	Icon = "ui/perks/perk_warlock_drainstamina.png",
+	IconDisabled = "ui/perks/perk_warlock_drainstamina_sw.png",
+	Const = "DrainStamina"
+}
+
+gt.Const.Perks.PerkDefObjects.LifeTap <- {
+	ID = "perk.wow.warlock.lifetap",
+	Script = "scripts/skills/perks/perk_wow_lifetap",
+	Name = this.Const.Wow_strings.PerkName.LifeTap,
+	Tooltip = this.Const.Wow_strings.PerkDescription.LifeTap,
+	Icon = "ui/perks/perk_warlock_lifetap.png",
+	IconDisabled = "ui/perks/perk_warlock_lifetap_sw.png",
+	Const = "LifeTap"
+}
+
+gt.Const.Perks.PerkDefObjects.DemonArmor <- {
+	ID = "perk.wow.warlock.demonarmor",
+	Script = "scripts/skills/perks/perk_wow_demonarmor",
+	Name = this.Const.Wow_strings.PerkName.DemonArmor,
+	Tooltip = this.Const.Wow_strings.PerkDescription.DemonArmor,
+	Icon = "ui/perks/perk_warlock_demonarmor.png",
+	IconDisabled = "ui/perks/perk_warlock_demonarmor_sw.png",
+	Const = "DemonArmor"
+}
+
+gt.Const.Perks.PerkDefObjects.DestructiveReach <- {
+	ID = "perk.wow.warlock.destructivereach",
+	Script = "scripts/skills/perks/perk_wow_destructivereach",
+	Name = this.Const.Wow_strings.PerkName.DestructiveReach,
+	Tooltip = this.Const.Wow_strings.PerkDescription.DestructiveReach,
+	Icon = "ui/perks/perk_warlock_destructivereach.png",
+	IconDisabled = "ui/perks/perk_warlock_destructivereach_sw.png",
+	Const = "DestructiveReach"
+}
+
+gt.Const.Perks.PerkDefObjects.Devastation <- {
+	ID = "perk.wow.warlock.devastation",
+	Script = "scripts/skills/perks/perk_wow_devastation",
+	Name = this.Const.Wow_strings.PerkName.Devastation,
+	Tooltip = this.Const.Wow_strings.PerkDescription.Devastation,
+	Icon = "ui/perks/perk_warlock_devastation.png",
+	IconDisabled = "ui/perks/perk_warlock_devastation_sw.png",
+	Const = "Devastation"
+}
+
+gt.Const.Perks.PerkDefObjects.CurseofAgony <- {
+	ID = "perk.wow.warlock.curseofagony",
+	Script = "scripts/skills/perks/perk_wow_curseofagony",
+	Name = this.Const.Wow_strings.PerkName.CurseofAgony,
+	Tooltip = this.Const.Wow_strings.PerkDescription.CurseofAgony,
+	Icon = "ui/perks/perk_warlock_curseofagony.png",
+	IconDisabled = "ui/perks/perk_warlock_curseofagony_sw.png",
+	Const = "CurseofAgony"
+}
+
+gt.Const.Perks.PerkDefObjects.DrainFunnel <- {
+	ID = "perk.wow.warlock.drainfunnel",
+	Script = "scripts/skills/perks/perk_wow_drainfunnel",
+	Name = this.Const.Wow_strings.PerkName.DrainFunnel,
+	Tooltip = this.Const.Wow_strings.PerkDescription.DrainFunnel,
+	Icon = "ui/perks/perk_warlock_drainfunnel.png",
+	IconDisabled = "ui/perks/perk_warlock_drainfunnel_sw.png",
+	Const = "DrainFunnel"
+}
+
+gt.Const.Perks.PerkDefObjects.Shadowburn <- {
+	ID = "perk.wow.warlock.shadowburn",
+	Script = "scripts/skills/perks/perk_wow_shadowburn",
+	Name = this.Const.Wow_strings.PerkName.Shadowburn,
+	Tooltip = this.Const.Wow_strings.PerkDescription.Shadowburn,
+	Icon = "ui/perks/perk_warlock_shadowburn.png",
+	IconDisabled = "ui/perks/perk_warlock_shadowburn_sw.png",
+	Const = "Shadowburn"
+}
+
+gt.Const.Perks.PerkDefObjects.GrimReach <- {
+	ID = "perk.wow.warlock.grimreach",
+	Script = "scripts/skills/perks/perk_wow_grimreach",
+	Name = this.Const.Wow_strings.PerkName.GrimReach,
+	Tooltip = this.Const.Wow_strings.PerkDescription.GrimReach,
+	Icon = "ui/perks/perk_warlock_grimreach.png",
+	IconDisabled = "ui/perks/perk_warlock_grimreach_sw.png",
+	Const = "GrimReach"
+}
+
+gt.Const.Perks.PerkDefObjects.FelDomination <- {
+	ID = "perk.wow.warlock.feldomination",
+	Script = "scripts/skills/perks/perk_wow_feldomination",
+	Name = this.Const.Wow_strings.PerkName.FelDomination,
+	Tooltip = this.Const.Wow_strings.PerkDescription.FelDomination,
+	Icon = "ui/perks/perk_warlock_feldomination.png",
+	IconDisabled = "ui/perks/perk_warlock_feldomination_sw.png",
+	Const = "FelDomination"
+}
+
+gt.Const.Perks.PerkDefObjects.DemonSkin <- {
+	ID = "perk.wow.warlock.demonskin",
+	Script = "scripts/skills/perks/perk_wow_demonskin",
+	Name = this.Const.Wow_strings.PerkName.DemonSkin,
+	Tooltip = this.Const.Wow_strings.PerkDescription.DemonSkin,
+	Icon = "ui/perks/perk_warlock_demonskin.png",
+	IconDisabled = "ui/perks/perk_warlock_demonskin_sw.png",
+	Const = "DemonSkin"
+}
+
+gt.Const.Perks.PerkDefObjects.DemonicEmbrace <- {
+	ID = "perk.wow.warlock.demonicembrace",
+	Script = "scripts/skills/perks/perk_wow_demonicembrace",
+	Name = this.Const.Wow_strings.PerkName.DemonicEmbrace,
+	Tooltip = this.Const.Wow_strings.PerkDescription.DemonicEmbrace,
+	Icon = "ui/perks/perk_warlock_demonicembrace.png",
+	IconDisabled = "ui/perks/perk_warlock_demonicembrace_sw.png",
+	Const = "DemonicEmbrace"
+}
+
+gt.Const.Perks.PerkDefObjects.FelIntellect <- {
+	ID = "perk.wow.warlock.felintellect",
+	Script = "scripts/skills/perks/perk_wow_felintellect",
+	Name = this.Const.Wow_strings.PerkName.FelIntellect,
+	Tooltip = this.Const.Wow_strings.PerkDescription.FelIntellect,
+	Icon = "ui/perks/perk_warlock_felintellect.png",
+	IconDisabled = "ui/perks/perk_warlock_felintellect_sw.png",
+	Const = "FelIntellect"
+}
+
+gt.Const.Perks.PerkDefObjects.ShadowMastery <- {
+	ID = "perk.wow.warlock.shadowmastery",
+	Script = "scripts/skills/perks/perk_wow_shadowmastery",
+	Name = this.Const.Wow_strings.PerkName.ShadowMastery,
+	Tooltip = this.Const.Wow_strings.PerkDescription.ShadowMastery,
+	Icon = "ui/perks/perk_warlock_shadowmastery.png",
+	IconDisabled = "ui/perks/perk_warlock_shadowmastery_sw.png",
+	Const = "ShadowMastery"
+}
+
+gt.Const.Perks.PerkDefObjects.MasterDemonologist <- {
+	ID = "perk.wow.warlock.masterdemonologist",
+	Script = "scripts/skills/perks/perk_wow_masterdemonologist",
+	Name = this.Const.Wow_strings.PerkName.MasterDemonologist,
+	Tooltip = this.Const.Wow_strings.PerkDescription.MasterDemonologist,
+	Icon = "ui/perks/perk_warlock_masterdemonologist.png",
+	IconDisabled = "ui/perks/perk_warlock_masterdemonologist_sw.png",
+	Const = "MasterDemonologist"
+}
+
+gt.Const.Perks.PerkDefObjects.Ruin <- {
+	ID = "perk.wow.warlock.ruin",
+	Script = "scripts/skills/perks/perk_wow_ruin",
+	Name = this.Const.Wow_strings.PerkName.Ruin,
+	Tooltip = this.Const.Wow_strings.PerkDescription.Ruin,
+	Icon = "ui/perks/perk_warlock_ruin.png",
+	IconDisabled = "ui/perks/perk_warlock_ruin_sw.png",
+	Const = "Ruin"
+}
+
+gt.Const.Perks.PerkDefObjects.CurseofDoom <- {
+	ID = "perk.wow.warlock.curseofdoom",
+	Script = "scripts/skills/perks/perk_wow_curseofdoom",
+	Name = this.Const.Wow_strings.PerkName.CurseofDoom,
+	Tooltip = this.Const.Wow_strings.PerkDescription.CurseofDoom,
+	Icon = "ui/perks/perk_warlock_curseofdoom.png",
+	IconDisabled = "ui/perks/perk_warlock_curseofdoom_sw.png",
+	Const = "CurseofDoom"
+}
+
+// ---------------------------------------------|
+// -----------  WOW END PERKS DEFINITION -------|
 // ---------------------------------------------|
