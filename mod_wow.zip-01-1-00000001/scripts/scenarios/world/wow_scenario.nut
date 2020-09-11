@@ -159,6 +159,8 @@ this.wow_scenario <- this.inherit("scripts/scenarios/world/starting_scenario", {
 		this.World.Assets.getStash().add(this.new("scripts/items/misc/wardog_armor_upgrade_item"));
 		this.World.Assets.getStash().add(this.new("scripts/items/misc/wardog_armor_upgrade_item"));
 		this.World.Assets.getStash().add(this.new("scripts/items/misc/wardog_armor_upgrade_item"));
+		this.World.Assets.getStash().add(this.new("scripts/items/armor/warlock_t0_armor"));
+		this.World.Assets.getStash().add(this.new("scripts/items/helmets/warlock_t0_helm"));
 
 		bros[7].setStartValuesEx([
 			"raider_developer_background"
