@@ -13,4 +13,17 @@ this.perk_wow_shadowbolt <- this.inherit("scripts/skills/skill", {
 		this.m.IsStacking = false;
 		this.m.IsHidden = false;
 	}
+	
+	function onAdded()
+	{
+		if (!this.m.Container.hasSkill("actives.shadowbolt_skill"))
+		{
+			this.m.Container.add(this.new("scripts/skills/actives/warlock_shadowbolt_skill"));
+		}
+	}
+
+	function onRemoved()
+	{
+		this.m.Container.removeByID("actives.shadowbolt_skill");
+	}
 });
