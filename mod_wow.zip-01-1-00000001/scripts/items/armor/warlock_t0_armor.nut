@@ -28,4 +28,3 @@ this.warlock_t0_armor <- this.inherit("scripts/items/armor/armor", {
 		this.m.Icon = "armor/icon_wow_body_armor_" + variant + ".png";
 	}
 });
-

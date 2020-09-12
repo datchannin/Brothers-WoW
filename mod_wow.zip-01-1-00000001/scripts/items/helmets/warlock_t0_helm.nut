@@ -31,6 +31,4 @@ this.warlock_t0_helm <- this.inherit("scripts/items/helmets/helmet", {
 		this.m.IconLarge = "";
 		this.m.Icon = "helmets/inventory_wow_helmet_" + variant + ".png";
 	}
-
 });
-
