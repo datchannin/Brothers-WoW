@@ -5,3 +5,8 @@ gt.Const.RogueScale <- {
 	poison_duration = 15
 };
 
+
+gt.Const.WarlockScale <- {
+	shadow_damage_min = 0.02,
+	shadow_damage_max = 0.04
+};
