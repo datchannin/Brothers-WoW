@@ -1,14 +1,14 @@
 /*BBWOW:This file is part of datchannin bbWoW mod, mod_version = 7.02, game_version = 1.4.0.41*/
 this.warlock_drainsoul_skill <- this.inherit("scripts/skills/skill", {
 	m = {
-		base_damage_min = 15,
-		base_damage_max = 25
+		base_damage_min = 10,
+		base_damage_max = 12
 	},
 	function create()
 	{
 		this.m.ID = "actives.drainsoul_skill";
 		this.m.Name = "Drain Soul";
-		this.m.Description = "Try to drains the soul of the target. If the target dies while being drained, the caster gains charge for using destructive debuff.";
+		this.m.Description = "Try to drains the soul of the target. If the target dies while being drained, the warlock consumes the soul and creates \'Sould Shard\'.";
 		this.m.KilledString = "Drained!";
 		this.m.Icon = "ui/perks/skill_warlock_drainsoul.png";
 		this.m.IconDisabled = "ui/perks/skill_warlock_drainsoul_sw.png";
@@ -33,10 +33,10 @@ this.warlock_drainsoul_skill <- this.inherit("scripts/skills/skill", {
 		this.m.IsShowingProjectile = false;
 		this.m.IsUsingHitchance = false;
 		this.m.IsDoingForwardMove = true;
-		this.m.ActionPointCost = 1;
-		this.m.FatigueCost = 1;
+		this.m.ActionPointCost = 2;
+		this.m.FatigueCost = 15;
 		this.m.MinRange = 1;
-		this.m.MaxRange = 8;
+		this.m.MaxRange = 7;
 		this.m.MaxLevelDifference = 4;
 	}
 
@@ -85,7 +85,7 @@ this.warlock_drainsoul_skill <- this.inherit("scripts/skills/skill", {
 			id = 6,
 			type = "text",
 			icon = "ui/icons/hitchance.png",
-			text = "Has [color=" + this.Const.UI.Color.DamageValue + "] 100% [/color] chance to drain soul if kill an enemy."
+			text = "Has [color=" + this.Const.UI.Color.DamageValue + "] 100% [/color] chance to drain soul if kill an enemy and to create \'Soul Shard\'."
 		});
 
 		ret.push({
@@ -93,6 +93,13 @@ this.warlock_drainsoul_skill <- this.inherit("scripts/skills/skill", {
 			type = "text",
 			icon = "ui/icons/vision.png",
 			text = "Has a range of [color=" + this.Const.UI.Color.PositiveValue + "]" + this.m.MaxRange + "[/color] tiles."
+		});
+
+		ret.push({
+			id = 6,
+			type = "text",
+			icon = "ui/icons/special.png",
+			text = "Soul breaks free at the end of the turn."
 		});
 
 		return ret;
@@ -152,13 +159,13 @@ this.warlock_drainsoul_skill <- this.inherit("scripts/skills/skill", {
 		{
 			this.Sound.play(_data.Skill.m.SoundOnHit[this.Math.rand(0, _data.Skill.m.SoundOnHit.len() - 1)], this.Const.Sound.Volume.Skill, targetEntity.getPos());
 		}
-		
+
 		_data.Skill.attackEntity(userEntity, targetEntity);
 		_data.Skill.getContainer().setBusy(false);
 
 		return true;
 	}
-	
+
 	function onTargetKilled( _targetEntity, _skill )
 	{
 		local actor = this.getContainer().getActor();
@@ -166,8 +173,9 @@ this.warlock_drainsoul_skill <- this.inherit("scripts/skills/skill", {
 		if (_skill == this)
 		{
 			actor.getSkills().update();
-			this.m.Container.removeByID("effects.drainsoul");
-			this.m.Container.add(this.new("scripts/skills/effects/drainsoul_effect"));
+			//this.m.Container.removeByID("effects.soulshard");
+			//this.m.Container.add(this.new("scripts/skills/effects/soulshard_effect"));
+			actor.setDirty(true);
 		}
 	}
 });

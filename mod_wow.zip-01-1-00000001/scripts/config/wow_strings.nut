@@ -357,7 +357,7 @@ gt.Const.Wow_strings.PerkDescription <- {
 	Tiger = "Now you know how to increase of your rage while you are in \'Cat Form\'. Your Melee Skill increases by [color=" + this.Const.UI.Color.PositiveValue + "]10[/color] points. Also you can use [color=" + this.Const.UI.Color.PositiveValue + "]2[/color] additional Action Points.",
 	DireBear = "Now you know how to stay alive more effectively while you are in \'Bear Form\'. Your Hitpoints increases by [color=" + this.Const.UI.Color.PositiveValue + "]25%[/color]. Also your Resolve increases by [color=" + this.Const.UI.Color.PositiveValue + "]10%[/color].",
 	Shadowbolt = "Unlocks the \'Shadowbolt\' skill. Summons a shadow bolt, which deals heavy damage, but cost lot of Fatigue. Not every Warlock can use this spell.",
-	DrainSoul = "Unlocks the \'Drain Soul\' skill. Warlock is able to deal damage to target\'s soul. If target dies from this spell, Warlock consume the soul and create soulshard.\n\nSoul from the \'Soul Shard\' breaks free at the end of the turn.",
+	DrainSoul = "Unlocks the \'Drain Soul\' skill. Warlock is able to deal damage to target\'s soul. If target dies from this spell, Warlock consumes the soul and creates soulshard.\n\nSoul from the \'Soul Shard\' breaks free at the end of the turn.",
 	DrainLife = "Unlocks the \'Drain Life\' skill. This skill can be used for drain target\'s hitpoins. Hitpoints can not be drunk, if spell damages only Armor.",
 	DrainStamina = "Unlocks the \'Drain Stamina\' skill. Using this skill you can drain target\'s stamina. This effect increases enemy\'s Fatigue and decreases your Fatigue.",
 	LifeTap = "Unlocks the \'Life Tap\' skill. This skill allows you to reduce Fatigue using your Hitpoints.",
