@@ -2,7 +2,8 @@
 this.warlock_shadowbolt_skill <- this.inherit("scripts/skills/skill", {
 	m = {
 		damage_base_min = 20,
-		damage_base_max = 35
+		damage_base_max = 35,
+		CurrentLevel = 1
 	},
 	function create()
 	{
@@ -45,6 +46,9 @@ this.warlock_shadowbolt_skill <- this.inherit("scripts/skills/skill", {
 	function getTotalShadowMinDamage()
 	{
 		local total_damage_min = this.m.damage_base_min;
+		local scale_damage = 0;
+
+		total_damage_min += scale_damage;
 
 		return total_damage_min;
 	}
@@ -52,6 +56,9 @@ this.warlock_shadowbolt_skill <- this.inherit("scripts/skills/skill", {
 	function getTotalShadowMaxDamage()
 	{
 		local total_damage_max = this.m.damage_base_max;
+		local scale_damage = 0;
+
+		total_damage_max += scale_damage;
 
 		return total_damage_max;
 	}
@@ -106,6 +113,7 @@ this.warlock_shadowbolt_skill <- this.inherit("scripts/skills/skill", {
 	function onUpdate( _properties )
 	{
 		local user = this.getContainer().getActor();
+		this.m.CurrentLevel = user.getLevel();
 	}
 
 	function onAfterUpdate( _properties )
