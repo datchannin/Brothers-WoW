@@ -14,10 +14,10 @@ this.warlock_shadowbolt_skill <- this.inherit("scripts/skills/skill", {
 		this.m.IconDisabled = "ui/perks/skill_warlock_shadowbolt_sw.png";
 		this.m.Overlay = "skill_warlock_shadowbolt";
 		this.m.SoundOnUse = [
-			//"sounds/combat/"
+			"sounds/combat/warlock_shadowbolt_precast.wav"
 		];
 		this.m.SoundOnHit = [
-			//"sounds/combat/",
+			"sounds/combat/warlock_shadowbolt_cast.wav"
 		];
 		this.m.SoundOnHitDelay = 0;
 		this.m.Type = this.Const.SkillType.Active;
