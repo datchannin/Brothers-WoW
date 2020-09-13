@@ -147,3 +147,157 @@ gt.Const.Tactical.SoulParticles <- [
 		]
 	}
 ];
+
+gt.Const.Tactical.StaminaParticles <- [
+	{
+		Delay = 0,
+		Quantity = 200,
+		LifeTimeQuantity = 200,
+		SpawnRate = 156,
+		Brushes = [
+			"stamina_01",
+			"stamina_02"
+		],
+		Stages = [
+			{
+				LifeTimeMin = 0.1,
+				LifeTimeMax = 0.1,
+				ColorMin = this.createColor("fffffff00"),
+				ColorMax = this.createColor("fffffff00"),
+				ScaleMin = 0.25,
+				ScaleMax = 0.5,
+				RotationMin = -10,
+				RotationMax = 10,
+				VelocityMin = 60,
+				VelocityMax = 100,
+				DirectionMin = this.createVec(-0.1, -0.9),
+				DirectionMax = this.createVec(0.1, -0.9),
+				SpawnOffsetMin = this.createVec(-10, 30),
+				SpawnOffsetMax = this.createVec(10, 30),
+				ForceMin = this.createVec(0, 220),
+				ForceMax = this.createVec(0, 220)
+			},
+			{
+				LifeTimeMin = 0.1,
+				LifeTimeMax = 0.3,
+				ColorMin = this.createColor("fffffffe0"),
+				ColorMax = this.createColor("ffffffff0"),
+				ScaleMin = 0.5,
+				ScaleMax = 0.75,
+				RotationMin = -10,
+				RotationMax = 10,
+				VelocityMin = 60,
+				VelocityMax = 100,
+				DirectionMin = this.createVec(-0.2, -0.9),
+				DirectionMax = this.createVec(0.2, -0.9),
+				ForceMin = this.createVec(0, 220),
+				ForceMax = this.createVec(0, 220)
+			},
+			{
+				LifeTimeMin = 0.1,
+				LifeTimeMax = 0.3,
+				ColorMin = this.createColor("ffffffe0"),
+				ColorMax = this.createColor("ffffffe0"),
+				ScaleMin = 0.5,
+				ScaleMax = 0.75,
+				RotationMin = -10,
+				RotationMax = 10,
+				VelocityMin = 60,
+				VelocityMax = 100,
+				ForceMin = this.createVec(0, 220),
+				ForceMax = this.createVec(0, 220)
+			},
+			{
+				LifeTimeMin = 0.1,
+				LifeTimeMax = 0.2,
+				ColorMin = this.createColor("ffffff00"),
+				ColorMax = this.createColor("ffffff00"),
+				ScaleMin = 0.75,
+				ScaleMax = 1.0,
+				RotationMin = -10,
+				RotationMax = 10,
+				VelocityMin = 60,
+				VelocityMax = 100,
+				ForceMin = this.createVec(0, 220),
+				ForceMax = this.createVec(0, 220)
+			}
+		]
+	}
+];
+
+gt.Const.Tactical.LifeParticles <- [
+	{
+		Delay = 0,
+		Quantity = 200,
+		LifeTimeQuantity = 200,
+		SpawnRate = 156,
+		Brushes = [
+			"life_01",
+			"life_02"
+		],
+		Stages = [
+			{
+				LifeTimeMin = 0.1,
+				LifeTimeMax = 0.1,
+				ColorMin = this.createColor("fffffff00"),
+				ColorMax = this.createColor("fffffff00"),
+				ScaleMin = 0.25,
+				ScaleMax = 0.5,
+				RotationMin = -10,
+				RotationMax = 10,
+				VelocityMin = 60,
+				VelocityMax = 100,
+				DirectionMin = this.createVec(-0.1, -0.9),
+				DirectionMax = this.createVec(0.1, -0.9),
+				SpawnOffsetMin = this.createVec(-10, 30),
+				SpawnOffsetMax = this.createVec(10, 30),
+				ForceMin = this.createVec(0, 220),
+				ForceMax = this.createVec(0, 220)
+			},
+			{
+				LifeTimeMin = 0.1,
+				LifeTimeMax = 0.3,
+				ColorMin = this.createColor("fffffffe0"),
+				ColorMax = this.createColor("ffffffff0"),
+				ScaleMin = 0.5,
+				ScaleMax = 0.75,
+				RotationMin = -10,
+				RotationMax = 10,
+				VelocityMin = 60,
+				VelocityMax = 100,
+				DirectionMin = this.createVec(-0.2, -0.9),
+				DirectionMax = this.createVec(0.2, -0.9),
+				ForceMin = this.createVec(0, 220),
+				ForceMax = this.createVec(0, 220)
+			},
+			{
+				LifeTimeMin = 0.1,
+				LifeTimeMax = 0.3,
+				ColorMin = this.createColor("ffffffe0"),
+				ColorMax = this.createColor("ffffffe0"),
+				ScaleMin = 0.5,
+				ScaleMax = 0.75,
+				RotationMin = -10,
+				RotationMax = 10,
+				VelocityMin = 60,
+				VelocityMax = 100,
+				ForceMin = this.createVec(0, 220),
+				ForceMax = this.createVec(0, 220)
+			},
+			{
+				LifeTimeMin = 0.1,
+				LifeTimeMax = 0.2,
+				ColorMin = this.createColor("ffffff00"),
+				ColorMax = this.createColor("ffffff00"),
+				ScaleMin = 0.75,
+				ScaleMax = 1.0,
+				RotationMin = -10,
+				RotationMax = 10,
+				VelocityMin = 60,
+				VelocityMax = 100,
+				ForceMin = this.createVec(0, 220),
+				ForceMax = this.createVec(0, 220)
+			}
+		]
+	}
+];
