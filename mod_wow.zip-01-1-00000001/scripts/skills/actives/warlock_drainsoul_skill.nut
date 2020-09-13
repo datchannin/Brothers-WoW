@@ -173,8 +173,8 @@ this.warlock_drainsoul_skill <- this.inherit("scripts/skills/skill", {
 		if (_skill == this)
 		{
 			actor.getSkills().update();
-			//this.m.Container.removeByID("effects.soulshard");
-			//this.m.Container.add(this.new("scripts/skills/effects/soulshard_effect"));
+			this.m.Container.removeByID("effects.soulshard");
+			this.m.Container.add(this.new("scripts/skills/effects/soulshard_effect"));
 			actor.setDirty(true);
 		}
 	}
