@@ -3,6 +3,7 @@ this.warlock_shadowbolt_skill <- this.inherit("scripts/skills/skill", {
 	m = {
 		damage_base_min = 20,
 		damage_base_max = 35,
+		destructivereach = false,
 		CurrentLevel = 1
 	},
 	function create()
@@ -118,10 +119,19 @@ this.warlock_shadowbolt_skill <- this.inherit("scripts/skills/skill", {
 	{
 		local user = this.getContainer().getActor();
 		this.m.CurrentLevel = user.getLevel();
+		this.m.destructivereach = user.getSkills().hasSkill("perk.wow.warlock.destructivereach");
 	}
 
 	function onAfterUpdate( _properties )
 	{
+		if ((this.m.destructivereach))
+		{
+			this.m.MaxRange = 8;
+		}
+		else
+		{
+			this.m.MaxRange = 5;
+		}
 	}
 
 	function onAnySkillUsed( _skill, _targetEntity, _properties )
