@@ -184,6 +184,8 @@ this.warlock_drainlife_skill <- this.inherit("scripts/skills/skill", {
 
 			actor.setHitpoints(this.Math.min(actor.getHitpointsMax(), actor.getHitpoints() + _damageInflictedHitpoints));
 			actor.onUpdateInjuryLayer();
+			actor.getSkills().update();
+			actor.setDirty(true);
 		}
 	}
 });

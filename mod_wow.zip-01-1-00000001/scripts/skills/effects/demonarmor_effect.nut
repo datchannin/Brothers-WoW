@@ -90,9 +90,24 @@ this.demonarmor_effect <- this.inherit("scripts/skills/skill", {
 
 	function onTurnEnd()
 	{
+		local actor = this.m.Container.getActor();
+
 		if (--this.m.TurnsLeft <= 0)
 		{
 			this.removeSelf();
+		}
+		
+		if (this.m.power)
+		{
+			if (actor.getHitpoints() < actor.getHitpointsMax())
+			{
+				this.spawnIcon("effect_warlock_demonarmor", actor.getTile());
+				actor.setHitpoints(this.Math.min(actor.getHitpointsMax(), actor.getHitpoints() + 5));
+
+				actor.onUpdateInjuryLayer();
+				actor.getSkills().update();
+				actor.setDirty(true);
+			}
 		}
 	}
 });
