@@ -8,7 +8,7 @@ this.warlock_drainlife_skill <- this.inherit("scripts/skills/skill", {
 	{
 		this.m.ID = "actives.drainlife_skill";
 		this.m.Name = "Drain Life";
-		this.m.Description = "Try to drains the life of the target. Hitpoints can not be drunk, if spell damages only Armor.";
+		this.m.Description = "Try to drain the life of the target. Hitpoints can not be drunk, if spell damages only Armor.";
 		this.m.KilledString = "Drained!";
 		this.m.Icon = "ui/perks/skill_warlock_drainlife.png";
 		this.m.IconDisabled = "ui/perks/skill_warlock_drainlife_sw.png";
