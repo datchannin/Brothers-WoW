@@ -2,6 +2,7 @@
 this.warlock_demonarmor_skill <- this.inherit("scripts/skills/skill", {
 	m = {
 		soulshard = false,
+		demonskin = false,
 		BaseTurnsDuration = 2,
 	},
 	function create()
@@ -32,10 +33,10 @@ this.warlock_demonarmor_skill <- this.inherit("scripts/skills/skill", {
 	{
 		local duration = this.m.BaseTurnsDuration;
 
-		//if (this.m.)
-		//{
-		//	duration += 2;
-		//}
+		if (this.m.demonskin)
+		{
+			duration += 2;
+		}
 
 		return duration;
 	}
@@ -95,6 +96,7 @@ this.warlock_demonarmor_skill <- this.inherit("scripts/skills/skill", {
 	{
 		local user = this.getContainer().getActor();
 		this.m.soulshard = user.getSkills().hasSkill("effects.soulshard");
+		this.m.demonskin = user.getSkills().hasSkill("perk.wow.warlock.demonskin");
 	}
 
 	function onVerifyTarget( _originTile, _targetTile )

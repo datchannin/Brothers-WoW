@@ -68,6 +68,7 @@ this.demonarmor_effect <- this.inherit("scripts/skills/skill", {
 	{
 		local user = this.getContainer().getActor();
 		this.m.power = user.getSkills().hasSkill("effects.soulshard");
+		this.m.demonskin = user.getSkills().hasSkill("perk.wow.warlock.demonskin");
 		this.m.TurnsLeft = 2;
 
 		if (this.m.power)
@@ -77,7 +78,7 @@ this.demonarmor_effect <- this.inherit("scripts/skills/skill", {
 
 		if (this.m.demonskin)
 		{
-			TurnsLeft += 2;
+			this.m.TurnsLeft += 2;
 		}
 	}
 
