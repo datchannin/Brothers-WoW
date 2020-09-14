@@ -5,6 +5,8 @@ this.warlock_curseofagony_skill <- this.inherit("scripts/skills/skill", {
 		BaseMaxShadowDamage = 18,
 		BaseTurnsDuration = 2,
 		soulshard = false,
+		feldomination = false,
+		grimreach = false,
 		CurrentLevel = 1
 	},
 	function create()
@@ -32,7 +34,7 @@ this.warlock_curseofagony_skill <- this.inherit("scripts/skills/skill", {
 		this.m.ActionPointCost = 6;
 		this.m.FatigueCost = 40;
 		this.m.MinRange = 1;
-		this.m.MaxRange = 5;
+		this.m.MaxRange = 3;
 	}
 
 	function getTotalShadowMinDamage()
@@ -121,6 +123,20 @@ this.warlock_curseofagony_skill <- this.inherit("scripts/skills/skill", {
 		local user = this.getContainer().getActor();
 		this.m.CurrentLevel = user.getLevel();
 		this.m.soulshard = user.getSkills().hasSkill("effects.soulshard");
+		this.m.feldomination = user.getSkills().hasSkill("perk.wow.warlock.feldomination");
+		this.m.grimreach = user.getSkills().hasSkill("perk.wow.warlock.grimreach");
+	}
+
+	function onAfterUpdate( _properties )
+	{
+		if ((this.m.grimreach))
+		{
+			this.m.MaxRange = 6;
+		}
+		else
+		{
+			this.m.MaxRange = 3;
+		}
 	}
 
 	function onVerifyTarget( _originTile, _targetTile )
