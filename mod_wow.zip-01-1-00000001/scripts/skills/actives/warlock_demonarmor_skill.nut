@@ -1,6 +1,8 @@
 /*BBWOW:This file is part of datchannin bbWoW mod, mod_version = 7.02, game_version = 1.4.0.41*/
 this.warlock_demonarmor_skill <- this.inherit("scripts/skills/skill", {
-	m = {},
+	m = {
+		soulshard = false
+	},
 	function create()
 	{
 		this.m.ID = "actives.demonarmor_skill";
@@ -43,12 +45,35 @@ this.warlock_demonarmor_skill <- this.inherit("scripts/skills/skill", {
 			text = "Ranged Defense will be increased by [color=" + this.Const.UI.Color.PositiveValue + "]5[/color] points."
 		});
 
+		if (this.m.soulshard)
+		{
+			ret.push({
+				id = 6,
+				type = "text",
+				icon = "ui/icons/health.png",
+				text = "Health Regeneration will be increased by [color=" + this.Const.UI.Color.PositiveValue + "]5[/color] points per turn."
+			});
+
+			ret.push({
+				id = 6,
+				type = "text",
+				icon = "ui/icons/special.png",
+				text = "Using this skill consumes your \'Soul Shard\'."
+			});
+		}
+
 		return ret;
 	}
 
 	function isUsable()
 	{
 		return this.skill.isUsable();
+	}
+
+	function onUpdate( _properties )
+	{
+		local user = this.getContainer().getActor();
+		this.m.soulshard = user.getSkills().hasSkill("effects.soulshard");
 	}
 
 	function onVerifyTarget( _originTile, _targetTile )
