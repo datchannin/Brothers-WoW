@@ -18,7 +18,7 @@ this.warlock_curseofagony_skill <- this.inherit("scripts/skills/skill", {
 		this.m.IconDisabled = "ui/perks/skill_warlock_curseofagony_sw.png";
 		this.m.Overlay = "skill_warlock_curseofagony";
 		this.m.SoundOnUse = [
-			//"sounds/combat/.wav",
+			"sounds/combat/warlock_curseofagony.wav",
 		];
 		this.m.Type = this.Const.SkillType.Active;
 		this.m.Order = this.Const.SkillOrder.UtilityTargeted;
