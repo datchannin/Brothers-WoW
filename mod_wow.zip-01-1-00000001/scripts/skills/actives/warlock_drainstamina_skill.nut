@@ -140,8 +140,8 @@ this.warlock_drainstamina_skill <- this.inherit("scripts/skills/skill", {
 		targetEntity.setFatigue(targetFatigue_current + drainvalue);
 		userEntity.setFatigue(userFatigue_current - drainvalue);
 
-		this.spawnIcon("effect_warlock_lifetap", userEntity.getTile());
-		this.spawnIcon("effect_warlock_lifetap", targetEntity.getTile());
+		this.spawnIcon("effect_warlock_drainstamina", userEntity.getTile());
+		this.spawnIcon("effect_warlock_drainstamina", targetEntity.getTile());
 		userEntity.getSkills().update();
 		userEntity.setDirty(true);
 

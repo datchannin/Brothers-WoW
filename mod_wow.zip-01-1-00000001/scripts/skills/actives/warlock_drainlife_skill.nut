@@ -175,7 +175,7 @@ this.warlock_drainlife_skill <- this.inherit("scripts/skills/skill", {
 				return;
 			}
 
-			this.spawnIcon("effect_warlock_lifetap", actor.getTile());
+			this.spawnIcon("effect_warlock_drainlife", actor.getTile());
 
 			if (!actor.isHiddenToPlayer())
 			{
