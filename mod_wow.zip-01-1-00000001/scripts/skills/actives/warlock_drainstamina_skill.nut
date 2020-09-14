@@ -1,7 +1,8 @@
 /*BBWOW:This file is part of datchannin bbWoW mod, mod_version = 7.02, game_version = 1.4.0.41*/
 this.warlock_drainstamina_skill <- this.inherit("scripts/skills/skill", {
 	m = {
-		base_drain = 10
+		base_drain = 10,
+		drainfunnel = false
 	},
 	function create()
 	{
@@ -42,6 +43,11 @@ this.warlock_drainstamina_skill <- this.inherit("scripts/skills/skill", {
 	{
 		local total_drain = this.m.base_drain;
 
+		if (this.m.drainfunnel)
+		{
+			total_drain = this.Math.floor(1.2*total_drain);
+		}
+
 		return total_drain;
 	}
 
@@ -79,6 +85,12 @@ this.warlock_drainstamina_skill <- this.inherit("scripts/skills/skill", {
 		});
 
 		return ret;
+	}
+
+	function onUpdate( _properties )
+	{
+		local user = this.getContainer().getActor();
+		this.m.drainfunnel = user.getSkills().hasSkill("perk.wow.warlock.drainfunnel");
 	}
 
 	function onVerifyTarget( _originTile, _targetTile )
@@ -122,7 +134,7 @@ this.warlock_drainstamina_skill <- this.inherit("scripts/skills/skill", {
 		local targetFatigue_current = targetEntity.getFatigue();
 		local targetFatigue_max = targetEntity.getFatigueMax();
 		local targetFatigue_delta = targetFatigue_max - targetFatigue_current;
-		local dtainvalue_base = getTotalDrain();
+		local drainvalue_base = getTotalDrain();
 		local drainvalue = 0;
 
 		if (_data.Skill.m.SoundOnHit.len() != 0)
@@ -135,7 +147,7 @@ this.warlock_drainstamina_skill <- this.inherit("scripts/skills/skill", {
 			return;
 		}
 
-		drainvalue = this.Math.minf(dtainvalue_base, targetFatigue_delta);
+		drainvalue = this.Math.minf(drainvalue_base, targetFatigue_delta);
 
 		targetEntity.setFatigue(targetFatigue_current + drainvalue);
 		userEntity.setFatigue(userFatigue_current - drainvalue);
