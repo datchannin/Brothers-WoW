@@ -2,7 +2,8 @@
 this.warlock_drainsoul_skill <- this.inherit("scripts/skills/skill", {
 	m = {
 		base_damage_min = 10,
-		base_damage_max = 12
+		base_damage_max = 12,
+		masterdemonologist = false
 	},
 	function create()
 	{
@@ -95,12 +96,24 @@ this.warlock_drainsoul_skill <- this.inherit("scripts/skills/skill", {
 			text = "Has a range of [color=" + this.Const.UI.Color.PositiveValue + "]" + this.m.MaxRange + "[/color] tiles."
 		});
 
-		ret.push({
-			id = 6,
-			type = "text",
-			icon = "ui/icons/special.png",
-			text = "Soul breaks free at the end of the turn."
-		});
+		if (!this.m.masterdemonologist)
+		{
+			ret.push({
+				id = 6,
+				type = "text",
+				icon = "ui/icons/special.png",
+				text = "Soul breaks free at the end of the turn."
+			});
+		}
+		else
+		{
+			ret.push({
+				id = 6,
+				type = "text",
+				icon = "ui/icons/special.png",
+				text = "Soul will be totally under your control."
+			});
+		}
 
 		return ret;
 	}
@@ -113,6 +126,12 @@ this.warlock_drainsoul_skill <- this.inherit("scripts/skills/skill", {
 		}
 
 		return true;
+	}
+
+	function onUpdate( _properties )
+	{
+		local user = this.getContainer().getActor();
+		this.m.masterdemonologist = user.getSkills().hasSkill("perk.wow.warlock.masterdemonologist");
 	}
 
 	function onAnySkillUsed( _skill, _targetEntity, _properties )
