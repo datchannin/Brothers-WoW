@@ -156,10 +156,10 @@ this.warlock_curseofdoom_skill <- this.inherit("scripts/skills/skill", {
 		targetEntity.getSkills().removeByID("effects.curseofdoom");
 		_user.getSkills().removeByID("effects.soulshard");
 
-		//local effect = this.new("scripts/skills/effects/curseofdoom_effect");
-		//effect.resetTime(curse_duration);
-		//effect.setDamage(total_shadow);
-		//targetEntity.getSkills().add(effect);
+		local effect = this.new("scripts/skills/effects/curseofdoom_effect");
+		effect.resetTime(curse_duration);
+		effect.setDamage(total_shadow);
+		targetEntity.getSkills().add(effect);
 
 		this.spawnIcon("effect_warlock_curseofdoom", _targetTile);
 		this.Tactical.EventLog.log(this.Const.UI.getColorizedEntityName(targetEntity) + " is cursed");
