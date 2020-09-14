@@ -13,4 +13,17 @@ this.perk_wow_lifetap <- this.inherit("scripts/skills/skill", {
 		this.m.IsStacking = false;
 		this.m.IsHidden = false;
 	}
+	
+	function onAdded()
+	{
+		if (!this.m.Container.hasSkill("actives.lifetap_skill"))
+		{
+			this.m.Container.add(this.new("scripts/skills/actives/warlock_lifetap_skill"));
+		}
+	}
+
+	function onRemoved()
+	{
+		this.m.Container.removeByID("actives.lifetap_skill");
+	}
 });

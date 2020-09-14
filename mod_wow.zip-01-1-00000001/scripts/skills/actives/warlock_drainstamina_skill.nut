@@ -120,7 +120,7 @@ this.warlock_drainstamina_skill <- this.inherit("scripts/skills/skill", {
 
 		local userFatigue_current = userEntity.getFatigue();
 		local targetFatigue_current = targetEntity.getFatigue();
-		local targetFatigue_max = targetEntity.getFatigueMax();;
+		local targetFatigue_max = targetEntity.getFatigueMax();
 		local targetFatigue_delta = targetFatigue_max - targetFatigue_current;
 		local dtainvalue_base = getTotalDrain();
 		local drainvalue = 0;
