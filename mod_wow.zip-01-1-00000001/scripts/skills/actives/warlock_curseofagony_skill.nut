@@ -172,22 +172,14 @@ this.warlock_curseofagony_skill <- this.inherit("scripts/skills/skill", {
 		local total_shadow_min = getTotalShadowMinDamage();
 		local total_shadow_max = getTotalShadowMaxDamage();
 		local curse_duration = this.m.BaseTurnsDuration;
-		local curse = targetEntity.getSkills().getSkillByID("effects.curseofagony");
 
-		if (curse == null)
-		{
-			//local effect = this.new("scripts/skills/effects/curseofagony_effect");
-			//effect.resetTime(curse_duration);
-			//effect.setMinDamage(total_shadow_min);
-			//effect.setMaxDamage(total_shadow_max);
-			//targetEntity.getSkills().add(effect);
-		}
-		else
-		{
-			//poison.resetTime(curse_duration);
-			//poison.setMinDamage(total_shadow_min);
-			//poison.setMaxDamage(total_shadow_max);
-		}
+		targetEntity.getSkills().removeByID("effects.curseofagony");
+		_user.getSkills().removeByID("effects.soulshard");
+
+		local effect = this.new("scripts/skills/effects/curseofagony_effect");
+		effect.resetTime(curse_duration);
+		effect.setDamage(total_shadow_min, total_shadow_max);
+		targetEntity.getSkills().add(effect);
 
 		this.spawnIcon("effect_warlock_curseofagony", _targetTile);
 		this.Tactical.EventLog.log(this.Const.UI.getColorizedEntityName(targetEntity) + " is cursed");
