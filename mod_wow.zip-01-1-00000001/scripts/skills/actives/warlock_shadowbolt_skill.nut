@@ -4,6 +4,7 @@ this.warlock_shadowbolt_skill <- this.inherit("scripts/skills/skill", {
 		damage_base_min = 20,
 		damage_base_max = 35,
 		destructivereach = false,
+		shadowburn = false,
 		CurrentLevel = 1
 	},
 	function create()
@@ -49,6 +50,11 @@ this.warlock_shadowbolt_skill <- this.inherit("scripts/skills/skill", {
 		local total_damage_min = this.m.damage_base_min;
 		local scale_damage = 0;
 
+		if (this.m.shadowburn)
+		{
+			total_damage_min += 10;
+		}
+
 		scale_damage = this.Math.floor(this.m.damage_base_min * this.m.CurrentLevel * Const.WarlockScale.shadow_damage_min);
 
 		total_damage_min += scale_damage;
@@ -60,6 +66,11 @@ this.warlock_shadowbolt_skill <- this.inherit("scripts/skills/skill", {
 	{
 		local total_damage_max = this.m.damage_base_max;
 		local scale_damage = 0;
+
+		if (this.m.shadowburn)
+		{
+			total_damage_max += 12;
+		}
 
 		scale_damage = this.Math.floor(this.m.damage_base_max * this.m.CurrentLevel * Const.WarlockScale.shadow_damage_max);
 
@@ -120,6 +131,7 @@ this.warlock_shadowbolt_skill <- this.inherit("scripts/skills/skill", {
 		local user = this.getContainer().getActor();
 		this.m.CurrentLevel = user.getLevel();
 		this.m.destructivereach = user.getSkills().hasSkill("perk.wow.warlock.destructivereach");
+		this.m.shadowburn = user.getSkills().hasSkill("perk.wow.warlock.shadowburn");
 	}
 
 	function onAfterUpdate( _properties )
