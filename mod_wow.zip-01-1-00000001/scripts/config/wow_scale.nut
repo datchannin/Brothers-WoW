@@ -8,5 +8,6 @@ gt.Const.RogueScale <- {
 
 gt.Const.WarlockScale <- {
 	shadow_damage_min = 0.02,
-	shadow_damage_max = 0.04
+	shadow_damage_max = 0.04,
+	curseofdoom = 0.1
 };

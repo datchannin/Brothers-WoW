@@ -39,7 +39,7 @@ this.warlock_curseofdoom_skill <- this.inherit("scripts/skills/skill", {
 		local total_damage = this.m.BaseShadowDamage;
 		local scale_damage = 0;
 
-		scale_damage = this.Math.floor(total_damage * this.m.CurrentLevel * Const.WarlockScale.shadow_damage_min);
+		scale_damage = this.Math.floor(total_damage * this.m.CurrentLevel * Const.WarlockScale.curseofdoom);
 
 		total_damage += scale_damage;
 
