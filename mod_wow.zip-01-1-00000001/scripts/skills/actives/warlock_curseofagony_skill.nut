@@ -44,6 +44,11 @@ this.warlock_curseofagony_skill <- this.inherit("scripts/skills/skill", {
 
 		total_damage_min += scale_damage;
 
+		if (this.m.soulshard)
+		{
+			total_damage_min = total_damage_min * 2;
+		}
+
 		return total_damage_min;
 	}
 
@@ -55,6 +60,11 @@ this.warlock_curseofagony_skill <- this.inherit("scripts/skills/skill", {
 		scale_damage = this.Math.floor(this.m.BaseMaxShadowDamage * this.m.CurrentLevel * Const.WarlockScale.shadow_damage_max);
 
 		total_damage_max += scale_damage;
+
+		if (this.m.soulshard)
+		{
+			total_damage_max = total_damage_max * 2;
+		}
 
 		return total_damage_max;
 	}
@@ -93,6 +103,16 @@ this.warlock_curseofagony_skill <- this.inherit("scripts/skills/skill", {
 			text = "Has a range of [color=" + this.Const.UI.Color.PositiveValue + "]" + this.m.MaxRange + "[/color] tiles."
 		});
 
+		if (this.m.soulshard)
+		{
+			ret.push({
+				id = 6,
+				type = "text",
+				icon = "ui/icons/special.png",
+				text = "Damage deal is doubled, but using this skill consumes your \'Soul Shard\'."
+			});
+		}
+
 		return ret;
 	}
 
@@ -100,6 +120,7 @@ this.warlock_curseofagony_skill <- this.inherit("scripts/skills/skill", {
 	{
 		local user = this.getContainer().getActor();
 		this.m.CurrentLevel = user.getLevel();
+		this.m.soulshard = user.getSkills().hasSkill("effects.soulshard");
 	}
 
 	function onVerifyTarget( _originTile, _targetTile )
