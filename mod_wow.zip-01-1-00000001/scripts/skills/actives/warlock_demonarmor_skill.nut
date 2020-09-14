@@ -101,18 +101,26 @@ this.warlock_demonarmor_skill <- this.inherit("scripts/skills/skill", {
 	{
 		return true;
 	}
-	
+
 	function onUse( _user, _targetTile )
 	{
-		local effect = _user.getSkills().getSkillByID("effects.demonarmor");
+		local duration = getTotalDuration();
+		local demonarmor = _user.getSkills().getSkillByID("effects.demonarmor");
 
-		if (effect != null)
+		if (demonarmor == null)
 		{
-			effect.reset();
+			//local effect = this.new("scripts/skills/effects/demonarmor_effect");
+			//effect.resetTime(duration);
+			//_user.getSkills().add(effect);
 		}
 		else
 		{
-			//this.m.Container.add(this.new("scripts/skills/effects/demonarmor_effect"));
+			demonarmor.resetTime(duration);
+		}
+
+		if (this.m.Container.hasSkill("effects.soulshard"))
+		{
+			this.m.Container.removeByID("effects.soulshard");
 		}
 
 		return true;
