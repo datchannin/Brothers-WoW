@@ -1,7 +1,8 @@
 /*BBWOW:This file is part of datchannin bbWoW mod, mod_version = 7.02, game_version = 1.4.0.41*/
 this.warlock_demonarmor_skill <- this.inherit("scripts/skills/skill", {
 	m = {
-		soulshard = false
+		soulshard = false,
+		BaseTurnsDuration = 2,
 	},
 	function create()
 	{
@@ -27,9 +28,22 @@ this.warlock_demonarmor_skill <- this.inherit("scripts/skills/skill", {
 		this.m.MaxRange = 0;
 	}
 
+	function getTotalDuration()
+	{
+		local duration = this.m.BaseTurnsDuration;
+
+		if (this.m.soulshard)
+		{
+			duration += 2;
+		}
+
+		return duration;
+	}
+
 	function getTooltip()
 	{
 		local ret = this.getDefaultUtilityTooltip();
+		local duration = getTotalDuration();
 
 		ret.push({
 			id = 6,
@@ -61,6 +75,13 @@ this.warlock_demonarmor_skill <- this.inherit("scripts/skills/skill", {
 				text = "Using this skill consumes your \'Soul Shard\'."
 			});
 		}
+
+		ret.push({
+			id = 6,
+			type = "text",
+			icon = "ui/icons/action_points.png",
+			text = "Duration is [color=" + this.Const.UI.Color.PositiveValue + "]" + duration + "[/color] turn(s)."
+		});
 
 		return ret;
 	}
