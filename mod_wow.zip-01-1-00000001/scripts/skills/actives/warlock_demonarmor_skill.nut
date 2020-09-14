@@ -32,10 +32,10 @@ this.warlock_demonarmor_skill <- this.inherit("scripts/skills/skill", {
 	{
 		local duration = this.m.BaseTurnsDuration;
 
-		if (this.m.soulshard)
-		{
-			duration += 2;
-		}
+		//if (this.m.)
+		//{
+		//	duration += 2;
+		//}
 
 		return duration;
 	}
@@ -104,24 +104,12 @@ this.warlock_demonarmor_skill <- this.inherit("scripts/skills/skill", {
 
 	function onUse( _user, _targetTile )
 	{
-		local duration = getTotalDuration();
-		local demonarmor = _user.getSkills().getSkillByID("effects.demonarmor");
-
-		if (demonarmor == null)
+		if (this.m.Container.hasSkill("effects.demonarmor"))
 		{
-			//local effect = this.new("scripts/skills/effects/demonarmor_effect");
-			//effect.resetTime(duration);
-			//_user.getSkills().add(effect);
-		}
-		else
-		{
-			demonarmor.resetTime(duration);
+			this.m.Container.removeByID("effects.demonarmor");
 		}
 
-		if (this.m.Container.hasSkill("effects.soulshard"))
-		{
-			this.m.Container.removeByID("effects.soulshard");
-		}
+		_user.getSkills().add(this.new("scripts/skills/effects/demonarmor_effect"));
 
 		return true;
 	}
