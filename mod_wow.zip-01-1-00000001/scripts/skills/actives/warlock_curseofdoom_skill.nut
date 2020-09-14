@@ -108,6 +108,21 @@ this.warlock_curseofdoom_skill <- this.inherit("scripts/skills/skill", {
 		return ret;
 	}
 
+	function isUsable()
+	{
+		if (this.skill.isUsable())
+		{
+			if (this.m.Container.hasSkill("effects.soulshard"))
+			{
+				return true;
+			}
+			else
+			{
+				return false;
+			}
+		}
+	}
+
 	function onUpdate( _properties )
 	{
 		local user = this.getContainer().getActor();
