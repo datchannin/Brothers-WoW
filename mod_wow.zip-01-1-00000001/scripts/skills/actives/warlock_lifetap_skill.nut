@@ -12,10 +12,7 @@ this.warlock_lifetap_skill <- this.inherit("scripts/skills/skill", {
 		this.m.IconDisabled = "ui/perks/skill_warlock_lifetap_sw.png";
 		this.m.Overlay = "skill_warlock_lifetap";
 		this.m.SoundOnUse = [
-			//"sounds/combat/.wav"
-		];
-		this.m.SoundOnHit = [
-			//"sounds/combat/.wav",
+			"sounds/combat/warlock_lifetap.wav"
 		];
 		this.m.SoundOnHitDelay = 0;
 		this.m.Type = this.Const.SkillType.Active;
