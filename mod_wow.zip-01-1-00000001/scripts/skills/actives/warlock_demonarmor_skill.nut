@@ -5,12 +5,12 @@ this.warlock_demonarmor_skill <- this.inherit("scripts/skills/skill", {
 	{
 		this.m.ID = "actives.demonarmor_skill";
 		this.m.Name = "Demon Armor";
-		this.m.Description = "Allows character to ignore hostile zone of control for one turn.";
+		this.m.Description = "Increases Melee and Ranged Defense. Can use \'Soul Shard\' if warlock has it.";
 		this.m.Icon = "ui/perks/skill_warlock_demonarmor.png";
 		this.m.IconDisabled = "ui/perks/skill_warlock_demonarmor_sw.png";
 		this.m.Overlay = "skill_warlock_demonarmor";
 		this.m.SoundOnUse = [
-			//"sounds/combat/.wav"
+			"sounds/combat/warlock_demonarmor.wav"
 		];
 		this.m.Type = this.Const.SkillType.Active;
 		this.m.Order = this.Const.SkillOrder.NonTargeted;
