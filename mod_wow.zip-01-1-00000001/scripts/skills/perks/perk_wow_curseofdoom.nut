@@ -13,4 +13,17 @@ this.perk_wow_curseofdoom <- this.inherit("scripts/skills/skill", {
 		this.m.IsStacking = false;
 		this.m.IsHidden = false;
 	}
+	
+	function onAdded()
+	{
+		if (!this.m.Container.hasSkill("actives.curseofdoom_skill"))
+		{
+			this.m.Container.add(this.new("scripts/skills/actives/warlock_curseofdoom_skill"));
+		}
+	}
+
+	function onRemoved()
+	{
+		this.m.Container.removeByID("actives.curseofdoom_skill");
+	}
 });
