@@ -209,9 +209,6 @@ this.warlock_shadowbolt_skill <- this.inherit("scripts/skills/skill", {
 			{
 				damage_min *= crit_mult;
 				damage_max *= crit_mult;
-				this.logInfo("crit chance with c=" + c);
-				this.logInfo("damage_min = " + damage_min);
-				this.logInfo("damage_max = " + damage_max);
 			}
 
 			_properties.DamageRegularMin = damage_min;
