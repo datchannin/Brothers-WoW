@@ -13,4 +13,9 @@ this.perk_wow_felintellect <- this.inherit("scripts/skills/skill", {
 		this.m.IsStacking = false;
 		this.m.IsHidden = false;
 	}
+	
+	function onUpdate( _properties )
+	{
+		_properties.Stamina += 15;
+	}
 });
