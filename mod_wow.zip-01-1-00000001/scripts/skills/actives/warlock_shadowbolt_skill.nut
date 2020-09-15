@@ -5,6 +5,9 @@ this.warlock_shadowbolt_skill <- this.inherit("scripts/skills/skill", {
 		damage_base_max = 35,
 		destructivereach = false,
 		shadowburn = false,
+		devastation = false,
+		ruin = false,
+		shadowmastery = false,
 		CurrentLevel = 1
 	},
 	function create()
@@ -43,6 +46,34 @@ this.warlock_shadowbolt_skill <- this.inherit("scripts/skills/skill", {
 		this.m.MaxLevelDifference = 4;
 		this.m.ProjectileType = this.Const.ProjectileType.Shadowbolt;
 		this.m.ProjectileTimeScale = 1.5;
+	}
+
+	function getCriticalChance()
+	{
+		local crit_chance = 0;
+
+		if (this.m.devastation)
+		{
+			crit_chance += 20;
+			if (this.m.shadowmastery)
+			{
+				crit_chance += 20;
+			}
+		}
+
+		return crit_chance;
+	}
+
+	function getCriticalMult()
+	{
+		local crit_mult = 2;
+
+		if (this.m.ruin)
+		{
+			crit_mult = 3;
+		}
+
+		return crit_mult;
 	}
 
 	function getTotalShadowMinDamage()
@@ -84,6 +115,7 @@ this.warlock_shadowbolt_skill <- this.inherit("scripts/skills/skill", {
 		local ret = this.getDefaultUtilityTooltip();
 		local total_shadow_min = getTotalShadowMinDamage();
 		local total_shadow_max = getTotalShadowMaxDamage();
+		local crit_chance = getCriticalChance();
 
 		ret.push({
 			id = 6,
@@ -99,12 +131,24 @@ this.warlock_shadowbolt_skill <- this.inherit("scripts/skills/skill", {
 			text = "Inflicts [color=" + this.Const.UI.Color.DamageValue + "]" + total_shadow_min + "[/color] - [color=" + this.Const.UI.Color.DamageValue + "]" + total_shadow_max + "[/color] damage to armor."
 		});
 
-		ret.push({
-			id = 6,
-			type = "text",
-			icon = "ui/icons/hitchance.png",
-			text = "Has [color=" + this.Const.UI.Color.DamageValue + "] 100% [/color] chance to hit."
-		});
+		if (crit_chance == 0)
+		{
+			ret.push({
+				id = 6,
+				type = "text",
+				icon = "ui/icons/hitchance.png",
+				text = "Has [color=" + this.Const.UI.Color.DamageValue + "] 100% [/color] chance to hit."
+			});
+		}
+		else
+		{
+			ret.push({
+				id = 6,
+				type = "text",
+				icon = "ui/icons/hitchance.png",
+				text = "Has [color=" + this.Const.UI.Color.DamageValue + "] 100% [/color] chance to hit with [color=" + this.Const.UI.Color.DamageValue + "]" + crit_chance + "[/color]% chance for critical damage."
+			});
+		}
 
 		ret.push({
 			id = 6,
@@ -132,6 +176,9 @@ this.warlock_shadowbolt_skill <- this.inherit("scripts/skills/skill", {
 		this.m.CurrentLevel = user.getLevel();
 		this.m.destructivereach = user.getSkills().hasSkill("perk.wow.warlock.destructivereach");
 		this.m.shadowburn = user.getSkills().hasSkill("perk.wow.warlock.shadowburn");
+		this.m.devastation = user.getSkills().hasSkill("perk.wow.warlock.devastation");
+		this.m.ruin = user.getSkills().hasSkill("perk.wow.warlock.ruin");
+		this.m.shadowmastery = user.getSkills().hasSkill("perk.wow.warlock.shadowmastery");		
 	}
 
 	function onAfterUpdate( _properties )
@@ -152,6 +199,20 @@ this.warlock_shadowbolt_skill <- this.inherit("scripts/skills/skill", {
 		{
 			local damage_min = getTotalShadowMinDamage();
 			local damage_max = getTotalShadowMaxDamage();
+			local crit_chance = getCriticalChance();
+			local crit_mult = getCriticalMult();
+			local c;
+
+			c = this.Math.rand(1, 100);
+
+			if (c <= crit_chance)
+			{
+				damage_min *= crit_mult;
+				damage_max *= crit_mult;
+				this.logInfo("crit chance with c=" + c);
+				this.logInfo("damage_min = " + damage_min);
+				this.logInfo("damage_max = " + damage_max);
+			}
 
 			_properties.DamageRegularMin = damage_min;
 			_properties.DamageRegularMax = damage_max;
