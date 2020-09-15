@@ -99,8 +99,23 @@ this.raider_warlock_background <- this.inherit("scripts/skills/backgrounds/chara
 	function onAddEquipment()
 	{
 		local items = this.getContainer().getActor().getItems();
-		items.equip(this.new("scripts/items/armor/warlock_t0_armor"));
-		items.equip(this.new("scripts/items/helmets/warlock_t0_helm"));
+		local r;
+
+		r = this.Math.rand(0, 2);
+
+		if (r == 0)
+		{
+			items.equip(this.new("scripts/items/armor/ragged_surcoat"));
+		}
+		else if (r == 1)
+		{
+			items.equip(this.new("scripts/items/armor/thick_tunic"));
+		}
+		else
+		{
+			items.equip(this.new("scripts/items/armor/leather_tunic"));
+		}
+		items.equip(this.new("scripts/items/helmets/hunters_hat"));
 	}
 
 });

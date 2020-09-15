@@ -101,13 +101,6 @@ this.raider_mage_background <- this.inherit("scripts/skills/backgrounds/characte
 		local items = this.getContainer().getActor().getItems();
 		local r;
 
-		r = this.Math.rand(0, 1);
-
-		if (r == 0)
-		{
-			items.addToBag(this.new("scripts/items/weapons/knife"));
-		}
-
 		r = this.Math.rand(0, 2);
 
 		if (r == 0)
