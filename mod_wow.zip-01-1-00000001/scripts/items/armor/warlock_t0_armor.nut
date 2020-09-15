@@ -44,7 +44,7 @@ this.warlock_t0_armor <- this.inherit("scripts/items/armor/armor", {
 			id = 15,
 			type = "text",
 			icon = "ui/icons/special.png",
-			text = "Dreadmist Set bonus: Shadowbolt Damage [color=" + this.Const.UI.Color.PositiveValue + "]+3[/color]"
+			text = "Dreadmist Set bonus: Shadowbolt Damage [color=" + this.Const.UI.Color.PositiveValue + "]+" + Const.WarlockSet.T0_bonus + "[/color]"
 		});
 
 		return result;

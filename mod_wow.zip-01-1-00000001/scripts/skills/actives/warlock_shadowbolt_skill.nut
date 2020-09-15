@@ -93,7 +93,7 @@ this.warlock_shadowbolt_skill <- this.inherit("scripts/skills/skill", {
 
 		if (this.m.dreadmistset)
 		{
-			total_damage_min += 3;
+			total_damage_min += Const.WarlockSet.T0_bonus;
 		}
 
 		return total_damage_min;
@@ -115,7 +115,7 @@ this.warlock_shadowbolt_skill <- this.inherit("scripts/skills/skill", {
 
 		if (this.m.dreadmistset)
 		{
-			total_damage_max += 3;
+			total_damage_max += Const.WarlockSet.T0_bonus;
 		}
 
 		return total_damage_max;
@@ -148,7 +148,7 @@ this.warlock_shadowbolt_skill <- this.inherit("scripts/skills/skill", {
 				id = 6,
 				type = "text",
 				icon = "ui/icons/special.png",
-				text = "Dreadmist Set bonus was [color=" + this.Const.UI.Color.DamageValue + "]activated[/color]."
+				text = "Dreadmist Set bonus was [color=" + this.Const.UI.Color.PositiveValue + "]activated[/color]."
 			});
 		}
 
