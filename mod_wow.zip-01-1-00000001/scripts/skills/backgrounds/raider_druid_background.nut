@@ -7,7 +7,7 @@ this.raider_druid_background <- this.inherit("scripts/skills/backgrounds/charact
 		this.m.ID = "background.raider_druid";
 		this.m.Name = "Druid";
 		this.m.Icon = "ui/backgrounds/background_druid.png";
-		this.m.BackgroundDescription = "";
+		this.m.BackgroundDescription = "Druids are the keepers of the world. Locked in slumber for generations, they awoke to meet the threat of the Burning Legion during its recent invasion. After Archimonde's defeat, the Druids chose to remain in the waking world and help to rebuild their shattered lands. The Legion's attack left a terrible scar on the natural order, and the Druids seek to heal it.";
 		this.m.GoodEnding = "";
 		this.m.BadEnding = "";
 		this.m.HiringCost = 200;
