@@ -47,9 +47,17 @@ this.wow_scenario_dark_arts <- this.inherit("scripts/scenarios/world/starting_sc
 		talents[this.Const.Attributes.Bravery] = 2;
 		talents[this.Const.Attributes.Fatigue] = 3;
 
+		local items = bros[0].getItems();
+		items.unequip(items.getItemAtSlot(this.Const.ItemSlot.Body));
+		items.unequip(items.getItemAtSlot(this.Const.ItemSlot.Head));
+		items.unequip(items.getItemAtSlot(this.Const.ItemSlot.Mainhand));
+		items.unequip(items.getItemAtSlot(this.Const.ItemSlot.Offhand));
+		items.equip(this.new("scripts/items/armor/warlock_t0_armor"));
+		items.equip(this.new("scripts/items/helmets/warlock_t0_helm"));
+
 		this.World.Assets.getStash().add(this.new("scripts/items/supplies/ground_grains_item"));
 		this.World.Assets.getStash().add(this.new("scripts/items/supplies/ground_grains_item"));
-		this.World.Assets.m.Money = this.World.Assets.m.Money + 1000;
+		this.World.Assets.m.Money = this.World.Assets.m.Money + 2000;
 	}
 
 	function onSpawnPlayer()
