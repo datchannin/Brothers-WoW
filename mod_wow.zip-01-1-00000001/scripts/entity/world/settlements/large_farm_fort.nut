@@ -60,6 +60,8 @@ this.large_farm_fort <- this.inherit("scripts/entity/world/settlement", {
 			"raider_paladin_background",
 			"raider_druid_background",
 			"raider_druid_background",
+			"raider_warlock_background",
+			"raider_warlock_background",
 			"hedge_knight_background",
 			"retired_soldier_background",
 			"sellsword_background",

@@ -63,6 +63,8 @@ this.large_coast_fort <- this.inherit("scripts/entity/world/settlement", {
 			"raider_paladin_background",
 			"raider_druid_background",
 			"raider_druid_background",
+			"raider_warlock_background",
+			"raider_warlock_background",
 			"sellsword_background",
 			"squire_background",
 			"swordmaster_background",

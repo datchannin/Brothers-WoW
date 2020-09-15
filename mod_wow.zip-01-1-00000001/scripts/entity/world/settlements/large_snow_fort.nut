@@ -74,6 +74,8 @@ this.large_snow_fort <- this.inherit("scripts/entity/world/settlement", {
 			"raider_paladin_background",
 			"raider_druid_background",
 			"raider_druid_background",
+			"raider_warlock_background",
+			"raider_warlock_background",
 			"retired_soldier_background",
 			"retired_soldier_background",
 			"sellsword_background",
