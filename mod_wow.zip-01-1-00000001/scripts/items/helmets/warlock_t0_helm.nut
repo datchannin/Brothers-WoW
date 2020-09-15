@@ -16,10 +16,10 @@ this.warlock_t0_helm <- this.inherit("scripts/items/helmets/helmet", {
 		this.updateVariant();
 		this.m.ImpactSound = this.Const.Sound.ArmorLeatherImpact;
 		this.m.InventorySound = this.Const.Sound.ClothEquip;
-		this.m.Value = 100;
-		this.m.Condition = 20;
-		this.m.ConditionMax = 20;
-		this.m.StaminaModifier = 0;
+		this.m.Value = 1200;
+		this.m.Condition = 120;
+		this.m.ConditionMax = 120;
+		this.m.StaminaModifier = -4;
 	}
 
 	function updateVariant()
