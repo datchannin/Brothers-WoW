@@ -936,6 +936,10 @@ gt.Const.CharacterProperties <- {
 	DailyWage = 0,
 	DailyWageMult = 1.0,
 	DailyFood = 2.0,
+	
+	T0_warlock_head = false,
+	T0_warlock_armor = false,
+	
 	function getMeleeDefense()
 	{
 		if (this.MeleeDefense >= 0)

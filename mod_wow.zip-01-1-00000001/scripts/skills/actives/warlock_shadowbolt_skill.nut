@@ -8,7 +8,8 @@ this.warlock_shadowbolt_skill <- this.inherit("scripts/skills/skill", {
 		devastation = false,
 		ruin = false,
 		shadowmastery = false,
-		CurrentLevel = 1
+		CurrentLevel = 1,
+		dreadmistset = false,
 	},
 	function create()
 	{
@@ -90,6 +91,11 @@ this.warlock_shadowbolt_skill <- this.inherit("scripts/skills/skill", {
 
 		total_damage_min += scale_damage;
 
+		if (this.m.dreadmistset)
+		{
+			total_damage_min += 3;
+		}
+
 		return total_damage_min;
 	}
 
@@ -106,6 +112,11 @@ this.warlock_shadowbolt_skill <- this.inherit("scripts/skills/skill", {
 		scale_damage = this.Math.floor(this.m.damage_base_max * this.m.CurrentLevel * Const.WarlockScale.shadow_damage_max);
 
 		total_damage_max += scale_damage;
+
+		if (this.m.dreadmistset)
+		{
+			total_damage_max += 3;
+		}
 
 		return total_damage_max;
 	}
@@ -130,6 +141,16 @@ this.warlock_shadowbolt_skill <- this.inherit("scripts/skills/skill", {
 			icon = "ui/icons/armor_damage.png",
 			text = "Inflicts [color=" + this.Const.UI.Color.DamageValue + "]" + total_shadow_min + "[/color] - [color=" + this.Const.UI.Color.DamageValue + "]" + total_shadow_max + "[/color] damage to armor."
 		});
+
+		if (this.m.dreadmistset)
+		{
+			ret.push({
+				id = 6,
+				type = "text",
+				icon = "ui/icons/special.png",
+				text = "Dreadmist Set bonus was [color=" + this.Const.UI.Color.DamageValue + "]activated[/color]."
+			});
+		}
 
 		if (crit_chance == 0)
 		{
@@ -178,7 +199,8 @@ this.warlock_shadowbolt_skill <- this.inherit("scripts/skills/skill", {
 		this.m.shadowburn = user.getSkills().hasSkill("perk.wow.warlock.shadowburn");
 		this.m.devastation = user.getSkills().hasSkill("perk.wow.warlock.devastation");
 		this.m.ruin = user.getSkills().hasSkill("perk.wow.warlock.ruin");
-		this.m.shadowmastery = user.getSkills().hasSkill("perk.wow.warlock.shadowmastery");		
+		this.m.shadowmastery = user.getSkills().hasSkill("perk.wow.warlock.shadowmastery");
+		this.m.dreadmistset = _properties.T0_warlock_head && _properties.T0_warlock_armor;
 	}
 
 	function onAfterUpdate( _properties )

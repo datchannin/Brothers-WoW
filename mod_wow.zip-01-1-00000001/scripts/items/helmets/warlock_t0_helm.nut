@@ -1,5 +1,7 @@
 this.warlock_t0_helm <- this.inherit("scripts/items/helmets/helmet", {
-	m = {},
+	m = {
+		HitpointsModifier = 4
+	},
 	function create()
 	{
 		this.helmet.create();
@@ -30,5 +32,25 @@ this.warlock_t0_helm <- this.inherit("scripts/items/helmets/helmet", {
 		this.m.SpriteCorpse = "bust_wow_helmet_" + variant + "_dead";
 		this.m.IconLarge = "";
 		this.m.Icon = "helmets/inventory_wow_helmet_" + variant + ".png";
+	}
+	
+	function getTooltip()
+	{
+		local result = this.helmet.getTooltip();
+		result.push({
+			id = 15,
+			type = "text",
+			icon = "ui/icons/health.png",
+			text = "Maximum Hitpoints [color=" + this.Const.UI.Color.PositiveValue + "]+" + this.m.HitpointsModifier + "[/color]"
+		});
+
+		return result;
+	}
+
+	function onUpdateProperties( _properties )
+	{
+		this.helmet.onUpdateProperties(_properties);
+		_properties.Hitpoints += this.m.HitpointsModifier;
+		_properties.T0_warlock_head = true;
 	}
 });

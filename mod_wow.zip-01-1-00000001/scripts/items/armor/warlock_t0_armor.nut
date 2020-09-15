@@ -1,5 +1,7 @@
 this.warlock_t0_armor <- this.inherit("scripts/items/armor/armor", {
-	m = {},
+	m = {
+		HitpointsModifier = 6
+	},
 	function create()
 	{
 		this.armor.create();
@@ -26,5 +28,32 @@ this.warlock_t0_armor <- this.inherit("scripts/items/armor/armor", {
 		this.m.SpriteCorpse = "bust_wow_body_" + variant + "_dead";
 		this.m.IconLarge = "armor/inventory_wow_body_armor_" + variant + ".png";
 		this.m.Icon = "armor/icon_wow_body_armor_" + variant + ".png";
+	}
+	
+	function getTooltip()
+	{
+		local result = this.armor.getTooltip();
+		result.push({
+			id = 15,
+			type = "text",
+			icon = "ui/icons/health.png",
+			text = "Maximum Hitpoints [color=" + this.Const.UI.Color.PositiveValue + "]+" + this.m.HitpointsModifier + "[/color]"
+		});
+
+		result.push({
+			id = 15,
+			type = "text",
+			icon = "ui/icons/special.png",
+			text = "Dreadmist Set bonus: Shadowbolt Damage [color=" + this.Const.UI.Color.PositiveValue + "]+3[/color]"
+		});
+
+		return result;
+	}
+
+	function onUpdateProperties( _properties )
+	{
+		this.armor.onUpdateProperties(_properties);
+		_properties.Hitpoints += this.m.HitpointsModifier;
+		_properties.T0_warlock_armor = true;
 	}
 });
