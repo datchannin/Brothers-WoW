@@ -1,4 +1,4 @@
-/*BBWOW:This file is part of datchannin bbWoW mod, mod_version = 081, game_version = 1.4.0.41*/
+/*BBWOW:This file is part of datchannin bbWoW mod, mod_version = 8.02, game_version = 1.4.0.42*/
 this.curseofdoom_effect <- this.inherit("scripts/skills/skill", {
 	m = {
 		TurnsLeft = 4,
@@ -28,7 +28,7 @@ this.curseofdoom_effect <- this.inherit("scripts/skills/skill", {
 
 	function getDescription()
 	{
-		return "This character was cursed and will take [color=" + this.Const.UI.Color.NegativeValue + "]" + this.m.Damage + "[/color] damage aftet [color=" + this.Const.UI.Color.NegativeValue + "]" + this.m.TurnsLeft + "[/color] more turn(s) end. Also he is retard while under this curse.";
+		return "This character was cursed and will take [color=" + this.Const.UI.Color.NegativeValue + "]" + this.m.Damage + "[/color] damage after [color=" + this.Const.UI.Color.NegativeValue + "]" + this.m.TurnsLeft + "[/color] more turn(s) end. Also he is retard while under this curse.";
 	}
 
 	function applyDamage()

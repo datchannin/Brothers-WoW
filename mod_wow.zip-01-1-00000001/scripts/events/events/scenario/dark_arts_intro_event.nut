@@ -1,4 +1,4 @@
-/*BBWOW:This file is part of datchannin bbWoW mod, mod_version = 081, game_version = 1.4.0.41*/
+/*BBWOW:This file is part of datchannin bbWoW mod, mod_version = 8.02, game_version = 1.4.0.42*/
 this.dark_arts_intro_event <- this.inherit("scripts/events/event", {
 	m = {},
 	function create()
