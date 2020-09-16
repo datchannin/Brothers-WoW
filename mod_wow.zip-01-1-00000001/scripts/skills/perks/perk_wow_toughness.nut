@@ -39,7 +39,7 @@ this.perk_wow_toughness <- this.inherit("scripts/skills/skill", {
 	function onBeforeDamageReceived( _attacker, _skill, _hitInfo, _properties )
 	{
 		local value = getValue();
-		local value_percent = value/100;
+		local value_percent = value * 0.01;
 
 		if (_attacker != null && _attacker.getID() == this.getContainer().getActor().getID() || _skill != null && !_skill.isAttack())
 		{
@@ -47,6 +47,10 @@ this.perk_wow_toughness <- this.inherit("scripts/skills/skill", {
 		}
 
 		_properties.DamageReceivedArmorMult *= (1 - value_percent);
+		this.logInfo("value = " + value);
+		this.logInfo("value_percent = " + value_percent);
+		this.logInfo("1 - value_percent = " + (1 - value_percent));
+		this.logInfo("DamageReceivedArmorMult = " + _properties.DamageReceivedArmorMult);
 	}
 
 	function onUpdate( _properties )
