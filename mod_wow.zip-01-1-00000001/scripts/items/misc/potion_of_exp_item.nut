@@ -1,3 +1,4 @@
+/*BBWOW:This file is part of datchannin bbWoW mod, mod_version = 081, game_version = 1.4.0.41*/
 this.potion_of_exp_item <- this.inherit("scripts/items/item", {
 	m = {},
 	function create()

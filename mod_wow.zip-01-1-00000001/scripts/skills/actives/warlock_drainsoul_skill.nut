@@ -1,4 +1,4 @@
-/*BBWOW:This file is part of datchannin bbWoW mod, mod_version = 7.02, game_version = 1.4.0.41*/
+/*BBWOW:This file is part of datchannin bbWoW mod, mod_version = 081, game_version = 1.4.0.41*/
 this.warlock_drainsoul_skill <- this.inherit("scripts/skills/skill", {
 	m = {
 		base_damage_min = 10,
