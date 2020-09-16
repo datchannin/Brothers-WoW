@@ -47,10 +47,6 @@ this.perk_wow_toughness <- this.inherit("scripts/skills/skill", {
 		}
 
 		_properties.DamageReceivedArmorMult *= (1 - value_percent);
-		this.logInfo("value = " + value);
-		this.logInfo("value_percent = " + value_percent);
-		this.logInfo("1 - value_percent = " + (1 - value_percent));
-		this.logInfo("DamageReceivedArmorMult = " + _properties.DamageReceivedArmorMult);
 	}
 
 	function onUpdate( _properties )
