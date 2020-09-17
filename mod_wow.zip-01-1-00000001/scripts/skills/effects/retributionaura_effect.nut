@@ -1,11 +1,14 @@
 /*BBWOW:This file is part of datchannin bbWoW mod, mod_version = 8.02, game_version = 1.4.0.42*/
 this.retributionaura_effect <- this.inherit("scripts/skills/skill", {
-	m = {},
+	m = {
+		PaladinCurrentLevel = 1,
+		BaseEffect = 4		
+	},
 	function create()
 	{
 		this.m.ID = "effects.retributionaura";
 		this.m.Name = "Retribution Aura";
-		this.m.Description = "You is under paladin Retribution Aura now. Your successful melee attack restores you [color=" + this.Const.UI.Color.PositiveValue + "]4[/color] health. Keep closer.";
+		this.m.Description = "You is under paladin Retribution Aura now. Your successful melee attack restores you Hitpoints. Keep closer.";
 		this.m.Icon = "ui/perks/perk_paladin_retributionaura.png";
 		this.m.IconMini = "effect_mini_retributionaura";
 		this.m.Type = this.Const.SkillType.StatusEffect;
@@ -13,26 +16,31 @@ this.retributionaura_effect <- this.inherit("scripts/skills/skill", {
 		this.m.IsRemovedAfterBattle = false;
 	}
 
+	function getTotalEffectValue()
+	{
+		local total_value = this.m.BaseEffect;
+		local scale = 0;
+		local level_for_effect = this.Math.floor(this.m.PaladinCurrentLevel/5);
+
+		scale = this.Math.floor(level_for_effect * this.Const.PaladinScale.retributionaura);
+		total_value += scale;
+
+		return total_value;
+	}
+
 	function getTooltip()
 	{
-		return [
-			{
-				id = 1,
-				type = "title",
-				text = this.getName()
-			},
-			{
-				id = 2,
-				type = "description",
-				text = this.getDescription()
-			},
-			{
-				id = 10,
-				type = "text",
-				icon = "ui/icons/health.png",
-				text = "Successful melee attack restores [color=" + this.Const.UI.Color.PositiveValue + "]4[/color] health."
-			}
-		];
+		local ret = this.getDefaultUtilityTooltip();
+		local total_value = getTotalEffectValue();
+
+		ret.push({
+			id = 6,
+			type = "text",
+			icon = "ui/icons/health.png",
+			text = "Successful melee attack restores [color=" + this.Const.UI.Color.PositiveValue + "]" + total_value + "[/color] Hitpoints"
+		});
+
+		return ret;
 	}
 
 	function getBonus()
@@ -63,6 +71,7 @@ this.retributionaura_effect <- this.inherit("scripts/skills/skill", {
 			{
 				if (ally.getCurrentProperties().IsRetributionAuraActive)
 				{
+					this.m.PaladinCurrentLevel = ally.getLevel();
 					isBonusShouldApply = 1;
 				}
 			}
@@ -74,6 +83,8 @@ this.retributionaura_effect <- this.inherit("scripts/skills/skill", {
 	function onTargetHit( _skill, _targetEntity, _bodyPart, _damageInflictedHitpoints, _damageInflictedArmor )
 	{
 		local bonus = this.getBonus();
+		local total_value = getTotalEffectValue();
+
 		if (bonus == 1)
 		{
 			if (_damageInflictedHitpoints <= 0)
@@ -92,10 +103,10 @@ this.retributionaura_effect <- this.inherit("scripts/skills/skill", {
 
 			if (!actor.isHiddenToPlayer())
 			{
-				this.Tactical.EventLog.log(this.Const.UI.getColorizedEntityName(actor) + " heals for " + this.Math.min(actor.getHitpointsMax() - actor.getHitpoints(), 4) + " points");
+				this.Tactical.EventLog.log(this.Const.UI.getColorizedEntityName(actor) + " heals for " + this.Math.min(actor.getHitpointsMax() - actor.getHitpoints(), total_value) + " points");
 			}
 
-			actor.setHitpoints(this.Math.min(actor.getHitpointsMax(), actor.getHitpoints() + 4));
+			actor.setHitpoints(this.Math.min(actor.getHitpointsMax(), actor.getHitpoints() + total_value));
 			actor.onUpdateInjuryLayer();
 		}
 	}
@@ -109,6 +120,7 @@ this.retributionaura_effect <- this.inherit("scripts/skills/skill", {
 	{
 		local bonus = this.getBonus();
 		local actor = this.getContainer().getActor();
+
 		if (bonus == 1)
 		{
 			this.m.IsHidden = false;

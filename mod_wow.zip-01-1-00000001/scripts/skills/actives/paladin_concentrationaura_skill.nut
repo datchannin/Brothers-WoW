@@ -16,7 +16,7 @@ this.paladin_concentrationaura_skill <- this.inherit("scripts/skills/skill", {
 			"sounds/combat/paladin_concentrationaura.wav",
 		];
 		this.m.Type = this.Const.SkillType.Active;
-		this.m.Order = this.Const.SkillOrder.Any;
+		this.m.Order = this.Const.SkillOrder.NonTargeted;
 		this.m.IsSerialized = false;
 		this.m.IsActive = true;
 		this.m.IsTargeted = false;

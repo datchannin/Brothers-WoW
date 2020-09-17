@@ -276,7 +276,7 @@ gt.Const.Wow_strings.PerkDescription <- {
 	HammerofJustice = "Unlocks the \'Hammer of Justice\' skill which allows paladin to summon a hammer into your enemy and stun the target.",
 	DivineStrength = "You have skill in weapon using. This perk helps you to increase Melee Skill by [color=" + this.Const.UI.Color.PositiveValue + "]15[/color].",
 	DevoutionAura = "Unlocks the \'Devoution Aura\' skill. This aura increases Melee Defense of all party members within 4 tiles by value started from [color=" + this.Const.UI.Color.PositiveValue + "]10[/color] points. The effect is growing with your level.",
-	RetributionAura = "Unlocks the \'Retribution Aura\' skill. This aura allows all party members within 4 tiles to restore [color=" + this.Const.UI.Color.PositiveValue + "]4[/color] health points by every successful melee attack.",
+	RetributionAura = "Unlocks the \'Retribution Aura\' skill. This aura allows all party members within 4 tiles to restore [color=" + this.Const.UI.Color.PositiveValue + "]4[/color] health points by every successful melee attack. The effect is growing with your level.",
 	ConcentrationAura = "Unlocks the \'Concentration Aura\' skill. This aura increases Fatigue Recovery of all party members within 4 tiles by value started from [color=" + this.Const.UI.Color.PositiveValue + "]3[/color]. The effect is growing with your level.",
 	SanctityAura = "Unlocks the \'Sanctity Aura\' skill. This aura add Hitpoints regeneration of all party members within 4 tiles by [color=" + this.Const.UI.Color.PositiveValue + "]2[/color] points.",
 	DivineShield = "Unlocks the \'Divine Shield\' skill which gives your target Immunity for one turn.",
