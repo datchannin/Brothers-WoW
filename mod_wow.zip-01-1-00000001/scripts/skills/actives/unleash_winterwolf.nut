@@ -68,6 +68,91 @@ this.unleash_winterwolf <- this.inherit("scripts/skills/skill", {
 		this.m.MaxRange = 1;
 	}
 
+	function getTooltip()
+	{
+		local ret = this.getDefaultUtilityTooltip();
+
+		if (this.m.IsMasterHasEnduranceTraining || this.m.IsMasterHasThickHide || this.m.IsMasterHasBestialSwiftness || this.m.IsMasterHasUnleashFury)
+		{
+			ret.push({
+				id = 6,
+				type = "text",
+				icon = "ui/icons/special.png",
+				text = "Your pet gets bonuses from your skills!"
+			});
+		}
+
+		if (this.m.IsMasterHasEnduranceTraining)
+		{
+			ret.push({
+				id = 7,
+				type = "text",
+				icon = "ui/icons/health.png",
+				text = "Pet Hitpoints increased by [color=" + this.Const.UI.Color.PositiveValue + "]100%[/color]."
+			});
+
+			ret.push({
+				id = 7,
+				type = "text",
+				icon = "ui/icons/vision.png",
+				text = "Pet Stamina increased by [color=" + this.Const.UI.Color.PositiveValue + "]40[/color]."
+			});
+		}
+
+		if (this.m.IsMasterHasThickHide)
+		{
+			ret.push({
+				id = 7,
+				type = "text",
+				icon = "ui/icons/melee_defense.png",
+				text = "Pet Melee Defense increased by [color=" + this.Const.UI.Color.PositiveValue + "]40[/color]."
+			});
+
+			ret.push({
+				id = 7,
+				type = "text",
+				icon = "ui/icons/ranged_defense.png",
+				text = "Pet Range Defense increased by [color=" + this.Const.UI.Color.PositiveValue + "]40[/color]."
+			});
+		}
+
+		if (this.m.IsMasterHasBestialSwiftness)
+		{
+			ret.push({
+				id = 7,
+				type = "text",
+				icon = "ui/icons/action_points.png",
+				text = "Pet Action Points increased by [color=" + this.Const.UI.Color.PositiveValue + "]5[/color]."
+			});
+
+			ret.push({
+				id = 7,
+				type = "text",
+				icon = "ui/icons/fatigue.png",
+				text = "Pet Fatigue Recovery increased by [color=" + this.Const.UI.Color.PositiveValue + "]10[/color]."
+			});
+		}
+
+		if (this.m.IsMasterHasUnleashFury)
+		{
+			ret.push({
+				id = 7,
+				type = "text",
+				icon = "ui/icons/melee_skill.png",
+				text = "Pet Melee Skill increased by [color=" + this.Const.UI.Color.PositiveValue + "]30[/color]."
+			});
+
+			ret.push({
+				id = 7,
+				type = "text",
+				icon = "ui/icons/bravery.png",
+				text = "Pet Bravery increased by [color=" + this.Const.UI.Color.PositiveValue + "]30[/color]."
+			});
+		}
+
+		return ret;
+	}
+
 	function addResources()
 	{
 		this.skill.addResources();
@@ -101,28 +186,6 @@ this.unleash_winterwolf <- this.inherit("scripts/skills/skill", {
 		{
 			this.Tactical.addResource(r);
 		}
-	}
-
-	function getTooltip()
-	{
-		local ret = [
-			{
-				id = 1,
-				type = "title",
-				text = this.getName()
-			},
-			{
-				id = 2,
-				type = "description",
-				text = this.getDescription()
-			},
-			{
-				id = 3,
-				type = "text",
-				text = this.getCostString()
-			}
-		];
-		return ret;
 	}
 
 	function isUsable()
