@@ -1,7 +1,7 @@
 # Brothers-WoW
 ![Brothers-WoW](spec/bbwow_02.png "Brothers WoW repo: Play Battle Brothers using WoW heroes")
 
-## Mode Game Processing
+## Mod Game Processing
 Classes that should be implemented for the addon - alliance classes from World of Warcraft Classic:
 * ![custom badges](https://img.shields.io/badge/status-done-green) [paladin](https://github.com/datchannin/Brothers-WoW/blob/master/spec/paladin.md)
 * ![custom badges](https://img.shields.io/badge/status-done-green) [warrior](https://github.com/datchannin/Brothers-WoW/blob/master/spec/warrior.md)
@@ -31,17 +31,17 @@ For the future the plan is to add WoW-like equipment in addition to standard wea
 * mod_wow.zip, the latest version
 
 ## Usage
-To install this mode you should do step-by-step:
+To install this mod you should do step-by-step:
 1. Download and install the latest "Battle Brothers" game.
 2. Download the latest directory from "Brothers-WoW" release repo: [release link](https://github.com/datchannin/Brothers-WoW/releases)
-3. Put addon into the "data" dir (you should put zip without unzipping).
-4. Run the game. "bbWoW" addon works by default.
-5. For test or debug this addon, select "WoW debug Company" from the scenario list.
+3. Put mod into the "data" dir (you should put zip without unzipping).
+4. Run the game. "bbWoW" mod works by default.
+5. For test or debug this mod, select "WoW debug Company" from the scenario list.
 ![Selection screen](spec/company.png "Brothers WoW repo: Select company for play.")
 
 ## License, Authors and Copyright
 
-This repository is used for private mode Battle Brothers game. Play Battle Brothers the same way as WoW.
+This repository is used for private mod Battle Brothers game. Play Battle Brothers the same way as WoW.
 
 This file is part of the Brothers-WoW Project. 
 
