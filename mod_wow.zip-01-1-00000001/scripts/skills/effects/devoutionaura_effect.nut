@@ -90,7 +90,7 @@ this.devoutionaura_effect <- this.inherit("scripts/skills/skill", {
 		local bonus = this.getBonus();
 		local actor = this.getContainer().getActor();
 		local total_value = getTotalEffectValue();
-		
+
 		if (bonus == 1)
 		{
 			this.m.IsHidden = false;

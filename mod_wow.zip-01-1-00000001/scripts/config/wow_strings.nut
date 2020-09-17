@@ -277,7 +277,7 @@ gt.Const.Wow_strings.PerkDescription <- {
 	DivineStrength = "You have skill in weapon using. This perk helps you to increase Melee Skill by [color=" + this.Const.UI.Color.PositiveValue + "]15[/color].",
 	DevoutionAura = "Unlocks the \'Devoution Aura\' skill. This aura increases Melee Defense of all party members within 4 tiles by value started from [color=" + this.Const.UI.Color.PositiveValue + "]10[/color] points. The effect is growing with your level.",
 	RetributionAura = "Unlocks the \'Retribution Aura\' skill. This aura allows all party members within 4 tiles to restore [color=" + this.Const.UI.Color.PositiveValue + "]4[/color] health points by every successful melee attack.",
-	ConcentrationAura = "Unlocks the \'Concentration Aura\' skill. This aura increases Fatigue Recovery of all party members within 4 tiles by [color=" + this.Const.UI.Color.PositiveValue + "]3[/color].",
+	ConcentrationAura = "Unlocks the \'Concentration Aura\' skill. This aura increases Fatigue Recovery of all party members within 4 tiles by value started from [color=" + this.Const.UI.Color.PositiveValue + "]3[/color]. The effect is growing with your level.",
 	SanctityAura = "Unlocks the \'Sanctity Aura\' skill. This aura add Hitpoints regeneration of all party members within 4 tiles by [color=" + this.Const.UI.Color.PositiveValue + "]2[/color] points.",
 	DivineShield = "Unlocks the \'Divine Shield\' skill which gives your target Immunity for one turn.",
 	SealofCommand = "Fills you with \'Seal of Command\'. This gives your additional Action Point, [color=" + this.Const.UI.Color.PositiveValue + "]10[/color] Fatigue and increase your Hitpoints by [color=" + this.Const.UI.Color.PositiveValue + "]10%[/color].",

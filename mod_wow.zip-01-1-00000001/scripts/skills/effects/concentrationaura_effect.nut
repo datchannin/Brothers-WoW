@@ -1,6 +1,9 @@
 /*BBWOW:This file is part of datchannin bbWoW mod, mod_version = 8.02, game_version = 1.4.0.42*/
 this.concentrationaura_effect <- this.inherit("scripts/skills/skill", {
-	m = {},
+	m = {
+		PaladinCurrentLevel = 1,
+		BaseEffect = 3		
+	},
 	function create()
 	{
 		this.m.ID = "effects.concentrationaura";
@@ -13,26 +16,31 @@ this.concentrationaura_effect <- this.inherit("scripts/skills/skill", {
 		this.m.IsRemovedAfterBattle = false;
 	}
 
+	function getTotalEffectValue()
+	{
+		local total_value = this.m.BaseEffect;
+		local scale = 0;
+		local level_for_effect = this.Math.floor(this.m.PaladinCurrentLevel/5);
+
+		scale = this.Math.floor(level_for_effect * this.Const.PaladinScale.concentrationaura);
+		total_value += scale;
+
+		return total_value;
+	}
+
 	function getTooltip()
 	{
-		return [
-			{
-				id = 1,
-				type = "title",
-				text = this.getName()
-			},
-			{
-				id = 2,
-				type = "description",
-				text = this.getDescription()
-			},
-			{
-				id = 10,
-				type = "text",
-				icon = "ui/icons/melee_defense.png",
-				text = "[color=" + this.Const.UI.Color.PositiveValue + "]+3[/color] Fatigue Recovery per turn for all party members within 4 tiles"
-			}
-		];
+		local ret = this.getDefaultUtilityTooltip();
+		local total_value = getTotalEffectValue();
+
+		ret.push({
+			id = 6,
+			type = "text",
+			icon = "ui/icons/fatigue.png",
+			text = "[color=" + this.Const.UI.Color.PositiveValue + "]+" + total_value + "[/color] Fatigue Recovery"
+		});
+
+		return ret;
 	}
 
 	function getBonus()
@@ -63,6 +71,7 @@ this.concentrationaura_effect <- this.inherit("scripts/skills/skill", {
 			{
 				if (ally.getCurrentProperties().IsConcentrationAuraActive)
 				{
+					this.m.PaladinCurrentLevel = ally.getLevel();
 					isBonusShouldApply = 1;
 				}
 			}
@@ -80,10 +89,12 @@ this.concentrationaura_effect <- this.inherit("scripts/skills/skill", {
 	{
 		local bonus = this.getBonus();
 		local actor = this.getContainer().getActor();
+		local total_value = getTotalEffectValue();
+
 		if (bonus == 1)
 		{
 			this.m.IsHidden = false;
-			_properties.FatigueRecoveryRate += 3;
+			_properties.FatigueRecoveryRate += total_value;
 			if (actor.hasSprite("aura2"))
 			{
 				actor.getSprite("aura2").setBrush("anim_paladin_concentrationaura");
