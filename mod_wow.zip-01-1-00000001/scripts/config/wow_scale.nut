@@ -5,6 +5,11 @@ gt.Const.WarriorScale <- {
 	toughness = 1
 };
 
+gt.Const.PaladinScale <- {
+	holy_heal_min = 0.02,
+	holy_heal_max = 0.03,
+};
+
 gt.Const.RogueScale <- {
 	poison_damage = 0.05,
 	poison_duration = 15
