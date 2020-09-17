@@ -1,6 +1,9 @@
 /*BBWOW:This file is part of datchannin bbWoW mod, mod_version = 8.02, game_version = 1.4.0.42*/
 this.bestialswiftness_effect <- this.inherit("scripts/skills/skill", {
-	m = {},
+	m = {
+		ActionPointsBonusBase = 5,
+		FatigueRecoveryRateBase = 10
+	},
 	function create()
 	{
 		this.m.ID = "effects.bestialswiftness";
@@ -11,6 +14,16 @@ this.bestialswiftness_effect <- this.inherit("scripts/skills/skill", {
 		this.m.Type = this.Const.SkillType.StatusEffect;
 		this.m.IsActive = false;
 		this.m.IsRemovedAfterBattle = true;
+	}
+
+	function SetActionPointsBonusBase(_d)
+	{
+		this.m.ActionPointsBonusBase = _d;
+	}
+
+	function SetFatigueRecoveryRateBase(_d)
+	{
+		this.m.FatigueRecoveryRateBase = _d;
 	}
 
 	function getTooltip()
@@ -31,7 +44,7 @@ this.bestialswiftness_effect <- this.inherit("scripts/skills/skill", {
 
 	function onUpdate( _properties )
 	{
-		_properties.ActionPointsBonus += 5;
-		_properties.FatigueRecoveryRate += 10;
+		_properties.ActionPointsBonus += this.m.ActionPointsBonusBase;
+		_properties.FatigueRecoveryRate += this.m.FatigueRecoveryRateBase;
 	}
 });

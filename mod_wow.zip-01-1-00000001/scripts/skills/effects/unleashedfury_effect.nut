@@ -1,6 +1,9 @@
 /*BBWOW:This file is part of datchannin bbWoW mod, mod_version = 8.02, game_version = 1.4.0.42*/
 this.unleashedfury_effect <- this.inherit("scripts/skills/skill", {
-	m = {},
+	m = {
+		MeleeSkillBase = 30,
+		BraveryBase = 30
+	},
 	function create()
 	{
 		this.m.ID = "effects.unleashedfury";
@@ -11,6 +14,16 @@ this.unleashedfury_effect <- this.inherit("scripts/skills/skill", {
 		this.m.Type = this.Const.SkillType.StatusEffect;
 		this.m.IsActive = false;
 		this.m.IsRemovedAfterBattle = true;
+	}
+
+	function SetMeleeSkillBase(_d)
+	{
+		this.m.MeleeSkillBase = _d;
+	}
+
+	function SetBraveryBase(_d)
+	{
+		this.m.BraveryBase = _d;
 	}
 
 	function getTooltip()
@@ -31,7 +44,7 @@ this.unleashedfury_effect <- this.inherit("scripts/skills/skill", {
 
 	function onUpdate( _properties )
 	{
-		_properties.MeleeSkill += 30;
-		_properties.Bravery += 30;
+		_properties.MeleeSkill += this.m.MeleeSkillBase;
+		_properties.Bravery += this.m.BraveryBase;
 	}
 });

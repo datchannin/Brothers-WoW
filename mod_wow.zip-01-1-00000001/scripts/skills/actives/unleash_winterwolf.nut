@@ -35,7 +35,16 @@ this.unleash_winterwolf <- this.inherit("scripts/skills/skill", {
 		IsMasterHasEnduranceTraining = 0,
 		IsMasterHasThickHide = 0,
 		IsMasterHasBestialSwiftness = 0,
-		IsMasterHasUnleashFury = 0
+		IsMasterHasUnleashFury = 0,
+		CurrentHunterLevel = 1,
+		BaseHealthBonus = 50,
+		BaseStaminaBonus = 40,
+		BaseMeleeDefenseBonus = 40,
+		BaseRangedDefenseBonus = 40,
+		BaseActionPointsBonus = 5,
+		BaseFatigueRecoveryBonus = 10,
+		BaseMeleeSkillBonus = 30,
+		BaseBraveryBonus = 30
 	},
 	function setItem( _i )
 	{
@@ -68,9 +77,33 @@ this.unleash_winterwolf <- this.inherit("scripts/skills/skill", {
 		this.m.MaxRange = 1;
 	}
 
+	function getTotalHealthBonus()
+	{
+		local health_bonus = this.m.BaseHealthBonus;
+		local scale = 0;
+
+		scale = this.Math.floor(this.m.CurrentHunterLevel * this.Const.HunterScale.pet_health_bonus);
+		health_bonus += scale;
+
+		return health_bonus;
+	}
+
+	function getTotalStaminaBonus()
+	{
+		local stamina_bonus = this.m.BaseStaminaBonus;
+		local scale = 0;
+
+		scale = this.Math.floor(stamina_bonus * this.m.CurrentHunterLevel * this.Const.HunterScale.pet_stamina_bonus);
+		stamina_bonus += scale;
+
+		return stamina_bonus;
+	}
+
 	function getTooltip()
 	{
 		local ret = this.getDefaultUtilityTooltip();
+		local health_bonus = getTotalHealthBonus();
+		local stamina_bonus = getTotalStaminaBonus();
 
 		if (this.m.IsMasterHasEnduranceTraining || this.m.IsMasterHasThickHide || this.m.IsMasterHasBestialSwiftness || this.m.IsMasterHasUnleashFury)
 		{
@@ -88,14 +121,14 @@ this.unleash_winterwolf <- this.inherit("scripts/skills/skill", {
 				id = 7,
 				type = "text",
 				icon = "ui/icons/health.png",
-				text = "Pet Hitpoints increased by [color=" + this.Const.UI.Color.PositiveValue + "]100%[/color]."
+				text = "Pet Hitpoints increased by [color=" + this.Const.UI.Color.PositiveValue + "]" + health_bonus + "%[/color]."
 			});
 
 			ret.push({
 				id = 7,
 				type = "text",
 				icon = "ui/icons/vision.png",
-				text = "Pet Stamina increased by [color=" + this.Const.UI.Color.PositiveValue + "]40[/color]."
+				text = "Pet Stamina increased by [color=" + this.Const.UI.Color.PositiveValue + "]" + stamina_bonus + "[/color]."
 			});
 		}
 
@@ -206,7 +239,9 @@ this.unleash_winterwolf <- this.inherit("scripts/skills/skill", {
 
 	function onUpdate( _properties )
 	{
+		local user = this.getContainer().getActor();
 		this.m.IsHidden = this.m.Item.isUnleashed();
+		this.m.CurrentHunterLevel = user.getLevel();
 
 		if (_properties.IsPetEnduranceTraining)
 		{
@@ -254,26 +289,42 @@ this.unleash_winterwolf <- this.inherit("scripts/skills/skill", {
 		entity.setVariant(this.m.Item.getVariant());
 		this.m.Item.setEntity(entity);
 
+		local health_bonus = getTotalHealthBonus();
+		local health_bonus_mult = (health_bonus * 0.01) + 1;
+		local stamina_bonus = getTotalStaminaBonus();
+
 		if (!this.World.getTime().IsDaytime)
 		{
 			entity.getSkills().add(this.new("scripts/skills/special/night_effect"));
 		}
-		
+
 		if (this.m.IsMasterHasEnduranceTraining)
 		{
-			entity.getSkills().add(this.new("scripts/skills/effects/endurancetraining_effect"));
+			local endurancetraining = this.new("scripts/skills/effects/endurancetraining_effect");
+			endurancetraining.SetStaminaBase(stamina_bonus);
+			endurancetraining.SetHitpointsMultBase(health_bonus_mult);
+			entity.getSkills().add(endurancetraining);
 		}
 		if (this.m.IsMasterHasThickHide)
 		{
-			entity.getSkills().add(this.new("scripts/skills/effects/thickhide_effect"));
+			local thickhide = this.new("scripts/skills/effects/thickhide_effect");
+			thickhide.SetMeleeDefenseBase(40);
+			thickhide.SetRangedDefenseBase(40);
+			entity.getSkills().add(thickhide);
 		}
 		if (this.m.IsMasterHasBestialSwiftness)
 		{
-			entity.getSkills().add(this.new("scripts/skills/effects/bestialswiftness_effect"));
+			local bestialswiftness = this.new("scripts/skills/effects/bestialswiftness_effect");
+			bestialswiftness.SetActionPointsBonusBase(5);
+			bestialswiftness.SetFatigueRecoveryRateBase(10);
+			entity.getSkills().add(bestialswiftness);
 		}
 		if (this.m.IsMasterHasUnleashFury)
 		{
-			entity.getSkills().add(this.new("scripts/skills/effects/unleashedfury_effect"));
+			local unleashedfury = this.new("scripts/skills/effects/unleashedfury_effect");
+			unleashedfury.SetMeleeSkillBase(30);
+			unleashedfury.SetBraveryBase(30);
+			entity.getSkills().add(unleashedfury);
 		}
 		entity.getSkills().add(this.new("scripts/skills/effects/winterwolfgetheal_effect"));
 

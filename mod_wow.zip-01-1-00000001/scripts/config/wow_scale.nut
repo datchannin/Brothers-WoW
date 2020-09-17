@@ -14,6 +14,11 @@ gt.Const.PaladinScale <- {
 	sanctityaura = 1
 };
 
+gt.Const.HunterScale <- {
+	pet_health_bonus = 10,
+	pet_stamina_bonus = 0.1
+};
+
 gt.Const.RogueScale <- {
 	poison_damage = 0.05,
 	poison_duration = 15

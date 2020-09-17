@@ -1,6 +1,9 @@
 /*BBWOW:This file is part of datchannin bbWoW mod, mod_version = 8.02, game_version = 1.4.0.42*/
 this.thickhide_effect <- this.inherit("scripts/skills/skill", {
-	m = {},
+	m = {
+		MeleeDefenseBase = 40,
+		RangedDefenseBase = 40
+	},
 	function create()
 	{
 		this.m.ID = "effects.thickhide";
@@ -11,6 +14,16 @@ this.thickhide_effect <- this.inherit("scripts/skills/skill", {
 		this.m.Type = this.Const.SkillType.StatusEffect;
 		this.m.IsActive = false;
 		this.m.IsRemovedAfterBattle = true;
+	}
+
+	function SetMeleeDefenseBase(_d)
+	{
+		this.m.MeleeDefenseBase = _d;
+	}
+
+	function SetRangedDefenseBase(_d)
+	{
+		this.m.RangedDefenseBase = _d;
 	}
 
 	function getTooltip()
@@ -31,7 +44,7 @@ this.thickhide_effect <- this.inherit("scripts/skills/skill", {
 
 	function onUpdate( _properties )
 	{
-		_properties.MeleeDefense += 40;
-		_properties.RangedDefense += 40;
+		_properties.MeleeDefense += this.m.MeleeDefenseBase;
+		_properties.RangedDefense += this.m.RangedDefenseBase;
 	}
 });
