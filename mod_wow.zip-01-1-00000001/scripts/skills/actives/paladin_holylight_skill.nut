@@ -1,7 +1,10 @@
 /*BBWOW:This file is part of datchannin bbWoW mod, mod_version = 8.02, game_version = 1.4.0.42*/
 this.paladin_holylight_skill <- this.inherit("scripts/skills/skill", {
 	m = {
-		IsMasterInLight = 0
+		heal_base_min = 7,
+		heal_base_max = 14,
+		CurrentLevel = 1,
+		holypower = false
 	},
 	function create()
 	{
@@ -18,7 +21,7 @@ this.paladin_holylight_skill <- this.inherit("scripts/skills/skill", {
 			"sounds/combat/paladin_holylight_cast.wav"
 		];
 		this.m.Type = this.Const.SkillType.Active;
-		this.m.Order = this.Const.SkillOrder.Any;
+		this.m.Order = this.Const.SkillOrder.UtilityTargeted;
 		this.m.Delay = 0;
 		this.m.IsSerialized = false;
 		this.m.IsActive = true;
@@ -34,72 +37,61 @@ this.paladin_holylight_skill <- this.inherit("scripts/skills/skill", {
 		this.m.MaxRange = 2;
 	}
 
-	function getTooltip()
+	function getTotalMinHeal()
 	{
-		if (this.m.IsMasterInLight == 0)
+		local total_heal_min = this.m.heal_base_min;
+		local scale_value = 0;
+
+		if (this.m.holypower)
 		{
-			return [
-				{
-					id = 1,
-					type = "title",
-					text = "Holy Light"
-				},
-				{
-					id = 2,
-					type = "description",
-					text = "Heal target with Holy Light."
-				},
-				{
-					id = 3,
-					type = "text",
-					text = this.getCostString()
-				},
-				{
-					id = 7,
-					type = "text",
-					icon = "ui/icons/heal.png",
-					text = "Heal the target for [color=" + this.Const.UI.Color.PositiveValue + "]7[/color] - [color=" + this.Const.UI.Color.PositiveValue + "]14[/color] Hitpoints."
-				},
-			];
+			total_heal_min += 10;
 		}
-		else
-		{
-			return [
-				{
-					id = 1,
-					type = "title",
-					text = "Great Holy Light"
-				},
-				{
-					id = 2,
-					type = "description",
-					text = "You know how to increase healing effency. Heal target with Great Holy Light."
-				},
-				{
-					id = 3,
-					type = "text",
-					text = this.getCostString()
-				},
-				{
-					id = 7,
-					type = "text",
-					icon = "ui/icons/heal.png",
-					text = "Heal the target for [color=" + this.Const.UI.Color.PositiveValue + "]17[/color] - [color=" + this.Const.UI.Color.PositiveValue + "]24[/color] Hitpoints."
-				},
-			];
-		}
+
+		//scale_value = this.Math.floor(total_heal_min * this.m.CurrentLevel * Const..);
+
+		total_heal_min += scale_value;
+
+		return total_heal_min;
 	}
 
-	function onAfterUpdate( _properties )
+	function getTotalMaxHeal()
 	{
-		if (_properties.IsMasterInLight)
+		local total_heal_max = this.m.heal_base_max;
+		local scale_value = 0;
+
+		if (this.m.holypower)
 		{
-			this.m.IsMasterInLight = 1;
+			total_heal_max += 10;
 		}
-		else
-		{
-			this.m.IsMasterInLight = 0;
-		}
+
+		//scale_value = this.Math.floor(total_heal_max * this.m.CurrentLevel * Const..);
+
+		total_heal_max += scale_value;
+
+		return total_heal_max;
+	}
+
+	function getTooltip()
+	{
+		local ret = this.getDefaultUtilityTooltip();
+		local heal_min = getTotalMinHeal();
+		local heal_max = getTotalMaxHeal();
+
+		ret.push({
+			id = 6,
+			type = "text",
+			icon = "ui/icons/heal.png",
+			text = "Heal the target for [color=" + this.Const.UI.Color.PositiveValue + "]" + heal_min + "[/color] - [color=" + this.Const.UI.Color.PositiveValue + "]" + heal_max + "[/color] Hitpoints."
+		});
+
+		return ret;
+	}
+
+	function onUpdate( _properties )
+	{
+		local user = this.getContainer().getActor();
+		this.m.CurrentLevel = user.getLevel();
+		this.m.holypower = user.getSkills().hasSkill("perk.wow.paladin.holypower");
 	}
 
 	function onVerifyTarget( _originTile, _targetTile )
@@ -131,8 +123,10 @@ this.paladin_holylight_skill <- this.inherit("scripts/skills/skill", {
 
 	function onUse( _user, _targetTile )
 	{
+		local heal_min = getTotalMinHeal();
+		local heal_max = getTotalMaxHeal();
 		local targetEntity = _targetTile.getEntity();
-		local healnumber = this.Math.rand(7, 14);
+		local healnumber = this.Math.rand(heal_min, heal_max);
 
 		this.Time.scheduleEvent(this.TimeUnit.Real, 1200, this.onApplyEffect.bindenv(this), {
 			Skill = this,
@@ -160,23 +154,11 @@ this.paladin_holylight_skill <- this.inherit("scripts/skills/skill", {
 			return;
 		}
 
-		if (this.m.IsMasterInLight == 0)
+		if (!targetEntity.isHiddenToPlayer())
 		{
-			if (!targetEntity.isHiddenToPlayer())
-			{
-				this.Tactical.EventLog.log(this.Const.UI.getColorizedEntityName(targetEntity) + " was healed for " + this.Math.min(targetEntity.getHitpointsMax() - targetEntity.getHitpoints(), healnumber) + " hitpoints");
-			}
-			targetEntity.setHitpoints(this.Math.min(targetEntity.getHitpointsMax(), targetEntity.getHitpoints() + healnumber));
+			this.Tactical.EventLog.log(this.Const.UI.getColorizedEntityName(targetEntity) + " was healed for " + this.Math.min(targetEntity.getHitpointsMax() - targetEntity.getHitpoints(), healnumber) + " hitpoints");
 		}
-		else
-		{
-			healnumber = healnumber+10;
-			if (!targetEntity.isHiddenToPlayer())
-			{
-				this.Tactical.EventLog.log(this.Const.UI.getColorizedEntityName(targetEntity) + " was healed for " + this.Math.min(targetEntity.getHitpointsMax() - targetEntity.getHitpoints(), healnumber) + " hitpoints");
-			}
-			targetEntity.setHitpoints(this.Math.min(targetEntity.getHitpointsMax(), targetEntity.getHitpoints() + healnumber));
-		}
+		targetEntity.setHitpoints(this.Math.min(targetEntity.getHitpointsMax(), targetEntity.getHitpoints() + healnumber));
 
 		targetEntity.onUpdateInjuryLayer();
 	}

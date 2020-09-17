@@ -923,7 +923,6 @@ gt.Const.CharacterProperties <- {
 	IsMasterInThrowing = false,
 	IsMasterInBow = false,
 	IsMasterInCrossbow = false,
-	IsMasterInLight = false,
 	IsDevoutionAuraActive = false,
 	IsRetributionAuraActive = false,
 	IsConcentrationAuraActive = false,
