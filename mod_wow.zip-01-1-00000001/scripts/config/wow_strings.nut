@@ -263,7 +263,7 @@ gt.Const.Wow_strings.PerkDescription <- {
 	KidneyShot = "Unlocks the \'Kidney Shot\' skill which stuns the target.",
 	Initiative = "No one can stop you. Your Initiative increases by [color=" + this.Const.UI.Color.PositiveValue + "]20[/color] points.\n\nAlso it gives you immunity to being rooted.",
 	Kick = "Unlocks the \'Kick\' skill which allows you to push the enemy. Enemy will not be able to understand where is his target now.",
-	Disarm = "Unlocks the \'Disarm\' skill which allows you to disarm the enemy with high probability. Who lost the weapon, will lose the life.",
+	Disarm = "Unlocks the \'Disarm\' skill which allows you try to disarm the enemy. Who lost the weapon, will lose the life.",
 	MasterDagger = "Dagger Adept. Dagger punctures becomes stronger and more accurate. Damage done by dagger is increased by [color=" + this.Const.UI.Color.PositiveValue + "]10%[/color]. An additional [color=" + this.Const.UI.Color.PositiveValue + "]10%[/color] of any dagger damage ignores armor.",
 	MasterMace = "Mace Adept. The mace in your hands becomes more destructive. Damage done by mace is increased by [color=" + this.Const.UI.Color.PositiveValue + "]20%[/color]. Does not work with two-handed weapon.",
 	MasterFlail = "Flail Adept. Сhain movements becomes faster. Take care of your head and ribs. Damage done by flail is increased by [color=" + this.Const.UI.Color.PositiveValue + "]20%[/color]. Does not work with two-handed weapon.",

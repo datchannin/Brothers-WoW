@@ -13,19 +13,17 @@ this.rogue_disarm_skill <- this.inherit("scripts/skills/skill", {
 			"sounds/combat/rogue_disarm.wav"
 		];
 		this.m.Type = this.Const.SkillType.Active;
-		this.m.Order = this.Const.SkillOrder.Any;
+		this.m.Order = this.Const.SkillOrder.OffensiveTargeted;
 		this.m.Delay = 0;
 		this.m.IsSerialized = false;
 		this.m.IsActive = true;
 		this.m.IsTargeted = true;
 		this.m.IsStacking = false;
 		this.m.IsAttack = true;
-		this.m.IsRanged = false;
 		this.m.IsIgnoredAsAOO = true;
-		this.m.IsShowingProjectile = false;
-		this.m.IsUsingHitchance = false;
+		this.m.IsUsingHitchance = true;
 		this.m.ActionPointCost = 5;
-		this.m.FatigueCost = 25;
+		this.m.FatigueCost = 20;
 		this.m.MinRange = 1;
 		this.m.MaxRange = 1;
 	}
@@ -38,38 +36,39 @@ this.rogue_disarm_skill <- this.inherit("scripts/skills/skill", {
 			id = 7,
 			type = "text",
 			icon = "ui/icons/special.png",
-			text = "Has a [color=" + this.Const.UI.Color.PositiveValue + "]80%[/color] chance to disarm on a hit"
+			text = "Has a [color=" + this.Const.UI.Color.PositiveValue + "]100%[/color] chance to disarm on a hit"
 		});
 		return ret;
 	}
 
 	function onUse( _user, _targetTile )
 	{
-		local target = _targetTile.getEntity();
-	
-		if (this.Math.rand(1, 100) < 21)
+		local success = this.attackEntity(_user, _targetTile.getEntity());
+
+		if (success)
 		{
-			if (!_user.isHiddenToPlayer() && _targetTile.IsVisibleForPlayer)
+			local target = _targetTile.getEntity();
+
+			if (!target.getCurrentProperties().IsStunned && !target.getCurrentProperties().IsImmuneToDisarm)
 			{
-				this.Tactical.EventLog.log(this.Const.UI.getColorizedEntityName(target) + " has resisted disarm skill");
+				target.getSkills().add(this.new("scripts/skills/effects/disarmed_effect"));
+
+				if (!_user.isHiddenToPlayer() && _targetTile.IsVisibleForPlayer)
+				{
+					this.Tactical.EventLog.log(this.Const.UI.getColorizedEntityName(_user) + " has disarmed " + this.Const.UI.getColorizedEntityName(target) + " for one turn");
+				}
 			}
-			return false;
 		}
 
-		if (!target.getCurrentProperties().IsStunned && !target.getCurrentProperties().IsImmuneToDisarm)
-		{
-			target.getSkills().add(this.new("scripts/skills/effects/disarmed_effect"));
+		return success;
+	}
 
-			if (!_user.isHiddenToPlayer() && _targetTile.IsVisibleForPlayer)
-			{
-				this.Tactical.EventLog.log(this.Const.UI.getColorizedEntityName(_user) + " has disarmed " + this.Const.UI.getColorizedEntityName(target) + " for one turn");
-			}
-
-			return true;
-		}
-		else
+	function onAnySkillUsed( _skill, _targetEntity, _properties )
+	{
+		if (_skill == this)
 		{
-			return false;
+			_properties.DamageTotalMult = 0.0;
+			_properties.HitChanceMult[this.Const.BodyPart.Head] = 0.0;
 		}
 	}
 });
