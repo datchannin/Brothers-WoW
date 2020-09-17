@@ -1,6 +1,9 @@
 /*BBWOW:This file is part of datchannin bbWoW mod, mod_version = 8.02, game_version = 1.4.0.42*/
 this.devoutionaura_effect <- this.inherit("scripts/skills/skill", {
-	m = {},
+	m = {
+		PaladinCurrentLevel = 1,
+		BaseEffect = 10		
+	},
 	function create()
 	{
 		this.m.ID = "effects.devoutionaura";
@@ -13,26 +16,31 @@ this.devoutionaura_effect <- this.inherit("scripts/skills/skill", {
 		this.m.IsRemovedAfterBattle = false;
 	}
 
+	function getTotalEffectValue()
+	{
+		local total_value = this.m.BaseEffect;
+		local scale = 0;
+		local level_for_effect = this.Math.floor(this.m.PaladinCurrentLevel/5);
+
+		scale = this.Math.floor(level_for_effect * this.Const.PaladinScale.devoutionaura);
+		total_value += scale;
+
+		return total_value;
+	}
+
 	function getTooltip()
 	{
-		return [
-			{
-				id = 1,
-				type = "title",
-				text = this.getName()
-			},
-			{
-				id = 2,
-				type = "description",
-				text = this.getDescription()
-			},
-			{
-				id = 10,
-				type = "text",
-				icon = "ui/icons/melee_defense.png",
-				text = "[color=" + this.Const.UI.Color.PositiveValue + "]+" + 10 + "[/color] Melee Defense"
-			}
-		];
+		local ret = this.getDefaultUtilityTooltip();
+		local total_value = getTotalEffectValue();
+
+		ret.push({
+			id = 6,
+			type = "text",
+			icon = "ui/icons/melee_defense.png",
+			text = "[color=" + this.Const.UI.Color.PositiveValue + "]+" + total_value + "[/color] Melee Defense"
+		});
+
+		return ret;
 	}
 
 	function getBonus()
@@ -63,6 +71,7 @@ this.devoutionaura_effect <- this.inherit("scripts/skills/skill", {
 			{
 				if (ally.getCurrentProperties().IsDevoutionAuraActive)
 				{
+					this.m.PaladinCurrentLevel = ally.getLevel();
 					isBonusShouldApply = 1;
 				}
 			}
@@ -75,15 +84,17 @@ this.devoutionaura_effect <- this.inherit("scripts/skills/skill", {
 	{
 		this.m.IsHidden = true;
 	}
-	
+
 	function onAfterUpdate( _properties )
 	{
 		local bonus = this.getBonus();
 		local actor = this.getContainer().getActor();
+		local total_value = getTotalEffectValue();
+		
 		if (bonus == 1)
 		{
 			this.m.IsHidden = false;
-			_properties.MeleeDefense += 10;
+			_properties.MeleeDefense += total_value;
 			if (actor.hasSprite("aura"))
 			{
 				actor.getSprite("aura").setBrush("anim_paladin_devoutionaura");

@@ -8,6 +8,7 @@ gt.Const.WarriorScale <- {
 gt.Const.PaladinScale <- {
 	holy_heal_min = 0.02,
 	holy_heal_max = 0.03,
+	devoutionaura = 1
 };
 
 gt.Const.RogueScale <- {
