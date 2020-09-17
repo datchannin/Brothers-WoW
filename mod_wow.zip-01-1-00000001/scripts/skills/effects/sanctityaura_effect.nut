@@ -1,11 +1,14 @@
 /*BBWOW:This file is part of datchannin bbWoW mod, mod_version = 8.02, game_version = 1.4.0.42*/
 this.sanctityaura_effect <- this.inherit("scripts/skills/skill", {
-	m = {},
+	m = {
+		PaladinCurrentLevel = 1,
+		BaseEffect = 2		
+	},
 	function create()
 	{
 		this.m.ID = "effects.sanctityaura";
 		this.m.Name = "Sanctity Aura";
-		this.m.Description = "You is under paladin Sanctity Aura now. You regenerate for [color=" + this.Const.UI.Color.PositiveValue + "]2[/color] Hitpoints on every turn. Keep closer.";
+		this.m.Description = "You is under paladin Sanctity Aura now. You regenerate Hitpoints on every turn. Keep closer.";
 		this.m.Icon = "ui/perks/perk_paladin_sanctityaura.png";
 		this.m.IconMini = "effect_mini_sanctityaura";
 		this.m.Type = this.Const.SkillType.StatusEffect;
@@ -13,26 +16,31 @@ this.sanctityaura_effect <- this.inherit("scripts/skills/skill", {
 		this.m.IsRemovedAfterBattle = false;
 	}
 
+	function getTotalEffectValue()
+	{
+		local total_value = this.m.BaseEffect;
+		local scale = 0;
+		local level_for_effect = this.Math.floor(this.m.PaladinCurrentLevel/5);
+
+		scale = this.Math.floor(level_for_effect * this.Const.PaladinScale.sanctityaura);
+		total_value += scale;
+
+		return total_value;
+	}
+
 	function getTooltip()
 	{
-		return [
-			{
-				id = 1,
-				type = "title",
-				text = this.getName()
-			},
-			{
-				id = 2,
-				type = "description",
-				text = this.getDescription()
-			},
-			{
-				id = 10,
-				type = "text",
-				icon = "ui/icons/health.png",
-				text = "[color=" + this.Const.UI.Color.PositiveValue + "]+2[/color] Hitpoints per turn for all party members within 4 tiles."
-			}
-		];
+		local ret = this.getDefaultUtilityTooltip();
+		local total_value = getTotalEffectValue();
+
+		ret.push({
+			id = 6,
+			type = "text",
+			icon = "ui/icons/health.png",
+			text = "[color=" + this.Const.UI.Color.PositiveValue + "]+" + total_value + "[/color] Hitpoints per turn"
+		});
+
+		return ret;
 	}
 
 	function getBonus()
@@ -64,6 +72,7 @@ this.sanctityaura_effect <- this.inherit("scripts/skills/skill", {
 				if (ally.getCurrentProperties().IsSanctityAuraActive)
 				{
 					isBonusShouldApply = 1;
+					this.m.PaladinCurrentLevel = ally.getLevel();
 				}
 			}
 		}
@@ -74,6 +83,8 @@ this.sanctityaura_effect <- this.inherit("scripts/skills/skill", {
 	function onTurnStart()
 	{
 		local bonus = this.getBonus();
+		local total_value = getTotalEffectValue();
+
 		if (bonus == 1)
 		{
 			local actor = this.m.Container.getActor();
@@ -87,10 +98,10 @@ this.sanctityaura_effect <- this.inherit("scripts/skills/skill", {
 			
 			if (!actor.isHiddenToPlayer())
 			{
-				this.Tactical.EventLog.log(this.Const.UI.getColorizedEntityName(actor) + " heals for " + this.Math.min(actor.getHitpointsMax() - actor.getHitpoints(), 2) + " points");
+				this.Tactical.EventLog.log(this.Const.UI.getColorizedEntityName(actor) + " heals for " + this.Math.min(actor.getHitpointsMax() - actor.getHitpoints(), total_value) + " points");
 			}
 
-			actor.setHitpoints(this.Math.min(actor.getHitpointsMax(), actor.getHitpoints() + 2));
+			actor.setHitpoints(this.Math.min(actor.getHitpointsMax(), actor.getHitpoints() + total_value));
 			actor.onUpdateInjuryLayer();
 		}
 	}

@@ -1,11 +1,14 @@
 /*BBWOW:This file is part of datchannin bbWoW mod, mod_version = 8.02, game_version = 1.4.0.42*/
 this.paladin_sanctityaura_skill <- this.inherit("scripts/skills/skill", {
-	m = {},
+	m = {
+		CurrentLevel = 1,
+		BaseEffect = 2,
+	},
 	function create()
 	{
 		this.m.ID = "actives.sanctityaura_skill";
 		this.m.Name = "Sanctity Aura";
-		this.m.Description = "Apply Sanctity Aura on the Paladin. This aura increases Hitpoints Regeneration of all party members within 4 tiles by [color=" + this.Const.UI.Color.PositiveValue + "]2[/color] points.";
+		this.m.Description = "Apply Sanctity Aura on the Paladin. This aura increases Hitpoints Regeneration of all party members within 4 tiles.";
 		this.m.Icon = "ui/perks/skill_paladin_sanctityaura.png";
 		this.m.IconDisabled = "ui/perks/skill_paladin_sanctityaura_sw.png";
 		this.m.Overlay = "skill_paladin_sanctityaura";
@@ -13,7 +16,7 @@ this.paladin_sanctityaura_skill <- this.inherit("scripts/skills/skill", {
 			"sounds/combat/paladin_sanctityaura.wav"
 		];
 		this.m.Type = this.Const.SkillType.Active;
-		this.m.Order = this.Const.SkillOrder.Any;
+		this.m.Order = this.Const.SkillOrder.NonTargeted;
 		this.m.IsSerialized = false;
 		this.m.IsActive = true;
 		this.m.IsTargeted = false;
@@ -25,31 +28,37 @@ this.paladin_sanctityaura_skill <- this.inherit("scripts/skills/skill", {
 		this.m.MaxRange = 0;
 	}
 
+	function getTotalEffectValue()
+	{
+		local total_value = this.m.BaseEffect;
+		local scale = 0;
+		local level_for_effect = this.Math.floor(this.m.CurrentLevel/5);
+
+		scale = this.Math.floor(level_for_effect * this.Const.PaladinScale.sanctityaura);
+		total_value += scale;
+
+		return total_value;
+	}
+
 	function getTooltip()
 	{
-		return [
-			{
-				id = 1,
-				type = "title",
-				text = this.getName()
-			},
-			{
-				id = 2,
-				type = "description",
-				text = this.getDescription()
-			},
-			{
-				id = 3,
-				type = "text",
-				text = this.getCostString()
-			},
-			{
-				id = 6,
-				type = "text",
-				icon = "ui/icons/health.png",
-				text = "[color=" + this.Const.UI.Color.PositiveValue + "]+2[/color] Hitpoints per turn for all party members within 4 tiles"
-			},
-		];
+		local ret = this.getDefaultUtilityTooltip();
+		local total_value = getTotalEffectValue();
+
+		ret.push({
+			id = 6,
+			type = "text",
+			icon = "ui/icons/health.png",
+			text = "[color=" + this.Const.UI.Color.PositiveValue + "]+" + total_value + "[/color] Hitpoints per turn for all party members within 4 tiles"
+		});
+
+		return ret;
+	}
+
+	function onUpdate( _properties )
+	{
+		local user = this.getContainer().getActor();
+		this.m.CurrentLevel = user.getLevel();
 	}
 
 	function isUsable()

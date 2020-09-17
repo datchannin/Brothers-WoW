@@ -13,7 +13,7 @@ this.rogue_disarm_skill <- this.inherit("scripts/skills/skill", {
 			"sounds/combat/rogue_disarm.wav"
 		];
 		this.m.Type = this.Const.SkillType.Active;
-		this.m.Order = this.Const.SkillOrder.OffensiveTargeted;
+		this.m.Order = this.Const.SkillOrder.UtilityTargeted;
 		this.m.Delay = 0;
 		this.m.IsSerialized = false;
 		this.m.IsActive = true;

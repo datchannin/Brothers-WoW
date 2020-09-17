@@ -10,7 +10,8 @@ gt.Const.PaladinScale <- {
 	holy_heal_max = 0.03,
 	devoutionaura = 1,
 	concentrationaura = 1,
-	retributionaura = 1
+	retributionaura = 1,
+	sanctityaura = 1
 };
 
 gt.Const.RogueScale <- {
