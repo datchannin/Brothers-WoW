@@ -1,13 +1,10 @@
 /*BBWOW:This file is part of datchannin bbWoW mod, mod_version = 8.02, game_version = 1.4.0.42*/
 this.mage_frostbolt_skill <- this.inherit("scripts/skills/skill", {
 	m = {
-		damage_min = 18,
-		damage_max = 22,
+		damage_base_min = 18,
+		damage_base_max = 22,
 		arcticreach = false,
 		winterschill = false,
-		focus1 = false,
-		focus2 = false,
-		focus3 = false,
 		magicabsorption = false,
 		magicinstability = false,
 		iceattunement = false
@@ -52,7 +49,8 @@ this.mage_frostbolt_skill <- this.inherit("scripts/skills/skill", {
 
 	function getTotalFrostMinDamage()
 	{
-		local total_damage_min = 18;
+		local total_damage_min = this.m.damage_base_min;
+		local scale = 0;
 		if (this.m.arcticreach)
 		{
 			total_damage_min += 5;
@@ -63,27 +61,15 @@ this.mage_frostbolt_skill <- this.inherit("scripts/skills/skill", {
 			total_damage_min += 5;
 		}
 
-		if (this.m.focus1)
-		{
-			total_damage_min += 3;
-		}
-
-		if (this.m.focus2)
-		{
-			total_damage_min += 3;
-		}
-
-		if (this.m.focus3)
-		{
-			total_damage_min += 3;
-		}
+		total_damage_min += scale;
 
 		return total_damage_min;
 	}
 
 	function getTotalFrostMaxDamage()
 	{
-		local total_damage_max = 22;
+		local total_damage_max = this.m.damage_base_max;
+		local scale = 0;
 		if (this.m.arcticreach)
 		{
 			total_damage_max += 5;
@@ -94,20 +80,7 @@ this.mage_frostbolt_skill <- this.inherit("scripts/skills/skill", {
 			total_damage_max += 5;
 		}
 
-		if (this.m.focus1)
-		{
-			total_damage_max += 3;
-		}
-
-		if (this.m.focus2)
-		{
-			total_damage_max += 3;
-		}
-
-		if (this.m.focus3)
-		{
-			total_damage_max += 3;
-		}
+		total_damage_max += scale;
 
 		return total_damage_max;
 	}
@@ -174,9 +147,6 @@ this.mage_frostbolt_skill <- this.inherit("scripts/skills/skill", {
 		local user = this.getContainer().getActor();
 		this.m.arcticreach = user.getSkills().hasSkill("perk.wow.mage.arcticreach");
 		this.m.winterschill = user.getSkills().hasSkill("perk.wow.mage.winterschill");
-		this.m.focus1 = user.getSkills().hasSkill("perk.wow.mage.magicfocus1");
-		this.m.focus2 = user.getSkills().hasSkill("perk.wow.mage.magicfocus2");
-		this.m.focus3 = user.getSkills().hasSkill("perk.wow.mage.magicfocus3");
 		this.m.magicabsorption = user.getSkills().hasSkill("perk.wow.mage.magicabsorption");
 		this.m.magicinstability = user.getSkills().hasSkill("perk.wow.mage.magicinstability");
 		this.m.iceattunement = user.getSkills().hasSkill("perk.wow.mage.iceattunement");
@@ -210,11 +180,11 @@ this.mage_frostbolt_skill <- this.inherit("scripts/skills/skill", {
 	{
 		if (_skill == this)
 		{
-			this.m.damage_min = getTotalFrostMinDamage();
-			this.m.damage_max = getTotalFrostMaxDamage();
+			local total_damage_min = getTotalFrostMinDamage();
+			local total_damage_max = getTotalFrostMaxDamage();
 		
-			_properties.DamageRegularMin = this.m.damage_min;
-			_properties.DamageRegularMax = this.m.damage_max;
+			_properties.DamageRegularMin = total_damage_min;
+			_properties.DamageRegularMax = total_damage_max;
 			_properties.DamageRegularMult = 1;
 			_properties.DamageArmorMult = 1;
 		}
