@@ -87,7 +87,7 @@ this.warlock_shadowbolt_skill <- this.inherit("scripts/skills/skill", {
 			total_damage_min += 10;
 		}
 
-		scale_damage = this.Math.floor(this.m.damage_base_min * this.m.CurrentLevel * this.Const.WarlockScale.shadow_damage_min);
+		scale_damage = this.Math.floor(total_damage_min * this.m.CurrentLevel * this.Const.WarlockScale.shadow_damage_min);
 
 		total_damage_min += scale_damage;
 
@@ -109,7 +109,7 @@ this.warlock_shadowbolt_skill <- this.inherit("scripts/skills/skill", {
 			total_damage_max += 12;
 		}
 
-		scale_damage = this.Math.floor(this.m.damage_base_max * this.m.CurrentLevel * this.Const.WarlockScale.shadow_damage_max);
+		scale_damage = this.Math.floor(total_damage_max * this.m.CurrentLevel * this.Const.WarlockScale.shadow_damage_max);
 
 		total_damage_max += scale_damage;
 

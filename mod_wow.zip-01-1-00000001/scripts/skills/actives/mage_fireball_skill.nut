@@ -1,13 +1,10 @@
 /*BBWOW:This file is part of datchannin bbWoW mod, mod_version = 8.02, game_version = 1.4.0.42*/
 this.mage_fireball_skill <- this.inherit("scripts/skills/skill", {
 	m = {
-		damage_min = 15,
-		damage_max = 25,
+		damage_base_min = 15,
+		damage_base_max = 25,
 		blastwave = false,
 		ignite = false,
-		focus1 = false,
-		focus2 = false,
-		focus3 = false,
 		magicabsorption = false,
 		magicinstability = false,
 		fireattunement = false
@@ -52,7 +49,9 @@ this.mage_fireball_skill <- this.inherit("scripts/skills/skill", {
 
 	function getTotalFireMinDamage()
 	{
-		local total_damage_min = 15;
+		local total_damage_min = this.m.damage_base_min;
+		local scale = 0;
+
 		if (this.m.blastwave)
 		{
 			total_damage_min += 5;
@@ -63,27 +62,16 @@ this.mage_fireball_skill <- this.inherit("scripts/skills/skill", {
 			total_damage_min += 5;
 		}
 
-		if (this.m.focus1)
-		{
-			total_damage_min += 3;
-		}
-
-		if (this.m.focus2)
-		{
-			total_damage_min += 3;
-		}
-
-		if (this.m.focus3)
-		{
-			total_damage_min += 3;
-		}
+		total_damage_min += scale;
 
 		return total_damage_min;
 	}
 
 	function getTotalFireMaxDamage()
 	{
-		local total_damage_max = 25;
+		local total_damage_max = this.m.damage_base_max;
+		local scale = 0;
+
 		if (this.m.blastwave)
 		{
 			total_damage_max += 5;
@@ -94,20 +82,7 @@ this.mage_fireball_skill <- this.inherit("scripts/skills/skill", {
 			total_damage_max += 5;
 		}
 
-		if (this.m.focus1)
-		{
-			total_damage_max += 3;
-		}
-
-		if (this.m.focus2)
-		{
-			total_damage_max += 3;
-		}
-
-		if (this.m.focus3)
-		{
-			total_damage_max += 3;
-		}
+		total_damage_max += scale;
 
 		return total_damage_max;
 	}
@@ -174,9 +149,6 @@ this.mage_fireball_skill <- this.inherit("scripts/skills/skill", {
 		local user = this.getContainer().getActor();
 		this.m.blastwave = user.getSkills().hasSkill("perk.wow.mage.blastwave");
 		this.m.ignite = user.getSkills().hasSkill("perk.wow.mage.ignite");
-		this.m.focus1 = user.getSkills().hasSkill("perk.wow.mage.magicfocus1");
-		this.m.focus2 = user.getSkills().hasSkill("perk.wow.mage.magicfocus2");
-		this.m.focus3 = user.getSkills().hasSkill("perk.wow.mage.magicfocus3");
 		this.m.magicabsorption = user.getSkills().hasSkill("perk.wow.mage.magicabsorption");
 		this.m.magicinstability = user.getSkills().hasSkill("perk.wow.mage.magicinstability");
 		this.m.fireattunement = user.getSkills().hasSkill("perk.wow.mage.fireattunement");
@@ -210,11 +182,11 @@ this.mage_fireball_skill <- this.inherit("scripts/skills/skill", {
 	{
 		if (_skill == this)
 		{
-			this.m.damage_min = getTotalFireMinDamage();
-			this.m.damage_max = getTotalFireMaxDamage();
+			local total_damage_min = getTotalFireMinDamage();
+			local total_damage_max = getTotalFireMaxDamage();
 
-			_properties.DamageRegularMin = this.m.damage_min;
-			_properties.DamageRegularMax = this.m.damage_max;
+			_properties.DamageRegularMin = total_damage_min;
+			_properties.DamageRegularMax = total_damage_max;
 			_properties.DamageRegularMult = 1;
 			_properties.DamageArmorMult = 1;
 		}
