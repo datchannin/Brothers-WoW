@@ -419,6 +419,7 @@ this.unleash_winterwolf <- this.inherit("scripts/skills/skill", {
 		if (this.m.CurrentHunterLevel >= 5)
 		{
 			entity.getSkills().add(this.new("scripts/skills/perks/perk_crippling_strikes"));
+			entity.getSkills().add(this.new("scripts/skills/perks/perk_coup_de_grace"));
 		}
 		
 		if (this.m.CurrentHunterLevel >= 7)
