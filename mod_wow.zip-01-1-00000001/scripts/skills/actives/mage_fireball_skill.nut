@@ -8,7 +8,8 @@ this.mage_fireball_skill <- this.inherit("scripts/skills/skill", {
 		ignite = false,
 		magicabsorption = false,
 		magicinstability = false,
-		fireattunement = false
+		fireattunement = false,
+		iceattunement = false
 	},
 	function create()
 	{
@@ -60,7 +61,12 @@ this.mage_fireball_skill <- this.inherit("scripts/skills/skill", {
 
 		if (this.m.fireattunement)
 		{
-			total_damage_min += 5;
+			total_damage_min += 7;
+		}
+
+		if (this.m.iceattunement)
+		{
+			total_damage_min -= 4;
 		}
 
 		scale = this.Math.floor(total_damage_min * this.m.CurrentLevel * this.Const.MageScale.fire_damage_min);
@@ -82,7 +88,12 @@ this.mage_fireball_skill <- this.inherit("scripts/skills/skill", {
 
 		if (this.m.fireattunement)
 		{
-			total_damage_max += 5;
+			total_damage_max += 7;
+		}
+
+		if (this.m.iceattunement)
+		{
+			total_damage_max -= 4;
 		}
 
 		scale = this.Math.floor(total_damage_max * this.m.CurrentLevel * this.Const.MageScale.fire_damage_max);
@@ -158,6 +169,7 @@ this.mage_fireball_skill <- this.inherit("scripts/skills/skill", {
 		this.m.magicabsorption = user.getSkills().hasSkill("perk.wow.mage.magicabsorption");
 		this.m.magicinstability = user.getSkills().hasSkill("perk.wow.mage.magicinstability");
 		this.m.fireattunement = user.getSkills().hasSkill("perk.wow.mage.fireattunement");
+		this.m.iceattunement = user.getSkills().hasSkill("perk.wow.mage.iceattunement");
 	}
 
 	function onAfterUpdate( _properties )
