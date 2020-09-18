@@ -18,7 +18,7 @@ this.perk_wow_manaagat <- this.inherit("scripts/skills/skill", {
 	{
 		if (!this.m.Container.hasSkill("actives.manaagat_skill"))
 		{
-			//this.m.Container.add(this.new("scripts/skills/actives/mage_manaagat_skill"));
+			this.m.Container.add(this.new("scripts/skills/actives/mage_manaagat_skill"));
 		}
 	}
 

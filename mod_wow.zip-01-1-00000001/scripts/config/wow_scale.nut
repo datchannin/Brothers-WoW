@@ -37,7 +37,9 @@ gt.Const.MageScale <- {
 	fire_damage_max = 0.04,
 	frost_damage_min = 0.02,
 	frost_damage_max = 0.03,
-	exp_share = 2
+	exp_share = 2,
+	agat_restore = 2,
+	agat_charges = 12
 };
 
 gt.Const.WarlockScale <- {
