@@ -1374,6 +1374,16 @@ gt.Const.Perks.PerkDefObjects.IceAttunement <- {
 	Const = "IceAttunement"
 }
 
+gt.Const.Perks.PerkDefObjects.ManaAgat <- {
+	ID = "perk.wow.mage.manaagat",
+	Script = "scripts/skills/perks/perk_wow_manaagat",
+	Name = this.Const.Wow_strings.PerkName.ManaAgat,
+	Tooltip = this.Const.Wow_strings.PerkDescription.ManaAgat,
+	Icon = "ui/perks/perk_mage_manaagat.png",
+	IconDisabled = "ui/perks/perk_mage_manaagat_sw.png",
+	Const = "ManaAgat"
+}
+
 // ---------------------------------------------|
 // ----------------  WOW PRIEST ----------------|
 // ---------------------------------------------|

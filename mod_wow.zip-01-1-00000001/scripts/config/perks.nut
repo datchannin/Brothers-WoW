@@ -379,7 +379,7 @@ gt.Const.Perks.PerkTreeMage <- [
 		gt.Const.Perks.PerkDefObjects.Footwork
 	],
 	[
-		//gt.Const.Perks.PerkDefObjects.
+		gt.Const.Perks.PerkDefObjects.ManaAgat
 		gt.Const.Perks.PerkDefObjects.Berserk
 		gt.Const.Perks.PerkDefObjects.Nimble
 	],
