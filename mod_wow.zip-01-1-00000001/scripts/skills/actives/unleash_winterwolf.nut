@@ -77,6 +77,28 @@ this.unleash_winterwolf <- this.inherit("scripts/skills/skill", {
 		this.m.MaxRange = 1;
 	}
 
+	function getTotalRangedDefenseBonus()
+	{
+		local rangeddefense_bonus = this.m.BaseRangedDefenseBonus;
+		local scale = 0;
+
+		scale = this.Math.floor(this.m.CurrentHunterLevel * this.Const.HunterScale.pet_rangeddefense_bonus);
+		rangeddefense_bonus += scale;
+
+		return rangeddefense_bonus;
+	}
+
+	function getTotalMeleeDefenseBonus()
+	{
+		local meleedefense_bonus = this.m.BaseMeleeDefenseBonus;
+		local scale = 0;
+
+		scale = this.Math.floor(this.m.CurrentHunterLevel * this.Const.HunterScale.pet_meleedefense_bonus);
+		meleedefense_bonus += scale;
+
+		return meleedefense_bonus;
+	}
+
 	function getTotalHealthBonus()
 	{
 		local health_bonus = this.m.BaseHealthBonus;
@@ -104,6 +126,8 @@ this.unleash_winterwolf <- this.inherit("scripts/skills/skill", {
 		local ret = this.getDefaultUtilityTooltip();
 		local health_bonus = getTotalHealthBonus();
 		local stamina_bonus = getTotalStaminaBonus();
+		local meleedefense_bonus = getTotalMeleeDefenseBonus();
+		local rangeddefense_bonus = getTotalRangedDefenseBonus();
 
 		if (this.m.IsMasterHasEnduranceTraining || this.m.IsMasterHasThickHide || this.m.IsMasterHasBestialSwiftness || this.m.IsMasterHasUnleashFury)
 		{
@@ -138,14 +162,14 @@ this.unleash_winterwolf <- this.inherit("scripts/skills/skill", {
 				id = 7,
 				type = "text",
 				icon = "ui/icons/melee_defense.png",
-				text = "Pet Melee Defense increased by [color=" + this.Const.UI.Color.PositiveValue + "]40[/color]."
+				text = "Pet Melee Defense increased by [color=" + this.Const.UI.Color.PositiveValue + "]" + meleedefense_bonus + "[/color]."
 			});
 
 			ret.push({
 				id = 7,
 				type = "text",
 				icon = "ui/icons/ranged_defense.png",
-				text = "Pet Range Defense increased by [color=" + this.Const.UI.Color.PositiveValue + "]40[/color]."
+				text = "Pet Range Defense increased by [color=" + this.Const.UI.Color.PositiveValue + "]" + rangeddefense_bonus + "[/color]."
 			});
 		}
 
@@ -292,6 +316,8 @@ this.unleash_winterwolf <- this.inherit("scripts/skills/skill", {
 		local health_bonus = getTotalHealthBonus();
 		local health_bonus_mult = (health_bonus * 0.01) + 1;
 		local stamina_bonus = getTotalStaminaBonus();
+		local meleedefense_bonus = getTotalMeleeDefenseBonus();
+		local rangeddefense_bonus = getTotalRangedDefenseBonus();
 
 		if (!this.World.getTime().IsDaytime)
 		{
@@ -308,8 +334,8 @@ this.unleash_winterwolf <- this.inherit("scripts/skills/skill", {
 		if (this.m.IsMasterHasThickHide)
 		{
 			local thickhide = this.new("scripts/skills/effects/thickhide_effect");
-			thickhide.SetMeleeDefenseBase(40);
-			thickhide.SetRangedDefenseBase(40);
+			thickhide.SetMeleeDefenseBase(meleedefense_bonus);
+			thickhide.SetRangedDefenseBase(rangeddefense_bonus);
 			entity.getSkills().add(thickhide);
 		}
 		if (this.m.IsMasterHasBestialSwiftness)
