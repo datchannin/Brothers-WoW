@@ -1324,6 +1324,16 @@ gt.Const.Perks.PerkDefObjects.Meditation <- {
 	Const = "Meditation"
 }
 
+gt.Const.Perks.PerkDefObjects.GreatnessofMind <- {
+	ID = "perk.wow.mage.greatnessofmind",
+	Script = "scripts/skills/perks/perk_wow_greatnessofmind",
+	Name = this.Const.Wow_strings.PerkName.GreatnessofMind,
+	Tooltip = this.Const.Wow_strings.PerkDescription.GreatnessofMind,
+	Icon = "ui/perks/perk_mage_greatnessofmind.png",
+	IconDisabled = "ui/perks/perk_mage_greatnessofmind_sw.png",
+	Const = "GreatnessofMind"
+}
+
 gt.Const.Perks.PerkDefObjects.MagicAbsorption <- {
 	ID = "perk.wow.mage.magicabsorption",
 	Script = "scripts/skills/perks/perk_wow_magicabsorption",

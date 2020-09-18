@@ -366,7 +366,7 @@ gt.Const.Perks.PerkTreeMage <- [
 		gt.Const.Perks.PerkDefObjects.RallyTheTroops
 	],
 	[
-		//gt.Const.Perks.PerkDefObjects.
+		gt.Const.Perks.PerkDefObjects.GreatnessofMind
 		//gt.Const.Perks.PerkDefObjects.
 		//gt.Const.Perks.PerkDefObjects.
 		gt.Const.Perks.PerkDefObjects.Meditation
