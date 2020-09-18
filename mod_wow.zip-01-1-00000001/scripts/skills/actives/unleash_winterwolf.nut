@@ -77,6 +77,28 @@ this.unleash_winterwolf <- this.inherit("scripts/skills/skill", {
 		this.m.MaxRange = 1;
 	}
 
+	function getTotalBraveryBonus()
+	{
+		local bravery_bonus = this.m.BaseBraveryBonus;
+		local scale = 0;
+
+		scale = this.Math.floor(this.m.CurrentHunterLevel * this.Const.HunterScale.pet_bravery_bonus);
+		bravery_bonus += scale;
+
+		return bravery_bonus;
+	}
+
+	function getTotalMeleeSkillBonus()
+	{
+		local meleeskill_bonus = this.m.BaseMeleeSkillBonus;
+		local scale = 0;
+
+		scale = this.Math.floor(this.m.CurrentHunterLevel * this.Const.HunterScale.pet_meleeskill_bonus);
+		meleeskill_bonus += scale;
+
+		return meleeskill_bonus;
+	}
+
 	function getTotalFatigueRecoveryBonus()
 	{
 		local fatiguerecovery_bonus = this.m.BaseFatigueRecoveryBonus;
@@ -152,6 +174,8 @@ this.unleash_winterwolf <- this.inherit("scripts/skills/skill", {
 		local rangeddefense_bonus = getTotalRangedDefenseBonus();
 		local actionpoints_bonus = getTotalActionPointsBonus();
 		local fatiguerecovery_bonus = getTotalFatigueRecoveryBonus();
+		local meleeskill_bonus = getTotalMeleeSkillBonus();
+		local bravery_bonus = getTotalBraveryBonus();
 
 		if (this.m.IsMasterHasEnduranceTraining || this.m.IsMasterHasThickHide || this.m.IsMasterHasBestialSwiftness || this.m.IsMasterHasUnleashFury)
 		{
@@ -220,14 +244,14 @@ this.unleash_winterwolf <- this.inherit("scripts/skills/skill", {
 				id = 7,
 				type = "text",
 				icon = "ui/icons/melee_skill.png",
-				text = "Pet Melee Skill increased by [color=" + this.Const.UI.Color.PositiveValue + "]30[/color]."
+				text = "Pet Melee Skill increased by [color=" + this.Const.UI.Color.PositiveValue + "]" + meleeskill_bonus + "[/color]."
 			});
 
 			ret.push({
 				id = 7,
 				type = "text",
 				icon = "ui/icons/bravery.png",
-				text = "Pet Bravery increased by [color=" + this.Const.UI.Color.PositiveValue + "]30[/color]."
+				text = "Pet Bravery increased by [color=" + this.Const.UI.Color.PositiveValue + "]" + bravery_bonus + "[/color]."
 			});
 		}
 
@@ -344,6 +368,8 @@ this.unleash_winterwolf <- this.inherit("scripts/skills/skill", {
 		local rangeddefense_bonus = getTotalRangedDefenseBonus();
 		local actionpoints_bonus = getTotalActionPointsBonus();
 		local fatiguerecovery_bonus = getTotalFatigueRecoveryBonus();
+		local meleeskill_bonus = getTotalMeleeSkillBonus();
+		local bravery_bonus = getTotalBraveryBonus();
 
 		if (!this.World.getTime().IsDaytime)
 		{
@@ -374,8 +400,8 @@ this.unleash_winterwolf <- this.inherit("scripts/skills/skill", {
 		if (this.m.IsMasterHasUnleashFury)
 		{
 			local unleashedfury = this.new("scripts/skills/effects/unleashedfury_effect");
-			unleashedfury.SetMeleeSkillBase(30);
-			unleashedfury.SetBraveryBase(30);
+			unleashedfury.SetMeleeSkillBase(meleeskill_bonus);
+			unleashedfury.SetBraveryBase(bravery_bonus);
 			entity.getSkills().add(unleashedfury);
 		}
 		entity.getSkills().add(this.new("scripts/skills/effects/winterwolfgetheal_effect"));
