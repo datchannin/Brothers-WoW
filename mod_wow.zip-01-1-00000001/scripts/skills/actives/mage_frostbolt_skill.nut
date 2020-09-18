@@ -3,6 +3,7 @@ this.mage_frostbolt_skill <- this.inherit("scripts/skills/skill", {
 	m = {
 		damage_base_min = 18,
 		damage_base_max = 22,
+		CurrentLevel = 1,
 		arcticreach = false,
 		winterschill = false,
 		magicabsorption = false,
@@ -51,6 +52,7 @@ this.mage_frostbolt_skill <- this.inherit("scripts/skills/skill", {
 	{
 		local total_damage_min = this.m.damage_base_min;
 		local scale = 0;
+
 		if (this.m.arcticreach)
 		{
 			total_damage_min += 5;
@@ -60,6 +62,8 @@ this.mage_frostbolt_skill <- this.inherit("scripts/skills/skill", {
 		{
 			total_damage_min += 5;
 		}
+
+		scale = this.Math.floor(total_damage_min * this.m.CurrentLevel * this.Const.MageScale.frost_damage_min);
 
 		total_damage_min += scale;
 
@@ -70,6 +74,7 @@ this.mage_frostbolt_skill <- this.inherit("scripts/skills/skill", {
 	{
 		local total_damage_max = this.m.damage_base_max;
 		local scale = 0;
+
 		if (this.m.arcticreach)
 		{
 			total_damage_max += 5;
@@ -79,6 +84,8 @@ this.mage_frostbolt_skill <- this.inherit("scripts/skills/skill", {
 		{
 			total_damage_max += 5;
 		}
+
+		scale = this.Math.floor(total_damage_max * this.m.CurrentLevel * this.Const.MageScale.frost_damage_max);
 
 		total_damage_max += scale;
 
@@ -145,6 +152,7 @@ this.mage_frostbolt_skill <- this.inherit("scripts/skills/skill", {
 	function onUpdate( _properties )
 	{
 		local user = this.getContainer().getActor();
+		this.m.CurrentLevel = user.getLevel();
 		this.m.arcticreach = user.getSkills().hasSkill("perk.wow.mage.arcticreach");
 		this.m.winterschill = user.getSkills().hasSkill("perk.wow.mage.winterschill");
 		this.m.magicabsorption = user.getSkills().hasSkill("perk.wow.mage.magicabsorption");

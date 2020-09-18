@@ -32,6 +32,12 @@ gt.Const.RogueScale <- {
 	poison_duration = 15
 };
 
+gt.Const.MageScale <- {
+	fire_damage_min = 0.01,
+	fire_damage_max = 0.04,
+	frost_damage_min = 0.02,
+	frost_damage_max = 0.03
+};
 
 gt.Const.WarlockScale <- {
 	shadow_damage_min = 0.02,

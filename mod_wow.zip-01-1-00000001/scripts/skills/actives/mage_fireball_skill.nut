@@ -3,6 +3,7 @@ this.mage_fireball_skill <- this.inherit("scripts/skills/skill", {
 	m = {
 		damage_base_min = 15,
 		damage_base_max = 25,
+		CurrentLevel = 1,
 		blastwave = false,
 		ignite = false,
 		magicabsorption = false,
@@ -62,6 +63,8 @@ this.mage_fireball_skill <- this.inherit("scripts/skills/skill", {
 			total_damage_min += 5;
 		}
 
+		scale = this.Math.floor(total_damage_min * this.m.CurrentLevel * this.Const.MageScale.fire_damage_min);
+
 		total_damage_min += scale;
 
 		return total_damage_min;
@@ -81,6 +84,8 @@ this.mage_fireball_skill <- this.inherit("scripts/skills/skill", {
 		{
 			total_damage_max += 5;
 		}
+
+		scale = this.Math.floor(total_damage_max * this.m.CurrentLevel * this.Const.MageScale.fire_damage_max);
 
 		total_damage_max += scale;
 
@@ -147,6 +152,7 @@ this.mage_fireball_skill <- this.inherit("scripts/skills/skill", {
 	function onUpdate( _properties )
 	{
 		local user = this.getContainer().getActor();
+		this.m.CurrentLevel = user.getLevel();
 		this.m.blastwave = user.getSkills().hasSkill("perk.wow.mage.blastwave");
 		this.m.ignite = user.getSkills().hasSkill("perk.wow.mage.ignite");
 		this.m.magicabsorption = user.getSkills().hasSkill("perk.wow.mage.magicabsorption");
