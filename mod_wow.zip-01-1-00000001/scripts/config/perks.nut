@@ -366,9 +366,9 @@ gt.Const.Perks.PerkTreeMage <- [
 		gt.Const.Perks.PerkDefObjects.RallyTheTroops
 	],
 	[
-		gt.Const.Perks.PerkDefObjects.MagicFocus1
-		gt.Const.Perks.PerkDefObjects.MagicFocus2
-		gt.Const.Perks.PerkDefObjects.MagicFocus3
+		//gt.Const.Perks.PerkDefObjects.
+		//gt.Const.Perks.PerkDefObjects.
+		//gt.Const.Perks.PerkDefObjects.
 		gt.Const.Perks.PerkDefObjects.Meditation
 		gt.Const.Perks.PerkDefObjects.MagicAbsorption
 		gt.Const.Perks.PerkDefObjects.MagicInstability
