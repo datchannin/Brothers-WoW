@@ -1,6 +1,10 @@
 /*BBWOW:This file is part of datchannin bbWoW mod, mod_version = 8.02, game_version = 1.4.0.42*/
 this.hunter_mendpet_skill <- this.inherit("scripts/skills/skill", {
-	m = {},
+	m = {
+		heal_base_min = 15,
+		heal_base_max = 25,
+		CurrentLevel = 1
+	},
 	function create()
 	{
 		this.m.ID = "actives.mendpet_skill";
@@ -13,7 +17,7 @@ this.hunter_mendpet_skill <- this.inherit("scripts/skills/skill", {
 			"sounds/combat/hunter_mendpet.wav"
 		];
 		this.m.Type = this.Const.SkillType.Active;
-		this.m.Order = this.Const.SkillOrder.Any;
+		this.m.Order = this.Const.SkillOrder.UtilityTargeted;
 		this.m.Delay = 0;
 		this.m.IsSerialized = false;
 		this.m.IsActive = true;
@@ -29,31 +33,50 @@ this.hunter_mendpet_skill <- this.inherit("scripts/skills/skill", {
 		this.m.MaxRange = 8;
 	}
 
+	function getTotalHealMin()
+	{
+		local total_heal_min = this.m.heal_base_min;
+		local scale = 0;
+
+		//scale = this.Math.floor(this.m.heal_base_min * this.m.CurrentLevel);
+
+		total_heal_min += scale;
+
+		return total_heal_min;
+	}
+
+	function getTotalHealMax()
+	{
+		local total_heal_max = this.m.heal_base_max;
+		local scale = 0;
+
+		//scale = this.Math.floor(this.m.heal_base_max * this.m.CurrentLevel);
+
+		total_heal_max += scale;
+
+		return total_heal_max;
+	}
+
 	function getTooltip()
 	{
-		return [
-			{
-				id = 1,
-				type = "title",
-				text = "Mend Pet"
-			},
-			{
-				id = 2,
-				type = "description",
-				text = "Heal Winterwolf during the battle."
-			},
-			{
-				id = 3,
-				type = "text",
-				text = this.getCostString()
-			},
-			{
-				id = 7,
-				type = "text",
-				icon = "ui/icons/special.png",
-				text = "Heal the Winterwolf for [color=" + this.Const.UI.Color.PositiveValue + "]15[/color] - [color=" + this.Const.UI.Color.PositiveValue + "]25[/color] Hitpoints."
-			},
-		];
+		local ret = this.getDefaultUtilityTooltip();
+		local heal_min = getTotalHealMin();
+		local heal_max = getTotalHealMax();
+
+		ret.push({
+			id = 7,
+			type = "text",
+			icon = "ui/icons/heal.png",
+			text = "Heal the Winterwolf for [color=" + this.Const.UI.Color.PositiveValue + "]" + heal_min + "[/color] - [color=" + this.Const.UI.Color.PositiveValue + "]" + heal_max + "[/color] value."
+		});
+
+		return ret;
+	}
+
+	function onUpdate( _properties )
+	{
+		local user = this.getContainer().getActor();
+		this.m.CurrentLevel = user.getLevel();
 	}
 
 	function onVerifyTarget( _originTile, _targetTile )
@@ -91,7 +114,9 @@ this.hunter_mendpet_skill <- this.inherit("scripts/skills/skill", {
 	function onUse( _user, _targetTile )
 	{
 		local targetEntity = _targetTile.getEntity();
-		local healnumber = this.Math.rand(15, 25);
+		local heal_min = getTotalHealMin();
+		local heal_max = getTotalHealMax();
+		local healnumber = this.Math.rand(heal_min, heal_max);
 
 		this.spawnIcon("effect_hunter_mendpet", targetEntity.getTile());
 		if (targetEntity.getHitpoints() == targetEntity.getHitpointsMax())
