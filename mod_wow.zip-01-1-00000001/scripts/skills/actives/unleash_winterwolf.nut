@@ -77,6 +77,28 @@ this.unleash_winterwolf <- this.inherit("scripts/skills/skill", {
 		this.m.MaxRange = 1;
 	}
 
+	function getTotalFatigueRecoveryBonus()
+	{
+		local fatiguerecovery_bonus = this.m.BaseFatigueRecoveryBonus;
+		local scale = 0;
+
+		scale = this.Math.floor(this.m.CurrentHunterLevel * this.Const.HunterScale.pet_fatiguerecovery_bonus);
+		fatiguerecovery_bonus += scale;
+
+		return fatiguerecovery_bonus;
+	}
+
+	function getTotalActionPointsBonus()
+	{
+		local actionpoints_bonus = this.m.BaseActionPointsBonus;
+		local scale = 0;
+
+		scale = this.Math.floor(this.m.CurrentHunterLevel * this.Const.HunterScale.pet_actionpoints_bonus);
+		actionpoints_bonus += scale;
+
+		return actionpoints_bonus;
+	}
+
 	function getTotalRangedDefenseBonus()
 	{
 		local rangeddefense_bonus = this.m.BaseRangedDefenseBonus;
@@ -128,6 +150,8 @@ this.unleash_winterwolf <- this.inherit("scripts/skills/skill", {
 		local stamina_bonus = getTotalStaminaBonus();
 		local meleedefense_bonus = getTotalMeleeDefenseBonus();
 		local rangeddefense_bonus = getTotalRangedDefenseBonus();
+		local actionpoints_bonus = getTotalActionPointsBonus();
+		local fatiguerecovery_bonus = getTotalFatigueRecoveryBonus();
 
 		if (this.m.IsMasterHasEnduranceTraining || this.m.IsMasterHasThickHide || this.m.IsMasterHasBestialSwiftness || this.m.IsMasterHasUnleashFury)
 		{
@@ -179,14 +203,14 @@ this.unleash_winterwolf <- this.inherit("scripts/skills/skill", {
 				id = 7,
 				type = "text",
 				icon = "ui/icons/action_points.png",
-				text = "Pet Action Points increased by [color=" + this.Const.UI.Color.PositiveValue + "]5[/color]."
+				text = "Pet Action Points increased by [color=" + this.Const.UI.Color.PositiveValue + "]" + actionpoints_bonus + "[/color]."
 			});
 
 			ret.push({
 				id = 7,
 				type = "text",
 				icon = "ui/icons/fatigue.png",
-				text = "Pet Fatigue Recovery increased by [color=" + this.Const.UI.Color.PositiveValue + "]10[/color]."
+				text = "Pet Fatigue Recovery increased by [color=" + this.Const.UI.Color.PositiveValue + "]" + fatiguerecovery_bonus + "[/color]."
 			});
 		}
 
@@ -318,6 +342,8 @@ this.unleash_winterwolf <- this.inherit("scripts/skills/skill", {
 		local stamina_bonus = getTotalStaminaBonus();
 		local meleedefense_bonus = getTotalMeleeDefenseBonus();
 		local rangeddefense_bonus = getTotalRangedDefenseBonus();
+		local actionpoints_bonus = getTotalActionPointsBonus();
+		local fatiguerecovery_bonus = getTotalFatigueRecoveryBonus();
 
 		if (!this.World.getTime().IsDaytime)
 		{
@@ -341,8 +367,8 @@ this.unleash_winterwolf <- this.inherit("scripts/skills/skill", {
 		if (this.m.IsMasterHasBestialSwiftness)
 		{
 			local bestialswiftness = this.new("scripts/skills/effects/bestialswiftness_effect");
-			bestialswiftness.SetActionPointsBonusBase(5);
-			bestialswiftness.SetFatigueRecoveryRateBase(10);
+			bestialswiftness.SetActionPointsBonusBase(actionpoints_bonus);
+			bestialswiftness.SetFatigueRecoveryRateBase(fatiguerecovery_bonus);
 			entity.getSkills().add(bestialswiftness);
 		}
 		if (this.m.IsMasterHasUnleashFury)
