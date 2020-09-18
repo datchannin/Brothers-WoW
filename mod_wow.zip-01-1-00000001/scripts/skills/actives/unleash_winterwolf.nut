@@ -406,6 +406,36 @@ this.unleash_winterwolf <- this.inherit("scripts/skills/skill", {
 		}
 		entity.getSkills().add(this.new("scripts/skills/effects/winterwolfgetheal_effect"));
 
+		if (this.m.CurrentHunterLevel >= 1)
+		{
+			entity.getSkills().add(this.new("scripts/skills/perks/perk_pathfinder"));
+		}
+
+		if (this.m.CurrentHunterLevel >= 3)
+		{
+			entity.getSkills().add(this.new("scripts/skills/perks/perk_nine_lives"));
+		}
+		
+		if (this.m.CurrentHunterLevel >= 5)
+		{
+			entity.getSkills().add(this.new("scripts/skills/perks/perk_crippling_strikes"));
+		}
+		
+		if (this.m.CurrentHunterLevel >= 7)
+		{
+			entity.getSkills().add(this.new("scripts/skills/perks/perk_steel_brow"));
+		}
+		
+		if (this.m.CurrentHunterLevel >= 10)
+		{
+			entity.getSkills().add(this.new("scripts/skills/perks/perk_fortified_mind"));
+		}
+
+		if (this.m.CurrentHunterLevel >= 12)
+		{
+			entity.getSkills().add(this.new("scripts/skills/perks/perk_underdog"));
+		}
+
 		this.m.IsHidden = true;
 		return true;
 	}

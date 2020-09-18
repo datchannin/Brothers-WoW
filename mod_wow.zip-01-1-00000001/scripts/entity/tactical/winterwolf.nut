@@ -212,7 +212,5 @@ this.winterwolf <- this.inherit("scripts/entity/tactical/actor", {
 		this.setSpriteOffset("status_stunned", this.createVec(0, -25));
 		this.setSpriteOffset("arrow", this.createVec(0, -25));
 		this.m.Skills.add(this.new("scripts/skills/actives/wardog_bite"));
-		this.m.Skills.add(this.new("scripts/skills/perks/perk_pathfinder"));
-		this.m.Skills.add(this.new("scripts/skills/perks/perk_steel_brow"));
 	}
 });
