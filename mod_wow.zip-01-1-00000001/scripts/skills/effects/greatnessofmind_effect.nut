@@ -38,7 +38,6 @@ this.greatnessofmind_effect <- this.inherit("scripts/skills/skill", {
 	{
 		local bonus_percent = this.m.ExpBonus;
 		local bonus = (bonus_percent * 0.01) + 1;
-		this.logInfo("bonus = " + bonus);
 		_properties.XPGainMult *= bonus;
 	}
 });

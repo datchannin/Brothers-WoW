@@ -13,7 +13,7 @@ this.perk_wow_presenceofmind <- this.inherit("scripts/skills/skill", {
 		this.m.IsStacking = false;
 		this.m.IsHidden = false;
 	}
-	
+
 	function onUpdate( _properties )
 	{
 		_properties.XPGainMult *= 1.4;

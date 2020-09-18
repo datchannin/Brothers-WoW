@@ -18,10 +18,23 @@ this.perk_wow_greatnessofmind <- this.inherit("scripts/skills/skill", {
 		this.m.IsHidden = false;
 	}
 
+	function getTotalExpValue()
+	{
+		local total_exp = this.m.BaseValue;
+		local scale = 0;
+
+		scale = this.Math.floor(this.m.MageLevel * this.Const.MageScale.exp_share);
+
+		total_exp += scale;
+
+		return total_exp;
+	}
+
 	function onCombatStarted()
 	{
 		local actor = this.getContainer().getActor();
 		local allies = this.Tactical.Entities.getInstancesOfFaction(actor.getFaction());
+		local total_exp = getTotalExpValue();
 
 		if (this.m.presenseofmind)
 		{
@@ -30,7 +43,7 @@ this.perk_wow_greatnessofmind <- this.inherit("scripts/skills/skill", {
 				if ((!ally.getSkills().hasSkill("perk.wow.mage.greatnessofmind")) && (!ally.getSkills().hasSkill("perk.wow.mage.presenceofmind")))
 				{
 					local effect = this.new("scripts/skills/effects/greatnessofmind_effect");
-					effect.SetValue(this.m.BaseValue);
+					effect.SetValue(total_exp);
 					ally.getSkills().add(effect);
 				}
 			}			
