@@ -22,7 +22,9 @@ gt.Const.HunterScale <- {
 	pet_actionpoints_bonus = 0.5,
 	pet_fatiguerecovery_bonus = 1,
 	pet_meleeskill_bonus = 1.5,
-	pet_bravery_bonus = 2
+	pet_bravery_bonus = 2,
+	pet_mend_min = 0.1,
+	pet_mend_max = 0.15,
 };
 
 gt.Const.RogueScale <- {

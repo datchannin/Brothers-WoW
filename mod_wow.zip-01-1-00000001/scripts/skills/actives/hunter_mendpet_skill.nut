@@ -38,7 +38,7 @@ this.hunter_mendpet_skill <- this.inherit("scripts/skills/skill", {
 		local total_heal_min = this.m.heal_base_min;
 		local scale = 0;
 
-		//scale = this.Math.floor(this.m.heal_base_min * this.m.CurrentLevel);
+		scale = this.Math.floor(total_heal_min * this.m.CurrentLevel * this.Const.HunterScale.pet_mend_min);
 
 		total_heal_min += scale;
 
@@ -50,7 +50,7 @@ this.hunter_mendpet_skill <- this.inherit("scripts/skills/skill", {
 		local total_heal_max = this.m.heal_base_max;
 		local scale = 0;
 
-		//scale = this.Math.floor(this.m.heal_base_max * this.m.CurrentLevel);
+		scale = this.Math.floor(total_heal_max * this.m.CurrentLevel * this.Const.HunterScale.pet_mend_max);
 
 		total_heal_max += scale;
 
