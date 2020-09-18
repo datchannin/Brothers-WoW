@@ -15,7 +15,7 @@ this.mage_manaagat_skill <- this.inherit("scripts/skills/skill", {
 		this.m.IconDisabled = "ui/perks/skill_mage_manaagat_sw.png";
 		this.m.Overlay = "skill_mage_manaagat";
 		this.m.SoundOnUse = [
-			//"sounds/combat/.wav"
+			"sounds/combat/mage_agat.wav"
 		];
 		this.m.Type = this.Const.SkillType.Active;
 		this.m.Order = this.Const.SkillOrder.NonTargeted;
