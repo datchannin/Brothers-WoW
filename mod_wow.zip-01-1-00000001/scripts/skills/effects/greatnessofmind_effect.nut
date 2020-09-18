@@ -9,7 +9,7 @@ this.greatnessofmind_effect <- this.inherit("scripts/skills/skill", {
 		this.m.Name = "Greatness of Mind";
 		this.m.Description = "One of your companions cleared your mind. You get additional experience from battle.";
 		this.m.Icon = "ui/perks/perk_mage_greatnessofmind.png";
-		this.m.IconMini = "effect_mini_adrenalinerush";
+		this.m.IconMini = "effect_mini_greatnessofmind";
 		this.m.Type = this.Const.SkillType.StatusEffect;
 		this.m.IsActive = false;
 		this.m.IsRemovedAfterBattle = true;
