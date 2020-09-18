@@ -47,7 +47,7 @@ this.warlock_curseofagony_skill <- this.inherit("scripts/skills/skill", {
 			total_damage_min += 7;
 		}
 
-		scale_damage = this.Math.floor(total_damage_min * this.m.CurrentLevel * Const.WarlockScale.shadow_damage_min);
+		scale_damage = this.Math.floor(total_damage_min * this.m.CurrentLevel * this.Const.WarlockScale.shadow_damage_min);
 
 		total_damage_min += scale_damage;
 
@@ -69,7 +69,7 @@ this.warlock_curseofagony_skill <- this.inherit("scripts/skills/skill", {
 			total_damage_max += 7;
 		}
 
-		scale_damage = this.Math.floor(total_damage_max * this.m.CurrentLevel * Const.WarlockScale.shadow_damage_max);
+		scale_damage = this.Math.floor(total_damage_max * this.m.CurrentLevel * this.Const.WarlockScale.shadow_damage_max);
 
 		total_damage_max += scale_damage;
 

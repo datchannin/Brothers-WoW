@@ -87,13 +87,13 @@ this.warlock_shadowbolt_skill <- this.inherit("scripts/skills/skill", {
 			total_damage_min += 10;
 		}
 
-		scale_damage = this.Math.floor(this.m.damage_base_min * this.m.CurrentLevel * Const.WarlockScale.shadow_damage_min);
+		scale_damage = this.Math.floor(this.m.damage_base_min * this.m.CurrentLevel * this.Const.WarlockScale.shadow_damage_min);
 
 		total_damage_min += scale_damage;
 
 		if (this.m.dreadmistset)
 		{
-			total_damage_min += Const.WarlockSet.T0_bonus;
+			total_damage_min += this.Const.WarlockSet.T0_bonus;
 		}
 
 		return total_damage_min;
@@ -109,13 +109,13 @@ this.warlock_shadowbolt_skill <- this.inherit("scripts/skills/skill", {
 			total_damage_max += 12;
 		}
 
-		scale_damage = this.Math.floor(this.m.damage_base_max * this.m.CurrentLevel * Const.WarlockScale.shadow_damage_max);
+		scale_damage = this.Math.floor(this.m.damage_base_max * this.m.CurrentLevel * this.Const.WarlockScale.shadow_damage_max);
 
 		total_damage_max += scale_damage;
 
 		if (this.m.dreadmistset)
 		{
-			total_damage_max += Const.WarlockSet.T0_bonus;
+			total_damage_max += this.Const.WarlockSet.T0_bonus;
 		}
 
 		return total_damage_max;

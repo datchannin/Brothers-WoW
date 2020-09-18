@@ -47,7 +47,7 @@ this.paladin_holylight_skill <- this.inherit("scripts/skills/skill", {
 			total_heal_min += 10;
 		}
 
-		scale_value = this.Math.floor(total_heal_min * this.m.CurrentLevel * Const.PaladinScale.holy_heal_min);
+		scale_value = this.Math.floor(total_heal_min * this.m.CurrentLevel * this.Const.PaladinScale.holy_heal_min);
 
 		total_heal_min += scale_value;
 
@@ -64,7 +64,7 @@ this.paladin_holylight_skill <- this.inherit("scripts/skills/skill", {
 			total_heal_max += 10;
 		}
 
-		scale_value = this.Math.floor(total_heal_max * this.m.CurrentLevel * Const.PaladinScale.holy_heal_max);
+		scale_value = this.Math.floor(total_heal_max * this.m.CurrentLevel * this.Const.PaladinScale.holy_heal_max);
 
 		total_heal_max += scale_value;
 

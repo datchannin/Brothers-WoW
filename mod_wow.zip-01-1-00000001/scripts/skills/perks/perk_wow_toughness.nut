@@ -22,7 +22,7 @@ this.perk_wow_toughness <- this.inherit("scripts/skills/skill", {
 		local result = this.m.BaseValue;
 		local scale_value = 0;
 
-		scale_value = this.m.WarriorLevel * Const.WarriorScale.toughness;
+		scale_value = this.m.WarriorLevel * this.Const.WarriorScale.toughness;
 
 		result += scale_value;
 		
