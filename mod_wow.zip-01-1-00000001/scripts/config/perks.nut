@@ -366,9 +366,9 @@ gt.Const.Perks.PerkTreeMage <- [
 		gt.Const.Perks.PerkDefObjects.RallyTheTroops
 	],
 	[
+		gt.Const.Perks.PerkDefObjects.FireAttunement
+		gt.Const.Perks.PerkDefObjects.IceAttunement
 		gt.Const.Perks.PerkDefObjects.GreatnessofMind
-		//gt.Const.Perks.PerkDefObjects.
-		//gt.Const.Perks.PerkDefObjects.
 		gt.Const.Perks.PerkDefObjects.Meditation
 		gt.Const.Perks.PerkDefObjects.MagicAbsorption
 		gt.Const.Perks.PerkDefObjects.MagicInstability
@@ -379,8 +379,7 @@ gt.Const.Perks.PerkTreeMage <- [
 		gt.Const.Perks.PerkDefObjects.Footwork
 	],
 	[
-		gt.Const.Perks.PerkDefObjects.FireAttunement
-		gt.Const.Perks.PerkDefObjects.IceAttunement
+		//gt.Const.Perks.PerkDefObjects.
 		gt.Const.Perks.PerkDefObjects.Berserk
 		gt.Const.Perks.PerkDefObjects.Nimble
 	],
