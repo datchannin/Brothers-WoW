@@ -17,18 +17,16 @@ this.greatnessofmind_effect <- this.inherit("scripts/skills/skill", {
 
 	function getTooltip()
 	{
-		return [
-			{
-				id = 1,
-				type = "title",
-				text = this.getName()
-			},
-			{
-				id = 2,
-				type = "description",
-				text = this.getDescription()
-			}
-		];
+		local ret = this.getDefaultUtilityTooltip();
+
+		ret.push({
+			id = 6,
+			type = "text",
+			icon = "ui/icons/xp_received.png",
+			text = "Get [color=" + this.Const.UI.Color.PositiveValue + "]" + this.m.ExpBonus + "%[/color] additional experience from battle"
+		});
+
+		return ret;
 	}
 
 	function SetValue( _d )
