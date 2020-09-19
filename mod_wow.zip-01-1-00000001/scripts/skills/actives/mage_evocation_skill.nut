@@ -103,6 +103,9 @@ this.mage_evocation_skill <- this.inherit("scripts/skills/skill", {
 				this.Sound.play(_data.Skill.m.SoundOnHit[this.Math.rand(0, _data.Skill.m.SoundOnHit.len() - 1)], this.Const.Sound.Volume.Skill, user.getPos());
 			}
 		}
+
+		user.getSkills().update();
+		user.setDirty(true);
 		this.getContainer().setBusy(false);
 
 		return true;
