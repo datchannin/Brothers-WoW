@@ -122,7 +122,7 @@ this.mage_manaagat_skill <- this.inherit("scripts/skills/skill", {
 		return false;
 	}
 
-	function onCombatStart()
+	function onCombatStarted()
 	{
 		local base_charges = getTotalCharges();
 		this.m.CurrentCharges = base_charges;
