@@ -399,7 +399,6 @@ gt.Const.Perks.PerkTreePriest <- [
 	[
 		gt.Const.Perks.PerkDefObjects.Heal
 		gt.Const.Perks.PerkDefObjects.Shield
-		gt.Const.Perks.PerkDefObjects.BlessedRecovery
 		gt.Const.Perks.PerkDefObjects.Colossus
 		gt.Const.Perks.PerkDefObjects.NineLives
 		gt.Const.Perks.PerkDefObjects.Pathfinder
@@ -419,7 +418,7 @@ gt.Const.Perks.PerkTreePriest <- [
 	[
 		gt.Const.Perks.PerkDefObjects.HolyReach
 		gt.Const.Perks.PerkDefObjects.Inspiration
-		gt.Const.Perks.PerkDefObjects.HealingFocus
+		gt.Const.Perks.PerkDefObjects.BlessedRecovery
 		gt.Const.Perks.PerkDefObjects.MentalStrength
 		gt.Const.Perks.PerkDefObjects.ShieldExpert
 		gt.Const.Perks.PerkDefObjects.Brawny
@@ -430,10 +429,10 @@ gt.Const.Perks.PerkTreePriest <- [
 		gt.Const.Perks.PerkDefObjects.SpiritalHealing
 		gt.Const.Perks.PerkDefObjects.MentalAgility
 		gt.Const.Perks.PerkDefObjects.Meditation
-		gt.Const.Perks.PerkDefObjects.RecoveryBroke
-		gt.Const.Perks.PerkDefObjects.RecoveryFracture
-		gt.Const.Perks.PerkDefObjects.RecoveryPierce
-		gt.Const.Perks.PerkDefObjects.RecoverySplit
+		//gt.Const.Perks.PerkDefObjects.RecoveryFocus
+		//gt.Const.Perks.PerkDefObjects.MentalPower
+		gt.Const.Perks.PerkDefObjects.PermanentRecovery
+		//gt.Const.Perks.PerkDefObjects.UnbreakableWill
 	],
 	[
 		gt.Const.Perks.PerkDefObjects.LoneWolf
@@ -447,8 +446,13 @@ gt.Const.Perks.PerkTreePriest <- [
 	[
 		gt.Const.Perks.PerkDefObjects.Renew
 		gt.Const.Perks.PerkDefObjects.RepairMaster
-		gt.Const.Perks.PerkDefObjects.RecoveryMaximum
 		gt.Const.Perks.PerkDefObjects.Indomitable
+		//gt.Const.Perks.PerkDefObjects.RecoveryMaximum
+		//gt.Const.Perks.PerkDefObjects.HealingFocus
+		//gt.Const.Perks.PerkDefObjects.RecoveryBroke
+		//gt.Const.Perks.PerkDefObjects.RecoveryFracture
+		//gt.Const.Perks.PerkDefObjects.RecoveryPierce
+		//gt.Const.Perks.PerkDefObjects.RecoverySplit
 	],
 	[],
 	[],

@@ -1578,14 +1578,14 @@ gt.Const.Perks.PerkDefObjects.RepairMaster <- {
 	Const = "RepairMaster"
 }
 
-gt.Const.Perks.PerkDefObjects.RecoveryMaximum <- {
-	ID = "perk.wow.priest.recoverymaximum",
-	Script = "scripts/skills/perks/perk_wow_recoverymaximum",
-	Name = this.Const.Wow_strings.PerkName.RecoveryMaximum,
-	Tooltip = this.Const.Wow_strings.PerkDescription.RecoveryMaximum,
-	Icon = "ui/perks/perk_priest_recoverymaximum.png",
-	IconDisabled = "ui/perks/perk_priest_recoverymaximum_sw.png",
-	Const = "RecoveryMaximum"
+gt.Const.Perks.PerkDefObjects.PermanentRecovery <- {
+	ID = "perk.wow.priest.permanentrecovery",
+	Script = "scripts/skills/perks/perk_wow_permanentrecovery",
+	Name = this.Const.Wow_strings.PerkName.PermanentRecovery,
+	Tooltip = this.Const.Wow_strings.PerkDescription.PermanentRecovery,
+	Icon = "ui/perks/perk_priest_permanentrecovery.png",
+	IconDisabled = "ui/perks/perk_priest_permanentrecovery_sw.png",
+	Const = "PermanentRecovery"
 }
 
 // ---------------------------------------------|
