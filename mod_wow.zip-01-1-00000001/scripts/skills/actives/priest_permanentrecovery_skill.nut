@@ -1,7 +1,8 @@
 /*BBWOW:This file is part of datchannin bbWoW mod, mod_version = 8.02, game_version = 1.4.0.42*/
 this.priest_permanentrecovery_skill <- this.inherit("scripts/skills/skill", {
 	m = {
-		BaseChance = 20
+		BaseChance = 20,
+		luckyrecovery = false
 	},
 	function create()
 	{
@@ -33,6 +34,11 @@ this.priest_permanentrecovery_skill <- this.inherit("scripts/skills/skill", {
 	{
 		local chance = this.m.BaseChance;
 
+		if (this.m.luckyrecovery)
+		{
+			chance += 20;
+		}
+
 		return chance;
 	}
 
@@ -52,7 +58,7 @@ this.priest_permanentrecovery_skill <- this.inherit("scripts/skills/skill", {
 			id = 6,
 			type = "text",
 			icon = "ui/icons/special.png",
-			text = "Chance to recover is [color=" + this.Const.UI.Color.DamageValue + "]" + chance + "%[/color] for every injury independently."
+			text = "Chance to recover is [color=" + this.Const.UI.Color.PositiveValue + "]" + chance + "%[/color] for every injury independently."
 		});
 
 		return ret;
@@ -93,6 +99,7 @@ this.priest_permanentrecovery_skill <- this.inherit("scripts/skills/skill", {
 	function onUpdate( _properties )
 	{
 		local user = this.getContainer().getActor();
+		this.m.luckyrecovery = user.getSkills().hasSkill("perk.wow.priest.luckyrecovery");
 	}
 
 	function onUse( _user, _targetTile )
