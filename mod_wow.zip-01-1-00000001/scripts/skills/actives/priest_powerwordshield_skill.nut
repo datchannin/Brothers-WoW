@@ -6,6 +6,7 @@ this.priest_powerwordshield_skill <- this.inherit("scripts/skills/skill", {
 		BaseChance = 100,
 		BaseEffect = 10,
 		mentalstrength = false,
+		mentalpower = false,
 		mentalagility = false,
 		inspiration = false,
 		repairmaster = false
@@ -42,6 +43,11 @@ this.priest_powerwordshield_skill <- this.inherit("scripts/skills/skill", {
 	function GetTotalEffect()
 	{
 		local effect = this.m.BaseEffect;
+
+		if (this.m.mentalpower)
+		{
+			effect *= 2;
+		}
 
 		return effect;
 	}
@@ -133,6 +139,7 @@ this.priest_powerwordshield_skill <- this.inherit("scripts/skills/skill", {
 	{
 		local user = this.getContainer().getActor();
 		this.m.mentalstrength = user.getSkills().hasSkill("perk.wow.priest.mentalstrength");
+		this.m.mentalpower = user.getSkills().hasSkill("perk.wow.priest.mentalpower");
 		this.m.mentalagility = user.getSkills().hasSkill("perk.wow.priest.mentalagility");
 		this.m.inspiration = user.getSkills().hasSkill("perk.wow.priest.inspiration");
 		this.m.repairmaster = user.getSkills().hasSkill("perk.wow.priest.repairmaster");
