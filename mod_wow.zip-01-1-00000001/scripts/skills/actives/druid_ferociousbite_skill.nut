@@ -4,6 +4,7 @@ this.druid_ferociousbite_skill <- this.inherit("scripts/skills/skill", {
 		Recharge = 0,
 		damage_min = 40,
 		damage_max = 50,
+		CurrentLevel = 1,
 		damage_armor_mult = 0.1
 	},
 	function create()
@@ -35,13 +36,39 @@ this.druid_ferociousbite_skill <- this.inherit("scripts/skills/skill", {
 		this.m.MaxRange = 1;
 	}
 
+	function getTotalMinDamage()
+	{
+		local total_damage_min = this.m.damage_min;
+		local scale = 0;
+
+		scale = this.Math.floor(total_damage_min * this.m.CurrentLevel * this.Const.DruidScale.bitemin);
+		total_damage_min += scale;
+
+		return total_damage_min;
+	}
+
+	function getTotalMaxDamage()
+	{
+		local total_damage_max = this.m.damage_max;
+		local scale = 0;
+
+		scale = this.Math.floor(total_damage_max * this.m.CurrentLevel * this.Const.DruidScale.bitemax);
+		total_damage_max += scale;
+
+		return total_damage_max;
+	}
+
 	function getTooltip()
 	{
 		local p = this.getContainer().getActor().getCurrentProperties();
-		local damage_armor_min = this.Math.floor(this.m.damage_min * this.m.damage_armor_mult * p.DamageTotalMult * p.MeleeDamageMult);
-		local damage_armor_max = this.Math.floor(this.m.damage_max * this.m.damage_armor_mult * p.DamageTotalMult * p.MeleeDamageMult);
-		local damage_min = this.Math.floor(this.m.damage_min * p.DamageTotalMult * p.MeleeDamageMult);
-		local damage_max = this.Math.floor(this.m.damage_max * p.DamageTotalMult * p.MeleeDamageMult);
+		
+		local damage_min_st = getTotalMinDamage();
+		local damage_max_st = getTotalMaxDamage();
+		
+		local damage_armor_min = this.Math.floor(damage_min_st * this.m.damage_armor_mult * p.DamageTotalMult * p.MeleeDamageMult);
+		local damage_armor_max = this.Math.floor(damage_max_st * this.m.damage_armor_mult * p.DamageTotalMult * p.MeleeDamageMult);
+		local damage_min = this.Math.floor(damage_min_st * p.DamageTotalMult * p.MeleeDamageMult);
+		local damage_max = this.Math.floor(damage_max_st * p.DamageTotalMult * p.MeleeDamageMult);
 		local direct_damage_max = this.Math.floor(this.m.DirectDamageMult * damage_max);
 
 		local ret = this.getDefaultUtilityTooltip();
@@ -114,12 +141,21 @@ this.druid_ferociousbite_skill <- this.inherit("scripts/skills/skill", {
 		}
 	}
 
+	function onUpdate( _properties )
+	{
+		local user = this.getContainer().getActor();
+		this.m.CurrentLevel = user.getLevel();
+	}
+
 	function onAnySkillUsed( _skill, _targetEntity, _properties )
 	{
 		if (_skill == this)
 		{
-			_properties.DamageRegularMin = this.m.damage_min;
-			_properties.DamageRegularMax = this.m.damage_max;
+			local damage_min = getTotalMinDamage();
+			local damage_max = getTotalMaxDamage();		
+		
+			_properties.DamageRegularMin = damage_min;
+			_properties.DamageRegularMax = damage_max;
 			_properties.DamageArmorMult *= this.m.damage_armor_mult;
 		}
 	}

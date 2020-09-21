@@ -37,7 +37,9 @@ gt.Const.DruidScale <- {
 	direbearhealth = 0.01,
 	direbeardravery = 0.01,
 	clawsmin = 0.05,
-	clawsmax = 0.07
+	clawsmax = 0.07,
+	bitemin = 0.02,
+	bitemax = 0.04,
 };
 
 gt.Const.RogueScale <- {

@@ -94,7 +94,7 @@ this.druid_claws_skill <- this.inherit("scripts/skills/skill", {
 		local damage_armor_max = this.Math.floor(damage_max_st * this.m.damage_armor_mult * p.DamageTotalMult * p.MeleeDamageMult);
 		local damage_min = this.Math.floor(damage_min_st * p.DamageTotalMult * p.MeleeDamageMult);
 		local damage_max = this.Math.floor(damage_max_st * p.DamageTotalMult * p.MeleeDamageMult);
-		local direct_damage_max = this.Math.floor(this.m.damage_direct_mult * damage_max_st);
+		local direct_damage_max = this.Math.floor(this.m.damage_direct_mult * damage_max);
 
 		local ret = this.getDefaultUtilityTooltip();
 
