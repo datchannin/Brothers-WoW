@@ -1518,46 +1518,6 @@ gt.Const.Perks.PerkDefObjects.MentalAgility <- {
 	Const = "MentalAgility"
 }
 
-gt.Const.Perks.PerkDefObjects.RecoveryBroke <- {
-	ID = "perk.wow.priest.recoverybroke",
-	Script = "scripts/skills/perks/perk_wow_recoverybroke",
-	Name = this.Const.Wow_strings.PerkName.RecoveryBroke,
-	Tooltip = this.Const.Wow_strings.PerkDescription.RecoveryBroke,
-	Icon = "ui/perks/perk_priest_recoveryrank.png",
-	IconDisabled = "ui/perks/perk_priest_recoveryrank_sw.png",
-	Const = "RecoveryBroke"
-}
-
-gt.Const.Perks.PerkDefObjects.RecoveryFracture <- {
-	ID = "perk.wow.priest.recoveryfracture",
-	Script = "scripts/skills/perks/perk_wow_recoveryfracture",
-	Name = this.Const.Wow_strings.PerkName.RecoveryFracture,
-	Tooltip = this.Const.Wow_strings.PerkDescription.RecoveryFracture,
-	Icon = "ui/perks/perk_priest_recoveryrank.png",
-	IconDisabled = "ui/perks/perk_priest_recoveryrank_sw.png",
-	Const = "RecoveryFracture"
-}
-
-gt.Const.Perks.PerkDefObjects.RecoveryPierce <- {
-	ID = "perk.wow.priest.recoverypierce",
-	Script = "scripts/skills/perks/perk_wow_recoverypierce",
-	Name = this.Const.Wow_strings.PerkName.RecoveryPierce,
-	Tooltip = this.Const.Wow_strings.PerkDescription.RecoveryPierce,
-	Icon = "ui/perks/perk_priest_recoveryrank.png",
-	IconDisabled = "ui/perks/perk_priest_recoveryrank_sw.png",
-	Const = "RecoveryPierce"
-}
-
-gt.Const.Perks.PerkDefObjects.RecoverySplit <- {
-	ID = "perk.wow.priest.recoverysplit",
-	Script = "scripts/skills/perks/perk_wow_recoverysplit",
-	Name = this.Const.Wow_strings.PerkName.RecoverySplit,
-	Tooltip = this.Const.Wow_strings.PerkDescription.RecoverySplit,
-	Icon = "ui/perks/perk_priest_recoveryrank.png",
-	IconDisabled = "ui/perks/perk_priest_recoveryrank_sw.png",
-	Const = "RecoverySplit"
-}
-
 gt.Const.Perks.PerkDefObjects.Renew <- {
 	ID = "perk.wow.priest.renew",
 	Script = "scripts/skills/perks/perk_wow_renew",
@@ -1586,6 +1546,16 @@ gt.Const.Perks.PerkDefObjects.PermanentRecovery <- {
 	Icon = "ui/perks/perk_priest_permanentrecovery.png",
 	IconDisabled = "ui/perks/perk_priest_permanentrecovery_sw.png",
 	Const = "PermanentRecovery"
+}
+
+gt.Const.Perks.PerkDefObjects.LuckyRecovery <- {
+	ID = "perk.wow.priest.luckyrecovery",
+	Script = "scripts/skills/perks/perk_wow_luckyrecovery",
+	Name = this.Const.Wow_strings.PerkName.LuckyRecovery,
+	Tooltip = this.Const.Wow_strings.PerkDescription.LuckyRecovery,
+	Icon = "ui/perks/perk_priest_luckyrecovery.png",
+	IconDisabled = "ui/perks/perk_priest_luckyrecovery_sw.png",
+	Const = "LuckyRecovery"
 }
 
 // ---------------------------------------------|
