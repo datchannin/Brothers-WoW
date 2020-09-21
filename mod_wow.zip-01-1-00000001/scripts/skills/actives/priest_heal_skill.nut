@@ -6,6 +6,7 @@ this.priest_heal_skill <- this.inherit("scripts/skills/skill", {
 		holyreach = false,
 		healingfocus = false,
 		spiritalhealing = false,
+		blessedrecovery = false,
 		renew = false
 	},
 	function create()
@@ -111,6 +112,7 @@ this.priest_heal_skill <- this.inherit("scripts/skills/skill", {
 		this.m.healingfocus = user.getSkills().hasSkill("perk.wow.priest.healingfocus");
 		this.m.spiritalhealing = user.getSkills().hasSkill("perk.wow.priest.spiritalhealing");
 		this.m.renew = user.getSkills().hasSkill("perk.wow.priest.renew");
+		this.m.blessedrecovery = user.getSkills().hasSkill("perk.wow.priest.blessedrecovery");
 	}
 
 	function onAfterUpdate( _properties )
@@ -196,6 +198,11 @@ this.priest_heal_skill <- this.inherit("scripts/skills/skill", {
 
 				this.spawnIcon("effect_priest_renew_apply", targetEntity.getTile());
 			}
+		}
+
+		if (this.m.blessedrecovery)
+		{
+			
 		}
 
 		if (targetEntity.getHitpoints() == targetEntity.getHitpointsMax())
