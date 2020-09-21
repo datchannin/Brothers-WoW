@@ -4,7 +4,8 @@ this.catform_effect <- this.inherit("scripts/skills/skill", {
 		initBody = "",
 		initHead = "",
 		abolishpoison = false,
-		tiger = false
+		tiger = false,
+		CurrentLevel = 1
 	},
 	function create()
 	{
@@ -18,6 +19,17 @@ this.catform_effect <- this.inherit("scripts/skills/skill", {
 		this.m.IsRemovedAfterBattle = true;
 	}
 
+	function getActionPointsBonus()
+	{
+		local ap = 2;
+		local scale = 0;
+
+		scale = this.Math.floor(this.m.CurrentLevel * this.Const.DruidScale.tigerap);
+		ap += scale;
+
+		return ap;
+	}
+
 	function getDescription()
 	{
 		return "You are under shapeshift effect now. Big bad cat.";
@@ -25,6 +37,8 @@ this.catform_effect <- this.inherit("scripts/skills/skill", {
 
 	function getTooltip()
 	{
+		local ap = getActionPointsBonus();
+	
 		local ret = [
 			{
 				id = 1,
@@ -70,7 +84,7 @@ this.catform_effect <- this.inherit("scripts/skills/skill", {
 				id = 10,
 				type = "text",
 				icon = "ui/icons/action_points.png",
-				text = "Your Action Points are increased by [color=" + this.Const.UI.Color.PositiveValue + "]2[/color] points."
+				text = "Your Action Points are increased by [color=" + this.Const.UI.Color.PositiveValue + "]" + ap + "[/color] points."
 			});
 		}
 
@@ -198,8 +212,10 @@ this.catform_effect <- this.inherit("scripts/skills/skill", {
 	{
 		toDropWeapons();
 		local actor = this.getContainer().getActor();
+		this.m.CurrentLevel = actor.getLevel();
 		toSetVisibleBrush(0);
 
+		local ap = getActionPointsBonus();
 		this.m.abolishpoison = actor.getSkills().hasSkill("perk.wow.druid.abolishpoison");
 		this.m.tiger = actor.getSkills().hasSkill("perk.wow.druid.tiger");
 
@@ -211,7 +227,7 @@ this.catform_effect <- this.inherit("scripts/skills/skill", {
 		if (actor.getSkills().hasSkill("perk.wow.druid.tiger"))
 		{
 			_properties.MeleeSkill += 10;
-			_properties.ActionPointsBonus = 2;
+			_properties.ActionPointsBonus = ap;
 		}
 
 		_properties.MeleeSkillMult *= 1.2;

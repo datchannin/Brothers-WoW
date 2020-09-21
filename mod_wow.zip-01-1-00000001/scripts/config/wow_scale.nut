@@ -40,6 +40,7 @@ gt.Const.DruidScale <- {
 	clawsmax = 0.07,
 	bitemin = 0.02,
 	bitemax = 0.04,
+	tigerap = 0.2
 };
 
 gt.Const.RogueScale <- {
