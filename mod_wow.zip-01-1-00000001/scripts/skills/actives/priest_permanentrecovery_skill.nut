@@ -1,6 +1,8 @@
 /*BBWOW:This file is part of datchannin bbWoW mod, mod_version = 8.02, game_version = 1.4.0.42*/
 this.priest_permanentrecovery_skill <- this.inherit("scripts/skills/skill", {
-	m = {},
+	m = {
+		BaseChance = 20
+	},
 	function create()
 	{
 		this.m.ID = "actives.permanentrecovery_skill";
@@ -27,15 +29,30 @@ this.priest_permanentrecovery_skill <- this.inherit("scripts/skills/skill", {
 		this.m.MaxRange = 1;
 	}
 
+	function GetTotalChance()
+	{
+		local chance = this.m.BaseChance;
+
+		return chance;
+	}
+
 	function getTooltip()
 	{
 		local ret = this.getDefaultUtilityTooltip();
+		local chance = GetTotalChance();
 
 		ret.push({
 			id = 6,
 			type = "text",
 			icon = "ui/icons/special.png",
 			text = "You are able to recover some [color=" + this.Const.UI.Color.DamageValue + "] \'Permanent\' [/color] injuries."
+		});
+		
+		ret.push({
+			id = 6,
+			type = "text",
+			icon = "ui/icons/special.png",
+			text = "Chance to recover is [color=" + this.Const.UI.Color.DamageValue + "]" + chance + "%[/color] for every injury independently."
 		});
 
 		return ret;
@@ -82,16 +99,52 @@ this.priest_permanentrecovery_skill <- this.inherit("scripts/skills/skill", {
 	{
 		local target = _targetTile.getEntity();
 		local skills = target.getSkills();
+		local chance = GetTotalChance();
+		local r = 0;
 
 		this.spawnIcon("effect_priest_permanentrecovery", _targetTile);
 
-		skills.removeByID("injury.broken_elbow_joint");
-		skills.removeByID("injury.broken_knee");
-		skills.removeByID("injury.collapsed_lung_part");
-		skills.removeByID("injury.traumatized");
-		skills.removeByID("injury.weakened_heart");
-		skills.removeByID("injury.brain_damage");
-		skills.removeByID("injury.maimed_foot");
+		r = this.Math.rand(0, 99);
+		if (r <= chance)
+		{
+			skills.removeByID("injury.broken_elbow_joint");
+		}
+
+		r = this.Math.rand(0, 99);
+		if (r <= chance)
+		{
+			skills.removeByID("injury.broken_knee");
+		}
+		
+		r = this.Math.rand(0, 99);
+		if (r <= chance)
+		{
+			skills.removeByID("injury.collapsed_lung_part");
+		}
+		
+		r = this.Math.rand(0, 99);
+		if (r <= chance)
+		{
+			skills.removeByID("injury.traumatized");
+		}
+		
+		r = this.Math.rand(0, 99);
+		if (r <= chance)
+		{
+			skills.removeByID("injury.weakened_heart");
+		}
+		
+		r = this.Math.rand(0, 99);
+		if (r <= chance)
+		{
+			skills.removeByID("injury.brain_damage");
+		}
+		
+		r = this.Math.rand(0, 99);
+		if (r <= chance)
+		{
+			skills.removeByID("injury.maimed_foot");
+		}
 
 		return true;
 	}
