@@ -3,6 +3,7 @@ this.priest_heal_skill <- this.inherit("scripts/skills/skill", {
 	m = {
 		heal_base_min = 12,
 		heal_base_max = 25,
+		CurrentLevel = 1,
 		holyreach = false,
 		spiritalhealing = false,
 		blessedrecovery = false,
@@ -116,6 +117,7 @@ this.priest_heal_skill <- this.inherit("scripts/skills/skill", {
 	function onUpdate( _properties )
 	{
 		local user = this.getContainer().getActor();
+		this.m.CurrentLevel = user.getLevel();
 		this.m.holyreach = user.getSkills().hasSkill("perk.wow.priest.holyreach");
 		this.m.spiritalhealing = user.getSkills().hasSkill("perk.wow.priest.spiritalhealing");
 		this.m.renew = user.getSkills().hasSkill("perk.wow.priest.renew");

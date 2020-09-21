@@ -3,6 +3,7 @@ this.priest_powerwordshield_skill <- this.inherit("scripts/skills/skill", {
 	m = {
 		repair_base_min = 10,
 		repair_base_max = 15,
+		CurrentLevel = 1,
 		BaseChance = 100,
 		BaseEffect = 10,
 		mentalstrength = false,
@@ -63,6 +64,7 @@ this.priest_powerwordshield_skill <- this.inherit("scripts/skills/skill", {
 			repair_total_min += 20;
 		}
 
+		scale = this.Math.floor(repair_total_min * this.m.CurrentLevel * this.Const.PriestScale.repair_min);
 		repair_total_min += scale;
 
 		return repair_total_min;
@@ -78,6 +80,7 @@ this.priest_powerwordshield_skill <- this.inherit("scripts/skills/skill", {
 			repair_total_max += 20;
 		}
 
+		scale = this.Math.floor(repair_total_min * this.m.CurrentLevel * this.Const.PriestScale.repair_max);
 		repair_total_max += scale;
 
 		return repair_total_max;
@@ -150,6 +153,7 @@ this.priest_powerwordshield_skill <- this.inherit("scripts/skills/skill", {
 	function onUpdate( _properties )
 	{
 		local user = this.getContainer().getActor();
+		this.m.CurrentLevel = user.getLevel();
 		this.m.mentalstrength = user.getSkills().hasSkill("perk.wow.priest.mentalstrength");
 		this.m.mentalpower = user.getSkills().hasSkill("perk.wow.priest.mentalpower");
 		this.m.mentalagility = user.getSkills().hasSkill("perk.wow.priest.mentalagility");
