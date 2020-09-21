@@ -2,7 +2,8 @@
 this.druid_rejuvenation_skill <- this.inherit("scripts/skills/skill", {
 	m = {
 		BaseHealValue = 7,
-		swiftmend = false
+		swiftmend = false,
+		CurrentLevel = 1
 	},
 	function create()
 	{
@@ -31,10 +32,15 @@ this.druid_rejuvenation_skill <- this.inherit("scripts/skills/skill", {
 	function getHealPower()
 	{
 		local healpower = this.m.BaseHealValue;
+		local scale = 0;
+
 		if (this.m.swiftmend)
 		{
 			healpower += 5;
 		}
+
+		scale = this.Math.floor(healpower * this.m.CurrentLevel * this.Const.DruidScale.rejuvenation);
+		healpower += scale;
 
 		return healpower;
 	}
@@ -103,6 +109,7 @@ this.druid_rejuvenation_skill <- this.inherit("scripts/skills/skill", {
 	function onUpdate( _properties )
 	{
 		local user = this.getContainer().getActor();
+		this.m.CurrentLevel = user.getLevel();
 		this.m.swiftmend = user.getSkills().hasSkill("perk.wow.druid.swiftmend");
 	}
 
@@ -119,9 +126,9 @@ this.druid_rejuvenation_skill <- this.inherit("scripts/skills/skill", {
 		}
 		else
 		{
-			targetEntity.getSkills().add(this.new("scripts/skills/effects/rejuvenation_effect"));
-			local effect2 = targetEntity.getSkills().getSkillByID("effects.rejuvenation");
+			local effect2 = this.new("scripts/skills/effects/rejuvenation_effect");
 			effect2.setpower(healpower);
+			targetEntity.getSkills().add(effect2);
 		}
 
 		this.spawnIcon("effect_druid_rejuvenation", _targetTile);

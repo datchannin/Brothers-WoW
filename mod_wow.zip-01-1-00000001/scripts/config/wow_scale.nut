@@ -28,7 +28,8 @@ gt.Const.HunterScale <- {
 };
 
 gt.Const.DruidScale <- {
-	markofwild = 1
+	markofwild = 1,
+	rejuvenation = 0.05
 };
 
 gt.Const.RogueScale <- {
