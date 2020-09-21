@@ -9,7 +9,8 @@ this.priest_powerwordshield_skill <- this.inherit("scripts/skills/skill", {
 		mentalpower = false,
 		mentalagility = false,
 		inspiration = false,
-		repairmaster = false
+		repairmaster = false,
+		unbreakablewill = false
 	},
 	function create()
 	{
@@ -143,6 +144,7 @@ this.priest_powerwordshield_skill <- this.inherit("scripts/skills/skill", {
 		this.m.mentalagility = user.getSkills().hasSkill("perk.wow.priest.mentalagility");
 		this.m.inspiration = user.getSkills().hasSkill("perk.wow.priest.inspiration");
 		this.m.repairmaster = user.getSkills().hasSkill("perk.wow.priest.repairmaster");
+		this.m.unbreakablewill = user.getSkills().hasSkill("perk.wow.priest.unbreakablewill");
 	}
 
 	function onAfterUpdate( _properties )
@@ -152,9 +154,9 @@ this.priest_powerwordshield_skill <- this.inherit("scripts/skills/skill", {
 			this.m.MaxRange = 3;
 		}
 		
-		if (this.m.repairmaster)
+		if (this.m.unbreakablewill)
 		{
-			this.m.FatigueCost = 25;
+			this.m.FatigueCost = 20;
 		}		
 	}
 

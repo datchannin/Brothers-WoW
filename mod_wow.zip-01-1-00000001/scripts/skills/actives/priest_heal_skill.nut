@@ -7,6 +7,7 @@ this.priest_heal_skill <- this.inherit("scripts/skills/skill", {
 		healingfocus = false,
 		spiritalhealing = false,
 		blessedrecovery = false,
+		unbreakablewill = false,
 		renew = false
 	},
 	function create()
@@ -85,13 +86,6 @@ this.priest_heal_skill <- this.inherit("scripts/skills/skill", {
 			text = "Heal the target for [color=" + this.Const.UI.Color.PositiveValue + "]" + total_heal_min + "[/color] - [color=" + this.Const.UI.Color.PositiveValue + "]" + total_heal_max + "[/color] Hitpoints."
 		});
 
-		ret.push({
-			id = 6,
-			type = "text",
-			icon = "ui/icons/vision.png",
-			text = "Has a range of [color=" + this.Const.UI.Color.PositiveValue + "]" + this.m.MaxRange + "[/color] tiles."
-		});
-
 		if (this.m.renew)
 		{
 			ret.push({
@@ -112,6 +106,13 @@ this.priest_heal_skill <- this.inherit("scripts/skills/skill", {
 			});
 		}
 
+		ret.push({
+			id = 6,
+			type = "text",
+			icon = "ui/icons/vision.png",
+			text = "Has a range of [color=" + this.Const.UI.Color.PositiveValue + "]" + this.m.MaxRange + "[/color] tiles."
+		});
+
 		return ret;
 	}
 
@@ -123,6 +124,7 @@ this.priest_heal_skill <- this.inherit("scripts/skills/skill", {
 		this.m.spiritalhealing = user.getSkills().hasSkill("perk.wow.priest.spiritalhealing");
 		this.m.renew = user.getSkills().hasSkill("perk.wow.priest.renew");
 		this.m.blessedrecovery = user.getSkills().hasSkill("perk.wow.priest.blessedrecovery");
+		this.m.unbreakablewill = user.getSkills().hasSkill("perk.wow.priest.unbreakablewill");
 	}
 
 	function onAfterUpdate( _properties )
@@ -131,6 +133,11 @@ this.priest_heal_skill <- this.inherit("scripts/skills/skill", {
 		{
 			this.m.MaxRange = 7;
 		}
+		
+		if (this.m.unbreakablewill)
+		{
+			this.m.FatigueCost = 12;
+		}	
 	}
 
 	function onVerifyTarget( _originTile, _targetTile )
