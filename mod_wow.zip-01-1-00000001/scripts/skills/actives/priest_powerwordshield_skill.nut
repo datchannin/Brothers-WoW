@@ -56,11 +56,14 @@ this.priest_powerwordshield_skill <- this.inherit("scripts/skills/skill", {
 	function getTotalMinRepair()
 	{
 		local repair_total_min = this.m.repair_base_min;
+		local scale = 0;
 
 		if (this.m.mentalagility)
 		{
 			repair_total_min += 20;
 		}
+
+		repair_total_min += scale;
 
 		return repair_total_min;
 	}
@@ -68,11 +71,14 @@ this.priest_powerwordshield_skill <- this.inherit("scripts/skills/skill", {
 	function getTotalMaxRepair()
 	{
 		local repair_total_max = this.m.repair_base_max;
+		local scale = 0;
 
 		if (this.m.mentalagility)
 		{
 			repair_total_max += 20;
 		}
+
+		repair_total_max += scale;
 
 		return repair_total_max;
 	}

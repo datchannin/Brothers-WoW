@@ -32,6 +32,13 @@ gt.Const.RogueScale <- {
 	poison_duration = 15
 };
 
+gt.Const.PriestScale <- {
+	heal_min = 0.03,
+	heal_max = 0.04,
+	repair_min = 0.04,
+	repair_max = 0.04
+};
+
 gt.Const.MageScale <- {
 	fire_damage_min = 0.01,
 	fire_damage_max = 0.04,

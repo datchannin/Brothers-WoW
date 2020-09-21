@@ -43,11 +43,14 @@ this.priest_heal_skill <- this.inherit("scripts/skills/skill", {
 	function getTotalMinHeal()
 	{
 		local total_heal_min = this.m.heal_base_min;
+		local scale = 0;
 
 		if (this.m.spiritalhealing)
 		{
 			total_heal_min += 15;
 		}
+
+		total_heal_min += scale;
 
 		return total_heal_min;
 	}
@@ -55,11 +58,14 @@ this.priest_heal_skill <- this.inherit("scripts/skills/skill", {
 	function getTotalMaxHeal()
 	{
 		local total_heal_max = this.m.heal_base_max;
+		local scale = 0;
 
 		if (this.m.spiritalhealing)
 		{
 			total_heal_max += 15;
 		}
+
+		total_heal_max += scale;
 
 		return total_heal_max;
 	}
