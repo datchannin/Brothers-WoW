@@ -80,7 +80,7 @@ this.priest_powerwordshield_skill <- this.inherit("scripts/skills/skill", {
 			repair_total_max += 20;
 		}
 
-		scale = this.Math.floor(repair_total_min * this.m.CurrentLevel * this.Const.PriestScale.repair_max);
+		scale = this.Math.floor(repair_total_max * this.m.CurrentLevel * this.Const.PriestScale.repair_max);
 		repair_total_max += scale;
 
 		return repair_total_max;
