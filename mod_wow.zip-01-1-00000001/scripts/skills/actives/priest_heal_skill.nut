@@ -4,7 +4,6 @@ this.priest_heal_skill <- this.inherit("scripts/skills/skill", {
 		heal_base_min = 12,
 		heal_base_max = 25,
 		holyreach = false,
-		healingfocus = false,
 		spiritalhealing = false,
 		blessedrecovery = false,
 		unbreakablewill = false,
@@ -45,13 +44,9 @@ this.priest_heal_skill <- this.inherit("scripts/skills/skill", {
 	{
 		local total_heal_min = this.m.heal_base_min;
 
-		if (this.m.healingfocus)
-		{
-			total_heal_min += 10;
-		}
 		if (this.m.spiritalhealing)
 		{
-			total_heal_min += 10;
+			total_heal_min += 15;
 		}
 
 		return total_heal_min;
@@ -61,13 +56,9 @@ this.priest_heal_skill <- this.inherit("scripts/skills/skill", {
 	{
 		local total_heal_max = this.m.heal_base_max;
 
-		if (this.m.healingfocus)
-		{
-			total_heal_max += 10;
-		}
 		if (this.m.spiritalhealing)
 		{
-			total_heal_max += 10;
+			total_heal_max += 15;
 		}
 
 		return total_heal_max;
@@ -120,7 +111,6 @@ this.priest_heal_skill <- this.inherit("scripts/skills/skill", {
 	{
 		local user = this.getContainer().getActor();
 		this.m.holyreach = user.getSkills().hasSkill("perk.wow.priest.holyreach");
-		this.m.healingfocus = user.getSkills().hasSkill("perk.wow.priest.healingfocus");
 		this.m.spiritalhealing = user.getSkills().hasSkill("perk.wow.priest.spiritalhealing");
 		this.m.renew = user.getSkills().hasSkill("perk.wow.priest.renew");
 		this.m.blessedrecovery = user.getSkills().hasSkill("perk.wow.priest.blessedrecovery");

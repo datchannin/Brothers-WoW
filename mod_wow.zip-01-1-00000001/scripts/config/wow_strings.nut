@@ -333,7 +333,7 @@ gt.Const.Wow_strings.PerkDescription <- {
 	MentalStrength = "Now your \'Power Word: Shield\' skill is able to apply a protection buff to your target. This buff reduces armor damage taken by [color=" + this.Const.UI.Color.PositiveValue + "]10%[/color].",
 	MentalPower = "Doubles \'Mental Strength\' effect. Armor damage taken is reduced by additional [color=" + this.Const.UI.Color.PositiveValue + "]10%[/color].",
 	UnbreakableWill = "Legends are made about the unbreakable will of the priests, and now you are one of them! Reduces Fatigue cost of healing and repair spells by [color=" + this.Const.UI.Color.PositiveValue + "]10[/color] points",
-	SpiritalHealing = "Healing is your main specialization. This enhances your [color=" + this.Const.UI.Color.PositiveValue + "]\'Heal\'[/color] skill. Increases the number of Hitpoints healing for [color=" + this.Const.UI.Color.PositiveValue + "]10[/color] points.",
+	SpiritalHealing = "Healing is your main specialization. This enhances your [color=" + this.Const.UI.Color.PositiveValue + "]\'Heal\'[/color] skill. Increases the number of Hitpoints healing for [color=" + this.Const.UI.Color.PositiveValue + "]15[/color] points.",
 	MentalAgility = "Increases base power of your \'Power Word: Shield\' skill by [color=" + this.Const.UI.Color.PositiveValue + "]20[/color] points.",
 	Renew = "Now your \'Heal\' spell is able to apply a healing buff to your target. Target will be healed for every turn under this effect.",
 	RepairMaster = "Become Master of repair. \'Power Word: Shield\' skill now is able to repair target Shield. Also increases range of this spell by [color=" + this.Const.UI.Color.PositiveValue + "]1[/color].",
