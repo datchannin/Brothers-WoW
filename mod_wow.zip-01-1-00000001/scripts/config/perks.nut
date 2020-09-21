@@ -429,7 +429,7 @@ gt.Const.Perks.PerkTreePriest <- [
 		gt.Const.Perks.PerkDefObjects.SpiritalHealing
 		gt.Const.Perks.PerkDefObjects.MentalAgility
 		gt.Const.Perks.PerkDefObjects.Meditation
-		//gt.Const.Perks.PerkDefObjects.MentalPower
+		gt.Const.Perks.PerkDefObjects.MentalPower
 		gt.Const.Perks.PerkDefObjects.PermanentRecovery
 		gt.Const.Perks.PerkDefObjects.LuckyRecovery
 		//gt.Const.Perks.PerkDefObjects.UnbreakableWill

@@ -1498,6 +1498,16 @@ gt.Const.Perks.PerkDefObjects.MentalStrength <- {
 	Const = "MentalStrength"
 }
 
+gt.Const.Perks.PerkDefObjects.MentalPower <- {
+	ID = "perk.wow.priest.mentalpower",
+	Script = "scripts/skills/perks/perk_wow_mentalpower",
+	Name = this.Const.Wow_strings.PerkName.MentalPower,
+	Tooltip = this.Const.Wow_strings.PerkDescription.MentalPower,
+	Icon = "ui/perks/perk_priest_mentalpower.png",
+	IconDisabled = "ui/perks/perk_priest_mentalpower_sw.png",
+	Const = "MentalPower"
+}
+
 gt.Const.Perks.PerkDefObjects.SpiritalHealing <- {
 	ID = "perk.wow.priest.spiritalhealing",
 	Script = "scripts/skills/perks/perk_wow_spiritalhealing",
