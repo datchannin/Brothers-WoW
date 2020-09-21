@@ -110,10 +110,14 @@ gt.Const.Perks.PerkTreeWarrior <- [
 		gt.Const.Perks.PerkDefObjects.Taunt
 	],
 	[
-		gt.Const.Perks.PerkDefObjects.MasterSpear
-		gt.Const.Perks.PerkDefObjects.MasterSword
-		gt.Const.Perks.PerkDefObjects.MasterAxe
+		gt.Const.Perks.PerkDefObjects.MasterMace
+		gt.Const.Perks.PerkDefObjects.MasterFlail
 		gt.Const.Perks.PerkDefObjects.MasterHammer
+		gt.Const.Perks.PerkDefObjects.MasterAxe
+		gt.Const.Perks.PerkDefObjects.MasterSword
+		gt.Const.Perks.PerkDefObjects.MasterSpear
+		gt.Const.Perks.PerkDefObjects.SpecMace
+		gt.Const.Perks.PerkDefObjects.SpecFlail
 		gt.Const.Perks.PerkDefObjects.SpecHammer
 		gt.Const.Perks.PerkDefObjects.SpecAxe
 		gt.Const.Perks.PerkDefObjects.SpecSword
@@ -238,14 +242,18 @@ gt.Const.Perks.PerkTreePaladin <- [
 		gt.Const.Perks.PerkDefObjects.RallyTheTroops
 	],
 	[
-		gt.Const.Perks.PerkDefObjects.MasterAxe
-		gt.Const.Perks.PerkDefObjects.MasterHammer
-		gt.Const.Perks.PerkDefObjects.MasterFlail
 		gt.Const.Perks.PerkDefObjects.MasterMace
+		gt.Const.Perks.PerkDefObjects.MasterFlail
+		gt.Const.Perks.PerkDefObjects.MasterHammer
+		gt.Const.Perks.PerkDefObjects.MasterAxe
+		gt.Const.Perks.PerkDefObjects.MasterSword
+		gt.Const.Perks.PerkDefObjects.MasterSpear
 		gt.Const.Perks.PerkDefObjects.SpecMace
 		gt.Const.Perks.PerkDefObjects.SpecFlail
 		gt.Const.Perks.PerkDefObjects.SpecHammer
 		gt.Const.Perks.PerkDefObjects.SpecAxe
+		gt.Const.Perks.PerkDefObjects.SpecSword
+		gt.Const.Perks.PerkDefObjects.SpecSpear
 	],
 	[
 		gt.Const.Perks.PerkDefObjects.ReachAdvantage
