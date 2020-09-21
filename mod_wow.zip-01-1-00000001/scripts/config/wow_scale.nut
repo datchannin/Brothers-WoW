@@ -36,6 +36,8 @@ gt.Const.DruidScale <- {
 	frenziedregeneration = 1,
 	direbearhealth = 0.01,
 	direbeardravery = 0.01,
+	clawsmin = 0.05,
+	clawsmax = 0.07
 };
 
 gt.Const.RogueScale <- {

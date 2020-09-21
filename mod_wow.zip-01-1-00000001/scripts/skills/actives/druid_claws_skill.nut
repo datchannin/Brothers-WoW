@@ -3,6 +3,7 @@ this.druid_claws_skill <- this.inherit("scripts/skills/skill", {
 	m = {
 		damage_min = 30,
 		damage_max = 35,
+		CurrentLevel = 1,
 		damage_armor_mult = 0.4,
 		damage_direct_mult = 0.3,
 		heartofwild = false,
@@ -42,7 +43,8 @@ this.druid_claws_skill <- this.inherit("scripts/skills/skill", {
 
 	function getTotalMinDamage()
 	{
-		local total_damage_min = 30;
+		local total_damage_min = this.m.damage_min;
+		local scale = 0;
 
 		if (this.m.heartofwild)
 		{
@@ -53,13 +55,17 @@ this.druid_claws_skill <- this.inherit("scripts/skills/skill", {
 		{
 			total_damage_min += 6;
 		}
+
+		scale = this.Math.floor(total_damage_min * this.m.CurrentLevel * this.Const.DruidScale.clawsmin);
+		total_damage_min += scale;
 
 		return total_damage_min;
 	}
 
 	function getTotalMaxDamage()
 	{
-		local total_damage_max = 35;
+		local total_damage_max = this.m.damage_max;
+		local scale = 0;
 
 		if (this.m.heartofwild)
 		{
@@ -70,6 +76,9 @@ this.druid_claws_skill <- this.inherit("scripts/skills/skill", {
 		{
 			total_damage_max += 7;
 		}
+
+		scale = this.Math.floor(total_damage_max * this.m.CurrentLevel * this.Const.DruidScale.clawsmax);
+		total_damage_max += scale;
 
 		return total_damage_max;
 	}
@@ -128,6 +137,7 @@ this.druid_claws_skill <- this.inherit("scripts/skills/skill", {
 	function onUpdate( _properties )
 	{
 		local user = this.getContainer().getActor();
+		this.m.CurrentLevel = user.getLevel();
 		this.m.heartofwild = user.getSkills().hasSkill("perk.wow.druid.heartofwild");
 		this.m.sharpenedclaws = user.getSkills().hasSkill("perk.wow.druid.sharpenedclaws");
 	}
@@ -136,11 +146,11 @@ this.druid_claws_skill <- this.inherit("scripts/skills/skill", {
 	{
 		if (_skill == this)
 		{
-			this.m.damage_min = getTotalMinDamage();
-			this.m.damage_max = getTotalMaxDamage();
+			local damage_min = getTotalMinDamage();
+			local damage_max = getTotalMaxDamage();
 
-			_properties.DamageRegularMin = this.m.damage_min;
-			_properties.DamageRegularMax = this.m.damage_max;
+			_properties.DamageRegularMin = damage_min;
+			_properties.DamageRegularMax = damage_max;
 			_properties.DamageArmorMult *= this.m.damage_armor_mult;
 		}
 	}
