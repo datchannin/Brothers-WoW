@@ -22,9 +22,9 @@ this.perk_wow_masterflail <- this.inherit("scripts/skills/skill", {
 	function onAnySkillUsed( _skill, _targetEntity, _properties )
 	{
 		local mainhand = this.getContainer().getActor().getItems().getItemAtSlot(this.Const.ItemSlot.Mainhand);
-		if (mainhand != null && mainhand.isItemType(this.Const.Items.ItemType.OneHanded))
+		if (mainhand != null)
 		{
-			if (_skill.getID() == "actives.flail" || _skill.getID() == "actives.lash" || _skill.getID() == "actives.cascade" || _skill.getID() == "actives.hail")
+			if (_skill.getID() == "actives.flail" || _skill.getID() == "actives.lash" || _skill.getID() == "actives.cascade" || _skill.getID() == "actives.hail" || _skill.getID() == "actives.pound" || _skill.getID() == "actives.thresh")
 			{
 				_properties.DamageTotalMult *= 1.2;
 				_properties.TargetAttractionMult *= 1.2;

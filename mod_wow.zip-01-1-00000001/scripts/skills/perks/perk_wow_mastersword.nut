@@ -22,9 +22,9 @@ this.perk_wow_mastersword <- this.inherit("scripts/skills/skill", {
 	function onAnySkillUsed( _skill, _targetEntity, _properties )
 	{
 		local mainhand = this.getContainer().getActor().getItems().getItemAtSlot(this.Const.ItemSlot.Mainhand);
-		if (mainhand != null && mainhand.isItemType(this.Const.Items.ItemType.OneHanded))
+		if (mainhand != null)
 		{
-			if (_skill.getID() == "actives.slash" || _skill.getID() == "actives.decapitate" || _skill.getID() == "actives.gash" || _skill.getID() == "actives.lunge" || _skill.getID() == "actives.slash_lightins")
+			if (_skill.getID() == "actives.slash" || _skill.getID() == "actives.decapitate" || _skill.getID() == "actives.gash" || _skill.getID() == "actives.lunge" || _skill.getID() == "actives.slash_lightins" || _skill.getID() == "actives.riposte" || _skill.getID() == "actives.split" || _skill.getID() == "actives.swing" || _skill.getID() == "actives.overhead_strike")
 			{
 				_properties.DamageTotalMult *= 1.2;
 				_properties.TargetAttractionMult *= 1.2;

@@ -22,9 +22,9 @@ this.perk_wow_masterhammer <- this.inherit("scripts/skills/skill", {
 	function onAnySkillUsed( _skill, _targetEntity, _properties )
 	{
 		local mainhand = this.getContainer().getActor().getItems().getItemAtSlot(this.Const.ItemSlot.Mainhand);
-		if (mainhand != null && mainhand.isItemType(this.Const.Items.ItemType.TwoHanded))
+		if (mainhand != null)
 		{
-			if (_skill.getID() == "actives.batter" || _skill.getID() == "actives.shatter" || _skill.getID() == "actives.smite")
+			if (_skill.getID() == "actives.batter" || _skill.getID() == "actives.shatter" || _skill.getID() == "actives.smite" || _skill.getID() == "actives.hammer" || _skill.getID() == "actives.crush_armor")
 			{
 				_properties.DamageTotalMult *= 1.2;
 				_properties.TargetAttractionMult *= 1.2;

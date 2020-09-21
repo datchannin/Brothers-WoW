@@ -21,7 +21,7 @@ this.perk_wow_masterspear <- this.inherit("scripts/skills/skill", {
 
 	function onAnySkillUsed( _skill, _targetEntity, _properties )
 	{
-		if (_skill.getID() == "actives.thrust")
+		if (_skill.getID() == "actives.thrust" || _skill.getID() == "actives.knock_out")
 		{
 			_properties.DamageTotalMult *= 1.2;
 			_properties.TargetAttractionMult *= 1.2;

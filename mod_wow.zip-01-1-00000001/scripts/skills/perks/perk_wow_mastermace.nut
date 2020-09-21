@@ -22,9 +22,9 @@ this.perk_wow_mastermace <- this.inherit("scripts/skills/skill", {
 	function onAnySkillUsed( _skill, _targetEntity, _properties )
 	{
 		local mainhand = this.getContainer().getActor().getItems().getItemAtSlot(this.Const.ItemSlot.Mainhand);
-		if (mainhand != null && mainhand.isItemType(this.Const.Items.ItemType.OneHanded))
+		if (mainhand != null)
 		{
-			if (_skill.getID() == "actives.knock_out" || _skill.getID() == "actives.bash")
+			if (_skill.getID() == "actives.knock_out" || _skill.getID() == "actives.bash" || _skill.getID() == "actives.cudgel" || _skill.getID() == "actives.strike_down" || _skill.getID() == "actives.crumble" || _skill.getID() == "actives.knock_over")
 			{
 				_properties.DamageTotalMult *= 1.2;
 				_properties.TargetAttractionMult *= 1.2;
