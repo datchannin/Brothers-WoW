@@ -328,7 +328,7 @@ gt.Const.Wow_strings.PerkDescription <- {
 	HolyReach = "Increases range of \'Heal\' by [color=" + this.Const.UI.Color.PositiveValue + "]3[/color]. Distance doesn\'t matter more.",
 	Inspiration = "Upps your \'Power Word: Shield\' skill. Now this skill can be used for repair Head Armor.",
 	HealingFocus = "Heal more Hitpoints for the same efforts. This enhances your [color=" + this.Const.UI.Color.PositiveValue + "]\'Heal\'[/color] skill. Increases the number of Hitpoints healing for [color=" + this.Const.UI.Color.PositiveValue + "]10[/color] points.",
-	MentalStrength = "Increases power of your \'Power Word: Shield\' skill by [color=" + this.Const.UI.Color.PositiveValue + "]15[/color] points and Action Points cost of this spell will be increased by [color=" + this.Const.UI.Color.NegativeValue + "]1[/color].",
+	MentalStrength = "Now your \'Power Word: Shield\' skill is able to apply a protection buff to your target. This buff reduces armor damage taken by [color=" + this.Const.UI.Color.PositiveValue + "]10%[/color].",
 	SpiritalHealing = "Healing is your main specialization. This enhances your [color=" + this.Const.UI.Color.PositiveValue + "]\'Heal\'[/color] skill. Increases the number of Hitpoints healing for [color=" + this.Const.UI.Color.PositiveValue + "]10[/color] points.",
 	MentalAgility = "Increases power of your \'Power Word: Shield\' skill by [color=" + this.Const.UI.Color.PositiveValue + "]20[/color] points and Action Points cost of this spell will be increased by [color=" + this.Const.UI.Color.NegativeValue + "]2[/color].",
 	Renew = "Now your \'Heal\' spell is able to apply a healing buff to your target. Target will be healed for every turn under this effect.",
