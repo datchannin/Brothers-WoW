@@ -1,7 +1,9 @@
 /*BBWOW:This file is part of datchannin bbWoW mod, mod_version = 8.02, game_version = 1.4.0.42*/
 this.druid_markofwild_skill <- this.inherit("scripts/skills/skill", {
 	m = {
-		ResolveValue = 20
+		ResolveValue = 20,
+		TurnBase = 3,
+		CurrentLevel = 1
 	},
 	function create()
 	{
@@ -27,15 +29,27 @@ this.druid_markofwild_skill <- this.inherit("scripts/skills/skill", {
 		this.m.MaxRange = 2;
 	}
 
+	function getTotalValue()
+	{
+		local resolve = this.m.ResolveValue;
+		local scale = 0;
+
+		scale = this.Math.floor(this.m.CurrentLevel * this.Const.DruidScale.markofwild);
+		resolve += scale;
+
+		return resolve;
+	}
+
 	function getTooltip()
 	{
 		local ret = this.getDefaultUtilityTooltip();
-		
+		local resolve = getTotalValue();
+
 		ret.push({
 			id = 6,
 			type = "text",
 			icon = "ui/icons/bravery.png",
-			text = "Increases the target\'s Resolve for [color=" + this.Const.UI.Color.PositiveValue + "]" + this.m.ResolveValue + "[/color] points during three turns."
+			text = "Increases the target\'s Resolve for [color=" + this.Const.UI.Color.PositiveValue + "]" + resolve + "[/color] points during three turns."
 		});
 
 		return ret;
@@ -87,18 +101,28 @@ this.druid_markofwild_skill <- this.inherit("scripts/skills/skill", {
 		return true;
 	}
 
+	function onUpdate( _properties )
+	{
+		local user = this.getContainer().getActor();
+		this.m.CurrentLevel = user.getLevel();
+	}
+
 	function onUse( _user, _targetTile )
 	{
 		local targetEntity = _targetTile.getEntity();
 		local effect = targetEntity.getSkills().getSkillByID("effects.markofwild");
+		local resolve = getTotalValue();
 
 		if (effect != null)
 		{
-			effect.reset();
+			effect.resetTime(this.m.TurnBase);
 		}
 		else
 		{
-			targetEntity.getSkills().add(this.new("scripts/skills/effects/markofwild_effect"));
+			local mark = this.new("scripts/skills/effects/markofwild_effect");
+			mark.setValue(resolve);
+			mark.resetTime(this.m.TurnBase);
+			targetEntity.getSkills().add(mark);
 		}
 
 		this.spawnIcon("effect_druid_markofwild", _targetTile);

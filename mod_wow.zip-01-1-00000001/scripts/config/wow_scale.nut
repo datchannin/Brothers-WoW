@@ -27,6 +27,10 @@ gt.Const.HunterScale <- {
 	pet_mend_max = 0.15,
 };
 
+gt.Const.DruidScale <- {
+	markofwild = 1
+};
+
 gt.Const.RogueScale <- {
 	poison_damage = 0.05,
 	poison_duration = 15

@@ -1,7 +1,8 @@
 /*BBWOW:This file is part of datchannin bbWoW mod, mod_version = 8.02, game_version = 1.4.0.42*/
 this.markofwild_effect <- this.inherit("scripts/skills/skill", {
 	m = {
-		TurnsLeft = 3
+		TurnsLeft = 3,
+		ResolveValue = 20
 	},
 	function create()
 	{
@@ -37,19 +38,24 @@ this.markofwild_effect <- this.inherit("scripts/skills/skill", {
 				id = 10,
 				type = "text",
 				icon = "ui/icons/bravery.png",
-				text = "Resolve is increased for [color=" + this.Const.UI.Color.PositiveValue + "]20[/color] points."
+				text = "Resolve is increased for [color=" + this.Const.UI.Color.PositiveValue + "]" + this.m.ResolveValue + "[/color] points."
 			}
 		];
 	}
 
-	function reset()
+	function setValue ( _d )
 	{
-		this.m.TurnsLeft = 3;
+		this.m.ResolveValue = _d;
+	}
+
+	function resetTime( _d )
+	{
+		this.m.TurnsLeft = _d;
 	}
 
 	function onUpdate( _properties )
 	{
-		_properties.Bravery += 20;
+		_properties.Bravery += this.m.ResolveValue;
 	}
 
 	function onTurnEnd()

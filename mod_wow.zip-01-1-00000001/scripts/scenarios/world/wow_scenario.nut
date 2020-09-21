@@ -153,7 +153,7 @@ this.wow_scenario <- this.inherit("scripts/scenarios/world/starting_scenario", {
 		local shield = bros[6].getItems().getItemAtSlot(this.Const.ItemSlot.Offhand);
 		body.setArmor(1);
 		head.setArmor(1);
-		shield.setCondition(1);
+		//shield.setCondition(1);
 		bros[6].setHitpoints(5);
 
 		this.World.Assets.getStash().add(this.new("scripts/items/supplies/ground_grains_item"));
