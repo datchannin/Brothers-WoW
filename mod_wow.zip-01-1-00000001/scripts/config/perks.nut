@@ -432,7 +432,7 @@ gt.Const.Perks.PerkTreePriest <- [
 		gt.Const.Perks.PerkDefObjects.MentalPower
 		gt.Const.Perks.PerkDefObjects.PermanentRecovery
 		gt.Const.Perks.PerkDefObjects.LuckyRecovery
-		//gt.Const.Perks.PerkDefObjects.UnbreakableWill
+		gt.Const.Perks.PerkDefObjects.UnbreakableWill
 	],
 	[
 		gt.Const.Perks.PerkDefObjects.LoneWolf
@@ -447,7 +447,6 @@ gt.Const.Perks.PerkTreePriest <- [
 		gt.Const.Perks.PerkDefObjects.Renew
 		gt.Const.Perks.PerkDefObjects.RepairMaster
 		gt.Const.Perks.PerkDefObjects.Indomitable
-		//gt.Const.Perks.PerkDefObjects.HealingFocus
 	],
 	[],
 	[],

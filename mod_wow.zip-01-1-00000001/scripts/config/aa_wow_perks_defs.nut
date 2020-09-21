@@ -1508,6 +1508,16 @@ gt.Const.Perks.PerkDefObjects.MentalPower <- {
 	Const = "MentalPower"
 }
 
+gt.Const.Perks.PerkDefObjects.UnbreakableWill <- {
+	ID = "perk.wow.priest.unbreakablewill",
+	Script = "scripts/skills/perks/perk_wow_unbreakablewill",
+	Name = this.Const.Wow_strings.PerkName.UnbreakableWill,
+	Tooltip = this.Const.Wow_strings.PerkDescription.UnbreakableWill,
+	Icon = "ui/perks/perk_priest_unbreakablewill.png",
+	IconDisabled = "ui/perks/perk_priest_unbreakablewill_sw.png",
+	Const = "UnbreakableWill"
+}
+
 gt.Const.Perks.PerkDefObjects.SpiritalHealing <- {
 	ID = "perk.wow.priest.spiritalhealing",
 	Script = "scripts/skills/perks/perk_wow_spiritalhealing",
