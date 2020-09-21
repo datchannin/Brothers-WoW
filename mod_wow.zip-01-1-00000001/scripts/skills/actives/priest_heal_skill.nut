@@ -51,6 +51,7 @@ this.priest_heal_skill <- this.inherit("scripts/skills/skill", {
 			total_heal_min += 15;
 		}
 
+		scale = this.Math.floor(total_heal_min * this.m.CurrentLevel * this.Const.PriestScale.heal_min);
 		total_heal_min += scale;
 
 		return total_heal_min;
@@ -66,6 +67,7 @@ this.priest_heal_skill <- this.inherit("scripts/skills/skill", {
 			total_heal_max += 15;
 		}
 
+		scale = this.Math.floor(total_heal_max * this.m.CurrentLevel * this.Const.PriestScale.heal_max);
 		total_heal_max += scale;
 
 		return total_heal_max;
