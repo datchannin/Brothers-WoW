@@ -124,6 +124,9 @@ this.raider_paladin_background <- this.inherit("scripts/skills/backgrounds/chara
 			}
 		}
 
+
+		//items.equip(this.new("scripts/items/shields/heater_shield"));
+
 		r = this.Math.rand(0, 4);
 
 		if (r == 0)

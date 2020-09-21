@@ -61,10 +61,6 @@ this.priest_powerwordshield_skill <- this.inherit("scripts/skills/skill", {
 		{
 			repair_total_min += 20;
 		}
-		if (this.m.repairmaster)
-		{
-			repair_total_min += 10;
-		}
 
 		return repair_total_min;
 	}
@@ -76,10 +72,6 @@ this.priest_powerwordshield_skill <- this.inherit("scripts/skills/skill", {
 		if (this.m.mentalagility)
 		{
 			repair_total_max += 20;
-		}
-		if (this.m.repairmaster)
-		{
-			repair_total_max += 10;
 		}
 
 		return repair_total_max;
@@ -96,7 +88,7 @@ this.priest_powerwordshield_skill <- this.inherit("scripts/skills/skill", {
 			id = 6,
 			type = "text",
 			icon = "ui/icons/repair_item.png",
-			text = "Repair target\'s Body Armor for [color=" + this.Const.UI.Color.PositiveValue + "]" + repair_total_min + "[/color] - [color=" + this.Const.UI.Color.PositiveValue + "]" + repair_total_max + "[/color] points."
+			text = "Repair Body Armor for [color=" + this.Const.UI.Color.PositiveValue + "]" + repair_total_min + "[/color] - [color=" + this.Const.UI.Color.PositiveValue + "]" + repair_total_max + "[/color] points."
 		});
 
 		if (this.m.inspiration)
@@ -105,14 +97,27 @@ this.priest_powerwordshield_skill <- this.inherit("scripts/skills/skill", {
 				id = 6,
 				type = "text",
 				icon = "ui/icons/repair_item.png",
-				text = "Target\'s Head Armor now also can be repaired."
+				text = "Head Armor can be repaired."
 			});
-			
+		}
+
+		if (this.m.repairmaster)
+		{
 			ret.push({
 				id = 6,
 				type = "text",
 				icon = "ui/icons/repair_item.png",
-				text = "Body Armor has a repair priority over Head Armor."
+				text = "Shield can be repaired."
+			});
+		}
+
+		if (this.m.inspiration || this.m.repairmaster)
+		{
+			ret.push({
+				id = 6,
+				type = "text",
+				icon = "ui/icons/special.png",
+				text = "Body Armor is more priority than Head Armor, and Head Armor is more priority than Shield."
 			});
 		}
 
@@ -212,18 +217,23 @@ this.priest_powerwordshield_skill <- this.inherit("scripts/skills/skill", {
 		local repairnumber = _data.Repairnumber;
 		local bodyitem = targetEntity.getItems().getItemAtSlot(this.Const.ItemSlot.Body);
 		local headitem = targetEntity.getItems().getItemAtSlot(this.Const.ItemSlot.Head);
+		local offhanditem = targetEntity.getItems().getItemAtSlot(this.Const.ItemSlot.Offhand);
 
 		local effect = GetTotalEffect();
 
 		local currentBody = 0;
 		local currentHead = 0;
+		local currentShield = 0;
 		local maxBody = 0;
 		local maxHead = 0;
+		local maxShield = 0;
 		local missingBody = 0;
 		local missingHead = 0;
+		local missingShield = 0;
 
 		local repairBody = 0;
 		local repairHead = 0;
+		local repairShield = 0;
 
 		if (this.m.mentalstrength)
 		{
@@ -246,6 +256,13 @@ this.priest_powerwordshield_skill <- this.inherit("scripts/skills/skill", {
 			currentHead = headitem.getArmor();
 			maxHead = headitem.getArmorMax();
 			missingHead = maxHead - currentHead;
+		}
+
+		if (offhanditem != null && offhanditem.isItemType(this.Const.Items.ItemType.Shield))
+		{
+			currentShield = offhanditem.getCondition();
+			maxShield = offhanditem.getConditionMax();
+			missingShield = maxShield - currentShield;
 		}
 
 		if (bodyitem)
@@ -286,6 +303,28 @@ this.priest_powerwordshield_skill <- this.inherit("scripts/skills/skill", {
 				}
 				headitem.setArmor(currentHead + repairHead);
 				this.Tactical.EventLog.log(this.Const.UI.getColorizedEntityName(targetEntity) + " Head Armor was restored for " + repairHead + " points");
+			}
+		}
+
+		if (this.m.repairmaster)
+		{
+			if (offhanditem)
+			{
+				if (offhanditem.isItemType(this.Const.Items.ItemType.Shield))
+				{
+					if (missingShield >= repairnumber)
+					{
+						repairShield = repairnumber;
+						repairnumber = repairnumber - repairShield;
+					}
+					else
+					{
+						repairShield = missingShield;
+						repairnumber = repairnumber - repairShield;
+					}
+				}
+				offhanditem.setCondition(currentShield + repairShield);
+				this.Tactical.EventLog.log(this.Const.UI.getColorizedEntityName(targetEntity) + " Shield was restored for " + repairShield + " points");
 			}
 		}
 
