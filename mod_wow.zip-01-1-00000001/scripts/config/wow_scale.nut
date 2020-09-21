@@ -29,7 +29,8 @@ gt.Const.HunterScale <- {
 
 gt.Const.DruidScale <- {
 	markofwild = 1,
-	rejuvenation = 0.05
+	rejuvenation = 0.05,
+	innervate = 0.01,
 };
 
 gt.Const.RogueScale <- {
