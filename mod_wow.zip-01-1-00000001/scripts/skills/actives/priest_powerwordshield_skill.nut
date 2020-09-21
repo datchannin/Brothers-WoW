@@ -3,6 +3,8 @@ this.priest_powerwordshield_skill <- this.inherit("scripts/skills/skill", {
 	m = {
 		repair_base_min = 10,
 		repair_base_max = 15,
+		BaseChance = 100,
+		BaseEffect = 10,
 		mentalstrength = false,
 		mentalagility = false,
 		inspiration = false,
@@ -37,14 +39,17 @@ this.priest_powerwordshield_skill <- this.inherit("scripts/skills/skill", {
 		this.m.MaxRange = 2;
 	}
 
+	function GetTotalEffect()
+	{
+		local effect = this.m.BaseEffect;
+
+		return effect;
+	}
+
 	function getTotalMinRepair()
 	{
 		local repair_total_min = this.m.repair_base_min;
 
-		if (this.m.mentalstrength)
-		{
-			repair_total_min += 15;
-		}
 		if (this.m.mentalagility)
 		{
 			repair_total_min += 20;
@@ -61,10 +66,6 @@ this.priest_powerwordshield_skill <- this.inherit("scripts/skills/skill", {
 	{
 		local repair_total_max = this.m.repair_base_max;
 
-		if (this.m.mentalstrength)
-		{
-			repair_total_max += 15;
-		}
 		if (this.m.mentalagility)
 		{
 			repair_total_max += 20;
@@ -82,6 +83,7 @@ this.priest_powerwordshield_skill <- this.inherit("scripts/skills/skill", {
 		local ret = this.getDefaultUtilityTooltip();
 		local repair_total_min = getTotalMinRepair();
 		local repair_total_max = getTotalMaxRepair();
+		local effect = GetTotalEffect();
 
 		ret.push({
 			id = 6,
@@ -104,6 +106,16 @@ this.priest_powerwordshield_skill <- this.inherit("scripts/skills/skill", {
 				type = "text",
 				icon = "ui/icons/repair_item.png",
 				text = "Body Armor has a repair priority over Head Armor."
+			});
+		}
+
+		if (this.m.mentalstrength)
+		{
+			ret.push({
+				id = 6,
+				type = "text",
+				icon = "ui/icons/special.png",
+				text = "Apply protection buff that reduces armor damage taken by [color=" + this.Const.UI.Color.PositiveValue + "]" + effect + "%[/color]."
 			});
 		}
 
@@ -136,23 +148,7 @@ this.priest_powerwordshield_skill <- this.inherit("scripts/skills/skill", {
 		if (this.m.repairmaster)
 		{
 			this.m.FatigueCost = 25;
-		}
-		
-		if ((this.m.mentalstrength) && (this.m.mentalagility))
-		{
-			this.m.ActionPointCost = 9;
-		}
-		else
-		{
-			if (this.m.mentalstrength)
-			{
-				this.m.ActionPointCost = 7;
-			}
-			if (this.m.mentalagility)
-			{
-				this.m.ActionPointCost = 8;
-			}
-		}
+		}		
 	}
 
 	function onVerifyTarget( _originTile, _targetTile )
@@ -208,6 +204,8 @@ this.priest_powerwordshield_skill <- this.inherit("scripts/skills/skill", {
 		local bodyitem = targetEntity.getItems().getItemAtSlot(this.Const.ItemSlot.Body);
 		local headitem = targetEntity.getItems().getItemAtSlot(this.Const.ItemSlot.Head);
 
+		local effect = GetTotalEffect();
+
 		local currentBody = 0;
 		local currentHead = 0;
 		local maxBody = 0;
@@ -217,6 +215,11 @@ this.priest_powerwordshield_skill <- this.inherit("scripts/skills/skill", {
 
 		local repairBody = 0;
 		local repairHead = 0;
+
+		if (this.m.mentalstrength)
+		{
+			
+		}
 
 		if (bodyitem != null)
 		{
