@@ -218,7 +218,11 @@ this.priest_powerwordshield_skill <- this.inherit("scripts/skills/skill", {
 
 		if (this.m.mentalstrength)
 		{
-			
+			local mental = this.new("scripts/skills/effects/mentalstrength_effect");
+			mental.setValue(effect);
+			mental.resetTime(1);
+			targetEntity.getSkills().add(mental);
+			this.spawnIcon("effect_priest_mentalstrength", targetEntity.getTile());
 		}
 
 		if (bodyitem != null)
