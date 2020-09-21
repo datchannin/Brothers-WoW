@@ -31,6 +31,8 @@ gt.Const.DruidScale <- {
 	markofwild = 1,
 	rejuvenation = 0.05,
 	innervate = 0.01,
+	maulmin = 0.05,
+	maulmax = 0.07,
 };
 
 gt.Const.RogueScale <- {

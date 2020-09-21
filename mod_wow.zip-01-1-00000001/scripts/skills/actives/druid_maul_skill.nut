@@ -3,6 +3,7 @@ this.druid_maul_skill <- this.inherit("scripts/skills/skill", {
 	m = {
 		damage_min = 25,
 		damage_max = 30,
+		CurrentLevel = 1,
 		damage_armor_mult = 0.8,
 		primalfury = false
 	},
@@ -39,7 +40,7 @@ this.druid_maul_skill <- this.inherit("scripts/skills/skill", {
 
 	function getTotalArmorMult()
 	{
-		local total_armor_mult = 0.8;
+		local total_armor_mult = this.m.damage_armor_mult;
 
 		if (this.m.primalfury)
 		{
@@ -49,15 +50,39 @@ this.druid_maul_skill <- this.inherit("scripts/skills/skill", {
 		return total_armor_mult;
 	}
 
+	function getTotalMinDamage()
+	{
+		local damage = this.m.damage_min;
+		local scale = 0;
+
+		scale = this.Math.floor(damage * this.m.CurrentLevel * this.Const.DruidScale.maulmin);
+		damage += scale;
+
+		return damage;
+	}
+
+	function getTotalMaxDamage()
+	{
+		local damage = this.m.damage_max;
+		local scale = 0;
+
+		scale = this.Math.floor(damage * this.m.CurrentLevel * this.Const.DruidScale.maulmax);
+		damage += scale;
+
+		return damage;
+	}
+
 	function getTooltip()
 	{
 		local p = this.getContainer().getActor().getCurrentProperties();
 		local damage_armor_mult = getTotalArmorMult();		
+		local damage_maul_min = getTotalMinDamage();
+		local damage_maul_max = getTotalMaxDamage();
 
-		local damage_armor_min = this.Math.floor(this.m.damage_min * damage_armor_mult * p.DamageTotalMult * p.MeleeDamageMult);
-		local damage_armor_max = this.Math.floor(this.m.damage_max * damage_armor_mult * p.DamageTotalMult * p.MeleeDamageMult);
-		local damage_min = this.Math.floor(this.m.damage_min * p.DamageTotalMult * p.MeleeDamageMult);
-		local damage_max = this.Math.floor(this.m.damage_max * p.DamageTotalMult * p.MeleeDamageMult);
+		local damage_armor_min = this.Math.floor(damage_maul_min * damage_armor_mult * p.DamageTotalMult * p.MeleeDamageMult);
+		local damage_armor_max = this.Math.floor(damage_maul_max * damage_armor_mult * p.DamageTotalMult * p.MeleeDamageMult);
+		local damage_min = this.Math.floor(damage_maul_min * p.DamageTotalMult * p.MeleeDamageMult);
+		local damage_max = this.Math.floor(damage_maul_max * p.DamageTotalMult * p.MeleeDamageMult);
 		local direct_damage_max = this.Math.floor(this.m.DirectDamageMult * damage_max);
 
 		local ret = this.getDefaultUtilityTooltip();
@@ -101,6 +126,7 @@ this.druid_maul_skill <- this.inherit("scripts/skills/skill", {
 	function onUpdate( _properties )
 	{
 		local user = this.getContainer().getActor();
+		this.m.CurrentLevel = user.getLevel();
 		this.m.primalfury = user.getSkills().hasSkill("perk.wow.druid.primalfury");
 	}
 
@@ -108,11 +134,13 @@ this.druid_maul_skill <- this.inherit("scripts/skills/skill", {
 	{
 		if (_skill == this)
 		{
-			this.m.damage_armor_mult = getTotalArmorMult();
+			local damage_armor_mult = getTotalArmorMult();
+			local damage_maul_min = getTotalMinDamage();
+			local damage_maul_max = getTotalMaxDamage();
 
-			_properties.DamageRegularMin = this.m.damage_min;
-			_properties.DamageRegularMax = this.m.damage_max;
-			_properties.DamageArmorMult *= this.m.damage_armor_mult;
+			_properties.DamageRegularMin = damage_maul_min;
+			_properties.DamageRegularMax = damage_maul_max;
+			_properties.DamageArmorMult *= damage_armor_mult;
 		}
 	}
 
