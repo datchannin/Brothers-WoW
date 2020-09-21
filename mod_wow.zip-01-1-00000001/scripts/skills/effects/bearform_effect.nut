@@ -5,7 +5,8 @@ this.bearform_effect <- this.inherit("scripts/skills/skill", {
 		initHead = "",
 		abolishpoison = false,
 		heartofwild = false,
-		direbear = false
+		direbear = false,
+		CurrentLevel = 1
 	},
 	function create()
 	{
@@ -27,6 +28,7 @@ this.bearform_effect <- this.inherit("scripts/skills/skill", {
 	function getHealthMult()
 	{
 		local healthmult = 0.3;
+		local scale = 0;
 
 		if (this.m.heartofwild)
 		{
@@ -35,9 +37,22 @@ this.bearform_effect <- this.inherit("scripts/skills/skill", {
 		if (this.m.direbear)
 		{
 			healthmult += 0.25;
+			scale = this.m.CurrentLevel * this.Const.DruidScale.direbearhealth;
+			healthmult += scale;
 		}
 
 		return healthmult;
+	}
+
+	function getBraveryMult()
+	{
+		local braverymult = 0.1;
+		local scale = 0;
+
+		scale = this.m.CurrentLevel * this.Const.DruidScale.direbeardravery;
+		braverymult += scale;
+
+		return braverymult;
 	}
 
 	function getTooltip()
@@ -55,6 +70,7 @@ this.bearform_effect <- this.inherit("scripts/skills/skill", {
 			}
 		];
 		local healthmult = getHealthMult() * 100;
+		local braverymult = getBraveryMult() * 100;
 
 		ret.push({
 			id = 10,
@@ -83,7 +99,7 @@ this.bearform_effect <- this.inherit("scripts/skills/skill", {
 				id = 10,
 				type = "text",
 				icon = "ui/icons/bravery.png",
-				text = "Bravery is increased by [color=" + this.Const.UI.Color.PositiveValue + "]10%[/color]."
+				text = "Bravery is increased by [color=" + this.Const.UI.Color.PositiveValue + "]" + braverymult + "%[/color]."
 			});
 		}
 
@@ -211,6 +227,7 @@ this.bearform_effect <- this.inherit("scripts/skills/skill", {
 	{
 		toDropWeapons();
 		local actor = this.getContainer().getActor();
+		this.m.CurrentLevel = actor.getLevel();
 		toSetVisibleBrush(0);
 
 		this.m.abolishpoison = actor.getSkills().hasSkill("perk.wow.druid.abolishpoison");
@@ -218,7 +235,7 @@ this.bearform_effect <- this.inherit("scripts/skills/skill", {
 		this.m.heartofwild = actor.getSkills().hasSkill("perk.wow.druid.heartofwild");
 
 		local healthmult = getHealthMult();
-
+		local braverymult = getBraveryMult();
 		_properties.HitpointsMult *= (1 + healthmult);
 
 		if (actor.getSkills().hasSkill("perk.wow.druid.abolishpoison"))
@@ -227,7 +244,7 @@ this.bearform_effect <- this.inherit("scripts/skills/skill", {
 		}
 		if (actor.getSkills().hasSkill("perk.wow.druid.direbear"))
 		{
-			_properties.BraveryMult *= 1.1;
+			_properties.BraveryMult *= (1 + braverymult);
 		}
 
 		_properties.DamageReceivedTotalMult *= 0.9;

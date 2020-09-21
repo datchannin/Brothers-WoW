@@ -34,6 +34,8 @@ gt.Const.DruidScale <- {
 	maulmin = 0.05,
 	maulmax = 0.07,
 	frenziedregeneration = 1,
+	direbearhealth = 0.01,
+	direbeardravery = 0.01,
 };
 
 gt.Const.RogueScale <- {
