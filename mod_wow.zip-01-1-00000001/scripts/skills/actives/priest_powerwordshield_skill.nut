@@ -279,9 +279,9 @@ this.priest_powerwordshield_skill <- this.inherit("scripts/skills/skill", {
 					repairBody = missingBody;
 					repairnumber = repairnumber - repairBody;
 				}
+				bodyitem.setArmor(currentBody + repairBody);
+				this.Tactical.EventLog.log(this.Const.UI.getColorizedEntityName(targetEntity) + " Body Armor was restored for " + repairBody + " points");
 			}			
-			bodyitem.setArmor(currentBody + repairBody);
-			this.Tactical.EventLog.log(this.Const.UI.getColorizedEntityName(targetEntity) + " Body Armor was restored for " + repairBody + " points");
 		}
 
 		if (this.m.inspiration)
@@ -300,9 +300,9 @@ this.priest_powerwordshield_skill <- this.inherit("scripts/skills/skill", {
 						repairHead = missingHead;
 						repairnumber = repairnumber - repairHead;
 					}
+					headitem.setArmor(currentHead + repairHead);
+					this.Tactical.EventLog.log(this.Const.UI.getColorizedEntityName(targetEntity) + " Head Armor was restored for " + repairHead + " points");
 				}
-				headitem.setArmor(currentHead + repairHead);
-				this.Tactical.EventLog.log(this.Const.UI.getColorizedEntityName(targetEntity) + " Head Armor was restored for " + repairHead + " points");
 			}
 		}
 
@@ -322,9 +322,9 @@ this.priest_powerwordshield_skill <- this.inherit("scripts/skills/skill", {
 						repairShield = missingShield;
 						repairnumber = repairnumber - repairShield;
 					}
+					offhanditem.setCondition(currentShield + repairShield);
+					this.Tactical.EventLog.log(this.Const.UI.getColorizedEntityName(targetEntity) + " Shield was restored for " + repairShield + " points");
 				}
-				offhanditem.setCondition(currentShield + repairShield);
-				this.Tactical.EventLog.log(this.Const.UI.getColorizedEntityName(targetEntity) + " Shield was restored for " + repairShield + " points");
 			}
 		}
 
