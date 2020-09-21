@@ -33,6 +33,7 @@ gt.Const.DruidScale <- {
 	innervate = 0.01,
 	maulmin = 0.05,
 	maulmax = 0.07,
+	frenziedregeneration = 1,
 };
 
 gt.Const.RogueScale <- {

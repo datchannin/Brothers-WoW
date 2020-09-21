@@ -1,7 +1,8 @@
 /*BBWOW:This file is part of datchannin bbWoW mod, mod_version = 8.02, game_version = 1.4.0.42*/
 this.druid_frenziedregeneration_skill <- this.inherit("scripts/skills/skill", {
 	m = {
-		PercentRegenerate = 25
+		PercentRegenerate = 20,
+		CurrentLevel = 1
 	},
 	function create()
 	{
@@ -27,15 +28,27 @@ this.druid_frenziedregeneration_skill <- this.inherit("scripts/skills/skill", {
 		this.m.MaxRange = 0;
 	}
 
+	function getRegenValue()
+	{
+		local regen = this.m.PercentRegenerate;
+		local scale = 0;
+
+		scale = this.Math.floor(this.m.CurrentLevel * this.Const.DruidScale.frenziedregeneration);
+		regen += scale;
+
+		return regen;
+	}
+
 	function getTooltip()
 	{
 		local ret = this.getDefaultUtilityTooltip();
-		
+		local regen = getRegenValue();
+
 		ret.push({
 			id = 6,
 			type = "text",
 			icon = "ui/icons/health.png",
-			text = "You spend part of your turn to regenerate [color=" + this.Const.UI.Color.PositiveValue + "]" + this.m.PercentRegenerate + "[/color]% of your maximum Hitpoints."
+			text = "You spend part of your turn to regenerate [color=" + this.Const.UI.Color.PositiveValue + "]" + regen + "[/color]% of your maximum Hitpoints."
 		});
 
 		return ret;
@@ -65,12 +78,19 @@ this.druid_frenziedregeneration_skill <- this.inherit("scripts/skills/skill", {
 		}
 	}
 
+	function onUpdate( _properties )
+	{
+		local user = this.getContainer().getActor();
+		this.m.CurrentLevel = user.getLevel();
+	}
+
 	function onUse( _user, _targetTile )
 	{
 		local MaximumHitpoints = _user.getHitpointsMax();
 		local CurrentHitpoints = _user.getHitpoints();
 		local AbsentHitpoints = MaximumHitpoints - CurrentHitpoints;
-		local TryRegenerate = this.Math.floor((MaximumHitpoints*this.m.PercentRegenerate)/100);
+		local regen = getRegenValue();
+		local TryRegenerate = this.Math.floor((MaximumHitpoints*regen)/100);
 
 		if (!AbsentHitpoints)
 		{
