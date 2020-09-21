@@ -102,6 +102,16 @@ this.priest_heal_skill <- this.inherit("scripts/skills/skill", {
 			});
 		}
 
+		if (this.m.blessedrecovery)
+		{
+			ret.push({
+				id = 6,
+				type = "text",
+				icon = "ui/icons/special.png",
+				text = "Has a [color=" + this.Const.UI.Color.PositiveValue + "] 100% [/color] chance to remove some injuries from the target."
+			});
+		}
+
 		return ret;
 	}
 
@@ -173,6 +183,7 @@ this.priest_heal_skill <- this.inherit("scripts/skills/skill", {
 	{
 		local targetEntity = _data.Target;
 		local healnumber = _data.Healnumber;
+		local skills = targetEntity.getSkills();
 
 		this.spawnIcon("effect_priest_heal", targetEntity.getTile());
 
@@ -202,7 +213,33 @@ this.priest_heal_skill <- this.inherit("scripts/skills/skill", {
 
 		if (this.m.blessedrecovery)
 		{
-			
+			skills.removeByID("injury.cut_achilles_tendon");
+			skills.removeByID("injury.cut_arm");
+			skills.removeByID("injury.cut_arm_sinew");
+			skills.removeByID("injury.cut_artery");
+			skills.removeByID("injury.cut_leg_muscles");
+			skills.removeByID("injury.cut_throat_injury");
+			skills.removeByID("injury.deep_abdominal_cut");
+			skills.removeByID("injury.deep_chest_cut");
+			skills.removeByID("injury.deep_face_cut");
+			skills.removeByID("injury.broken_arm");
+			skills.removeByID("injury.broken_leg");
+			skills.removeByID("injury.broken_nose");
+			skills.removeByID("injury.broken_ribs");
+			skills.removeByID("injury.fractured_elbow");
+			skills.removeByID("injury.fractured_hand");
+			skills.removeByID("injury.fractured_ribs");
+			skills.removeByID("injury.fractured_skull");
+			skills.removeByID("injury.pierced_arm_muscles");
+			skills.removeByID("injury.pierced_cheek");
+			skills.removeByID("injury.pierced_chest");
+			skills.removeByID("injury.pierced_hand");
+			skills.removeByID("injury.pierced_leg_muscles");
+			skills.removeByID("injury.pierced_lung");
+			skills.removeByID("injury.pierced_side");
+			skills.removeByID("injury.split_hand");
+			skills.removeByID("injury.split_nose");
+			skills.removeByID("injury.split_shoulder");
 		}
 
 		if (targetEntity.getHitpoints() == targetEntity.getHitpointsMax())
