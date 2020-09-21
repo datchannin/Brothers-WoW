@@ -274,7 +274,7 @@ this.priest_powerwordshield_skill <- this.inherit("scripts/skills/skill", {
 		}
 
 		targetEntity.getSkills().update();
-		this.spawnIcon("skill_priest_shield", targetEntity.getTile());
+		this.spawnIcon("effect_priest_shield", targetEntity.getTile());
 
 		_data.Skill.getContainer().setBusy(false);
 	}

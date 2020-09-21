@@ -239,7 +239,7 @@ gt.Const.Wow_strings.PerkName <- {
 };
 
 gt.Const.Wow_strings.PerkDescription <- {
-	GameDev = "Perk for test, design and debug skills.",
+	GameDev = "Perk for test, design and debug of skills.",
 	DefensiveStance = "A defensive combat stance. Decreases damage taken by [color=" + this.Const.UI.Color.PositiveValue + "]10%[/color] and damage caused by [color=" + this.Const.UI.Color.NegativeValue + "]10%[/color].",
 	BerserkerStance = "An aggressive stance. Damage done is increased by [color=" + this.Const.UI.Color.PositiveValue + "]10%[/color] and all direct damage taken is increased by [color=" + this.Const.UI.Color.NegativeValue + "]10%[/color].",
 	Toughness = "You have skill in armor using. Armor damage taken is reduced by the value started from [color=" + this.Const.UI.Color.PositiveValue + "]3%[/color]. The effect is growing with your level.",
@@ -253,7 +253,7 @@ gt.Const.Wow_strings.PerkDescription <- {
 	MasterSpear = "Spear Adept. Spear is your past, present and future. Damage done by spear is increased by [color=" + this.Const.UI.Color.PositiveValue + "]20%[/color]. Does not work with two-handed weapon.",
 	MasterSword = "Sword Adept. What can be greater, that sword? Fast attack, then attack again and again. Damage done by sword is increased by [color=" + this.Const.UI.Color.PositiveValue + "]20%[/color]. Does not work with two-handed weapon.",
 	MasterAxe = "Axe Adept. Now chopping opponents into pieces has become easier. After all, you have learned the details of destruction! Damage done by axe is increased by [color=" + this.Const.UI.Color.PositiveValue + "]20%[/color]. Does not work with one-handed weapon.",
-	MasterHammer = "Hammer Adept. The severity of the hammers gives you confidence. And the more confident you hit, the more serious the damage becomes... Damage done by hammer is increased by [color=" + this.Const.UI.Color.PositiveValue + "]20%[/color]. Does not work with one-handed weapon.",
+	MasterHammer = "Hammer Adept. The severity of the hammers gives you confidence. And the more confidently you hit, the more serious the damage becomes... Damage done by hammer is increased by [color=" + this.Const.UI.Color.PositiveValue + "]20%[/color]. Does not work with one-handed weapon.",
 	MasterShield = "Shield Adept. You become steady. It’s easier for your opponents to break through the wall than through your shield. The shield defense bonus is increased by [color=" + this.Const.UI.Color.PositiveValue + "]25%[/color]. This also applies to the additional defense bonus of the Shieldwall skill.\n\nAlso it gives you immunity to being stunned even if you are not equipped by shield right now.",
 	BloodThirst = "Your successful melee attack restores you [color=" + this.Const.UI.Color.PositiveValue + "]10[/color] health. Hitpoints can not be restored, if you damage only Armor.",	
 	Poison = "Unlocks the \'Poison\' skill which allows rogue to impose poisons on the target. Make your enemies die slowly. Damage dealt by your poisons is growing with your level.",
