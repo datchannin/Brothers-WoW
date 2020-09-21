@@ -34,8 +34,8 @@ this.priest_heal_skill <- this.inherit("scripts/skills/skill", {
 		this.m.IsIgnoredAsAOO = true;
 		this.m.IsShowingProjectile = false;
 		this.m.IsUsingHitchance = false;
-		this.m.ActionPointCost = 4;
-		this.m.FatigueCost = 30;
+		this.m.ActionPointCost = 3;
+		this.m.FatigueCost = 22;
 		this.m.MinRange = 0;
 		this.m.MaxRange = 4;
 	}
