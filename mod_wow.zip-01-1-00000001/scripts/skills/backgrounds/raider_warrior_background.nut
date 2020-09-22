@@ -11,7 +11,7 @@ this.raider_warrior_background <- this.inherit("scripts/skills/backgrounds/chara
 		this.m.GoodEnding = "";
 		this.m.BadEnding = "";
 		this.m.HiringCost = 180;
-		this.m.DailyCost = 32;
+		this.m.DailyCost = 16;
 		this.m.Excluded = [
 		];
 		this.m.Titles = [

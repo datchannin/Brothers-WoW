@@ -11,7 +11,7 @@ this.raider_hunter_background <- this.inherit("scripts/skills/backgrounds/charac
 		this.m.GoodEnding = "";
 		this.m.BadEnding = "";
 		this.m.HiringCost = 200;
-		this.m.DailyCost = 40;
+		this.m.DailyCost = 20;
 		this.m.Excluded = [
 			"trait.weasel",
 			"trait.fear_undead",

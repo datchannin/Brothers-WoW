@@ -11,7 +11,7 @@ this.raider_warlock_background <- this.inherit("scripts/skills/backgrounds/chara
 		this.m.GoodEnding = "";
 		this.m.BadEnding = "";
 		this.m.HiringCost = 200;
-		this.m.DailyCost = 40;
+		this.m.DailyCost = 19;
 		this.m.Excluded = [
 			"trait.asthmatic",
 			"trait.craven",

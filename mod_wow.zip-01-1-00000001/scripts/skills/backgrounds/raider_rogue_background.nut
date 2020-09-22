@@ -11,7 +11,7 @@ this.raider_rogue_background <- this.inherit("scripts/skills/backgrounds/charact
 		this.m.GoodEnding = "";
 		this.m.BadEnding = "";
 		this.m.HiringCost = 150;
-		this.m.DailyCost = 25;
+		this.m.DailyCost = 13;
 		this.m.Excluded = [
 			"trait.huge",
 			"trait.teamplayer",
