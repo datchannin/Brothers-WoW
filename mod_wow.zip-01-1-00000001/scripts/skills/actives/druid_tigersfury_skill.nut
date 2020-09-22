@@ -49,6 +49,25 @@ this.druid_tigersfury_skill <- this.inherit("scripts/skills/skill", {
 		return true;
 	}
 
+	function isHidden()
+	{
+		if (this.m.IsHidden)
+		{
+			return true;
+		}
+		else
+		{
+			if (!this.m.Container.hasSkill("effects.catform"))
+			{
+				return true;
+			}
+			else
+			{
+				return false;
+			}
+		}
+	}
+
 	function onUse( _user, _targetTile )
 	{
 		if (!this.getContainer().hasSkill("effects.tigersfury"))
