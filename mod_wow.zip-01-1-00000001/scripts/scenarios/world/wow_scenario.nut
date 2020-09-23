@@ -167,8 +167,8 @@ this.wow_scenario <- this.inherit("scripts/scenarios/world/starting_scenario", {
 		this.World.Assets.getStash().add(this.new("scripts/items/weapons/rondel_dagger_off"));
 		this.World.Assets.getStash().add(this.new("scripts/items/weapons/oriental/qatal_dagger"));
 		this.World.Assets.getStash().add(this.new("scripts/items/weapons/qatal_dagger_off"));
-
-
+		this.World.Assets.getStash().add(this.new("scripts/items/weapons/hand_axe"));
+		this.World.Assets.getStash().add(this.new("scripts/items/weapons/flail"));
 
 		bros[7].setStartValuesEx([
 			"raider_developer_background"

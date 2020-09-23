@@ -11,6 +11,7 @@ this.offdagger_effect <- this.inherit("scripts/skills/skill", {
 		this.m.IsActive = false;
 		this.m.IsStacking = false;
 		this.m.IsRemovedAfterBattle = true;
+		this.m.IsHidden = true;
 	}
 
 	function getDescription()
@@ -40,9 +41,34 @@ this.offdagger_effect <- this.inherit("scripts/skills/skill", {
 
 	function onUpdate( _properties )
 	{
+		_properties.IsImmuneToDisarm = true;
 	}
 
 	function onTurnEnd()
 	{
+	}
+	
+	function onAnySkillUsed( _skill, _targetEntity, _properties )
+	{
+		local mainhand = this.getContainer().getActor().getItems().getItemAtSlot(this.Const.ItemSlot.Mainhand);
+		if (mainhand != null && mainhand.isItemType(this.Const.Items.ItemType.OneHanded))
+		{
+			if (_skill.getID() == "actives.puncture")
+			{
+				_properties.MeleeSkill += 15;
+			}
+			if (_skill.getID() == "actives.chop")
+			{
+				_properties.HitChance[this.Const.BodyPart.Head] += 15;
+			}
+			if (_skill.getID() == "actives.slash")
+			{
+				_properties.DamageTotalMult *= 1.45;
+			}
+			if (_skill.getID() == "actives.flail")
+			{
+				_properties.DamageDirectAdd += 25;
+			}
+		}
 	}
 });
