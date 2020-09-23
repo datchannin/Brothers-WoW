@@ -21,7 +21,7 @@ this.qatal_dagger_off <- this.inherit("scripts/items/weapons/weapon", {
 		this.m.Condition = 60.0;
 		this.m.ConditionMax = 60.0;
 		this.m.Value = 1000;
-		this.m.ChanceToHitHead = 0;
+		this.m.ChanceToHitHead = 9;
 		this.m.IsAllowedInBag = false;
 	}
 
@@ -161,7 +161,6 @@ this.qatal_dagger_off <- this.inherit("scripts/items/weapons/weapon", {
 			if (actor.getCurrentProperties().IsOffDaggerMaster)
 			{
 				this.m.DualIsInCharacter = true;
-				this.weapon.onEquip();
 				actor.getSkills().removeByID("effects.offdagger");
 				actor.getSkills().add(this.new("scripts/skills/effects/offdagger_effect"));
 			}
