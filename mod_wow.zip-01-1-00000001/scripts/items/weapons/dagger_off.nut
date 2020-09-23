@@ -1,5 +1,7 @@
 this.dagger_off <- this.inherit("scripts/items/weapons/weapon", {
-	m = {},
+	m = {
+		DualIsInCharacter = false
+	},
 	function create()
 	{
 		this.weapon.create();
@@ -25,19 +27,34 @@ this.dagger_off <- this.inherit("scripts/items/weapons/weapon", {
 
 	function onEquip()
 	{
-		local actor = this.m.Container.getActor();
+		this.weapon.onEquip();
+		local actor = this.getContainer().getActor();
 		local items = actor.getItems();
 		local item = items.getItemAtSlot(this.Const.ItemSlot.Offhand);
 
-		if ((actor.getCurrentProperties().IsOffDaggerMaster) || (actor.getBackground().getID() == "background.raider_rogue"))
+		if (!this.m.DualIsInCharacter)
 		{
-			this.weapon.onEquip();
+			if (actor.getCurrentProperties().IsOffDaggerMaster)
+			{
+				this.m.DualIsInCharacter = true;
+				this.weapon.onEquip();
+				actor.getSkills().removeByID("effects.offdagger");
+				actor.getSkills().add(this.new("scripts/skills/effects/offdagger_effect"));
+			}
+			else
+			{
+				actor.getItems().unequip(item);
+				this.World.Assets.getStash().add(item);
+			}
 		}
-		else
-		{
-			actor.getItems().unequip(item);
-			this.World.Assets.getStash().add(item);
-		}
+	}
+
+	function onUnequip()
+	{
+		this.weapon.onUnequip();
+		local actor = this.m.Container.getActor();
+		actor.getSkills().removeByID("effects.offdagger");
+		this.m.DualIsInCharacter = false;
 	}
 
 	function onUpdateProperties( _properties )
@@ -45,4 +62,15 @@ this.dagger_off <- this.inherit("scripts/items/weapons/weapon", {
 		this.weapon.onUpdateProperties(_properties);
 	}
 
+	function onSerialize( _out )
+	{
+		this.weapon.onSerialize(_out);
+		_out.writeBool(this.m.DualIsInCharacter);
+	}
+
+	function onDeserialize( _in )
+	{
+		this.weapon.onDeserialize(_in);
+		this.m.DualIsInCharacter = _in.readBool();
+	}
 });

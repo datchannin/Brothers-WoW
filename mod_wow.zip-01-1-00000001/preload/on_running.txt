@@ -1,4 +1,5 @@
 gfx/wow.png
+gfx/wow_weapons.png
 gfx/entity_0.png
 gfx/entity_3.png
 gfx/entity_icons.png
