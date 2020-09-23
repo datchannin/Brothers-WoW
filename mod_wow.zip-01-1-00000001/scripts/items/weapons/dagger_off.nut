@@ -29,7 +29,7 @@ this.dagger_off <- this.inherit("scripts/items/weapons/weapon", {
 		local items = actor.getItems();
 		local item = items.getItemAtSlot(this.Const.ItemSlot.Offhand);
 
-		if (actor.getBackground().getID() == "background.raider_rogue")
+		if ((actor.getCurrentProperties().IsOffDaggerMaster) || (actor.getBackground().getID() == "background.raider_rogue"))
 		{
 			this.weapon.onEquip();
 		}

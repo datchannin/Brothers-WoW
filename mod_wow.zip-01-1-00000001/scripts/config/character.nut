@@ -932,6 +932,7 @@ gt.Const.CharacterProperties <- {
 	IsPetThickHide = false,
 	IsPetBestialSwiftness = false,
 	IsPetUnleashFury = false,
+	IsOffDaggerMaster = false,
 	DailyWage = 0,
 	DailyWageMult = 1.0,
 	DailyFood = 2.0,

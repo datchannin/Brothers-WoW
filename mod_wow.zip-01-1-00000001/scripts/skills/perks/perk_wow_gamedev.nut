@@ -35,5 +35,6 @@ this.perk_wow_gamedev <- this.inherit("scripts/skills/skill", {
 	function onUpdate( _properties )
 	{
 		_properties.ActionPointsBonus = 200;
+		_properties.IsOffDaggerMaster = true;
 	}
 });
