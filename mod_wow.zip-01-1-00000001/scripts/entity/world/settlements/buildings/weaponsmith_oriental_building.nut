@@ -19,7 +19,7 @@ this.weaponsmith_oriental_building <- this.inherit("scripts/entity/world/settlem
 			{
 				R = 40,
 				P = 1.0,
-				S = "weapons/oriental/qatal_dagger_off"
+				S = "weapons/qatal_dagger_off"
 			},
 			{
 				R = 70,
