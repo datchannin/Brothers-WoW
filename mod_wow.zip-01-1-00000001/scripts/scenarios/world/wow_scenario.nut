@@ -161,7 +161,12 @@ this.wow_scenario <- this.inherit("scripts/scenarios/world/starting_scenario", {
 		this.World.Assets.getStash().add(this.new("scripts/items/misc/wardog_armor_upgrade_item"));
 		this.World.Assets.getStash().add(this.new("scripts/items/misc/wardog_armor_upgrade_item"));
 		this.World.Assets.getStash().add(this.new("scripts/items/misc/wardog_armor_upgrade_item"));
+		this.World.Assets.getStash().add(this.new("scripts/items/weapons/dagger"));
 		this.World.Assets.getStash().add(this.new("scripts/items/weapons/dagger_off"));
+		this.World.Assets.getStash().add(this.new("scripts/items/weapons/rondel_dagger"));
+		this.World.Assets.getStash().add(this.new("scripts/items/weapons/rondel_dagger_off"));
+		this.World.Assets.getStash().add(this.new("scripts/items/weapons/oriental/qatal_dagger"));
+		this.World.Assets.getStash().add(this.new("scripts/items/weapons/qatal_dagger_off"));
 
 
 
