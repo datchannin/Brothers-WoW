@@ -13,7 +13,12 @@ this.perk_wow_camouflage <- this.inherit("scripts/skills/skill", {
 		this.m.IsStacking = false;
 		this.m.IsHidden = false;
 	}
-	
+
+	function onUpdate( _properties )
+	{
+		_properties.IsOffDaggerMaster = true;
+	}
+
 	function onAdded()
 	{
 		if (!this.m.Container.hasSkill("actives.camouflage_skill"))
