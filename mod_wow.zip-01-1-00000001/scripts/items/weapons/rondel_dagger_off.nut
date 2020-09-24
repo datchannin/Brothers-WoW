@@ -21,7 +21,7 @@ this.rondel_dagger_off <- this.inherit("scripts/items/weapons/weapon", {
 		this.m.Condition = 50.0;
 		this.m.ConditionMax = 50.0;
 		this.m.Value = 400;
-		this.m.ChanceToHitHead = 6;
+		this.m.ChanceToHitHead = 4;
 		this.m.IsAllowedInBag = false;
 	}
 	

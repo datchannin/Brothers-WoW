@@ -21,7 +21,7 @@ this.qatal_dagger_off <- this.inherit("scripts/items/weapons/weapon", {
 		this.m.Condition = 60.0;
 		this.m.ConditionMax = 60.0;
 		this.m.Value = 1000;
-		this.m.ChanceToHitHead = 9;
+		this.m.ChanceToHitHead = 6;
 		this.m.IsAllowedInBag = false;
 	}
 
