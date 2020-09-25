@@ -1,3 +1,4 @@
+/*BBWOW:This file is part of datchannin bbWoW mod, mod_version = 8.03, game_version = 1.4.0.43*/
 this.weaponsmith_oriental_building <- this.inherit("scripts/entity/world/settlements/buildings/weaponsmith_building", {
 	m = {},
 	function create()

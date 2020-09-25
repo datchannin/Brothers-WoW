@@ -1,4 +1,4 @@
-/*BBWOW:This file is part of datchannin bbWoW mod, mod_version = 8.02, game_version = 1.4.0.42*/
+/*BBWOW:This file is part of datchannin bbWoW mod, mod_version = 8.03, game_version = 1.4.0.43*/
 this.warlock_shadowbolt_skill <- this.inherit("scripts/skills/skill", {
 	m = {
 		damage_base_min = 20,
@@ -178,7 +178,42 @@ this.warlock_shadowbolt_skill <- this.inherit("scripts/skills/skill", {
 			text = "Has a range of [color=" + this.Const.UI.Color.PositiveValue + "]" + this.m.MaxRange + "[/color] tiles."
 		});
 
+		if (this.Tactical.isActive() && this.getContainer().getActor().getTile().hasZoneOfControlOtherThan(this.getContainer().getActor().getAlliedFactions()))
+		{
+			ret.push({
+				id = 9,
+				type = "text",
+				icon = "ui/tooltips/warning.png",
+				text = "[color=" + this.Const.UI.Color.NegativeValue + "]Can not be used because this character is engaged in melee[/color]"
+			});
+		}
+
 		return ret;
+	}
+
+	function isUsable()
+	{
+		return !this.Tactical.isActive() || this.skill.isUsable() && !this.getContainer().getActor().getTile().hasZoneOfControlOtherThan(this.getContainer().getActor().getAlliedFactions());
+	}
+
+	function isUsable()
+	{
+		if (!this.Tactical.isActive())
+		{
+			return true;
+		}
+
+		if (this.skill.isUsable())
+		{
+			if (!this.getContainer().getActor().getTile().hasZoneOfControlOtherThan(this.getContainer().getActor().getAlliedFactions()))
+			{
+				return true;
+			}
+			else
+			{
+				return false;
+			}
+		}
 	}
 
 	function onVerifyTarget( _originTile, _targetTile )

@@ -1,4 +1,4 @@
-/*BBWOW:This file is part of datchannin bbWoW mod, mod_version = 8.02, game_version = 1.4.0.42*/
+/*BBWOW:This file is part of datchannin bbWoW mod, mod_version = 8.03, game_version = 1.4.0.43*/
 this.wow_scenario <- this.inherit("scripts/scenarios/world/starting_scenario", {
 	m = {},
 	function create()
@@ -78,7 +78,7 @@ this.wow_scenario <- this.inherit("scripts/scenarios/world/starting_scenario", {
 		bros[5].m.PerkPoints = 12;
 		bros[5].m.LevelUps = 6;
 		bros[5].m.Level = 5;
-
+/*
 		bros[5].getSkills().add(this.new("scripts/skills/injury/broken_arm_injury"));
 		bros[5].getSkills().add(this.new("scripts/skills/injury/broken_leg_injury"));
 		bros[5].getSkills().add(this.new("scripts/skills/injury/broken_nose_injury"));
@@ -127,7 +127,7 @@ this.wow_scenario <- this.inherit("scripts/scenarios/world/starting_scenario", {
 		bros[5].getSkills().add(this.new("scripts/skills/injury/split_shoulder_injury"));
 		bros[5].getSkills().add(this.new("scripts/skills/injury/sprained_ankle_injury"));
 		bros[5].getSkills().add(this.new("scripts/skills/injury/stabbed_guts_injury"));
-
+*/
 		bros[6].setStartValuesEx([
 			"raider_paladin_background"
 		]);
@@ -135,7 +135,7 @@ this.wow_scenario <- this.inherit("scripts/scenarios/world/starting_scenario", {
 		bros[6].m.PerkPoints = 12;
 		bros[6].m.LevelUps = 6;
 		bros[6].m.Level = 5;
-
+/*
 		bros[6].getSkills().add(this.new("scripts/skills/injury_permanent/brain_damage_injury"));
 		bros[6].getSkills().add(this.new("scripts/skills/injury_permanent/broken_elbow_joint_injury"));
 		bros[6].getSkills().add(this.new("scripts/skills/injury_permanent/broken_knee_injury"));
@@ -155,7 +155,7 @@ this.wow_scenario <- this.inherit("scripts/scenarios/world/starting_scenario", {
 		head.setArmor(1);
 		//shield.setCondition(1);
 		bros[6].setHitpoints(5);
-
+*/
 		this.World.Assets.getStash().add(this.new("scripts/items/supplies/ground_grains_item"));
 		this.World.Assets.getStash().add(this.new("scripts/items/supplies/ground_grains_item"));
 		this.World.Assets.getStash().add(this.new("scripts/items/misc/wardog_armor_upgrade_item"));
@@ -169,6 +169,8 @@ this.wow_scenario <- this.inherit("scripts/scenarios/world/starting_scenario", {
 		this.World.Assets.getStash().add(this.new("scripts/items/weapons/qatal_dagger_off"));
 		this.World.Assets.getStash().add(this.new("scripts/items/weapons/hand_axe"));
 		this.World.Assets.getStash().add(this.new("scripts/items/weapons/flail"));
+		this.World.Assets.getStash().add(this.new("scripts/items/weapons/arming_sword"));
+		this.World.Assets.getStash().add(this.new("scripts/items/weapons/shortsword"));
 
 		bros[7].setStartValuesEx([
 			"raider_developer_background"
