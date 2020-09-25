@@ -193,11 +193,6 @@ this.warlock_shadowbolt_skill <- this.inherit("scripts/skills/skill", {
 
 	function isUsable()
 	{
-		return !this.Tactical.isActive() || this.skill.isUsable() && !this.getContainer().getActor().getTile().hasZoneOfControlOtherThan(this.getContainer().getActor().getAlliedFactions());
-	}
-
-	function isUsable()
-	{
 		if (!this.Tactical.isActive())
 		{
 			return true;

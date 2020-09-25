@@ -147,7 +147,37 @@ this.mage_fireball_skill <- this.inherit("scripts/skills/skill", {
 			});
 		}
 
+		if (this.Tactical.isActive() && this.getContainer().getActor().getTile().hasZoneOfControlOtherThan(this.getContainer().getActor().getAlliedFactions()))
+		{
+			ret.push({
+				id = 9,
+				type = "text",
+				icon = "ui/tooltips/warning.png",
+				text = "[color=" + this.Const.UI.Color.NegativeValue + "]Can not be used because this character is engaged in melee[/color]"
+			});
+		}
+
 		return ret;
+	}
+
+	function isUsable()
+	{
+		if (!this.Tactical.isActive())
+		{
+			return true;
+		}
+
+		if (this.skill.isUsable())
+		{
+			if (!this.getContainer().getActor().getTile().hasZoneOfControlOtherThan(this.getContainer().getActor().getAlliedFactions()))
+			{
+				return true;
+			}
+			else
+			{
+				return false;
+			}
+		}
 	}
 
 	function onVerifyTarget( _originTile, _targetTile )
