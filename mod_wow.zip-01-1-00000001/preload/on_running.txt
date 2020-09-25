@@ -1,5 +1,4 @@
 gfx/wow.png
-gfx/wow_ui.png
 gfx/wow_weapons.png
 gfx/wow_armor.png
 gfx/wow_helmets.png
