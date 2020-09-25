@@ -41,7 +41,7 @@ this.druid_catform_skill <- this.inherit("scripts/skills/skill", {
 		ret.push({
 			id = 6,
 			type = "text",
-			icon = "ui/icons/feral2.png",
+			icon = "ui/icons/feral.png",
 			text = "Requires free hands."
 		});
 
@@ -50,7 +50,7 @@ this.druid_catform_skill <- this.inherit("scripts/skills/skill", {
 			ret.push({
 				id = 6,
 				type = "text",
-				icon = "ui/icons/feral2.png",
+				icon = "ui/icons/feral.png",
 				text = "You are already is under shapeshift effect. Use this again to become human."
 			});
 		}
