@@ -13,6 +13,14 @@ this.raider_warrior_background <- this.inherit("scripts/skills/backgrounds/chara
 		this.m.HiringCost = 180;
 		this.m.DailyCost = 16;
 		this.m.Excluded = [
+			"trait.asthmatic",
+			"trait.bright",
+			"trait.clubfooted",
+			"trait.clumsy",
+			"trait.dastard",
+			"trait.dumb",
+			"trait.fragile",
+			"trait.insecure"
 		];
 		this.m.Titles = [
 			"the Brutal",
