@@ -58,6 +58,12 @@ this.raider_druid_background <- this.inherit("scripts/skills/backgrounds/charact
 				id = 2,
 				type = "description",
 				text = this.getDescription()
+			},
+			{
+				id = 13,
+				type = "text",
+				icon = "ui/icons/special.png",
+				text = "Night is elf time, Night Elves are not affected by nighttime penalties"
 			}
 		];
 	}
@@ -109,6 +115,12 @@ this.raider_druid_background <- this.inherit("scripts/skills/backgrounds/charact
 	function onAddEquipment()
 	{
 		local items = this.getContainer().getActor().getItems();
+	}
+
+	function onUpdate( _properties )
+	{
+		this.character_background.onUpdate(_properties);
+		_properties.IsAffectedByNight = false;
 	}
 
 });
