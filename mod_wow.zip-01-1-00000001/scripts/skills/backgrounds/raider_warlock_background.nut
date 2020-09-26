@@ -14,9 +14,16 @@ this.raider_warlock_background <- this.inherit("scripts/skills/backgrounds/chara
 		this.m.DailyCost = 19;
 		this.m.Excluded = [
 			"trait.asthmatic",
-			"trait.craven",
+			"trait.brute",
 			"trait.dastard",
-			"trait.drunkard"
+			"trait.drunkard",
+			"trait.dumb",
+			"trait.gluttonous",
+			"trait.hesitant",
+			"trait.huge",
+			"trait.insecure",
+			"trait.paranoid",
+			"trait.superstitious"
 		];
 		this.m.Titles = [
 			"Reaper",
