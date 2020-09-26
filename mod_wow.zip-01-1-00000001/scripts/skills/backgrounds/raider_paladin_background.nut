@@ -13,6 +13,15 @@ this.raider_paladin_background <- this.inherit("scripts/skills/backgrounds/chara
 		this.m.HiringCost = 160;
 		this.m.DailyCost = 15;
 		this.m.Excluded = [
+			"trait.bloodthirsty",
+			"trait.brute",
+			"trait.clubfooted",
+			"trait.clumsy",
+			"trait.craven",
+			"trait.dastard",
+			"trait.drunkard",
+			"trait.dumb",
+			"trait.greedy"
 		];
 		this.m.Titles = [
 			"Holy",
