@@ -13,21 +13,21 @@ this.raider_druid_background <- this.inherit("scripts/skills/backgrounds/charact
 		this.m.HiringCost = 200;
 		this.m.DailyCost = 20;
 		this.m.Excluded = [
-			"trait.weasel",
 			"trait.fear_undead",
 			"trait.fear_beasts",
+			"trait.fear_greenskins",
 			"trait.hate_beasts",
-			"trait.night_blind",
-			"trait.clubfooted",
-			"trait.brute",
-			"trait.short_sighted",
-			"trait.fat",
-			"trait.clumsy",
-			"trait.gluttonous",
+			"trait.bleeder",
 			"trait.asthmatic",
+			"trait.ailing",
+			"trait.clumsy",
+			"trait.clubfooted",
 			"trait.craven",
 			"trait.dastard",
-			"trait.drunkard"
+			"trait.dumb",
+			"trait.tiny",
+			"trait.fragile",
+			"trait.insecure"
 		];
 		this.m.Titles = [
 			"Feral",
