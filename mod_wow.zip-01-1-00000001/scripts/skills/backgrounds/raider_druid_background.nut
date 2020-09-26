@@ -112,6 +112,14 @@ this.raider_druid_background <- this.inherit("scripts/skills/backgrounds/charact
 		return c;
 	}
 
+//	function onAdded()
+//	{
+//		this.character_background.onAdded();
+//		local actor = this.getContainer().getActor();
+//		local elune = this.new("scripts/skills/traits/elunesgrace_trait");
+//		actor.getSkills().add(elune);
+//	}
+
 	function onAddEquipment()
 	{
 		local items = this.getContainer().getActor().getItems();
