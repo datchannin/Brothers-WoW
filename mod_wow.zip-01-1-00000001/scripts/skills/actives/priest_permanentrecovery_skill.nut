@@ -50,7 +50,7 @@ this.priest_permanentrecovery_skill <- this.inherit("scripts/skills/skill", {
 		ret.push({
 			id = 6,
 			type = "text",
-			icon = "ui/icons/special.png",
+			icon = "ui/icons/buff.png",
 			text = "You are able to recover some [color=" + this.Const.UI.Color.DamageValue + "] \'Permanent\' [/color] injuries."
 		});
 		

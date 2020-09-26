@@ -199,7 +199,7 @@ this.unleash_winterwolf <- this.inherit("scripts/skills/skill", {
 			ret.push({
 				id = 7,
 				type = "text",
-				icon = "ui/icons/vision.png",
+				icon = "ui/icons/fatigue.png",
 				text = "Pet Stamina increased by [color=" + this.Const.UI.Color.PositiveValue + "]" + stamina_bonus + "[/color]."
 			});
 		}
