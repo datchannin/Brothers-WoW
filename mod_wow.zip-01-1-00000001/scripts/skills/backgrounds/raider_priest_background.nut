@@ -14,9 +14,16 @@ this.raider_priest_background <- this.inherit("scripts/skills/backgrounds/charac
 		this.m.DailyCost = 15;
 		this.m.Excluded = [
 			"trait.asthmatic",
-			"trait.craven",
+			"trait.brute",
 			"trait.dastard",
-			"trait.drunkard"
+			"trait.drunkard",
+			"trait.dumb",
+			"trait.gluttonous",
+			"trait.hesitant",
+			"trait.huge",
+			"trait.insecure",
+			"trait.paranoid",
+			"trait.superstitious"
 		];
 		this.m.Titles = [
 			"Study",
