@@ -96,7 +96,7 @@ this.priest_powerwordshield_skill <- this.inherit("scripts/skills/skill", {
 		ret.push({
 			id = 6,
 			type = "text",
-			icon = "ui/icons/repair_item.png",
+			icon = "ui/icons/repair.png",
 			text = "Repair Body Armor for [color=" + this.Const.UI.Color.PositiveValue + "]" + repair_total_min + "[/color] - [color=" + this.Const.UI.Color.PositiveValue + "]" + repair_total_max + "[/color] points."
 		});
 
@@ -105,7 +105,7 @@ this.priest_powerwordshield_skill <- this.inherit("scripts/skills/skill", {
 			ret.push({
 				id = 6,
 				type = "text",
-				icon = "ui/icons/repair_item.png",
+				icon = "ui/icons/repair.png",
 				text = "Head Armor can be repaired."
 			});
 		}
@@ -115,7 +115,7 @@ this.priest_powerwordshield_skill <- this.inherit("scripts/skills/skill", {
 			ret.push({
 				id = 6,
 				type = "text",
-				icon = "ui/icons/repair_item.png",
+				icon = "ui/icons/repair.png",
 				text = "Shield can be repaired."
 			});
 		}
