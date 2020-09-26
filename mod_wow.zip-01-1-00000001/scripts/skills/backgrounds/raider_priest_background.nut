@@ -23,7 +23,9 @@ this.raider_priest_background <- this.inherit("scripts/skills/backgrounds/charac
 			"trait.huge",
 			"trait.insecure",
 			"trait.paranoid",
-			"trait.superstitious"
+			"trait.superstitious",
+			"trait.athletic",
+			"trait.strong"
 		];
 		this.m.Titles = [
 			"Study",

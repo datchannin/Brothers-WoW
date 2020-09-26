@@ -23,7 +23,9 @@ this.raider_warlock_background <- this.inherit("scripts/skills/backgrounds/chara
 			"trait.huge",
 			"trait.insecure",
 			"trait.paranoid",
-			"trait.superstitious"
+			"trait.superstitious",
+			"trait.athletic",
+			"trait.strong"
 		];
 		this.m.Titles = [
 			"Reaper",
