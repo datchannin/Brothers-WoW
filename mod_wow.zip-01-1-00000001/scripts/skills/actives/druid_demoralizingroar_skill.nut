@@ -36,7 +36,7 @@ this.druid_demoralizingroar_skill <- this.inherit("scripts/skills/skill", {
 		ret.push({
 			id = 6,
 			type = "text",
-			icon = "ui/icons/damage_received.png",
+			icon = "ui/icons/melee_skill.png",
 			text = "Target\'s Melee Skill will be reduced by [color=" + this.Const.UI.Color.PositiveValue + "]5[/color] points for [color=" + this.Const.UI.Color.PositiveValue + "]2[/color] turns."
 		});
 
