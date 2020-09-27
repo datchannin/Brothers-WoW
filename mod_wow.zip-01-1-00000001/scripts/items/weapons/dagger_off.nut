@@ -126,25 +126,25 @@ this.dagger_off <- this.inherit("scripts/items/weapons/weapon", {
 			id = 10,
 			type = "text",
 			icon = "ui/icons/regular_damage.png",
-			text = "[color=" + this.Const.UI.Color.PositiveValue + "]\'Slash\'[/color] skill increases damage by [color=" + this.Const.UI.Color.PositiveValue + "]45%[/color]"
+			text = "[color=" + this.Const.UI.Color.PositiveValue + "]\'Slash\'[/color] skill increases damage by [color=" + this.Const.UI.Color.PositiveValue + "]20%[/color]"
 		});
 		result.push({
 			id = 10,
 			type = "text",
 			icon = "ui/icons/direct_damage.png",
-			text = "[color=" + this.Const.UI.Color.PositiveValue + "]\'Flail\'[/color] skill has [color=" + this.Const.UI.Color.PositiveValue + "]25[/color] points additional direct damage"
+			text = "[color=" + this.Const.UI.Color.PositiveValue + "]\'Flail\'[/color] skill has [color=" + this.Const.UI.Color.PositiveValue + "]15[/color] points additional direct damage"
 		});
 		result.push({
 			id = 10,
 			type = "text",
 			icon = "ui/icons/hitchance.png",
-			text = "[color=" + this.Const.UI.Color.PositiveValue + "]\'Puncture\'[/color] skill increases hit chance for [color=" + this.Const.UI.Color.PositiveValue + "]15%[/color]"
+			text = "[color=" + this.Const.UI.Color.PositiveValue + "]\'Puncture\'[/color] skill increases hit chance for [color=" + this.Const.UI.Color.PositiveValue + "]5%[/color]"
 		});
 		result.push({
 			id = 10,
 			type = "text",
 			icon = "ui/icons/chance_to_hit_head.png",
-			text = "[color=" + this.Const.UI.Color.PositiveValue + "]\'Chop\'[/color] skill increases chance to hit head by [color=" + this.Const.UI.Color.PositiveValue + "]15%[/color]"
+			text = "[color=" + this.Const.UI.Color.PositiveValue + "]\'Chop\'[/color] skill increases chance to hit head by [color=" + this.Const.UI.Color.PositiveValue + "]9%[/color]"
 		});
 
 		return result;
@@ -163,7 +163,13 @@ this.dagger_off <- this.inherit("scripts/items/weapons/weapon", {
 			{
 				this.m.DualIsInCharacter = true;
 				actor.getSkills().removeByID("effects.offdagger");
-				actor.getSkills().add(this.new("scripts/skills/effects/offdagger_effect"));
+				
+				local offdagger_effect = this.new("scripts/skills/effects/offdagger_effect");
+				offdagger_effect.setPunctureBonus(5);
+				offdagger_effect.setChopBonus(9);
+				offdagger_effect.setFlailBonus(15);
+				offdagger_effect.setSlashBonus(20);
+				actor.getSkills().add(offdagger_effect);
 			}
 			else
 			{

@@ -126,7 +126,7 @@ this.qatal_dagger_off <- this.inherit("scripts/items/weapons/weapon", {
 			id = 10,
 			type = "text",
 			icon = "ui/icons/regular_damage.png",
-			text = "[color=" + this.Const.UI.Color.PositiveValue + "]\'Slash\'[/color] skill increases damage by [color=" + this.Const.UI.Color.PositiveValue + "]45%[/color]"
+			text = "[color=" + this.Const.UI.Color.PositiveValue + "]\'Slash\'[/color] skill increases damage by [color=" + this.Const.UI.Color.PositiveValue + "]40%[/color]"
 		});
 		result.push({
 			id = 10,
@@ -163,7 +163,13 @@ this.qatal_dagger_off <- this.inherit("scripts/items/weapons/weapon", {
 			{
 				this.m.DualIsInCharacter = true;
 				actor.getSkills().removeByID("effects.offdagger");
-				actor.getSkills().add(this.new("scripts/skills/effects/offdagger_effect"));
+				
+				local offdagger_effect = this.new("scripts/skills/effects/offdagger_effect");
+				offdagger_effect.setPunctureBonus(15);
+				offdagger_effect.setChopBonus(15);
+				offdagger_effect.setFlailBonus(25);
+				offdagger_effect.setSlashBonus(40);
+				actor.getSkills().add(offdagger_effect);
 			}
 			else
 			{
