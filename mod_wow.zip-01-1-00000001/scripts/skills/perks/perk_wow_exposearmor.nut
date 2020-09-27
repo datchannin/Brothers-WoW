@@ -18,10 +18,21 @@ this.perk_wow_exposearmor <- this.inherit("scripts/skills/skill", {
 	{
 		local items = this.getContainer().getActor().getItems();
 		local off = items.getItemAtSlot(this.Const.ItemSlot.Offhand);
+		local offID;
+
+		if (off != null)
+		{
+			offID = off.getID();
+		}
 
 		if (off == null && !items.hasBlockedSlot(this.Const.ItemSlot.Offhand) || off != null && off.isItemType(this.Const.Items.ItemType.Tool))
 		{
 			_properties.DamageDirectAdd += 0.1;
+		}
+
+		if (offID == "weapon.dagger_off" || offID == "weapon.rondel_dagger_off" || offID == "weapon.qatal_dagger_off")
+		{
+			_properties.DamageDirectAdd += 0.4;
 		}
 	}
 });
