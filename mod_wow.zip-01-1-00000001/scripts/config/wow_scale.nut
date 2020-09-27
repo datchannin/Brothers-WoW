@@ -45,7 +45,8 @@ gt.Const.DruidScale <- {
 
 gt.Const.RogueScale <- {
 	poison_damage = 0.05,
-	poison_duration = 15
+	poison_duration = 15,
+	ambidextr = 1
 };
 
 gt.Const.PriestScale <- {

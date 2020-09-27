@@ -22,6 +22,8 @@ this.perk_wow_ambidextr <- this.inherit("scripts/skills/skill", {
 		local result = this.m.BaseValue;
 		local scale_value = 0;
 
+		scale_value = this.m.RogueLevel * this.Const.RogueScale.ambidextr;
+
 		result += scale_value;
 		
 		return result;
