@@ -852,6 +852,16 @@ gt.Const.Perks.PerkDefObjects.MasterFlail <- {
 	Const = "MasterFlail"
 }
 
+gt.Const.Perks.PerkDefObjects.Ambidextr <- {
+	ID = "perk.wow.rogue.ambidextr",
+	Script = "scripts/skills/perks/perk_wow_ambidextr",
+	Name = this.Const.Wow_strings.PerkName.Ambidextr,
+	Tooltip = this.Const.Wow_strings.PerkDescription.Ambidextr,
+	Icon = "ui/perks/perk_rogue_ambidextr.png",
+	IconDisabled = "ui/perks/perk_rogue_ambidextr_sw.png",
+	Const = "Ambidextr"
+}
+
 gt.Const.Perks.PerkDefObjects.Vigor <- {
 	ID = "perk.wow.rogue.vigor",
 	Script = "scripts/skills/perks/perk_wow_vigor",
