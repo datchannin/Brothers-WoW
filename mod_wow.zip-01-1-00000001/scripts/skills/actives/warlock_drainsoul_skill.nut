@@ -120,7 +120,19 @@ this.warlock_drainsoul_skill <- this.inherit("scripts/skills/skill", {
 
 	function onVerifyTarget( _originTile, _targetTile )
 	{
+		local targetEntity = _targetTile.getEntity();
+		
 		if (!this.skill.onVerifyTarget(_originTile, _targetTile))
+		{
+			return false;
+		}
+
+		if (targetEntity == null)
+		{
+			return false;
+		}
+
+		if (targetEntity.getType() == this.Const.EntityType.Ghost)
 		{
 			return false;
 		}
