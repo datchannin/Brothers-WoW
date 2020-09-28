@@ -15,7 +15,7 @@ this.druid_bearform_skill <- this.inherit("scripts/skills/skill", {
 			"sounds/combat/druid_bearform.wav"
 		];
 		this.m.Type = this.Const.SkillType.Active;
-		this.m.Order = this.Const.SkillOrder.Any;
+		this.m.Order = (this.Const.SkillOrder.Any+1);
 		this.m.IsSerialized = false;
 		this.m.IsActive = true;
 		this.m.IsTargeted = false;
