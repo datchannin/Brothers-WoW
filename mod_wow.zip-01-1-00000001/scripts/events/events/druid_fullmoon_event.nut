@@ -46,6 +46,11 @@ this.druid_fullmoon_event <- this.inherit("scripts/events/event", {
 			return;
 		}
 
+		if (this.World.getTime().Days < 40)
+		{
+			return;
+		}
+
 		if (brothers.len() < 2)
 		{
 			return;
