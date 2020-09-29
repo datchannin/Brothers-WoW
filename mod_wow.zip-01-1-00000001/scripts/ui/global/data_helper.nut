@@ -199,7 +199,6 @@ this.data_helper <- {
 		
 		if (bg != null)
 		{
-			this.logInfo("Background" + _entity.getBackground().getID());
 			result.perkTree = _entity.getBackground().getPerkTree();
 		}
 		
