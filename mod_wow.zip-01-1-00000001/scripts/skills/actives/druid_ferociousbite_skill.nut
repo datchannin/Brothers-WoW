@@ -160,6 +160,11 @@ this.druid_ferociousbite_skill <- this.inherit("scripts/skills/skill", {
 		}
 	}
 
+	function onCombatStarted()
+	{
+		this.m.Recharge = 0;
+	}
+
 	function onTurnEnd()
 	{
 		if (this.m.Recharge)
