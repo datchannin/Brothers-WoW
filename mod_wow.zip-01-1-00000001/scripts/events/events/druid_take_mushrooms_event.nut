@@ -86,7 +86,7 @@ this.druid_take_mushrooms_event <- this.inherit("scripts/events/event", {
 		}
 
 		this.m.Druid = candidates_druid[this.Math.rand(0, candidates_druid.len() - 1)];
-		this.m.Score = candidates_druid.len() * 25;
+		this.m.Score = candidates_druid.len() * 15;
 	}
 
 	function onPrepare()

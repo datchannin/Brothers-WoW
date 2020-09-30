@@ -80,7 +80,7 @@ this.druid_fullmoon_event <- this.inherit("scripts/events/event", {
 		}
 
 		this.m.Druid = candidates_druid[this.Math.rand(0, candidates_druid.len() - 1)];
-		this.m.Score = candidates_druid.len() * 20;
+		this.m.Score = candidates_druid.len() * 10;
 	}
 
 	function onPrepare()

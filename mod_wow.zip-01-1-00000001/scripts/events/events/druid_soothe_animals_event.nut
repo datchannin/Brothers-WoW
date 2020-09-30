@@ -188,7 +188,7 @@ this.druid_soothe_animals_event <- this.inherit("scripts/events/event", {
 		}
 
 		this.m.Druid = candidates_druid[this.Math.rand(0, candidates_druid.len() - 1)];
-		this.m.Score = 70 * candidates_druid.len();
+		this.m.Score = 10 * candidates_druid.len();
 	}
 
 	function onPrepare()

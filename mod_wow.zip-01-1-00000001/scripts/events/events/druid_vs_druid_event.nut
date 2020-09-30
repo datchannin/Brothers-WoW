@@ -265,7 +265,7 @@ this.druid_vs_druid_event <- this.inherit("scripts/events/event", {
 
 		this.m.Druid1 = candidates_druid[0];
 		this.m.Druid2 = candidates_druid[this.Math.rand(1, candidates_druid.len() - 1)];
-		this.m.Score = candidates_druid.len() * 20;
+		this.m.Score = candidates_druid.len() * 10;
 	}
 
 	function onPrepare()
