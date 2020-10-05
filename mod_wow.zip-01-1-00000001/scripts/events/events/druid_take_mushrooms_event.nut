@@ -1,3 +1,4 @@
+/*BBWOW:This file is part of datchannin bbWoW mod, mod_version = 8.04, game_version = 1.4.0.44*/
 this.druid_take_mushrooms_event <- this.inherit("scripts/events/event", {
 	m = {
 		Druid = null

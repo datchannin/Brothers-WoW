@@ -1,3 +1,4 @@
+/*BBWOW:This file is part of datchannin bbWoW mod, mod_version = 8.04, game_version = 1.4.0.44*/
 this.druid_vs_druid_event <- this.inherit("scripts/events/event", {
 	m = {
 		Druid1 = null,

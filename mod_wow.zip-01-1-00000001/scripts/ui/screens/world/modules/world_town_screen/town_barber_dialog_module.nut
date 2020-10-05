@@ -1,4 +1,4 @@
-/*BBWOW:This file is part of datchannin bbWoW mod, mod_version = 8.03, game_version = 1.4.0.43*/
+/*BBWOW:This file is part of datchannin bbWoW mod, mod_version = 8.04, game_version = 1.4.0.44*/
 this.town_barber_dialog_module <- this.inherit("scripts/ui/screens/ui_module", {
 	m = {},
 	function create()
