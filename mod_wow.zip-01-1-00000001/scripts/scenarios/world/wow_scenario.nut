@@ -54,6 +54,7 @@ this.wow_scenario <- this.inherit("scripts/scenarios/world/starting_scenario", {
 		bros[2].m.PerkPoints = 12;
 		bros[2].m.LevelUps = 6;
 		bros[2].m.Level = 5;
+		bros[2].getSkills().add(this.new("scripts/skills/traits/bright_trait"));
 
 		bros[3].setStartValuesEx([
 			"raider_hunter_background"
@@ -188,6 +189,7 @@ this.wow_scenario <- this.inherit("scripts/scenarios/world/starting_scenario", {
 		bros[8].m.PerkPoints = 12;
 		bros[8].m.LevelUps = 6;
 		bros[8].m.Level = 5;
+		bros[8].getSkills().add(this.new("scripts/skills/traits/bright_trait"));
 
 		bros[9].setStartValuesEx([
 			"raider_druid_background"
