@@ -188,7 +188,6 @@ this.wow_scenario <- this.inherit("scripts/scenarios/world/starting_scenario", {
 		bros[8].m.PerkPoints = 12;
 		bros[8].m.LevelUps = 6;
 		bros[8].m.Level = 5;
-		bros[8].getSkills().add(this.new("scripts/skills/traits/bright_trait"));
 
 		bros[9].setStartValuesEx([
 			"raider_druid_background"
@@ -197,6 +196,8 @@ this.wow_scenario <- this.inherit("scripts/scenarios/world/starting_scenario", {
 		bros[9].m.PerkPoints = 12;
 		bros[9].m.LevelUps = 6;
 		bros[9].m.Level = 5;
+		bros[9].getSkills().add(this.new("scripts/skills/traits/fear_undead_trait"));
+		bros[9].getSkills().add(this.new("scripts/skills/traits/bleeder_trait"));
 
 		for (local i = 0; i < 10; i=++i)
 		{
