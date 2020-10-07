@@ -254,7 +254,7 @@ this.faction_manager <- {
 		this.createBandits();
 		this.createBarbarians();
 
-		if (this.Const.DLC.WoW)
+		if (this.Const.Expantion.WoW)
 		{
 			this.createWarcraft();
 		}

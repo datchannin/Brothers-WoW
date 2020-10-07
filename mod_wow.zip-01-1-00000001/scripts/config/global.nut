@@ -3,6 +3,11 @@ local gt = this.getroottable();
 gt.Const.Serialization <- {
 	Version = 63
 };
+
+gt.Const.Expantion <- {
+	WoW = false
+}
+
 gt.Const.DLC <- {
 	Mask = 0,
 	Info = [],
@@ -14,7 +19,6 @@ gt.Const.DLC <- {
 	WildmenSupporter = false,
 	Desert = false,
 	DesertSupporter = false,
-	WoW = false,
 	function isCompatible( _meta )
 	{
 		local maskInSave = _meta.getInt("dlc");
