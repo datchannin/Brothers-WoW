@@ -197,7 +197,7 @@ this.wow_scenario <- this.inherit("scripts/scenarios/world/starting_scenario", {
 		bros[9].m.LevelUps = 6;
 		bros[9].m.Level = 5;
 		bros[9].getSkills().add(this.new("scripts/skills/traits/fear_undead_trait"));
-		bros[9].getSkills().add(this.new("scripts/skills/traits/bleeder_trait"));
+		bros[9].getSkills().add(this.new("scripts/skills/traits/fainthearted_trait"));
 
 		for (local i = 0; i < 10; i=++i)
 		{
