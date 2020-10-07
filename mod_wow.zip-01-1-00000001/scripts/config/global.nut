@@ -14,6 +14,7 @@ gt.Const.DLC <- {
 	WildmenSupporter = false,
 	Desert = false,
 	DesertSupporter = false,
+	WoW = false,
 	function isCompatible( _meta )
 	{
 		local maskInSave = _meta.getInt("dlc");
