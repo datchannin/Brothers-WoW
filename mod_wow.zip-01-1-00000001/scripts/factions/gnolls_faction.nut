@@ -3,7 +3,7 @@ this.gnolls_faction <- this.inherit("scripts/factions/faction", {
 	function create()
 	{
 		this.faction.create();
-		this.m.Type = this.Const.FactionType.Barbarians;
+		this.m.Type = this.Const.FactionType.Gnolls;
 		this.m.Base = "world_base_12";
 		this.m.TacticalBase = "bust_base_gnolls";
 		this.m.CombatMusic = this.Const.Music.BarbarianTracks;

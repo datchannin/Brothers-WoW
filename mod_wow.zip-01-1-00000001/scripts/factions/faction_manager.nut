@@ -195,6 +195,7 @@ this.faction_manager <- {
 		this.logInfo("Running simulation for " + this.Const.Factions.CyclesOnNewCampaign + " cycles...");
 		local barbarians = this.Const.DLC.Wildmen ? this.getFactionOfType(this.Const.FactionType.Barbarians) : null;
 		local bandits = this.getFactionOfType(this.Const.FactionType.Bandits);
+		local gnolls = this.getFactionOfType(this.Const.FactionType.Gnolls);
 		local nomads = this.Const.DLC.Desert ? this.getFactionOfType(this.Const.FactionType.OrientalBandits) : null;
 		local orcs = this.getFactionOfType(this.Const.FactionType.Orcs);
 		local goblins = this.getFactionOfType(this.Const.FactionType.Goblins);
@@ -215,6 +216,7 @@ this.faction_manager <- {
 			}
 
 			bandits.update(true, true);
+			gnolls.update(true, true);
 			goblins.update(true, true);
 			orcs.update(true, true);
 			undead.update(true, true);
