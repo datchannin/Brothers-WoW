@@ -42,7 +42,7 @@ this.build_warcraft_camp_action <- this.inherit("scripts/factions/faction_action
 
 		if (tile != null)
 		{
-			camp = this.World.spawnLocation("scripts/entity/world/locations/barbarian_camp_location", tile.Coords);
+			camp = this.World.spawnLocation("scripts/entity/world/locations/gnoll_camp_location", tile.Coords);
 			this.logInfo("!!!SPAWN WARCRAFT LOCATION GNOLL!!!");
 		}
 
