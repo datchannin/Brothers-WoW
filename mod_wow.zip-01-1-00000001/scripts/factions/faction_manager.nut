@@ -214,9 +214,13 @@ this.faction_manager <- {
 			{
 				nomads.update(true, true);
 			}
+			
+			if (gnolls != null)
+			{
+				gnolls.update(true, true);
+			}
 
 			bandits.update(true, true);
-			gnolls.update(true, true);
 			goblins.update(true, true);
 			orcs.update(true, true);
 			undead.update(true, true);

@@ -14,7 +14,7 @@ this.gnoll_camp_location <- this.inherit("scripts/entity/world/location", {
 		this.m.CombatLocation.Fortification = this.Const.Tactical.FortificationType.None;
 		this.m.CombatLocation.CutDownTrees = true;
 		this.m.IsDespawningDefenders = false;
-		this.setDefenderSpawnList(this.Const.World.Spawn.Barbarians);
+		this.setDefenderSpawnList(this.Const.World.Spawn.Gnolls);
 		this.m.Resources = 180;
 	}
 
