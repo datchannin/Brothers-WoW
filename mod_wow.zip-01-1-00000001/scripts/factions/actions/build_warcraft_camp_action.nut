@@ -33,45 +33,17 @@ this.build_warcraft_camp_action <- this.inherit("scripts/factions/faction_action
 	function onExecute( _faction )
 	{
 		local camp;
-		local r = this.Math.rand(1, 3);
 
 		this.logInfo("!!!SPAWN WARCRAFT LOCATION!!!");
 
-		if (r == 1)
-		{
-			local tile = this.getTileToSpawnLocation(this.Const.Factions.BuildCampTries, [
-				this.Const.World.TerrainType.Mountains
-			], 7, 20, 1000, 7, 7, null, 0.75);
+		local tile = this.getTileToSpawnLocation(this.Const.Factions.BuildCampTries, [
+			this.Const.World.TerrainType.Mountains
+		], 7, 20, 1000, 7, 7, null, 0.75);
 
-			if (tile != null)
-			{
-				camp = this.World.spawnLocation("scripts/entity/world/locations/barbarian_shelter_location", tile.Coords);
-				this.logInfo("!!!SPAWN WARCRAFT LOCATION FIRST!!!");
-			}
-		}
-		else if (r == 2)
+		if (tile != null)
 		{
-			local tile = this.getTileToSpawnLocation(this.Const.Factions.BuildCampTries, [
-				this.Const.World.TerrainType.Mountains
-			], 9, 25, 1000, 7, 7, null, 0.75);
-
-			if (tile != null)
-			{
-				camp = this.World.spawnLocation("scripts/entity/world/locations/barbarian_camp_location", tile.Coords);
-				this.logInfo("!!!SPAWN WARCRAFT LOCATION SECOND!!!");
-			}
-		}
-		else if (r == 3)
-		{
-			local tile = this.getTileToSpawnLocation(this.Const.Factions.BuildCampTries, [
-				this.Const.World.TerrainType.Mountains
-			], 13, 35, 1000, 7, 7, null, 0.75);
-
-			if (tile != null)
-			{
-				camp = this.World.spawnLocation("scripts/entity/world/locations/barbarian_sanctuary_location", tile.Coords);
-				this.logInfo("!!!SPAWN WARCRAFT LOCATION THIRD!!!");
-			}
+			camp = this.World.spawnLocation("scripts/entity/world/locations/barbarian_camp_location", tile.Coords);
+			this.logInfo("!!!SPAWN WARCRAFT LOCATION GNOLL!!!");
 		}
 
 		if (camp != null)
