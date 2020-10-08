@@ -1,4 +1,4 @@
-this.warcraft_faction <- this.inherit("scripts/factions/faction", {
+this.gnolls_faction <- this.inherit("scripts/factions/faction", {
 	m = {},
 	function create()
 	{

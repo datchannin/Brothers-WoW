@@ -20,7 +20,7 @@ gt.Const.FactionTrait <- {
 	Barbarians = 17,
 	OrientalCityState = 18,
 	OrientalBandits = 19,
-	Warcraft = 20,
+	Gnolls = 20,
 	Actions = [
 		[],
 		[],
@@ -174,7 +174,7 @@ gt.Const.FactionTrait <- {
 			"scripts/factions/actions/defend_nomad_action"
 		],
 		[
-			"scripts/factions/actions/build_warcraft_camp_action"
+			"scripts/factions/actions/build_gnolls_camp_action"
 		]
 	]
 };

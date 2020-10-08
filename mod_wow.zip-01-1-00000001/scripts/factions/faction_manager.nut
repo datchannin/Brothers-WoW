@@ -256,7 +256,7 @@ this.faction_manager <- {
 
 		if (this.Const.Expantion.WoW)
 		{
-			this.createWarcraft();
+			this.createGnolls();
 		}
 
 		this.createNomads();
@@ -335,13 +335,13 @@ this.faction_manager <- {
 		this.m.Factions.push(f);
 	}
 
-	function createWarcraft()
+	function createGnolls()
 	{
-		local f = this.new("scripts/factions/warcraft_faction");
+		local f = this.new("scripts/factions/gnolls_faction");
 		f.setID(this.m.Factions.len());
-		f.setName("Warcraft");
+		f.setName("Gnolls");
 		f.setDiscovered(true);
-		f.addTrait(this.Const.FactionTrait.Warcraft);
+		f.addTrait(this.Const.FactionTrait.Gnolls);
 		this.m.Factions.push(f);
 	}
 

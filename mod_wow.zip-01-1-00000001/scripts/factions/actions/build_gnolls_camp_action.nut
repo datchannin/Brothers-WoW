@@ -1,8 +1,8 @@
-this.build_warcraft_camp_action <- this.inherit("scripts/factions/faction_action", {
+this.build_gnolls_camp_action <- this.inherit("scripts/factions/faction_action", {
 	m = {},
 	function create()
 	{
-		this.m.ID = "build_warcraft_camp_action";
+		this.m.ID = "build_gnolls_camp_action";
 		this.m.IsRunOnNewCampaign = true;
 		this.faction_action.create();
 	}
@@ -34,7 +34,7 @@ this.build_warcraft_camp_action <- this.inherit("scripts/factions/faction_action
 	{
 		local camp;
 
-		this.logInfo("!!!SPAWN WARCRAFT LOCATION!!!");
+		this.logInfo("!!!SPAWN GNOLLS LOCATION!!!");
 
 		local tile = this.getTileToSpawnLocation(this.Const.Factions.BuildCampTries, [
 			this.Const.World.TerrainType.Mountains
@@ -43,7 +43,7 @@ this.build_warcraft_camp_action <- this.inherit("scripts/factions/faction_action
 		if (tile != null)
 		{
 			camp = this.World.spawnLocation("scripts/entity/world/locations/gnoll_camp_location", tile.Coords);
-			this.logInfo("!!!SPAWN WARCRAFT LOCATION GNOLL!!!");
+			this.logInfo("!!!SPAWN GNOLLS LOCATION CAMP!!!");
 		}
 
 		if (camp != null)
