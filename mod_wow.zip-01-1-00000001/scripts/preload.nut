@@ -11,7 +11,8 @@ local priorityScriptFiles = [
 	scriptsConfigPath + "strings",
 	scriptsConfigPath + "wow_strings",
 	scriptsConfigPath + "character_names",
-	scriptsConfigPath + "spawnlist_master"
+	scriptsConfigPath + "spawnlist_master",
+	scriptsConfigPath + "wow_spawnlist_master"
 ];
 
 foreach( scriptFile in priorityScriptFiles )

@@ -29,6 +29,11 @@ if (!("Wow_strings" in gt.Const))
 	};
 }
 
+gt.Const.Strings.EntityName.push("Winter Wolf");			//106
+gt.Const.Strings.EntityNamePlural.push("Winter Wolves");	//106
+gt.Const.Strings.EntityName.push("Gnoll Rookie");			//107
+gt.Const.Strings.EntityNamePlural.push("Gnoll Rookie"); 	//107
+
 gt.Const.Wow_strings.WinterwolfNames <- [
 	"Max",
 	"Bear",
