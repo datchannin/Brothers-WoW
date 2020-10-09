@@ -1,5 +1,7 @@
 this.gnoll_rookie <- this.inherit("scripts/entity/tactical/actor", {
-	m = {},
+	m = {
+		color = 2
+	},
 	function create()
 	{
 		this.m.Type = this.Const.EntityType.GnollRookie;
@@ -151,7 +153,7 @@ this.gnoll_rookie <- this.inherit("scripts/entity/tactical/actor", {
 				}
 				else
 				{
-					decal = _tile.spawnDetail("bust_naked_gnoll_body_01_dead_arrows", this.Const.Tactical.DetailFlag.Corpse, flip);
+					decal = _tile.spawnDetail(("bust_naked_gnoll_body_0" + this.m.color + "_dead_arrows"), this.Const.Tactical.DetailFlag.Corpse, flip);
 				}
 
 				decal.Scale = 0.9;
@@ -164,7 +166,7 @@ this.gnoll_rookie <- this.inherit("scripts/entity/tactical/actor", {
 				}
 				else
 				{
-					decal = _tile.spawnDetail("bust_naked_gnoll_body_01_dead_javelin", this.Const.Tactical.DetailFlag.Corpse, flip);
+					decal = _tile.spawnDetail(("bust_naked_gnoll_body_0" + this.m.color + "_dead_javelin"), this.Const.Tactical.DetailFlag.Corpse, flip);
 				}
 
 				decal.Scale = 0.9;
@@ -188,6 +190,7 @@ this.gnoll_rookie <- this.inherit("scripts/entity/tactical/actor", {
 
 	function onInit()
 	{
+		this.m.color = this.Math.rand(2, 3);
 		this.actor.onInit();
 		local b = this.m.BaseProperties;
 		b.setValues(this.Const.Tactical.Actor.GnollRookie);
@@ -204,23 +207,23 @@ this.gnoll_rookie <- this.inherit("scripts/entity/tactical/actor", {
 		this.m.CurrentProperties = clone b;
 		this.m.ActionPointCosts = this.Const.DefaultMovementAPCost;
 		this.m.FatigueCosts = this.Const.DefaultMovementFatigueCost;
-		this.m.Items.getAppearance().Body = "bust_naked_gnoll_body_01";
+		this.m.Items.getAppearance().Body = ("bust_naked_gnoll_body_0" + this.m.color);
 		this.addSprite("socket").setBrush("bust_base_gnolls");
 		local body = this.addSprite("body");
-		body.setBrush("bust_naked_gnoll_body_01");
+		body.setBrush("bust_naked_gnoll_body_0" + this.m.color);
 		body.varySaturation(0.05);
 		body.varyColor(0.07, 0.07, 0.07);
 		local injury_body = this.addSprite("injury_body");
 		injury_body.Visible = false;
-		injury_body.setBrush("bust_naked_gnoll_body_01_injured");
+		injury_body.setBrush("bust_naked_gnoll_body_0" + this.m.color + "_injured");
 		this.addSprite("armor");
 		local head = this.addSprite("head");
-		head.setBrush("bust_head_gnoll_01");
+		head.setBrush("bust_head_gnoll_0" + this.m.color);
 		head.Saturation = body.Saturation;
 		head.Color = body.Color;
 		local injury = this.addSprite("injury");
 		injury.Visible = false;
-		injury.setBrush("bust_head_gnoll_01");
+		injury.setBrush("bust_head_gnoll_0" + this.m.color);
 		this.addSprite("helmet");
 		//local body_blood = this.addSprite("body_blood");
 		//body_blood.setBrush("bust_orc_01_body_bloodied");
@@ -244,7 +247,7 @@ this.gnoll_rookie <- this.inherit("scripts/entity/tactical/actor", {
 
 	function assignRandomEquipment()
 	{
-		local r;
+/*		local r;
 		local weapon;
 
 		if (this.Math.rand(1, 100) <= 25)
@@ -312,6 +315,7 @@ this.gnoll_rookie <- this.inherit("scripts/entity/tactical/actor", {
 		{
 			this.m.Items.equip(this.new("scripts/items/shields/greenskins/orc_light_shield"));
 		}
+		*/
 	}
 
 });
