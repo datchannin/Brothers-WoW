@@ -328,6 +328,7 @@ gt.Const.EntityType <- {
 	ZombieTreasureHunter = 104,
 	FlyingSkull = 105,
 	Winterwolf = 106,
+	GnollRookie = 107,
 	function convertOldToNew( _id )
 	{
 		switch(_id)
@@ -597,6 +598,7 @@ gt.Const.EntityIcon <- [
 	"phylactery_orientation",
 	"zombie_04_orientation",
 	"skeleton_08_orientation",
-	"winterwolf_orientation"
+	"winterwolf_orientation",
+	"gnollrookie_orientation"
 ];
 
