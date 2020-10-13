@@ -5,7 +5,7 @@ gt.Const.Serialization <- {
 };
 
 gt.Const.Expantion <- {
-	WoW = false
+	WoW = true
 }
 
 gt.Const.DLC <- {
@@ -329,6 +329,11 @@ gt.Const.EntityType <- {
 	FlyingSkull = 105,
 	Winterwolf = 106,
 	GnollRookie = 107,
+	GnollMystic = 108,
+	GnollShaman = 109,
+	GnollPoacher = 110,
+	GnollAssassin = 111,
+	GnollBrute = 112,
 	function convertOldToNew( _id )
 	{
 		switch(_id)
@@ -599,6 +604,11 @@ gt.Const.EntityIcon <- [
 	"zombie_04_orientation",
 	"skeleton_08_orientation",
 	"winterwolf_orientation",
-	"gnollrookie_orientation"
+	"gnollrookie_orientation",
+	"gnollmystic_orientation",
+	"gnollshaman_orientation",
+	"gnollpoacher_orientation",
+	"gnollassassin_orientation",
+	"gnollbrute_orientation",
 ];
 

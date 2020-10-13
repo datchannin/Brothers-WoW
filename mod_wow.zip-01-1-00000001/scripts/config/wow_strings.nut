@@ -33,6 +33,16 @@ gt.Const.Strings.EntityName.push("Winter Wolf");			//106
 gt.Const.Strings.EntityNamePlural.push("Winter Wolves");	//106
 gt.Const.Strings.EntityName.push("Gnoll Rookie");			//107
 gt.Const.Strings.EntityNamePlural.push("Gnoll Rookies"); 	//107
+gt.Const.Strings.EntityName.push("Gnoll Mystic");			//108
+gt.Const.Strings.EntityNamePlural.push("Gnoll Mystics"); 	//108
+gt.Const.Strings.EntityName.push("Gnoll Shaman");			//109
+gt.Const.Strings.EntityNamePlural.push("Gnoll Shamans"); 	//109
+gt.Const.Strings.EntityName.push("Gnoll Poacher");			//110
+gt.Const.Strings.EntityNamePlural.push("Gnoll Poachers"); 	//110
+gt.Const.Strings.EntityName.push("Gnoll Assassin");			//111
+gt.Const.Strings.EntityNamePlural.push("Gnoll Assassins"); 	//111
+gt.Const.Strings.EntityName.push("Gnoll Brute");			//112
+gt.Const.Strings.EntityNamePlural.push("Gnoll Brutes");		//112
 
 gt.Const.Wow_strings.WinterwolfNames <- [
 	"Max",
