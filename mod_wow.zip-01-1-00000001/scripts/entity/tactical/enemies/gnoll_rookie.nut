@@ -252,7 +252,8 @@ this.gnoll_rookie <- this.inherit("scripts/entity/tactical/actor", {
 			//this.m.Items.equip(this.new("scripts/items/armor/gnolls/gnoll_brute_armor"));
 			//this.m.Items.equip(this.new("scripts/items/armor/gnolls/gnoll_shaman_armor"));
 			//this.m.Items.equip(this.new("scripts/items/armor/gnolls/gnoll_mystic_armor"));
-			this.m.Items.equip(this.new("scripts/items/armor/gnolls/gnoll_assassin_armor"));
+			//this.m.Items.equip(this.new("scripts/items/armor/gnolls/gnoll_assassin_armor"));
+			this.m.Items.equip(this.new("scripts/items/armor/gnolls/gnoll_poacher_armor"));
 		}
 
 		if (this.m.Items.getItemAtSlot(this.Const.ItemSlot.Head) == null)
@@ -260,7 +261,8 @@ this.gnoll_rookie <- this.inherit("scripts/entity/tactical/actor", {
 			//this.m.Items.equip(this.new("scripts/items/helmets/gnolls/gnoll_brute_helmet"));
 			//this.m.Items.equip(this.new("scripts/items/helmets/gnolls/gnoll_shaman_helmet"));
 			//this.m.Items.equip(this.new("scripts/items/helmets/gnolls/gnoll_mystic_helmet"));
-			this.m.Items.equip(this.new("scripts/items/helmets/gnolls/gnoll_assassin_helmet"));
+			//this.m.Items.equip(this.new("scripts/items/helmets/gnolls/gnoll_assassin_helmet"));
+			this.m.Items.equip(this.new("scripts/items/helmets/gnolls/gnoll_poacher_helmet"));
 		}
 	}
 
