@@ -247,75 +247,15 @@ this.gnoll_rookie <- this.inherit("scripts/entity/tactical/actor", {
 
 	function assignRandomEquipment()
 	{
-/*		local r;
-		local weapon;
-
-		if (this.Math.rand(1, 100) <= 25)
+		if (this.m.Items.getItemAtSlot(this.Const.ItemSlot.Body) == null)
 		{
-			this.m.Items.addToBag(this.new("scripts/items/weapons/greenskins/orc_javelin"));
+			this.m.Items.equip(this.new("scripts/items/armor/gnolls/gnoll_brute_armor"));
 		}
 
-		if (this.Math.rand(1, 100) <= 75)
+		if (this.m.Items.getItemAtSlot(this.Const.ItemSlot.Head) == null)
 		{
-			if (this.Math.rand(1, 100) <= 50)
-			{
-				local r = this.Math.rand(1, 2);
-
-				if (r == 1)
-				{
-					weapon = this.new("scripts/items/weapons/greenskins/orc_axe");
-				}
-				else if (r == 2)
-				{
-					weapon = this.new("scripts/items/weapons/greenskins/orc_cleaver");
-				}
-			}
-			else
-			{
-				local r = this.Math.rand(1, 2);
-
-				if (r == 1)
-				{
-					weapon = this.new("scripts/items/weapons/greenskins/orc_wooden_club");
-				}
-				else if (r == 2)
-				{
-					weapon = this.new("scripts/items/weapons/greenskins/orc_metal_club");
-				}
-			}
+			this.m.Items.equip(this.new("scripts/items/helmets/gnolls/gnoll_brute_helmet"));
 		}
-		else
-		{
-			r = this.Math.rand(1, 3);
-
-			if (r == 1)
-			{
-				weapon = this.new("scripts/items/weapons/greenskins/goblin_falchion");
-			}
-			else if (r == 2)
-			{
-				weapon = this.new("scripts/items/weapons/hatchet");
-			}
-			else if (r == 3)
-			{
-				weapon = this.new("scripts/items/weapons/morning_star");
-			}
-		}
-
-		if (this.m.Items.hasEmptySlot(this.Const.ItemSlot.Mainhand))
-		{
-			this.m.Items.equip(weapon);
-		}
-		else
-		{
-			this.m.Items.addToBag(weapon);
-		}
-
-		if (this.Math.rand(1, 100) <= 50)
-		{
-			this.m.Items.equip(this.new("scripts/items/shields/greenskins/orc_light_shield"));
-		}
-		*/
 	}
 
 });
