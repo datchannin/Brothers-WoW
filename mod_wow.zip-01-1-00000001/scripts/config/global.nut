@@ -5,7 +5,7 @@ gt.Const.Serialization <- {
 };
 
 gt.Const.Expantion <- {
-	WoW = true
+	WoW = false
 }
 
 gt.Const.DLC <- {
