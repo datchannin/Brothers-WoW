@@ -74,4 +74,6 @@ gt.Const.NomadBanners <- [
 	"banner_nomads_02",
 	"banner_nomads_03"
 ];
-
+gt.Const.GnollBanners <- [
+	"banner_gnoll"
+];

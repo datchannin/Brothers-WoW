@@ -48,7 +48,7 @@ this.build_gnolls_camp_action <- this.inherit("scripts/factions/faction_action",
 
 		if (camp != null)
 		{
-			local banner = this.getAppropriateBanner(camp, _faction.getSettlements(), 15, this.Const.BarbarianBanners);
+			local banner = this.getAppropriateBanner(camp, _faction.getSettlements(), 15, this.Const.GnollBanners);
 			camp.onSpawned();
 			camp.setBanner(banner);
 			_faction.addSettlement(camp, false);
