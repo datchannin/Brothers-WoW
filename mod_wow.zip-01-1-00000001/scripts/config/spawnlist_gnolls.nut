@@ -15,8 +15,8 @@ gt.Const.World.Spawn.Gnolls <- [
 		Body = "figure_wildman_01",
 		Troops = [
 			{
-				Type = this.Const.World.Spawn.Troops.GnollRookie,
-				Num = 3
+				Type = this.Const.World.Spawn.Troops.GnollBrute,
+				Num = 5
 			},
 			{
 				Type = this.Const.World.Spawn.Troops.GnollAssassin,
