@@ -16,6 +16,10 @@ gt.Const.World.Spawn.Gnolls <- [
 		Troops = [
 			{
 				Type = this.Const.World.Spawn.Troops.GnollRookie,
+				Num = 8
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.GnollPoacher,
 				Num = 4
 			}
 		]

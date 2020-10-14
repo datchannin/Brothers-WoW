@@ -15,6 +15,15 @@ gt.Const.World.Spawn.Troops.GnollRookie <- {
 	Variant = 0,
 	Strength = 35,
 	Cost = 35,
-	Row = 1,
+	Row = 0,
 	Script = "scripts/entity/tactical/enemies/gnoll_rookie"
+};
+
+gt.Const.World.Spawn.Troops.GnollPoacher <- {
+	ID = this.Const.EntityType.GnollPoacher,
+	Variant = 0,
+	Strength = 45,
+	Cost = 45,
+	Row = 1,
+	Script = "scripts/entity/tactical/enemies/gnoll_poacher"
 };
