@@ -25,6 +25,10 @@ gt.Const.World.Spawn.Gnolls <- [
 			{
 				Type = this.Const.World.Spawn.Troops.GnollShaman,
 				Num = 2
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.GnollMystic,
+				Num = 2
 			}
 		]
 	}

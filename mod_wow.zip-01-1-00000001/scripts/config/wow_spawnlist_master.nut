@@ -33,6 +33,15 @@ gt.Const.World.Spawn.Troops.GnollShaman <- {
 	Variant = 0,
 	Strength = 45,
 	Cost = 45,
-	Row = 1,
+	Row = 2,
 	Script = "scripts/entity/tactical/enemies/gnoll_shaman"
+};
+
+gt.Const.World.Spawn.Troops.GnollMystic <- {
+	ID = this.Const.EntityType.GnollMystic,
+	Variant = 0,
+	Strength = 45,
+	Cost = 45,
+	Row = 1,
+	Script = "scripts/entity/tactical/enemies/gnoll_mystic"
 };
