@@ -9,16 +9,13 @@ this.build_gnolls_camp_action <- this.inherit("scripts/factions/faction_action",
 
 	function onUpdate( _faction )
 	{
-		local settlements = _faction.getSettlements();
-
-		if (this.World.FactionManager.isGreaterEvil())
+		if (this.World.getTime().Days < this.Const.Expantion.gnoll_days)
 		{
-			if (settlements.len() > 5)
-			{
-				return;
-			}
+			return;
 		}
-		else if (settlements.len() > 7)
+	
+		local settlements = _faction.getSettlements();
+		if (settlements.len() > (this.Const.Expantion.gnoll_count - 1))
 		{
 			return;
 		}
