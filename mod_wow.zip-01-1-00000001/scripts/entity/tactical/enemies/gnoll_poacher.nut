@@ -224,11 +224,10 @@ this.gnoll_poacher <- this.inherit("scripts/entity/tactical/actor", {
 		injury.Visible = false;
 		injury.setBrush("bust_head_gnoll_0" + this.m.color);
 		this.addSprite("helmet");
+		//this.getSprite("quiver").Visible = true;
 		this.addDefaultStatusSprites();
 		this.getSprite("status_rooted").Scale = 0.55;
 		this.m.Skills.add(this.new("scripts/skills/special/double_grip"));
-		this.m.Skills.add(this.new("scripts/skills/actives/hand_to_hand"));
-		this.m.Skills.add(this.new("scripts/skills/actives/charge"));
 
 		if (this.Const.DLC.Unhold)
 		{
@@ -243,6 +242,13 @@ this.gnoll_poacher <- this.inherit("scripts/entity/tactical/actor", {
 
 	function assignRandomEquipment()
 	{
+		if (this.m.Items.getItemAtSlot(this.Const.ItemSlot.Mainhand) == null)
+		{
+			this.m.Items.equip(this.new("scripts/items/weapons/gnolls/gnoll_crossbow"));
+		}
+	
+		this.m.Items.equip(this.new("scripts/items/ammo/quiver_of_arrows"));
+	
 		if (this.m.Items.getItemAtSlot(this.Const.ItemSlot.Body) == null)
 		{
 			this.m.Items.equip(this.new("scripts/items/armor/gnolls/gnoll_poacher_armor"));
