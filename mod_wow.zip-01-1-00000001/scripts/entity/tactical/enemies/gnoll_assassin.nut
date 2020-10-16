@@ -243,6 +243,11 @@ this.gnoll_assassin <- this.inherit("scripts/entity/tactical/actor", {
 
 	function assignRandomEquipment()
 	{
+		if (this.m.Items.getItemAtSlot(this.Const.ItemSlot.Mainhand) == null)
+		{
+			this.m.Items.equip(this.new("scripts/items/weapons/gnolls/gnoll_dagger"));
+		}
+	
 		if (this.m.Items.getItemAtSlot(this.Const.ItemSlot.Body) == null)
 		{
 			this.m.Items.equip(this.new("scripts/items/armor/gnolls/gnoll_assassin_armor"));
