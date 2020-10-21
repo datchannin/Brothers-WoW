@@ -232,7 +232,8 @@ gt.Const.AI <- {
 			Wither = 81,
 			Explode = 82,
 			MoveToMerge = 83,
-			COUNT = 84
+			AttackShadowbolt = 84,
+			COUNT = 85
 		},
 		Name = [
 			"None",
@@ -318,7 +319,8 @@ gt.Const.AI <- {
 			"LightningStorm",
 			"Wither",
 			"Explode",
-			"MoveToMerge"
+			"MoveToMerge",
+			"Attack.Shadowbolt"
 		],
 		Order = {
 			Retreat = 2,
@@ -340,6 +342,7 @@ gt.Const.AI <- {
 			ThrowNet = 20,
 			AttackDefault = 20,
 			AttackBow = 21,
+			AttackShadowbolt = 21,
 			AttackHandgonne = 21,
 			Mortar = 21,
 			Reload = 22,
@@ -477,6 +480,7 @@ gt.Const.AI <- {
 			PickupWeapon = 1000,
 			MoveToMerge = 2000,
 			LightningStorm = 2000,
+			AttackShadowbolt = 2000,
 			MirrorImage = 2000,
 			FlyingSkulls = 2000,
 			Retreat = 2000,
