@@ -34,7 +34,7 @@ gt.Const.Tactical.Actor.GnollRookie <- {
 
 gt.Const.Tactical.Actor.GnollMystic <- {
 	XP = 720,
-	ActionPoints = 11,
+	ActionPoints = 12,
 	Hitpoints = 250,
 	Bravery = 95,
 	Stamina = 200,
