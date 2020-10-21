@@ -173,7 +173,7 @@ this.gnoll_mystic <- this.inherit("scripts/entity/tactical/actor", {
 
 			this.spawnTerrainDropdownEffect(_tile);
 			local corpse = clone this.Const.Corpse;
-			corpse.CorpseName = "A Rookie Gnoll";
+			corpse.CorpseName = "A Mystic Gnoll";
 			corpse.Tile = _tile;
 			corpse.IsResurrectable = false;
 			corpse.IsConsumable = true;
@@ -192,15 +192,7 @@ this.gnoll_mystic <- this.inherit("scripts/entity/tactical/actor", {
 		this.m.color = this.Math.rand(2, 3);
 		this.actor.onInit();
 		local b = this.m.BaseProperties;
-		b.setValues(this.Const.Tactical.Actor.GnollRookie);
-
-		if (!this.Tactical.State.isScenarioMode() && this.World.getTime().Days >= 150)
-		{
-			b.RangedSkill += 5;
-		}
-
-		b.IsSpecializedInAxes = true;
-		b.IsSpecializedInCleavers = true;
+		b.setValues(this.Const.Tactical.Actor.GnollMystic);
 		this.m.ActionPoints = b.ActionPoints;
 		this.m.Hitpoints = b.Hitpoints;
 		this.m.CurrentProperties = clone b;
@@ -224,15 +216,13 @@ this.gnoll_mystic <- this.inherit("scripts/entity/tactical/actor", {
 		injury.Visible = false;
 		injury.setBrush("bust_head_gnoll_0" + this.m.color);
 		this.addSprite("helmet");
-		//local body_blood = this.addSprite("body_blood");
-		//body_blood.setBrush("bust_orc_01_body_bloodied");
-		//body_blood.Visible = false;
 		this.addDefaultStatusSprites();
 		this.getSprite("status_rooted").Scale = 0.55;
-		this.m.Skills.add(this.new("scripts/skills/special/double_grip"));
-		this.m.Skills.add(this.new("scripts/skills/actives/hand_to_hand"));
-		this.m.Skills.add(this.new("scripts/skills/actives/charge"));
-
+		this.m.Skills.add(this.new("scripts/skills/actives/recover_skill"));
+		this.m.Skills.add(this.new("scripts/skills/actives/footwork"));
+		this.m.Skills.add(this.new("scripts/skills/perks/perk_dodge"));
+		this.m.Skills.add(this.new("scripts/skills/perks/perk_nimble"));
+		//this.m.Skills.add(this.new("scripts/skills/actives/warlock_shadowbolt_skill"));
 		if (this.Const.DLC.Unhold)
 		{
 			this.m.Skills.add(this.new("scripts/skills/actives/wake_ally_skill"));
