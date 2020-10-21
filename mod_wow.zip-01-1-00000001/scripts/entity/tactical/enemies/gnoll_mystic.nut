@@ -51,7 +51,7 @@ this.gnoll_mystic <- this.inherit("scripts/entity/tactical/actor", {
 		this.m.SoundVolume[this.Const.Sound.ActorEvent.Death] = 0.9;
 		this.m.SoundVolume[this.Const.Sound.ActorEvent.DamageReceived] = 0.9;
 		this.m.SoundVolume[this.Const.Sound.ActorEvent.Idle] = 1.25;
-		this.m.AIAgent = this.new("scripts/ai/tactical/agents/orc_young_agent");
+		this.m.AIAgent = this.new("scripts/ai/tactical/agents/gnoll_mystic_agent");
 		this.m.AIAgent.setActor(this);
 	}
 
@@ -222,7 +222,7 @@ this.gnoll_mystic <- this.inherit("scripts/entity/tactical/actor", {
 		this.m.Skills.add(this.new("scripts/skills/actives/footwork"));
 		this.m.Skills.add(this.new("scripts/skills/perks/perk_dodge"));
 		this.m.Skills.add(this.new("scripts/skills/perks/perk_nimble"));
-		//this.m.Skills.add(this.new("scripts/skills/actives/warlock_shadowbolt_skill"));
+		this.m.Skills.add(this.new("scripts/skills/actives/warlock_shadowbolt_skill"));
 		if (this.Const.DLC.Unhold)
 		{
 			this.m.Skills.add(this.new("scripts/skills/actives/wake_ally_skill"));
