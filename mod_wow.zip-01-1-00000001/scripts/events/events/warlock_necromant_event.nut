@@ -1,3 +1,4 @@
+/*BBWOW:This file is part of datchannin bbWoW mod, mod_version = 8.05, game_version = 1.4.0.45*/
 this.warlock_necromant_event <- this.inherit("scripts/events/event", {
 	m = {
 		Warlock = null

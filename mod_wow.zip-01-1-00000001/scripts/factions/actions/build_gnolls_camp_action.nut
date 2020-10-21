@@ -1,3 +1,4 @@
+/*BBWOW:This file is part of datchannin bbWoW mod, mod_version = 8.05, game_version = 1.4.0.45*/
 this.build_gnolls_camp_action <- this.inherit("scripts/factions/faction_action", {
 	m = {},
 	function create()

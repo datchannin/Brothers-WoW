@@ -1,3 +1,4 @@
+/*BBWOW:This file is part of datchannin bbWoW mod, mod_version = 8.05, game_version = 1.4.0.45*/
 this.gnoll_camp_location <- this.inherit("scripts/entity/world/location", {
 	m = {},
 	function getDescription()

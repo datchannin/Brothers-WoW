@@ -1,3 +1,4 @@
+/*BBWOW:This file is part of datchannin bbWoW mod, mod_version = 8.05, game_version = 1.4.0.45*/
 this.mage_ice_block_event <- this.inherit("scripts/events/event", {
 	m = {
 		Mage = null

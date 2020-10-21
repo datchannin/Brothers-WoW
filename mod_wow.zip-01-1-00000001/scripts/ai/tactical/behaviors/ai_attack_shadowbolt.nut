@@ -1,3 +1,4 @@
+/*BBWOW:This file is part of datchannin bbWoW mod, mod_version = 8.05, game_version = 1.4.0.45*/
 this.ai_attack_shadowbolt <- this.inherit("scripts/ai/tactical/behavior", {
 	m = {
 		TargetTile = null,
