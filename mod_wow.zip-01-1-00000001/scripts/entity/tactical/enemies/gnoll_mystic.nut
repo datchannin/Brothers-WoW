@@ -223,7 +223,17 @@ this.gnoll_mystic <- this.inherit("scripts/entity/tactical/actor", {
 		this.m.Skills.add(this.new("scripts/skills/actives/footwork"));
 		this.m.Skills.add(this.new("scripts/skills/perks/perk_dodge"));
 		this.m.Skills.add(this.new("scripts/skills/perks/perk_nimble"));
+
+		// WARLOCK MAIN SPEC
 		this.m.Skills.add(this.new("scripts/skills/actives/warlock_shadowbolt_skill"));
+		this.m.Skills.add(this.new("scripts/skills/perks/perk_wow_destructivereach"));
+		this.m.Skills.add(this.new("scripts/skills/perks/perk_wow_devastation"));
+		this.m.Skills.add(this.new("scripts/skills/perks/perk_wow_shadowburn"));
+		this.m.Skills.add(this.new("scripts/skills/perks/perk_wow_shadowmastery"));
+		this.m.Skills.add(this.new("scripts/skills/perks/perk_wow_ruin"));
+
+//perk_wow_demonicembrace
+
 		if (this.Const.DLC.Unhold)
 		{
 			this.m.Skills.add(this.new("scripts/skills/actives/wake_ally_skill"));
