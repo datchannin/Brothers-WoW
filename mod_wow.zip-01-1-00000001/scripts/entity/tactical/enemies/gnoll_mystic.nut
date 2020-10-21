@@ -223,6 +223,7 @@ this.gnoll_mystic <- this.inherit("scripts/entity/tactical/actor", {
 		this.m.Skills.add(this.new("scripts/skills/actives/footwork"));
 		this.m.Skills.add(this.new("scripts/skills/perks/perk_dodge"));
 		this.m.Skills.add(this.new("scripts/skills/perks/perk_nimble"));
+		this.m.Skills.add(this.new("scripts/skills/perks/perk_nine_lives"));
 
 		// WARLOCK MAIN SPEC
 		this.m.Skills.add(this.new("scripts/skills/actives/warlock_shadowbolt_skill"));
@@ -232,7 +233,28 @@ this.gnoll_mystic <- this.inherit("scripts/entity/tactical/actor", {
 		this.m.Skills.add(this.new("scripts/skills/perks/perk_wow_shadowmastery"));
 		this.m.Skills.add(this.new("scripts/skills/perks/perk_wow_ruin"));
 
-//perk_wow_demonicembrace
+		local r = this.Math.rand(1, 3);
+		if (r == 1)
+		{
+			this.m.Skills.add(this.new("scripts/skills/perks/perk_wow_demonicembrace"));
+		}
+		else if (r == 2)
+		{
+			this.m.Skills.add(this.new("scripts/skills/perks/perk_wow_demonicembrace"));
+			this.m.Skills.add(this.new("scripts/skills/perks/perk_colossus"));
+		}
+		else
+		{
+			this.m.Skills.add(this.new("scripts/skills/perks/perk_wow_demonicembrace"));
+			this.m.Skills.add(this.new("scripts/skills/perks/perk_colossus"));
+			this.m.Skills.add(this.new("scripts/skills/perks/perk_steel_brow"));
+		}
+
+		r = this.Math.rand(1, 2);
+		if (r == 1)
+		{
+			this.m.Skills.add(this.new("scripts/skills/perks/perk_pathfinder"));
+		}
 
 		if (this.Const.DLC.Unhold)
 		{
