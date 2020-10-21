@@ -243,6 +243,11 @@ this.warlock_shadowbolt_skill <- this.inherit("scripts/skills/skill", {
 		this.m.ruin = user.getSkills().hasSkill("perk.wow.warlock.ruin");
 		this.m.shadowmastery = user.getSkills().hasSkill("perk.wow.warlock.shadowmastery");
 		this.m.dreadmistset = _properties.T0_warlock_head && _properties.T0_warlock_armor;
+
+		if (user.getAIAgent().m.ID == "agent.gnoll.mystic")
+		{
+			this.m.CurrentLevel = 12;
+		}
 	}
 
 	function onAfterUpdate( _properties )
@@ -286,6 +291,8 @@ this.warlock_shadowbolt_skill <- this.inherit("scripts/skills/skill", {
 	{
 		local targetEntity = _targetTile.getEntity();
 		this.getContainer().setBusy(true);
+
+		this.logInfo("LEVEL: " + this.m.CurrentLevel);
 
 		this.Time.scheduleEvent(this.TimeUnit.Real, this.m.Delay, this.onApplyDirect.bindenv(this), {
 			Skill = this,
