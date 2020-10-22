@@ -249,7 +249,7 @@ this.gnoll_brute <- this.inherit("scripts/entity/tactical/actor", {
 		{
 			if (this.m.Items.getItemAtSlot(this.Const.ItemSlot.Mainhand) == null)
 			{
-				this.m.Items.equip(this.new("scripts/items/weapons/gnolls/gnoll_axe"));
+				this.m.Items.equip(this.new("scripts/items/weapons/gnolls/gnoll_axe_two_handed"));
 			}
 		}
 
