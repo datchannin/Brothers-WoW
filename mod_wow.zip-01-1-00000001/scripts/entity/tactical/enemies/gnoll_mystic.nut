@@ -269,8 +269,16 @@ this.gnoll_mystic <- this.inherit("scripts/entity/tactical/actor", {
 
 	function assignRandomEquipment()
 	{
-		this.m.Items.addToBag(this.new("scripts/items/weapons/gnolls/gnoll_dagger"));
-	
+		if (this.m.Items.getItemAtSlot(this.Const.ItemSlot.Mainhand) == null)
+		{
+			this.m.Items.equip(this.new("scripts/items/weapons/gnolls/gnoll_dagger"));
+		}
+
+		//if (this.m.Items.getItemAtSlot(this.Const.ItemSlot.Offhand) == null)
+		//{
+		//	this.m.Items.equip(this.new("scripts/items/shields/gnolls/gnoll_shield"));
+		//}
+
 		if (this.m.Items.getItemAtSlot(this.Const.ItemSlot.Body) == null)
 		{
 			this.m.Items.equip(this.new("scripts/items/armor/gnolls/gnoll_mystic_armor"));
