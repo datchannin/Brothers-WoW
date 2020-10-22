@@ -215,6 +215,7 @@ this.priest_powerwordshield_skill <- this.inherit("scripts/skills/skill", {
 		this.Time.scheduleEvent(this.TimeUnit.Real, 200, this.onApplyEffect.bindenv(this), {
 			Skill = this,
 			Target = targetEntity,
+			User = _user,
 			Repairnumber = repairnumber,
 		});
 
@@ -224,6 +225,7 @@ this.priest_powerwordshield_skill <- this.inherit("scripts/skills/skill", {
 	function onApplyEffect( _data )
 	{
 		local targetEntity = _data.Target;
+		local user = _data.User;
 		local repairnumber = _data.Repairnumber;
 		local bodyitem = targetEntity.getItems().getItemAtSlot(this.Const.ItemSlot.Body);
 		local headitem = targetEntity.getItems().getItemAtSlot(this.Const.ItemSlot.Head);
@@ -338,6 +340,7 @@ this.priest_powerwordshield_skill <- this.inherit("scripts/skills/skill", {
 			}
 		}
 
+		user.addXP(repairBody + repairHead + repairShield);
 		targetEntity.getSkills().update();
 		this.spawnIcon("effect_priest_shield", targetEntity.getTile());
 

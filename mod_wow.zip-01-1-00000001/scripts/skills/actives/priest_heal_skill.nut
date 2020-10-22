@@ -180,6 +180,7 @@ this.priest_heal_skill <- this.inherit("scripts/skills/skill", {
 		this.Time.scheduleEvent(this.TimeUnit.Real, 1200, this.onApplyEffect.bindenv(this), {
 			Skill = this,
 			Target = targetEntity,
+			User = _user,
 			Healnumber = healnumber,
 		});
 		
@@ -189,8 +190,10 @@ this.priest_heal_skill <- this.inherit("scripts/skills/skill", {
 	function onApplyEffect( _data )
 	{
 		local targetEntity = _data.Target;
+		local user = _data.User;
 		local healnumber = _data.Healnumber;
 		local skills = targetEntity.getSkills();
+		local real_healnumber = 0;
 
 		this.spawnIcon("effect_priest_heal", targetEntity.getTile());
 
@@ -258,6 +261,8 @@ this.priest_heal_skill <- this.inherit("scripts/skills/skill", {
 		{
 			this.Tactical.EventLog.log(this.Const.UI.getColorizedEntityName(targetEntity) + " was healed for " + this.Math.min(targetEntity.getHitpointsMax() - targetEntity.getHitpoints(), healnumber) + " hitpoints");
 		}
+		real_healnumber = this.Math.min(targetEntity.getHitpointsMax() - targetEntity.getHitpoints(), healnumber);
+		user.addXP(real_healnumber);
 		targetEntity.setHitpoints(this.Math.min(targetEntity.getHitpointsMax(), targetEntity.getHitpoints() + healnumber));
 
 		targetEntity.onUpdateInjuryLayer();
