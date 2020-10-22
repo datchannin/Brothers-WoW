@@ -174,7 +174,7 @@ this.gnoll_brute <- this.inherit("scripts/entity/tactical/actor", {
 
 			this.spawnTerrainDropdownEffect(_tile);
 			local corpse = clone this.Const.Corpse;
-			corpse.CorpseName = "A Rookie Gnoll";
+			corpse.CorpseName = "A Brute Gnoll";
 			corpse.Tile = _tile;
 			corpse.IsResurrectable = false;
 			corpse.IsConsumable = true;
@@ -193,15 +193,8 @@ this.gnoll_brute <- this.inherit("scripts/entity/tactical/actor", {
 		this.m.color = this.Math.rand(2, 3);
 		this.actor.onInit();
 		local b = this.m.BaseProperties;
-		b.setValues(this.Const.Tactical.Actor.GnollRookie);
-
-		if (!this.Tactical.State.isScenarioMode() && this.World.getTime().Days >= 150)
-		{
-			b.RangedSkill += 5;
-		}
-
+		b.setValues(this.Const.Tactical.Actor.GnollBrute);
 		b.IsSpecializedInAxes = true;
-		b.IsSpecializedInCleavers = true;
 		this.m.ActionPoints = b.ActionPoints;
 		this.m.Hitpoints = b.Hitpoints;
 		this.m.CurrentProperties = clone b;
@@ -229,7 +222,6 @@ this.gnoll_brute <- this.inherit("scripts/entity/tactical/actor", {
 		this.getSprite("status_rooted").Scale = 0.55;
 		this.m.Skills.add(this.new("scripts/skills/special/double_grip"));
 		this.m.Skills.add(this.new("scripts/skills/actives/hand_to_hand"));
-		this.m.Skills.add(this.new("scripts/skills/actives/charge"));
 
 		if (this.Const.DLC.Unhold)
 		{
@@ -244,6 +236,28 @@ this.gnoll_brute <- this.inherit("scripts/entity/tactical/actor", {
 
 	function assignRandomEquipment()
 	{
+		local r = this.Math.rand(1, 2);
+
+		if (r == 1)
+		{
+			if (this.m.Items.getItemAtSlot(this.Const.ItemSlot.Mainhand) == null)
+			{
+				this.m.Items.equip(this.new("scripts/items/weapons/gnolls/gnoll_axe"));
+			}
+		}
+		else
+		{
+			if (this.m.Items.getItemAtSlot(this.Const.ItemSlot.Mainhand) == null)
+			{
+				this.m.Items.equip(this.new("scripts/items/weapons/gnolls/gnoll_axe"));
+			}
+		}
+
+		if (this.m.Items.getItemAtSlot(this.Const.ItemSlot.Offhand) == null)
+		{
+			this.m.Items.equip(this.new("scripts/items/shields/gnolls/gnoll_shield"));
+		}
+	
 		if (this.m.Items.getItemAtSlot(this.Const.ItemSlot.Body) == null)
 		{
 			this.m.Items.equip(this.new("scripts/items/armor/gnolls/gnoll_brute_armor"));
