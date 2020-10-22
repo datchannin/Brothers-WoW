@@ -277,7 +277,7 @@ this.gnoll_mystic <- this.inherit("scripts/entity/tactical/actor", {
 		//if (this.m.Items.getItemAtSlot(this.Const.ItemSlot.Offhand) == null)
 		//{
 		//	this.m.Items.equip(this.new("scripts/items/shields/gnolls/gnoll_shield"));
-		//}
+		//}gnoll_axe
 
 		if (this.m.Items.getItemAtSlot(this.Const.ItemSlot.Body) == null)
 		{
