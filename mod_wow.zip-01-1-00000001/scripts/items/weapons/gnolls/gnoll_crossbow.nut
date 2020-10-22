@@ -20,6 +20,8 @@ this.gnoll_crossbow <- this.inherit("scripts/items/weapons/weapon", {
 		this.m.Name = "Gnoll Crossbow";
 		this.m.Description = "Crossbow made by gnoll blacksmiths. It is strange that such wild creatures could make such a weapon.";
 		this.m.Categories = "Crossbow, Two-Handed";
+		this.m.IconLarge = "weapons/gnolls/gnoll_crossbow_70x140.png";
+		this.m.Icon = "weapons/gnolls/gnoll_crossbow_70x70.png";
 		this.m.SlotType = this.Const.ItemSlot.Mainhand;
 		this.m.BlockedSlotType = this.Const.ItemSlot.Offhand;
 		this.m.ItemType = this.Const.Items.ItemType.Weapon | this.Const.Items.ItemType.RangedWeapon | this.Const.Items.ItemType.Defensive;

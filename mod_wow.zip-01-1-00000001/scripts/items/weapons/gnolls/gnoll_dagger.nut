@@ -8,6 +8,8 @@ this.gnoll_dagger <- this.inherit("scripts/items/weapons/weapon", {
 		this.m.Name = "Gnoll Dagger";
 		this.m.Description = "Dagger.";
 		this.m.Categories = "Sword/Dagger, One-Handed";
+		this.m.IconLarge = "weapons/gnolls/gnoll_dagger_70x140.png";
+		this.m.Icon = "weapons/gnolls/gnoll_dagger_70x70.png";
 		this.m.SlotType = this.Const.ItemSlot.Mainhand;
 		this.m.ItemType = this.Const.Items.ItemType.Weapon | this.Const.Items.ItemType.MeleeWeapon | this.Const.Items.ItemType.OneHanded;
 		this.m.IsDoubleGrippable = true;
