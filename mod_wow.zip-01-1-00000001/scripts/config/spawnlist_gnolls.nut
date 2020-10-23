@@ -17,11 +17,11 @@ gt.Const.World.Spawn.Gnolls <- [
 		Troops = [
 			{
 				Type = this.Const.World.Spawn.Troops.GnollBrute,
-				Num = 5
+				Num = 4
 			},
 			{
 				Type = this.Const.World.Spawn.Troops.GnollAssassin,
-				Num = 3
+				Num = 2
 			}
 			{
 				Type = this.Const.World.Spawn.Troops.GnollPoacher,
@@ -29,11 +29,11 @@ gt.Const.World.Spawn.Gnolls <- [
 			},
 			{
 				Type = this.Const.World.Spawn.Troops.GnollShaman,
-				Num = 2
+				Num = 0
 			},
 			{
 				Type = this.Const.World.Spawn.Troops.GnollMystic,
-				Num = 2
+				Num = 1
 			}
 		]
 	}
