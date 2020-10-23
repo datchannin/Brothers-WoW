@@ -24,8 +24,8 @@ this.gnoll_axe_two_handed <- this.inherit("scripts/items/weapons/weapon", {
 		this.m.Condition = 110.0;
 		this.m.ConditionMax = 110.0;
 		this.m.StaminaModifier = -36;
-		this.m.RegularDamage = 100;
-		this.m.RegularDamageMax = 135;
+		this.m.RegularDamage = 80;
+		this.m.RegularDamageMax = 100;
 		this.m.ArmorDamageMult = 1.5;
 		this.m.DirectDamageMult = 0.4;
 		this.m.DirectDamageAdd = 0.1;

@@ -222,6 +222,56 @@ this.gnoll_brute <- this.inherit("scripts/entity/tactical/actor", {
 		this.getSprite("status_rooted").Scale = 0.55;
 		this.m.Skills.add(this.new("scripts/skills/special/double_grip"));
 		this.m.Skills.add(this.new("scripts/skills/actives/hand_to_hand"));
+		this.m.Skills.add(this.new("scripts/skills/actives/recover_skill"));
+		this.m.Skills.add(this.new("scripts/skills/actives/rotation"));
+		this.m.Skills.add(this.new("scripts/skills/perks/perk_battering_ram"));
+		this.m.Skills.add(this.new("scripts/skills/perks/perk_shield_bash"));
+		this.m.Skills.add(this.new("scripts/skills/perks/perk_stalwart"));
+		this.m.Skills.add(this.new("scripts/skills/perks/perk_battle_forged"));
+
+		// WARRIOR MAIN SPEC
+		this.m.Skills.add(this.new("scripts/skills/perks/perk_wow_masteraxe"));
+		this.m.Skills.add(this.new("scripts/skills/perks/perk_wow_blood_thirst"));
+		this.m.Skills.add(this.new("scripts/skills/perks/perk_wow_hardness"));
+		this.m.Skills.add(this.new("scripts/skills/perks/perk_wow_toughness"));
+		local r = this.Math.rand(1, 2);
+		if (r == 1)
+		{
+			this.m.Skills.add(this.new("scripts/skills/perks/perk_wow_defensive_stance"));
+		}
+		else
+		{
+			this.m.Skills.add(this.new("scripts/skills/perks/perk_wow_berserker_stance"));
+		}
+
+		r = this.Math.rand(1, 3);
+		if (r == 1)
+		{
+			this.m.Skills.add(this.new("scripts/skills/perks/perk_wow_last_stand"));
+		}
+		else if (r == 2)
+		{
+			this.m.Skills.add(this.new("scripts/skills/perks/perk_wow_last_stand"));
+			this.m.Skills.add(this.new("scripts/skills/perks/perk_colossus"));
+		}
+		else
+		{
+			this.m.Skills.add(this.new("scripts/skills/perks/perk_wow_last_stand"));
+			this.m.Skills.add(this.new("scripts/skills/perks/perk_colossus"));
+			this.m.Skills.add(this.new("scripts/skills/perks/perk_steel_brow"));
+		}
+
+		r = this.Math.rand(1, 2);
+		if (r == 1)
+		{
+			this.m.Skills.add(this.new("scripts/skills/perks/perk_pathfinder"));
+		}
+
+		r = this.Math.rand(1, 2);
+		if (r == 1)
+		{
+			this.m.Skills.add(this.new("scripts/skills/perks/perk_nine_lives"));
+		}
 
 		if (this.Const.DLC.Unhold)
 		{
