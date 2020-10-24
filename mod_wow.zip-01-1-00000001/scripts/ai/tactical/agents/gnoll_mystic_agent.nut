@@ -33,7 +33,7 @@ this.gnoll_mystic_agent <- this.inherit("scripts/ai/tactical/agent", {
 		this.addBehavior(this.new("scripts/ai/tactical/behaviors/ai_break_free"));
 		this.addBehavior(this.new("scripts/ai/tactical/behaviors/ai_disengage"));
 		this.addBehavior(this.new("scripts/ai/tactical/behaviors/ai_wake_up_ally"));
-		this.addBehavior(this.new("scripts/ai/tactical/behaviors/ai_engage_ranged"));
+		this.addBehavior(this.new("scripts/ai/tactical/behaviors/ai_engage_cast"));
 		this.addBehavior(this.new("scripts/ai/tactical/behaviors/ai_engage_melee"));
 		this.addBehavior(this.new("scripts/ai/tactical/behaviors/ai_attack_default"));
 		this.addBehavior(this.new("scripts/ai/tactical/behaviors/ai_attack_puncture"));

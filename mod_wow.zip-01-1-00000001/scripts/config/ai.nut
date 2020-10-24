@@ -234,7 +234,8 @@ gt.Const.AI <- {
 			Explode = 82,
 			MoveToMerge = 83,
 			AttackShadowbolt = 84,
-			COUNT = 85
+			EngageCast = 85,
+			COUNT = 86
 		},
 		Name = [
 			"None",
@@ -321,7 +322,8 @@ gt.Const.AI <- {
 			"Wither",
 			"Explode",
 			"MoveToMerge",
-			"Attack.Shadowbolt"
+			"Attack.Shadowbolt",
+			"Engage.Cast"
 		],
 		Order = {
 			Retreat = 2,
@@ -335,6 +337,7 @@ gt.Const.AI <- {
 			Adrenaline = 9,
 			EngageMelee = 10,
 			EngageRanged = 11,
+			EngageCast = 11,
 			MoveToMerge = 11,
 			Darkflight = 12,
 			MoveTail = 12,
@@ -440,6 +443,7 @@ gt.Const.AI <- {
 			KnockOut = 100,
 			Reload = 100,
 			EngageRanged = 120,
+			EngageCast = 120,
 			Hide = 120,
 			LineBreaker = 120,
 			Puncture = 120,
