@@ -111,6 +111,7 @@ this.demolish_armor_skill <- this.inherit("scripts/skills/skill", {
 
 	function onAnySkillUsed( _skill, _targetEntity, _properties )
 	{
+		local p = this.getContainer().getActor().getCurrentProperties();
 		if (_skill == this)
 		{
 			if (p.IsMasterInHammers)
