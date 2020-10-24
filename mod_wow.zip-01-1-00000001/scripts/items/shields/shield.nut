@@ -109,9 +109,9 @@ this.shield <- this.inherit("scripts/items/item", {
 			id = 4,
 			type = "progressbar",
 			icon = "ui/icons/asset_supplies.png",
-			value = this.m.Condition,
-			valueMax = this.m.ConditionMax,
-			text = "" + this.m.Condition + " / " + this.m.ConditionMax + "",
+			value = this.getCondition(),
+			valueMax = this.getConditionMax(),
+			text = "" + this.getCondition() + " / " + this.getConditionMax() + "",
 			style = "armor-head-slim"
 		});
 
@@ -188,7 +188,7 @@ this.shield <- this.inherit("scripts/items/item", {
 		local isLucky = !this.Tactical.State.isScenarioMode() && !isPlayer && this.World.Assets.getOrigin().isDroppedAsLoot(this);
 		local isBlacksmithed = isPlayer && !this.Tactical.State.isScenarioMode() && this.World.Assets.m.IsBlacksmithed;
 
-		if ((isPlayer || this.m.Condition >= 6) && (isPlayer || this.m.Condition / this.m.ConditionMax >= 0.25) && (isPlayer || isLucky || isBlacksmithed || !isPlayer && this.isItemType(this.Const.Items.ItemType.Named) || this.isItemType(this.Const.Items.ItemType.Legendary) || this.Math.rand(1, 100) <= 90))
+		if ((isBlacksmithed || this.m.Condition >= 6) && (isPlayer || this.m.Condition / this.m.ConditionMax >= 0.25) && (isPlayer || isLucky || isBlacksmithed || !isPlayer && this.isItemType(this.Const.Items.ItemType.Named) || this.isItemType(this.Const.Items.ItemType.Legendary) || this.Math.rand(1, 100) <= 90))
 		{
 			return true;
 		}
