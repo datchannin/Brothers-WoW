@@ -1,13 +1,13 @@
 /*BBWOW:This file is part of datchannin bbWoW mod, mod_version = 8.05, game_version = 1.4.0.45*/
-this.wow_scenario2 <- this.inherit("scripts/scenarios/world/starting_scenario", {
+this.wow_scenario_gnoll_invasion <- this.inherit("scripts/scenarios/world/starting_scenario", {
 	m = {},
 	function create()
 	{
-		this.m.ID = "scenario.wow2";
-		this.m.Name = "WoW debug Company 2";
-		this.m.Description = "[p=c][img]gfx/ui/events/event_wow.png[/img][/p][p]This scenario was created for debug WoW characters, new perks, skills and abilities. Use them and play. If you find any bug - please, inform the github repo.[/p]";
+		this.m.ID = "scenario.gnoll_invasion";
+		this.m.Name = "Gnoll Invasion";
+		this.m.Description = "[p=c][img]gfx/ui/events/event_wow_gnoll_invasion.png[/img][/p][p]This scenario was created for debug WoW characters, new perks, skills and abilities. Use them and play. If you find any bug - please, inform the github repo.[/p]";
 		this.m.Difficulty = 3;
-		this.m.Order = 801;
+		this.m.Order = 473;
 	}
 
 	function onSpawnAssets()
@@ -35,82 +35,82 @@ this.wow_scenario2 <- this.inherit("scripts/scenarios/world/starting_scenario", 
 		bros[0].setStartValuesEx([
 			"raider_warrior_background"
 		]);
-		bros[0].setPlaceInFormation(3);
+		bros[0].setPlaceInFormation(0);
 
 		bros[1].setStartValuesEx([
 			"raider_rogue_background"
 		]);
-		bros[1].setPlaceInFormation(4);
+		bros[1].setPlaceInFormation(1);
 
 		bros[2].setStartValuesEx([
-			"raider_mage_background"
+			"raider_paladin_background"
 		]);
-		bros[2].setPlaceInFormation(5);
+		bros[2].setPlaceInFormation(2);
 
 		bros[3].setStartValuesEx([
-			"raider_hunter_background"
+			"raider_druid_background"
 		]);
-		bros[3].setPlaceInFormation(6);
+		bros[3].setPlaceInFormation(3);
 
 		bros[4].setStartValuesEx([
-			"raider_paladin_background"
+			"raider_druid_background"
 		]);
-		bros[4].setPlaceInFormation(7);
+		bros[4].setPlaceInFormation(4);
 
 		bros[5].setStartValuesEx([
-			"raider_warlock_background"
+			"raider_druid_background"
 		]);
-		bros[5].setPlaceInFormation(8);
+		bros[5].setPlaceInFormation(5);
 
 		bros[6].setStartValuesEx([
-			"raider_druid_background"
-		]);
-		bros[6].setPlaceInFormation(9);
-
-		bros[7].setStartValuesEx([
-			"raider_priest_background"
-		]);
-		bros[7].setPlaceInFormation(10);
-
-		bros[8].setStartValuesEx([
-			"raider_priest_background"
-		]);
-		bros[8].setPlaceInFormation(11);
-
-		bros[9].setStartValuesEx([
-			"raider_druid_background"
-		]);
-		bros[9].setPlaceInFormation(12);
-
-		bros[10].setStartValuesEx([
-			"raider_warlock_background"
-		]);
-		bros[10].setPlaceInFormation(13);
-		
-		bros[11].setStartValuesEx([
 			"raider_paladin_background"
 		]);
-		bros[11].setPlaceInFormation(14);
-		
-		bros[12].setStartValuesEx([
-			"raider_hunter_background"
-		]);
-		bros[12].setPlaceInFormation(15);
+		bros[6].setPlaceInFormation(6);
 
-		bros[13].setStartValuesEx([
-			"raider_mage_background"
-		]);
-		bros[13].setPlaceInFormation(16);
-
-		bros[14].setStartValuesEx([
+		bros[7].setStartValuesEx([
 			"raider_rogue_background"
 		]);
-		bros[14].setPlaceInFormation(17);
+		bros[7].setPlaceInFormation(7);
 
-		bros[15].setStartValuesEx([
+		bros[8].setStartValuesEx([
 			"raider_warrior_background"
 		]);
-		bros[15].setPlaceInFormation(18);
+		bros[8].setPlaceInFormation(8);
+
+		bros[9].setStartValuesEx([
+			"raider_warlock_background"
+		]);
+		bros[9].setPlaceInFormation(10);
+
+		bros[10].setStartValuesEx([
+			"raider_mage_background"
+		]);
+		bros[10].setPlaceInFormation(11);
+		
+		bros[11].setStartValuesEx([
+			"raider_priest_background"
+		]);
+		bros[11].setPlaceInFormation(12);
+		
+		bros[12].setStartValuesEx([
+			"raider_paladin_background"
+		]);
+		bros[12].setPlaceInFormation(13);
+
+		bros[13].setStartValuesEx([
+			"raider_priest_background"
+		]);
+		bros[13].setPlaceInFormation(14);
+
+		bros[14].setStartValuesEx([
+			"raider_mage_background"
+		]);
+		bros[14].setPlaceInFormation(15);
+
+		bros[15].setStartValuesEx([
+			"raider_hunter_background"
+		]);
+		bros[15].setPlaceInFormation(16);
 
 		for (local i = 0; i < 16; i = ++i)
 		{
