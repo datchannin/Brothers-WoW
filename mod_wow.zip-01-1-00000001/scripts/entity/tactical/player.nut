@@ -722,9 +722,16 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 		this.improveMood(1.5, "Joined a mercenary company");
 		}
 
-		if (("State" in this.World) && this.World.State != null && this.World.Assets.getOrigin().getID() == "scenario.manhunters" && this.getBackground().getID() != "background.slave")
+		if (("State" in this.World) && this.World.State != null && this.World.Assets.getOrigin().getID() == "scenario.manhunters")
 		{
-			this.getSkills().add(this.new("scripts/skills/actives/whip_slave_skill"));
+			if (this.getBackground().getID() != "background.slave")
+			{
+				this.getSkills().add(this.new("scripts/skills/actives/whip_slave_skill"));
+			}
+			else
+			{
+				this.getSprite("miniboss").setBrush("bust_miniboss_indebted");
+			}
 		}
 
 		if (this.World.getPlayerRoster().getSize() >= 12)
@@ -764,6 +771,8 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 	{
 		this.actor.resetRenderEffects();
 		this.m.IsAlive = true;
+		this.m.IsDying = false;
+		this.m.IsAbleToDie = true;
 		this.m.Hitpoints = this.Math.max(1, this.m.Hitpoints);
 		this.m.MaxEnemiesThisTurn = 1;
 
@@ -804,6 +813,11 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 		}
 
 		if (this.Tactical.State.isAutoRetreat())
+		{
+			return true;
+		}
+		
+		if (this.isGuest())
 		{
 			return true;
 		}
@@ -854,7 +868,7 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 			return;
 		}
 
-		if (_victim.getFaction() == this.getFaction() && ("getBackground" in _victim) && _victim.getBackground().getID() == "background.slave" && this.getBackground().getID() != "background.slave")
+		if (!this.isGuest() && _victim.getFaction() == this.getFaction() && ("getBackground" in _victim) && _victim.getBackground().getID() == "background.slave" && this.getBackground().getID() != "background.slave")
 		{
 			return;
 		}
@@ -864,7 +878,7 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 
 	function kill( _killer = null, _skill = null, _fatalityType = this.Const.FatalityType.None, _silent = false )
 	{
-		if (!this.Tactical.State.isScenarioMode() && this.World.Assets.m.IsSurvivalGuaranteed && !this.m.Skills.hasSkillOfType(this.Const.SkillType.PermanentInjury) && (this.World.Assets.getOrigin().getID() != "scenario.manhunters" || this.getBackground().getID() != "background.slave"))
+		if (!this.Tactical.State.isScenarioMode() && this.World.Assets.m.IsSurvivalGuaranteed && !this.m.Skills.hasSkillOfType(this.Const.SkillType.PermanentInjury) && (this.World.Assets.getOrigin().getID() != "scenario.manhunters" || this.getBackground() != null && this.getBackground().getID() != "background.slave"))
 		{
 			_fatalityType = this.Const.FatalityType.None;
 		}
@@ -2148,6 +2162,7 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 		}
 
 		this.m.IsTurnDone = true;
+		this.m.IsAbleToDie = false;
 		this.Tactical.getRetreatRoster().add(this);
 		this.removeFromMap();
 		this.Tactical.Entities.setLastCombatResult(this.Const.Tactical.CombatResult.PlayerRetreated);
