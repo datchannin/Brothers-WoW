@@ -52,7 +52,7 @@ this.gnoll_assassin <- this.inherit("scripts/entity/tactical/actor", {
 		this.m.SoundVolume[this.Const.Sound.ActorEvent.Death] = 0.9;
 		this.m.SoundVolume[this.Const.Sound.ActorEvent.DamageReceived] = 0.9;
 		this.m.SoundVolume[this.Const.Sound.ActorEvent.Idle] = 1.25;
-		this.m.AIAgent = this.new("scripts/ai/tactical/agents/orc_young_agent");
+		this.m.AIAgent = this.new("scripts/ai/tactical/agents/gnoll_assassin_agent");
 		this.m.AIAgent.setActor(this);
 	}
 
