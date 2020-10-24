@@ -1193,6 +1193,7 @@ this.skill <- {
 			return 100;
 		}
 
+		local allowDiversion = this.m.IsRanged && this.m.MaxRangeBonus > 1;
 		local defenderProperties = _targetEntity.getSkills().buildPropertiesForDefense(user, this);
 		local skill = this.m.IsRanged ? properties.RangedSkill * properties.RangedSkillMult : properties.MeleeSkill * properties.MeleeSkillMult;
 		local defense = _targetEntity.getDefense(user, this, defenderProperties);
@@ -1234,7 +1235,7 @@ this.skill <- {
 		toHit = toHit + this.Math.max(0, 100 - toHit) * (1.0 - defenderProperties.TotalDefenseToHitMult);
 		local userTile = user.getTile();
 
-		if (this.m.IsRanged && userTile.getDistanceTo(_targetEntity.getTile()) > 1)
+		if (allowDiversion && this.m.IsRanged && userTile.getDistanceTo(_targetEntity.getTile()) > 1)
 		{
 			local blockedTiles = this.Const.Tactical.Common.getBlockedTiles(userTile, _targetEntity.getTile(), user.getFaction(), true);
 
