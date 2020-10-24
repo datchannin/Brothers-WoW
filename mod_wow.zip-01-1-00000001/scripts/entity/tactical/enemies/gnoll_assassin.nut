@@ -223,6 +223,37 @@ this.gnoll_assassin <- this.inherit("scripts/entity/tactical/actor", {
 		this.getSprite("status_rooted").Scale = 0.55;
 		this.m.Skills.add(this.new("scripts/skills/special/double_grip"));
 		this.m.Skills.add(this.new("scripts/skills/actives/hand_to_hand"));
+		this.m.Skills.add(this.new("scripts/skills/actives/recover_skill"));
+		this.m.Skills.add(this.new("scripts/skills/actives/footwork"));
+		this.m.Skills.add(this.new("scripts/skills/perks/perk_pathfinder"));
+		this.m.Skills.add(this.new("scripts/skills/perks/perk_nine_lives"));
+		this.m.Skills.add(this.new("scripts/skills/perks/perk_battle_forged"));
+		this.m.Skills.add(this.new("scripts/skills/perks/perk_brawny"));
+		this.m.Skills.add(this.new("scripts/skills/perks/perk_berserk"));
+		this.m.Skills.add(this.new("scripts/skills/perks/perk_adrenalin"));
+		this.m.Skills.add(this.new("scripts/skills/perks/perk_backstabber"));
+		this.m.Skills.add(this.new("scripts/skills/perks/perk_coup_de_grace"));
+		this.m.Skills.add(this.new("scripts/skills/perks/perk_duelist"));
+
+		// ROGUE MAIN SPEC
+		this.m.Skills.add(this.new("scripts/skills/perks/perk_wow_exposearmor"));
+		this.m.Skills.add(this.new("scripts/skills/perks/perk_wow_endurance"));
+		this.m.Skills.add(this.new("scripts/skills/perks/perk_wow_initiative"));
+
+		r = this.Math.rand(1, 3);
+		if (r == 1)
+		{
+
+		}
+		else if (r == 2)
+		{
+
+		}
+		else
+		{
+
+			this.m.Skills.add(this.new("scripts/skills/perks/perk_steel_brow"));
+		}
 
 		if (this.Const.DLC.Unhold)
 		{
