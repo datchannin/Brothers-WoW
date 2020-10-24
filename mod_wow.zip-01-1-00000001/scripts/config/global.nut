@@ -5,9 +5,9 @@ gt.Const.Serialization <- {
 };
 
 gt.Const.Expantion <- {
-	WoW = true,
+	WoW = false,
 	gnoll_count = 1,
-	gnoll_days = 1
+	gnoll_days = 90
 }
 
 gt.Const.DLC <- {

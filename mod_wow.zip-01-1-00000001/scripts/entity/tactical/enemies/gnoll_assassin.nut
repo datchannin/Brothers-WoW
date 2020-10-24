@@ -240,7 +240,7 @@ this.gnoll_assassin <- this.inherit("scripts/entity/tactical/actor", {
 		this.m.Skills.add(this.new("scripts/skills/perks/perk_wow_endurance"));
 		this.m.Skills.add(this.new("scripts/skills/perks/perk_wow_initiative"));
 
-		r = this.Math.rand(1, 3);
+		local r = this.Math.rand(1, 3);
 		if (r == 1)
 		{
 

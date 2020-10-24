@@ -12,17 +12,18 @@ if (!("Spawn" in gt.Const.World))
 }
 
 gt.Const.World.Spawn.Gnolls <- [
+	// EQUIAL BRUTES AND ASSASSINS
 	{
 		Body = "figure_wildman_01",
 		Troops = [
 			{
 				Type = this.Const.World.Spawn.Troops.GnollBrute,
-				Num = 4
+				Num = 2
 			},
 			{
 				Type = this.Const.World.Spawn.Troops.GnollAssassin,
 				Num = 2
-			}
+			},
 			{
 				Type = this.Const.World.Spawn.Troops.GnollPoacher,
 				Num = 2
@@ -34,6 +35,485 @@ gt.Const.World.Spawn.Gnolls <- [
 			{
 				Type = this.Const.World.Spawn.Troops.GnollMystic,
 				Num = 1
+			}
+		]
+	},
+	{
+		Body = "figure_wildman_01",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.GnollBrute,
+				Num = 2
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.GnollAssassin,
+				Num = 2
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.GnollPoacher,
+				Num = 3
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.GnollShaman,
+				Num = 0
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.GnollMystic,
+				Num = 0
+			}
+		]
+	},
+	{
+		Body = "figure_wildman_01",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.GnollBrute,
+				Num = 2
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.GnollAssassin,
+				Num = 2
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.GnollPoacher,
+				Num = 1
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.GnollShaman,
+				Num = 0
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.GnollMystic,
+				Num = 2
+			}
+		]
+	},
+	{
+		Body = "figure_wildman_01",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.GnollBrute,
+				Num = 2
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.GnollAssassin,
+				Num = 2
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.GnollPoacher,
+				Num = 0
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.GnollShaman,
+				Num = 0
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.GnollMystic,
+				Num = 3
+			}
+		]
+	},
+	// MORE ASSASSINS
+	{
+		Body = "figure_wildman_01",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.GnollBrute,
+				Num = 1
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.GnollAssassin,
+				Num = 3
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.GnollPoacher,
+				Num = 2
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.GnollShaman,
+				Num = 0
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.GnollMystic,
+				Num = 1
+			}
+		]
+	},
+	{
+		Body = "figure_wildman_01",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.GnollBrute,
+				Num = 1
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.GnollAssassin,
+				Num = 3
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.GnollPoacher,
+				Num = 3
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.GnollShaman,
+				Num = 0
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.GnollMystic,
+				Num = 0
+			}
+		]
+	},
+	{
+		Body = "figure_wildman_01",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.GnollBrute,
+				Num = 1
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.GnollAssassin,
+				Num = 3
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.GnollPoacher,
+				Num = 1
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.GnollShaman,
+				Num = 0
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.GnollMystic,
+				Num = 2
+			}
+		]
+	},
+	{
+		Body = "figure_wildman_01",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.GnollBrute,
+				Num = 1
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.GnollAssassin,
+				Num = 3
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.GnollPoacher,
+				Num = 0
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.GnollShaman,
+				Num = 0
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.GnollMystic,
+				Num = 3
+			}
+		]
+	},
+	// MORE BRUTES
+	{
+		Body = "figure_wildman_01",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.GnollBrute,
+				Num = 3
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.GnollAssassin,
+				Num = 1
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.GnollPoacher,
+				Num = 2
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.GnollShaman,
+				Num = 0
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.GnollMystic,
+				Num = 1
+			}
+		]
+	},
+	{
+		Body = "figure_wildman_01",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.GnollBrute,
+				Num = 3
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.GnollAssassin,
+				Num = 1
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.GnollPoacher,
+				Num = 3
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.GnollShaman,
+				Num = 0
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.GnollMystic,
+				Num = 0
+			}
+		]
+	},
+	{
+		Body = "figure_wildman_01",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.GnollBrute,
+				Num = 3
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.GnollAssassin,
+				Num = 1
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.GnollPoacher,
+				Num = 1
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.GnollShaman,
+				Num = 0
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.GnollMystic,
+				Num = 2
+			}
+		]
+	},
+	{
+		Body = "figure_wildman_01",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.GnollBrute,
+				Num = 3
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.GnollAssassin,
+				Num = 1
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.GnollPoacher,
+				Num = 0
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.GnollShaman,
+				Num = 0
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.GnollMystic,
+				Num = 3
+			}
+		]
+	},
+	// MAXIMUM ASSASSINS
+	{
+		Body = "figure_wildman_01",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.GnollBrute,
+				Num = 0
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.GnollAssassin,
+				Num = 4
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.GnollPoacher,
+				Num = 2
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.GnollShaman,
+				Num = 0
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.GnollMystic,
+				Num = 1
+			}
+		]
+	},
+	{
+		Body = "figure_wildman_01",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.GnollBrute,
+				Num = 0
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.GnollAssassin,
+				Num = 4
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.GnollPoacher,
+				Num = 3
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.GnollShaman,
+				Num = 0
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.GnollMystic,
+				Num = 0
+			}
+		]
+	},
+	{
+		Body = "figure_wildman_01",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.GnollBrute,
+				Num = 0
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.GnollAssassin,
+				Num = 4
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.GnollPoacher,
+				Num = 1
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.GnollShaman,
+				Num = 0
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.GnollMystic,
+				Num = 2
+			}
+		]
+	},
+	{
+		Body = "figure_wildman_01",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.GnollBrute,
+				Num = 0
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.GnollAssassin,
+				Num = 4
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.GnollPoacher,
+				Num = 0
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.GnollShaman,
+				Num = 0
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.GnollMystic,
+				Num = 3
+			}
+		]
+	},
+	// MAXIMUM BRUTES
+	{
+		Body = "figure_wildman_01",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.GnollBrute,
+				Num = 4
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.GnollAssassin,
+				Num = 0
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.GnollPoacher,
+				Num = 2
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.GnollShaman,
+				Num = 0
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.GnollMystic,
+				Num = 1
+			}
+		]
+	},
+	{
+		Body = "figure_wildman_01",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.GnollBrute,
+				Num = 4
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.GnollAssassin,
+				Num = 0
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.GnollPoacher,
+				Num = 3
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.GnollShaman,
+				Num = 0
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.GnollMystic,
+				Num = 0
+			}
+		]
+	},
+	{
+		Body = "figure_wildman_01",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.GnollBrute,
+				Num = 4
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.GnollAssassin,
+				Num = 0
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.GnollPoacher,
+				Num = 1
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.GnollShaman,
+				Num = 0
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.GnollMystic,
+				Num = 2
+			}
+		]
+	},
+	{
+		Body = "figure_wildman_01",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.GnollBrute,
+				Num = 4
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.GnollAssassin,
+				Num = 0
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.GnollPoacher,
+				Num = 0
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.GnollShaman,
+				Num = 0
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.GnollMystic,
+				Num = 3
 			}
 		]
 	}
