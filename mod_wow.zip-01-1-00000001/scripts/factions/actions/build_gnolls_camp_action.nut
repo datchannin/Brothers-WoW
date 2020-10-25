@@ -32,7 +32,7 @@ this.build_gnolls_camp_action <- this.inherit("scripts/factions/faction_action",
 	{
 		local camp;
 
-		this.logInfo("!!!SPAWN GNOLLS LOCATION!!!");
+		//this.logInfo("!!!SPAWN GNOLLS LOCATION!!!");
 
 		local tile = this.getTileToSpawnLocation(this.Const.Factions.BuildCampTries, [
 			this.Const.World.TerrainType.Mountains
