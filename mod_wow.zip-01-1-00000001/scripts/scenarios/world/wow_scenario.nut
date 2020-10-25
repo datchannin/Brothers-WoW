@@ -222,10 +222,19 @@ this.wow_scenario <- this.inherit("scripts/scenarios/world/starting_scenario", {
 		item = this.new("scripts/items/weapons/noble_sword");
 		this.World.Assets.getStash().add(item);
 
+		item = this.new("scripts/items/armor/warlock_t0_armor");
+		this.World.Assets.getStash().add(item);
+
+		item = this.new("scripts/items/helmets/warlock_t0_helm");
+		this.World.Assets.getStash().add(item);
+
 		item = this.new("scripts/items/armor/mage_t0_armor");
 		this.World.Assets.getStash().add(item);
 
 		item = this.new("scripts/items/helmets/mage_t0_helmet");
+		this.World.Assets.getStash().add(item);
+
+		item = this.new("scripts/items/helmets/priest_t0_helmet");
 		this.World.Assets.getStash().add(item);
 
 		this.World.Assets.m.Money = this.World.Assets.m.Money + 40000;
