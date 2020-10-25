@@ -195,7 +195,7 @@ this.wow_scenario_gnoll_invasion <- this.inherit("scripts/scenarios/world/starti
 		this.Time.scheduleEvent(this.TimeUnit.Real, 1000, function ( _tag )
 		{
 			this.Music.setTrackList(this.Const.Music.IntroTracks, this.Const.Music.CrossFadeTime);
-			this.World.Events.fire("event.early_access_scenario_intro");
+			this.World.Events.fire("event.gnoll_invasion_intro_event");
 		}, null);
 	}
 });
