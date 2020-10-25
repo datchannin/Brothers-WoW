@@ -29,8 +29,8 @@ this.mage_t0_helmet <- this.inherit("scripts/items/helmets/helmet", {
 	{
 		local variant = this.m.Variant > 9 ? this.m.Variant : "0" + this.m.Variant;
 		this.m.Sprite = "bust_wow_mage_helmet_" + variant;
-		this.m.SpriteDamaged = "bust_wow_helmet_" + variant + "_damaged";
-		this.m.SpriteCorpse = "bust_wow_helmet_" + variant + "_dead";
+		this.m.SpriteDamaged = "bust_wow_mage_helmet_" + variant + "_damaged";
+		this.m.SpriteCorpse = "bust_wow_mage_helmet_" + variant + "_dead";
 		this.m.IconLarge = "";
 		this.m.Icon = "helmets/icon_wow_mage_helmet_" + variant + ".png";
 	}

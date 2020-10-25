@@ -25,8 +25,8 @@ this.mage_t0_armor <- this.inherit("scripts/items/armor/armor", {
 	{
 		local variant = this.m.Variant > 9 ? this.m.Variant : "0" + this.m.Variant;
 		this.m.Sprite = "bust_wow_mage_body_" + variant;
-		this.m.SpriteDamaged = "bust_wow_body_" + variant + "_damaged";
-		this.m.SpriteCorpse = "bust_wow_body_" + variant + "_dead";
+		this.m.SpriteDamaged = "bust_wow_mage_body_" + variant + "_damaged";
+		this.m.SpriteCorpse = "bust_wow_mage_body_" + variant + "_dead";
 		this.m.IconLarge = "armor/inventory_wow_mage_body_" + variant + ".png";
 		this.m.Icon = "armor/icon_wow_mage_body_" + variant + ".png";
 	}
