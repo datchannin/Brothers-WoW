@@ -7,8 +7,8 @@ this.mage_t0_helmet <- this.inherit("scripts/items/helmets/helmet", {
 	{
 		this.helmet.create();
 		this.m.ID = "armor.head.mage_t0_helmet";
-		this.m.Name = "Magister\'s Crown";
-		this.m.Description = "A fire crown for Mages. This fire does not burn.";
+		this.m.Name = "Magister\'s Hood";
+		this.m.Description = "A fire hood for Mages. This fire does not burn.";
 		this.m.ShowOnCharacter = true;
 		this.m.HideCharacterHead = false;
 		this.m.HideCorpseHead = false;
@@ -32,7 +32,7 @@ this.mage_t0_helmet <- this.inherit("scripts/items/helmets/helmet", {
 		this.m.SpriteDamaged = "bust_wow_helmet_" + variant + "_damaged";
 		this.m.SpriteCorpse = "bust_wow_helmet_" + variant + "_dead";
 		this.m.IconLarge = "";
-		this.m.Icon = "helmets/inventory_wow_helmet_" + variant + ".png";
+		this.m.Icon = "helmets/icon_wow_mage_helmet_" + variant + ".png";
 	}
 
 	function getTooltip()
