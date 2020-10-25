@@ -5,7 +5,7 @@ this.wow_scenario_gnoll_invasion <- this.inherit("scripts/scenarios/world/starti
 	{
 		this.m.ID = "scenario.gnoll_invasion";
 		this.m.Name = "Gnoll Invasion";
-		this.m.Description = "[p=c][img]gfx/ui/events/event_wow_gnoll_invasion.png[/img][/p][p]This scenario was created for debug WoW characters, new perks, skills and abilities. Use them and play. If you find any bug - please, inform the github repo.[/p]";
+		this.m.Description = "[p=c][img]gfx/ui/events/event_wow_gnoll_invasion.png[/img][/p][p]Brave warriors from all over the world have united under your banner. Only a strong and close-knit squad can destroy the settlements of the gnoll tribes.\n\n[color=#bcad8c]New backgrounds:[/color] Start with new characters: warrior, paladin, hunter, rogue, druid, warlock, mage and priest at the same time.\n[color=#bcad8c]Perk Tree:[/color] New characters use separate perk trees.\n[color=#bcad8c]Full raid:[/color] Take up to 18 men into battle at once, and have up to 27 in your roster.\n[color=#bcad8c]Gnoll Location:[/color] Find brothers strong enough to defeat gnoll squads from new locations.[/p]";
 		this.m.Difficulty = 3;
 		this.m.Order = 473;
 	}
@@ -119,7 +119,7 @@ this.wow_scenario_gnoll_invasion <- this.inherit("scripts/scenarios/world/starti
 			bros[i].m.LevelUps = 0;
 		}
 
-		this.World.Assets.m.Money = this.World.Assets.m.Money + 10000;
+		this.World.Assets.m.Money = this.World.Assets.m.Money + 15000;
 		this.World.Assets.getStash().add(this.new("scripts/items/supplies/ground_grains_item"));
 		this.World.Assets.getStash().add(this.new("scripts/items/supplies/ground_grains_item"));
 		this.World.Assets.getStash().add(this.new("scripts/items/supplies/ground_grains_item"));
@@ -135,7 +135,7 @@ this.wow_scenario_gnoll_invasion <- this.inherit("scripts/scenarios/world/starti
 	function onInit()
 	{
 		this.World.Assets.m.BrothersMax = 27;
-		this.World.Assets.m.BrothersMaxInCombat = 16;
+		this.World.Assets.m.BrothersMaxInCombat = 18;
 		this.World.Assets.m.BrothersScaleMax = 27;
 	}
 
