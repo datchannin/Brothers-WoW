@@ -29,7 +29,7 @@ gt.Const.Tactical.Actor.GnollRookie <- {
 		0
 	],
 	FatigueRecoveryRate = 25,
-	DamageTotalMult = 1.15
+	DamageTotalMult = 1.05
 };
 
 gt.Const.Tactical.Actor.GnollMystic <- {
@@ -72,7 +72,7 @@ gt.Const.Tactical.Actor.GnollShaman <- {
 };
 gt.Const.Tactical.Actor.GnollPoacher <- {
 	XP = 780,
-	ActionPoints = 12,
+	ActionPoints = 9,
 	Hitpoints = 250,
 	Bravery = 95,
 	Stamina = 230,
@@ -88,11 +88,11 @@ gt.Const.Tactical.Actor.GnollPoacher <- {
 		0
 	],
 	FatigueRecoveryRate = 35,
-	DamageTotalMult = 1.3
+	DamageTotalMult = 1.05
 };
 gt.Const.Tactical.Actor.GnollAssassin <- {
 	XP = 820,
-	ActionPoints = 12,
+	ActionPoints = 9,
 	Hitpoints = 320,
 	Bravery = 110,
 	Stamina = 300,
@@ -108,11 +108,11 @@ gt.Const.Tactical.Actor.GnollAssassin <- {
 		0
 	],
 	FatigueRecoveryRate = 35,
-	DamageTotalMult = 1.7
+	DamageTotalMult = 1.05
 };
 gt.Const.Tactical.Actor.GnollBrute <- {
 	XP = 950,
-	ActionPoints = 12,
+	ActionPoints = 9,
 	Hitpoints = 370,
 	Bravery = 150,
 	Stamina = 270,
@@ -128,5 +128,5 @@ gt.Const.Tactical.Actor.GnollBrute <- {
 		0
 	],
 	FatigueRecoveryRate = 35,
-	DamageTotalMult = 1.3
+	DamageTotalMult = 1.1
 };
