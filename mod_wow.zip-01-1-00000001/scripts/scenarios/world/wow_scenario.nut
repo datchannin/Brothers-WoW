@@ -270,12 +270,10 @@ this.wow_scenario <- this.inherit("scripts/scenarios/world/starting_scenario", {
 		item = this.new("scripts/items/helmets/warrior_t0_helmet");
 		this.World.Assets.getStash().add(item);
 		
-		item = this.new("scripts/items/accessory/warrior_t0_shoulders");
-		this.World.Assets.getStash().add(item);
-
-		for (local i = 0; i < 20; i=++i)
+		for (local i = 0; i < 10; i=++i)
 		{
 			this.World.Assets.getStash().add(this.new("scripts/items/armor_upgrades/additional_padding_upgrade"));
+			this.World.Assets.getStash().add(this.new("scripts/items/armor_upgrades/warrior_t0_update"));
 		}
 
 		this.World.Assets.m.Money = this.World.Assets.m.Money + 40000;
