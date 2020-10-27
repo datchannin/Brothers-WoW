@@ -210,7 +210,7 @@ this.wow_scenario <- this.inherit("scripts/scenarios/world/starting_scenario", {
 			this.World.Assets.getStash().add(this.new("scripts/items/misc/potion_of_oblivion_item"));
 		}
 
-		for (local i = 0; i < 40; i=++i)
+		for (local i = 0; i < 20; i=++i)
 		{
 			this.World.Assets.getStash().add(this.new("scripts/items/misc/potion_of_exp_item"));
 		}
@@ -272,6 +272,11 @@ this.wow_scenario <- this.inherit("scripts/scenarios/world/starting_scenario", {
 		
 		item = this.new("scripts/items/accessory/warrior_t0_shoulders");
 		this.World.Assets.getStash().add(item);
+
+		for (local i = 0; i < 20; i=++i)
+		{
+			this.World.Assets.getStash().add(this.new("scripts/items/armor_upgrades/additional_padding_upgrade"));
+		}
 
 		this.World.Assets.m.Money = this.World.Assets.m.Money + 40000;
 	}
