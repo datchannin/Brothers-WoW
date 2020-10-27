@@ -269,6 +269,9 @@ this.wow_scenario <- this.inherit("scripts/scenarios/world/starting_scenario", {
 
 		item = this.new("scripts/items/helmets/warrior_t0_helmet");
 		this.World.Assets.getStash().add(item);
+		
+		item = this.new("scripts/items/accessory/warrior_t0_shoulders");
+		this.World.Assets.getStash().add(item);
 
 		this.World.Assets.m.Money = this.World.Assets.m.Money + 40000;
 	}

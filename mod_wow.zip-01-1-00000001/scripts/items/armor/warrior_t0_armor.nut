@@ -8,7 +8,7 @@ this.warrior_t0_armor <- this.inherit("scripts/items/armor/armor", {
 		this.armor.create();
 		this.m.ID = "armor.body.warrior_t0_armor";
 		this.m.Name = "Breastplate of Valor";
-		this.m.Description = "Solid and heavy metal breastplate protects the warrior\'s body from all types of weapons";
+		this.m.Description = "Solid and heavy metal breastplate protects the warrior\'s body from all types of weapons.";
 		this.m.IsDroppedAsLoot = true;
 		this.m.ShowOnCharacter = true;
 		this.m.Variant = 1;
