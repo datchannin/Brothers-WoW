@@ -274,6 +274,7 @@ this.wow_scenario <- this.inherit("scripts/scenarios/world/starting_scenario", {
 		{
 			this.World.Assets.getStash().add(this.new("scripts/items/armor_upgrades/additional_padding_upgrade"));
 			this.World.Assets.getStash().add(this.new("scripts/items/armor_upgrades/warrior_t0_update"));
+			this.World.Assets.getStash().add(this.new("scripts/items/armor_upgrades/paladin_t0_update"));
 		}
 
 		this.World.Assets.m.Money = this.World.Assets.m.Money + 40000;

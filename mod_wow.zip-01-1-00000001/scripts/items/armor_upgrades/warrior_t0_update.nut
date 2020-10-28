@@ -5,7 +5,7 @@ this.warrior_t0_update <- this.inherit("scripts/items/armor_upgrades/armor_upgra
 		this.armor_upgrade.create();
 		this.m.ID = "armor_upgrade.warrior_t0_update";
 		this.m.Name = "Spaulders of Valor";
-		this.m.Description = "Solid and heavy metal helmet of the Warriors. The best head protection against all weapons.";
+		this.m.Description = "Solid and heavy metal shoulders protects the warrior\'s neck from all types of weapons.";
 		this.m.ArmorDescription = "This armor is used with Spaulders of Valor that gives additional properties.";
 		this.m.Icon = "armor_upgrades/upgrade_wow_warrior_shoulders_t0.png";
 		this.m.IconLarge = this.m.Icon;
