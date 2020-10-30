@@ -24,22 +24,21 @@ this.gnoll_camp_location <- this.inherit("scripts/entity/world/location", {
 		this.m.Name = this.World.EntityManager.getUniqueLocationName(this.Const.World.WarcraftLocationNames.GnollCamp);
 		this.location.onSpawned();
 
-		local gnoll_melee = 4;
-		local gnoll_range = 3;
-		local r = 0;
+		local gnoll_brutes = 2;
+		local gnoll_assassin = 1;
+		local gnoll_mystic = 1;
+		local gnoll_poacher = 1;
 
 		//SPAWN BRUTES
-		r = this.Math.rand(0, gnoll_melee);
-		for( local i = 0; i < r; i = ++i )
+		for( local i = 0; i < gnoll_brutes; i = ++i )
 		{
 			this.Const.World.Common.addTroop(this, {
 				Type = this.Const.World.Spawn.Troops.GnollBrute
 			}, false);
 		}
-		gnoll_melee = gnoll_melee - r;
 
 		//SPAWN ASSASSINS
-		for( local i = 0; i < gnoll_melee; i = ++i )
+		for( local i = 0; i < gnoll_assassin; i = ++i )
 		{
 			this.Const.World.Common.addTroop(this, {
 				Type = this.Const.World.Spawn.Troops.GnollAssassin
@@ -47,17 +46,15 @@ this.gnoll_camp_location <- this.inherit("scripts/entity/world/location", {
 		}
 
 		//SPAWN MYSTICS
-		r = this.Math.rand(0, gnoll_range);
-		for( local i = 0; i < r; i = ++i )
+		for( local i = 0; i < gnoll_mystic; i = ++i )
 		{
 			this.Const.World.Common.addTroop(this, {
 				Type = this.Const.World.Spawn.Troops.GnollMystic
 			}, false);
 		}
-		gnoll_range = gnoll_range - r;
 
 		//SPAWN POACHERS
-		for( local i = 0; i < gnoll_range; i = ++i )
+		for( local i = 0; i < gnoll_poacher; i = ++i )
 		{
 			this.Const.World.Common.addTroop(this, {
 				Type = this.Const.World.Spawn.Troops.GnollPoacher
