@@ -246,8 +246,7 @@ this.gnoll_poacher <- this.inherit("scripts/entity/tactical/actor", {
 			this.m.Items.equip(this.new("scripts/items/weapons/gnolls/gnoll_crossbow"));
 		}
 	
-		this.m.Items.equip(this.new("scripts/items/ammo/quiver_of_bolts"));
-		this.m.Items.addToBag(this.new("scripts/items/weapons/gnolls/gnoll_dagger"));
+		this.m.Items.addToBag(this.new("scripts/items/weapons/gnolls/gnoll_mace"));
 
 		if (this.m.Items.getItemAtSlot(this.Const.ItemSlot.Body) == null)
 		{

@@ -194,8 +194,10 @@ this.gnoll_assassin <- this.inherit("scripts/entity/tactical/actor", {
 		this.actor.onInit();
 		local b = this.m.BaseProperties;
 		b.setValues(this.Const.Tactical.Actor.GnollAssassin);
+		b.IsSpecializedInMaces = true;
+		b.IsMasterInMaces = true;
 		b.IsSpecializedInAxes = true;
-		b.IsMasterInDaggers = true;
+		b.IsMasterInAxes = true;
 		this.m.ActionPoints = b.ActionPoints;
 		this.m.Hitpoints = b.Hitpoints;
 		this.m.CurrentProperties = clone b;
@@ -245,10 +247,6 @@ this.gnoll_assassin <- this.inherit("scripts/entity/tactical/actor", {
 		{
 
 		}
-		else if (r == 2)
-		{
-
-		}
 		else
 		{
 
@@ -281,7 +279,7 @@ this.gnoll_assassin <- this.inherit("scripts/entity/tactical/actor", {
 		{
 			if (this.m.Items.getItemAtSlot(this.Const.ItemSlot.Mainhand) == null)
 			{
-				this.m.Items.equip(this.new("scripts/items/weapons/gnolls/gnoll_dagger"));
+				this.m.Items.equip(this.new("scripts/items/weapons/gnolls/gnoll_mace"));
 			}
 		}
 
