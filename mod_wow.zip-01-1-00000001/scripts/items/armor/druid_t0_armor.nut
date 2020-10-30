@@ -8,7 +8,7 @@ this.druid_t0_armor <- this.inherit("scripts/items/armor/armor", {
 		this.armor.create();
 		this.m.ID = "armor.body.druid_t0_armor";
 		this.m.Name = "Wildheart Vest";
-		this.m.Description = "Druid armor. Colors of nature and Emerald Dream.";
+		this.m.Description = "Druid armor. Colors of Nature and Emerald Dream.";
 		this.m.IsDroppedAsLoot = true;
 		this.m.ShowOnCharacter = true;
 		this.m.Variant = 1;

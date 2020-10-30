@@ -212,7 +212,7 @@ this.wow_scenario <- this.inherit("scripts/scenarios/world/starting_scenario", {
 
 		for (local i = 0; i < 20; i=++i)
 		{
-			this.World.Assets.getStash().add(this.new("scripts/items/misc/potion_of_exp_item"));
+			//this.World.Assets.getStash().add(this.new("scripts/items/misc/potion_of_exp_item"));
 		}
 
 		local item = this.new("scripts/items/tools/player_banner");
@@ -276,6 +276,7 @@ this.wow_scenario <- this.inherit("scripts/scenarios/world/starting_scenario", {
 			this.World.Assets.getStash().add(this.new("scripts/items/armor_upgrades/warrior_t0_update"));
 			this.World.Assets.getStash().add(this.new("scripts/items/armor_upgrades/paladin_t0_update"));
 			this.World.Assets.getStash().add(this.new("scripts/items/armor_upgrades/hunter_t0_update"));
+			this.World.Assets.getStash().add(this.new("scripts/items/armor_upgrades/druid_t0_update"));
 		}
 
 		this.World.Assets.m.Money = this.World.Assets.m.Money + 40000;
