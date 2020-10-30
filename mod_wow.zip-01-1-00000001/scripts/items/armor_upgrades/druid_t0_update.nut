@@ -5,7 +5,7 @@ this.druid_t0_update <- this.inherit("scripts/items/armor_upgrades/armor_upgrade
 		this.armor_upgrade.create();
 		this.m.ID = "armor_upgrade.druid_t0_update";
 		this.m.Name = "Wildheart Spaulders";
-		this.m.Description = "Strong and tough shoulders protects the druid\'s neck from all types of weapons.";
+		this.m.Description = "Strong and tough shoulders protects the druid\'s neck from all types of weapons. Can be only applied to Wildheart Vest.";
 		this.m.ArmorDescription = "This armor is used with Wildheart Spaulders that gives additional properties.";
 		this.m.Icon = "armor_upgrades/upgrade_wow_druid_shoulders_t0.png";
 		this.m.IconLarge = this.m.Icon;
@@ -38,6 +38,31 @@ this.druid_t0_update <- this.inherit("scripts/items/armor_upgrades/armor_upgrade
 			text = "[color=" + this.Const.UI.Color.NegativeValue + "]-4[/color] Maximum Fatigue"
 		});
 		return result;
+	}
+
+	function onUse( _actor, _item = null )
+	{
+		if (this.isUsed())
+		{
+			return false;
+		}
+
+		local armor = _item == null ? _actor.getItems().getItemAtSlot(this.Const.ItemSlot.Body) : _item;
+
+		if (armor == null)
+		{
+			return false;
+		}
+
+		if (armor.getName() != "Wildheart Vest")
+		{
+			return false;
+		}
+
+		this.Sound.play("sounds/inventory/armor_upgrade_use_01.wav", this.Const.Sound.Volume.Inventory);
+		armor.setUpgrade(this);
+
+		return true;
 	}
 
 	function onArmorTooltip( _result )

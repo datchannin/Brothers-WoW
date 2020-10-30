@@ -5,7 +5,7 @@ this.rogue_t0_update <- this.inherit("scripts/items/armor_upgrades/armor_upgrade
 		this.armor_upgrade.create();
 		this.m.ID = "armor_upgrade.rogue_t0_update";
 		this.m.Name = "Devout Mantle";
-		this.m.Description = "Strong and tough shoulders protects the rogue\'s neck from all types of weapons.";
+		this.m.Description = "Strong and tough shoulders protects the rogue\'s neck from all types of weapons. Can be only applied to Shadowcraft Tunic.";
 		this.m.ArmorDescription = "This armor is used with Devout Mantle that gives additional properties.";
 		this.m.Icon = "armor_upgrades/upgrade_wow_rogue_shoulders_t0.png";
 		this.m.IconLarge = this.m.Icon;
@@ -38,6 +38,31 @@ this.rogue_t0_update <- this.inherit("scripts/items/armor_upgrades/armor_upgrade
 			text = "[color=" + this.Const.UI.Color.NegativeValue + "]-4[/color] Maximum Fatigue"
 		});
 		return result;
+	}
+
+	function onUse( _actor, _item = null )
+	{
+		if (this.isUsed())
+		{
+			return false;
+		}
+
+		local armor = _item == null ? _actor.getItems().getItemAtSlot(this.Const.ItemSlot.Body) : _item;
+
+		if (armor == null)
+		{
+			return false;
+		}
+
+		if (armor.getName() != "Shadowcraft Tunic")
+		{
+			return false;
+		}
+
+		this.Sound.play("sounds/inventory/armor_upgrade_use_01.wav", this.Const.Sound.Volume.Inventory);
+		armor.setUpgrade(this);
+
+		return true;
 	}
 
 	function onArmorTooltip( _result )

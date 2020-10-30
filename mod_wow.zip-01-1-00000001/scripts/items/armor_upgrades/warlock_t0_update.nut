@@ -5,7 +5,7 @@ this.warlock_t0_update <- this.inherit("scripts/items/armor_upgrades/armor_upgra
 		this.armor_upgrade.create();
 		this.m.ID = "armor_upgrade.warlock_t0_update";
 		this.m.Name = "Dreadmist Mantle";
-		this.m.Description = "Strong and tough shoulders protects the warlock\'s neck from all types of weapons.";
+		this.m.Description = "Strong and tough shoulders protects the warlock\'s neck from all types of weapons. Can be only applied to Dreadmist Robe.";
 		this.m.ArmorDescription = "This armor is used with Dreadmist Mantle that gives additional properties.";
 		this.m.Icon = "armor_upgrades/upgrade_wow_warlock_shoulders_t0.png";
 		this.m.IconLarge = this.m.Icon;
@@ -38,6 +38,31 @@ this.warlock_t0_update <- this.inherit("scripts/items/armor_upgrades/armor_upgra
 			text = "[color=" + this.Const.UI.Color.NegativeValue + "]-4[/color] Maximum Fatigue"
 		});
 		return result;
+	}
+
+	function onUse( _actor, _item = null )
+	{
+		if (this.isUsed())
+		{
+			return false;
+		}
+
+		local armor = _item == null ? _actor.getItems().getItemAtSlot(this.Const.ItemSlot.Body) : _item;
+
+		if (armor == null)
+		{
+			return false;
+		}
+
+		if (armor.getName() != "Dreadmist Robe")
+		{
+			return false;
+		}
+
+		this.Sound.play("sounds/inventory/armor_upgrade_use_01.wav", this.Const.Sound.Volume.Inventory);
+		armor.setUpgrade(this);
+
+		return true;
 	}
 
 	function onArmorTooltip( _result )
