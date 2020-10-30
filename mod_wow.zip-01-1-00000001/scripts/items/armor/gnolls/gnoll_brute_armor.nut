@@ -13,8 +13,8 @@ this.gnoll_brute_armor <- this.inherit("scripts/items/armor/armor", {
 		this.m.SlotType = this.Const.ItemSlot.Body;
 		this.m.ShowOnCharacter = true;
 		this.m.ImpactSound = this.Const.Sound.ArmorLeatherImpact;
-		this.m.Condition = 750;
-		this.m.ConditionMax = 750;
+		this.m.Condition = 1200;
+		this.m.ConditionMax = 1200;
 		this.m.StaminaModifier = -50;
 	}
 

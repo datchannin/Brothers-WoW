@@ -12,8 +12,8 @@ this.gnoll_brute_helmet <- this.inherit("scripts/items/helmets/helmet", {
 		this.m.IconLarge = "";
 		this.m.Icon = "";
 		this.m.ImpactSound = this.Const.Sound.ArmorHalfplateImpact;
-		this.m.Condition = 750;
-		this.m.ConditionMax = 750;
+		this.m.Condition = 1100;
+		this.m.ConditionMax = 1100;
 		this.m.StaminaModifier = -35;
 	}
 
