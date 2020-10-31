@@ -4,9 +4,9 @@ this.rogue_t0_update <- this.inherit("scripts/items/armor_upgrades/armor_upgrade
 	{
 		this.armor_upgrade.create();
 		this.m.ID = "armor_upgrade.rogue_t0_update";
-		this.m.Name = "Devout Mantle";
+		this.m.Name = "Shadowcraft Spaulders";
 		this.m.Description = "Strong and tough shoulders protects the rogue\'s neck from all types of weapons. Can be only applied to Shadowcraft Tunic.";
-		this.m.ArmorDescription = "This armor is used with Devout Mantle that gives additional properties.";
+		this.m.ArmorDescription = "This armor is used with Shadowcraft Spaulders that gives additional properties.";
 		this.m.Icon = "armor_upgrades/upgrade_wow_rogue_shoulders_t0.png";
 		this.m.IconLarge = this.m.Icon;
 		this.m.OverlayIcon = "armor_upgrades/icon_upgrade_wow_rogue_shoulders_t0.png";
