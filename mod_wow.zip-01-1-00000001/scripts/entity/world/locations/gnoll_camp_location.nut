@@ -71,6 +71,7 @@ this.gnoll_camp_location <- this.inherit("scripts/entity/world/location", {
 		this.dropMedicine(this.Math.rand(0, 5), _lootTable);
 		_lootTable.push(this.new("scripts/items/misc/token_chest_item"));
 		_lootTable.push(this.new("scripts/items/misc/token_helmet_item"));
+		_lootTable.push(this.new("scripts/items/misc/token_shoulder_item"));
 	}
 
 	function onInit()

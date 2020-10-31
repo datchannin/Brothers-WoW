@@ -1,11 +1,11 @@
-this.token_chest_item <- this.inherit("scripts/items/item", {
+this.token_shoulder_item <- this.inherit("scripts/items/item", {
 	m = {},
 	function create()
 	{
-		this.m.ID = "misc.token_chest";
-		this.m.Name = "Token Chest";
-		this.m.Description = "The base of an ancient chest once removed from a slain hero. An experienced artisan will be able to turn it into an excellent chest.";
-		this.m.Icon = "misc/inventory_token_chest.png";
+		this.m.ID = "misc.token_shoulder";
+		this.m.Name = "Token Shoulder";
+		this.m.Description = "The base of an ancient shoulder once removed from a slain hero. An experienced artisan will be able to turn it into an excellent shoulder.";
+		this.m.Icon = "misc/inventory_token_shoulder.png";
 		this.m.SlotType = this.Const.ItemSlot.None;
 		this.m.ItemType = this.Const.Items.ItemType.Misc | this.Const.Items.ItemType.Crafting;
 		this.m.IsDroppedAsLoot = true;
