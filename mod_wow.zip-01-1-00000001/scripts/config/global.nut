@@ -7,7 +7,9 @@ gt.Const.Serialization <- {
 gt.Const.Expantion <- {
 	WoW = true,
 	gnoll_count = 1,
-	gnoll_days = 90
+	gnoll_days = 90,
+	badge_drop_enable = true,
+	badge_drop_chance = 1
 }
 
 gt.Const.DLC <- {
