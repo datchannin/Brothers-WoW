@@ -969,6 +969,102 @@ gt.Const.CharacterProperties <- {
 	T0_warlock_armor = false,
 	T0_warlock_shoulder = false,
 
+	function isFullSetWarriorT0()
+	{
+		if (T0_warrior_head && T0_warrior_armor && T0_warrior_shoulder)
+		{
+			return true;
+		}
+		else
+		{
+			return false;
+		}
+	}
+
+	function isFullSetPaladinT0()
+	{
+		if (T0_paladin_head && T0_paladin_armor && T0_paladin_shoulder)
+		{
+			return true;
+		}
+		else
+		{
+			return false;
+		}
+	}
+
+	function isFullSetHunterT0()
+	{
+		if (T0_hunter_head && T0_hunter_armor && T0_hunter_shoulder)
+		{
+			return true;
+		}
+		else
+		{
+			return false;
+		}
+	}
+
+	function isFullSetDruidT0()
+	{
+		if (T0_druid_head && T0_druid_armor && T0_druid_shoulder)
+		{
+			return true;
+		}
+		else
+		{
+			return false;
+		}
+	}
+
+	function isFullSetRogueT0()
+	{
+		if (T0_rogue_head && T0_rogue_armor && T0_rogue_shoulder)
+		{
+			return true;
+		}
+		else
+		{
+			return false;
+		}
+	}
+
+	function isFullSetPriestT0()
+	{
+		if (T0_priest_head && T0_priest_armor && T0_priest_shoulder)
+		{
+			return true;
+		}
+		else
+		{
+			return false;
+		}
+	}
+
+	function isFullSetMageT0()
+	{
+		if (T0_mage_head && T0_mage_armor && T0_mage_shoulder)
+		{
+			return true;
+		}
+		else
+		{
+			return false;
+		}
+	}
+
+	function isFullSetWarlockT0()
+	{
+		if (T0_warlock_head && T0_warlock_armor && T0_warlock_shoulder)
+		{
+			return true;
+		}
+		else
+		{
+			return false;
+		}
+	}
+
 	function getMeleeDefense()
 	{
 		if (this.MeleeDefense >= 0)
