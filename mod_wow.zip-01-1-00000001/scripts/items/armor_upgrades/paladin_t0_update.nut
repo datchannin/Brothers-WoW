@@ -1,5 +1,8 @@
 this.paladin_t0_update <- this.inherit("scripts/items/armor_upgrades/armor_upgrade", {
-	m = {},
+	m = {
+		BraveryValue = 10,
+		HitpointsValue = 15
+	},
 	function create()
 	{
 		this.armor_upgrade.create();
@@ -37,6 +40,21 @@ this.paladin_t0_update <- this.inherit("scripts/items/armor_upgrades/armor_upgra
 			icon = "ui/icons/fatigue.png",
 			text = "[color=" + this.Const.UI.Color.NegativeValue + "]-3[/color] Maximum Fatigue"
 		});
+		
+		result.push({
+			id = 14,
+			type = "text",
+			icon = "ui/icons/health.png",
+			text = "[color=" + this.Const.UI.Color.PositiveValue + "]+" + this.m.HitpointsValue + "[/color] Maximum Hitpoints"
+		});
+		
+		result.push({
+			id = 14,
+			type = "text",
+			icon = "ui/icons/bravery.png",
+			text = "[color=" + this.Const.UI.Color.PositiveValue + "]+" + this.m.BraveryValue + "[/color] Maximum Bravery"
+		});
+		
 		return result;
 	}
 
@@ -68,10 +86,25 @@ this.paladin_t0_update <- this.inherit("scripts/items/armor_upgrades/armor_upgra
 	function onUpdateProperties( _properties )
 	{
 		_properties.T0_paladin_shoulder = true;
+		_properties.Bravery += this.m.BraveryValue;
+		_properties.Hitpoints += this.m.HitpointsValue;
 	}
 
 	function onArmorTooltip( _result )
 	{
+		_result.push({
+			id = 14,
+			type = "text",
+			icon = "ui/icons/health.png",
+			text = "[color=" + this.Const.UI.Color.PositiveValue + "]+" + this.m.HitpointsValue + "[/color] Maximum Hitpoints"
+		});
+		
+		_result.push({
+			id = 14,
+			type = "text",
+			icon = "ui/icons/bravery.png",
+			text = "[color=" + this.Const.UI.Color.PositiveValue + "]+" + this.m.BraveryValue + "[/color] Maximum Bravery"
+		});
 	}
 
 });
