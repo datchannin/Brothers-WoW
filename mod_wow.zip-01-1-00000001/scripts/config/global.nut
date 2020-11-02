@@ -9,7 +9,7 @@ gt.Const.Expantion <- {
 	gnoll_count = 1,
 	gnoll_days = 90,
 	badge_drop_enable = true,
-	badge_drop_chance = 1
+	badge_drop_chance = 10
 }
 
 gt.Const.DLC <- {
