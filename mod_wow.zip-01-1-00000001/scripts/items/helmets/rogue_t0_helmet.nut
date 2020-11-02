@@ -21,7 +21,7 @@ this.rogue_t0_helmet <- this.inherit("scripts/items/helmets/helmet", {
 		this.m.Condition = 180;
 		this.m.ConditionMax = 180;
 		this.m.StaminaModifier = -8;
-		this.m.Vision = -2;
+		this.m.Vision = -1;
 	}
 
 	function updateVariant()

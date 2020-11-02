@@ -21,7 +21,7 @@ this.druid_t0_helmet <- this.inherit("scripts/items/helmets/helmet", {
 		this.m.Condition = 300;
 		this.m.ConditionMax = 300;
 		this.m.StaminaModifier = -15;
-		this.m.Vision = -3;
+		this.m.Vision = -2;
 	}
 
 	function updateVariant()

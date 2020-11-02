@@ -18,8 +18,8 @@ this.mage_t0_update <- this.inherit("scripts/items/armor_upgrades/armor_upgrade"
 		this.m.SpriteCorpseFront = "upgrade_wow_mage_shoulders_t0_dead";
 		this.m.SpriteCorpseBack = null;
 		this.m.Value = 200;
-		this.m.ConditionModifier = 60;
-		this.m.StaminaModifier = 4;
+		this.m.ConditionModifier = 30;
+		this.m.StaminaModifier = 0;
 	}
 
 	function getTooltip()
@@ -29,14 +29,9 @@ this.mage_t0_update <- this.inherit("scripts/items/armor_upgrades/armor_upgrade"
 			id = 14,
 			type = "text",
 			icon = "ui/icons/armor_body.png",
-			text = "[color=" + this.Const.UI.Color.PositiveValue + "]+60[/color] Durability"
+			text = "[color=" + this.Const.UI.Color.PositiveValue + "]+30[/color] Durability"
 		});
-		result.push({
-			id = 14,
-			type = "text",
-			icon = "ui/icons/fatigue.png",
-			text = "[color=" + this.Const.UI.Color.NegativeValue + "]-4[/color] Maximum Fatigue"
-		});
+
 		return result;
 	}
 
@@ -63,6 +58,11 @@ this.mage_t0_update <- this.inherit("scripts/items/armor_upgrades/armor_upgrade"
 		armor.setUpgrade(this);
 
 		return true;
+	}
+
+	function onUpdateProperties( _properties )
+	{
+		_properties.T0_mage_shoulder = true;
 	}
 
 	function onArmorTooltip( _result )
