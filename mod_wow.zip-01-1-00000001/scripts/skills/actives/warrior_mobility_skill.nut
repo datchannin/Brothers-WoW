@@ -2,7 +2,8 @@
 this.warrior_mobility_skill <- this.inherit("scripts/skills/skill", {
 	m = {
 		ChargeMax = 4,
-		ChargeCurrent = 0
+		ChargeCurrent = 0,
+		T0_warrior_armor = false
 	},
 	function create()
 	{
@@ -87,6 +88,24 @@ this.warrior_mobility_skill <- this.inherit("scripts/skills/skill", {
 		}
 		
 		return false;
+	}
+
+	function onUpdate( _properties )
+	{
+		local user = this.getContainer().getActor();
+		this.m.T0_warrior_armor = _properties.T0_warrior_armor;
+	}
+
+	function onAfterUpdate( _properties )
+	{
+		if (this.m.T0_warrior_armor)
+		{
+			this.m.FatigueCost = 6;
+		}
+		else
+		{
+			this.m.FatigueCost = 7;
+		}
 	}
 
 	function onTurnStart()
