@@ -1,5 +1,8 @@
 this.mage_t0_update <- this.inherit("scripts/items/armor_upgrades/armor_upgrade", {
-	m = {},
+	m = {
+		StaminaValue = 15,
+		HitpointsValue = 10
+	},
 	function create()
 	{
 		this.armor_upgrade.create();
@@ -30,6 +33,20 @@ this.mage_t0_update <- this.inherit("scripts/items/armor_upgrades/armor_upgrade"
 			type = "text",
 			icon = "ui/icons/armor_body.png",
 			text = "[color=" + this.Const.UI.Color.PositiveValue + "]+30[/color] Durability"
+		});
+
+		result.push({
+			id = 14,
+			type = "text",
+			icon = "ui/icons/health.png",
+			text = "[color=" + this.Const.UI.Color.PositiveValue + "]+" + this.m.HitpointsValue + "[/color] Maximum Hitpoints"
+		});
+		
+		result.push({
+			id = 14,
+			type = "text",
+			icon = "ui/icons/fatigue.png",
+			text = "[color=" + this.Const.UI.Color.PositiveValue + "]+" + this.m.StaminaValue + "[/color] Maximum Fatigue"
 		});
 
 		return result;
@@ -63,10 +80,25 @@ this.mage_t0_update <- this.inherit("scripts/items/armor_upgrades/armor_upgrade"
 	function onUpdateProperties( _properties )
 	{
 		_properties.T0_mage_shoulder = true;
+		_properties.Stamina += this.m.StaminaValue;
+		_properties.Hitpoints += this.m.HitpointsValue;
 	}
 
 	function onArmorTooltip( _result )
 	{
+		_result.push({
+			id = 14,
+			type = "text",
+			icon = "ui/icons/health.png",
+			text = "[color=" + this.Const.UI.Color.PositiveValue + "]+" + this.m.HitpointsValue + "[/color] Maximum Hitpoints"
+		});
+
+		_result.push({
+			id = 14,
+			type = "text",
+			icon = "ui/icons/fatigue.png",
+			text = "[color=" + this.Const.UI.Color.PositiveValue + "]+" + this.m.StaminaValue + "[/color] Maximum Fatigue"
+		});
 	}
 
 });
