@@ -38,6 +38,19 @@ this.warrior_t0_helmet <- this.inherit("scripts/items/helmets/helmet", {
 	{
 		local result = this.helmet.getTooltip();
 
+		result.push({
+			id = 14,
+			type = "text",
+			icon = "ui/icons/special.png",
+			text = "[color=" + this.Const.UI.Color.PositiveValue + "]\'Berserker Rage\'[/color] increases damage by additional [color=" + this.Const.UI.Color.PositiveValue + "]+5%[/color]"
+		});
+		result.push({
+			id = 14,
+			type = "text",
+			icon = "ui/icons/special.png",
+			text = "[color=" + this.Const.UI.Color.PositiveValue + "]\'Blood Thirst\'[/color] regain additional [color=" + this.Const.UI.Color.PositiveValue + "]+5[/color] hitpoints"
+		});
+
 		return result;
 	}
 

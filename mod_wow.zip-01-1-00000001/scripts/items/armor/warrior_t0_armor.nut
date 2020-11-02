@@ -33,6 +33,21 @@ this.warrior_t0_armor <- this.inherit("scripts/items/armor/armor", {
 	{
 		local result = this.armor.getTooltip();
 
+		result.push({
+			id = 14,
+			type = "text",
+			icon = "ui/icons/special.png",
+			text = "[color=" + this.Const.UI.Color.PositiveValue + "]\'Charge\'[/color] increases range by [color=" + this.Const.UI.Color.PositiveValue + "]+1[/color] tile"
+		});
+		result.push({
+			id = 14,
+			type = "text",
+			icon = "ui/icons/special.png",
+			text = "[color=" + this.Const.UI.Color.PositiveValue + "]\'Mobility\'[/color] cost will be reduced by [color=" + this.Const.UI.Color.PositiveValue + "]1[/color] point"
+		});
+
+		
+
 		return result;
 	}
 
