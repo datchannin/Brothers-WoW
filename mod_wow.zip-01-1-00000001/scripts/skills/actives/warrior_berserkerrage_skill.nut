@@ -78,7 +78,6 @@ this.warrior_berserkerrage_skill <- this.inherit("scripts/skills/skill", {
 		local effect = this.new("scripts/skills/effects/berserkerrage_effect");
 		effect.setValue(total_mult_value);
 		this.m.Container.add(effect);
-		//_user.getSkills().add(effect);
 
 		return true;
 	}
