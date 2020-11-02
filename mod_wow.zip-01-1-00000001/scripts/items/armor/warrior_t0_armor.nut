@@ -32,12 +32,6 @@ this.warrior_t0_armor <- this.inherit("scripts/items/armor/armor", {
 	function getTooltip()
 	{
 		local result = this.armor.getTooltip();
-//		result.push({
-//			id = 15,
-//			type = "text",
-//			icon = "ui/icons/health.png",
-//			text = "Maximum Hitpoints [color=" + this.Const.UI.Color.PositiveValue + "]+" + this.m.HitpointsModifier + "[/color]"
-//		});
 
 		return result;
 	}
@@ -45,6 +39,6 @@ this.warrior_t0_armor <- this.inherit("scripts/items/armor/armor", {
 	function onUpdateProperties( _properties )
 	{
 		this.armor.onUpdateProperties(_properties);
-//		_properties.T0_warrior_armor = true;
+		_properties.T0_warrior_armor = true;
 	}
 });
