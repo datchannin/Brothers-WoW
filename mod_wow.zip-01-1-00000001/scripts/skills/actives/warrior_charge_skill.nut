@@ -1,6 +1,8 @@
 /*BBWOW:This file is part of datchannin bbWoW mod, mod_version = 8.05, game_version = 1.4.0.45*/
 this.warrior_charge_skill <- this.inherit("scripts/skills/skill", {
-	m = {},
+	m = {
+		T0_warrior_armor = false
+	},
 	function create()
 	{
 		this.m.ID = "actives.charge_skill";
@@ -54,7 +56,7 @@ this.warrior_charge_skill <- this.inherit("scripts/skills/skill", {
 			id = 7,
 			type = "text",
 			icon = "ui/icons/vision.png",
-			text = "Has a maximum range of [color=" + this.Const.UI.Color.PositiveValue + "]4[/color] tiles"
+			text = "Has a maximum range of [color=" + this.Const.UI.Color.PositiveValue + "]" + this.m.MaxRange + "[/color] tiles"
 		});
 
 		if (this.getContainer().getActor().getCurrentProperties().IsRooted)
@@ -68,6 +70,24 @@ this.warrior_charge_skill <- this.inherit("scripts/skills/skill", {
 		}
 
 		return ret;
+	}
+
+	function onUpdate( _properties )
+	{
+		local user = this.getContainer().getActor();
+		this.m.T0_warrior_armor = _properties.T0_warrior_armor;
+	}
+
+	function onAfterUpdate( _properties )
+	{
+		if ((this.m.T0_warrior_armor))
+		{
+			this.m.MaxRange = 5;
+		}
+		else
+		{
+			this.m.MaxRange = 4;
+		}
 	}
 
 	function isUsable()
