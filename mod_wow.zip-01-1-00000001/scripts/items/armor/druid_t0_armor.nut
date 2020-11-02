@@ -13,10 +13,10 @@ this.druid_t0_armor <- this.inherit("scripts/items/armor/armor", {
 		this.updateVariant();
 		this.m.ImpactSound = this.Const.Sound.ArmorLeatherImpact;
 		this.m.InventorySound = this.Const.Sound.ClothEquip;
-		this.m.Value = 6500;
-		this.m.Condition = 300;
-		this.m.ConditionMax = 300;
-		this.m.StaminaModifier = -28;
+		this.m.Value = 3000;
+		this.m.Condition = 220;
+		this.m.ConditionMax = 220;
+		this.m.StaminaModifier = -20;
 	}
 
 	function updateVariant()

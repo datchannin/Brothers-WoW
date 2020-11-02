@@ -17,11 +17,11 @@ this.druid_t0_helmet <- this.inherit("scripts/items/helmets/helmet", {
 		this.updateVariant();
 		this.m.ImpactSound = this.Const.Sound.ArmorLeatherImpact;
 		this.m.InventorySound = this.Const.Sound.ClothEquip;
-		this.m.Value = 4000;
-		this.m.Condition = 300;
-		this.m.ConditionMax = 300;
-		this.m.StaminaModifier = -15;
-		this.m.Vision = -2;
+		this.m.Value = 2000;
+		this.m.Condition = 180;
+		this.m.ConditionMax = 180;
+		this.m.StaminaModifier = -8;
+		this.m.Vision = -1;
 	}
 
 	function updateVariant()
