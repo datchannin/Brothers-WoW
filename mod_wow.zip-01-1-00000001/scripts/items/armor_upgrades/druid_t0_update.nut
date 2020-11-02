@@ -1,5 +1,7 @@
 this.druid_t0_update <- this.inherit("scripts/items/armor_upgrades/armor_upgrade", {
-	m = {},
+	m = {
+		FatigueRecoveryValue = 3
+	},
 	function create()
 	{
 		this.armor_upgrade.create();
@@ -37,6 +39,12 @@ this.druid_t0_update <- this.inherit("scripts/items/armor_upgrades/armor_upgrade
 			icon = "ui/icons/fatigue.png",
 			text = "[color=" + this.Const.UI.Color.NegativeValue + "]-1[/color] Maximum Fatigue"
 		});
+		result.push({
+			id = 14,
+			type = "text",
+			icon = "ui/icons/fatigue.png",
+			text = "[color=" + this.Const.UI.Color.PositiveValue + "]+" + this.m.FatigueRecoveryValue + "[/color] Fatigue Recovery Rate"
+		});
 		return result;
 	}
 
@@ -68,10 +76,17 @@ this.druid_t0_update <- this.inherit("scripts/items/armor_upgrades/armor_upgrade
 	function onUpdateProperties( _properties )
 	{
 		_properties.T0_druid_shoulder = true;
+		_properties.FatigueRecoveryRate += this.m.FatigueRecoveryValue;
 	}
 
 	function onArmorTooltip( _result )
 	{
+		_result.push({
+			id = 14,
+			type = "text",
+			icon = "ui/icons/fatigue.png",
+			text = "[color=" + this.Const.UI.Color.PositiveValue + "]+" + this.m.FatigueRecoveryValue + "[/color] Fatigue Recovery Rate"
+		});
 	}
 
 });
