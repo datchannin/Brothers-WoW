@@ -1,8 +1,6 @@
 /*BBWOW:This file is part of datchannin bbWoW mod, mod_version = 8.05, game_version = 1.4.0.45*/
 this.priest_t0_helmet <- this.inherit("scripts/items/helmets/helmet", {
-	m = {
-		HitpointsModifier = 4
-	},
+	m = {},
 	function create()
 	{
 		this.helmet.create();
@@ -38,12 +36,6 @@ this.priest_t0_helmet <- this.inherit("scripts/items/helmets/helmet", {
 	function getTooltip()
 	{
 		local result = this.helmet.getTooltip();
-		result.push({
-			id = 15,
-			type = "text",
-			icon = "ui/icons/health.png",
-			text = "Maximum Hitpoints [color=" + this.Const.UI.Color.PositiveValue + "]+" + this.m.HitpointsModifier + "[/color]"
-		});
 
 		return result;
 	}
@@ -51,7 +43,6 @@ this.priest_t0_helmet <- this.inherit("scripts/items/helmets/helmet", {
 	function onUpdateProperties( _properties )
 	{
 		this.helmet.onUpdateProperties(_properties);
-		_properties.Hitpoints += this.m.HitpointsModifier;
-		_properties.T0_warlock_head = true;
+		_properties.T0_priest_head = true;
 	}
 });
