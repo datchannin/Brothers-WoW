@@ -936,10 +936,39 @@ gt.Const.CharacterProperties <- {
 	DailyWage = 0,
 	DailyWageMult = 1.0,
 	DailyFood = 2.0,
-	
+
+	T0_warrior_head = false,
+	T0_warrior_armor = false,
+	T0_warrior_shoulder = false,
+
+	T0_paladin_head = false,
+	T0_paladin_armor = false,
+	T0_paladin_shoulder = false,
+
+	T0_hunter_head = false,
+	T0_hunter_armor = false,
+	T0_hunter_shoulder = false,
+
+	T0_druid_head = false,
+	T0_druid_armor = false,
+	T0_druid_shoulder = false,
+
+	T0_rogue_head = false,
+	T0_rogue_armor = false,
+	T0_rogue_shoulder = false,
+
+	T0_priest_head = false,
+	T0_priest_armor = false,
+	T0_priest_shoulder = false,
+
+	T0_mage_head = false,
+	T0_mage_armor = false,
+	T0_mage_shoulder = false,
+
 	T0_warlock_head = false,
 	T0_warlock_armor = false,
-	
+	T0_warlock_shoulder = false,
+
 	function getMeleeDefense()
 	{
 		if (this.MeleeDefense >= 0)
