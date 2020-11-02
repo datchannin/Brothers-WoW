@@ -1,11 +1,14 @@
 /*BBWOW:This file is part of datchannin bbWoW mod, mod_version = 8.05, game_version = 1.4.0.45*/
 this.warrior_berserkerrage_skill <- this.inherit("scripts/skills/skill", {
-	m = {},
+	m = {
+		MultValue = 25,
+		T0_warrior_head = false
+	},
 	function create()
 	{
 		this.m.ID = "actives.berserkerrage_skill";
 		this.m.Name = "Berserker Rage";
-		this.m.Description = "Increase character\'s power. Damage done is increased by 25% for this turn.";
+		this.m.Description = "Increase character\'s power. Damage done will be increased for this turn.";
 		this.m.Icon = "ui/perks/skill_warrior_berserkerrage.png";
 		this.m.IconDisabled = "ui/perks/skill_warrior_berserkerrage_sw.png";
 		this.m.Overlay = "skill_warrior_berserkerrage";
@@ -26,31 +29,31 @@ this.warrior_berserkerrage_skill <- this.inherit("scripts/skills/skill", {
 		this.m.MaxRange = 0;
 	}
 
+	function getMultValue()
+	{
+		local total_mult_value = this.m.MultValue;
+
+		if (this.m.T0_warrior_head)
+		{
+			total_mult_value += 5;
+		}
+
+		return total_mult_value;
+	}
+
 	function getTooltip()
 	{
-		return [
-			{
-				id = 1,
-				type = "title",
-				text = this.getName()
-			},
-			{
-				id = 2,
-				type = "description",
-				text = this.getDescription()
-			},
-			{
-				id = 3,
-				type = "text",
-				text = this.getCostString()
-			},
-			{
-				id = 6,
-				type = "text",
-				icon = "ui/icons/damage_dealt.png",
-				text = "Damage done will be increased by [color=" + this.Const.UI.Color.PositiveValue + "]25%[/color]"
-			},
-		];
+		local ret = this.getDefaultUtilityTooltip();
+		local total_mult_value = getMultValue();
+
+		ret.push({
+			id = 6,
+			type = "text",
+			icon = "ui/icons/damage_dealt.png",
+			text = "Damage done will be increased by [color=" + this.Const.UI.Color.PositiveValue + "]" + total_mult_value + "%[/color]"
+		});
+
+		return ret;
 	}
 
 	function isUsable()
@@ -63,15 +66,21 @@ this.warrior_berserkerrage_skill <- this.inherit("scripts/skills/skill", {
 		return true;
 	}
 
+	function onUpdate( _properties )
+	{
+		local user = this.getContainer().getActor();
+		this.m.T0_warrior_head = _properties.T0_warrior_head;
+	}
+
 	function onUse( _user, _targetTile )
 	{
-		if (!this.getContainer().hasSkill("effects.berserkerrage"))
-		{
-			this.m.Container.add(this.new("scripts/skills/effects/berserkerrage_effect"));
-			return true;
-		}
+		local total_mult_value = getMultValue();
+		local effect = this.new("scripts/skills/effects/berserkerrage_effect");
+		effect.setValue(total_mult_value);
+		this.m.Container.add(effect);
+		//_user.getSkills().add(effect);
 
-		return false;
+		return true;
 	}
 
 });
