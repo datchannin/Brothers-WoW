@@ -1,6 +1,8 @@
 /*BBWOW:This file is part of datchannin bbWoW mod, mod_version = 8.05, game_version = 1.4.0.45*/
 this.defensivestance_effect <- this.inherit("scripts/skills/skill", {
-	m = {},
+	m = {
+		DamageTakenValue = 10
+	},
 	function create()
 	{
 		this.m.ID = "effects.defensivestance";
@@ -11,6 +13,11 @@ this.defensivestance_effect <- this.inherit("scripts/skills/skill", {
 		this.m.Type = this.Const.SkillType.StatusEffect;
 		this.m.IsActive = false;
 		this.m.IsRemovedAfterBattle = true;
+	}
+
+	function setDamageTakenValue( _d_ )
+	{
+		this.m.DamageTakenValue = _d_;
 	}
 
 	function getTooltip()
@@ -36,18 +43,19 @@ this.defensivestance_effect <- this.inherit("scripts/skills/skill", {
 				id = 11,
 				type = "text",
 				icon = "ui/icons/damage_received.png",
-				text = "Damage received is decreased by [color=" + this.Const.UI.Color.PositiveValue + "]10%[/color]"
+				text = "Damage received is decreased by [color=" + this.Const.UI.Color.PositiveValue + "]" + this.m.DamageTakenValue + "%[/color]"
 			}
 		];
 	}
 
 	function onBeforeDamageReceived( _attacker, _skill, _hitInfo, _properties )
 	{
+		local adding = this.m.DamageTakenValue * 0.01;
 		if (_attacker != null && _attacker.getID() == this.getContainer().getActor().getID() || _skill == null || !_skill.isAttack() || !_skill.isUsingHitchance())
 		{
 			return;
 		}
-		_properties.DamageReceivedTotalMult *= 0.9;
+		_properties.DamageReceivedTotalMult *= (1 - adding);
 	}
 
 	function onUpdate( _properties )

@@ -1,6 +1,9 @@
 /*BBWOW:This file is part of datchannin bbWoW mod, mod_version = 8.05, game_version = 1.4.0.45*/
 this.perk_wow_defensive_stance <- this.inherit("scripts/skills/skill", {
-	m = {},
+	m = {
+		BaseMultTakeValue = 10,
+		T0_warrior_set = false
+	},
 	function create()
 	{
 		this.m.ID = "perk.wow.warrior.defensive_stance";
@@ -14,13 +17,33 @@ this.perk_wow_defensive_stance <- this.inherit("scripts/skills/skill", {
 		this.m.IsHidden = false;
 	}
 
+	function getMultValue()
+	{
+		local total_mult_value = this.m.BaseMultTakeValue;
+
+		if (this.m.T0_warrior_set)
+		{
+			total_mult_value += 5;
+		}
+
+		return total_mult_value;
+	}
+
 	function onCombatStarted()
 	{
-		this.getContainer().add(this.new("scripts/skills/effects/defensivestance_effect"));
+		local total_mult_value = getMultValue();
+		local effect = this.new("scripts/skills/effects/defensivestance_effect");
+		effect.setDamageTakenValue(total_mult_value);
+		this.getContainer().add(effect);
 	}
 
 	function onRemoved()
 	{
 		this.getContainer().removeByID("effects.defensivestance");
+	}
+	
+	function onUpdate( _properties )
+	{
+		this.m.T0_warrior_set = _properties.isFullSetWarriorT0();
 	}
 });
