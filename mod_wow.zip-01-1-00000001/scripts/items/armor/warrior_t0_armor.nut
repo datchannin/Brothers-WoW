@@ -37,6 +37,19 @@ this.warrior_t0_armor <- this.inherit("scripts/items/armor/armor", {
 			id = 14,
 			type = "text",
 			icon = "ui/icons/special.png",
+			text = "Set bonus: [color=" + this.Const.UI.Color.PositiveValue + "]\'Berserker Stance\'[/color] increases damage done by [color=" + this.Const.UI.Color.PositiveValue + "]5%[/color]"
+		});
+		result.push({
+			id = 14,
+			type = "text",
+			icon = "ui/icons/special.png",
+			text = "Set bonus: [color=" + this.Const.UI.Color.PositiveValue + "]\'Defensive Stance\'[/color] reduces damage taken by [color=" + this.Const.UI.Color.PositiveValue + "]5%[/color]"
+		});
+
+		result.push({
+			id = 14,
+			type = "text",
+			icon = "ui/icons/special.png",
 			text = "[color=" + this.Const.UI.Color.PositiveValue + "]\'Charge\'[/color] increases range by [color=" + this.Const.UI.Color.PositiveValue + "]+1[/color] tile"
 		});
 		result.push({
@@ -45,8 +58,6 @@ this.warrior_t0_armor <- this.inherit("scripts/items/armor/armor", {
 			icon = "ui/icons/special.png",
 			text = "[color=" + this.Const.UI.Color.PositiveValue + "]\'Mobility\'[/color] cost will be reduced by [color=" + this.Const.UI.Color.PositiveValue + "]1[/color] point"
 		});
-
-		
 
 		return result;
 	}
