@@ -37,12 +37,6 @@ this.warrior_t0_helmet <- this.inherit("scripts/items/helmets/helmet", {
 	function getTooltip()
 	{
 		local result = this.helmet.getTooltip();
-//		result.push({
-//			id = 15,
-//			type = "text",
-//			icon = "ui/icons/health.png",
-//			text = "Maximum Hitpoints [color=" + this.Const.UI.Color.PositiveValue + "]+" + this.m.HitpointsModifier + "[/color]"
-//		});
 
 		return result;
 	}
@@ -50,6 +44,6 @@ this.warrior_t0_helmet <- this.inherit("scripts/items/helmets/helmet", {
 	function onUpdateProperties( _properties )
 	{
 		this.helmet.onUpdateProperties(_properties);
-//		_properties.T0_warlock_head = true;
+		_properties.T0_warrior_head = true;
 	}
 });
