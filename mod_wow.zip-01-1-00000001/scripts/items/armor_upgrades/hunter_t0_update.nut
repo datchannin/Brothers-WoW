@@ -18,8 +18,8 @@ this.hunter_t0_update <- this.inherit("scripts/items/armor_upgrades/armor_upgrad
 		this.m.SpriteCorpseFront = "upgrade_wow_hunter_shoulders_t0_dead";
 		this.m.SpriteCorpseBack = null;
 		this.m.Value = 200;
-		this.m.ConditionModifier = 60;
-		this.m.StaminaModifier = 4;
+		this.m.ConditionModifier = 50;
+		this.m.StaminaModifier = 2;
 	}
 
 	function getTooltip()
@@ -29,13 +29,13 @@ this.hunter_t0_update <- this.inherit("scripts/items/armor_upgrades/armor_upgrad
 			id = 14,
 			type = "text",
 			icon = "ui/icons/armor_body.png",
-			text = "[color=" + this.Const.UI.Color.PositiveValue + "]+60[/color] Durability"
+			text = "[color=" + this.Const.UI.Color.PositiveValue + "]+50[/color] Durability"
 		});
 		result.push({
 			id = 14,
 			type = "text",
 			icon = "ui/icons/fatigue.png",
-			text = "[color=" + this.Const.UI.Color.NegativeValue + "]-4[/color] Maximum Fatigue"
+			text = "[color=" + this.Const.UI.Color.NegativeValue + "]-2[/color] Maximum Fatigue"
 		});
 		return result;
 	}
@@ -63,6 +63,11 @@ this.hunter_t0_update <- this.inherit("scripts/items/armor_upgrades/armor_upgrad
 		armor.setUpgrade(this);
 
 		return true;
+	}
+
+	function onUpdateProperties( _properties )
+	{
+		_properties.T0_hunter_shoulder = true;
 	}
 
 	function onArmorTooltip( _result )

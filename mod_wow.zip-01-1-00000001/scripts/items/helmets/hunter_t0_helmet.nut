@@ -1,8 +1,6 @@
 /*BBWOW:This file is part of datchannin bbWoW mod, mod_version = 8.05, game_version = 1.4.0.45*/
 this.hunter_t0_helmet <- this.inherit("scripts/items/helmets/helmet", {
-	m = {
-		HitpointsModifier = 4
-	},
+	m = {},
 	function create()
 	{
 		this.helmet.create();
@@ -19,10 +17,11 @@ this.hunter_t0_helmet <- this.inherit("scripts/items/helmets/helmet", {
 		this.updateVariant();
 		this.m.ImpactSound = this.Const.Sound.ArmorLeatherImpact;
 		this.m.InventorySound = this.Const.Sound.ClothEquip;
-		this.m.Value = 1200;
-		this.m.Condition = 120;
-		this.m.ConditionMax = 120;
-		this.m.StaminaModifier = -4;
+		this.m.Value = 4000;
+		this.m.Condition = 300;
+		this.m.ConditionMax = 300;
+		this.m.StaminaModifier = -15;
+		this.m.Vision = -3;
 	}
 
 	function updateVariant()
@@ -38,12 +37,6 @@ this.hunter_t0_helmet <- this.inherit("scripts/items/helmets/helmet", {
 	function getTooltip()
 	{
 		local result = this.helmet.getTooltip();
-		result.push({
-			id = 15,
-			type = "text",
-			icon = "ui/icons/health.png",
-			text = "Maximum Hitpoints [color=" + this.Const.UI.Color.PositiveValue + "]+" + this.m.HitpointsModifier + "[/color]"
-		});
 
 		return result;
 	}
@@ -51,7 +44,6 @@ this.hunter_t0_helmet <- this.inherit("scripts/items/helmets/helmet", {
 	function onUpdateProperties( _properties )
 	{
 		this.helmet.onUpdateProperties(_properties);
-		_properties.Hitpoints += this.m.HitpointsModifier;
-		_properties.T0_warlock_head = true;
+		_properties.T0_hunter_head = true;
 	}
 });
