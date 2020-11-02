@@ -1,6 +1,8 @@
 /*BBWOW:This file is part of datchannin bbWoW mod, mod_version = 8.05, game_version = 1.4.0.45*/
 this.berserkerstance_effect <- this.inherit("scripts/skills/skill", {
-	m = {},
+	m = {
+		DamageDoneValue = 10
+	},
 	function create()
 	{
 		this.m.ID = "effects.berserkerstance";
@@ -11,6 +13,11 @@ this.berserkerstance_effect <- this.inherit("scripts/skills/skill", {
 		this.m.Type = this.Const.SkillType.StatusEffect;
 		this.m.IsActive = false;
 		this.m.IsRemovedAfterBattle = true;
+	}
+
+	function setDamageDoneValue( _d_ )
+	{
+		this.m.DamageDoneValue = _d_;
 	}
 
 	function getTooltip()
@@ -30,7 +37,7 @@ this.berserkerstance_effect <- this.inherit("scripts/skills/skill", {
 				id = 10,
 				type = "text",
 				icon = "ui/icons/damage_dealt.png",
-				text = "Damage done is increased by [color=" + this.Const.UI.Color.PositiveValue + "]10%[/color]"
+				text = "Damage done is increased by [color=" + this.Const.UI.Color.PositiveValue + "]" + this.m.DamageDoneValue + "%[/color]"
 			},
 			{
 				id = 11,
@@ -52,7 +59,8 @@ this.berserkerstance_effect <- this.inherit("scripts/skills/skill", {
 
 	function onUpdate( _properties )
 	{
-		_properties.DamageTotalMult *= 1.1;
+		local adding = this.m.DamageDoneValue * 0.01;
+		_properties.DamageTotalMult *= (1 + adding);
 		_properties.TargetAttractionMult *= 1.1;
 	}
 });
