@@ -1,8 +1,6 @@
 /*BBWOW:This file is part of datchannin bbWoW mod, mod_version = 8.05, game_version = 1.4.0.45*/
 this.warrior_t0_armor <- this.inherit("scripts/items/armor/armor", {
-	m = {
-		HitpointsModifier = 6
-	},
+	m = {},
 	function create()
 	{
 		this.armor.create();
@@ -15,10 +13,10 @@ this.warrior_t0_armor <- this.inherit("scripts/items/armor/armor", {
 		this.updateVariant();
 		this.m.ImpactSound = this.Const.Sound.ArmorHalfplateImpact;
 		this.m.InventorySound = this.Const.Sound.ArmorHalfplateImpact;
-		this.m.Value = 800;
-		this.m.Condition = 130;
-		this.m.ConditionMax = 130;
-		this.m.StaminaModifier = -11;
+		this.m.Value = 8000;
+		this.m.Condition = 400;
+		this.m.ConditionMax = 400;
+		this.m.StaminaModifier = -50;
 	}
 
 	function updateVariant()
@@ -34,19 +32,12 @@ this.warrior_t0_armor <- this.inherit("scripts/items/armor/armor", {
 	function getTooltip()
 	{
 		local result = this.armor.getTooltip();
-		result.push({
-			id = 15,
-			type = "text",
-			icon = "ui/icons/health.png",
-			text = "Maximum Hitpoints [color=" + this.Const.UI.Color.PositiveValue + "]+" + this.m.HitpointsModifier + "[/color]"
-		});
-
-		result.push({
-			id = 15,
-			type = "text",
-			icon = "ui/icons/special.png",
-			text = "Valor Set bonus: Shadowbolt Damage [color=" + this.Const.UI.Color.PositiveValue + "]+" + Const.WarlockSet.T0_bonus + "[/color]"
-		});
+//		result.push({
+//			id = 15,
+//			type = "text",
+//			icon = "ui/icons/health.png",
+//			text = "Maximum Hitpoints [color=" + this.Const.UI.Color.PositiveValue + "]+" + this.m.HitpointsModifier + "[/color]"
+//		});
 
 		return result;
 	}
@@ -54,7 +45,6 @@ this.warrior_t0_armor <- this.inherit("scripts/items/armor/armor", {
 	function onUpdateProperties( _properties )
 	{
 		this.armor.onUpdateProperties(_properties);
-		_properties.Hitpoints += this.m.HitpointsModifier;
-		_properties.T0_warlock_armor = true;
+//		_properties.T0_warrior_armor = true;
 	}
 });

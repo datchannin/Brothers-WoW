@@ -19,7 +19,7 @@ this.warrior_t0_update <- this.inherit("scripts/items/armor_upgrades/armor_upgra
 		this.m.SpriteCorpseBack = null;
 		this.m.Value = 200;
 		this.m.ConditionModifier = 60;
-		this.m.StaminaModifier = 4;
+		this.m.StaminaModifier = 3;
 	}
 
 	function getTooltip()
@@ -35,7 +35,7 @@ this.warrior_t0_update <- this.inherit("scripts/items/armor_upgrades/armor_upgra
 			id = 14,
 			type = "text",
 			icon = "ui/icons/fatigue.png",
-			text = "[color=" + this.Const.UI.Color.NegativeValue + "]-4[/color] Maximum Fatigue"
+			text = "[color=" + this.Const.UI.Color.NegativeValue + "]-3[/color] Maximum Fatigue"
 		});
 		return result;
 	}
