@@ -1,5 +1,7 @@
 this.hunter_t0_update <- this.inherit("scripts/items/armor_upgrades/armor_upgrade", {
-	m = {},
+	m = {
+		RangeDefenseValue = 10
+	},
 	function create()
 	{
 		this.armor_upgrade.create();
@@ -37,6 +39,12 @@ this.hunter_t0_update <- this.inherit("scripts/items/armor_upgrades/armor_upgrad
 			icon = "ui/icons/fatigue.png",
 			text = "[color=" + this.Const.UI.Color.NegativeValue + "]-2[/color] Maximum Fatigue"
 		});
+		result.push({
+			id = 14,
+			type = "text",
+			icon = "ui/icons/ranged_defense.png",
+			text = "[color=" + this.Const.UI.Color.PositiveValue + "]+" + this.m.RangeDefenseValue + "[/color] Ranged Defense"
+		});
 		return result;
 	}
 
@@ -68,10 +76,17 @@ this.hunter_t0_update <- this.inherit("scripts/items/armor_upgrades/armor_upgrad
 	function onUpdateProperties( _properties )
 	{
 		_properties.T0_hunter_shoulder = true;
+		_properties.RangedDefense += this.m.RangeDefenseValue;
 	}
 
 	function onArmorTooltip( _result )
 	{
+		_result.push({
+			id = 14,
+			type = "text",
+			icon = "ui/icons/ranged_defense.png",
+			text = "[color=" + this.Const.UI.Color.PositiveValue + "]+" + this.m.RangeDefenseValue + "[/color] Ranged Defense"
+		});
 	}
 
 });
