@@ -480,7 +480,6 @@ gt.Const.Perks.PerkTreeDruid <- [
 		gt.Const.Perks.PerkDefObjects.Barkskin
 		gt.Const.Perks.PerkDefObjects.GiftofNature
 		gt.Const.Perks.PerkDefObjects.Dodge
-		gt.Const.Perks.PerkDefObjects.FortifiedMind
 		gt.Const.Perks.PerkDefObjects.HoldOut
 		gt.Const.Perks.PerkDefObjects.SteelBrow
 	],
@@ -513,6 +512,7 @@ gt.Const.Perks.PerkTreeDruid <- [
 		gt.Const.Perks.PerkDefObjects.Berserk
 		gt.Const.Perks.PerkDefObjects.Nimble
 		gt.Const.Perks.PerkDefObjects.BattleForged
+		gt.Const.Perks.PerkDefObjects.TranquilSpirit
 	],
 	[
 		gt.Const.Perks.PerkDefObjects.MarkofWild

@@ -1781,6 +1781,16 @@ gt.Const.Perks.PerkDefObjects.DireBear <- {
 	Const = "DireBear"
 }
 
+gt.Const.Perks.PerkDefObjects.TranquilSpirit <- {
+	ID = "perk.wow.druid.tranquilspirit",
+	Script = "scripts/skills/perks/perk_wow_tranquilspirit",
+	Name = this.Const.Wow_strings.PerkName.TranquilSpirit,
+	Tooltip = this.Const.Wow_strings.PerkDescription.TranquilSpirit,
+	Icon = "ui/perks/perk_druid_tranquilspirit.png",
+	IconDisabled = "ui/perks/perk_druid_tranquilspirit_sw.png",
+	Const = "TranquilSpirit"
+}
+
 // ---------------------------------------------|
 // ----------------  WOW WARLOCK ---------------|
 // ---------------------------------------------|
