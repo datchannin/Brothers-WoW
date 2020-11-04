@@ -1,7 +1,10 @@
 /*BBWOW:This file is part of datchannin bbWoW mod, mod_version = 8.05, game_version = 1.4.0.45*/
 this.druid_catform_skill <- this.inherit("scripts/skills/skill", {
 	m = {
-		furor = false
+		baseActionPointsCost = 9,
+		furor = false,
+		T0_druid_armor = false,
+		T0_druid_head = false
 	},
 	function create()
 	{
@@ -106,6 +109,8 @@ this.druid_catform_skill <- this.inherit("scripts/skills/skill", {
 	{
 		local user = this.getContainer().getActor();
 		this.m.furor = user.getSkills().hasSkill("perk.wow.druid.furor");
+		this.m.T0_druid_armor = _properties.T0_druid_armor;
+		this.m.T0_druid_head = _properties.T0_druid_head;
 	}
 
 	function onAfterUpdate( _properties )
@@ -113,6 +118,19 @@ this.druid_catform_skill <- this.inherit("scripts/skills/skill", {
 		if (this.m.furor)
 		{
 			this.m.FatigueCost = 15;
+			if (this.m.T0_druid_armor)
+			{
+				this.m.FatigueCost = 0;
+			}
+			if (this.m.T0_druid_head)
+			{
+				this.m.ActionPointCost = 0;
+			}
+		}
+		else
+		{
+			this.m.FatigueCost = 30;
+			this.m.ActionPointCost = 9;
 		}
 	}
 

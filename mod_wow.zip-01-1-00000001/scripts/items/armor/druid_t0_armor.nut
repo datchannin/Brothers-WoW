@@ -33,6 +33,20 @@ this.druid_t0_armor <- this.inherit("scripts/items/armor/armor", {
 	{
 		local result = this.armor.getTooltip();
 
+		result.push({
+			id = 14,
+			type = "text",
+			icon = "ui/icons/special.png",
+			text = "Set bonus: [color=" + this.Const.UI.Color.PositiveValue + "]\'Heart of Wild\'[/color] doubles bonuses for Cat and Bear, [color=" + this.Const.UI.Color.PositiveValue + "]+5[/color] [color=" + this.Const.UI.Color.PositiveValue + "]\'Innervate\'[/color] power"
+		});
+
+		result.push({
+			id = 14,
+			type = "text",
+			icon = "ui/icons/special.png",
+			text = "[color=" + this.Const.UI.Color.PositiveValue + "]\'Furor\'[/color] decreases shapeshift fatigue cost by [color=" + this.Const.UI.Color.PositiveValue + "]15[/color] points"
+		});
+
 		return result;
 	}
 

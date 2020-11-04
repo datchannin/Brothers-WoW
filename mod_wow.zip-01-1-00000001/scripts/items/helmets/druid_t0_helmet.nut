@@ -38,6 +38,13 @@ this.druid_t0_helmet <- this.inherit("scripts/items/helmets/helmet", {
 	{
 		local result = this.helmet.getTooltip();
 
+		result.push({
+			id = 14,
+			type = "text",
+			icon = "ui/icons/special.png",
+			text = "[color=" + this.Const.UI.Color.PositiveValue + "]\'Furor\'[/color] decreases shapeshift Action Points cost by [color=" + this.Const.UI.Color.PositiveValue + "]9[/color] points"
+		});
+
 		return result;
 	}
 

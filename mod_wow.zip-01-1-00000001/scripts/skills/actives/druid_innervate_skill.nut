@@ -3,7 +3,8 @@ this.druid_innervate_skill <- this.inherit("scripts/skills/skill", {
 	m = {
 		BaseFatigueValue = 30,
 		clarity = false,
-		CurrentLevel = 1
+		CurrentLevel = 1,
+		T0_druid_set = false
 	},
 	function create()
 	{
@@ -34,6 +35,11 @@ this.druid_innervate_skill <- this.inherit("scripts/skills/skill", {
 		local innervatepower = this.m.BaseFatigueValue;
 		local scale = 0;
 		if (this.m.clarity)
+		{
+			innervatepower += 5;
+		}
+
+		if (this.m.T0_druid_set)
 		{
 			innervatepower += 5;
 		}
@@ -109,6 +115,7 @@ this.druid_innervate_skill <- this.inherit("scripts/skills/skill", {
 	{
 		local user = this.getContainer().getActor();
 		this.m.CurrentLevel = user.getLevel();
+		this.m.T0_druid_set = _properties.isFullSetDruidT0();
 		this.m.clarity = user.getSkills().hasSkill("perk.wow.druid.clarity");
 	}
 

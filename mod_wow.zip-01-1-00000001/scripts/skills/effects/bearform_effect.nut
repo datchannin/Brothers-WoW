@@ -6,7 +6,8 @@ this.bearform_effect <- this.inherit("scripts/skills/skill", {
 		abolishpoison = false,
 		heartofwild = false,
 		direbear = false,
-		CurrentLevel = 1
+		CurrentLevel = 1,
+		T0_druid_set = false
 	},
 	function create()
 	{
@@ -33,6 +34,10 @@ this.bearform_effect <- this.inherit("scripts/skills/skill", {
 		if (this.m.heartofwild)
 		{
 			healthmult += 0.3;
+			if (this.m.T0_druid_set)
+			{
+				healthmult += 0.3;
+			}
 		}
 		if (this.m.direbear)
 		{
@@ -229,7 +234,7 @@ this.bearform_effect <- this.inherit("scripts/skills/skill", {
 		local actor = this.getContainer().getActor();
 		this.m.CurrentLevel = actor.getLevel();
 		toSetVisibleBrush(0);
-
+		this.m.T0_druid_set = _properties.isFullSetDruidT0();
 		this.m.abolishpoison = actor.getSkills().hasSkill("perk.wow.druid.abolishpoison");
 		this.m.direbear = actor.getSkills().hasSkill("perk.wow.druid.direbear");
 		this.m.heartofwild = actor.getSkills().hasSkill("perk.wow.druid.heartofwild");
