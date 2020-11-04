@@ -2,7 +2,7 @@ this.inventory_badge_item <- this.inherit("scripts/items/item", {
 	m = {},
 	function create()
 	{
-		this.m.ID = "misc.token_chest";
+		this.m.ID = "misc.badge";
 		this.m.Name = "Ancient Badge";
 		this.m.Description = "Can be found in dangerous dungeons. Exchanges for item tokens that can be used for Item Sets create.";
 		this.m.Icon = "misc/inventory_badge_item.png";
