@@ -7,7 +7,8 @@ this.warlock_curseofagony_skill <- this.inherit("scripts/skills/skill", {
 		soulshard = false,
 		feldomination = false,
 		grimreach = false,
-		CurrentLevel = 1
+		CurrentLevel = 1,
+		T0_warlock_set = false
 	},
 	function create()
 	{
@@ -47,6 +48,11 @@ this.warlock_curseofagony_skill <- this.inherit("scripts/skills/skill", {
 			total_damage_min += 7;
 		}
 
+		if (this.m.T0_warlock_set)
+		{
+			total_damage_min += 10;
+		}
+
 		scale_damage = this.Math.floor(total_damage_min * this.m.CurrentLevel * this.Const.WarlockScale.shadow_damage_min);
 
 		total_damage_min += scale_damage;
@@ -67,6 +73,11 @@ this.warlock_curseofagony_skill <- this.inherit("scripts/skills/skill", {
 		if (this.m.feldomination)
 		{
 			total_damage_max += 7;
+		}
+
+		if (this.m.T0_warlock_set)
+		{
+			total_damage_max += 10;
 		}
 
 		scale_damage = this.Math.floor(total_damage_max * this.m.CurrentLevel * this.Const.WarlockScale.shadow_damage_max);
@@ -135,6 +146,7 @@ this.warlock_curseofagony_skill <- this.inherit("scripts/skills/skill", {
 		this.m.soulshard = user.getSkills().hasSkill("effects.soulshard");
 		this.m.feldomination = user.getSkills().hasSkill("perk.wow.warlock.feldomination");
 		this.m.grimreach = user.getSkills().hasSkill("perk.wow.warlock.grimreach");
+		this.m.T0_warlock_set = _properties.isFullSetWarlockT0();
 	}
 
 	function onAfterUpdate( _properties )

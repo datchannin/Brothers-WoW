@@ -2,8 +2,8 @@
 this.demonarmor_effect <- this.inherit("scripts/skills/skill", {
 	m = {
 		TurnsLeft = 2,
-		demonskin = false,
-		power = false
+		BaseDuration = 2,
+		power = false,
 	},
 	function create()
 	{
@@ -20,6 +20,11 @@ this.demonarmor_effect <- this.inherit("scripts/skills/skill", {
 	function getDescription()
 	{
 		return "Dark Armor surrounds you for [color=" + this.Const.UI.Color.PositiveValue + "]" + this.m.TurnsLeft + "[/color] more turn(s).";
+	}
+
+	function setDuration( _d )
+	{
+		this.m.BaseDuration = _d;
 	}
 
 	function getTooltip()
@@ -68,17 +73,11 @@ this.demonarmor_effect <- this.inherit("scripts/skills/skill", {
 	{
 		local user = this.getContainer().getActor();
 		this.m.power = user.getSkills().hasSkill("effects.soulshard");
-		this.m.demonskin = user.getSkills().hasSkill("perk.wow.warlock.demonskin");
-		this.m.TurnsLeft = 2;
+		this.m.TurnsLeft = this.m.BaseDuration;
 
 		if (this.m.power)
 		{
 			this.m.Container.removeByID("effects.soulshard");
-		}
-
-		if (this.m.demonskin)
-		{
-			this.m.TurnsLeft += 2;
 		}
 	}
 

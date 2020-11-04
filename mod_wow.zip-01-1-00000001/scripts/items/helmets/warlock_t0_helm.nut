@@ -37,6 +37,18 @@ this.warlock_t0_helm <- this.inherit("scripts/items/helmets/helmet", {
 	{
 		local result = this.helmet.getTooltip();
 
+		result.push({
+			id = 14,
+			type = "text",
+			icon = "ui/icons/special.png",
+			text = "[color=" + this.Const.UI.Color.PositiveValue + "]\'Demon Skin\'[/color] gives [color=" + this.Const.UI.Color.PositiveValue + "]+2[/color] turns effect duration"
+		});
+		result.push({
+			id = 14,
+			type = "text",
+			icon = "ui/icons/special.png",
+			text = "[color=" + this.Const.UI.Color.PositiveValue + "]\'Demonic Embrace\'[/color] gives [color=" + this.Const.UI.Color.PositiveValue + "]+10%[/color] hitpoints"
+		});
 		return result;
 	}
 

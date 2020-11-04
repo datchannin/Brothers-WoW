@@ -9,7 +9,7 @@ this.warlock_shadowbolt_skill <- this.inherit("scripts/skills/skill", {
 		ruin = false,
 		shadowmastery = false,
 		CurrentLevel = 1,
-		dreadmistset = false,
+		T0_warlock_set = false
 	},
 	function create()
 	{
@@ -86,15 +86,14 @@ this.warlock_shadowbolt_skill <- this.inherit("scripts/skills/skill", {
 		{
 			total_damage_min += 10;
 		}
+		if (this.m.T0_warlock_set)
+		{
+			total_damage_min += 10;
+		}
 
 		scale_damage = this.Math.floor(total_damage_min * this.m.CurrentLevel * this.Const.WarlockScale.shadow_damage_min);
 
 		total_damage_min += scale_damage;
-
-		if (this.m.dreadmistset)
-		{
-			total_damage_min += this.Const.WarlockSet.T0_bonus;
-		}
 
 		return total_damage_min;
 	}
@@ -108,15 +107,14 @@ this.warlock_shadowbolt_skill <- this.inherit("scripts/skills/skill", {
 		{
 			total_damage_max += 12;
 		}
+		if (this.m.T0_warlock_set)
+		{
+			total_damage_max += 10;
+		}
 
 		scale_damage = this.Math.floor(total_damage_max * this.m.CurrentLevel * this.Const.WarlockScale.shadow_damage_max);
 
 		total_damage_max += scale_damage;
-
-		if (this.m.dreadmistset)
-		{
-			total_damage_max += this.Const.WarlockSet.T0_bonus;
-		}
 
 		return total_damage_max;
 	}
@@ -141,16 +139,6 @@ this.warlock_shadowbolt_skill <- this.inherit("scripts/skills/skill", {
 			icon = "ui/icons/armor_damage.png",
 			text = "Inflicts [color=" + this.Const.UI.Color.DamageValue + "]" + total_shadow_min + "[/color] - [color=" + this.Const.UI.Color.DamageValue + "]" + total_shadow_max + "[/color] damage to armor."
 		});
-
-		if (this.m.dreadmistset)
-		{
-			ret.push({
-				id = 6,
-				type = "text",
-				icon = "ui/icons/special.png",
-				text = "Dreadmist Set bonus was [color=" + this.Const.UI.Color.PositiveValue + "]activated[/color]."
-			});
-		}
 
 		if (crit_chance == 0)
 		{
@@ -242,11 +230,11 @@ this.warlock_shadowbolt_skill <- this.inherit("scripts/skills/skill", {
 		this.m.devastation = user.getSkills().hasSkill("perk.wow.warlock.devastation");
 		this.m.ruin = user.getSkills().hasSkill("perk.wow.warlock.ruin");
 		this.m.shadowmastery = user.getSkills().hasSkill("perk.wow.warlock.shadowmastery");
-		this.m.dreadmistset = _properties.T0_warlock_head && _properties.T0_warlock_armor;
+		this.m.T0_warlock_set = _properties.isFullSetWarlockT0();
 
 		if (user.getAIAgent().m.ID == "agent.gnoll.mystic")
 		{
-			this.m.CurrentLevel = 12;
+			this.m.CurrentLevel = 15;
 		}
 	}
 

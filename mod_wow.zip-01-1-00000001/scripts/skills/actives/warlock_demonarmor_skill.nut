@@ -4,6 +4,7 @@ this.warlock_demonarmor_skill <- this.inherit("scripts/skills/skill", {
 		soulshard = false,
 		demonskin = false,
 		BaseTurnsDuration = 2,
+		T0_warlock_head = false
 	},
 	function create()
 	{
@@ -36,6 +37,10 @@ this.warlock_demonarmor_skill <- this.inherit("scripts/skills/skill", {
 		if (this.m.demonskin)
 		{
 			duration += 2;
+			if (this.m.T0_warlock_head)
+			{
+				duration += 2;
+			}
 		}
 
 		return duration;
@@ -97,6 +102,7 @@ this.warlock_demonarmor_skill <- this.inherit("scripts/skills/skill", {
 		local user = this.getContainer().getActor();
 		this.m.soulshard = user.getSkills().hasSkill("effects.soulshard");
 		this.m.demonskin = user.getSkills().hasSkill("perk.wow.warlock.demonskin");
+		this.m.T0_warlock_head = _properties.T0_warlock_head;
 	}
 
 	function onVerifyTarget( _originTile, _targetTile )
@@ -106,12 +112,15 @@ this.warlock_demonarmor_skill <- this.inherit("scripts/skills/skill", {
 
 	function onUse( _user, _targetTile )
 	{
+		local duration = getTotalDuration();
 		if (this.m.Container.hasSkill("effects.demonarmor"))
 		{
 			this.m.Container.removeByID("effects.demonarmor");
 		}
 
-		_user.getSkills().add(this.new("scripts/skills/effects/demonarmor_effect"));
+		local effect = this.new("scripts/skills/effects/demonarmor_effect");
+		effect.setDuration(duration);
+		_user.getSkills().add(effect);
 
 		return true;
 	}

@@ -3,7 +3,8 @@ this.warlock_drainlife_skill <- this.inherit("scripts/skills/skill", {
 	m = {
 		base_damage_min = 10,
 		base_damage_max = 12,
-		drainfunnel = false
+		drainfunnel = false,
+		T0_warlock_armor = false
 	},
 	function create()
 	{
@@ -50,6 +51,11 @@ this.warlock_drainlife_skill <- this.inherit("scripts/skills/skill", {
 			total_damage_min = this.Math.floor(1.2*total_damage_min);
 		}
 
+		if (this.m.T0_warlock_armor)
+		{
+			total_damage_min = this.Math.floor(1.2*total_damage_min);
+		}
+
 		return total_damage_min;
 	}
 
@@ -58,6 +64,11 @@ this.warlock_drainlife_skill <- this.inherit("scripts/skills/skill", {
 		local total_damage_max = this.m.base_damage_max;
 
 		if (this.m.drainfunnel)
+		{
+			total_damage_max = this.Math.floor(1.2*total_damage_max);
+		}
+
+		if (this.m.T0_warlock_armor)
 		{
 			total_damage_max = this.Math.floor(1.2*total_damage_max);
 		}
@@ -135,6 +146,7 @@ this.warlock_drainlife_skill <- this.inherit("scripts/skills/skill", {
 	{
 		local user = this.getContainer().getActor();
 		this.m.drainfunnel = user.getSkills().hasSkill("perk.wow.warlock.drainfunnel");
+		this.m.T0_warlock_armor = _properties.T0_warlock_armor;
 	}
 
 	function onAnySkillUsed( _skill, _targetEntity, _properties )

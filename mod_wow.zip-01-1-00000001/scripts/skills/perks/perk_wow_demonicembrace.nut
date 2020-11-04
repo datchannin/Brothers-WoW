@@ -1,6 +1,8 @@
 /*BBWOW:This file is part of datchannin bbWoW mod, mod_version = 8.05, game_version = 1.4.0.45*/
 this.perk_wow_demonicembrace <- this.inherit("scripts/skills/skill", {
-	m = {},
+	m = {
+		T0_warlock_head = false
+	},
 	function create()
 	{
 		this.m.ID = "perk.wow.warlock.demonicembrace";
@@ -20,12 +22,27 @@ this.perk_wow_demonicembrace <- this.inherit("scripts/skills/skill", {
 
 		if (actor.getHitpoints() == actor.getHitpointsMax())
 		{
-			actor.setHitpoints(this.Math.floor(actor.getHitpoints() * 1.25));
+			if (this.m.T0_warlock_head)
+			{
+				actor.setHitpoints(this.Math.floor(actor.getHitpoints() * 1.35));
+			}
+			else
+			{
+				actor.setHitpoints(this.Math.floor(actor.getHitpoints() * 1.25));
+			}
 		}
 	}
 
 	function onUpdate( _properties )
 	{
-		_properties.HitpointsMult *= 1.25;
+		this.m.T0_warlock_head = _properties.T0_warlock_head;
+		if (_properties.T0_warlock_head)
+		{
+			_properties.HitpointsMult *= 1.35;
+		}
+		else
+		{
+			_properties.HitpointsMult *= 1.25;
+		}
 	}
 });

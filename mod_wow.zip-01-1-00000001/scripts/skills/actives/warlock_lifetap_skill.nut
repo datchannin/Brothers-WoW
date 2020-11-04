@@ -2,6 +2,7 @@
 this.warlock_lifetap_skill <- this.inherit("scripts/skills/skill", {
 	m = {
 		base_tap = 10,
+		T0_warlock_armor = false
 	},
 	function create()
 	{
@@ -54,12 +55,24 @@ this.warlock_lifetap_skill <- this.inherit("scripts/skills/skill", {
 			text = "You will lose [color=" + this.Const.UI.Color.DamageValue + "]" + total_tap + "[/color] Hitpoints."
 		});
 
-		ret.push({
-			id = 6,
-			type = "text",
-			icon = "ui/icons/fatigue.png",
-			text = "You will remove [color=" + this.Const.UI.Color.DamageValue + "]" + total_tap*2 + "[/color] Fatigue points."
-		});
+		if (this.m.T0_warlock_armor)
+		{
+			ret.push({
+				id = 6,
+				type = "text",
+				icon = "ui/icons/fatigue.png",
+				text = "You will remove [color=" + this.Const.UI.Color.DamageValue + "]" + total_tap*3 + "[/color] Fatigue points."
+			});
+		}
+		else
+		{
+			ret.push({
+				id = 6,
+				type = "text",
+				icon = "ui/icons/fatigue.png",
+				text = "You will remove [color=" + this.Const.UI.Color.DamageValue + "]" + total_tap*2 + "[/color] Fatigue points."
+			});
+		}
 
 		if (!isUsable())
 		{
@@ -92,6 +105,11 @@ this.warlock_lifetap_skill <- this.inherit("scripts/skills/skill", {
 		}
 	}
 
+	function onUpdate( _properties )
+	{
+		this.m.T0_warlock_armor = _properties.T0_warlock_armor;
+	}
+
 	function onVerifyTarget( _originTile, _targetTile )
 	{
 		if (!this.skill.onVerifyTarget(_originTile, _targetTile))
@@ -106,6 +124,11 @@ this.warlock_lifetap_skill <- this.inherit("scripts/skills/skill", {
 	{
 		local hitpoints = getTotalTap();
 		local fatigue = hitpoints*2;
+
+		if (this.m.T0_warlock_armor)
+		{
+			fatigue = hitpoints*3;
+		}
 
 		if (_user.getHitpoints() < (hitpoints + 1))
 		{

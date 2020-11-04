@@ -33,6 +33,32 @@ this.warlock_t0_armor <- this.inherit("scripts/items/armor/armor", {
 	{
 		local result = this.armor.getTooltip();
 
+		result.push({
+			id = 14,
+			type = "text",
+			icon = "ui/icons/special.png",
+			text = "Set bonus: [color=" + this.Const.UI.Color.PositiveValue + "]\'Shadowbolt\'[/color] base power increases by [color=" + this.Const.UI.Color.PositiveValue + "]10[/color] points"
+		});
+		result.push({
+			id = 14,
+			type = "text",
+			icon = "ui/icons/special.png",
+			text = "Set bonus: [color=" + this.Const.UI.Color.PositiveValue + "]\'Curse of Agony\'[/color] base power increases by [color=" + this.Const.UI.Color.PositiveValue + "]10[/color] points"
+		});
+
+		result.push({
+			id = 14,
+			type = "text",
+			icon = "ui/icons/special.png",
+			text = "[color=" + this.Const.UI.Color.PositiveValue + "]\'Drain Life\'[/color] power increases by [color=" + this.Const.UI.Color.PositiveValue + "]20%[/color]"
+		});
+		result.push({
+			id = 14,
+			type = "text",
+			icon = "ui/icons/special.png",
+			text = "[color=" + this.Const.UI.Color.PositiveValue + "]\'Life Tap\'[/color] removes [color=" + this.Const.UI.Color.PositiveValue + "]+1[/color] fatigue per every health point"
+		});
+
 		return result;
 	}
 
