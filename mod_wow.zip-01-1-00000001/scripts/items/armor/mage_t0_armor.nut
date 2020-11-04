@@ -33,6 +33,20 @@ this.mage_t0_armor <- this.inherit("scripts/items/armor/armor", {
 	{
 		local result = this.armor.getTooltip();
 
+		result.push({
+			id = 14,
+			type = "text",
+			icon = "ui/icons/special.png",
+			text = "Set bonus: [color=" + this.Const.UI.Color.PositiveValue + "]\'Fireball\'[/color] and [color=" + this.Const.UI.Color.PositiveValue + "]\'Frostbolt\'[/color] base power increases by [color=" + this.Const.UI.Color.PositiveValue + "]10[/color] points"
+		});
+
+		result.push({
+			id = 14,
+			type = "text",
+			icon = "ui/icons/special.png",
+			text = "[color=" + this.Const.UI.Color.PositiveValue + "]\'Fire Attunement\'[/color] and [color=" + this.Const.UI.Color.PositiveValue + "]\'Ice Attunement\'[/color] have double effect"
+		});
+
 		return result;
 	}
 

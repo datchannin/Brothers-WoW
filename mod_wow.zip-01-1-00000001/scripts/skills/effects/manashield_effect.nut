@@ -1,6 +1,8 @@
 /*BBWOW:This file is part of datchannin bbWoW mod, mod_version = 8.05, game_version = 1.4.0.45*/
 this.manashield_effect <- this.inherit("scripts/skills/skill", {
-	m = {},
+	m = {
+		DamageTakenReduce = 10
+	},
 	function create()
 	{
 		this.m.ID = "effects.manashield";
@@ -30,9 +32,14 @@ this.manashield_effect <- this.inherit("scripts/skills/skill", {
 				id = 10,
 				type = "text",
 				icon = "ui/icons/damage_received.png",
-				text = "Damage received is decreased by [color=" + this.Const.UI.Color.PositiveValue + "]10%[/color]"
+				text = "Damage received is decreased by [color=" + this.Const.UI.Color.PositiveValue + "]" + this.m.DamageTakenReduce + "%[/color]"
 			}
 		];
+	}
+
+	function setValue( _d )
+	{
+		this.m.DamageTakenReduce = _d;
 	}
 
 	function onBeforeDamageReceived( _attacker, _skill, _hitInfo, _properties )
@@ -41,7 +48,8 @@ this.manashield_effect <- this.inherit("scripts/skills/skill", {
 		{
 			return;
 		}
-		_properties.DamageReceivedTotalMult *= 0.9;
+		local adding = this.m.DamageTakenReduce * 0.01;
+		_properties.DamageReceivedTotalMult *= (1 - adding);
 	}
 });
 

@@ -1,6 +1,9 @@
 /*BBWOW:This file is part of datchannin bbWoW mod, mod_version = 8.05, game_version = 1.4.0.45*/
 this.perk_wow_manashield <- this.inherit("scripts/skills/skill", {
-	m = {},
+	m = {
+		BaseMultTakenValue = 10,
+		T0_mage_head = false
+	},
 	function create()
 	{
 		this.m.ID = "perk.wow.mage.manashield";
@@ -13,14 +16,34 @@ this.perk_wow_manashield <- this.inherit("scripts/skills/skill", {
 		this.m.IsStacking = false;
 		this.m.IsHidden = false;
 	}
-	
+
+	function getMultValue()
+	{
+		local total_mult_value = this.m.BaseMultTakenValue;
+
+		if (this.m.T0_mage_head)
+		{
+			total_mult_value += 5;
+		}
+
+		return total_mult_value;
+	}
+
 	function onCombatStarted()
 	{
-		this.getContainer().add(this.new("scripts/skills/effects/manashield_effect"));
+		local total_mult_value = getMultValue();
+		local effect = this.new("scripts/skills/effects/manashield_effect");
+		effect.setValue(total_mult_value);
+		this.getContainer().add(effect);
 	}
 
 	function onRemoved()
 	{
 		this.getContainer().removeByID("effects.manashield");
+	}
+	
+	function onUpdate( _properties )
+	{
+		this.m.T0_mage_head = _properties.T0_mage_head;
 	}
 });

@@ -9,7 +9,9 @@ this.mage_frostbolt_skill <- this.inherit("scripts/skills/skill", {
 		magicabsorption = false,
 		magicinstability = false,
 		iceattunement = false,
-		fireattunement = false
+		fireattunement = false,
+		T0_mage_armor = false,
+		T0_mage_set = false,
 	},
 	function create()
 	{
@@ -62,11 +64,24 @@ this.mage_frostbolt_skill <- this.inherit("scripts/skills/skill", {
 		if (this.m.iceattunement)
 		{
 			total_damage_min += 7;
+			if (this.m.T0_mage_armor)
+			{
+				total_damage_min += 7;
+			}
 		}
 
 		if (this.m.fireattunement)
 		{
 			total_damage_min -= 4;
+			if (this.m.T0_mage_armor)
+			{
+				total_damage_min -= 4;
+			}
+		}
+
+		if (this.m.T0_mage_set)
+		{
+			total_damage_min += 10;
 		}
 
 		scale = this.Math.floor(total_damage_min * this.m.CurrentLevel * this.Const.MageScale.frost_damage_min);
@@ -89,11 +104,24 @@ this.mage_frostbolt_skill <- this.inherit("scripts/skills/skill", {
 		if (this.m.iceattunement)
 		{
 			total_damage_max += 7;
+			if (this.m.T0_mage_armor)
+			{
+				total_damage_max += 7;
+			}
 		}
 
 		if (this.m.fireattunement)
 		{
 			total_damage_max -= 4;
+			if (this.m.T0_mage_armor)
+			{
+				total_damage_max -= 4;
+			}
+		}
+
+		if (this.m.T0_mage_set)
+		{
+			total_damage_max += 10;
 		}
 
 		scale = this.Math.floor(total_damage_max * this.m.CurrentLevel * this.Const.MageScale.frost_damage_max);
@@ -212,6 +240,8 @@ this.mage_frostbolt_skill <- this.inherit("scripts/skills/skill", {
 		this.m.magicinstability = user.getSkills().hasSkill("perk.wow.mage.magicinstability");
 		this.m.fireattunement = user.getSkills().hasSkill("perk.wow.mage.fireattunement");
 		this.m.iceattunement = user.getSkills().hasSkill("perk.wow.mage.iceattunement");
+		this.m.T0_mage_set = _properties.isFullSetMageT0();
+		this.m.T0_mage_armor = _properties.T0_mage_armor;
 	}
 
 	function onAfterUpdate( _properties )

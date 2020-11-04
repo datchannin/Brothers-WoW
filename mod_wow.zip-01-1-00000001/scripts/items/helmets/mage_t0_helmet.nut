@@ -37,6 +37,13 @@ this.mage_t0_helmet <- this.inherit("scripts/items/helmets/helmet", {
 	{
 		local result = this.helmet.getTooltip();
 
+		result.push({
+			id = 14,
+			type = "text",
+			icon = "ui/icons/special.png",
+			text = "[color=" + this.Const.UI.Color.PositiveValue + "]\'Mana Shield\'[/color] effect value will be increased by [color=" + this.Const.UI.Color.PositiveValue + "]+5%[/color]"
+		});
+
 		return result;
 	}
 
