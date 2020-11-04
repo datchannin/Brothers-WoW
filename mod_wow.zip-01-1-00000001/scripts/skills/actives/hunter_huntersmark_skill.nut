@@ -68,7 +68,7 @@ this.hunter_huntersmark_skill <- this.inherit("scripts/skills/skill", {
 			{
 				id = 7,
 				type = "text",
-				icon = "ui/icons/action_points.png",
+				icon = "ui/icons/damage_received.png",
 				text = "Increase target damage taken by [color=" + this.Const.UI.Color.NegativeValue + "]" + total_damage_taken_value + "%[/color]"
 			}
 		];
