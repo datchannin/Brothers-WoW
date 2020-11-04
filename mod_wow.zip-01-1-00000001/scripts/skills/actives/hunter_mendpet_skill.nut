@@ -3,7 +3,8 @@ this.hunter_mendpet_skill <- this.inherit("scripts/skills/skill", {
 	m = {
 		heal_base_min = 15,
 		heal_base_max = 25,
-		CurrentLevel = 1
+		CurrentLevel = 1,
+		T0_hunter_set = false
 	},
 	function create()
 	{
@@ -38,6 +39,11 @@ this.hunter_mendpet_skill <- this.inherit("scripts/skills/skill", {
 		local total_heal_min = this.m.heal_base_min;
 		local scale = 0;
 
+		if (this.m.T0_hunter_set)
+		{
+			total_heal_min += 10;
+		}
+
 		scale = this.Math.floor(total_heal_min * this.m.CurrentLevel * this.Const.HunterScale.pet_mend_min);
 
 		total_heal_min += scale;
@@ -49,6 +55,11 @@ this.hunter_mendpet_skill <- this.inherit("scripts/skills/skill", {
 	{
 		local total_heal_max = this.m.heal_base_max;
 		local scale = 0;
+
+		if (this.m.T0_hunter_set)
+		{
+			total_heal_max += 10;
+		}
 
 		scale = this.Math.floor(total_heal_max * this.m.CurrentLevel * this.Const.HunterScale.pet_mend_max);
 
@@ -77,6 +88,7 @@ this.hunter_mendpet_skill <- this.inherit("scripts/skills/skill", {
 	{
 		local user = this.getContainer().getActor();
 		this.m.CurrentLevel = user.getLevel();
+		this.m.T0_hunter_set = _properties.isFullSetHunterT0();
 	}
 
 	function onVerifyTarget( _originTile, _targetTile )

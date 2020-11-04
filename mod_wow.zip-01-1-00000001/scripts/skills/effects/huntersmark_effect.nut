@@ -1,7 +1,8 @@
 /*BBWOW:This file is part of datchannin bbWoW mod, mod_version = 8.05, game_version = 1.4.0.45*/
 this.huntersmark_effect <- this.inherit("scripts/skills/skill", {
 	m = {
-		TurnsLeft = 2
+		TurnsLeft = 2,
+		Value = 5
 	},
 	function create()
 	{
@@ -17,7 +18,7 @@ this.huntersmark_effect <- this.inherit("scripts/skills/skill", {
 
 	function getDescription()
 	{
-		return "Damage taken by this character is increased by [color=" + this.Const.UI.Color.NegativeValue + "]5%[/color] for [color=" + this.Const.UI.Color.NegativeValue + "] + this.m.TurnsLeft + [/color] more turn(s).";
+		return "Damage taken by this character is increased by [color=" + this.Const.UI.Color.NegativeValue + "]" + this.m.Value + "%[/color] for [color=" + this.Const.UI.Color.NegativeValue + "]" + this.m.TurnsLeft + "[/color] more turn(s).";
 	}
 
 	function getTooltip()
@@ -37,7 +38,7 @@ this.huntersmark_effect <- this.inherit("scripts/skills/skill", {
 				id = 6,
 				type = "text",
 				icon = "ui/icons/damage_received.png",
-				text = "Damage taken increased by [color=" + this.Const.UI.Color.NegativeValue + "]5%[/color]"
+				text = "Damage taken increased by [color=" + this.Const.UI.Color.NegativeValue + "]" + this.m.Value + "%[/color]"
 			},
 		];
 	}
@@ -48,7 +49,15 @@ this.huntersmark_effect <- this.inherit("scripts/skills/skill", {
 		{
 			return;
 		}
-		_properties.DamageReceivedTotalMult *= 1.05;
+		
+		local percent_value = this.m.Value * 0.01;
+		
+		_properties.DamageReceivedTotalMult *= (1 + percent_value);
+	}
+
+	function setValue( _d )
+	{
+		this.m.Value = _d;
 	}
 
 	function resetTime()
@@ -68,7 +77,7 @@ this.huntersmark_effect <- this.inherit("scripts/skills/skill", {
 			this.removeSelf();
 		}
 	}
-	
+
 	function onAdded()
 	{
 		local actor = this.getContainer().getActor();

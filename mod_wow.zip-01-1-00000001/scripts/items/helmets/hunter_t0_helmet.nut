@@ -38,6 +38,13 @@ this.hunter_t0_helmet <- this.inherit("scripts/items/helmets/helmet", {
 	{
 		local result = this.helmet.getTooltip();
 
+		result.push({
+			id = 14,
+			type = "text",
+			icon = "ui/icons/special.png",
+			text = "[color=" + this.Const.UI.Color.PositiveValue + "]\'Hunter\'s Mark\'[/color] Action Points cost is reduced by [color=" + this.Const.UI.Color.PositiveValue + "]5[/color] points"
+		});
+
 		return result;
 	}
 
