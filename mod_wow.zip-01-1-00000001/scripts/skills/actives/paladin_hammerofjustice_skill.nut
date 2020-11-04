@@ -1,6 +1,8 @@
 /*BBWOW:This file is part of datchannin bbWoW mod, mod_version = 8.05, game_version = 1.4.0.45*/
 this.paladin_hammerofjustice_skill <- this.inherit("scripts/skills/skill", {
-	m = {},
+	m = {
+		T0_paladin_head = false
+	},
 	function create()
 	{
 		this.m.ID = "actives.hammerofjustice_skill";
@@ -61,6 +63,23 @@ this.paladin_hammerofjustice_skill <- this.inherit("scripts/skills/skill", {
 		}
 
 		return true;
+	}
+
+	function onUpdate( _properties )
+	{
+		this.m.T0_paladin_head = _properties.T0_paladin_head;
+	}
+
+	function onAfterUpdate( _properties )
+	{
+		if (this.m.T0_paladin_head)
+		{
+			this.m.FatigueCost = 10;
+		}
+		else
+		{
+			this.m.FatigueCost = 30;
+		}
 	}
 
 	function onUse( _user, _targetTile )

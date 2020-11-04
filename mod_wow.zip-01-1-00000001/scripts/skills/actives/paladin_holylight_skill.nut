@@ -4,7 +4,8 @@ this.paladin_holylight_skill <- this.inherit("scripts/skills/skill", {
 		heal_base_min = 7,
 		heal_base_max = 14,
 		CurrentLevel = 1,
-		holypower = false
+		holypower = false,
+		T0_paladin_armor = false
 	},
 	function create()
 	{
@@ -47,6 +48,11 @@ this.paladin_holylight_skill <- this.inherit("scripts/skills/skill", {
 			total_heal_min += 10;
 		}
 
+		if (this.m.T0_paladin_armor)
+		{
+			total_heal_min += 5;
+		}
+
 		scale_value = this.Math.floor(total_heal_min * this.m.CurrentLevel * this.Const.PaladinScale.holy_heal_min);
 
 		total_heal_min += scale_value;
@@ -62,6 +68,11 @@ this.paladin_holylight_skill <- this.inherit("scripts/skills/skill", {
 		if (this.m.holypower)
 		{
 			total_heal_max += 10;
+		}
+
+		if (this.m.T0_paladin_armor)
+		{
+			total_heal_max += 5;
 		}
 
 		scale_value = this.Math.floor(total_heal_max * this.m.CurrentLevel * this.Const.PaladinScale.holy_heal_max);
@@ -92,6 +103,7 @@ this.paladin_holylight_skill <- this.inherit("scripts/skills/skill", {
 		local user = this.getContainer().getActor();
 		this.m.CurrentLevel = user.getLevel();
 		this.m.holypower = user.getSkills().hasSkill("perk.wow.paladin.holypower");
+		this.m.T0_paladin_armor = _properties.T0_paladin_armor;
 	}
 
 	function onVerifyTarget( _originTile, _targetTile )

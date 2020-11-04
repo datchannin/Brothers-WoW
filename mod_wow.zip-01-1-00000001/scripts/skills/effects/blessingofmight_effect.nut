@@ -1,7 +1,8 @@
 /*BBWOW:This file is part of datchannin bbWoW mod, mod_version = 8.05, game_version = 1.4.0.45*/
 this.blessingofmight_effect <- this.inherit("scripts/skills/skill", {
 	m = {
-		TurnsLeft = 2
+		TurnsLeft = 2,
+		Power = 20
 	},
 	function create()
 	{
@@ -13,6 +14,11 @@ this.blessingofmight_effect <- this.inherit("scripts/skills/skill", {
 		this.m.IsActive = false;
 		this.m.IsStacking = false;
 		this.m.IsRemovedAfterBattle = true;
+	}
+
+	function setValue( _d )
+	{
+		this.m.Power = _d;
 	}
 
 	function getDescription()
@@ -37,7 +43,7 @@ this.blessingofmight_effect <- this.inherit("scripts/skills/skill", {
 				id = 10,
 				type = "text",
 				icon = "ui/icons/damage_dealt.png",
-				text = "[color=" + this.Const.UI.Color.PositiveValue + "]+20%[/color] Damage"
+				text = "Damage done is increased by [color=" + this.Const.UI.Color.PositiveValue + "]" + this.m.Power + "%[/color]"
 			}
 		];
 	}
@@ -52,7 +58,8 @@ this.blessingofmight_effect <- this.inherit("scripts/skills/skill", {
 
 	function onUpdate( _properties )
 	{
-		_properties.DamageTotalMult *= 1.2;
+		local percent = this.m.Power * 0.01;
+		_properties.DamageTotalMult *= (1 + percent);
 	}
 
 	function onTurnEnd()

@@ -3,6 +3,7 @@ this.paladin_sanctityaura_skill <- this.inherit("scripts/skills/skill", {
 	m = {
 		CurrentLevel = 1,
 		BaseEffect = 2,
+		T0_paladin_set = false
 	},
 	function create()
 	{
@@ -59,6 +60,19 @@ this.paladin_sanctityaura_skill <- this.inherit("scripts/skills/skill", {
 	{
 		local user = this.getContainer().getActor();
 		this.m.CurrentLevel = user.getLevel();
+		this.m.T0_paladin_set = _properties.isFullSetPaladinT0();
+	}
+
+	function onAfterUpdate( _properties )
+	{
+		if (this.m.T0_paladin_set)
+		{
+			this.m.ActionPointCost = 0;
+		}
+		else
+		{
+			this.m.ActionPointCost = 9;
+		}
 	}
 
 	function isUsable()

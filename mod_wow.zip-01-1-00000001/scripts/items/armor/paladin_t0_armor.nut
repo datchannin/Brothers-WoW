@@ -33,6 +33,24 @@ this.paladin_t0_armor <- this.inherit("scripts/items/armor/armor", {
 	{
 		local result = this.armor.getTooltip();
 
+		result.push({
+			id = 14,
+			type = "text",
+			icon = "ui/icons/special.png",
+			text = "Set bonus: [color=" + this.Const.UI.Color.PositiveValue + "]\'Auras\'[/color] Action Points cost reduces by [color=" + this.Const.UI.Color.PositiveValue + "]9[/color] points"
+		});
+		result.push({
+			id = 14,
+			type = "text",
+			icon = "ui/icons/special.png",
+			text = "[color=" + this.Const.UI.Color.PositiveValue + "]\'Holy Light\'[/color] base power increases by [color=" + this.Const.UI.Color.PositiveValue + "]5[/color] points"
+		});
+		result.push({
+			id = 14,
+			type = "text",
+			icon = "ui/icons/special.png",
+			text = "[color=" + this.Const.UI.Color.PositiveValue + "]\'Blessing of Might\'[/color] effect increases by [color=" + this.Const.UI.Color.PositiveValue + "]+5%[/color]"
+		});
 		return result;
 	}
 

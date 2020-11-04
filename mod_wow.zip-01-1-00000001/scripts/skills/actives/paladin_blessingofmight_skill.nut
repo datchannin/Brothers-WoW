@@ -1,11 +1,14 @@
 /*BBWOW:This file is part of datchannin bbWoW mod, mod_version = 8.05, game_version = 1.4.0.45*/
 this.paladin_blessingofmight_skill <- this.inherit("scripts/skills/skill", {
-	m = {},
+	m = {
+		BaseValue = 20,
+		T0_paladin_armor = false
+	},
 	function create()
 	{
 		this.m.ID = "actives.blessingofmight_skill";
 		this.m.Name = "Blessing of Might";
-		this.m.Description = "Increase character\'s power. Damage done is increased by 20% for two turns.";
+		this.m.Description = "Increase character\'s power. Damage done is increased for two turns.";
 		this.m.Icon = "ui/perks/skill_paladin_blessingofmight.png";
 		this.m.IconDisabled = "ui/perks/skill_paladin_blessingofmight_sw.png";
 		this.m.Overlay = "skill_paladin_blessingofmight";
@@ -25,8 +28,21 @@ this.paladin_blessingofmight_skill <- this.inherit("scripts/skills/skill", {
 		this.m.MaxRange = 4;
 	}
 
+	function getBaseValue()
+	{
+		local value = this.m.BaseValue;
+
+		if (this.m.T0_paladin_armor)
+		{
+			value += 5;
+		}
+
+		return value;
+	}
+
 	function getTooltip()
 	{
+		local value = getBaseValue();
 		return [
 			{
 				id = 1,
@@ -47,7 +63,7 @@ this.paladin_blessingofmight_skill <- this.inherit("scripts/skills/skill", {
 				id = 6,
 				type = "text",
 				icon = "ui/icons/damage_dealt.png",
-				text = "Damage done will be increased by [color=" + this.Const.UI.Color.PositiveValue + "]20%[/color] for two turns"
+				text = "Damage done will be increased by [color=" + this.Const.UI.Color.PositiveValue + "]" + value + "%[/color] for two turns"
 			},
 		];
 	}
@@ -79,23 +95,30 @@ this.paladin_blessingofmight_skill <- this.inherit("scripts/skills/skill", {
 		return true;
 	}
 
+	function onUpdate( _properties )
+	{
+		this.m.T0_paladin_armor = _properties.T0_paladin_armor;
+	}
+
 	function onUse( _user, _targetTile )
 	{
 		local targetEntity = _targetTile.getEntity();
+		local value = getBaseValue();
 
-		local effect = targetEntity.getSkills().getSkillByID("effects.blessingofmight");
+		local bless = targetEntity.getSkills().getSkillByID("effects.blessingofmight");
 		this.spawnIcon("effect_paladin_blessingofmight", targetEntity.getTile());
 
-		if (effect != null)
+		if (bless != null)
 		{
-			effect.reset();
+			bless.reset();
 		}
 		else
 		{
-			targetEntity.getSkills().add(this.new("scripts/skills/effects/blessingofmight_effect"));
+			local effect = this.new("scripts/skills/effects/blessingofmight_effect");
+			effect.setValue(value);
+			targetEntity.getSkills().add(effect);
 		}
 
 		return true;
 	}
 });
-
