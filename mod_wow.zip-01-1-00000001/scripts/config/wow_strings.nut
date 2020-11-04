@@ -311,7 +311,7 @@ gt.Const.Wow_strings.PerkDescription <- {
 	AspectoftheHawk = "You know hot Hawk tracks down prey. Increase your Ranged Skill by [color=" + this.Const.UI.Color.PositiveValue + "]20[/color] points",
 	MasterThrowing = "Throwing Adept. Your arms get stronger and your throwing power is rising. Damage done by Throw Weapon is increased by [color=" + this.Const.UI.Color.PositiveValue + "]20%[/color].",
 	MasterBow = "Bow Adept. Bow is weapon for the winner! Do your shot more powerful, kill your target faster. Damage done by Bow is increased by [color=" + this.Const.UI.Color.PositiveValue + "]20%[/color].",
-	MasterCrossbow = "Crossbow Adept. Сrossbow can pierce target that is inaccessible to anyone else! Damage done by Crossbow is increased by [color=" + this.Const.UI.Color.PositiveValue + "]20%[/color].",
+	MasterCrossbow = "Crossbow and Handgone Adept. Сrossbow can pierce target that is inaccessible to anyone else! Handgone has a real power now! Damage done by Crossbow and Handgone is increased by [color=" + this.Const.UI.Color.PositiveValue + "]20%[/color].",
 	MendPet = "Unlocks the \'Mend Pet\' skill which allows you to heal your pet.",
 	LethalShots = "Gives you \'Lethal Shots\' possibility. Learn to take advantage of your high Initiative and stun the enemy with your attacks.\n\nWith every attack, hit or miss, against an opponent that acts after you in the current round, you can stun him for one turn with [color=" + this.Const.UI.Color.PositiveValue + "]33%[/color] probability.",
 	Fireball = "This is main spell for mages who wants to be \'Fire Mage\'. Unlocks the \'Fireball\' skill. Use this to burn an enemy.\nSpell damage is growing with your level.",

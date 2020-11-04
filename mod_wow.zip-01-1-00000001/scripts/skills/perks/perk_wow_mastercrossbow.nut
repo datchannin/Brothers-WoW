@@ -24,7 +24,7 @@ this.perk_wow_mastercrossbow <- this.inherit("scripts/skills/skill", {
 		local mainhand = this.getContainer().getActor().getItems().getItemAtSlot(this.Const.ItemSlot.Mainhand);
 		if (mainhand != null && mainhand.isItemType(this.Const.Items.ItemType.RangedWeapon))
 		{
-			if (_skill.getID() == "actives.shoot_bolt" || _skill.getID() == "actives.shoot_stake")
+			if (_skill.getID() == "actives.shoot_bolt" || _skill.getID() == "actives.shoot_stake" || _skill.getID() == "actives.fire_handgonne")
 			{
 				_properties.DamageTotalMult *= 1.2;
 			}
