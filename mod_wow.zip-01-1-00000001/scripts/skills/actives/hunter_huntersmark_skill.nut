@@ -48,31 +48,23 @@ this.hunter_huntersmark_skill <- this.inherit("scripts/skills/skill", {
 
 	function getTooltip()
 	{
+		local ret = this.getDefaultUtilityTooltip();
 		local total_damage_taken_value = getDamageTakenValue();
-		local ret = [
-			{
-				id = 1,
-				type = "title",
-				text = this.getName()
-			},
-			{
-				id = 2,
-				type = "description",
-				text = this.getDescription()
-			},
-			{
-				id = 3,
-				type = "text",
-				text = this.getCostString()
-			},
-			{
-				id = 7,
-				type = "text",
-				icon = "ui/icons/damage_received.png",
-				text = "Increase target damage taken by [color=" + this.Const.UI.Color.NegativeValue + "]" + total_damage_taken_value + "%[/color]"
-			}
-		];
-		
+
+		ret.push({
+			id = 7,
+			type = "text",
+			icon = "ui/icons/damage_received.png",
+			text = "Increase target damage taken by [color=" + this.Const.UI.Color.NegativeValue + "]" + total_damage_taken_value + "%[/color]"
+		});
+
+		ret.push({
+			id = 6,
+			type = "text",
+			icon = "ui/icons/vision.png",
+			text = "Has a range of [color=" + this.Const.UI.Color.PositiveValue + "]" + this.m.MaxRange + "[/color] tiles."
+		});
+
 		return ret;
 	}
 
