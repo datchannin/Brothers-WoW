@@ -11,7 +11,8 @@ this.priest_powerwordshield_skill <- this.inherit("scripts/skills/skill", {
 		mentalagility = false,
 		inspiration = false,
 		repairmaster = false,
-		unbreakablewill = false
+		unbreakablewill = false,
+		T0_priest_head = false
 	},
 	function create()
 	{
@@ -46,9 +47,17 @@ this.priest_powerwordshield_skill <- this.inherit("scripts/skills/skill", {
 	{
 		local effect = this.m.BaseEffect;
 
+		if (this.m.mentalstrength)
+		{
+			if (this.m.T0_priest_head)
+			{
+				effect += 5;
+			}
+		}
+
 		if (this.m.mentalpower)
 		{
-			effect *= 2;
+			effect += 10;
 		}
 
 		return effect;
@@ -160,6 +169,7 @@ this.priest_powerwordshield_skill <- this.inherit("scripts/skills/skill", {
 		this.m.inspiration = user.getSkills().hasSkill("perk.wow.priest.inspiration");
 		this.m.repairmaster = user.getSkills().hasSkill("perk.wow.priest.repairmaster");
 		this.m.unbreakablewill = user.getSkills().hasSkill("perk.wow.priest.unbreakablewill");
+		this.m.T0_priest_head = _properties.T0_priest_head;
 	}
 
 	function onAfterUpdate( _properties )

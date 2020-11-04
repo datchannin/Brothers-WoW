@@ -8,7 +8,8 @@ this.priest_heal_skill <- this.inherit("scripts/skills/skill", {
 		spiritalhealing = false,
 		blessedrecovery = false,
 		unbreakablewill = false,
-		renew = false
+		renew = false,
+		T0_priest_armor = false
 	},
 	function create()
 	{
@@ -106,6 +107,16 @@ this.priest_heal_skill <- this.inherit("scripts/skills/skill", {
 			});
 		}
 
+		if (this.m.T0_priest_armor)
+		{
+			ret.push({
+				id = 6,
+				type = "text",
+				icon = "ui/icons/special.png",
+				text = "Has a [color=" + this.Const.UI.Color.PositiveValue + "] 100% [/color] chance to remove a Bleeding from the target."
+			});
+		}
+
 		ret.push({
 			id = 6,
 			type = "text",
@@ -125,6 +136,7 @@ this.priest_heal_skill <- this.inherit("scripts/skills/skill", {
 		this.m.renew = user.getSkills().hasSkill("perk.wow.priest.renew");
 		this.m.blessedrecovery = user.getSkills().hasSkill("perk.wow.priest.blessedrecovery");
 		this.m.unbreakablewill = user.getSkills().hasSkill("perk.wow.priest.unbreakablewill");
+		this.m.T0_priest_armor = _properties.T0_priest_armor;
 	}
 
 	function onAfterUpdate( _properties )
@@ -250,6 +262,14 @@ this.priest_heal_skill <- this.inherit("scripts/skills/skill", {
 			skills.removeByID("injury.split_hand");
 			skills.removeByID("injury.split_nose");
 			skills.removeByID("injury.split_shoulder");
+		}
+
+		if (this.m.T0_priest_armor)
+		{
+			while (targetEntity.getSkills().hasSkill("effects.bleeding"))
+			{
+				targetEntity.getSkills().removeByID("effects.bleeding");
+			}
 		}
 
 		if (targetEntity.getHitpoints() == targetEntity.getHitpointsMax())

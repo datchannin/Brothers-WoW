@@ -33,6 +33,20 @@ this.priest_t0_armor <- this.inherit("scripts/items/armor/armor", {
 	{
 		local result = this.armor.getTooltip();
 
+		result.push({
+			id = 14,
+			type = "text",
+			icon = "ui/icons/special.png",
+			text = "Set bonus: [color=" + this.Const.UI.Color.PositiveValue + "]\'Permanent Recovery\'[/color] increases apply chance by [color=" + this.Const.UI.Color.PositiveValue + "]10%[/color] and can remove almost all injuries"
+		});
+
+		result.push({
+			id = 14,
+			type = "text",
+			icon = "ui/icons/special.png",
+			text = "[color=" + this.Const.UI.Color.PositiveValue + "]\'Heal\'[/color] removes  [color=" + this.Const.UI.Color.NegativeValue + "]\'Bleeding\'[/color] from target"
+		});
+
 		return result;
 	}
 

@@ -2,7 +2,8 @@
 this.priest_permanentrecovery_skill <- this.inherit("scripts/skills/skill", {
 	m = {
 		BaseChance = 20,
-		luckyrecovery = false
+		luckyrecovery = false,
+		T0_priest_set = false
 	},
 	function create()
 	{
@@ -39,6 +40,11 @@ this.priest_permanentrecovery_skill <- this.inherit("scripts/skills/skill", {
 			chance += 20;
 		}
 
+		if (this.m.T0_priest_set)
+		{
+			chance += 10;
+		}
+
 		return chance;
 	}
 
@@ -47,13 +53,25 @@ this.priest_permanentrecovery_skill <- this.inherit("scripts/skills/skill", {
 		local ret = this.getDefaultUtilityTooltip();
 		local chance = GetTotalChance();
 
-		ret.push({
-			id = 6,
-			type = "text",
-			icon = "ui/icons/buff.png",
-			text = "You are able to recover some [color=" + this.Const.UI.Color.DamageValue + "] \'Permanent\' [/color] injuries."
-		});
-		
+		if (this.m.T0_priest_set)
+		{
+			ret.push({
+				id = 6,
+				type = "text",
+				icon = "ui/icons/buff.png",
+				text = "You are able to recover almost all [color=" + this.Const.UI.Color.DamageValue + "] \'Permanent\' [/color] injuries."
+			});
+		}
+		else
+		{
+			ret.push({
+				id = 6,
+				type = "text",
+				icon = "ui/icons/buff.png",
+				text = "You are able to recover some [color=" + this.Const.UI.Color.DamageValue + "] \'Permanent\' [/color] injuries."
+			});
+		}
+
 		ret.push({
 			id = 6,
 			type = "text",
@@ -100,6 +118,7 @@ this.priest_permanentrecovery_skill <- this.inherit("scripts/skills/skill", {
 	{
 		local user = this.getContainer().getActor();
 		this.m.luckyrecovery = user.getSkills().hasSkill("perk.wow.priest.luckyrecovery");
+		this.m.T0_priest_set = _properties.isFullSetPriestT0();
 	}
 
 	function onUse( _user, _targetTile )
@@ -151,6 +170,33 @@ this.priest_permanentrecovery_skill <- this.inherit("scripts/skills/skill", {
 		if (r <= chance)
 		{
 			skills.removeByID("injury.maimed_foot");
+		}
+
+		if (this.m.T0_priest_set)
+		{
+			r = this.Math.rand(0, 99);
+			if (r <= chance)
+			{
+				skills.removeByID("injury.missing_ear");
+			}
+			
+			r = this.Math.rand(0, 99);
+			if (r <= chance)
+			{
+				skills.removeByID("injury.missing_eye");
+			}
+			
+			r = this.Math.rand(0, 99);
+			if (r <= chance)
+			{
+				skills.removeByID("injury.missing_finger");
+			}
+			
+			r = this.Math.rand(0, 99);
+			if (r <= chance)
+			{
+				skills.removeByID("injury.missing_nose");
+			}
 		}
 
 		return true;
