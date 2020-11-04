@@ -81,6 +81,13 @@ this.hunter_mendpet_skill <- this.inherit("scripts/skills/skill", {
 			text = "Heal the Winterwolf for [color=" + this.Const.UI.Color.PositiveValue + "]" + heal_min + "[/color] - [color=" + this.Const.UI.Color.PositiveValue + "]" + heal_max + "[/color] value."
 		});
 
+		ret.push({
+			id = 7,
+			type = "text",
+			icon = "ui/icons/vision.png",
+			text = "Has a maximum range of [color=" + this.Const.UI.Color.PositiveValue + "]" + this.m.MaxRange + "[/color] tiles"
+		});
+
 		return ret;
 	}
 
