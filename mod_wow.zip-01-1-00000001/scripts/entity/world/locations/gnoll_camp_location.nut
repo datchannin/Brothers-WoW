@@ -28,6 +28,7 @@ this.gnoll_camp_location <- this.inherit("scripts/entity/world/location", {
 		local gnoll_assassin = 1;
 		local gnoll_mystic = 1;
 		local gnoll_poacher = 1;
+		local gnoll_rookies = 20;
 
 		//SPAWN BRUTES
 		for( local i = 0; i < gnoll_brutes; i = ++i )
@@ -58,6 +59,14 @@ this.gnoll_camp_location <- this.inherit("scripts/entity/world/location", {
 		{
 			this.Const.World.Common.addTroop(this, {
 				Type = this.Const.World.Spawn.Troops.GnollPoacher
+			}, false);
+		}
+		
+		//SPAWN ROOKIES
+		for( local i = 0; i < gnoll_rookies; i = ++i )
+		{
+			this.Const.World.Common.addTroop(this, {
+				Type = this.Const.World.Spawn.Troops.GnollRookie
 			}, false);
 		}
 	}
