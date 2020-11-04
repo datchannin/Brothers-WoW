@@ -52,8 +52,7 @@ this.gnoll_rookie <- this.inherit("scripts/entity/tactical/actor", {
 		this.m.SoundVolume[this.Const.Sound.ActorEvent.Death] = 0.9;
 		this.m.SoundVolume[this.Const.Sound.ActorEvent.DamageReceived] = 0.9;
 		this.m.SoundVolume[this.Const.Sound.ActorEvent.Idle] = 1.25;
-		//this.m.AIAgent = this.new("scripts/ai/tactical/agents/gnoll_rookie_agent");	//FIXME should be implemented!
-		this.m.AIAgent = this.new("scripts/ai/tactical/agents/orc_young_agent");
+		this.m.AIAgent = this.new("scripts/ai/tactical/agents/gnoll_rookie_agent");
 		this.m.AIAgent.setActor(this);
 	}
 
@@ -195,14 +194,10 @@ this.gnoll_rookie <- this.inherit("scripts/entity/tactical/actor", {
 		this.actor.onInit();
 		local b = this.m.BaseProperties;
 		b.setValues(this.Const.Tactical.Actor.GnollRookie);
-
-		if (!this.Tactical.State.isScenarioMode() && this.World.getTime().Days >= 150)
-		{
-			b.RangedSkill += 5;
-		}
-
+		b.IsSpecializedInMaces = true;
+		b.IsMasterInMaces = true;
 		b.IsSpecializedInAxes = true;
-		b.IsSpecializedInCleavers = true;
+		b.IsMasterInAxes = true;
 		this.m.ActionPoints = b.ActionPoints;
 		this.m.Hitpoints = b.Hitpoints;
 		this.m.CurrentProperties = clone b;
@@ -226,14 +221,12 @@ this.gnoll_rookie <- this.inherit("scripts/entity/tactical/actor", {
 		injury.Visible = false;
 		injury.setBrush("bust_head_gnoll_0" + this.m.color);
 		this.addSprite("helmet");
-		//local body_blood = this.addSprite("body_blood");
-		//body_blood.setBrush("bust_orc_01_body_bloodied");
-		//body_blood.Visible = false;
 		this.addDefaultStatusSprites();
 		this.getSprite("status_rooted").Scale = 0.55;
 		this.m.Skills.add(this.new("scripts/skills/special/double_grip"));
 		this.m.Skills.add(this.new("scripts/skills/actives/hand_to_hand"));
-		this.m.Skills.add(this.new("scripts/skills/actives/charge"));
+		this.m.Skills.add(this.new("scripts/skills/actives/line_breaker"));
+		this.m.Skills.add(this.new("scripts/skills/actives/recover_skill"));
 
 		if (this.Const.DLC.Unhold)
 		{
@@ -248,24 +241,22 @@ this.gnoll_rookie <- this.inherit("scripts/entity/tactical/actor", {
 
 	function assignRandomEquipment()
 	{
-		if (this.m.Items.getItemAtSlot(this.Const.ItemSlot.Body) == null)
-		{
-			//this.m.Items.equip(this.new("scripts/items/armor/gnolls/gnoll_brute_armor"));
-			//this.m.Items.equip(this.new("scripts/items/armor/gnolls/gnoll_shaman_armor"));
-			//this.m.Items.equip(this.new("scripts/items/armor/gnolls/gnoll_mystic_armor"));
-			//this.m.Items.equip(this.new("scripts/items/armor/gnolls/gnoll_assassin_armor"));
-			//this.m.Items.equip(this.new("scripts/items/armor/gnolls/gnoll_poacher_armor"));
-		}
+		local r = this.Math.rand(1, 2);
 
-		if (this.m.Items.getItemAtSlot(this.Const.ItemSlot.Head) == null)
+		if (r == 1)
 		{
-			//this.m.Items.equip(this.new("scripts/items/helmets/gnolls/gnoll_brute_helmet"));
-			//this.m.Items.equip(this.new("scripts/items/helmets/gnolls/gnoll_shaman_helmet"));
-			//this.m.Items.equip(this.new("scripts/items/helmets/gnolls/gnoll_mystic_helmet"));
-			//this.m.Items.equip(this.new("scripts/items/helmets/gnolls/gnoll_assassin_helmet"));
-			//this.m.Items.equip(this.new("scripts/items/helmets/gnolls/gnoll_poacher_helmet"));
+			if (this.m.Items.getItemAtSlot(this.Const.ItemSlot.Mainhand) == null)
+			{
+				this.m.Items.equip(this.new("scripts/items/weapons/gnolls/gnoll_axe"));
+			}
+		}
+		else
+		{
+			if (this.m.Items.getItemAtSlot(this.Const.ItemSlot.Mainhand) == null)
+			{
+				this.m.Items.equip(this.new("scripts/items/weapons/gnolls/gnoll_mace"));
+			}
 		}
 	}
-
 });
 
