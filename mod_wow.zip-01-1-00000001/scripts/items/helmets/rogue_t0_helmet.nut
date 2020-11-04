@@ -11,7 +11,7 @@ this.rogue_t0_helmet <- this.inherit("scripts/items/helmets/helmet", {
 		this.m.HideCharacterHead = false;
 		this.m.HideCorpseHead = false;
 		this.m.HideHair = true;
-		this.m.HideBeard = false;
+		this.m.HideBeard = true;
 		this.m.IsDroppedAsLoot = true;
 		this.m.Variant = 1;
 		this.updateVariant();
@@ -37,7 +37,18 @@ this.rogue_t0_helmet <- this.inherit("scripts/items/helmets/helmet", {
 	function getTooltip()
 	{
 		local result = this.helmet.getTooltip();
-
+		result.push({
+			id = 14,
+			type = "text",
+			icon = "ui/icons/special.png",
+			text = "[color=" + this.Const.UI.Color.PositiveValue + "]\'Camouflage\'[/color] skill duration will be increased by [color=" + this.Const.UI.Color.PositiveValue + "]1[/color] turn"
+		});
+		result.push({
+			id = 14,
+			type = "text",
+			icon = "ui/icons/special.png",
+			text = "[color=" + this.Const.UI.Color.PositiveValue + "]\'Initiative\'[/color] perk also dives [color=" + this.Const.UI.Color.PositiveValue + "]+10[/color] Ranged Defense"
+		});
 		return result;
 	}
 

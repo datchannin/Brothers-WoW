@@ -18,5 +18,9 @@ this.perk_wow_initiative <- this.inherit("scripts/skills/skill", {
 	{
 		_properties.Initiative += 20;
 		_properties.IsImmuneToRoot = true;
+		if (_properties.T0_rogue_head)
+		{
+			_properties.RangedDefense += 10;
+		}
 	}
 });

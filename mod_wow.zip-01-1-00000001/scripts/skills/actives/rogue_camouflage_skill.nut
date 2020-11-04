@@ -1,11 +1,14 @@
 /*BBWOW:This file is part of datchannin bbWoW mod, mod_version = 8.05, game_version = 1.4.0.45*/
 this.rogue_camouflage_skill <- this.inherit("scripts/skills/skill", {
-	m = {},
+	m = {
+		T0_rogue_head = false,
+		BaseDuration = 2
+	},
 	function create()
 	{
 		this.m.ID = "actives.camouflage_skill";
 		this.m.Name = "Camouflage";
-		this.m.Description = "Increase character\'s Melee Defense for [color=" + this.Const.UI.Color.PositiveValue + "]2[/color] turns and allow to ignore hostile zone of control.";
+		this.m.Description = "Increase character\'s Melee Defense for several turns and allow to ignore hostile zone of control.";
 		this.m.Icon = "ui/perks/skill_rogue_camouflage.png";
 		this.m.IconDisabled = "ui/perks/skill_rogue_camouflage_sw.png";
 		this.m.Overlay = "skill_rogue_camouflage";
@@ -25,8 +28,21 @@ this.rogue_camouflage_skill <- this.inherit("scripts/skills/skill", {
 		this.m.MaxRange = 0;
 	}
 
+	function getTotalDuration()
+	{
+		local duration = this.m.BaseDuration;
+
+		if (this.m.T0_rogue_head)
+		{
+			duration += 1;
+		}
+
+		return duration;
+	}
+
 	function getTooltip()
 	{
+		local duration = getTotalDuration();
 		return [
 			{
 				id = 1,
@@ -47,22 +63,30 @@ this.rogue_camouflage_skill <- this.inherit("scripts/skills/skill", {
 				id = 6,
 				type = "text",
 				icon = "ui/icons/melee_defense.png",
-				text = "Melee Defense will be increased by [color=" + this.Const.UI.Color.PositiveValue + "]20[/color]"
-			},
+				text = "Melee Defense will be increased by [color=" + this.Const.UI.Color.PositiveValue + "]20[/color] for [color=" + this.Const.UI.Color.PositiveValue + "]" + duration + "[/color] turns"
+			}
 		];
+	}
+
+	function onUpdate( _properties )
+	{
+		this.m.T0_rogue_head = _properties.T0_rogue_head;
 	}
 
 	function onUse( _user, _targetTile )
 	{
-		local effect = _user.getSkills().getSkillByID("effects.camouflage");
+		local camouflage = _user.getSkills().getSkillByID("effects.camouflage");
+		local duration = getTotalDuration();
 
-		if (effect != null)
+		if (camouflage != null)
 		{
-			effect.reset();
+			camouflage.reset();
 		}
 		else
 		{
-			_user.getSkills().add(this.new("scripts/skills/effects/camouflage_effect"));
+			local effect = this.new("scripts/skills/effects/camouflage_effect");
+			effect.setDuration(duration);
+			_user.getSkills().add(effect);
 		}
 
 		return true;

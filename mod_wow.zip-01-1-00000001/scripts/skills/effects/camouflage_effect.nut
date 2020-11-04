@@ -1,6 +1,7 @@
 /*BBWOW:This file is part of datchannin bbWoW mod, mod_version = 8.05, game_version = 1.4.0.45*/
 this.camouflage_effect <- this.inherit("scripts/skills/skill", {
 	m = {
+		BaseDuration = 2,
 		TurnsLeft = 2
 	},
 	function create()
@@ -48,14 +49,19 @@ this.camouflage_effect <- this.inherit("scripts/skills/skill", {
 		];
 	}
 
+	function setDuration( _d )
+	{
+		this.m.BaseDuration = _d;
+	}
+
 	function onAdded()
 	{
-		this.m.TurnsLeft = 2;
+		this.m.TurnsLeft = this.m.BaseDuration;
 	}
 
 	function reset()
 	{
-		this.m.TurnsLeft = 2;
+		this.m.TurnsLeft = this.m.BaseDuration;
 	}
 
 	function onUpdate( _properties )

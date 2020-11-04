@@ -33,6 +33,26 @@ this.rogue_t0_armor <- this.inherit("scripts/items/armor/armor", {
 	{
 		local result = this.armor.getTooltip();
 
+		result.push({
+			id = 14,
+			type = "text",
+			icon = "ui/icons/special.png",
+			text = "Set bonus: [color=" + this.Const.UI.Color.PositiveValue + "]\'Poison\'[/color] duration will be increased by [color=" + this.Const.UI.Color.PositiveValue + "]1[/color] turn"
+		});
+
+		result.push({
+			id = 14,
+			type = "text",
+			icon = "ui/icons/special.png",
+			text = "[color=" + this.Const.UI.Color.PositiveValue + "]\'Hemorrhage\'[/color] Action Points cost decreases by [color=" + this.Const.UI.Color.PositiveValue + "]2[/color] poins"
+		});
+		result.push({
+			id = 14,
+			type = "text",
+			icon = "ui/icons/special.png",
+			text = "[color=" + this.Const.UI.Color.PositiveValue + "]\'Poison\'[/color] base power increases by [color=" + this.Const.UI.Color.PositiveValue + "]+5[/color] points"
+		});
+
 		return result;
 	}
 

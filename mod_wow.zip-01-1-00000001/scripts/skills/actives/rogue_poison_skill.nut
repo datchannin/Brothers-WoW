@@ -4,7 +4,9 @@ this.rogue_poison_skill <- this.inherit("scripts/skills/skill", {
 		BasePoisonDamage = 10,
 		BaseTurnsDuration = 1,
 		vilepoison = false,
-		CurrentLevel = 1
+		CurrentLevel = 1,
+		T0_rogue_armor = false,
+		T0_rogue_set = false
 	},
 	function create()
 	{
@@ -46,6 +48,11 @@ this.rogue_poison_skill <- this.inherit("scripts/skills/skill", {
 			poison_damage += 10;
 		}
 
+		if (this.m.T0_rogue_armor)
+		{
+			poison_damage += 5;
+		}
+
 		scale_damage = this.Math.floor(poison_damage * this.m.CurrentLevel * this.Const.RogueScale.poison_damage);
 		poison_damage += scale_damage;
 
@@ -58,6 +65,11 @@ this.rogue_poison_skill <- this.inherit("scripts/skills/skill", {
 		local scale_duration = 0;
 
 		if (this.m.vilepoison)
+		{
+			poison_duration += 1;
+		}
+
+		if (this.m.T0_rogue_set)
 		{
 			poison_duration += 1;
 		}
@@ -89,6 +101,8 @@ this.rogue_poison_skill <- this.inherit("scripts/skills/skill", {
 		local user = this.getContainer().getActor();
 		this.m.vilepoison = user.getSkills().hasSkill("perk.wow.rogue.vilepoison");
 		this.m.CurrentLevel = user.getLevel();
+		this.m.T0_rogue_armor = _properties.T0_rogue_armor;
+		this.m.T0_rogue_set = _properties.isFullSetRogueT0();
 	}
 
 	function onVerifyTarget( _originTile, _targetTile )

@@ -1,6 +1,8 @@
 /*BBWOW:This file is part of datchannin bbWoW mod, mod_version = 8.05, game_version = 1.4.0.45*/
 this.rogue_hemorrhage_skill <- this.inherit("scripts/skills/skill", {
-	m = {},
+	m = {
+		T0_rogue_armor = false
+	},
 	function create()
 	{
 		this.m.ID = "actives.hemorrhage_skill";
@@ -61,6 +63,23 @@ this.rogue_hemorrhage_skill <- this.inherit("scripts/skills/skill", {
 		}
 
 		return true;
+	}
+
+	function onUpdate( _properties )
+	{
+		this.m.T0_rogue_armor = _properties.T0_rogue_armor;
+	}
+
+	function onAfterUpdate( _properties )
+	{
+		if (this.m.T0_rogue_armor)
+		{
+			this.m.ActionPointCost = 2;
+		}
+		else
+		{
+			this.m.ActionPointCost = 4;
+		}
 	}
 
 	function onUse( _user, _targetTile )
