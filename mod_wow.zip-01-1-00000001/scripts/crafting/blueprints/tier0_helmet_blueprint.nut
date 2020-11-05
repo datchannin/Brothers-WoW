@@ -5,7 +5,7 @@ this.tier0_helmet_blueprint <- this.inherit("scripts/crafting/blueprint", {
 		this.blueprint.create();
 		this.m.ID = "blueprint.tier0_helmet";
 		this.m.PreviewCraftable = this.new("scripts/items/misc/token_helmet_item");
-		this.m.Cost = 18000;
+		this.m.Cost = 9000;
 		local ingredients = [
 			{
 				Script = "scripts/items/misc/inventory_badge_item",

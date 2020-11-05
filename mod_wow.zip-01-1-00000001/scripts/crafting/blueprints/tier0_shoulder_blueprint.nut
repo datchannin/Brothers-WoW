@@ -5,7 +5,7 @@ this.tier0_shoulder_blueprint <- this.inherit("scripts/crafting/blueprint", {
 		this.blueprint.create();
 		this.m.ID = "blueprint.tier0_shoulder";
 		this.m.PreviewCraftable = this.new("scripts/items/misc/token_shoulder_item");
-		this.m.Cost = 10000;
+		this.m.Cost = 5000;
 		local ingredients = [
 			{
 				Script = "scripts/items/misc/inventory_badge_item",
