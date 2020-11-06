@@ -79,7 +79,7 @@ this.wow_scenario <- this.inherit("scripts/scenarios/world/starting_scenario", {
 		bros[5].m.PerkPoints = 12;
 		bros[5].m.LevelUps = 6;
 		bros[5].m.Level = 5;
-/*
+
 		bros[5].getSkills().add(this.new("scripts/skills/injury/broken_arm_injury"));
 		bros[5].getSkills().add(this.new("scripts/skills/injury/broken_leg_injury"));
 		bros[5].getSkills().add(this.new("scripts/skills/injury/broken_nose_injury"));
@@ -128,7 +128,7 @@ this.wow_scenario <- this.inherit("scripts/scenarios/world/starting_scenario", {
 		bros[5].getSkills().add(this.new("scripts/skills/injury/split_shoulder_injury"));
 		bros[5].getSkills().add(this.new("scripts/skills/injury/sprained_ankle_injury"));
 		bros[5].getSkills().add(this.new("scripts/skills/injury/stabbed_guts_injury"));
-*/
+
 		bros[6].setStartValuesEx([
 			"raider_paladin_background"
 		]);
@@ -136,7 +136,7 @@ this.wow_scenario <- this.inherit("scripts/scenarios/world/starting_scenario", {
 		bros[6].m.PerkPoints = 12;
 		bros[6].m.LevelUps = 6;
 		bros[6].m.Level = 5;
-/*
+
 		bros[6].getSkills().add(this.new("scripts/skills/injury_permanent/brain_damage_injury"));
 		bros[6].getSkills().add(this.new("scripts/skills/injury_permanent/broken_elbow_joint_injury"));
 		bros[6].getSkills().add(this.new("scripts/skills/injury_permanent/broken_knee_injury"));
@@ -148,8 +148,7 @@ this.wow_scenario <- this.inherit("scripts/scenarios/world/starting_scenario", {
 		bros[6].getSkills().add(this.new("scripts/skills/injury_permanent/missing_nose_injury"));
 		bros[6].getSkills().add(this.new("scripts/skills/injury_permanent/traumatized_injury"));
 		bros[6].getSkills().add(this.new("scripts/skills/injury_permanent/weakened_heart_injury"));
-		*/
-/*
+
 		local body = bros[6].getItems().getItemAtSlot(this.Const.ItemSlot.Body);
 		local head = bros[6].getItems().getItemAtSlot(this.Const.ItemSlot.Head);
 		local shield = bros[6].getItems().getItemAtSlot(this.Const.ItemSlot.Offhand);
@@ -173,10 +172,9 @@ this.wow_scenario <- this.inherit("scripts/scenarios/world/starting_scenario", {
 		this.World.Assets.getStash().add(this.new("scripts/items/weapons/flail"));
 		this.World.Assets.getStash().add(this.new("scripts/items/weapons/arming_sword"));
 		this.World.Assets.getStash().add(this.new("scripts/items/weapons/shortsword"));
-*/
+
 		bros[7].setStartValuesEx([
-			//"raider_developer_background"
-			"raider_priest_background"
+			"raider_developer_background"
 		]);
 		bros[7].setPlaceInFormation(1);
 		bros[7].m.PerkPoints = 50;
@@ -209,15 +207,13 @@ this.wow_scenario <- this.inherit("scripts/scenarios/world/starting_scenario", {
 
 		for (local i = 0; i < 10; i=++i)
 		{
-			//this.World.Assets.getStash().add(this.new("scripts/items/misc/potion_of_oblivion_item"));
+			this.World.Assets.getStash().add(this.new("scripts/items/misc/potion_of_oblivion_item"));
 		}
 
 		for (local i = 0; i < 20; i=++i)
 		{
 			//this.World.Assets.getStash().add(this.new("scripts/items/misc/potion_of_exp_item"));
 		}
-
-/*
 
 		local item = this.new("scripts/items/tools/player_banner");
 		item.setVariant(this.World.Assets.getBannerID());
@@ -286,7 +282,7 @@ this.wow_scenario <- this.inherit("scripts/scenarios/world/starting_scenario", {
 			this.World.Assets.getStash().add(this.new("scripts/items/armor_upgrades/mage_t0_update"));
 			this.World.Assets.getStash().add(this.new("scripts/items/armor_upgrades/warlock_t0_update"));
 		}
-*/
+
 		this.World.Assets.m.Money = this.World.Assets.m.Money + 40000;
 	}
 
