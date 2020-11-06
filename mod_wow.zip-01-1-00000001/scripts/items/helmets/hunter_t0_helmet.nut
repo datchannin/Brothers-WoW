@@ -18,10 +18,10 @@ this.hunter_t0_helmet <- this.inherit("scripts/items/helmets/helmet", {
 		this.m.ImpactSound = this.Const.Sound.ArmorLeatherImpact;
 		this.m.InventorySound = this.Const.Sound.ClothEquip;
 		this.m.Value = 4000;
-		this.m.Condition = 300;
-		this.m.ConditionMax = 300;
+		this.m.Condition = 260;
+		this.m.ConditionMax = 260;
 		this.m.StaminaModifier = -15;
-		this.m.Vision = -2;
+		this.m.Vision = -1;
 	}
 
 	function updateVariant()
