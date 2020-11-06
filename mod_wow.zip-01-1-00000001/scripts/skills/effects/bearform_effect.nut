@@ -282,7 +282,12 @@ this.bearform_effect <- this.inherit("scripts/skills/skill", {
 		actor.getSprite("body").setBrush(this.m.initBody);
 		actor.getSprite("head").setBrush(this.m.initHead);
 		toSetVisibleBrush(1);
-		
+
+		if (!actor.getSkills().hasSkill("actives.hand_to_hand"))
+		{
+			actor.getSkills().add(this.new("scripts/skills/actives/hand_to_hand"));
+		}
+
 		this.removeSelf();
 	}
 });
