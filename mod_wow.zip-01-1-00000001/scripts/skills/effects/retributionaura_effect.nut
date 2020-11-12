@@ -2,7 +2,8 @@
 this.retributionaura_effect <- this.inherit("scripts/skills/skill", {
 	m = {
 		PaladinCurrentLevel = 1,
-		BaseEffect = 4		
+		BaseEffect = 4,
+		BaseRadius = 4
 	},
 	function create()
 	{

@@ -2,7 +2,8 @@
 this.concentrationaura_effect <- this.inherit("scripts/skills/skill", {
 	m = {
 		PaladinCurrentLevel = 1,
-		BaseEffect = 3		
+		BaseEffect = 3,
+		BaseRadius = 4
 	},
 	function create()
 	{

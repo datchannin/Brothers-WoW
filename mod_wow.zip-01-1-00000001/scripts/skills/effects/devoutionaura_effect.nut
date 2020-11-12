@@ -2,7 +2,8 @@
 this.devoutionaura_effect <- this.inherit("scripts/skills/skill", {
 	m = {
 		PaladinCurrentLevel = 1,
-		BaseEffect = 10		
+		BaseEffect = 10,
+		BaseRadius = 4
 	},
 	function create()
 	{

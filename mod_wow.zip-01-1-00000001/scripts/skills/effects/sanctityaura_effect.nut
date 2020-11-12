@@ -2,7 +2,8 @@
 this.sanctityaura_effect <- this.inherit("scripts/skills/skill", {
 	m = {
 		PaladinCurrentLevel = 1,
-		BaseEffect = 2		
+		BaseEffect = 2,
+		BaseRadius = 4
 	},
 	function create()
 	{
