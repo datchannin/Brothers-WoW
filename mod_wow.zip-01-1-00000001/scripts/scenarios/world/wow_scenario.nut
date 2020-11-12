@@ -130,32 +130,32 @@ this.wow_scenario <- this.inherit("scripts/scenarios/world/starting_scenario", {
 		bros[5].getSkills().add(this.new("scripts/skills/injury/stabbed_guts_injury"));
 
 		bros[6].setStartValuesEx([
-			"raider_paladin_background"
+			"raider_mage_background"
 		]);
 		bros[6].setPlaceInFormation(12);
 		bros[6].m.PerkPoints = 12;
 		bros[6].m.LevelUps = 6;
 		bros[6].m.Level = 5;
 
-		bros[6].getSkills().add(this.new("scripts/skills/injury_permanent/brain_damage_injury"));
-		bros[6].getSkills().add(this.new("scripts/skills/injury_permanent/broken_elbow_joint_injury"));
-		bros[6].getSkills().add(this.new("scripts/skills/injury_permanent/broken_knee_injury"));
-		bros[6].getSkills().add(this.new("scripts/skills/injury_permanent/collapsed_lung_part_injury"));
-		bros[6].getSkills().add(this.new("scripts/skills/injury_permanent/maimed_foot_injury"));
-		bros[6].getSkills().add(this.new("scripts/skills/injury_permanent/missing_ear_injury"));
-		bros[6].getSkills().add(this.new("scripts/skills/injury_permanent/missing_eye_injury"));
-		bros[6].getSkills().add(this.new("scripts/skills/injury_permanent/missing_finger_injury"));
-		bros[6].getSkills().add(this.new("scripts/skills/injury_permanent/missing_nose_injury"));
-		bros[6].getSkills().add(this.new("scripts/skills/injury_permanent/traumatized_injury"));
-		bros[6].getSkills().add(this.new("scripts/skills/injury_permanent/weakened_heart_injury"));
+		//bros[6].getSkills().add(this.new("scripts/skills/injury_permanent/brain_damage_injury"));
+		//bros[6].getSkills().add(this.new("scripts/skills/injury_permanent/broken_elbow_joint_injury"));
+		//bros[6].getSkills().add(this.new("scripts/skills/injury_permanent/broken_knee_injury"));
+		//bros[6].getSkills().add(this.new("scripts/skills/injury_permanent/collapsed_lung_part_injury"));
+		//bros[6].getSkills().add(this.new("scripts/skills/injury_permanent/maimed_foot_injury"));
+		//bros[6].getSkills().add(this.new("scripts/skills/injury_permanent/missing_ear_injury"));
+		//bros[6].getSkills().add(this.new("scripts/skills/injury_permanent/missing_eye_injury"));
+		//bros[6].getSkills().add(this.new("scripts/skills/injury_permanent/missing_finger_injury"));
+		//bros[6].getSkills().add(this.new("scripts/skills/injury_permanent/missing_nose_injury"));
+		//bros[6].getSkills().add(this.new("scripts/skills/injury_permanent/traumatized_injury"));
+		//bros[6].getSkills().add(this.new("scripts/skills/injury_permanent/weakened_heart_injury"));
 
-		local body = bros[6].getItems().getItemAtSlot(this.Const.ItemSlot.Body);
-		local head = bros[6].getItems().getItemAtSlot(this.Const.ItemSlot.Head);
-		local shield = bros[6].getItems().getItemAtSlot(this.Const.ItemSlot.Offhand);
-		body.setArmor(1);
-		head.setArmor(1);
+		//local body = bros[6].getItems().getItemAtSlot(this.Const.ItemSlot.Body);
+		//local head = bros[6].getItems().getItemAtSlot(this.Const.ItemSlot.Head);
+		//local shield = bros[6].getItems().getItemAtSlot(this.Const.ItemSlot.Offhand);
+		//body.setArmor(1);
+		//head.setArmor(1);
 		//shield.setCondition(1);
-		bros[6].setHitpoints(5);
+		//bros[6].setHitpoints(5);
 
 		this.World.Assets.getStash().add(this.new("scripts/items/supplies/ground_grains_item"));
 		this.World.Assets.getStash().add(this.new("scripts/items/supplies/ground_grains_item"));

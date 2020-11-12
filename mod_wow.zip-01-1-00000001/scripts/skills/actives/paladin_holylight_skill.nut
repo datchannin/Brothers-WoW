@@ -160,7 +160,9 @@ this.paladin_holylight_skill <- this.inherit("scripts/skills/skill", {
 		local targetEntity = _targetTile.getEntity();
 		local healnumber = this.Math.rand(heal_min, heal_max);
 
-		this.Time.scheduleEvent(this.TimeUnit.Real, 1200, this.onApplyEffect.bindenv(this), {
+		this.getContainer().setBusy(true);
+
+		this.Time.scheduleEvent(this.TimeUnit.Virtual, 1200, this.onApplyEffect.bindenv(this), {
 			Skill = this,
 			Target = targetEntity,
 			Healnumber = healnumber,
@@ -201,5 +203,7 @@ this.paladin_holylight_skill <- this.inherit("scripts/skills/skill", {
 		targetEntity.setHitpoints(this.Math.min(targetEntity.getHitpointsMax(), targetEntity.getHitpoints() + healnumber));
 
 		targetEntity.onUpdateInjuryLayer();
+		
+		_data.Skill.getContainer().setBusy(false);
 	}
 });

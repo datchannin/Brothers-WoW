@@ -287,7 +287,7 @@ this.mage_frostbolt_skill <- this.inherit("scripts/skills/skill", {
 		local targetEntity = _targetTile.getEntity();
 		this.getContainer().setBusy(true);
 
-		this.Time.scheduleEvent(this.TimeUnit.Real, this.m.Delay, this.onApplyDirect.bindenv(this), {
+		this.Time.scheduleEvent(this.TimeUnit.Virtual, this.m.Delay, this.onApplyDirect.bindenv(this), {
 			Skill = this,
 			TargetTile = _targetTile,
 			User = _user

@@ -175,7 +175,7 @@ this.warlock_drainlife_skill <- this.inherit("scripts/skills/skill", {
 			}
 		}
 
-		this.Time.scheduleEvent(this.TimeUnit.Real, this.m.Delay, this.onApplyDirect.bindenv(this), {
+		this.Time.scheduleEvent(this.TimeUnit.Virtual, this.m.Delay, this.onApplyDirect.bindenv(this), {
 			Skill = this,
 			TargetTile = _targetTile,
 			User = _user

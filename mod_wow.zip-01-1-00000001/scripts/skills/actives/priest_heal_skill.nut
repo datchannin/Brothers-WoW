@@ -189,7 +189,7 @@ this.priest_heal_skill <- this.inherit("scripts/skills/skill", {
 
 		this.getContainer().setBusy(true);
 
-		this.Time.scheduleEvent(this.TimeUnit.Real, 1200, this.onApplyEffect.bindenv(this), {
+		this.Time.scheduleEvent(this.TimeUnit.Virtual, 1200, this.onApplyEffect.bindenv(this), {
 			Skill = this,
 			Target = targetEntity,
 			User = _user,

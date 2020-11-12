@@ -222,7 +222,7 @@ this.priest_powerwordshield_skill <- this.inherit("scripts/skills/skill", {
 
 		this.getContainer().setBusy(true);
 
-		this.Time.scheduleEvent(this.TimeUnit.Real, 200, this.onApplyEffect.bindenv(this), {
+		this.Time.scheduleEvent(this.TimeUnit.Virtual, 200, this.onApplyEffect.bindenv(this), {
 			Skill = this,
 			Target = targetEntity,
 			User = _user,

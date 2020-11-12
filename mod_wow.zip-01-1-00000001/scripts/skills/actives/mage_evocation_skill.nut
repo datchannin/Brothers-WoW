@@ -83,7 +83,7 @@ this.mage_evocation_skill <- this.inherit("scripts/skills/skill", {
 		this.m.isUsed = true;
 		this.getContainer().setBusy(true);
 
-		this.Time.scheduleEvent(this.TimeUnit.Real, this.m.Delay, this.onRestoreMana.bindenv(this), {
+		this.Time.scheduleEvent(this.TimeUnit.Virtual, this.m.Delay, this.onRestoreMana.bindenv(this), {
 			Skill = this,
 			User = _user
 		});
