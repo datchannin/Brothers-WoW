@@ -72,14 +72,6 @@ this.paladin_hammerofjustice_skill <- this.inherit("scripts/skills/skill", {
 
 	function onAfterUpdate( _properties )
 	{
-		if (this.m.T0_paladin_head)
-		{
-			this.m.FatigueCost = 10;
-		}
-		else
-		{
-			this.m.FatigueCost = 30;
-		}
 	}
 
 	function onUse( _user, _targetTile )
