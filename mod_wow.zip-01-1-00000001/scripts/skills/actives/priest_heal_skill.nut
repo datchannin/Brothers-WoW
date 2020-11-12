@@ -113,7 +113,7 @@ this.priest_heal_skill <- this.inherit("scripts/skills/skill", {
 				id = 6,
 				type = "text",
 				icon = "ui/icons/special.png",
-				text = "Has a [color=" + this.Const.UI.Color.PositiveValue + "] 100% [/color] chance to remove a Bleeding from the target."
+				text = "Has a [color=" + this.Const.UI.Color.PositiveValue + "] 100% [/color] chance to remove a [color=" + this.Const.UI.Color.NegativeValue + "] Bleeding [/color] from the target."
 			});
 		}
 

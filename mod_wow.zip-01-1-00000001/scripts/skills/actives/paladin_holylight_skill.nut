@@ -4,6 +4,7 @@ this.paladin_holylight_skill <- this.inherit("scripts/skills/skill", {
 		heal_base_min = 7,
 		heal_base_max = 14,
 		CurrentLevel = 1,
+		cleanse = false,
 		holypower = false,
 		T0_paladin_armor = false
 	},
@@ -95,6 +96,16 @@ this.paladin_holylight_skill <- this.inherit("scripts/skills/skill", {
 			text = "Heal the target for [color=" + this.Const.UI.Color.PositiveValue + "]" + heal_min + "[/color] - [color=" + this.Const.UI.Color.PositiveValue + "]" + heal_max + "[/color] Hitpoints."
 		});
 
+		if (this.m.cleanse)
+		{
+			ret.push({
+				id = 6,
+				type = "text",
+				icon = "ui/icons/special.png",
+				text = "Has a [color=" + this.Const.UI.Color.PositiveValue + "] 100% [/color] chance to remove a [color=" + this.Const.UI.Color.NegativeValue + "] Bleeding [/color] from the target."
+			});
+		}
+
 		return ret;
 	}
 
@@ -103,6 +114,7 @@ this.paladin_holylight_skill <- this.inherit("scripts/skills/skill", {
 		local user = this.getContainer().getActor();
 		this.m.CurrentLevel = user.getLevel();
 		this.m.holypower = user.getSkills().hasSkill("perk.wow.paladin.holypower");
+		this.m.cleanse = user.getSkills().hasSkill("perk.wow.paladin.cleanse");
 		this.m.T0_paladin_armor = _properties.T0_paladin_armor;
 	}
 
@@ -159,6 +171,14 @@ this.paladin_holylight_skill <- this.inherit("scripts/skills/skill", {
 		if (_data.Skill.m.SoundOnHit.len() != 0)
 		{
 			this.Sound.play(this.m.SoundOnHit[0], this.Const.Sound.Volume.Skill, targetEntity.getPos());
+		}
+
+		if (this.m.cleanse)
+		{
+			while (targetEntity.getSkills().hasSkill("effects.bleeding"))
+			{
+				targetEntity.getSkills().removeByID("effects.bleeding");
+			}
 		}
 
 		if (targetEntity.getHitpoints() == targetEntity.getHitpointsMax())
