@@ -9,7 +9,7 @@ this.paladin_concentrationaura_skill <- this.inherit("scripts/skills/skill", {
 	{
 		this.m.ID = "actives.concentrationaura_skill";
 		this.m.Name = "Concentration Aura";
-		this.m.Description = "Apply Concentration Aura on the Paladin. This aura increases Fatigue Recovery of all party members within 4 tiles.";
+		this.m.Description = "Apply Concentration Aura on the Paladin. This aura increases Fatigue Recovery of all party members near Paladin.";
 		this.m.Icon = "ui/perks/skill_paladin_concentrationaura.png";
 		this.m.IconDisabled = "ui/perks/skill_paladin_concentrationaura_sw.png";
 		this.m.Overlay = "skill_paladin_concentrationaura";

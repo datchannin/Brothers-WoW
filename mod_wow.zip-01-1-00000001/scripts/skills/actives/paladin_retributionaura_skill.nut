@@ -9,7 +9,7 @@ this.paladin_retributionaura_skill <- this.inherit("scripts/skills/skill", {
 	{
 		this.m.ID = "actives.retributionaura_skill";
 		this.m.Name = "Retribution Aura";
-		this.m.Description = "Apply Retribution Aura on the Paladin. This aura gives possibility of all party members within 4 tiles to restore hitpoints with every successful melee attack.";
+		this.m.Description = "Apply Retribution Aura on the Paladin. This aura gives possibility of all party members near Paladin to restore hitpoints with every successful melee attack.";
 		this.m.Icon = "ui/perks/skill_paladin_retributionaura.png";
 		this.m.IconDisabled = "ui/perks/skill_paladin_retributionaura_sw.png";
 		this.m.Overlay = "skill_paladin_retributionaura";

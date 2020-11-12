@@ -37,12 +37,8 @@ this.concentrationaura_setup_effect <- this.inherit("scripts/skills/skill", {
 		];
 	}
 
-	function onAdded()
+	function updateAlly()
 	{
-		this.m.Container.removeByID("effects.devoutionaura_setup");
-		this.m.Container.removeByID("effects.retributionaura_setup");
-		this.m.Container.removeByID("effects.sanctityaura_setup");
-		
 		local actor = this.getContainer().getActor();
 		local allies = this.Tactical.Entities.getInstancesOfFaction(actor.getFaction());
 		foreach( ally in allies )
@@ -58,32 +54,22 @@ this.concentrationaura_setup_effect <- this.inherit("scripts/skills/skill", {
 		}
 	}
 
+	function onAdded()
+	{
+		this.m.Container.removeByID("effects.devoutionaura_setup");
+		this.m.Container.removeByID("effects.retributionaura_setup");
+		this.m.Container.removeByID("effects.sanctityaura_setup");
+		updateAlly();
+	}
+
 	function onMovementFinished()
 	{
-		local actor = this.getContainer().getActor();
-		local allies = this.Tactical.Entities.getInstancesOfFaction(actor.getFaction());
-
-		foreach( ally in allies )
-		{
-			if (ally.getID() != actor.getID())
-			{
-				ally.getSkills().update();
-			}
-		}
+		updateAlly();
 	}
 
 	function onRemoved()
 	{
-		local actor = this.getContainer().getActor();
-		local allies = this.Tactical.Entities.getInstancesOfFaction(actor.getFaction());
-
-		foreach( ally in allies )
-		{
-			if (ally.getID() != actor.getID())
-			{
-				ally.getSkills().update();
-			}
-		}
+		updateAlly();
 	}
 
 	function onUpdate( _properties )
@@ -92,19 +78,6 @@ this.concentrationaura_setup_effect <- this.inherit("scripts/skills/skill", {
 		_properties.IsRetributionAuraActive = false;
 		_properties.IsConcentrationAuraActive = true;
 		_properties.IsSanctityAuraActive = false;
-		
-		local actor = this.getContainer().getActor();
-		local allies = this.Tactical.Entities.getInstancesOfFaction(actor.getFaction());
-		foreach( ally in allies )
-		{
-			if (ally.getID() == actor.getID() || !ally.isPlacedOnMap())
-			{
-				continue;
-			}
-			else
-			{
-				ally.getSkills().update();
-			}
-		}
+		updateAlly();
 	}
 });

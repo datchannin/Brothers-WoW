@@ -8,8 +8,8 @@ this.paladin_devoutionaura_skill <- this.inherit("scripts/skills/skill", {
 	function create()
 	{
 		this.m.ID = "actives.devoutionaura_skill";
-		this.m.Name = "Devoution Aura";
-		this.m.Description = "Apply Devoution Aura on the Paladin. This aura increases Melee Defense of all party members within 4 tiles.";
+		this.m.Name = "Devotion Aura";
+		this.m.Description = "Apply Devotion Aura on the Paladin. This aura increases Melee Defense of all party members near Paladin.";
 		this.m.Icon = "ui/perks/skill_paladin_devoutionaura.png";
 		this.m.IconDisabled = "ui/perks/skill_paladin_devoutionaura_sw.png";
 		this.m.Overlay = "skill_paladin_devoutionaura";
