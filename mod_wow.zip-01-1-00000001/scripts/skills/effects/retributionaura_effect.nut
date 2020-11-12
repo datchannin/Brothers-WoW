@@ -8,7 +8,7 @@ this.retributionaura_effect <- this.inherit("scripts/skills/skill", {
 	{
 		this.m.ID = "effects.retributionaura";
 		this.m.Name = "Retribution Aura";
-		this.m.Description = "You is under paladin Retribution Aura now. Your successful melee attack restores you Hitpoints. Keep closer.";
+		this.m.Description = "You is under Paladin\'s Retribution Aura now. Your successful melee attack restores you Hitpoints. Keep closer.";
 		this.m.Icon = "ui/perks/perk_paladin_retributionaura.png";
 		this.m.IconMini = "effect_mini_retributionaura";
 		this.m.Type = this.Const.SkillType.StatusEffect;
@@ -30,7 +30,19 @@ this.retributionaura_effect <- this.inherit("scripts/skills/skill", {
 
 	function getTooltip()
 	{
-		local ret = this.getDefaultUtilityTooltip();
+		local ret = [
+			{
+				id = 1,
+				type = "title",
+				text = this.getName()
+			},
+			{
+				id = 2,
+				type = "description",
+				text = this.getDescription()
+			}
+		];
+
 		local total_value = getTotalEffectValue();
 
 		ret.push({

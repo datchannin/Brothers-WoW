@@ -8,7 +8,7 @@ this.concentrationaura_effect <- this.inherit("scripts/skills/skill", {
 	{
 		this.m.ID = "effects.concentrationaura";
 		this.m.Name = "Concentration Aura";
-		this.m.Description = "You is under paladin Concentration Aura now. Your Fatigue Recovery per turn is increased by Paladin\'s Aura. Keep closer.";
+		this.m.Description = "You is under Paladin\'s Concentration Aura now. Your Fatigue Recovery per turn is increased by Paladin\'s Aura. Keep closer.";
 		this.m.Icon = "ui/perks/perk_paladin_concentrationaura.png";
 		this.m.IconMini = "effect_mini_concentrationaura";
 		this.m.Type = this.Const.SkillType.StatusEffect;
@@ -30,7 +30,19 @@ this.concentrationaura_effect <- this.inherit("scripts/skills/skill", {
 
 	function getTooltip()
 	{
-		local ret = this.getDefaultUtilityTooltip();
+		local ret = [
+			{
+				id = 1,
+				type = "title",
+				text = this.getName()
+			},
+			{
+				id = 2,
+				type = "description",
+				text = this.getDescription()
+			}
+		];
+
 		local total_value = getTotalEffectValue();
 
 		ret.push({

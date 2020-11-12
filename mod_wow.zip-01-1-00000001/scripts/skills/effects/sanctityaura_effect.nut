@@ -8,7 +8,7 @@ this.sanctityaura_effect <- this.inherit("scripts/skills/skill", {
 	{
 		this.m.ID = "effects.sanctityaura";
 		this.m.Name = "Sanctity Aura";
-		this.m.Description = "You is under paladin Sanctity Aura now. You regenerate Hitpoints on every turn. Keep closer.";
+		this.m.Description = "You is under Paladin\'s Sanctity Aura now. You regenerate Hitpoints on every turn. Keep closer.";
 		this.m.Icon = "ui/perks/perk_paladin_sanctityaura.png";
 		this.m.IconMini = "effect_mini_sanctityaura";
 		this.m.Type = this.Const.SkillType.StatusEffect;
@@ -30,7 +30,19 @@ this.sanctityaura_effect <- this.inherit("scripts/skills/skill", {
 
 	function getTooltip()
 	{
-		local ret = this.getDefaultUtilityTooltip();
+		local ret = [
+			{
+				id = 1,
+				type = "title",
+				text = this.getName()
+			},
+			{
+				id = 2,
+				type = "description",
+				text = this.getDescription()
+			}
+		];
+
 		local total_value = getTotalEffectValue();
 
 		ret.push({

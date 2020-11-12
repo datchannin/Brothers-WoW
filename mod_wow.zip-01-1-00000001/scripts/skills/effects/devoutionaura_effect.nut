@@ -7,8 +7,8 @@ this.devoutionaura_effect <- this.inherit("scripts/skills/skill", {
 	function create()
 	{
 		this.m.ID = "effects.devoutionaura";
-		this.m.Name = "Devoution Aura";
-		this.m.Description = "You is under paladin Devoution Aura now. Your Melee Defence is increased by Paladin\'s Aura. Keep closer.";
+		this.m.Name = "Devotion Aura";
+		this.m.Description = "You is under Paladin\'s Devotion Aura now. Your Melee Defense is increased by Paladin\'s Aura. Keep closer.";
 		this.m.Icon = "ui/perks/perk_paladin_devoutionaura.png";
 		this.m.IconMini = "effect_mini_devoutionaura";
 		this.m.Type = this.Const.SkillType.StatusEffect;
@@ -30,7 +30,19 @@ this.devoutionaura_effect <- this.inherit("scripts/skills/skill", {
 
 	function getTooltip()
 	{
-		local ret = this.getDefaultUtilityTooltip();
+		local ret = [
+			{
+				id = 1,
+				type = "title",
+				text = this.getName()
+			},
+			{
+				id = 2,
+				type = "description",
+				text = this.getDescription()
+			}
+		];
+
 		local total_value = getTotalEffectValue();
 
 		ret.push({
