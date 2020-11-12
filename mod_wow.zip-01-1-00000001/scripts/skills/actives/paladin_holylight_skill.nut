@@ -118,6 +118,14 @@ this.paladin_holylight_skill <- this.inherit("scripts/skills/skill", {
 		this.m.T0_paladin_armor = _properties.T0_paladin_armor;
 	}
 
+	function onAfterUpdate( _properties )
+	{
+		if (this.m.holypower)
+		{
+			this.m.FatigueCost = 15;
+		}
+	}
+
 	function onVerifyTarget( _originTile, _targetTile )
 	{
 		if (!this.skill.onVerifyTarget(_originTile, _targetTile))
