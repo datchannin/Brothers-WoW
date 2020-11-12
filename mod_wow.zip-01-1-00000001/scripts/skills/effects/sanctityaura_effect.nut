@@ -3,7 +3,8 @@ this.sanctityaura_effect <- this.inherit("scripts/skills/skill", {
 	m = {
 		PaladinCurrentLevel = 1,
 		BaseEffect = 2,
-		BaseRadius = 4
+		BaseRadius = 4,
+		BonusRadius = 0
 	},
 	function create()
 	{
@@ -32,6 +33,9 @@ this.sanctityaura_effect <- this.inherit("scripts/skills/skill", {
 	function getTotalRadiusValue()
 	{
 		local total_value = this.m.BaseRadius;
+		local total_bonus = this.m.BonusRadius;
+
+		total_value += total_bonus;
 
 		return total_value;
 	}
