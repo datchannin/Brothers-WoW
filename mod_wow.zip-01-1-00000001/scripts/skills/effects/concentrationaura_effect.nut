@@ -78,6 +78,7 @@ this.concentrationaura_effect <- this.inherit("scripts/skills/skill", {
 		local myTile = actor.getTile();
 		local allies = this.Tactical.Entities.getInstancesOfFaction(actor.getFaction());
 		local isBonusShouldApply = 0;
+		this.m.PaladinCurrentLevel = 1;
 
 		foreach( ally in allies )
 		{
@@ -94,7 +95,10 @@ this.concentrationaura_effect <- this.inherit("scripts/skills/skill", {
 					local total_radius = getTotalRadiusValue();
 					if (ally.getTile().getDistanceTo(myTile) <= total_radius)
 					{
-						this.m.PaladinCurrentLevel = ally.getLevel();
+						if (ally.getLevel() > this.m.PaladinCurrentLevel)
+						{
+							this.m.PaladinCurrentLevel = ally.getLevel();
+						}
 						isBonusShouldApply = 1;
 					}
 				}

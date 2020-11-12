@@ -48,7 +48,7 @@ this.wow_scenario <- this.inherit("scripts/scenarios/world/starting_scenario", {
 		bros[1].m.Level = 5;
 
 		bros[2].setStartValuesEx([
-			"raider_mage_background"
+			"raider_paladin_background"
 		]);
 		bros[2].setPlaceInFormation(5);
 		bros[2].m.PerkPoints = 12;
@@ -210,9 +210,9 @@ this.wow_scenario <- this.inherit("scripts/scenarios/world/starting_scenario", {
 			this.World.Assets.getStash().add(this.new("scripts/items/misc/potion_of_oblivion_item"));
 		}
 
-		for (local i = 0; i < 20; i=++i)
+		for (local i = 0; i < 10; i=++i)
 		{
-			//this.World.Assets.getStash().add(this.new("scripts/items/misc/potion_of_exp_item"));
+			this.World.Assets.getStash().add(this.new("scripts/items/misc/potion_of_exp_item"));
 		}
 
 		local item = this.new("scripts/items/tools/player_banner");
