@@ -755,6 +755,7 @@ gt.Const.CharacterProperties <- {
 		return c;
 	}
 
+	AuraRadiusBonus = 0,
 	ActionPoints = 0,
 	ActionPointsMult = 1.0,
 	ActionPointsBonus = 0,

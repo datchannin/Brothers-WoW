@@ -4,6 +4,7 @@ this.paladin_retributionaura_skill <- this.inherit("scripts/skills/skill", {
 		CurrentLevel = 1,
 		BaseEffect = 4,
 		BaseRadius = 4,
+		BonusRadius = 0,
 		T0_paladin_set = false
 	},
 	function create()
@@ -45,6 +46,9 @@ this.paladin_retributionaura_skill <- this.inherit("scripts/skills/skill", {
 	function getTotalRadiusValue()
 	{
 		local total_value = this.m.BaseRadius;
+		local total_bonus = this.m.BonusRadius;
+
+		total_value += total_bonus;
 
 		return total_value;
 	}
@@ -53,12 +57,13 @@ this.paladin_retributionaura_skill <- this.inherit("scripts/skills/skill", {
 	{
 		local ret = this.getDefaultUtilityTooltip();
 		local total_value = getTotalEffectValue();
+		local total_radius = getTotalRadiusValue();
 
 		ret.push({
 			id = 6,
 			type = "text",
 			icon = "ui/icons/health.png",
-			text = "Successful melee attack restores [color=" + this.Const.UI.Color.PositiveValue + "]" + total_value + "[/color] Hitpoints for all party members within 4 tiles"
+			text = "Successful melee attack restores [color=" + this.Const.UI.Color.PositiveValue + "]" + total_value + "[/color] Hitpoints for all party members within [color=" + this.Const.UI.Color.PositiveValue + "]" + total_radius + "[/color] tiles"
 		});
 
 		return ret;
@@ -69,6 +74,7 @@ this.paladin_retributionaura_skill <- this.inherit("scripts/skills/skill", {
 		local user = this.getContainer().getActor();
 		this.m.CurrentLevel = user.getLevel();
 		this.m.T0_paladin_set = _properties.isFullSetPaladinT0();
+		this.m.BonusRadius = _properties.AuraRadiusBonus;
 	}
 
 	function onAfterUpdate( _properties )
