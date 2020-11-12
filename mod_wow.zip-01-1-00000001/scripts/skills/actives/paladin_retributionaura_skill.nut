@@ -11,7 +11,7 @@ this.paladin_retributionaura_skill <- this.inherit("scripts/skills/skill", {
 	{
 		this.m.ID = "actives.retributionaura_skill";
 		this.m.Name = "Retribution Aura";
-		this.m.Description = "Apply Retribution Aura on the Paladin. This aura gives possibility of all party members near Paladin to restore hitpoints with every successful melee attack.";
+		this.m.Description = "Apply Retribution Aura on the Paladin. This aura causes direct damage to melee attacker of all party members near Paladin.";
 		this.m.Icon = "ui/perks/skill_paladin_retributionaura.png";
 		this.m.IconDisabled = "ui/perks/skill_paladin_retributionaura_sw.png";
 		this.m.Overlay = "skill_paladin_retributionaura";
@@ -62,8 +62,8 @@ this.paladin_retributionaura_skill <- this.inherit("scripts/skills/skill", {
 		ret.push({
 			id = 6,
 			type = "text",
-			icon = "ui/icons/health.png",
-			text = "Successful melee attack restores [color=" + this.Const.UI.Color.PositiveValue + "]" + total_value + "[/color] Hitpoints for all party members within [color=" + this.Const.UI.Color.PositiveValue + "]" + total_radius + "[/color] tiles"
+			icon = "ui/icons/direct_damage.png",
+			text = "Causes [color=" + this.Const.UI.Color.PositiveValue + "]" + total_value + "[/color] points direct damage to melee attacker for all party members within [color=" + this.Const.UI.Color.PositiveValue + "]" + total_radius + "[/color] tiles"
 		});
 
 		return ret;
