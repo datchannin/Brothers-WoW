@@ -108,35 +108,56 @@ this.retributionaura_effect <- this.inherit("scripts/skills/skill", {
 		return isBonusShouldApply;
 	}
 
-	function onTargetHit( _skill, _targetEntity, _bodyPart, _damageInflictedHitpoints, _damageInflictedArmor )
+	function onDamageReceived( _attacker, _damageHitpoints, _damageArmor )
 	{
 		local bonus = this.getBonus();
 		local total_value = getTotalEffectValue();
 
-		if (bonus == 1)
+		if (!bonus)
 		{
-			if (_damageInflictedHitpoints <= 0)
-			{
-				return;
-			}
-
-			local actor = this.m.Container.getActor();
-
-			if (actor.getHitpoints() == actor.getHitpointsMax())
-			{
-				return;
-			}
-
-			this.spawnIcon("effect_paladin_retributionaura", actor.getTile());
-
-			if (!actor.isHiddenToPlayer())
-			{
-				this.Tactical.EventLog.log(this.Const.UI.getColorizedEntityName(actor) + " heals for " + this.Math.min(actor.getHitpointsMax() - actor.getHitpoints(), total_value) + " points");
-			}
-
-			actor.setHitpoints(this.Math.min(actor.getHitpointsMax(), actor.getHitpoints() + total_value));
-			actor.onUpdateInjuryLayer();
+			return;
 		}
+
+		if (_attacker == null || !_attacker.isAlive())
+		{
+			return;
+		}
+
+		if (_attacker.isAlliedWith(this.getContainer().getActor()))
+		{
+			return;
+		}
+
+		if (_damageHitpoints == 0 && _damageArmor == 0)
+		{
+			return;
+		}
+
+		if (_attacker.getTile().getDistanceTo(this.getContainer().getActor().getTile()) > 1)
+		{
+			return;
+		}
+
+		this.getContainer().setBusy(true);
+
+		this.Time.scheduleEvent(this.TimeUnit.Virtual, 500, this.applyDamage.bindenv(this), {
+			Attacker = _attacker,
+			Damage = total_value
+		});
+	}
+	
+	function applyDamage( _data )
+	{
+		local hitInfo = clone this.Const.Tactical.HitInfo;
+		hitInfo.DamageRegular = _data.Damage;
+		hitInfo.DamageDirect = 1.0;
+		hitInfo.BodyPart = this.Const.BodyPart.Body;
+		hitInfo.BodyDamageMult = 1.0;
+		hitInfo.FatalityChanceMult = 0.0;
+
+		this.spawnIcon("effect_paladin_retributionaura", _data.Attacker.getTile());
+		_data.Attacker.onDamageReceived(this.getContainer().getActor(), this, hitInfo);
+		this.getContainer().setBusy(false);
 	}
 
 	function onUpdate( _properties )
