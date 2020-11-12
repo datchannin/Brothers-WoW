@@ -224,6 +224,7 @@ gt.Const.Perks.PerkTreePaladin <- [
 	],
 	[
 		gt.Const.Perks.PerkDefObjects.HolyPower
+		gt.Const.Perks.PerkDefObjects.Cleanse
 		gt.Const.Perks.PerkDefObjects.Anticipation_paladin
 		gt.Const.Perks.PerkDefObjects.HammerofJustice
 		gt.Const.Perks.PerkDefObjects.DivineStrength

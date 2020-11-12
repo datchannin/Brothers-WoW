@@ -996,6 +996,16 @@ gt.Const.Perks.PerkDefObjects.AuraMastery <- {
 	Const = "AuraMastery"
 }
 
+gt.Const.Perks.PerkDefObjects.Cleanse <- {
+	ID = "perk.wow.paladin.cleanse",
+	Script = "scripts/skills/perks/perk_wow_cleanse",
+	Name = this.Const.Wow_strings.PerkName.Cleanse,
+	Tooltip = this.Const.Wow_strings.PerkDescription.Cleanse,
+	Icon = "ui/perks/perk_paladin_cleanse.png",
+	IconDisabled = "ui/perks/perk_paladin_cleanse_sw.png",
+	Const = "Cleanse"
+}
+
 gt.Const.Perks.PerkDefObjects.DivineShield <- {
 	ID = "perk.wow.paladin.divineshield",
 	Script = "scripts/skills/perks/perk_wow_divineshield",
