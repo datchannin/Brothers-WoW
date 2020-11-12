@@ -986,6 +986,16 @@ gt.Const.Perks.PerkDefObjects.SanctityAura <- {
 	Const = "SanctityAura"
 }
 
+gt.Const.Perks.PerkDefObjects.AuraMastery <- {
+	ID = "perk.wow.paladin.auramastery",
+	Script = "scripts/skills/perks/perk_wow_auramastery",
+	Name = this.Const.Wow_strings.PerkName.AuraMastery,
+	Tooltip = this.Const.Wow_strings.PerkDescription.AuraMastery,
+	Icon = "ui/perks/perk_paladin_auramastery.png",
+	IconDisabled = "ui/perks/perk_paladin_auramastery_sw.png",
+	Const = "AuraMastery"
+}
+
 gt.Const.Perks.PerkDefObjects.DivineShield <- {
 	ID = "perk.wow.paladin.divineshield",
 	Script = "scripts/skills/perks/perk_wow_divineshield",

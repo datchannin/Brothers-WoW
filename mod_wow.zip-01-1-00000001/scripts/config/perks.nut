@@ -263,6 +263,7 @@ gt.Const.Perks.PerkTreePaladin <- [
 		gt.Const.Perks.PerkDefObjects.Footwork
 	],
 	[
+		gt.Const.Perks.PerkDefObjects.AuraMastery
 		gt.Const.Perks.PerkDefObjects.Berserk
 		gt.Const.Perks.PerkDefObjects.HeadHunter
 		gt.Const.Perks.PerkDefObjects.BattleForged
