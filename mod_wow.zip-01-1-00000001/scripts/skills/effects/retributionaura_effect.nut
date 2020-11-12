@@ -29,6 +29,13 @@ this.retributionaura_effect <- this.inherit("scripts/skills/skill", {
 		return total_value;
 	}
 
+	function getTotalRadiusValue()
+	{
+		local total_value = this.m.BaseRadius;
+
+		return total_value;
+	}
+
 	function getTooltip()
 	{
 		local ret = [
