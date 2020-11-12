@@ -86,17 +86,17 @@ this.concentrationaura_effect <- this.inherit("scripts/skills/skill", {
 				continue;
 			}
 
-			if (ally.getTile().getDistanceTo(myTile) > 4)
-			{
-				continue;
-			}
-
 			if (ally.getSkills().hasSkill("perk.wow.paladin.concentrationaura"))
 			{
 				if (ally.getCurrentProperties().IsConcentrationAuraActive)
 				{
-					this.m.PaladinCurrentLevel = ally.getLevel();
-					isBonusShouldApply = 1;
+					this.m.BonusRadius = ally.getCurrentProperties().AuraRadiusBonus;
+					local total_radius = getTotalRadiusValue();
+					if (ally.getTile().getDistanceTo(myTile) <= total_radius)
+					{
+						this.m.PaladinCurrentLevel = ally.getLevel();
+						isBonusShouldApply = 1;
+					}
 				}
 			}
 		}
