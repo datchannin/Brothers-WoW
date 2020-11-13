@@ -8,7 +8,7 @@ this.hunter_disengage_skill <- this.inherit("scripts/skills/skill", {
 		this.m.Description = "Jump to the new point. Can be used to leave a Zone of Control without triggering free attacks.";
 		this.m.Icon = "ui/perks/skill_hunter_disengage.png";
 		this.m.IconDisabled = "ui/perks/skill_hunter_disengage_sw.png";
-		//this.m.Overlay = "skill_hunter_disengage";
+		this.m.Overlay = "skill_hunter_disengage";
 		this.m.SoundOnUse = [
 			//"sounds/combat/hunter_disengage.wav"
 		];
