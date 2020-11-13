@@ -13,13 +13,13 @@ if (!("Actor" in gt.Const.Tactical))
 
 gt.Const.Tactical.Actor.Winterwolf <- {
 	XP = 100,
-	ActionPoints = 12,
-	Hitpoints = 60,
+	ActionPoints = 9,
+	Hitpoints = 90,
 	Bravery = 40,
 	Stamina = 130,
 	MeleeSkill = 50,
 	RangedSkill = 0,
-	MeleeDefense = 20,
+	MeleeDefense = 15,
 	RangedDefense = 25,
 	Initiative = 130,
 	FatigueEffectMult = 1.0,
