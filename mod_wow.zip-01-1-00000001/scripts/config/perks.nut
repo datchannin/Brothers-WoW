@@ -310,7 +310,6 @@ gt.Const.Perks.PerkTreeHunter <- [
 		gt.Const.Perks.PerkDefObjects.Anticipation
 		gt.Const.Perks.PerkDefObjects.Brawny
 		gt.Const.Perks.PerkDefObjects.Relentless
-		gt.Const.Perks.PerkDefObjects.Rotation
 	],
 	[
 		gt.Const.Perks.PerkDefObjects.MasterThrowing
@@ -326,7 +325,6 @@ gt.Const.Perks.PerkTreeHunter <- [
 		gt.Const.Perks.PerkDefObjects.Overwhelm
 		gt.Const.Perks.PerkDefObjects.LoneWolf
 		gt.Const.Perks.PerkDefObjects.Underdog
-		gt.Const.Perks.PerkDefObjects.Footwork
 		gt.Const.Perks.PerkDefObjects.Disengage
 	],
 	[
