@@ -1180,6 +1180,16 @@ gt.Const.Perks.PerkDefObjects.LethalShots <- {
 	Const = "LethalShots"
 }
 
+gt.Const.Perks.PerkDefObjects.Disengage <- {
+	ID = "perk.wow.hunter.disengage",
+	Script = "scripts/skills/perks/perk_wow_disengage",
+	Name = this.Const.Wow_strings.PerkName.Disengage,
+	Tooltip = this.Const.Wow_strings.PerkDescription.Disengage,
+	Icon = "ui/perks/perk_hunter_disengage.png",
+	IconDisabled = "ui/perks/perk_hunter_disengage_sw.png",
+	Const = "Disengage"
+}
+
 // ---------------------------------------------|
 // ----------------  WOW MAGE ------------------|
 // ---------------------------------------------|

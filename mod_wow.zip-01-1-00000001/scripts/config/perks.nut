@@ -327,6 +327,7 @@ gt.Const.Perks.PerkTreeHunter <- [
 		gt.Const.Perks.PerkDefObjects.LoneWolf
 		gt.Const.Perks.PerkDefObjects.Underdog
 		gt.Const.Perks.PerkDefObjects.Footwork
+		gt.Const.Perks.PerkDefObjects.Disengage
 	],
 	[
 		gt.Const.Perks.PerkDefObjects.Berserk
