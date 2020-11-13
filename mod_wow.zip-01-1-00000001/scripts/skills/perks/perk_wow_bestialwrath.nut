@@ -18,7 +18,7 @@ this.perk_wow_bestialwrath <- this.inherit("scripts/skills/skill", {
 	{
 		if (!this.m.Container.hasSkill("actives.bestialwrath_skill"))
 		{
-			//this.m.Container.add(this.new("scripts/skills/actives/hunter_bestialwrath_skill"));
+			this.m.Container.add(this.new("scripts/skills/actives/hunter_bestialwrath_skill"));
 		}
 	}
 
