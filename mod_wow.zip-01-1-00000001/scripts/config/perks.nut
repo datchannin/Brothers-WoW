@@ -332,8 +332,6 @@ gt.Const.Perks.PerkTreeHunter <- [
 		gt.Const.Perks.PerkDefObjects.PetCare
 		gt.Const.Perks.PerkDefObjects.EagleEye
 		gt.Const.Perks.PerkDefObjects.Berserk
-		gt.Const.Perks.PerkDefObjects.Nimble
-		gt.Const.Perks.PerkDefObjects.BattleForged
 	],
 	[
 		gt.Const.Perks.PerkDefObjects.BestialWrath
