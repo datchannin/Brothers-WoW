@@ -1200,6 +1200,16 @@ gt.Const.Perks.PerkDefObjects.BestialWrath <- {
 	Const = "BestialWrath"
 }
 
+gt.Const.Perks.PerkDefObjects.PetCare <- {
+	ID = "perk.wow.hunter.petcare",
+	Script = "scripts/skills/perks/perk_wow_petcare",
+	Name = this.Const.Wow_strings.PerkName.PetCare,
+	Tooltip = this.Const.Wow_strings.PerkDescription.PetCare,
+	Icon = "ui/perks/perk_hunter_petcare.png",
+	IconDisabled = "ui/perks/perk_hunter_petcare_sw.png",
+	Const = "PetCare"
+}
+
 // ---------------------------------------------|
 // ----------------  WOW MAGE ------------------|
 // ---------------------------------------------|
