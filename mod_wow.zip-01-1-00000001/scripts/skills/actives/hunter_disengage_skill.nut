@@ -10,7 +10,11 @@ this.hunter_disengage_skill <- this.inherit("scripts/skills/skill", {
 		this.m.IconDisabled = "ui/perks/skill_hunter_disengage_sw.png";
 		this.m.Overlay = "skill_hunter_disengage";
 		this.m.SoundOnUse = [
-			//"sounds/combat/hunter_disengage.wav"
+			"sounds/combat/hunter_disangage01.ogg",
+			"sounds/combat/hunter_disangage02.ogg",
+			"sounds/combat/hunter_disangage03.ogg",
+			"sounds/combat/hunter_disangage04.ogg",
+			"sounds/combat/hunter_disangage05.ogg"
 		];
 		this.m.Type = this.Const.SkillType.Active;
 		this.m.Order = this.Const.SkillOrder.Any;
