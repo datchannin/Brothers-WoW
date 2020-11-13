@@ -15,10 +15,10 @@ gt.Const.PaladinScale <- {
 };
 
 gt.Const.HunterScale <- {
-	pet_health_bonus = 10,
+	pet_health_bonus = 10,			// +10% per hunter level
 	pet_stamina_bonus = 0.1,
-	pet_meleedefense_bonus = 1,
-	pet_rangeddefense_bonus = 1,
+	pet_meleedefense_bonus = 0.5,
+	pet_rangeddefense_bonus = 0.5,
 	pet_actionpoints_bonus = 0.5,
 	pet_fatiguerecovery_bonus = 1,
 	pet_meleeskill_bonus = 1.5,
