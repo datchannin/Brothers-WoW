@@ -93,8 +93,8 @@ this.hunter_bestialwrath_skill <- this.inherit("scripts/skills/skill", {
 			this.Tactical.EventLog.log(this.Const.UI.getColorizedEntityName(targetEntity) + " gets furious!");
 		}
 
-		//local bestialwrath = this.new("scripts/skills/effects/bestialwrath_effect");
-		//targetEntity.getSkills().add(bestialwrath);
+		local bestialwrath = this.new("scripts/skills/effects/bestialwrath_effect");
+		targetEntity.getSkills().add(bestialwrath);
 
 		return true;
 	}
