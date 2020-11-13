@@ -41,7 +41,7 @@ this.unleash_winterwolf <- this.inherit("scripts/skills/skill", {
 		BaseStaminaBonus = 40,
 		BaseMeleeDefenseBonus = 10,
 		BaseRangedDefenseBonus = 10,
-		BaseActionPointsBonus = 5,
+		BaseActionPointsBonus = 3,
 		BaseFatigueRecoveryBonus = 10,
 		BaseMeleeSkillBonus = 30,
 		BaseBraveryBonus = 30
