@@ -1190,6 +1190,16 @@ gt.Const.Perks.PerkDefObjects.Disengage <- {
 	Const = "Disengage"
 }
 
+gt.Const.Perks.PerkDefObjects.BestialWrath <- {
+	ID = "perk.wow.hunter.bestialwrath",
+	Script = "scripts/skills/perks/perk_wow_bestialwrath",
+	Name = this.Const.Wow_strings.PerkName.BestialWrath,
+	Tooltip = this.Const.Wow_strings.PerkDescription.BestialWrath,
+	Icon = "ui/perks/perk_hunter_bestialwrath.png",
+	IconDisabled = "ui/perks/perk_hunter_bestialwrath_sw.png",
+	Const = "BestialWrath"
+}
+
 // ---------------------------------------------|
 // ----------------  WOW MAGE ------------------|
 // ---------------------------------------------|

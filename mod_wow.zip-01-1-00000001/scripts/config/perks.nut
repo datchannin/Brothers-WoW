@@ -322,6 +322,7 @@ gt.Const.Perks.PerkTreeHunter <- [
 		gt.Const.Perks.PerkDefObjects.SpecThrowing
 	],
 	[
+		gt.Const.Perks.PerkDefObjects.MendPet
 		gt.Const.Perks.PerkDefObjects.Overwhelm
 		gt.Const.Perks.PerkDefObjects.LoneWolf
 		gt.Const.Perks.PerkDefObjects.Underdog
@@ -333,7 +334,7 @@ gt.Const.Perks.PerkTreeHunter <- [
 		gt.Const.Perks.PerkDefObjects.BattleForged
 	],
 	[
-		gt.Const.Perks.PerkDefObjects.MendPet
+		gt.Const.Perks.PerkDefObjects.BestialWrath
 		gt.Const.Perks.PerkDefObjects.LethalShots
 		gt.Const.Perks.PerkDefObjects.KillingFrenzy
 		gt.Const.Perks.PerkDefObjects.Indomitable
