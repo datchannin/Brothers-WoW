@@ -1210,6 +1210,16 @@ gt.Const.Perks.PerkDefObjects.PetCare <- {
 	Const = "PetCare"
 }
 
+gt.Const.Perks.PerkDefObjects.EagleEye <- {
+	ID = "perk.wow.hunter.eagleeye",
+	Script = "scripts/skills/perks/perk_wow_eagleeye",
+	Name = this.Const.Wow_strings.PerkName.EagleEye,
+	Tooltip = this.Const.Wow_strings.PerkDescription.EagleEye,
+	Icon = "ui/perks/perk_hunter_eagleeye.png",
+	IconDisabled = "ui/perks/perk_hunter_eagleeye_sw.png",
+	Const = "EagleEye"
+}
+
 // ---------------------------------------------|
 // ----------------  WOW MAGE ------------------|
 // ---------------------------------------------|
