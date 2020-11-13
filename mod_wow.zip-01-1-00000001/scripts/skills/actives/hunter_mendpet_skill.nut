@@ -4,7 +4,8 @@ this.hunter_mendpet_skill <- this.inherit("scripts/skills/skill", {
 		heal_base_min = 15,
 		heal_base_max = 25,
 		CurrentLevel = 1,
-		T0_hunter_set = false
+		T0_hunter_set = false,
+		petcare = false
 	},
 	function create()
 	{
@@ -44,6 +45,11 @@ this.hunter_mendpet_skill <- this.inherit("scripts/skills/skill", {
 			total_heal_min += 10;
 		}
 
+		if (this.m.petcare)
+		{
+			total_heal_min += 10;
+		}
+
 		scale = this.Math.floor(total_heal_min * this.m.CurrentLevel * this.Const.HunterScale.pet_mend_min);
 
 		total_heal_min += scale;
@@ -57,6 +63,11 @@ this.hunter_mendpet_skill <- this.inherit("scripts/skills/skill", {
 		local scale = 0;
 
 		if (this.m.T0_hunter_set)
+		{
+			total_heal_max += 10;
+		}
+
+		if (this.m.petcare)
 		{
 			total_heal_max += 10;
 		}
@@ -96,6 +107,19 @@ this.hunter_mendpet_skill <- this.inherit("scripts/skills/skill", {
 		local user = this.getContainer().getActor();
 		this.m.CurrentLevel = user.getLevel();
 		this.m.T0_hunter_set = _properties.isFullSetHunterT0();
+		this.m.petcare = user.getSkills().hasSkill("perk.wow.hunter.petcare");
+	}
+
+	function onAfterUpdate( _properties )
+	{
+		if (this.m.petcare)
+		{
+			this.m.ActionPointCost = 4;
+		}
+		else
+		{
+			this.m.ActionPointCost = 5;
+		}
 	}
 
 	function onVerifyTarget( _originTile, _targetTile )
