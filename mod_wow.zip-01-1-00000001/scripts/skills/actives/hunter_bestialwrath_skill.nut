@@ -10,7 +10,7 @@ this.hunter_bestialwrath_skill <- this.inherit("scripts/skills/skill", {
 		this.m.IconDisabled = "ui/perks/skill_hunter_bestialwrath_sw.png";
 		this.m.Overlay = "skill_hunter_bestialwrath";
 		this.m.SoundOnUse = [
-			//"sounds/combat/hunter_bestialwrath.wav"
+			"sounds/combat/hunter_bestialwrath.ogg"
 		];
 		this.m.Type = this.Const.SkillType.Active;
 		this.m.Order = this.Const.SkillOrder.UtilityTargeted;
@@ -37,7 +37,7 @@ this.hunter_bestialwrath_skill <- this.inherit("scripts/skills/skill", {
 			id = 7,
 			type = "text",
 			icon = "ui/icons/feral.png",
-			text = "Infuriate pet for this turn. Winterwolf\'s damage will be increased by [color=" + this.Const.UI.Color.PositiveValue + "]" + 25% + "[/color]."
+			text = "Infuriate pet for this turn. Winterwolf damage will be increased by [color=" + this.Const.UI.Color.PositiveValue + "]25%[/color]"
 		});
 
 		ret.push({
