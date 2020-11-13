@@ -323,7 +323,7 @@ gt.Const.Wow_strings.PerkDescription <- {
 	MasterCrossbow = "Crossbow and Handgone Adept. Сrossbow can pierce target that is inaccessible to anyone else! Handgone has a real power now! Damage done by Crossbow and Handgone is increased by [color=" + this.Const.UI.Color.PositiveValue + "]20%[/color].",
 	MendPet = "Unlocks the \'Mend Pet\' skill which allows you to heal your pet.",
 	PetCare = "You are really know how to care your pet! Increases base heal power of the \'Mend Pet\' skill by [color=" + this.Const.UI.Color.PositiveValue + "]10[/color] points.\nAlso Action Points cost of this spell will be reduced by [color=" + this.Const.UI.Color.PositiveValue + "]1[/color].",
-	EagleEye = "Your eye is like an eagle. Increases your vision range by [color=" + this.Const.UI.Color.PositiveValue + "]1[/color] point",
+	EagleEye = "Your eye is like an eagle. Increases your vision range by [color=" + this.Const.UI.Color.PositiveValue + "]1[/color] point.",
 	BestialWrath = "Unlocks the \'Bestial Wrath\' skill which allows you to infuriate your pet and increase your pet damage done for this turn.",
 	LethalShots = "Gives you \'Lethal Shots\' possibility. Learn to take advantage of your high Initiative and stun the enemy with your attacks.\n\nWith every attack, hit or miss, against an opponent that acts after you in the current round, you can stun him for one turn with [color=" + this.Const.UI.Color.PositiveValue + "]33%[/color] probability.",
 	Disengage = "Unlocks the \'Disengage\' skill which allows hunter to jump away from enemies a few tiles.",
