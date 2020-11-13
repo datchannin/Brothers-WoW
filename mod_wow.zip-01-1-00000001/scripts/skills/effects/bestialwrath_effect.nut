@@ -69,4 +69,17 @@ this.bestialwrath_effect <- this.inherit("scripts/skills/skill", {
 			this.removeSelf();
 		}
 	}
+	
+	function onAdded()
+	{
+		local actor = this.getContainer().getActor();
+
+		if (this.Const.Tactical.BestialWrathParticles.len() != 0)
+		{
+			for( local i = 0; i < this.Const.Tactical.BestialWrathParticles.len(); i = ++i )
+			{
+				this.Tactical.spawnParticleEffect(false, this.Const.Tactical.BestialWrathParticles[i].Brushes, actor.getTile(), this.Const.Tactical.BestialWrathParticles[i].Delay, this.Const.Tactical.BestialWrathParticles[i].Quantity, this.Const.Tactical.BestialWrathParticles[i].LifeTimeQuantity, this.Const.Tactical.BestialWrathParticles[i].SpawnRate, this.Const.Tactical.BestialWrathParticles[i].Stages);
+			}
+		}
+	}
 });

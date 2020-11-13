@@ -86,8 +86,6 @@ this.hunter_bestialwrath_skill <- this.inherit("scripts/skills/skill", {
 	{
 		local targetEntity = _targetTile.getEntity();
 
-		this.spawnIcon("effect_hunter_bestialwrath", targetEntity.getTile());
-		
 		if (!targetEntity.isHiddenToPlayer())
 		{
 			this.Tactical.EventLog.log(this.Const.UI.getColorizedEntityName(targetEntity) + " gets furious!");

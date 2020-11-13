@@ -301,3 +301,68 @@ gt.Const.Tactical.LifeParticles <- [
 		]
 	}
 ];
+
+gt.Const.Tactical.BestialWrathParticles <- [
+	{
+		Delay = 0,
+		Quantity = 1,
+		LifeTimeQuantity = 1,
+		SpawnRate = 1000,
+		Brushes = [
+			"anim_hunter_bestialwrath"
+		],
+		Stages = [
+			{
+				LifeTimeMin = 0.5,
+				LifeTimeMax = 0.5,
+				ColorMin = this.createColor("ffffffff"),
+				ColorMax = this.createColor("ffffffff"),
+				ScaleMin = 1,
+				ScaleMax = 1,
+				SpawnOffsetMin = this.createVec(0, 100),
+				SpawnOffsetMax = this.createVec(0, 100),
+				ForceMin = this.createVec(0, -30),
+				ForceMax = this.createVec(0, -30)
+			},
+			{
+				LifeTimeMin = 0,
+				LifeTimeMax = 0,
+				ColorMin = this.createColor("ffffff00"),
+				ColorMax = this.createColor("ffffff00"),
+				ScaleMin = 1,
+				ScaleMax = 1,
+			}
+		]
+	}
+	{
+		Delay = 500,
+		Quantity = 1,
+		LifeTimeQuantity = 1,
+		SpawnRate = 1000,
+		Brushes = [
+			"anim_hunter_bestialwrath"
+		],
+		Stages = [
+			{
+				LifeTimeMin = 0.5,
+				LifeTimeMax = 0.5,
+				ColorMin = this.createColor("ffffff00"),
+				ColorMax = this.createColor("ffffff00"),
+				ScaleMin = 1,
+				ScaleMax = 1,
+				SpawnOffsetMin = this.createVec(0, 90),
+				SpawnOffsetMax = this.createVec(0, 90),
+				ForceMin = this.createVec(0, 30),
+				ForceMax = this.createVec(0, 30)
+			},
+			{
+				LifeTimeMin = 0,
+				LifeTimeMax = 0,
+				ColorMin = this.createColor("ffffffff"),
+				ColorMax = this.createColor("ffffffff"),
+				ScaleMin = 1,
+				ScaleMax = 1,
+			}
+		]
+	},
+];
