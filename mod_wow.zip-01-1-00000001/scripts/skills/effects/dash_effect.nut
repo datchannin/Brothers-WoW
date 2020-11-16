@@ -76,6 +76,10 @@ this.dash_effect <- this.inherit("scripts/skills/skill", {
 	{
 		if (--this.m.TurnsLeft <= 0)
 		{
+			local actor = this.getContainer().getActor();
+			actor.m.ActionPointCosts = this.Const.DefaultMovementAPCost;
+			actor.m.FatigueCosts = this.Const.DefaultMovementFatigueCost;
+			actor.m.LevelActionPointCost = this.Const.Movement.LevelDifferenceActionPointCost;
 			this.removeSelf();
 		}
 	}

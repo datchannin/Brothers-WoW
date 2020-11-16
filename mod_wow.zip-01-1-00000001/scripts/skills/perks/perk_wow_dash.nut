@@ -18,7 +18,7 @@ this.perk_wow_dash <- this.inherit("scripts/skills/skill", {
 	{
 		if (!this.m.Container.hasSkill("actives.dash_skill"))
 		{
-			//this.m.Container.add(this.new("scripts/skills/actives/druid_dash_skill"));
+			this.m.Container.add(this.new("scripts/skills/actives/druid_dash_skill"));
 		}
 	}
 
