@@ -10,7 +10,7 @@ this.priest_fade_skill <- this.inherit("scripts/skills/skill", {
 		this.m.IconDisabled = "ui/perks/skill_priest_fade_sw.png";
 		this.m.Overlay = "skill_priest_fade";
 		this.m.SoundOnUse = [
-			//"sounds/combat/priest_fade.wav"
+			"sounds/combat/priest_fade.ogg"
 		];
 		this.m.Type = this.Const.SkillType.Active;
 		this.m.Order = this.Const.SkillOrder.Any;
