@@ -1658,6 +1658,16 @@ gt.Const.Perks.PerkDefObjects.LuckyRecovery <- {
 	Const = "LuckyRecovery"
 }
 
+gt.Const.Perks.PerkDefObjects.Fade <- {
+	ID = "perk.wow.priest.fade",
+	Script = "scripts/skills/perks/perk_wow_fade",
+	Name = this.Const.Wow_strings.PerkName.Fade,
+	Tooltip = this.Const.Wow_strings.PerkDescription.Fade,
+	Icon = "ui/perks/perk_priest_fade.png",
+	IconDisabled = "ui/perks/perk_priest_fade_sw.png",
+	Const = "Fade"
+}
+
 // ---------------------------------------------|
 // ----------------  WOW DRUID -----------------|
 // ---------------------------------------------|

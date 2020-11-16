@@ -432,7 +432,6 @@ gt.Const.Perks.PerkTreePriest <- [
 		gt.Const.Perks.PerkDefObjects.MentalStrength
 		gt.Const.Perks.PerkDefObjects.ShieldExpert
 		gt.Const.Perks.PerkDefObjects.Brawny
-		gt.Const.Perks.PerkDefObjects.Rotation
 		gt.Const.Perks.PerkDefObjects.RallyTheTroops
 	],
 	[
@@ -447,7 +446,7 @@ gt.Const.Perks.PerkTreePriest <- [
 	[
 		gt.Const.Perks.PerkDefObjects.LoneWolf
 		gt.Const.Perks.PerkDefObjects.Underdog
-		gt.Const.Perks.PerkDefObjects.Footwork
+		gt.Const.Perks.PerkDefObjects.Fade
 	],
 	[
 		gt.Const.Perks.PerkDefObjects.Nimble
