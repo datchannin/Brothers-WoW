@@ -7,7 +7,7 @@ this.rogue_sprint_skill <- this.inherit("scripts/skills/skill", {
 	{
 		this.m.ID = "actives.sprint_skill";
 		this.m.Name = "Sprint";
-		this.m.Description = "Allows rogue to move faster. Action Point costs for movement on all terrain now is [color=" + this.Const.UI.Color.PositiveValue + "]1[/color] point per tile. And fatigue cost now is [color=" + this.Const.UI.Color.PositiveValue + "]2[/color] points per tile.";
+		this.m.Description = "Allows rogue to move faster. Action Point costs for movement on all terrain will be [color=" + this.Const.UI.Color.PositiveValue + "]1[/color] point per tile. And fatigue cost will be [color=" + this.Const.UI.Color.PositiveValue + "]2[/color] points per tile.";
 		this.m.Icon = "ui/perks/skill_rogue_sprint.png";
 		this.m.IconDisabled = "ui/perks/skill_rogue_sprint_sw.png";
 		this.m.Overlay = "skill_rogue_sprint";
@@ -77,9 +77,9 @@ this.rogue_sprint_skill <- this.inherit("scripts/skills/skill", {
 		}
 		else
 		{
-			//local effect = this.new("scripts/skills/effects/sprint_effect");
-			//effect.setDuration(duration);
-			//_user.getSkills().add(effect);
+			local effect = this.new("scripts/skills/effects/sprint_effect");
+			effect.setDuration(duration);
+			_user.getSkills().add(effect);
 		}
 
 		return true;
