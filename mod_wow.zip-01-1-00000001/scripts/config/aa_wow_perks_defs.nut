@@ -2085,6 +2085,16 @@ gt.Const.Perks.PerkDefObjects.CurseofDoom <- {
 	Const = "CurseofDoom"
 }
 
+gt.Const.Perks.PerkDefObjects.Fear <- {
+	ID = "perk.wow.warlock.fear",
+	Script = "scripts/skills/perks/perk_wow_fear",
+	Name = this.Const.Wow_strings.PerkName.Fear,
+	Tooltip = this.Const.Wow_strings.PerkDescription.Fear,
+	Icon = "ui/perks/perk_warlock_fear.png",
+	IconDisabled = "ui/perks/perk_warlock_fear_sw.png",
+	Const = "Fear"
+}
+
 // ---------------------------------------------|
 // -----------  WOW END PERKS DEFINITION -------|
 // ---------------------------------------------|
