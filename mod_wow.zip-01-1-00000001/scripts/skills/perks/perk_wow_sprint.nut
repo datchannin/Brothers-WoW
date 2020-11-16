@@ -18,7 +18,7 @@ this.perk_wow_sprint <- this.inherit("scripts/skills/skill", {
 	{
 		if (!this.m.Container.hasSkill("actives.sprint_skill"))
 		{
-			//this.m.Container.add(this.new("scripts/skills/actives/rogue_sprint_skill"));
+			this.m.Container.add(this.new("scripts/skills/actives/rogue_sprint_skill"));
 		}
 	}
 
