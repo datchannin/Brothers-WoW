@@ -79,7 +79,7 @@ this.wow_scenario <- this.inherit("scripts/scenarios/world/starting_scenario", {
 		bros[5].m.PerkPoints = 12;
 		bros[5].m.LevelUps = 6;
 		bros[5].m.Level = 5;
-
+/*
 		bros[5].getSkills().add(this.new("scripts/skills/injury/broken_arm_injury"));
 		bros[5].getSkills().add(this.new("scripts/skills/injury/broken_leg_injury"));
 		bros[5].getSkills().add(this.new("scripts/skills/injury/broken_nose_injury"));
@@ -128,7 +128,7 @@ this.wow_scenario <- this.inherit("scripts/scenarios/world/starting_scenario", {
 		bros[5].getSkills().add(this.new("scripts/skills/injury/split_shoulder_injury"));
 		bros[5].getSkills().add(this.new("scripts/skills/injury/sprained_ankle_injury"));
 		bros[5].getSkills().add(this.new("scripts/skills/injury/stabbed_guts_injury"));
-
+*/
 		bros[6].setStartValuesEx([
 			"raider_mage_background"
 		]);
