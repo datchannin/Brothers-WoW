@@ -862,6 +862,16 @@ gt.Const.Perks.PerkDefObjects.Ambidextr <- {
 	Const = "Ambidextr"
 }
 
+gt.Const.Perks.PerkDefObjects.Sprint <- {
+	ID = "perk.wow.rogue.sprint",
+	Script = "scripts/skills/perks/perk_wow_sprint",
+	Name = this.Const.Wow_strings.PerkName.Sprint,
+	Tooltip = this.Const.Wow_strings.PerkDescription.Sprint,
+	Icon = "ui/perks/perk_rogue_sprint.png",
+	IconDisabled = "ui/perks/perk_rogue_sprint_sw.png",
+	Const = "Sprint"
+}
+
 gt.Const.Perks.PerkDefObjects.Vigor <- {
 	ID = "perk.wow.rogue.vigor",
 	Script = "scripts/skills/perks/perk_wow_vigor",

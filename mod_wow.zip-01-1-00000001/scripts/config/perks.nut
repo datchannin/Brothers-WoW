@@ -175,7 +175,6 @@ gt.Const.Perks.PerkTreeRogue <- [
 		gt.Const.Perks.PerkDefObjects.Backstabber
 		gt.Const.Perks.PerkDefObjects.Anticipation
 		gt.Const.Perks.PerkDefObjects.Relentless
-		gt.Const.Perks.PerkDefObjects.Rotation
 	],
 	[
 		gt.Const.Perks.PerkDefObjects.MasterDagger
@@ -192,7 +191,7 @@ gt.Const.Perks.PerkTreeRogue <- [
 		gt.Const.Perks.PerkDefObjects.Overwhelm
 		gt.Const.Perks.PerkDefObjects.LoneWolf
 		gt.Const.Perks.PerkDefObjects.Underdog
-		gt.Const.Perks.PerkDefObjects.Footwork
+		gt.Const.Perks.PerkDefObjects.Sprint
 	],
 	[
 		gt.Const.Perks.PerkDefObjects.Berserk
