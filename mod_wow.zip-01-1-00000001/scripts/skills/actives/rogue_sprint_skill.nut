@@ -12,7 +12,7 @@ this.rogue_sprint_skill <- this.inherit("scripts/skills/skill", {
 		this.m.IconDisabled = "ui/perks/skill_rogue_sprint_sw.png";
 		this.m.Overlay = "skill_rogue_sprint";
 		this.m.SoundOnUse = [
-			//"sounds/combat/rogue_sprint.wav"
+			"sounds/combat/rogue_sprint.wav"
 		];
 		this.m.Type = this.Const.SkillType.Active;
 		this.m.Order = this.Const.SkillOrder.Any;
