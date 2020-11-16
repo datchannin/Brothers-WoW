@@ -1861,6 +1861,16 @@ gt.Const.Perks.PerkDefObjects.TranquilSpirit <- {
 	Const = "TranquilSpirit"
 }
 
+gt.Const.Perks.PerkDefObjects.Dash <- {
+	ID = "perk.wow.druid.dash",
+	Script = "scripts/skills/perks/perk_wow_dash",
+	Name = this.Const.Wow_strings.PerkName.Dash,
+	Tooltip = this.Const.Wow_strings.PerkDescription.Dash,
+	Icon = "ui/perks/perk_druid_dash.png",
+	IconDisabled = "ui/perks/perk_druid_dash_sw.png",
+	Const = "Dash"
+}
+
 // ---------------------------------------------|
 // ----------------  WOW WARLOCK ---------------|
 // ---------------------------------------------|

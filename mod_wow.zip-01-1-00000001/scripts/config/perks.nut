@@ -507,7 +507,7 @@ gt.Const.Perks.PerkTreeDruid <- [
 	[
 		gt.Const.Perks.PerkDefObjects.LoneWolf
 		gt.Const.Perks.PerkDefObjects.Underdog
-		gt.Const.Perks.PerkDefObjects.Footwork
+		gt.Const.Perks.PerkDefObjects.Dash
 	],
 	[
 		gt.Const.Perks.PerkDefObjects.Berserk
