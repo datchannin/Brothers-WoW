@@ -260,7 +260,8 @@ gt.Const.Wow_strings.PerkName <- {
 	ShadowMastery = "Shadow Mastery",
 	MasterDemonologist = "Master Demonologist",
 	Ruin = "Ruin",
-	CurseofDoom = "Curse of Doom"
+	CurseofDoom = "Curse of Doom",
+	Fear = "Fear"
 };
 
 gt.Const.Wow_strings.PerkDescription <- {
@@ -414,5 +415,6 @@ gt.Const.Wow_strings.PerkDescription <- {
 	ShadowMastery = "Enhances the \'Devastation\' effect: increases \'Shadowbolt\' critical damage chance by additional [color=" + this.Const.UI.Color.PositiveValue + "]20%[/color]. Does not have any effect if you don\'t have [color=" + this.Const.UI.Color.PositiveValue + "]\'Devastation\'[/color] perk.",
 	MasterDemonologist = "If you learn this perk, soul from the \'Soul Shard\' will not be able to break free at the turn end. Consume the shard for spells casting only!",
 	Ruin = "Enhances the \'Devastation\' effect: increases \'Shadowbolt\' critical damage value by additional [color=" + this.Const.UI.Color.PositiveValue + "]100%[/color]. Does not have any effect if you don\'t have [color=" + this.Const.UI.Color.PositiveValue + "]\'Devastation\'[/color] perk.",
-	CurseofDoom = "Unlocks the \'Curse of Doom\' skill which is used to deal massive damage to your enemy.\nSpell damage is growing with your level.\n\n\'Soul Shard\': This skill can be used only if Warlock has \'Soul Shard\'. Using \'Curse of Doom\' consumes soul."
+	CurseofDoom = "Unlocks the \'Curse of Doom\' skill which is used to deal massive damage to your enemy.\nSpell damage is growing with your level.\n\n\'Soul Shard\': This skill can be used only if Warlock has \'Soul Shard\'. Using \'Curse of Doom\' consumes soul.",
+	Fear = "Unlocks the \'Fear\' skill which allows you to fear the enemy. Enemy will move to the next tile from you."
 };
