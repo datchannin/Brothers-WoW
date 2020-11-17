@@ -391,7 +391,6 @@ gt.Const.Perks.PerkTreeMage <- [
 	[
 		gt.Const.Perks.PerkDefObjects.ManaAgat
 		gt.Const.Perks.PerkDefObjects.Berserk
-		gt.Const.Perks.PerkDefObjects.Nimble
 	],
 	[
 		gt.Const.Perks.PerkDefObjects.Ignite
@@ -449,8 +448,7 @@ gt.Const.Perks.PerkTreePriest <- [
 		gt.Const.Perks.PerkDefObjects.Fade
 	],
 	[
-		gt.Const.Perks.PerkDefObjects.Nimble
-		gt.Const.Perks.PerkDefObjects.BattleForged
+
 	],
 	[
 		gt.Const.Perks.PerkDefObjects.Renew
@@ -571,8 +569,7 @@ gt.Const.Perks.PerkTreeWarlock <- [
 		gt.Const.Perks.PerkDefObjects.Fear
 	],
 	[
-		gt.Const.Perks.PerkDefObjects.Nimble
-		gt.Const.Perks.PerkDefObjects.BattleForged
+
 	],
 	[
 		gt.Const.Perks.PerkDefObjects.Ruin
