@@ -2109,6 +2109,16 @@ gt.Const.Perks.PerkDefObjects.MagicInterference <- {
 	Const = "MagicInterference"
 }
 
+gt.Const.Perks.PerkDefObjects.ElusiveProtection <- {
+	ID = "perk.wow.common.elusiveprotection",
+	Script = "scripts/skills/perks/perk_wow_elusiveprotection",
+	Name = this.Const.Wow_strings.PerkName.ElusiveProtection,
+	Tooltip = this.Const.Wow_strings.PerkDescription.ElusiveProtection,
+	Icon = "ui/perks/perk_elusive protection.png",
+	IconDisabled = "ui/perks/perk_elusive protection_sw.png",
+	Const = "ElusiveProtection"
+}
+
 // ---------------------------------------------|
 // -----------  WOW END PERKS DEFINITION -------|
 // ---------------------------------------------|
