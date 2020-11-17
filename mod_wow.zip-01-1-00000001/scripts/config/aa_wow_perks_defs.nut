@@ -2114,8 +2114,8 @@ gt.Const.Perks.PerkDefObjects.ElusiveProtection <- {
 	Script = "scripts/skills/perks/perk_wow_elusiveprotection",
 	Name = this.Const.Wow_strings.PerkName.ElusiveProtection,
 	Tooltip = this.Const.Wow_strings.PerkDescription.ElusiveProtection,
-	Icon = "ui/perks/perk_elusive protection.png",
-	IconDisabled = "ui/perks/perk_elusive protection_sw.png",
+	Icon = "ui/perks/perk_elusive_protection.png",
+	IconDisabled = "ui/perks/perk_elusive_protection_sw.png",
 	Const = "ElusiveProtection"
 }
 
