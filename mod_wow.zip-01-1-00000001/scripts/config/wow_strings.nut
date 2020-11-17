@@ -261,7 +261,8 @@ gt.Const.Wow_strings.PerkName <- {
 	MasterDemonologist = "Master Demonologist",
 	Ruin = "Ruin",
 	CurseofDoom = "Curse of Doom",
-	Fear = "Fear"
+	Fear = "Fear",
+	MagicInterference = "Magic Interference"
 };
 
 gt.Const.Wow_strings.PerkDescription <- {
@@ -416,5 +417,6 @@ gt.Const.Wow_strings.PerkDescription <- {
 	MasterDemonologist = "If you learn this perk, soul from the \'Soul Shard\' will not be able to break free at the turn end. Consume the shard for spells casting only!",
 	Ruin = "Enhances the \'Devastation\' effect: increases \'Shadowbolt\' critical damage value by additional [color=" + this.Const.UI.Color.PositiveValue + "]100%[/color]. Does not have any effect if you don\'t have [color=" + this.Const.UI.Color.PositiveValue + "]\'Devastation\'[/color] perk.",
 	CurseofDoom = "Unlocks the \'Curse of Doom\' skill which is used to deal massive damage to your enemy.\nSpell damage is growing with your level.\n\n\'Soul Shard\': This skill can be used only if Warlock has \'Soul Shard\'. Using \'Curse of Doom\' consumes soul.",
-	Fear = "Unlocks the \'Fear\' skill which allows you to fear the enemy. Enemy will move to the next tile from you."
+	Fear = "Unlocks the \'Fear\' skill which allows you to fear the enemy. Enemy will move to the next tile from you.",
+	MagicInterference = "Mana emanations create an interference around you. You must be focused on protection to reap the benefits. Hitpoint damage taken is reduced by up to [color=" + this.Const.UI.Color.PositiveValue + "]40%[/color], but lowered linear by the total penalty to Maximum Fatigue from body and head armor above [color=" + this.Const.UI.Color.PositiveValue + "]20[/color]. The lighter your armor and helmet, the more you benefit.\n\nBrawny does not affect this perk.\n\nUsing shields nullifies the effect!"
 };
