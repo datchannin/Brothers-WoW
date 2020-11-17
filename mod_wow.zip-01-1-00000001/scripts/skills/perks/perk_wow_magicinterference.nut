@@ -1,4 +1,4 @@
-this.perk_wow_magic_interference <- this.inherit("scripts/skills/skill", {
+this.perk_wow_magicinterference <- this.inherit("scripts/skills/skill", {
 	m = {},
 	function create()
 	{

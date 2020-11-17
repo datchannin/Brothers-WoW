@@ -2096,5 +2096,19 @@ gt.Const.Perks.PerkDefObjects.Fear <- {
 }
 
 // ---------------------------------------------|
+// -----------  WOW COMMON PERKS DEFINITION ----|
+// ---------------------------------------------|
+
+gt.Const.Perks.PerkDefObjects.MagicInterference <- {
+	ID = "perk.wow.common.magicinterference",
+	Script = "scripts/skills/perks/perk_wow_magicinterference",
+	Name = this.Const.Wow_strings.PerkName.MagicInterference,
+	Tooltip = this.Const.Wow_strings.PerkDescription.MagicInterference,
+	Icon = "ui/perks/perk_magic_interference.png",
+	IconDisabled = "ui/perks/perk_magic_interference_sw.png",
+	Const = "MagicInterference"
+}
+
+// ---------------------------------------------|
 // -----------  WOW END PERKS DEFINITION -------|
 // ---------------------------------------------|
