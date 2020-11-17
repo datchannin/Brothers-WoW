@@ -8,7 +8,7 @@ this.warlock_fear_skill <- this.inherit("scripts/skills/skill", {
 		this.m.Description = "Fear the enemy, he will move away by one tile from you. Targets hit may take damage if they are pushed down several levels of height. Shieldwall, Spearwall and Riposte will be canceled for a target that is successfully scared. A rooted target can not move away.";
 		this.m.Icon = "ui/perks/skill_warlock_fear.png";
 		this.m.IconDisabled = "ui/perks/skill_warlock_fear_sw.png";
-		this.m.Overlay = "skill_warlock_fear";
+		this.m.Overlay = "";
 		this.m.SoundOnUse = [
 			"sounds/combat/warlock_fear.ogg",
 		];
@@ -167,6 +167,8 @@ this.warlock_fear_skill <- this.inherit("scripts/skills/skill", {
 			this.Tactical.getNavigator().teleport(target, knockToTile, this.onKnockedDown, tag, true);
 		}
 
+		this.Anim();
+
 		return true;
 	}
 
@@ -180,6 +182,19 @@ this.warlock_fear_skill <- this.inherit("scripts/skills/skill", {
 		if (_tag.HitInfoBash != null)
 		{
 			_entity.onDamageReceived(_tag.Attacker, _tag.Skill, _tag.HitInfoBash);
+		}
+	}
+
+	function Anim()
+	{
+		local actor = this.getContainer().getActor();
+
+		if (this.Const.Tactical.WarlockFearParticles.len() != 0)
+		{
+			for( local i = 0; i < this.Const.Tactical.WarlockFearParticles.len(); i = ++i )
+			{
+				this.Tactical.spawnParticleEffect(false, this.Const.Tactical.WarlockFearParticles[i].Brushes, actor.getTile(), this.Const.Tactical.WarlockFearParticles[i].Delay, this.Const.Tactical.WarlockFearParticles[i].Quantity, this.Const.Tactical.WarlockFearParticles[i].LifeTimeQuantity, this.Const.Tactical.WarlockFearParticles[i].SpawnRate, this.Const.Tactical.WarlockFearParticles[i].Stages);
+			}
 		}
 	}
 
