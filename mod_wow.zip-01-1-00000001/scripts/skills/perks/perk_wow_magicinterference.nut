@@ -129,7 +129,7 @@ this.perk_wow_magicinterference <- this.inherit("scripts/skills/skill", {
 		}
 
 		local percent = this.getPercentValue() * 0.01;
-		_properties.DamageReceivedRegularMult = (1 - percent);
+		_properties.DamageReceivedRegularMult *= (1.0 - percent);
 	}
 
 });
