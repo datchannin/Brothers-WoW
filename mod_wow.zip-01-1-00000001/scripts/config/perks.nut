@@ -196,6 +196,7 @@ gt.Const.Perks.PerkTreeRogue <- [
 	[
 		gt.Const.Perks.PerkDefObjects.Berserk
 		gt.Const.Perks.PerkDefObjects.HeadHunter
+		gt.Const.Perks.PerkDefObjects.ElusiveProtection
 	],
 	[
 		gt.Const.Perks.PerkDefObjects.Vigor
@@ -508,6 +509,7 @@ gt.Const.Perks.PerkTreeDruid <- [
 	],
 	[
 		gt.Const.Perks.PerkDefObjects.Berserk
+		gt.Const.Perks.PerkDefObjects.ElusiveProtection
 		gt.Const.Perks.PerkDefObjects.TranquilSpirit
 	],
 	[
