@@ -133,8 +133,3 @@ this.perk_wow_magicinterference <- this.inherit("scripts/skills/skill", {
 	}
 
 });
-
-//	function getDescription()
-//	{
-//		return "Nimble like a cat! This character is able to partially evade or deflect attacks at the last moment, turning them into glancing hits. The lighter the armor, the more you benefit.";
-//	}
