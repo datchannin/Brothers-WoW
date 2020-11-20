@@ -231,6 +231,9 @@ this.wow_scenario <- this.inherit("scripts/scenarios/world/starting_scenario", {
 		item = this.new("scripts/items/staffs/firestaff");
 		this.World.Assets.getStash().add(item);
 
+		item = this.new("scripts/items/staffs/holystaff");
+		this.World.Assets.getStash().add(item);
+
 		item = this.new("scripts/items/armor/warlock_t0_armor");
 		this.World.Assets.getStash().add(item);
 

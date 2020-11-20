@@ -1,0 +1,28 @@
+this.holystaff <- this.inherit("scripts/items/staffs/staff", {
+	m = {},
+	function create()
+	{
+		this.staff.create();
+		this.m.ID = "staff.holystaff";
+		this.m.Name = "Holy Staff";
+		this.m.Description = "A long two-handed staff that glows with a soft light.";
+		this.m.Categories = "Staff, Two-Handed";
+		this.m.IconLarge = "staffs/staff_holy_140x70.png";
+		this.m.Icon = "staffs/staff_holy_70x70.png";
+		this.m.SlotType = this.Const.ItemSlot.Mainhand;
+		this.m.BlockedSlotType = this.Const.ItemSlot.Offhand;
+		this.m.ItemType = this.Const.Items.ItemType.Weapon | this.Const.Items.ItemType.MeleeWeapon | this.Const.Items.ItemType.TwoHanded;
+		this.m.IsAgainstShields = false;
+		this.m.IsAoE = false;
+		this.m.AddGenericSkill = false;
+		this.m.ShowQuiver = false;
+		this.m.ShowArmamentIcon = true;
+		this.m.ArmamentIcon = "staff_holy";
+		this.m.Value = 3200;
+		this.m.Condition = 90.0;
+		this.m.ConditionMax = 90.0;
+		this.m.StaminaModifier = -20;
+		this.m.SpellHolyPower = 20;
+	}
+});
+
