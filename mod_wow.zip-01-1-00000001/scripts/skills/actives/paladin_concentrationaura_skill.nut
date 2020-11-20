@@ -1,4 +1,4 @@
-/*BBWOW:This file is part of datchannin bbWoW mod, mod_version = 8.05, game_version = 1.4.0.45*/
+/*BBWOW:This file is part of datchannin bbWoW mod, mod_version = 9.00, game_version = 1.4.0.46*/
 this.paladin_concentrationaura_skill <- this.inherit("scripts/skills/skill", {
 	m = {
 		CurrentLevel = 1,

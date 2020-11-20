@@ -1,3 +1,4 @@
+/*BBWOW:This file is part of datchannin bbWoW mod, mod_version = 9.00, game_version = 1.4.0.46*/
 this.warlock_t0_update <- this.inherit("scripts/items/armor_upgrades/armor_upgrade", {
 	m = {
 		StaminaValue = 15,

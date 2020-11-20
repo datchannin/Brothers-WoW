@@ -1,3 +1,4 @@
+/*BBWOW:This file is part of datchannin bbWoW mod, mod_version = 9.00, game_version = 1.4.0.46*/
 this.perk_wow_elusiveprotection <- this.inherit("scripts/skills/skill", {
 	m = {
 		PercentArmor = 15

@@ -1,3 +1,4 @@
+/*BBWOW:This file is part of datchannin bbWoW mod, mod_version = 9.00, game_version = 1.4.0.46*/
 this.token_chest_item <- this.inherit("scripts/items/item", {
 	m = {},
 	function create()

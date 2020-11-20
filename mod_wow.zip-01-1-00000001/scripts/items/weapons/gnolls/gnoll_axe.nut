@@ -1,3 +1,4 @@
+/*BBWOW:This file is part of datchannin bbWoW mod, mod_version = 9.00, game_version = 1.4.0.46*/
 this.gnoll_axe <- this.inherit("scripts/items/weapons/weapon", {
 	m = {},
 	function create()
