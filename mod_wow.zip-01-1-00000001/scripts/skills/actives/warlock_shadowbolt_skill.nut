@@ -3,6 +3,7 @@ this.warlock_shadowbolt_skill <- this.inherit("scripts/skills/skill", {
 	m = {
 		damage_base_min = 20,
 		damage_base_max = 35,
+		SpellShadowPower = 0,
 		destructivereach = false,
 		shadowburn = false,
 		devastation = false,
@@ -82,6 +83,8 @@ this.warlock_shadowbolt_skill <- this.inherit("scripts/skills/skill", {
 		local total_damage_min = this.m.damage_base_min;
 		local scale_damage = 0;
 
+		total_damage_min += this.m.SpellShadowPower;
+
 		if (this.m.shadowburn)
 		{
 			total_damage_min += 10;
@@ -102,6 +105,8 @@ this.warlock_shadowbolt_skill <- this.inherit("scripts/skills/skill", {
 	{
 		local total_damage_max = this.m.damage_base_max;
 		local scale_damage = 0;
+
+		total_damage_max += this.m.SpellShadowPower;
 
 		if (this.m.shadowburn)
 		{
@@ -231,6 +236,7 @@ this.warlock_shadowbolt_skill <- this.inherit("scripts/skills/skill", {
 		this.m.ruin = user.getSkills().hasSkill("perk.wow.warlock.ruin");
 		this.m.shadowmastery = user.getSkills().hasSkill("perk.wow.warlock.shadowmastery");
 		this.m.T0_warlock_set = _properties.isFullSetWarlockT0();
+		this.m.SpellShadowPower = _properties.SpellShadowPower;
 
 		if (user.getAIAgent().m.ID == "agent.gnoll.mystic")
 		{
