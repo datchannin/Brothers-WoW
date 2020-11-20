@@ -146,6 +146,26 @@ this.weaponsmith_building <- this.inherit("scripts/entity/world/settlements/buil
 			{
 				R = 20,
 				P = 1.0,
+				S = "staffs/firestaff"
+			},
+			{
+				R = 20,
+				P = 1.0,
+				S = "staffs/froststaff"
+			},
+			{
+				R = 20,
+				P = 1.0,
+				S = "staffs/holystaff"
+			},
+			{
+				R = 20,
+				P = 1.0,
+				S = "staffs/shadowstaff"
+			},
+			{
+				R = 20,
+				P = 1.0,
 				S = "weapons/dagger"
 			},
 			{

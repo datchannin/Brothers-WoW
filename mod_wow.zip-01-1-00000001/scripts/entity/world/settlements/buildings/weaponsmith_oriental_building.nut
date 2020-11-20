@@ -13,6 +13,26 @@ this.weaponsmith_oriental_building <- this.inherit("scripts/entity/world/settlem
 	{
 		local list = [
 			{
+				R = 20,
+				P = 1.0,
+				S = "staffs/firestaff"
+			},
+			{
+				R = 20,
+				P = 1.0,
+				S = "staffs/froststaff"
+			},
+			{
+				R = 20,
+				P = 1.0,
+				S = "staffs/holystaff"
+			},
+			{
+				R = 20,
+				P = 1.0,
+				S = "staffs/shadowstaff"
+			},
+			{
 				R = 40,
 				P = 1.0,
 				S = "weapons/oriental/qatal_dagger"
