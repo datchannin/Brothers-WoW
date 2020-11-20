@@ -3,6 +3,7 @@ this.warlock_curseofagony_skill <- this.inherit("scripts/skills/skill", {
 	m = {
 		BaseMinShadowDamage = 14,
 		BaseMaxShadowDamage = 18,
+		SpellShadowPower = 0,
 		BaseTurnsDuration = 2,
 		soulshard = false,
 		feldomination = false,
@@ -43,6 +44,8 @@ this.warlock_curseofagony_skill <- this.inherit("scripts/skills/skill", {
 		local total_damage_min = this.m.BaseMinShadowDamage;
 		local scale_damage = 0;
 
+		total_damage_min += this.m.SpellShadowPower;
+
 		if (this.m.feldomination)
 		{
 			total_damage_min += 7;
@@ -69,6 +72,8 @@ this.warlock_curseofagony_skill <- this.inherit("scripts/skills/skill", {
 	{
 		local total_damage_max = this.m.BaseMaxShadowDamage;
 		local scale_damage = 0;
+
+		total_damage_max += this.m.SpellShadowPower;
 
 		if (this.m.feldomination)
 		{
@@ -147,6 +152,7 @@ this.warlock_curseofagony_skill <- this.inherit("scripts/skills/skill", {
 		this.m.feldomination = user.getSkills().hasSkill("perk.wow.warlock.feldomination");
 		this.m.grimreach = user.getSkills().hasSkill("perk.wow.warlock.grimreach");
 		this.m.T0_warlock_set = _properties.isFullSetWarlockT0();
+		this.m.SpellShadowPower = _properties.SpellShadowPower;
 	}
 
 	function onAfterUpdate( _properties )

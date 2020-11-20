@@ -2,6 +2,7 @@
 this.warlock_curseofdoom_skill <- this.inherit("scripts/skills/skill", {
 	m = {
 		BaseShadowDamage = 50,
+		SpellShadowPower = 0,
 		BaseTurnsDuration = 4,
 		soulshard = false,
 		CurrentLevel = 1
@@ -38,6 +39,8 @@ this.warlock_curseofdoom_skill <- this.inherit("scripts/skills/skill", {
 	{
 		local total_damage = this.m.BaseShadowDamage;
 		local scale_damage = 0;
+
+		total_damage += this.m.SpellShadowPower;
 
 		scale_damage = this.Math.floor(total_damage * this.m.CurrentLevel * this.Const.WarlockScale.curseofdoom);
 
@@ -128,6 +131,7 @@ this.warlock_curseofdoom_skill <- this.inherit("scripts/skills/skill", {
 		local user = this.getContainer().getActor();
 		this.m.CurrentLevel = user.getLevel();
 		this.m.soulshard = user.getSkills().hasSkill("effects.soulshard");
+		this.m.SpellShadowPower = _properties.SpellShadowPower;
 	}
 
 	function onVerifyTarget( _originTile, _targetTile )
