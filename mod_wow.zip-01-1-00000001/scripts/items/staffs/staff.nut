@@ -6,7 +6,7 @@ this.staff <- this.inherit("scripts/items/item", {
 		ArmamentIcon = "",
 		ArmamentIconBloody = "",
 		BreakingSound = "sounds/combat/weapon_break_01.wav",
-		EquipSound = this.Const.Sound.DefaultWeaponEquip,
+		EquipSound = this.Const.Wow_sound.DefaultStaffEquip,
 		RangeMin = 1,
 		RangeMax = 1,
 		RangeIdeal = 1,
