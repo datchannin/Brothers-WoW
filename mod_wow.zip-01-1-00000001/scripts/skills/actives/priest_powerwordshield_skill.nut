@@ -3,7 +3,7 @@ this.priest_powerwordshield_skill <- this.inherit("scripts/skills/skill", {
 	m = {
 		repair_base_min = 10,
 		repair_base_max = 15,
-		SpellHolyPower = 0;
+		SpellHolyPower = 0,
 		CurrentLevel = 1,
 		BaseChance = 100,
 		BaseEffect = 10,

@@ -99,7 +99,7 @@ this.mage_frostbolt_skill <- this.inherit("scripts/skills/skill", {
 		local total_damage_max = this.m.damage_base_max;
 		local scale = 0;
 
-		local total_damage_max = this.m.SpellFrostPower;
+		local total_damage_max += this.m.SpellFrostPower;
 
 		if (this.m.arcticreach)
 		{

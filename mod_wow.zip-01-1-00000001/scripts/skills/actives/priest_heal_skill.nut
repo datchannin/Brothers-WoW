@@ -3,7 +3,7 @@ this.priest_heal_skill <- this.inherit("scripts/skills/skill", {
 	m = {
 		heal_base_min = 12,
 		heal_base_max = 25,
-		SpellHolyPower = 0;
+		SpellHolyPower = 0,
 		CurrentLevel = 1,
 		holyreach = false,
 		spiritalhealing = false,
