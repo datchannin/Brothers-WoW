@@ -18,9 +18,9 @@ this.holystaff <- this.inherit("scripts/items/staffs/staff", {
 		this.m.ShowQuiver = false;
 		this.m.ShowArmamentIcon = true;
 		this.m.ArmamentIcon = "staff_holy";
-		this.m.Value = 3200;
-		this.m.Condition = 90.0;
-		this.m.ConditionMax = 90.0;
+		this.m.Value = 16000;
+		this.m.Condition = 120.0;
+		this.m.ConditionMax = 120.0;
 		this.m.StaminaModifier = -20;
 		this.m.SpellHolyPower = 20;
 	}
