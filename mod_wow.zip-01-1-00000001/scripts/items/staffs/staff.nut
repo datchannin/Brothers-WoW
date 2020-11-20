@@ -195,7 +195,7 @@ this.staff <- this.inherit("scripts/items/item", {
 				id = 4,
 				type = "text",
 				icon = "ui/icons/holy_power.png",
-				text = "Base [color=" + this.Const.UI.Color.PositiveValue + "]\'Holy\'[/color] spell power [color=" + this.Const.UI.Color.PositiveValue + "]+" + this.m.SpellFrostPower + "[/color]"
+				text = "Base [color=" + this.Const.UI.Color.PositiveValue + "]\'Holy\'[/color] spell power [color=" + this.Const.UI.Color.PositiveValue + "]+" + this.m.SpellHolyPower + "[/color]"
 			});
 		}
 
@@ -205,7 +205,7 @@ this.staff <- this.inherit("scripts/items/item", {
 				id = 4,
 				type = "text",
 				icon = "ui/icons/fire_power.png",
-				text = "Base [color=" + this.Const.UI.Color.PositiveValue + "]\'Fire\'[/color] spell power [color=" + this.Const.UI.Color.PositiveValue + "]+" + this.m.SpellFrostPower + "[/color]"
+				text = "Base [color=" + this.Const.UI.Color.PositiveValue + "]\'Fire\'[/color] spell power [color=" + this.Const.UI.Color.PositiveValue + "]+" + this.m.SpellFirePower + "[/color]"
 			});
 		}
 
@@ -225,7 +225,7 @@ this.staff <- this.inherit("scripts/items/item", {
 				id = 4,
 				type = "text",
 				icon = "ui/icons/shadow_power.png",
-				text = "Base [color=" + this.Const.UI.Color.PositiveValue + "]\'Shadow\'[/color] spell power [color=" + this.Const.UI.Color.PositiveValue + "]+" + this.m.SpellFrostPower + "[/color]"
+				text = "Base [color=" + this.Const.UI.Color.PositiveValue + "]\'Shadow\'[/color] spell power [color=" + this.Const.UI.Color.PositiveValue + "]+" + this.m.SpellShadowPower + "[/color]"
 			});
 		}
 
