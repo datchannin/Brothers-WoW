@@ -195,7 +195,7 @@ this.staff <- this.inherit("scripts/items/item", {
 				id = 4,
 				type = "text",
 				icon = "ui/icons/holy_power.png",
-				text = "Spell power using the school of Holy is increased by [color=" + this.Const.UI.Color.DamageValue + "]" + this.m.SpellHolyPower + "[/color]"
+				text = "Base [color=" + this.Const.UI.Color.PositiveValue + "]\'Holy\'[/color] spell power [color=" + this.Const.UI.Color.PositiveValue + "]+" + this.m.SpellFrostPower + "[/color]"
 			});
 		}
 
@@ -205,7 +205,7 @@ this.staff <- this.inherit("scripts/items/item", {
 				id = 4,
 				type = "text",
 				icon = "ui/icons/fire_power.png",
-				text = "Spell power using the school of Fire is increased by [color=" + this.Const.UI.Color.DamageValue + "]" + this.m.SpellFirePower + "[/color]"
+				text = "Base [color=" + this.Const.UI.Color.PositiveValue + "]\'Fire\'[/color] spell power [color=" + this.Const.UI.Color.PositiveValue + "]+" + this.m.SpellFrostPower + "[/color]"
 			});
 		}
 
@@ -215,7 +215,7 @@ this.staff <- this.inherit("scripts/items/item", {
 				id = 4,
 				type = "text",
 				icon = "ui/icons/frost_power.png",
-				text = "Spell power using the school of Frost is increased by [color=" + this.Const.UI.Color.DamageValue + "]" + this.m.SpellFrostPower + "[/color]"
+				text = "Base [color=" + this.Const.UI.Color.PositiveValue + "]\'Frost\'[/color] spell power [color=" + this.Const.UI.Color.PositiveValue + "]+" + this.m.SpellFrostPower + "[/color]"
 			});
 		}
 
@@ -225,7 +225,7 @@ this.staff <- this.inherit("scripts/items/item", {
 				id = 4,
 				type = "text",
 				icon = "ui/icons/shadow_power.png",
-				text = "Spell power using the school of Shadow is increased by [color=" + this.Const.UI.Color.DamageValue + "]" + this.m.SpellShadowPower + "[/color]"
+				text = "Base [color=" + this.Const.UI.Color.PositiveValue + "]\'Shadow\'[/color] spell power [color=" + this.Const.UI.Color.PositiveValue + "]+" + this.m.SpellFrostPower + "[/color]"
 			});
 		}
 
