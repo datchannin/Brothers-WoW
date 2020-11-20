@@ -14,7 +14,7 @@ this.froststaff <- this.inherit("scripts/items/staffs/staff", {
 		this.m.ItemType = this.Const.Items.ItemType.Weapon | this.Const.Items.ItemType.MeleeWeapon | this.Const.Items.ItemType.TwoHanded;
 		this.m.IsAgainstShields = false;
 		this.m.IsAoE = false;
-		this.m.AddGenericSkill = false;
+		this.m.AddGenericSkill = true;
 		this.m.ShowQuiver = false;
 		this.m.ShowArmamentIcon = true;
 		this.m.ArmamentIcon = "staff_frost";

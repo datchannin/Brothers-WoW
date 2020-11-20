@@ -3,6 +3,7 @@ this.mage_fireball_skill <- this.inherit("scripts/skills/skill", {
 	m = {
 		damage_base_min = 15,
 		damage_base_max = 25,
+		SpellFirePower = 0,
 		CurrentLevel = 1,
 		blastwave = false,
 		ignite = false,
@@ -56,6 +57,8 @@ this.mage_fireball_skill <- this.inherit("scripts/skills/skill", {
 		local total_damage_min = this.m.damage_base_min;
 		local scale = 0;
 
+		total_damage_min += this.m.SpellFirePower;
+
 		if (this.m.blastwave)
 		{
 			total_damage_min += 5;
@@ -95,6 +98,8 @@ this.mage_fireball_skill <- this.inherit("scripts/skills/skill", {
 	{
 		local total_damage_max = this.m.damage_base_max;
 		local scale = 0;
+
+		total_damage_max += this.m.SpellFirePower;
 
 		if (this.m.blastwave)
 		{
@@ -242,6 +247,7 @@ this.mage_fireball_skill <- this.inherit("scripts/skills/skill", {
 		this.m.iceattunement = user.getSkills().hasSkill("perk.wow.mage.iceattunement");
 		this.m.T0_mage_set = _properties.isFullSetMageT0();
 		this.m.T0_mage_armor = _properties.T0_mage_armor;
+		this.m.SpellFirePower = _properties.SpellFirePower;
 	}
 
 	function onAfterUpdate( _properties )
