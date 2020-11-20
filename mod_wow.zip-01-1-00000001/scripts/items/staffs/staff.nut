@@ -194,7 +194,7 @@ this.staff <- this.inherit("scripts/items/item", {
 			result.push({
 				id = 4,
 				type = "text",
-				icon = "ui/icons/regular_damage.png",
+				icon = "ui/icons/holy_power.png",
 				text = "Spell power using the school of Holy is increased by [color=" + this.Const.UI.Color.DamageValue + "]" + this.m.SpellHolyPower + "[/color]"
 			});
 		}
@@ -204,7 +204,7 @@ this.staff <- this.inherit("scripts/items/item", {
 			result.push({
 				id = 4,
 				type = "text",
-				icon = "ui/icons/regular_damage.png",
+				icon = "ui/icons/fire_power.png",
 				text = "Spell power using the school of Fire is increased by [color=" + this.Const.UI.Color.DamageValue + "]" + this.m.SpellFirePower + "[/color]"
 			});
 		}
@@ -214,7 +214,7 @@ this.staff <- this.inherit("scripts/items/item", {
 			result.push({
 				id = 4,
 				type = "text",
-				icon = "ui/icons/regular_damage.png",
+				icon = "ui/icons/frost_power.png",
 				text = "Spell power using the school of Frost is increased by [color=" + this.Const.UI.Color.DamageValue + "]" + this.m.SpellFrostPower + "[/color]"
 			});
 		}
@@ -224,7 +224,7 @@ this.staff <- this.inherit("scripts/items/item", {
 			result.push({
 				id = 4,
 				type = "text",
-				icon = "ui/icons/regular_damage.png",
+				icon = "ui/icons/shadow_power.png",
 				text = "Spell power using the school of Shadow is increased by [color=" + this.Const.UI.Color.DamageValue + "]" + this.m.SpellShadowPower + "[/color]"
 			});
 		}
