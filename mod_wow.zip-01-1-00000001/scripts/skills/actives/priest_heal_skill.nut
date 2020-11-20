@@ -3,6 +3,7 @@ this.priest_heal_skill <- this.inherit("scripts/skills/skill", {
 	m = {
 		heal_base_min = 12,
 		heal_base_max = 25,
+		SpellHolyPower = 0;
 		CurrentLevel = 1,
 		holyreach = false,
 		spiritalhealing = false,
@@ -47,6 +48,8 @@ this.priest_heal_skill <- this.inherit("scripts/skills/skill", {
 		local total_heal_min = this.m.heal_base_min;
 		local scale = 0;
 
+		total_heal_min += this.m.SpellHolyPower;
+
 		if (this.m.spiritalhealing)
 		{
 			total_heal_min += 15;
@@ -62,6 +65,8 @@ this.priest_heal_skill <- this.inherit("scripts/skills/skill", {
 	{
 		local total_heal_max = this.m.heal_base_max;
 		local scale = 0;
+
+		total_heal_max += this.m.SpellHolyPower;
 
 		if (this.m.spiritalhealing)
 		{
@@ -137,6 +142,7 @@ this.priest_heal_skill <- this.inherit("scripts/skills/skill", {
 		this.m.blessedrecovery = user.getSkills().hasSkill("perk.wow.priest.blessedrecovery");
 		this.m.unbreakablewill = user.getSkills().hasSkill("perk.wow.priest.unbreakablewill");
 		this.m.T0_priest_armor = _properties.T0_priest_armor;
+		this.m.SpellHolyPower = _properties.SpellHolyPower;
 	}
 
 	function onAfterUpdate( _properties )

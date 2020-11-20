@@ -3,6 +3,7 @@ this.priest_powerwordshield_skill <- this.inherit("scripts/skills/skill", {
 	m = {
 		repair_base_min = 10,
 		repair_base_max = 15,
+		SpellHolyPower = 0;
 		CurrentLevel = 1,
 		BaseChance = 100,
 		BaseEffect = 10,
@@ -68,6 +69,8 @@ this.priest_powerwordshield_skill <- this.inherit("scripts/skills/skill", {
 		local repair_total_min = this.m.repair_base_min;
 		local scale = 0;
 
+		repair_total_min += this.m.SpellHolyPower;
+
 		if (this.m.mentalagility)
 		{
 			repair_total_min += 20;
@@ -83,6 +86,8 @@ this.priest_powerwordshield_skill <- this.inherit("scripts/skills/skill", {
 	{
 		local repair_total_max = this.m.repair_base_max;
 		local scale = 0;
+
+		repair_total_max += this.m.SpellHolyPower;
 
 		if (this.m.mentalagility)
 		{
@@ -170,6 +175,7 @@ this.priest_powerwordshield_skill <- this.inherit("scripts/skills/skill", {
 		this.m.repairmaster = user.getSkills().hasSkill("perk.wow.priest.repairmaster");
 		this.m.unbreakablewill = user.getSkills().hasSkill("perk.wow.priest.unbreakablewill");
 		this.m.T0_priest_head = _properties.T0_priest_head;
+		this.m.SpellHolyPower = _properties.SpellHolyPower;
 	}
 
 	function onAfterUpdate( _properties )
