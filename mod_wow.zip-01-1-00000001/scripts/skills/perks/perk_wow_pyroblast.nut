@@ -18,7 +18,7 @@ this.perk_wow_pyroblast <- this.inherit("scripts/skills/skill", {
 	{
 		if (!this.m.Container.hasSkill("actives.pyroblast_skill"))
 		{
-			//this.m.Container.add(this.new("scripts/skills/actives/mage_pyroblast_skill"));
+			this.m.Container.add(this.new("scripts/skills/actives/mage_pyroblast_skill"));
 		}
 	}
 
