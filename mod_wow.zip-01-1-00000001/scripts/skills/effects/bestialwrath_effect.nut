@@ -2,7 +2,7 @@
 this.bestialwrath_effect <- this.inherit("scripts/skills/skill", {
 	m = {
 		TurnsLeft = 1,
-		BasePower = 25
+		BasePower = 40
 	},
 	function create()
 	{

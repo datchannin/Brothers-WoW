@@ -37,7 +37,7 @@ this.hunter_bestialwrath_skill <- this.inherit("scripts/skills/skill", {
 			id = 7,
 			type = "text",
 			icon = "ui/icons/feral.png",
-			text = "Infuriate pet for this turn. Winterwolf damage will be increased by [color=" + this.Const.UI.Color.PositiveValue + "]25%[/color]"
+			text = "Infuriate pet for this turn. Winterwolf damage will be increased by [color=" + this.Const.UI.Color.PositiveValue + "]40%[/color]"
 		});
 
 		ret.push({
