@@ -43,7 +43,6 @@ this.mage_frostnova_skill <- this.inherit("scripts/skills/skill", {
 			text = "Freeze group of [color=" + this.Const.UI.Color.DamageValue + "]7[/color] characters  for 2 rounds."
 		});
 
-
 		ret.push({
 			id = 12,
 			type = "text",
