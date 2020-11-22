@@ -154,7 +154,7 @@ this.priest_heal_skill <- this.inherit("scripts/skills/skill", {
 		
 		if (this.m.unbreakablewill)
 		{
-			this.m.FatigueCost = 12;
+			this.m.FatigueCost = 14;
 		}	
 	}
 

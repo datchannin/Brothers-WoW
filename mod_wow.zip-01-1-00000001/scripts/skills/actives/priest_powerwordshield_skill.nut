@@ -187,7 +187,7 @@ this.priest_powerwordshield_skill <- this.inherit("scripts/skills/skill", {
 		
 		if (this.m.unbreakablewill)
 		{
-			this.m.FatigueCost = 20;
+			this.m.FatigueCost = 22;
 		}		
 	}
 
