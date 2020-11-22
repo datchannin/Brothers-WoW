@@ -26,7 +26,7 @@ this.burn_effect <- this.inherit("scripts/skills/skill", {
 		];
 		this.m.Type = this.Const.SkillType.StatusEffect | this.Const.SkillType.DamageOverTime;
 		this.m.IsActive = false;
-		this.m.IsStacking = true;
+		this.m.IsStacking = false;
 		this.m.IsRemovedAfterBattle = true;
 	}
 
