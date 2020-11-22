@@ -3,6 +3,7 @@ this.paladin_holylight_skill <- this.inherit("scripts/skills/skill", {
 	m = {
 		heal_base_min = 7,
 		heal_base_max = 14,
+		SpellHolyPower = 0,
 		CurrentLevel = 1,
 		cleanse = false,
 		holypower = false,
@@ -44,6 +45,8 @@ this.paladin_holylight_skill <- this.inherit("scripts/skills/skill", {
 		local total_heal_min = this.m.heal_base_min;
 		local scale_value = 0;
 
+		total_heal_min += this.m.SpellHolyPower;
+
 		if (this.m.holypower)
 		{
 			total_heal_min += 10;
@@ -65,6 +68,8 @@ this.paladin_holylight_skill <- this.inherit("scripts/skills/skill", {
 	{
 		local total_heal_max = this.m.heal_base_max;
 		local scale_value = 0;
+
+		total_heal_max += this.m.SpellHolyPower;
 
 		if (this.m.holypower)
 		{
@@ -116,6 +121,7 @@ this.paladin_holylight_skill <- this.inherit("scripts/skills/skill", {
 		this.m.holypower = user.getSkills().hasSkill("perk.wow.paladin.holypower");
 		this.m.cleanse = user.getSkills().hasSkill("perk.wow.paladin.cleanse");
 		this.m.T0_paladin_armor = _properties.T0_paladin_armor;
+		this.m.SpellHolyPower = _properties.SpellHolyPower;
 	}
 
 	function onAfterUpdate( _properties )
