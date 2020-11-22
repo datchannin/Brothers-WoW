@@ -373,7 +373,7 @@ gt.Const.Wow_strings.PerkDescription <- {
 	SpiritalHealing = "Healing is your main specialization. This enhances your [color=" + this.Const.UI.Color.PositiveValue + "]\'Heal\'[/color] skill. Increases the number of Hitpoints healing for [color=" + this.Const.UI.Color.PositiveValue + "]15[/color] points.",
 	MentalAgility = "Increases base power of your \'Power Word: Shield\' skill by [color=" + this.Const.UI.Color.PositiveValue + "]20[/color] points.",
 	Renew = "Now your \'Heal\' spell is able to apply a healing buff to your target. Target will be healed for every turn under this effect.",
-	RepairMaster = "Become Master of repair. \'Power Word: Shield\' skill now is able to repair target Shield. Also increases range of this spell by [color=" + this.Const.UI.Color.PositiveValue + "]1[/color].",
+	RepairMaster = "Become Master of repair. \'Power Word: Shield\' skill now is able to repair target Shield. Reduces Action Points cost of \'Power Word: Shield\' skill by [color=" + this.Const.UI.Color.PositiveValue + "]1[/color].",
 	PermanentRecovery = "Unlocks the \'Permanent Recovery\' skill, which allows you to recover some kind of \'Permanent\' injuries.\n\nEvery \'Permanent\' injurie can be recovered with [color=" + this.Const.UI.Color.PositiveValue + "]20%[/color] chance. Chance is calculated independently for every injurie.",
 	LuckyRecovery = "You know how to get power to your \'Permanent Recovery\' skill. Chance to recover every \'Permanent\' injurie increases for additional [color=" + this.Const.UI.Color.PositiveValue + "]20%[/color]. Chance is calculated independently for every injurie.",
 	Fade = "Unlocks the \'Fade\' skill which can be used to buff the user. Allows you to ignore hostile zone of control for one turn.",

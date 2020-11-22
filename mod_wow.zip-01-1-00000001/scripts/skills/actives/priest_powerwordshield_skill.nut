@@ -182,7 +182,7 @@ this.priest_powerwordshield_skill <- this.inherit("scripts/skills/skill", {
 	{
 		if (this.m.repairmaster)
 		{
-			this.m.MaxRange = 3;
+			this.m.ActionPointCost = 4;
 		}
 		
 		if (this.m.unbreakablewill)
