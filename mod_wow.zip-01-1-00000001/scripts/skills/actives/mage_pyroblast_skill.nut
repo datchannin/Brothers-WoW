@@ -13,7 +13,7 @@ this.mage_pyroblast_skill <- this.inherit("scripts/skills/skill", {
 	{
 		this.m.ID = "actives.pyroblast_skill";
 		this.m.Name = "Pyroblast";
-		this.m.Description = "Throws a fiery blast that causes massive Fire damage to your target. Target should be under \'Ignite\' effect.";
+		this.m.Description = "Throws a fiery blast that causes massive Fire damage to your target. Target should be under \'Burn\' effect.";
 		this.m.KilledString = "Fired!";
 		this.m.Icon = "ui/perks/skill_mage_pyroblast.png";
 		this.m.IconDisabled = "ui/perks/skill_mage_pyroblast_sw.png";
@@ -149,7 +149,7 @@ this.mage_pyroblast_skill <- this.inherit("scripts/skills/skill", {
 			id = 9,
 			type = "text",
 			icon = "ui/tooltips/warning.png",
-			text = "[color=" + this.Const.UI.Color.NegativeValue + "]Target should be under \'Ignite\' effect.[/color]"
+			text = "[color=" + this.Const.UI.Color.NegativeValue + "]Target should be under \'Burn\' effect.[/color]"
 		});
 
 		if (this.Tactical.isActive() && this.getContainer().getActor().getTile().hasZoneOfControlOtherThan(this.getContainer().getActor().getAlliedFactions()))
