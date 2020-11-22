@@ -39,6 +39,12 @@ this.hunter_t0_armor <- this.inherit("scripts/items/armor/armor", {
 			icon = "ui/icons/special.png",
 			text = "Set bonus: [color=" + this.Const.UI.Color.PositiveValue + "]\'Mend Pet\'[/color] base power will be increased by [color=" + this.Const.UI.Color.PositiveValue + "]10[/color]"
 		});
+		result.push({
+			id = 14,
+			type = "text",
+			icon = "ui/icons/special.png",
+			text = "Set bonus: [color=" + this.Const.UI.Color.PositiveValue + "]\'Bestial Wrath\'[/color] effect will be increased by [color=" + this.Const.UI.Color.PositiveValue + "]10%[/color]"
+		});
 
 		result.push({
 			id = 14,

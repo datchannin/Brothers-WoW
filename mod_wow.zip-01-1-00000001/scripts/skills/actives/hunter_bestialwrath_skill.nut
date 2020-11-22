@@ -1,6 +1,9 @@
 /*BBWOW:This file is part of datchannin bbWoW mod, mod_version = 9.00, game_version = 1.4.0.46*/
 this.hunter_bestialwrath_skill <- this.inherit("scripts/skills/skill", {
-	m = {},
+	m = {
+		BasePower = 40,
+		T0_hunter_set = false,
+	},
 	function create()
 	{
 		this.m.ID = "actives.bestialwrath_skill";
@@ -29,15 +32,28 @@ this.hunter_bestialwrath_skill <- this.inherit("scripts/skills/skill", {
 		this.m.MaxRange = 8;
 	}
 
+	function getBestialPower()
+	{
+		local total_power = this.m.BasePower;
+		
+		if (this.m.T0_hunter_set)
+		{
+			total_power += 10;
+		}
+		
+		return total_power;
+	}
+
 	function getTooltip()
 	{
 		local ret = this.getDefaultUtilityTooltip();
+		local total_power = getBestialPower();
 
 		ret.push({
 			id = 7,
 			type = "text",
 			icon = "ui/icons/feral.png",
-			text = "Infuriate pet for this turn. Winterwolf damage will be increased by [color=" + this.Const.UI.Color.PositiveValue + "]40%[/color]"
+			text = "Infuriate pet for this turn. Winterwolf damage will be increased by [color=" + this.Const.UI.Color.PositiveValue + "]" + total_power + "%[/color]"
 		});
 
 		ret.push({
@@ -48,6 +64,11 @@ this.hunter_bestialwrath_skill <- this.inherit("scripts/skills/skill", {
 		});
 
 		return ret;
+	}
+
+	function onUpdate( _properties )
+	{
+		this.m.T0_hunter_set = _properties.isFullSetHunterT0();
 	}
 
 	function onVerifyTarget( _originTile, _targetTile )
@@ -85,6 +106,7 @@ this.hunter_bestialwrath_skill <- this.inherit("scripts/skills/skill", {
 	function onUse( _user, _targetTile )
 	{
 		local targetEntity = _targetTile.getEntity();
+		local total_power = getBestialPower();
 
 		if (!targetEntity.isHiddenToPlayer())
 		{
@@ -92,6 +114,7 @@ this.hunter_bestialwrath_skill <- this.inherit("scripts/skills/skill", {
 		}
 
 		local bestialwrath = this.new("scripts/skills/effects/bestialwrath_effect");
+		bestialwrath.setPower(total_power);
 		targetEntity.getSkills().add(bestialwrath);
 
 		return true;
