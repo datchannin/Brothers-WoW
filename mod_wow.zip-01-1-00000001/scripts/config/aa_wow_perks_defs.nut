@@ -1464,6 +1464,16 @@ gt.Const.Perks.PerkDefObjects.ManaAgat <- {
 	Const = "ManaAgat"
 }
 
+gt.Const.Perks.PerkDefObjects.FrostNova <- {
+	ID = "perk.wow.mage.frostnova",
+	Script = "scripts/skills/perks/perk_wow_frostnova",
+	Name = this.Const.Wow_strings.PerkName.FrostNova,
+	Tooltip = this.Const.Wow_strings.PerkDescription.FrostNova,
+	Icon = "ui/perks/perk_mage_frostnova.png",
+	IconDisabled = "ui/perks/perk_mage_frostnova_sw.png",
+	Const = "FrostNova"
+}
+
 // ---------------------------------------------|
 // ----------------  WOW PRIEST ----------------|
 // ---------------------------------------------|

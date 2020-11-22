@@ -389,13 +389,14 @@ gt.Const.Perks.PerkTreeMage <- [
 		gt.Const.Perks.PerkDefObjects.Footwork
 	],
 	[
+		gt.Const.Perks.PerkDefObjects.Ignite
+		gt.Const.Perks.PerkDefObjects.WintersChill
 		gt.Const.Perks.PerkDefObjects.ManaAgat
 		gt.Const.Perks.PerkDefObjects.Berserk
 		gt.Const.Perks.PerkDefObjects.MagicInterference
 	],
 	[
-		gt.Const.Perks.PerkDefObjects.Ignite
-		gt.Const.Perks.PerkDefObjects.WintersChill
+		gt.Const.Perks.PerkDefObjects.FrostNova
 		gt.Const.Perks.PerkDefObjects.KillingFrenzy
 		gt.Const.Perks.PerkDefObjects.Indomitable
 	],

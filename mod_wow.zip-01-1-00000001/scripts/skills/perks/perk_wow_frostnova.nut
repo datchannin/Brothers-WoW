@@ -4,8 +4,8 @@ this.perk_wow_frostnova <- this.inherit("scripts/skills/skill", {
 	function create()
 	{
 		this.m.ID = "perk.wow.mage.frostnova";
-		this.m.Name = this.Const.Wow_strings.PerkName.Frostnova;
-		this.m.Description = this.Const.Wow_strings.PerkDescription.Frostnova;
+		this.m.Name = this.Const.Wow_strings.PerkName.FrostNova;
+		this.m.Description = this.Const.Wow_strings.PerkDescription.FrostNova;
 		this.m.Icon = "ui/perks/perk_mage_frostnova.png";
 		this.m.Type = this.Const.SkillType.Perk;
 		this.m.Order = this.Const.SkillOrder.Perk;
@@ -18,7 +18,7 @@ this.perk_wow_frostnova <- this.inherit("scripts/skills/skill", {
 	{
 		if (!this.m.Container.hasSkill("actives.frostnova_skill"))
 		{
-			//this.m.Container.add(this.new("scripts/skills/actives/mage_frostnova_skill"));
+			this.m.Container.add(this.new("scripts/skills/actives/mage_frostnova_skill"));
 		}
 	}
 
