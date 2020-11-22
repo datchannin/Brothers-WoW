@@ -1474,6 +1474,16 @@ gt.Const.Perks.PerkDefObjects.FrostNova <- {
 	Const = "FrostNova"
 }
 
+gt.Const.Perks.PerkDefObjects.Pyroblast <- {
+	ID = "perk.wow.mage.pyroblast",
+	Script = "scripts/skills/perks/perk_wow_pyroblast",
+	Name = this.Const.Wow_strings.PerkName.Pyroblast,
+	Tooltip = this.Const.Wow_strings.PerkDescription.Pyroblast,
+	Icon = "ui/perks/perk_mage_pyroblast.png",
+	IconDisabled = "ui/perks/perk_mage_pyroblast_sw.png",
+	Const = "Pyroblast"
+}
+
 // ---------------------------------------------|
 // ----------------  WOW PRIEST ----------------|
 // ---------------------------------------------|

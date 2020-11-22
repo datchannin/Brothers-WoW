@@ -396,6 +396,7 @@ gt.Const.Perks.PerkTreeMage <- [
 		gt.Const.Perks.PerkDefObjects.MagicInterference
 	],
 	[
+		gt.Const.Perks.PerkDefObjects.Pyroblast
 		gt.Const.Perks.PerkDefObjects.FrostNova
 		gt.Const.Perks.PerkDefObjects.KillingFrenzy
 		gt.Const.Perks.PerkDefObjects.Indomitable
