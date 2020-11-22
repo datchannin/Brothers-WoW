@@ -171,6 +171,7 @@ this.paladin_holylight_skill <- this.inherit("scripts/skills/skill", {
 		this.Time.scheduleEvent(this.TimeUnit.Virtual, 1200, this.onApplyEffect.bindenv(this), {
 			Skill = this,
 			Target = targetEntity,
+			User = _user,
 			Healnumber = healnumber,
 		});
 		
@@ -181,6 +182,8 @@ this.paladin_holylight_skill <- this.inherit("scripts/skills/skill", {
 	{
 		local targetEntity = _data.Target;
 		local healnumber = _data.Healnumber;
+		local user = _data.User;
+		local real_healnumber = 0;
 
 		this.spawnIcon("effect_paladin_holylight", targetEntity.getTile());
 
@@ -206,6 +209,10 @@ this.paladin_holylight_skill <- this.inherit("scripts/skills/skill", {
 		{
 			this.Tactical.EventLog.log(this.Const.UI.getColorizedEntityName(targetEntity) + " was healed for " + this.Math.min(targetEntity.getHitpointsMax() - targetEntity.getHitpoints(), healnumber) + " hitpoints");
 		}
+		
+		real_healnumber = this.Math.min(targetEntity.getHitpointsMax() - targetEntity.getHitpoints(), healnumber);
+		user.addXP(real_healnumber);
+		
 		targetEntity.setHitpoints(this.Math.min(targetEntity.getHitpointsMax(), targetEntity.getHitpoints() + healnumber));
 
 		targetEntity.onUpdateInjuryLayer();
