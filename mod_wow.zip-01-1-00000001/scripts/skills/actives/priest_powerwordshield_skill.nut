@@ -41,7 +41,7 @@ this.priest_powerwordshield_skill <- this.inherit("scripts/skills/skill", {
 		this.m.ActionPointCost = 5;
 		this.m.FatigueCost = 30;
 		this.m.MinRange = 0;
-		this.m.MaxRange = 2;
+		this.m.MaxRange = 3;
 	}
 
 	function GetTotalEffect()
