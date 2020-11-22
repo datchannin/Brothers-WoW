@@ -5,6 +5,7 @@ this.mage_pyroblast_skill <- this.inherit("scripts/skills/skill", {
 		damage_base_max = 80,
 		SpellFirePower = 0,
 		CurrentLevel = 1,
+		T0_mage_armor = false,
 		fireattunement = false,
 		iceattunement = false
 	},
@@ -144,6 +145,13 @@ this.mage_pyroblast_skill <- this.inherit("scripts/skills/skill", {
 			text = "Has a range of [color=" + this.Const.UI.Color.PositiveValue + "]" + this.m.MaxRange + "[/color] tiles."
 		});
 
+		ret.push({
+			id = 9,
+			type = "text",
+			icon = "ui/tooltips/warning.png",
+			text = "[color=" + this.Const.UI.Color.NegativeValue + "]Target should be under \'Ignite\' effect.[/color]"
+		});
+
 		if (this.Tactical.isActive() && this.getContainer().getActor().getTile().hasZoneOfControlOtherThan(this.getContainer().getActor().getAlliedFactions()))
 		{
 			ret.push({
@@ -211,6 +219,7 @@ this.mage_pyroblast_skill <- this.inherit("scripts/skills/skill", {
 		this.m.fireattunement = user.getSkills().hasSkill("perk.wow.mage.fireattunement");
 		this.m.iceattunement = user.getSkills().hasSkill("perk.wow.mage.iceattunement");
 		this.m.SpellFirePower = _properties.SpellFirePower;
+		this.m.T0_mage_armor = _properties.T0_mage_armor;
 	}
 
 	function onAfterUpdate( _properties )
