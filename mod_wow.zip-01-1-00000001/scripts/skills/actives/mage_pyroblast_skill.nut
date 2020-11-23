@@ -5,9 +5,12 @@ this.mage_pyroblast_skill <- this.inherit("scripts/skills/skill", {
 		damage_base_max = 80,
 		SpellFirePower = 0,
 		CurrentLevel = 1,
-		T0_mage_armor = false,
+		blastwave = false,
+		magicabsorption = false,
+		magicinstability = false,
 		fireattunement = false,
 		iceattunement = false,
+		T0_mage_armor = false,
 		T0_mage_set = false,
 	},
 	function create()
@@ -42,7 +45,7 @@ this.mage_pyroblast_skill <- this.inherit("scripts/skills/skill", {
 		this.m.ActionPointCost = 9;
 		this.m.FatigueCost = 60;
 		this.m.MinRange = 1;
-		this.m.MaxRange = 7;
+		this.m.MaxRange = 5;
 		this.m.MaxLevelDifference = 4;
 		this.m.ProjectileType = this.Const.ProjectileType.Pyroblast;
 		this.m.ProjectileTimeScale = 1.5;
@@ -54,6 +57,11 @@ this.mage_pyroblast_skill <- this.inherit("scripts/skills/skill", {
 		local scale = 0;
 
 		total_damage_min += this.m.SpellFirePower;
+
+		if (this.m.blastwave)
+		{
+			total_damage_min += 5;
+		}
 
 		if (this.m.fireattunement)
 		{
@@ -91,6 +99,11 @@ this.mage_pyroblast_skill <- this.inherit("scripts/skills/skill", {
 		local scale = 0;
 
 		total_damage_max += this.m.SpellFirePower;
+
+		if (this.m.blastwave)
+		{
+			total_damage_max += 5;
+		}
 
 		if (this.m.fireattunement)
 		{
@@ -229,6 +242,9 @@ this.mage_pyroblast_skill <- this.inherit("scripts/skills/skill", {
 		this.m.CurrentLevel = user.getLevel();
 		this.m.fireattunement = user.getSkills().hasSkill("perk.wow.mage.fireattunement");
 		this.m.iceattunement = user.getSkills().hasSkill("perk.wow.mage.iceattunement");
+		this.m.blastwave = user.getSkills().hasSkill("perk.wow.mage.blastwave");
+		this.m.magicabsorption = user.getSkills().hasSkill("perk.wow.mage.magicabsorption");
+		this.m.magicinstability = user.getSkills().hasSkill("perk.wow.mage.magicinstability");
 		this.m.SpellFirePower = _properties.SpellFirePower;
 		this.m.T0_mage_armor = _properties.T0_mage_armor;
 		this.m.T0_mage_set = _properties.isFullSetMageT0();
@@ -236,6 +252,26 @@ this.mage_pyroblast_skill <- this.inherit("scripts/skills/skill", {
 
 	function onAfterUpdate( _properties )
 	{
+		if ((this.m.blastwave) && (this.m.magicinstability))
+		{
+			this.m.MaxRange = 8;
+		}
+		else
+		{
+			if (this.m.blastwave)
+			{
+				this.m.MaxRange = 7;
+			}
+			if (this.m.magicinstability)
+			{
+				this.m.MaxRange = 6;
+			}
+		}
+
+		if (this.m.magicabsorption)
+		{
+			this.m.FatigueCost = 52;
+		}
 	}
 
 	function onAnySkillUsed( _skill, _targetEntity, _properties )
