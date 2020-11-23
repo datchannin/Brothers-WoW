@@ -7,7 +7,8 @@ this.mage_pyroblast_skill <- this.inherit("scripts/skills/skill", {
 		CurrentLevel = 1,
 		T0_mage_armor = false,
 		fireattunement = false,
-		iceattunement = false
+		iceattunement = false,
+		T0_mage_set = false,
 	},
 	function create()
 	{
@@ -72,6 +73,11 @@ this.mage_pyroblast_skill <- this.inherit("scripts/skills/skill", {
 			}
 		}
 
+		if (this.m.T0_mage_set)
+		{
+			total_damage_min += 10;
+		}
+
 		scale = this.Math.floor(total_damage_min * this.m.CurrentLevel * this.Const.MageScale.fire_damage_min);
 
 		total_damage_min += scale;
@@ -102,6 +108,11 @@ this.mage_pyroblast_skill <- this.inherit("scripts/skills/skill", {
 			{
 				total_damage_max -= 4;
 			}
+		}
+
+		if (this.m.T0_mage_set)
+		{
+			total_damage_max += 10;
 		}
 
 		scale = this.Math.floor(total_damage_max * this.m.CurrentLevel * this.Const.MageScale.fire_damage_max);
@@ -220,6 +231,7 @@ this.mage_pyroblast_skill <- this.inherit("scripts/skills/skill", {
 		this.m.iceattunement = user.getSkills().hasSkill("perk.wow.mage.iceattunement");
 		this.m.SpellFirePower = _properties.SpellFirePower;
 		this.m.T0_mage_armor = _properties.T0_mage_armor;
+		this.m.T0_mage_set = _properties.isFullSetMageT0();
 	}
 
 	function onAfterUpdate( _properties )
