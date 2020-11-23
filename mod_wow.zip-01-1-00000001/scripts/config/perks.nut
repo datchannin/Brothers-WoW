@@ -428,7 +428,6 @@ gt.Const.Perks.PerkTreePriest <- [
 		gt.Const.Perks.PerkDefObjects.Inspiration
 		gt.Const.Perks.PerkDefObjects.BlessedRecovery
 		gt.Const.Perks.PerkDefObjects.MentalStrength
-		gt.Const.Perks.PerkDefObjects.ShieldExpert
 		gt.Const.Perks.PerkDefObjects.Brawny
 		gt.Const.Perks.PerkDefObjects.RallyTheTroops
 	],
@@ -440,7 +439,6 @@ gt.Const.Perks.PerkTreePriest <- [
 		gt.Const.Perks.PerkDefObjects.PermanentRecovery
 	],
 	[
-		gt.Const.Perks.PerkDefObjects.LoneWolf
 		gt.Const.Perks.PerkDefObjects.Underdog
 		gt.Const.Perks.PerkDefObjects.Fade
 	],
@@ -562,7 +560,6 @@ gt.Const.Perks.PerkTreeWarlock <- [
 		gt.Const.Perks.PerkDefObjects.MasterDemonologist
 	],
 	[
-		gt.Const.Perks.PerkDefObjects.LoneWolf
 		gt.Const.Perks.PerkDefObjects.Underdog
 		gt.Const.Perks.PerkDefObjects.Fear
 	],
