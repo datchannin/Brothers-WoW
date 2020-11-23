@@ -86,7 +86,7 @@ this.mage_pyroblast_skill <- this.inherit("scripts/skills/skill", {
 			total_damage_min += 10;
 		}
 
-		scale = this.Math.floor(total_damage_min * this.m.CurrentLevel * this.Const.MageScale.fire_damage_min);
+		scale = this.Math.floor(total_damage_min * this.m.CurrentLevel * this.Const.MageScale.fire_damage_pyroblast);
 
 		total_damage_min += scale;
 
@@ -128,7 +128,7 @@ this.mage_pyroblast_skill <- this.inherit("scripts/skills/skill", {
 			total_damage_max += 10;
 		}
 
-		scale = this.Math.floor(total_damage_max * this.m.CurrentLevel * this.Const.MageScale.fire_damage_max);
+		scale = this.Math.floor(total_damage_max * this.m.CurrentLevel * this.Const.MageScale.fire_damage_pyroblast);
 
 		total_damage_max += scale;
 

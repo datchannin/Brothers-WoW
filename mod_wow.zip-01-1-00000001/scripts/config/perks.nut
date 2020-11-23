@@ -382,8 +382,8 @@ gt.Const.Perks.PerkTreeMage <- [
 		gt.Const.Perks.PerkDefObjects.MagicInstability
 	],
 	[
-		gt.Const.Perks.PerkDefObjects.WintersChill
 		gt.Const.Perks.PerkDefObjects.Ignite
+		gt.Const.Perks.PerkDefObjects.WintersChill
 		gt.Const.Perks.PerkDefObjects.Underdog
 	],
 	[

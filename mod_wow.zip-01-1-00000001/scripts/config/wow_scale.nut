@@ -59,6 +59,7 @@ gt.Const.PriestScale <- {
 gt.Const.MageScale <- {
 	fire_damage_min = 0.01,
 	fire_damage_max = 0.04,
+	fire_damage_pyroblast = 0.12,
 	frost_damage_min = 0.02,
 	frost_damage_max = 0.03,
 	exp_share = 2,
