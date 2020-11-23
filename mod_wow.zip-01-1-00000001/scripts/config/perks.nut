@@ -370,9 +370,7 @@ gt.Const.Perks.PerkTreeMage <- [
 		gt.Const.Perks.PerkDefObjects.FireWard
 		gt.Const.Perks.PerkDefObjects.ArcticReach
 		gt.Const.Perks.PerkDefObjects.FrostArmor
-		gt.Const.Perks.PerkDefObjects.ShieldExpert
 		gt.Const.Perks.PerkDefObjects.Brawny
-		gt.Const.Perks.PerkDefObjects.Rotation
 		gt.Const.Perks.PerkDefObjects.RallyTheTroops
 	],
 	[
@@ -384,14 +382,12 @@ gt.Const.Perks.PerkTreeMage <- [
 		gt.Const.Perks.PerkDefObjects.MagicInstability
 	],
 	[
-		gt.Const.Perks.PerkDefObjects.LoneWolf
+		gt.Const.Perks.PerkDefObjects.WintersChill
+		gt.Const.Perks.PerkDefObjects.ManaAgat
 		gt.Const.Perks.PerkDefObjects.Underdog
-		gt.Const.Perks.PerkDefObjects.Footwork
 	],
 	[
 		gt.Const.Perks.PerkDefObjects.Ignite
-		gt.Const.Perks.PerkDefObjects.WintersChill
-		gt.Const.Perks.PerkDefObjects.ManaAgat
 		gt.Const.Perks.PerkDefObjects.Berserk
 		gt.Const.Perks.PerkDefObjects.MagicInterference
 	],
