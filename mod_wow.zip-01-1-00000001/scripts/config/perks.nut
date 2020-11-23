@@ -383,12 +383,12 @@ gt.Const.Perks.PerkTreeMage <- [
 	],
 	[
 		gt.Const.Perks.PerkDefObjects.WintersChill
-		gt.Const.Perks.PerkDefObjects.ManaAgat
+		gt.Const.Perks.PerkDefObjects.Ignite
 		gt.Const.Perks.PerkDefObjects.Underdog
 	],
 	[
-		gt.Const.Perks.PerkDefObjects.Ignite
 		gt.Const.Perks.PerkDefObjects.Berserk
+		gt.Const.Perks.PerkDefObjects.ManaAgat
 		gt.Const.Perks.PerkDefObjects.MagicInterference
 	],
 	[
