@@ -349,7 +349,7 @@ gt.Const.Wow_strings.PerkDescription <- {
 	MasterPolearm = "Polearm Adept. Hit enemies from behind allies with great power. Damage done by polearms is increased by [color=" + this.Const.UI.Color.PositiveValue + "]20%[/color].",
 	Ignite = "Now your \'Fireball\' is able to ignite target. Target gets damage for every turn under this effect.",
 	WintersChill = "Now your \'Frostbolt\' is able to freeze target. Target will be chained by this effect.",
-	FrostNova = "Unlocks the \'Frost Nova\' skill. Use this to quickly freeze a big group of enemy.\nSpell can also freeze your friends, be careful.",
+	FrostNova = "Unlocks the \'Frost Nova\' skill. Use this to quickly freeze a big group of enemy. Does not have any effect if you don\'t have [color=" + this.Const.UI.Color.PositiveValue + "]\'Winter\'s Chill\'[/color] perk.\nSpell can also freeze your friends, be careful.",
 	Pyroblast = "Unlocks the \'Pyroblast\' skill which allows mage to deal massive fire damage. Target should be under \'Burn\' effect from \'Ignite\' perk in order to allow the mage to choose himself as a target.\nSpell damage is growing with your level.",
 	MagicFocus1 = "Peace of your mind is under control now. Increases \'Frostbolt\' and \'Fireball\' spell damage by [color=" + this.Const.UI.Color.PositiveValue + "]3[/color] points.",
 	MagicFocus2 = "Angry of your mind is under control now. Increases \'Frostbolt\' and \'Fireball\' spell damage by [color=" + this.Const.UI.Color.PositiveValue + "]3[/color] points.",

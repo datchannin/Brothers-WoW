@@ -1,5 +1,7 @@
 this.mage_frostnova_skill <- this.inherit("scripts/skills/skill", {
-	m = {},
+	m = {
+		winterschill = false
+	},
 	function create()
 	{
 		this.m.ID = "actives.frostnova_skill";
@@ -71,7 +73,43 @@ this.mage_frostnova_skill <- this.inherit("scripts/skills/skill", {
 			text = "Has a range of [color=" + this.Const.UI.Color.PositiveValue + "]" + this.m.MaxRange + "[/color] tiles."
 		});
 
+		if (!this.m.winterschill)
+		{
+			ret.push({
+				id = 9,
+				type = "text",
+				icon = "ui/tooltips/warning.png",
+				text = "[color=" + this.Const.UI.Color.NegativeValue + "]You should learn how to use \'Winter\'s Chill\' if you want to use this skill.[/color]"
+			});
+		}
+
 		return ret;
+	}
+
+	function onUpdate( _properties )
+	{
+		local user = this.getContainer().getActor();
+		this.m.winterschill = user.getSkills().hasSkill("perk.wow.mage.winterschill");
+	}
+
+	function isUsable()
+	{
+		if (!this.Tactical.isActive())
+		{
+			return true;
+		}
+
+		if (this.skill.isUsable())
+		{
+			if (this.m.winterschill)
+			{
+				return true;
+			}
+			else
+			{
+				return false;
+			}
+		}
 	}
 
 	function onVerifyTarget( _originTile, _targetTile )
