@@ -12,6 +12,7 @@ this.mage_pyroblast_skill <- this.inherit("scripts/skills/skill", {
 		iceattunement = false,
 		T0_mage_armor = false,
 		T0_mage_set = false,
+		cooldown = 0
 	},
 	function create()
 	{
@@ -186,6 +187,16 @@ this.mage_pyroblast_skill <- this.inherit("scripts/skills/skill", {
 			});
 		}
 
+		if (this.m.cooldown > 0)
+		{
+			ret.push({
+					id = 8,
+					type = "text",
+					icon = "ui/icons/special.png",
+					text = "Skill should to be recharged. You\'re too tired to use it again so fast."
+			});
+		}
+
 		return ret;
 	}
 
@@ -200,7 +211,14 @@ this.mage_pyroblast_skill <- this.inherit("scripts/skills/skill", {
 		{
 			if (!this.getContainer().getActor().getTile().hasZoneOfControlOtherThan(this.getContainer().getActor().getAlliedFactions()))
 			{
-				return true;
+				if (this.m.cooldown == 0)
+				{
+					return true;
+				}
+				else
+				{
+					return false;
+				}
 			}
 			else
 			{
@@ -291,6 +309,7 @@ this.mage_pyroblast_skill <- this.inherit("scripts/skills/skill", {
 	function onUse( _user, _targetTile )
 	{
 		local targetEntity = _targetTile.getEntity();
+		this.m.cooldown = 3;
 		this.getContainer().setBusy(true);
 
 		this.Time.scheduleEvent(this.TimeUnit.Virtual, this.m.Delay, this.onApplyDirect.bindenv(this), {
@@ -321,5 +340,17 @@ this.mage_pyroblast_skill <- this.inherit("scripts/skills/skill", {
 		_data.Skill.getContainer().setBusy(false);
 
 		return true;
+	}
+
+	function onTurnEnd()
+	{
+		if (this.m.cooldown > 0)
+		{
+			this.m.cooldown--;
+		}
+		else
+		{
+			this.m.cooldown = 0;
+		}
 	}
 });
