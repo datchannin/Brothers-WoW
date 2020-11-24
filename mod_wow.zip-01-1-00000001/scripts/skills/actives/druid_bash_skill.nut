@@ -22,6 +22,7 @@ this.druid_bash_skill <- this.inherit("scripts/skills/skill", {
 		this.m.IsStacking = false;
 		this.m.IsAttack = true;
 		this.m.IsUsingHitchance = true;
+		this.m.HitChanceBonus = 10;
 		this.m.ActionPointCost = 5;
 		this.m.FatigueCost = 20;
 		this.m.MinRange = 1;
@@ -36,8 +37,16 @@ this.druid_bash_skill <- this.inherit("scripts/skills/skill", {
 			id = 7,
 			type = "text",
 			icon = "ui/icons/special.png",
-			text = "Has a [color=" + this.Const.UI.Color.PositiveValue + "]100%[/color] chance to stun on a hit if target does not have immunity to stun effects."
+			text = "Has a chance to stun on a hit if target does not have immunity to stun effects."
 		});
+		
+		ret.push({
+			id = 7,
+			type = "text",
+			icon = "ui/icons/hitchance.png",
+			text = "Has [color=" + this.Const.UI.Color.PositiveValue + "]+10%[/color] chance to hit."
+		});
+		
 		return ret;
 	}
 
@@ -89,26 +98,38 @@ this.druid_bash_skill <- this.inherit("scripts/skills/skill", {
 	function onUse( _user, _targetTile )
 	{
 		local target = _targetTile.getEntity();
+		local success = this.attackEntity(_user, target);
 
-		target.getSkills().add(this.new("scripts/skills/effects/stunned_effect"));
-
-		if (this.m.heartofwild)
+		if (success)
 		{
-			local effect = target.getSkills().getSkillByID("effects.stunned");
-			effect.addTurns(1);
-			if (!_user.isHiddenToPlayer() && _targetTile.IsVisibleForPlayer)
+			target.getSkills().add(this.new("scripts/skills/effects/stunned_effect"));
+
+			if (this.m.heartofwild)
 			{
-				this.Tactical.EventLog.log(this.Const.UI.getColorizedEntityName(_user) + " stunned " + this.Const.UI.getColorizedEntityName(target) + " for two turns");
+				local effect = target.getSkills().getSkillByID("effects.stunned");
+				effect.addTurns(1);
+				if (!_user.isHiddenToPlayer() && _targetTile.IsVisibleForPlayer)
+				{
+					this.Tactical.EventLog.log(this.Const.UI.getColorizedEntityName(_user) + " stunned " + this.Const.UI.getColorizedEntityName(target) + " for two turns");
+				}
+			}
+			else
+			{
+				if (!_user.isHiddenToPlayer() && _targetTile.IsVisibleForPlayer)
+				{
+					this.Tactical.EventLog.log(this.Const.UI.getColorizedEntityName(_user) + " stunned " + this.Const.UI.getColorizedEntityName(target) + " for one turn");
+				}
 			}
 		}
-		else
-		{
-			if (!_user.isHiddenToPlayer() && _targetTile.IsVisibleForPlayer)
-			{
-				this.Tactical.EventLog.log(this.Const.UI.getColorizedEntityName(_user) + " stunned " + this.Const.UI.getColorizedEntityName(target) + " for one turn");
-			}
-		}
 
-		return true;
+		return success;
+	}
+	
+	function onAnySkillUsed( _skill, _targetEntity, _properties )
+	{
+		if (_skill == this)
+		{
+			_properties.MeleeSkill += 10;
+		}
 	}
 });
