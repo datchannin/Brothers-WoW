@@ -630,6 +630,7 @@ this.location <- this.inherit("scripts/entity/world/world_entity", {
 
 		if (!this.isAlliedWithPlayer())
 		{
+			this.logInfo("EnemyMult = " + this.Const.Difficulty.EnemyMult[this.World.Assets.getCombatDifficulty()]);
 			resources = resources * this.Const.Difficulty.EnemyMult[this.World.Assets.getCombatDifficulty()];
 		}
 

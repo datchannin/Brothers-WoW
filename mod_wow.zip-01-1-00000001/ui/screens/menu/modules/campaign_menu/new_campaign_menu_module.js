@@ -510,7 +510,7 @@ NewCampaignMenuModule.prototype.createDIV = function (_parentDiv)
 		this.mDifficultyHellCheckbox.on('ifChecked', null, this, function (_event)
 		{
 			var self = _event.data;
-			self.mDifficulty = 3;
+			self.mDifficulty = 4;
 		});
 
 		// combat difficulty
