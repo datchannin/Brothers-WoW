@@ -1888,6 +1888,20 @@ this.tooltip_events <- {
 				}
 			];
 
+		case "menu-screen.new-campaign.UltraDifficulty":
+			return [
+				{
+					id = 1,
+					type = "title",
+					text = "Ultra Difficulty"
+				},
+				{
+					id = 2,
+					type = "description",
+					text = "You should use backgrounds, perks and skills synergy for play this.\n\nRecommended for players who already know advantages and disadvantages of all bbWoW characters and who already learn how are working all bbWoW new perks and skills."
+				}
+			];
+
 		case "menu-screen.new-campaign.EasyDifficultyEconomic":
 			return [
 				{
