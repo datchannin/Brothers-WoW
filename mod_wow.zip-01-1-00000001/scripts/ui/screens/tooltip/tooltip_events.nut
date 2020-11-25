@@ -1902,6 +1902,20 @@ this.tooltip_events <- {
 				}
 			];
 
+		case "menu-screen.new-campaign.HellDifficulty":
+			return [
+				{
+					id = 1,
+					type = "title",
+					text = "Hell Difficulty"
+				},
+				{
+					id = 2,
+					type = "description",
+					text = "You will face a huge number of opponents. Use all your skills to win.\n\nRecommended for players who have mastered the game at a high level, know the ways of leveling all bbWoW characters and understand how to choose the path of playing in different branches of Perk Trees."
+				}
+			];
+
 		case "menu-screen.new-campaign.EasyDifficultyEconomic":
 			return [
 				{

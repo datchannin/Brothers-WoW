@@ -107,6 +107,7 @@ var TooltipIdentifier =
 			DifficultyNormal: 'menu-screen.new-campaign.NormalDifficulty',
 			DifficultyHard: 'menu-screen.new-campaign.HardDifficulty',
 			DifficultyUltra: 'menu-screen.new-campaign.UltraDifficulty',
+			DifficultyHell: 'menu-screen.new-campaign.HellDifficulty',
 			EconomicDifficultyEasy: 'menu-screen.new-campaign.EasyDifficultyEconomic',
 			EconomicDifficultyNormal: 'menu-screen.new-campaign.NormalDifficultyEconomic',
 			EconomicDifficultyHard: 'menu-screen.new-campaign.HardDifficultyEconomic',

@@ -34,6 +34,8 @@ var NewCampaignMenuModule = function()
 	this.mDifficultyHardLabel = null;
 	this.mDifficultyUltraCheckbox = null;
 	this.mDifficultyUltraLabel = null;
+	this.mDifficultyHellCheckbox = null;
+	this.mDifficultyHellLabel = null;
 
 	this.mEconomicDifficultyEasyCheckbox = null;
 	this.mEconomicDifficultyEasyLabel = null;
@@ -494,6 +496,23 @@ NewCampaignMenuModule.prototype.createDIV = function (_parentDiv)
 			self.mDifficulty = 3;
 		});
 
+		var hellDifficultyControl = $('<div class="control"></div>');
+		row.append(hellDifficultyControl);
+		this.mDifficultyHellCheckbox = $('<input type="radio" id="cb-difficulty-hell" name="difficulty" />');
+		hellDifficultyControl.append(this.mDifficultyHellCheckbox);
+		this.mDifficultyHellLabel = $('<label class="text-font-normal font-color-subtitle" for="cb-difficulty-hell">Hell</label>');
+		hellDifficultyControl.append(this.mDifficultyHellLabel);
+		this.mDifficultyHellCheckbox.iCheck({
+			checkboxClass: 'icheckbox_flat-orange',
+			radioClass: 'iradio_flat-orange',
+			increaseArea: '30%'
+		});
+		this.mDifficultyHellCheckbox.on('ifChecked', null, this, function (_event)
+		{
+			var self = _event.data;
+			self.mDifficulty = 3;
+		});
+
 		// combat difficulty
 		var row = $('<div class="row" />');
 		rightColumn.append(row);
@@ -639,6 +658,10 @@ NewCampaignMenuModule.prototype.destroyDIV = function ()
 	this.mDifficultyUltraCheckbox = null;
 	this.mDifficultyUltraLabel.remove();
 	this.mDifficultyUltraLabel = null;
+	this.mDifficultyHellCheckbox.remove();
+	this.mDifficultyHellCheckbox = null;
+	this.mDifficultyHellLabel.remove();
+	this.mDifficultyHellLabel = null;
 	this.mCompanyName.remove();
 	this.mCompanyName = null;
 
@@ -696,6 +719,9 @@ NewCampaignMenuModule.prototype.bindTooltips = function ()
 
 	this.mDifficultyUltraLabel.bindTooltip({ contentType: 'ui-element', elementId: TooltipIdentifier.MenuScreen.NewCampaign.DifficultyUltra });
 	this.mDifficultyUltraCheckbox.bindTooltip({ contentType: 'ui-element', elementId: TooltipIdentifier.MenuScreen.NewCampaign.DifficultyUltra });
+
+	this.mDifficultyHellLabel.bindTooltip({ contentType: 'ui-element', elementId: TooltipIdentifier.MenuScreen.NewCampaign.DifficultyHell });
+	this.mDifficultyHellCheckbox.bindTooltip({ contentType: 'ui-element', elementId: TooltipIdentifier.MenuScreen.NewCampaign.DifficultyHell });
 
 	this.mIronmanCheckboxLabel.bindTooltip({ contentType: 'ui-element', elementId: TooltipIdentifier.MenuScreen.NewCampaign.Ironman });
 	this.mIronmanCheckbox.bindTooltip({ contentType: 'ui-element', elementId: TooltipIdentifier.MenuScreen.NewCampaign.Ironman });
@@ -759,6 +785,9 @@ NewCampaignMenuModule.prototype.unbindTooltips = function ()
 
 	this.mDifficultyUltraLabel.unbindTooltip();
 	this.mDifficultyUltraCheckbox.unbindTooltip();
+
+	this.mDifficultyHellLabel.unbindTooltip();
+	this.mDifficultyHellCheckbox.unbindTooltip();
 
 	this.mEconomicDifficultyEasyLabel.unbindTooltip();
 	this.mEconomicDifficultyEasyCheckbox.unbindTooltip();
