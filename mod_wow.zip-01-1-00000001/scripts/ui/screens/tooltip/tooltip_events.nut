@@ -241,7 +241,7 @@ this.tooltip_events <- {
 					id = 99,
 					type = "text",
 					icon = "ui/tooltips/warning.png",
-					text = "[color=" + this.Const.UI.Color.NegativeValue + "]Any character on this tile may retreat safely and without incurring an injury.[/color]"
+					text = "[color=" + this.Const.UI.Color.NegativeValue + "]Any character on this tile may retreat safely and immediately from battle.[/color]"
 				});
 			}
 
