@@ -144,12 +144,14 @@ this.rogue_poison_skill <- this.inherit("scripts/skills/skill", {
 			local effect = this.new("scripts/skills/effects/rogue_poison_effect");
 			effect.resetTime(poison_duration);
 			effect.setDamage(poison_damage);
+			effect.setActor(_user);
 			targetEntity.getSkills().add(effect);
 		}
 		else
 		{
 			poison.resetTime(poison_duration);
 			poison.setDamage(poison_damage);
+			poison.setActor(_user);
 		}
 
 		this.spawnIcon("status_effect_54", _targetTile);
