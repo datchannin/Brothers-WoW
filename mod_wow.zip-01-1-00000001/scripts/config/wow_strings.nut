@@ -44,6 +44,9 @@ gt.Const.Strings.EntityNamePlural.push("Gnoll Assassins"); 	//111
 gt.Const.Strings.EntityName.push("Gnoll Brute");			//112
 gt.Const.Strings.EntityNamePlural.push("Gnoll Brutes");		//112
 
+gt.Const.Strings.Difficulty.push("Ultra");
+gt.Const.Strings.Difficulty.push("Hell");
+
 gt.Const.Wow_strings.WinterwolfNames <- [
 	"Max",
 	"Bear",
