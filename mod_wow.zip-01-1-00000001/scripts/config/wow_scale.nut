@@ -84,7 +84,7 @@ gt.Const.WarlockScale <- {
 
 // SCALE COEFFICIENTS FOR ENEMY CHARACTERS DEPENDS ON DAY AND DIFFICULTY
 // Hitpoints Mult
-gt.Const.HitpointsScase <- {
+gt.Const.HitpointsScale <- {
 	day10 = 1.05,
 	day30 = 1.09,
 	day50 = 1.14,
@@ -106,4 +106,172 @@ gt.Const.HitpointsScase <- {
 	day370 = 2.16,
 	day390 = 2.25,
 	day400 = 2.33
-}
+};
+
+gt.Const.StaminaScale <- {
+	day10 = 3,
+	day30 = 5,
+	day50 = 7,
+	day70 = 9,
+	day90 = 12,
+	day110 = 16,
+	day130 = 20,
+	day150 = 24,
+	day170 = 28,
+	day190 = 32,
+	day210 = 37,
+	day230 = 42,
+	day250 = 47,
+	day270 = 52,
+	day290 = 57,
+	day310 = 62,
+	day330 = 67,
+	day350 = 75,
+	day370 = 85,
+	day390 = 95,
+	day400 = 100
+};
+
+gt.Const.FatigueRecoveryScale <- {
+	day10 = 1,
+	day30 = 2,
+	day50 = 2,
+	day70 = 2,
+	day90 = 3,
+	day110 = 3,
+	day130 = 3,
+	day150 = 4,
+	day170 = 4,
+	day190 = 4,
+	day210 = 5,
+	day230 = 5,
+	day250 = 6,
+	day270 = 6,
+	day290 = 7,
+	day310 = 8,
+	day330 = 9,
+	day350 = 10,
+	day370 = 12,
+	day390 = 14,
+	day400 = 15
+};
+
+gt.Const.BraveryScale <- {
+	day10 = 1,
+	day30 = 2,
+	day50 = 3,
+	day70 = 4,
+	day90 = 6,
+	day110 = 8,
+	day130 = 10,
+	day150 = 12,
+	day170 = 14,
+	day190 = 16,
+	day210 = 18,
+	day230 = 21,
+	day250 = 24,
+	day270 = 27,
+	day290 = 29,
+	day310 = 31,
+	day330 = 33,
+	day350 = 35,
+	day370 = 37,
+	day390 = 39,
+	day400 = 40
+};
+
+gt.Const.MeleeSkillScale <- {
+	day10 = 1,
+	day30 = 1,
+	day50 = 1,
+	day70 = 3,
+	day90 = 3,
+	day110 = 5,
+	day130 = 5,
+	day150 = 5,
+	day170 = 5,
+	day190 = 5,
+	day210 = 7,
+	day230 = 7,
+	day250 = 7,
+	day270 = 7,
+	day290 = 7,
+	day310 = 9,
+	day330 = 9,
+	day350 = 9,
+	day370 = 9,
+	day390 = 10,
+	day400 = 12
+};
+
+gt.Const.RangedSkillScale <- {
+	day10 = 1,
+	day30 = 1,
+	day50 = 1,
+	day70 = 3,
+	day90 = 3,
+	day110 = 5,
+	day130 = 5,
+	day150 = 5,
+	day170 = 5,
+	day190 = 5,
+	day210 = 7,
+	day230 = 7,
+	day250 = 7,
+	day270 = 7,
+	day290 = 7,
+	day310 = 9,
+	day330 = 9,
+	day350 = 9,
+	day370 = 9,
+	day390 = 10,
+	day400 = 12
+};
+
+gt.Const.MeleeDefenseScale <- {
+	day10 = 1,
+	day30 = 1,
+	day50 = 1,
+	day70 = 3,
+	day90 = 3,
+	day110 = 5,
+	day130 = 5,
+	day150 = 5,
+	day170 = 5,
+	day190 = 5,
+	day210 = 7,
+	day230 = 7,
+	day250 = 7,
+	day270 = 7,
+	day290 = 7,
+	day310 = 9,
+	day330 = 9,
+	day350 = 9,
+	day370 = 9,
+	day390 = 10,
+	day400 = 12
+};
+
+gt.Const.RangedDefenseScale <- {
+	day10 = 1,
+	day30 = 1,
+	day50 = 1,
+	day70 = 3,
+	day90 = 3,
+	day110 = 5,
+	day130 = 5,
+	day150 = 5,
+	day170 = 5,
+	day190 = 5,
+	day210 = 7,
+	day230 = 7,
+	day250 = 7,
+	day270 = 7,
+	day290 = 7,
+	day310 = 9,
+	day330 = 9,
+	day350 = 9,
+	day370 = 9,
+	day390 = 10,
+	day400 = 12
+};
