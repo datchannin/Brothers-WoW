@@ -2139,6 +2139,16 @@ gt.Const.Perks.PerkDefObjects.ElusiveProtection <- {
 	Const = "ElusiveProtection"
 }
 
+gt.Const.Perks.PerkDefObjects.Hell <- {
+	ID = "perk.wow.common.hell",
+	Script = "scripts/skills/perks/perk_wow_hell",
+	Name = this.Const.Wow_strings.PerkName.Hell,
+	Tooltip = this.Const.Wow_strings.PerkDescription.Hell,
+	Icon = "ui/perks/perk_hell.png",
+	IconDisabled = "ui/perks/perk_hell_sw.png",
+	Const = "Hell"
+}
+
 // ---------------------------------------------|
 // -----------  WOW END PERKS DEFINITION -------|
 // ---------------------------------------------|
