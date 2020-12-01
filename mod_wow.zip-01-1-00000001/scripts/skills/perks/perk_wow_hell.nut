@@ -16,5 +16,9 @@ this.perk_wow_hell <- this.inherit("scripts/skills/skill", {
 	
 	function onUpdate( _properties )
 	{
-	}	
+		if (this.World.Assets.getCombatDifficulty() == 4)
+		{
+
+		}
+	}
 });
