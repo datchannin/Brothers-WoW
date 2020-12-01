@@ -3,7 +3,7 @@ this.perk_wow_hell <- this.inherit("scripts/skills/skill", {
 	m = {},
 	function create()
 	{
-		this.m.ID = "perk.wow.hell";
+		this.m.ID = "perk.wow.common.hell";
 		this.m.Name = this.Const.Wow_strings.PerkName.Hell;
 		this.m.Description = this.Const.Wow_strings.PerkDescription.Hell;
 		this.m.Icon = "ui/perks/perk_hell.png";
@@ -11,7 +11,7 @@ this.perk_wow_hell <- this.inherit("scripts/skills/skill", {
 		this.m.Order = this.Const.SkillOrder.Perk;
 		this.m.IsActive = false;
 		this.m.IsStacking = false;
-		this.m.IsHidden = true;
+		this.m.IsHidden = false;
 	}
 	
 	function onUpdate( _properties )

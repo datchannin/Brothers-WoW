@@ -580,6 +580,7 @@ gt.Const.Perks.PerkTreeWarlock <- [
 gt.Const.Perks.PerkTreeDev <- [
 	[
 		gt.Const.Perks.PerkDefObjects.GameDev
+		gt.Const.Perks.PerkDefObjects.Hell
 	],
 	[
 	],
