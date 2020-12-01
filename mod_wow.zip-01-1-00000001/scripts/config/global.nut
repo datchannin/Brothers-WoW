@@ -181,36 +181,36 @@ gt.Const.Difficulty <- {
 		1.0,
 		1.0,
 		1.0,
-		1.1,
-		1.2
+		1.0,
+		1.0
 	],
 	SellPriceMult = [
 		1.0,
 		1.0,
 		0.9,
 		0.9,
-		0.8
+		0.9
 	],
 	EnemyMult = [
 		0.85,
 		1.0,
 		1.15,
 		1.5,
-		2.0
+		1.5
 	],
 	PaymentMult = [
 		1.1,
 		1.0,
 		0.9,
-		0.85,
-		0.7
+		0.9,
+		0.9
 	],
 	RetreatDefenseBonus = [
 		30,
 		20,
 		10,
 		10,
-		5
+		10
 	],
 	MaxResources = [
 		{
@@ -229,13 +229,13 @@ gt.Const.Difficulty <- {
 			ArmorParts = 150
 		},
 		{
-			Ammo = 250,
-			Medicine = 80,
+			Ammo = 300,
+			Medicine = 100,
 			ArmorParts = 150
 		},
 		{
-			Ammo = 250,
-			Medicine = 80,
+			Ammo = 300,
+			Medicine = 100,
 			ArmorParts = 150
 		}
 	]
