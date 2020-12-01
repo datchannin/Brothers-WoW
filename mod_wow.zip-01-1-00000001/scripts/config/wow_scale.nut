@@ -275,3 +275,27 @@ gt.Const.RangedDefenseScale <- {
 	day390 = 10,
 	day400 = 12
 };
+
+gt.Const.XPScale <- {
+	day10 = 1.1,
+	day30 = 1.2,
+	day50 = 1.3,
+	day70 = 1.4,
+	day90 = 1.5,
+	day110 = 1.6,
+	day130 = 1.7,
+	day150 = 1.8,
+	day170 = 1.9,
+	day190 = 2.0,
+	day210 = 2.1,
+	day230 = 2.2,
+	day250 = 2.3,
+	day270 = 2.4,
+	day290 = 2.5,
+	day310 = 2.6,
+	day330 = 2.7,
+	day350 = 2.8,
+	day370 = 2.9,
+	day390 = 3.0,
+	day400 = 3.2
+};

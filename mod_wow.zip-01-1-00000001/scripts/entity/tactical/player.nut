@@ -1241,6 +1241,106 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 		}
 	}
 
+	function getXPscaleMult()
+	{
+		local mult = 1;
+
+		if (this.World.Assets.getCombatDifficulty() == this.Const.Difficulty.Hell)
+		{
+			local current_day = this.World.getTime().Days;
+			if (current_day <= 10)
+			{
+				mult = this.Const.XPScale.day10;
+			}
+			else if (current_day <= 30)
+			{
+				mult = this.Const.XPScale.day30;
+			}
+			else if (current_day <= 50)
+			{
+				mult = this.Const.XPScale.day50;
+			}
+			else if (current_day <= 70)
+			{
+				mult = this.Const.XPScale.day70;
+			}
+			else if (current_day <= 90)
+			{
+				mult = this.Const.XPScale.day90;
+			}
+			else if (current_day <= 110)
+			{
+				mult = this.Const.XPScale.day110;
+			}
+			else if (current_day <= 130)
+			{
+				mult = this.Const.XPScale.day130;
+			}
+			else if (current_day <= 150)
+			{
+				mult = this.Const.XPScale.day150;
+			}
+			else if (current_day <= 170)
+			{
+				mult = this.Const.XPScale.day170;
+			}
+			else if (current_day <= 190)
+			{
+				mult = this.Const.XPScale.day190;
+			}
+			else if (current_day <= 210)
+			{
+				mult = this.Const.XPScale.day210;
+			}
+			else if (current_day <= 230)
+			{
+				mult = this.Const.XPScale.day230;
+			}
+			else if (current_day <= 250)
+			{
+				mult = this.Const.XPScale.day250;
+			}
+			else if (current_day <= 270)
+			{
+				mult = this.Const.XPScale.day270;
+			}
+			else if (current_day <= 290)
+			{
+				mult = this.Const.XPScale.day290;
+			}
+			else if (current_day <= 310)
+			{
+				mult = this.Const.XPScale.day310;
+			}
+			else if (current_day <= 330)
+			{
+				mult = this.Const.XPScale.day330;
+			}
+			else if (current_day <= 350)
+			{
+				mult = this.Const.XPScale.day350;
+			}
+			else if (current_day <= 370)
+			{
+				mult = this.Const.XPScale.day370;
+			}
+			else if (current_day <= 390)
+			{
+				mult = this.Const.XPScale.day390;
+			}
+			else
+			{
+				mult = this.Const.XPScale.day400;
+			}
+		}
+		else
+		{
+			mult = 1;
+		}
+		
+		return mult;
+	}
+
 	function addXP( _xp, _scale = true )
 	{
 		local isScenarioMode = !(("State" in this.World) && this.World.State != null);
@@ -1259,6 +1359,8 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 		{
 			_xp = _xp * this.Const.Combat.GlobalXPVeteranLevelMult;
 		}
+
+		_xp = _xp * getXPscaleMult();
 
 		if (!isScenarioMode)
 		{
