@@ -268,7 +268,8 @@ gt.Const.Wow_strings.PerkName <- {
 	CurseofDoom = "Curse of Doom",
 	Fear = "Fear",
 	MagicInterference = "Magic Interference",
-	ElusiveProtection = "Elusive Protection"
+	ElusiveProtection = "Elusive Protection",
+	Hell = "Hell Aura"
 };
 
 gt.Const.Wow_strings.PerkDescription <- {
@@ -427,5 +428,6 @@ gt.Const.Wow_strings.PerkDescription <- {
 	CurseofDoom = "Unlocks the \'Curse of Doom\' skill which is used to deal massive damage to your enemy.\nSpell damage is growing with your level.\n\n\'Soul Shard\': This skill can be used only if Warlock has \'Soul Shard\'. Using \'Curse of Doom\' consumes soul.",
 	Fear = "Unlocks the \'Fear\' skill which allows you to fear the enemy. Enemy will move to the next tile from you.",
 	MagicInterference = "Mana emanations create an interference around you. You must be focused on protection to reap the benefits. Hitpoint damage taken is reduced by up to [color=" + this.Const.UI.Color.PositiveValue + "]40%[/color], but lowered linear by the total penalty to Maximum Fatigue from body and head armor above [color=" + this.Const.UI.Color.PositiveValue + "]20[/color]. The lighter your armor and helmet, the more you benefit.\n\nBrawny does not affect this perk.\n\nUsing shields nullifies the effect!",
-	ElusiveProtection = "You know how to use armor, as well as dodge attacks as much as possible. Hitpoint damage taken is reduced by [color=" + this.Const.UI.Color.PositiveValue + "]15%[/color] if your total penalty to Maximum Fatigue from body and head armor is below [color=" + this.Const.UI.Color.PositiveValue + "]30[/color].\n\nArmor damage taken is reduced by the [color=" + this.Const.UI.Color.PositiveValue + "]15%[/color].\n\nBonus from this perk works always for armor damage taken, but hitpoints damage taken reducing will be nullified if total penalty to Maximum Fatigue from body and head armor is above [color=" + this.Const.UI.Color.PositiveValue + "]30[/color]."
+	ElusiveProtection = "You know how to use armor, as well as dodge attacks as much as possible. Hitpoint damage taken is reduced by [color=" + this.Const.UI.Color.PositiveValue + "]15%[/color] if your total penalty to Maximum Fatigue from body and head armor is below [color=" + this.Const.UI.Color.PositiveValue + "]30[/color].\n\nArmor damage taken is reduced by the [color=" + this.Const.UI.Color.PositiveValue + "]15%[/color].\n\nBonus from this perk works always for armor damage taken, but hitpoints damage taken reducing will be nullified if total penalty to Maximum Fatigue from body and head armor is above [color=" + this.Const.UI.Color.PositiveValue + "]30[/color].",
+	Hell = "A Hellish Aura envelops this creature, stay away from it!"
 };
