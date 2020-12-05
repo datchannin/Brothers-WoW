@@ -295,6 +295,9 @@ this.wow_scenario <- this.inherit("scripts/scenarios/world/starting_scenario", {
 			this.World.Assets.getStash().add(this.new("scripts/items/armor_upgrades/warlock_t0_update"));
 		}
 
+		item = this.new("scripts/items/misc/token_helmet_item");
+		this.World.Assets.getStash().add(item);
+
 		this.World.Assets.m.Money = this.World.Assets.m.Money + 40000;
 	}
 

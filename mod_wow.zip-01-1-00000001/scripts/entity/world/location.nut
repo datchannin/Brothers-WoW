@@ -449,6 +449,12 @@ this.location <- this.inherit("scripts/entity/world/world_entity", {
 			{
 				_lootTable.push(this.new("scripts/items/misc/inventory_badge_item"));
 			}
+			
+			if (this.World.Assets.getCombatDifficulty() == this.Const.Difficulty.Hell)
+			{
+				_lootTable.push(this.new("scripts/items/misc/inventory_badge_item"));
+				_lootTable.push(this.new("scripts/items/misc/inventory_badge_item"));
+			}
 		}
 	}
 
