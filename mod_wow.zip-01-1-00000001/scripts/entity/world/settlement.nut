@@ -1412,16 +1412,19 @@ this.settlement <- this.inherit("scripts/entity/world/location", {
 			s.onUpdateDraftList(draftList);
 		}
 
-		for (local i = 0; i < 3; i++)
+		if (this.Const.Expantion.background_hire_enable)
 		{
-			draftList.push("raider_warrior_background");
-			draftList.push("raider_paladin_background");
-			draftList.push("raider_hunter_background");
-			draftList.push("raider_druid_background");
-			draftList.push("raider_rogue_background");
-			draftList.push("raider_mage_background");
-			draftList.push("raider_priest_background");
-			draftList.push("raider_warlock_background");
+			for (local i = 0; i < this.Const.Expantion.background_hire_quantity; i++)
+			{
+				draftList.push("raider_warrior_background");
+				draftList.push("raider_paladin_background");
+				draftList.push("raider_hunter_background");
+				draftList.push("raider_druid_background");
+				draftList.push("raider_rogue_background");
+				draftList.push("raider_mage_background");
+				draftList.push("raider_priest_background");
+				draftList.push("raider_warlock_background");
+			}
 		}
 
 		this.World.Assets.getOrigin().onUpdateDraftList(draftList);
