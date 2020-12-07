@@ -115,6 +115,7 @@ var TooltipIdentifier =
 			BudgetDifficultyNormal: 'menu-screen.new-campaign.NormalDifficultyBudget',
 			BudgetDifficultyHard: 'menu-screen.new-campaign.HardDifficultyBudget',
             Ironman: 'menu-screen.new-campaign.Ironman',
+			WoWClassic: 'menu-screen.new-campaign.WoWClassic',
             Exploration: 'menu-screen.new-campaign.Exploration',
 			EvilRandom: 'menu-screen.new-campaign.EvilRandom',
 			EvilNone: 'menu-screen.new-campaign.EvilNone',

@@ -53,6 +53,8 @@ var NewCampaignMenuModule = function()
 
 	this.mIronmanCheckbox = null;
 	this.mIronmanCheckboxLabel = null;
+	this.mWoWClassicCharactersCheckbox = null;
+	this.mWoWClassicCharactersCheckboxLabel = null;
 	this.mCompanyName = null;
 
 	this.mEvilRandomCheckbox = null;
@@ -531,6 +533,25 @@ NewCampaignMenuModule.prototype.createDIV = function (_parentDiv)
 			increaseArea: '30%'
         });
 
+		var row = $('<div class="row" />');
+		rightColumn.append(row);
+		var title = $('<div class="title title-font-big font-color-title">WoW Characters</div>');
+		row.append(title);
+
+		var wowclassicControl = $('<div class="control ironman-control"/>');
+		row.append(wowclassicControl);
+		this.mWoWClassicCharactersCheckbox = $('<input type="checkbox" id="cb-wow-classic"/>');
+		wowclassicControl.append(this.mWoWClassicCharactersCheckbox);
+		this.mWoWClassicCharactersCheckboxLabel = $('<label class="text-font-normal font-color-subtitle" for="cb-wow-classic">WoW Classic Characters</label>');
+		wowclassicControl.append(this.mWoWClassicCharactersCheckboxLabel);
+
+		this.mWoWClassicCharactersCheckbox.iCheck({
+			checkboxClass: 'icheckbox_flat-orange',
+			radioClass: 'iradio_flat-orange',
+			increaseArea: '30%'
+        });
+		this.mWoWClassicCharactersCheckbox.iCheck('check');
+
         // seed
         var row = $('<div class="row map-seed-control" />');
         leftColumn.append(row);
@@ -726,6 +747,9 @@ NewCampaignMenuModule.prototype.bindTooltips = function ()
 	this.mIronmanCheckboxLabel.bindTooltip({ contentType: 'ui-element', elementId: TooltipIdentifier.MenuScreen.NewCampaign.Ironman });
 	this.mIronmanCheckbox.bindTooltip({ contentType: 'ui-element', elementId: TooltipIdentifier.MenuScreen.NewCampaign.Ironman });
 
+	this.mWoWClassicCharactersCheckboxLabel.bindTooltip({ contentType: 'ui-element', elementId: TooltipIdentifier.MenuScreen.NewCampaign.WoWClassic });
+	this.mWoWClassicCharactersCheckbox.bindTooltip({ contentType: 'ui-element', elementId: TooltipIdentifier.MenuScreen.NewCampaign.WoWClassic });
+
     this.mExplorationCheckboxLabel.bindTooltip({ contentType: 'ui-element', elementId: TooltipIdentifier.MenuScreen.NewCampaign.Exploration });
     this.mExplorationCheckbox.bindTooltip({ contentType: 'ui-element', elementId: TooltipIdentifier.MenuScreen.NewCampaign.Exploration });
 
@@ -809,6 +833,9 @@ NewCampaignMenuModule.prototype.unbindTooltips = function ()
 
 	this.mIronmanCheckboxLabel.unbindTooltip();
 	this.mIronmanCheckbox.unbindTooltip();
+
+	this.mWoWClassicCharactersCheckboxLabel.unbindTooltip();
+	this.mWoWClassicCharactersCheckbox.unbindTooltip();
 
     this.mExplorationCheckboxLabel.unbindTooltip();
     this.mExplorationCheckbox.unbindTooltip();
@@ -1099,6 +1126,9 @@ NewCampaignMenuModule.prototype.collectSettings = function()
 
     // starting scenario
     settings.push(this.mScenarios[this.mSelectedScenario].ID);
+
+	// WoWClassic hire
+	settings.push(this.mWoWClassicCharactersCheckbox.is(':checked'));
 
 	return settings;
 }

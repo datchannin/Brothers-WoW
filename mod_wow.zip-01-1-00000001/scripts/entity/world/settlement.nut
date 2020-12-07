@@ -1412,7 +1412,7 @@ this.settlement <- this.inherit("scripts/entity/world/location", {
 			s.onUpdateDraftList(draftList);
 		}
 
-		if (this.Const.Expantion.background_hire_enable)
+		if (this.World.Assets.isWoWClassicHiring())
 		{
 			for (local i = 0; i < this.Const.Expantion.background_hire_quantity; i++)
 			{

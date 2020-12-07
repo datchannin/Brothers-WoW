@@ -2014,6 +2014,20 @@ this.tooltip_events <- {
 				}
 			];
 
+		case "menu-screen.new-campaign.WoWClassic":
+			return [
+				{
+					id = 1,
+					type = "title",
+					text = "WoW Classic Characters"
+				},
+				{
+					id = 2,
+					type = "description",
+					text = "Remove this option if you don\'t want have possibility to find new World of Warcraft characters. If you unselect it, you can not hire Warriors, Paladins, Hunters, Druids, Rogues, Mages, Priests and Warlocks from settlements.\n\nBut you still can take them as start characters playing new bbWoW mod scenarios."
+				}
+			];
+
 		case "menu-screen.new-campaign.Ironman":
 			return [
 				{

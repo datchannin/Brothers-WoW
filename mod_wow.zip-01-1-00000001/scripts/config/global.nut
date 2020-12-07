@@ -10,7 +10,6 @@ gt.Const.Expantion <- {
 	gnoll_days = 90,
 	badge_drop_enable = true,
 	badge_drop_chance = 10,
-	background_hire_enable = true,
 	background_hire_quantity = 3
 }
 
