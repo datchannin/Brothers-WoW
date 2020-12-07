@@ -2099,6 +2099,14 @@ this.actor <- this.inherit("scripts/entity/tactical/entity", {
 			this.m.Items.setUnlockedBagSlots(this.Const.ItemSlotSpaces[this.Const.ItemSlot.Bag]);
 		}
 
+		if (this.m.Type != this.Const.EntityType.Player && this.m.Type != this.Const.EntityType.Winterwolf && this.m.Type != this.Const.EntityType.Wardog && this.m.Type != this.Const.EntityType.ArmoredWardog)
+		{
+			if (this.World.Assets.getCombatDifficulty() == this.Const.Difficulty.Hell)
+			{
+				this.m.Skills.add(this.new("scripts/skills/perks/perk_wow_hell"));
+			}
+		}
+
 		this.setPreventOcclusion(true);
 		this.setBlockSight(false);
 		this.setVisibleInFogOfWar(false);
