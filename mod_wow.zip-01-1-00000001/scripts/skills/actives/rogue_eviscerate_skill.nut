@@ -5,7 +5,7 @@ this.rogue_eviscerate_skill <- this.inherit("scripts/skills/skill", {
 	},
 	function create()
 	{
-		this.m.ID = "actives.eviscerate_skil";
+		this.m.ID = "actives.eviscerate_skill";
 		this.m.Name = "Eviscerate";
 		this.m.Description = "Powerful attack with a special rogue dagger at the opponent armor\'s weakspots. Ignores all armor, can be used only if rogue already has Combo Points. Spends all Combo Points after using.";
 		this.m.KilledString = "Stabbed";
@@ -64,11 +64,8 @@ this.rogue_eviscerate_skill <- this.inherit("scripts/skills/skill", {
 		local damage_min_st = getTotalMinDamage();
 		local damage_max_st = getTotalMaxDamage();
 		
-		local damage_armor_min = this.Math.floor(damage_min_st * this.m.damage_armor_mult * p.DamageTotalMult * p.MeleeDamageMult);
-		local damage_armor_max = this.Math.floor(damage_max_st * this.m.damage_armor_mult * p.DamageTotalMult * p.MeleeDamageMult);
 		local damage_min = this.Math.floor(damage_min_st * p.DamageTotalMult * p.MeleeDamageMult);
 		local damage_max = this.Math.floor(damage_max_st * p.DamageTotalMult * p.MeleeDamageMult);
-		local direct_damage_max = this.Math.floor(this.m.damage_direct_mult * damage_max);
 
 		local ret = this.getDefaultUtilityTooltip();
 		
@@ -89,9 +86,51 @@ this.rogue_eviscerate_skill <- this.inherit("scripts/skills/skill", {
 		return ret;
 	}
 
+	function equipProperWeapon()
+	{
+		local off = this.getContainer().getActor().getItems().getItemAtSlot(this.Const.ItemSlot.Offhand);
+		local offID;
+
+		if (off != null)
+		{
+			offID = off.getID();
+		}
+		else
+		{
+			return 0;
+		}
+
+		if (offID == "weapon.dagger_off" || offID == "weapon.rondel_dagger_off" || offID == "weapon.qatal_dagger_off")
+		{
+			return 1;
+		}
+		else
+		{
+			return 0;
+		}
+	}
+
+	function isHidden()
+	{
+		if (this.m.IsHidden)
+		{
+			return true;
+		}
+		else
+		{
+			if (!this.equipProperWeapon())
+			{
+				return true;
+			}
+			else
+			{
+				return false;
+			}
+		}
+	}
+
 	function onUse( _user, _targetTile )
 	{
-		this.spawnAttackEffect(_targetTile, this.Const.Tactical.AttackEffectClaws);
 		return this.attackEntity(_user, _targetTile.getEntity());
 	}
 

@@ -822,6 +822,16 @@ gt.Const.Perks.PerkDefObjects.Disarm <- {
 	Const = "Disarm"
 }
 
+gt.Const.Perks.PerkDefObjects.Eviscerate <- {
+	ID = "perk.wow.rogue.eviscerate",
+	Script = "scripts/skills/perks/perk_wow_eviscerate",
+	Name = this.Const.Wow_strings.PerkName.Eviscerate,
+	Tooltip = this.Const.Wow_strings.PerkDescription.Eviscerate,
+	Icon = "ui/perks/perk_rogue_eviscerate.png",
+	IconDisabled = "ui/perks/perk_rogue_eviscerate_sw.png",
+	Const = "Eviscerate"
+}
+
 gt.Const.Perks.PerkDefObjects.MasterDagger <- {
 	ID = "perk.wow.rogue.masterdagger",
 	Script = "scripts/skills/perks/perk_wow_masterdagger",
