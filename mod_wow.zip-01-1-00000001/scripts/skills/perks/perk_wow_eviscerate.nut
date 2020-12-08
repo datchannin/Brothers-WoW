@@ -22,11 +22,17 @@ this.perk_wow_eviscerate <- this.inherit("scripts/skills/skill", {
 		}
 	}
 
+	function onCombatStarted()
+	{
+		this.getContainer().add(this.new("scripts/skills/effects/combopoint_effect"));
+	}
+
 	function onRemoved()
 	{
 		this.m.Container.removeByID("actives.eviscerate_skill");
+		this.m.Container.removeByID("effects.combopoint_effect");
 	}
-	
+
 	function onTargetHit( _skill, _targetEntity, _bodyPart, _damageInflictedHitpoints, _damageInflictedArmor )
 	{
 		local actor = this.m.Container.getActor();
