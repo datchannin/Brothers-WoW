@@ -1,13 +1,16 @@
 this.rogue_eviscerate_skill <- this.inherit("scripts/skills/skill", {
 	m = {
 		damage_base_min = 55,
-		damage_base_max = 75
+		damage_base_max = 75,
+		ComboPointQuantity = 0,
+		ComboPointMaximum = 5,
+		CurrentLevel = 1
 	},
 	function create()
 	{
 		this.m.ID = "actives.eviscerate_skill";
 		this.m.Name = "Eviscerate";
-		this.m.Description = "Powerful attack with a special rogue dagger at the opponent armor\'s weakspots. Ignores all armor, can be used only if rogue already has Combo Points. Spends all Combo Points after using.";
+		this.m.Description = "Powerful attack with a special rogue dagger at the opponent armor\'s weakspots. Ignores all armor, can be used only if rogue already has [color=" + this.Const.UI.Color.DamageValue + "]" + this.m.ComboPointMaximum + "[/color] Combo Points. Spends all Combo Points after using.";
 		this.m.KilledString = "Stabbed";
 		this.m.Icon = "ui/perks/skill_rogue_eviscerate.png";
 		this.m.IconDisabled = "ui/perks/skill_rogue_eviscerate_sw.png";
@@ -19,7 +22,7 @@ this.rogue_eviscerate_skill <- this.inherit("scripts/skills/skill", {
 			//"sounds/combat/.wav"
 		];
 		this.m.Type = this.Const.SkillType.Active;
-		this.m.Order = this.Const.SkillOrder.OffensiveTargeted+1;
+		this.m.Order = this.Const.SkillOrder.UtilityTargeted;
 		this.m.IsSerialized = false;
 		this.m.IsActive = true;
 		this.m.IsTargeted = true;
@@ -86,6 +89,33 @@ this.rogue_eviscerate_skill <- this.inherit("scripts/skills/skill", {
 		return ret;
 	}
 
+	function isUsable()
+	{
+		if (this.m.ComboPointQuantity == 5)
+		{
+			return true;
+		}
+		else
+		{
+			return false;
+		}
+	}
+
+	function onUpdate( _properties )
+	{
+		local user = this.getContainer().getActor();
+		this.m.CurrentLevel = user.getLevel();
+		local combopoints = user.getSkills().getSkillByID("effects.combopoint");
+		if (combopoints != null)
+		{
+			this.m.ComboPointQuantity = combopoints.getComboPoint();
+		}
+		else
+		{
+			this.m.ComboPointQuantity = 0;
+		}
+	}
+
 	function equipProperWeapon()
 	{
 		local off = this.getContainer().getActor().getItems().getItemAtSlot(this.Const.ItemSlot.Offhand);
@@ -131,6 +161,11 @@ this.rogue_eviscerate_skill <- this.inherit("scripts/skills/skill", {
 
 	function onUse( _user, _targetTile )
 	{
+		local combopoints = _user.getSkills().getSkillByID("effects.combopoint");
+		if (combopoints != null)
+		{
+			combopoints.resetComboPoint();
+		}
 		return this.attackEntity(_user, _targetTile.getEntity());
 	}
 

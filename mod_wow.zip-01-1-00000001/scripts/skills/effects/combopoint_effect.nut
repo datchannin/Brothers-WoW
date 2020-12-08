@@ -25,6 +25,11 @@ this.combopoint_effect <- this.inherit("scripts/skills/skill", {
 		}
 	}
 
+	function getComboPoint()
+	{
+		return this.m.ComboPointQuantity;
+	}
+
 	function resetComboPoint()
 	{
 		this.m.ComboPointQuantity = 0;
