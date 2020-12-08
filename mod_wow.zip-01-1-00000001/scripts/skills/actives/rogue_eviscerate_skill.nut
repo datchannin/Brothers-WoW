@@ -14,7 +14,7 @@ this.rogue_eviscerate_skill <- this.inherit("scripts/skills/skill", {
 		this.m.KilledString = "Stabbed";
 		this.m.Icon = "ui/perks/skill_rogue_eviscerate.png";
 		this.m.IconDisabled = "ui/perks/skill_rogue_eviscerate_sw.png";
-		//this.m.Overlay = "";
+		this.m.Overlay = "skill_rogue_eviscerate";
 		this.m.SoundOnUse = [
 			//"sounds/combat/.wav"
 		];
