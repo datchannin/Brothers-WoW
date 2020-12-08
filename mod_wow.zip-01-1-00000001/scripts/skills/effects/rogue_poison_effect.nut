@@ -28,6 +28,11 @@ this.rogue_poison_effect <- this.inherit("scripts/skills/skill", {
 		return this.m.Damage;
 	}
 
+	function getTurns()
+	{
+		return this.m.TurnsLeft;
+	}
+
 	function getDescription()
 	{
 		return "This character has a vicious poison running through his veins and will lose [color=" + this.Const.UI.Color.NegativeValue + "]" + this.m.Damage + "[/color] hitpoints each turn for [color=" + this.Const.UI.Color.NegativeValue + "]" + this.m.TurnsLeft + "[/color] more turn(s).";

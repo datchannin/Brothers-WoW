@@ -18,7 +18,7 @@ this.perk_wow_fasttoxin <- this.inherit("scripts/skills/skill", {
 	{
 		if (!this.m.Container.hasSkill("actives.fasttoxin_skill"))
 		{
-			//this.m.Container.add(this.new("scripts/skills/actives/rogue_fasttoxin_skill"));
+			this.m.Container.add(this.new("scripts/skills/actives/rogue_fasttoxin_skill"));
 		}
 	}
 
