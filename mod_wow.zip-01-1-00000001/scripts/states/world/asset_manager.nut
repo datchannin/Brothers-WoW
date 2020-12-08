@@ -69,6 +69,8 @@ this.asset_manager <- {
 		LastFoodConsumed = 0,
 		IsIronman = false,
 		IsWoWClassicHiring = true,
+		IsWoWBurningHiring = false,
+		IsWoWLichHiring = false,
 		IsExplorationMode = false,
 		IsPermanentDestruction = true,
 		IsCamping = false,
@@ -225,6 +227,16 @@ this.asset_manager <- {
 		return this.m.IsWoWClassicHiring;
 	}
 
+	function isWoWBurningHiring()
+	{
+		return this.m.IsWoWBurningHiring;
+	}
+
+	function isWoWLichHiring()
+	{
+		return this.m.IsWoWLichHiring;
+	}
+
 	function isExplorationMode()
 	{
 		return this.m.IsExplorationMode;
@@ -372,6 +384,8 @@ this.asset_manager <- {
 		this.m.CombatDifficulty = _settings.Difficulty;
 		this.m.EconomicDifficulty = _settings.EconomicDifficulty;
 		this.m.IsWoWClassicHiring = _settings.WoWClassic;
+		this.m.IsWoWBurningHiring = _settings.WoWBurning;
+		this.m.IsWoWLichHiring = _settings.WoWLich;
 		this.m.IsIronman = _settings.Ironman;
 		this.m.IsPermanentDestruction = _settings.PermanentDestruction;
 		this.m.Origin = _settings.StartingScenario;
@@ -2063,6 +2077,8 @@ this.asset_manager <- {
 		_out.writeU8(this.m.EconomicDifficulty);
 		_out.writeU8(this.m.CombatDifficulty);
 		_out.writeBool(this.m.IsWoWClassicHiring);
+		_out.writeBool(this.m.IsWoWBurningHiring);
+		_out.writeBool(this.m.IsWoWLichHiring);
 		_out.writeBool(this.m.IsIronman);
 		_out.writeBool(!this.m.IsPermanentDestruction);
 		_out.writeString(this.m.Origin.getID());
@@ -2104,6 +2120,8 @@ this.asset_manager <- {
 		this.m.EconomicDifficulty = _in.readU8();
 		this.m.CombatDifficulty = _in.readU8();
 		this.m.IsWoWClassicHiring = _in.readBool();
+		this.m.IsWoWBurningHiring = _in.readBool();
+		this.m.IsWoWLichHiring = _in.readBool();
 		this.m.IsIronman = _in.readBool();
 		this.m.IsPermanentDestruction = !_in.readBool();
 

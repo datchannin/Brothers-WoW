@@ -55,6 +55,11 @@ var NewCampaignMenuModule = function()
 	this.mIronmanCheckboxLabel = null;
 	this.mWoWClassicCharactersCheckbox = null;
 	this.mWoWClassicCharactersCheckboxLabel = null;
+	this.mWoWBurningCharactersCheckbox = null;
+	this.mWoWBurningCharactersCheckboxLabel = null;
+	this.mWoWLichCharactersCheckbox = null;
+	this.mWoWLichCharactersCheckboxLabel = null;
+
 	this.mCompanyName = null;
 
 	this.mEvilRandomCheckbox = null;
@@ -552,6 +557,34 @@ NewCampaignMenuModule.prototype.createDIV = function (_parentDiv)
         });
 		this.mWoWClassicCharactersCheckbox.iCheck('check');
 
+		var wowburningControl = $('<div class="control ironman-control"/>');
+		row.append(wowburningControl);
+		this.mWoWBurningCharactersCheckbox = $('<input type="checkbox" id="cb-wow-burning"/>');
+		wowburningControl.append(this.mWoWBurningCharactersCheckbox);
+		this.mWoWBurningCharactersCheckboxLabel = $('<label class="text-font-normal font-color-subtitle" for="cb-wow-burning">WoW Burning Characters</label>');
+		wowburningControl.append(this.mWoWBurningCharactersCheckboxLabel);
+
+		this.mWoWBurningCharactersCheckbox.iCheck({
+			checkboxClass: 'icheckbox_flat-orange',
+			radioClass: 'iradio_flat-orange',
+			increaseArea: '30%'
+        });
+		this.mWoWBurningCharactersCheckbox.iCheck('disable');
+
+		var wowlichControl = $('<div class="control ironman-control"/>');
+		row.append(wowlichControl);
+		this.mWoWLichCharactersCheckbox = $('<input type="checkbox" id="cb-wow-lich"/>');
+		wowlichControl.append(this.mWoWLichCharactersCheckbox);
+		this.mWoWLichCharactersCheckboxLabel = $('<label class="text-font-normal font-color-subtitle" for="cb-wow-lich">WoW WotLK Characters</label>');
+		wowlichControl.append(this.mWoWLichCharactersCheckboxLabel);
+
+		this.mWoWLichCharactersCheckbox.iCheck({
+			checkboxClass: 'icheckbox_flat-orange',
+			radioClass: 'iradio_flat-orange',
+			increaseArea: '30%'
+        });
+		this.mWoWLichCharactersCheckbox.iCheck('disable');
+
         // seed
         var row = $('<div class="row map-seed-control" />');
         leftColumn.append(row);
@@ -749,6 +782,10 @@ NewCampaignMenuModule.prototype.bindTooltips = function ()
 
 	this.mWoWClassicCharactersCheckboxLabel.bindTooltip({ contentType: 'ui-element', elementId: TooltipIdentifier.MenuScreen.NewCampaign.WoWClassic });
 	this.mWoWClassicCharactersCheckbox.bindTooltip({ contentType: 'ui-element', elementId: TooltipIdentifier.MenuScreen.NewCampaign.WoWClassic });
+	this.mWoWBurningCharactersCheckboxLabel.bindTooltip({ contentType: 'ui-element', elementId: TooltipIdentifier.MenuScreen.NewCampaign.WoWBurning });
+	this.mWoWBurningCharactersCheckbox.bindTooltip({ contentType: 'ui-element', elementId: TooltipIdentifier.MenuScreen.NewCampaign.WoWBurning });
+	this.mWoWLichCharactersCheckboxLabel.bindTooltip({ contentType: 'ui-element', elementId: TooltipIdentifier.MenuScreen.NewCampaign.WoWLich });
+	this.mWoWLichCharactersCheckbox.bindTooltip({ contentType: 'ui-element', elementId: TooltipIdentifier.MenuScreen.NewCampaign.WoWLich });
 
     this.mExplorationCheckboxLabel.bindTooltip({ contentType: 'ui-element', elementId: TooltipIdentifier.MenuScreen.NewCampaign.Exploration });
     this.mExplorationCheckbox.bindTooltip({ contentType: 'ui-element', elementId: TooltipIdentifier.MenuScreen.NewCampaign.Exploration });
@@ -836,6 +873,10 @@ NewCampaignMenuModule.prototype.unbindTooltips = function ()
 
 	this.mWoWClassicCharactersCheckboxLabel.unbindTooltip();
 	this.mWoWClassicCharactersCheckbox.unbindTooltip();
+	this.mWoWBurningCharactersCheckboxLabel.unbindTooltip();
+	this.mWoWBurningCharactersCheckbox.unbindTooltip();
+	this.mWoWLichCharactersCheckboxLabel.unbindTooltip();
+	this.mWoWLichCharactersCheckbox.unbindTooltip();
 
     this.mExplorationCheckboxLabel.unbindTooltip();
     this.mExplorationCheckbox.unbindTooltip();
@@ -1127,8 +1168,10 @@ NewCampaignMenuModule.prototype.collectSettings = function()
     // starting scenario
     settings.push(this.mScenarios[this.mSelectedScenario].ID);
 
-	// WoWClassic hire
+	// WoWCharacters hire
 	settings.push(this.mWoWClassicCharactersCheckbox.is(':checked'));
+	settings.push(this.mWoWBurningCharactersCheckbox.is(':checked'));
+	settings.push(this.mWoWLichCharactersCheckbox.is(':checked'));
 
 	return settings;
 }

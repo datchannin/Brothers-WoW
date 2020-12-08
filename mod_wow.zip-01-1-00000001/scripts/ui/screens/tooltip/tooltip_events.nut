@@ -2028,6 +2028,34 @@ this.tooltip_events <- {
 				}
 			];
 
+		case "menu-screen.new-campaign.WoWBurning":
+			return [
+				{
+					id = 1,
+					type = "title",
+					text = "WoW Burning Characters"
+				},
+				{
+					id = 2,
+					type = "description",
+					text = "Remove this option if you don\'t want have possibility to find new World of Warcraft characters. If you unselect it, you can not hire Shamans from settlements.\n\nBut you still can take them as start characters playing new bbWoW mod scenarios.\n\n This option was not implemented yet!"
+				}
+			];
+
+		case "menu-screen.new-campaign.WoWLich":
+			return [
+				{
+					id = 1,
+					type = "title",
+					text = "WoW WotLK Characters"
+				},
+				{
+					id = 2,
+					type = "description",
+					text = "Remove this option if you don\'t want have possibility to find new World of Warcraft characters. If you unselect it, you can not hire Death Knights from settlements.\n\nBut you still can take them as start characters playing new bbWoW mod scenarios.\n\n This option was not implemented yet!"
+				}
+			];
+
 		case "menu-screen.new-campaign.Ironman":
 			return [
 				{

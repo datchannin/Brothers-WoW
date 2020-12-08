@@ -76,7 +76,9 @@ this.new_campaign_menu_module <- this.inherit("scripts/ui/screens/ui_module", {
 			PermanentDestruction = _settings[8],
 			Seed = _settings[9],
 			StartingScenario = _settings[10],
-			WoWClassic = _settings[11]
+			WoWClassic = _settings[11],
+			WoWBurning = _settings[12],
+			WoWLich = _settings[13]
 		};
 
 		if (this.m.OnStartButtonPressedListener != null)

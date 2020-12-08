@@ -3621,6 +3621,8 @@ this.world_state <- this.inherit("scripts/states/state", {
 		meta.setInt("difficulty2", this.World.Assets.getEconomicDifficulty());
 		meta.setInt("ironman", this.World.Assets.isIronman() ? 1 : 0);
 		meta.setInt("wowclassic", this.World.Assets.isWoWClassicHiring() ? 1 : 0);
+		meta.setInt("wowburning", this.World.Assets.isWoWBurningHiring() ? 1 : 0);
+		meta.setInt("wowlich", this.World.Assets.isWoWLichHiring() ? 1 : 0);
 		meta.setInt("dlc", this.Const.DLC.Mask);
 	}
 
