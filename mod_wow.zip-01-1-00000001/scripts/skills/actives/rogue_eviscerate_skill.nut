@@ -16,10 +16,17 @@ this.rogue_eviscerate_skill <- this.inherit("scripts/skills/skill", {
 		this.m.IconDisabled = "ui/perks/skill_rogue_eviscerate_sw.png";
 		this.m.Overlay = "skill_rogue_eviscerate";
 		this.m.SoundOnUse = [
-			//"sounds/combat/.wav"
+			"sounds/combat/rogue_eviscerate_use01.ogg",
+			"sounds/combat/rogue_eviscerate_use02.ogg",
+			"sounds/combat/rogue_eviscerate_use03.ogg",
+			"sounds/combat/rogue_eviscerate_use04.ogg"
 		];
 		this.m.SoundOnHit = [
-			//"sounds/combat/.wav"
+			"sounds/combat/rogue_eviscerate01.ogg",
+			"sounds/combat/rogue_eviscerate02.ogg",
+			"sounds/combat/rogue_eviscerate03.ogg",
+			"sounds/combat/rogue_eviscerate04.ogg",
+			"sounds/combat/rogue_eviscerate05.ogg"
 		];
 		this.m.Type = this.Const.SkillType.Active;
 		this.m.Order = this.Const.SkillOrder.UtilityTargeted;
@@ -184,6 +191,4 @@ this.rogue_eviscerate_skill <- this.inherit("scripts/skills/skill", {
 			_properties.HitChanceMult[this.Const.BodyPart.Body] = 1.0;
 		}
 	}
-
 });
-
