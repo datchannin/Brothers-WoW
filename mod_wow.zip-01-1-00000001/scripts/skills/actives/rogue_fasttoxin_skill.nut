@@ -103,7 +103,8 @@ this.rogue_fasttoxin_skill <- this.inherit("scripts/skills/skill", {
 	
 	function applyDamage(_userEntity, _targetEntity)
 	{
-		this.spawnIcon("status_effect_54", this.getContainer().getActor().getTile());
+		this.spawnIcon("status_effect_54", _targetEntity.getTile());
+		_targetEntity.getSkills().removeByID("effects.rogue_poison");
 
 		if (this.m.SoundOnUse.len() != 0)
 		{
