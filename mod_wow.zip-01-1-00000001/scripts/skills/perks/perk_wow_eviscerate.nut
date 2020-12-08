@@ -26,4 +26,12 @@ this.perk_wow_eviscerate <- this.inherit("scripts/skills/skill", {
 	{
 		this.m.Container.removeByID("actives.eviscerate_skill");
 	}
+	
+	function onAnySkillUsed( _skill, _targetEntity, _properties )
+	{
+		if (_skill.getID() == "actives.puncture" || _skill.getID() == "actives.chop" || _skill.getID() == "actives.slash" || _skill.getID() == "actives.flail")
+		{
+			
+		}
+	}
 });
