@@ -188,6 +188,7 @@ gt.Const.Perks.PerkTreeRogue <- [
 		gt.Const.Perks.PerkDefObjects.SpecDagger
 	],
 	[
+		gt.Const.Perks.PerkDefObjects.Fasttoxin
 		gt.Const.Perks.PerkDefObjects.Ambidextr
 		gt.Const.Perks.PerkDefObjects.Overwhelm
 		gt.Const.Perks.PerkDefObjects.LoneWolf

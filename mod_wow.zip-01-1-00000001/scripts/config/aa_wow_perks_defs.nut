@@ -832,6 +832,16 @@ gt.Const.Perks.PerkDefObjects.Eviscerate <- {
 	Const = "Eviscerate"
 }
 
+gt.Const.Perks.PerkDefObjects.Fasttoxin <- {
+	ID = "perk.wow.rogue.fasttoxin",
+	Script = "scripts/skills/perks/perk_wow_fasttoxin",
+	Name = this.Const.Wow_strings.PerkName.Fasttoxin,
+	Tooltip = this.Const.Wow_strings.PerkDescription.Fasttoxin,
+	Icon = "ui/perks/perk_rogue_fasttoxin.png",
+	IconDisabled = "ui/perks/perk_rogue_fasttoxin_sw.png",
+	Const = "Fasttoxin"
+}
+
 gt.Const.Perks.PerkDefObjects.MasterDagger <- {
 	ID = "perk.wow.rogue.masterdagger",
 	Script = "scripts/skills/perks/perk_wow_masterdagger",
