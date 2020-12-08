@@ -12,7 +12,9 @@ this.rogue_fasttoxin_skill <- this.inherit("scripts/skills/skill", {
 		this.m.IconDisabled = "ui/perks/skill_rogue_fasttoxin_sw.png";
 		this.m.Overlay = "skill_rogue_fasttoxin";
 		this.m.SoundOnUse = [
-			//"sounds/combat/",
+			"sounds/combat/rogue_fasttoxin01.ogg",
+			"sounds/combat/rogue_fasttoxin02.ogg",
+			"sounds/combat/rogue_fasttoxin03.ogg"
 		];
 		this.m.Type = this.Const.SkillType.Active;
 		this.m.Order = this.Const.SkillOrder.UtilityTargeted;
