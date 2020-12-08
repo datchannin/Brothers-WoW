@@ -1,7 +1,8 @@
 /*BBWOW:This file is part of datchannin bbWoW mod, mod_version = 9.00, game_version = 1.4.0.46*/
 this.combopoint_effect <- this.inherit("scripts/skills/skill", {
 	m = {
-		ComboPointQuantity = 0
+		ComboPointQuantity = 0,
+		ComboPointMaximum = 5
 	},
 	function create()
 	{
@@ -18,7 +19,10 @@ this.combopoint_effect <- this.inherit("scripts/skills/skill", {
 
 	function addComboPoint()
 	{
-		this.m.ComboPointQuantity++;
+		if (this.m.ComboPointQuantity < this.m.ComboPointMaximum)
+		{
+			this.m.ComboPointQuantity++;
+		}
 	}
 
 	function resetComboPoint()
