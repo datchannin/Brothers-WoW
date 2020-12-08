@@ -27,11 +27,27 @@ this.perk_wow_eviscerate <- this.inherit("scripts/skills/skill", {
 		this.m.Container.removeByID("actives.eviscerate_skill");
 	}
 	
-	function onAnySkillUsed( _skill, _targetEntity, _properties )
+	function onTargetHit( _skill, _targetEntity, _bodyPart, _damageInflictedHitpoints, _damageInflictedArmor )
 	{
+		local actor = this.m.Container.getActor();
 		if (_skill.getID() == "actives.puncture" || _skill.getID() == "actives.chop" || _skill.getID() == "actives.slash" || _skill.getID() == "actives.flail")
 		{
-			
+			if ((_damageInflictedHitpoints <= 0) && (_damageInflictedArmor <= 0))
+			{
+				return;
+			}
+
+			local combopoints = actor.getSkills().getSkillByID("effects.combopoint");
+			if (combopoints != null)
+			{
+				combopoints.addComboPoint();
+			}
+			else
+			{
+				local effect = this.new("scripts/skills/effects/combopoint_effect");
+				effect.addComboPoint();
+				actor.getSkills().add(effect);
+			}
 		}
 	}
 });
