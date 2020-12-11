@@ -41,7 +41,7 @@ this.rogue_eviscerate_skill <- this.inherit("scripts/skills/skill", {
 		this.m.InjuriesOnHead = this.Const.Injury.PiercingHead;
 		this.m.HitChanceBonus = 0;
 		this.m.DirectDamageMult = 1.0;
-		this.m.ActionPointCost = 6;
+		this.m.ActionPointCost = 0;
 		this.m.FatigueCost = 25;
 		this.m.MinRange = 1;
 		this.m.MaxRange = 1;
