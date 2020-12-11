@@ -52,7 +52,9 @@ gt.Const.DruidScale <- {
 gt.Const.RogueScale <- {
 	poison_damage = 0.05,
 	poison_duration = 15,
-	ambidextr = 1
+	ambidextr = 1,
+	eviscerate_min = 0.02,
+	eviscerate_max = 0.03
 };
 
 // Priest

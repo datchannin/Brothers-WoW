@@ -52,6 +52,8 @@ this.rogue_eviscerate_skill <- this.inherit("scripts/skills/skill", {
 		local total_damage_min = this.m.damage_base_min;
 		local scale = 0;
 
+		scale = this.Math.floor(total_damage_min * this.m.CurrentLevel * this.Const.RogueScale.eviscerate_min);
+
 		total_damage_min += scale;
 
 		return total_damage_min;
@@ -61,6 +63,8 @@ this.rogue_eviscerate_skill <- this.inherit("scripts/skills/skill", {
 	{
 		local total_damage_max = this.m.damage_base_max;
 		local scale = 0;
+
+		scale = this.Math.floor(total_damage_max * this.m.CurrentLevel * this.Const.RogueScale.eviscerate_max);
 
 		total_damage_max += scale;
 
