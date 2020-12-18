@@ -261,6 +261,9 @@ this.wow_scenario <- this.inherit("scripts/scenarios/world/starting_scenario", {
 		item = this.new("scripts/items/armor/druid_t0_armor");
 		this.World.Assets.getStash().add(item);
 
+		item = this.new("scripts/items/helmets/barbarians/heavy_horned_plate_helmet");
+		this.World.Assets.getStash().add(item);
+
 		item = this.new("scripts/items/helmets/druid_t0_helmet");
 		this.World.Assets.getStash().add(item);
 

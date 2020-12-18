@@ -3,6 +3,7 @@ this.bearform_effect <- this.inherit("scripts/skills/skill", {
 	m = {
 		initBody = "",
 		initHead = "",
+		initHead_hide = false,
 		abolishpoison = false,
 		heartofwild = false,
 		direbear = false,
@@ -173,16 +174,25 @@ this.bearform_effect <- this.inherit("scripts/skills/skill", {
 
 		appearance.HideBeard = !setvalue;
 		appearance.HideHair = !setvalue;
-		
+
+		if (items.getItemAtSlot(this.Const.ItemSlot.Head))
+		{
+			if (this.m.initHead_hide)
+			{
+				local helm = items.getItemAtSlot(this.Const.ItemSlot.Head);
+				helm.m.HideCharacterHead = value;
+				appearance.HideHead = value;
+				this.getContainer().getActor().getItems().updateAppearance();
+			}
+			
+			actor.getSprite("helmet").Visible = setvalue;
+			actor.getSprite("helmet_damage").Visible = setvalue;
+		}
 		if (items.getItemAtSlot(this.Const.ItemSlot.Body))
 		{
 			actor.getSprite("armor").Visible = setvalue;
 		}
-		if (items.getItemAtSlot(this.Const.ItemSlot.Head))
-		{
-			actor.getSprite("helmet").Visible = setvalue;
-			actor.getSprite("helmet_damage").Visible = setvalue;
-		}
+
 		actor.getSprite("shield_icon").Visible = setvalue;
 		actor.getSprite("arms_icon").Visible = setvalue;
 		actor.getSprite("hair").Visible = setvalue;
@@ -210,6 +220,13 @@ this.bearform_effect <- this.inherit("scripts/skills/skill", {
 		local actor = this.getContainer().getActor();
 		this.m.initBody = actor.getSprite("body").getBrush().Name;
 		this.m.initHead = actor.getSprite("head").getBrush().Name;
+		
+		local items = actor.getItems();
+		if (items.getItemAtSlot(this.Const.ItemSlot.Head))
+		{
+			local helm = items.getItemAtSlot(this.Const.ItemSlot.Head);
+			this.m.initHead_hide = helm.m.HideCharacterHead;
+		}
 
 		actor.setDirty(true);
 		actor.getSprite("body").setBrush("druid_bear_body");
