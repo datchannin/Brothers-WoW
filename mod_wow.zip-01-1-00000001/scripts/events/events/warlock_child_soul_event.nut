@@ -63,7 +63,7 @@ this.warlock_child_soul_event <- this.inherit("scripts/events/event", {
 						continue;
 					}
 
-					bro.worsenMood(3.0, "Horrified by the child\'s soul drain");
+					bro.worsenMood(2.0, "Horrified by the child\'s soul drain");
 
 					if (bro.getMoodState() < this.Const.MoodState.Neutral)
 					{
@@ -98,7 +98,7 @@ this.warlock_child_soul_event <- this.inherit("scripts/events/event", {
 			{
 				this.Characters.push(_event.m.Warlock.getImagePath());
 
-				_event.m.Warlock.worsenMood(2.0, "Was not able to drain child soul");
+				_event.m.Warlock.worsenMood(1.0, "Was not able to drain child soul");
 				if (_event.m.Warlock.getMoodState() < this.Const.MoodState.Neutral)
 				{
 					this.List.push({
