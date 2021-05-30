@@ -470,7 +470,8 @@ gt.Const.FatalityType <- {
 	Smashed = 3,
 	Unconscious = 4,
 	Devoured = 5,
-	Suicide = 6
+	Suicide = 6,
+	Kraken = 7
 };
 gt.Const.BloodType <- {
 	None = 0,
@@ -1148,12 +1149,12 @@ gt.Const.CharacterProperties <- {
 
 	function getRegularDamageAverage()
 	{
-		return this.Math.floor(this.DamageRegularMin + (this.DamageRegularMax - this.DamageRegularMin) / 2 * this.DamageRegularMult * this.DamageTotalMult);
+		return this.Math.floor((this.DamageRegularMin + (this.DamageRegularMax - this.DamageRegularMin) / 2) * this.DamageRegularMult * this.DamageTotalMult);
 	}
 
 	function getArmorDamageAverage()
 	{
-		return this.Math.floor(this.DamageRegularMin + (this.DamageRegularMax - this.DamageRegularMin) / 2 * this.DamageArmorMult * this.DamageTotalMult);
+		return this.Math.floor((this.DamageRegularMin + (this.DamageRegularMax - this.DamageRegularMin) / 2) * this.DamageArmorMult * this.DamageTotalMult);
 	}
 
 	function getDamageRegularMin()

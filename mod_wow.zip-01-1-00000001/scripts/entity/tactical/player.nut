@@ -743,6 +743,11 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 		{
 			this.updateAchievement("PowerInNumbers", 1, 1);
 		}
+		
+		if (this.World.getPlayerRoster().getSize() == 25 && this.World.Assets.getOrigin().getID() == "scenario.militia")
+		{
+			this.updateAchievement("HumanWave", 1, 1);
+		}
 	}
 
 	function onCombatStart()
@@ -1082,13 +1087,17 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 			this.World.Assets.addScore(-5 * this.getLevel());
 		}
 
-		if (!this.m.IsGuest && !this.Tactical.State.isScenarioMode() && _fatalityType != this.Const.FatalityType.Unconscious && (_skill != null && _killer != null || _fatalityType == this.Const.FatalityType.Devoured))
+		if (!this.m.IsGuest && !this.Tactical.State.isScenarioMode() && _fatalityType != this.Const.FatalityType.Unconscious && (_skill != null && _killer != null || _fatalityType == this.Const.FatalityType.Devoured || _fatalityType == this.Const.FatalityType.Kraken))
 		{
 			local killedBy;
 
 			if (_fatalityType == this.Const.FatalityType.Devoured)
 			{
 				killedBy = "Devoured by a Nachzehrer";
+			}
+			else if (_fatalityType == this.Const.FatalityType.Kraken)
+			{
+				killedBy = "Devoured by a Kraken";
 			}
 			else if (_fatalityType == this.Const.FatalityType.Suicide)
 			{

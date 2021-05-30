@@ -626,12 +626,6 @@ this.settlement <- this.inherit("scripts/entity/world/location", {
 
 	function addImportedProduce( _p )
 	{
-		if (this.m.ProduceImported.len() >= 6)
-		{
-			this.m.ProduceImported.remove(0);
-		}
-
-		this.m.ProduceImported.push(_p);
 	}
 
 	function getFoodPriceMult()

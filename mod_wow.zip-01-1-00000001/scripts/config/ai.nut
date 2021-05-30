@@ -1,7 +1,7 @@
 /*BBWOW:This file is part of datchannin bbWoW mod, mod_version = 9.00, game_version = 1.4.0.46*/
 local gt = this.getroottable();
 gt.Const.AI <- {
-	VerboseMode = true,
+	VerboseMode = false,
 	BenchmarkMode = false,
 	PathfindingDebugMode = false,
 	SecretSpectatorMode = false,

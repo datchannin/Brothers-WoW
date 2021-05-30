@@ -411,8 +411,8 @@ this.skill <- {
 		];
 		local damage_regular_min = this.Math.floor(p.DamageRegularMin * p.DamageRegularMult * p.DamageTotalMult * (this.m.IsRanged ? p.RangedDamageMult : p.MeleeDamageMult) * p.DamageTooltipMinMult);
 		local damage_regular_max = this.Math.floor(p.DamageRegularMax * p.DamageRegularMult * p.DamageTotalMult * (this.m.IsRanged ? p.RangedDamageMult : p.MeleeDamageMult) * p.DamageTooltipMaxMult);
-		local damage_direct_min = this.Math.floor(damage_regular_min * this.Math.minf(1.0, this.m.DirectDamageMult + p.DamageDirectAdd));
-		local damage_direct_max = this.Math.floor(damage_regular_max * this.Math.minf(1.0, this.m.DirectDamageMult + p.DamageDirectAdd));
+		local damage_direct_min = this.Math.floor(damage_regular_min * this.Math.minf(1.0, p.DamageDirectMult * (this.m.DirectDamageMult + p.DamageDirectAdd)));
+		local damage_direct_max = this.Math.floor(damage_regular_max * this.Math.minf(1.0, p.DamageDirectMult * (this.m.DirectDamageMult + p.DamageDirectAdd)));
 		local damage_armor_min = this.Math.floor(p.DamageRegularMin * p.DamageArmorMult * p.DamageTotalMult * (this.m.IsRanged ? p.RangedDamageMult : p.MeleeDamageMult) * p.DamageTooltipMinMult);
 		local damage_armor_max = this.Math.floor(p.DamageRegularMax * p.DamageArmorMult * p.DamageTotalMult * (this.m.IsRanged ? p.RangedDamageMult : p.MeleeDamageMult) * p.DamageTooltipMaxMult);
 
@@ -679,7 +679,7 @@ this.skill <- {
 		local critical = 1.0 + p.getHitchance(this.Const.BodyPart.Head) / 100.0 * (p.DamageAgainstMult[this.Const.BodyPart.Head] - 1.0);
 		local armor = _target.getArmor(this.Const.BodyPart.Head) * (p.getHitchance(this.Const.BodyPart.Head) / 100.0) + _target.getArmor(this.Const.BodyPart.Body) * (this.Math.max(0, p.getHitchance(this.Const.BodyPart.Body)) / 100.0);
 		local armorDamage = this.Math.min(armor, p.getArmorDamageAverage());
-		local directDamage = this.Math.max(0, p.getRegularDamageAverage() * this.m.DirectDamageMult * critical - (this.m.DirectDamageMult < 1.0 ? (armor - armorDamage) * this.Const.Combat.ArmorDirectDamageMitigationMult : 0));
+		local directDamage = this.Math.max(0, p.getRegularDamageAverage() * (p.DamageDirectMult * (this.m.DirectDamageMult + p.DamageDirectAdd)) * critical - (p.DamageDirectMult * (this.m.DirectDamageMult + p.DamageDirectAdd) < 1.0 ? (armor - armorDamage) * this.Const.Combat.ArmorDirectDamageMitigationMult : 0));
 		local hitpointDamage = this.Math.max(0, p.getRegularDamageAverage() * critical - directDamage - armorDamage);
 		armorDamage = armorDamage * (d.DamageReceivedArmorMult * d.DamageReceivedTotalMult);
 		directDamage = directDamage * (d.DamageReceivedDirectMult * d.DamageReceivedTotalMult);
@@ -1251,6 +1251,11 @@ this.skill <- {
 
 	function attackEntity( _user, _targetEntity, _allowDiversion = true )
 	{
+		if (_targetEntity != null && !_targetEntity.isAlive())
+		{
+			return false;
+		}
+
 		local properties = this.m.Container.buildPropertiesForUse(this, _targetEntity);
 		local userTile = _user.getTile();
 		local astray = false;

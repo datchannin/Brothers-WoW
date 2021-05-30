@@ -902,11 +902,6 @@ this.asset_manager <- {
 			this.m.AverageMoodState = this.Math.round(mood / roster.len());
 			_worldState.updateTopbarAssets();
 
-			if (this.World.getPlayerRoster().getSize() == this.m.BrothersMax && this.m.Origin.getID() == "scenario.militia")
-			{
-				this.updateAchievement("HumanWave", 1, 1);
-			}
-
 			if (this.m.EconomicDifficulty >= 1 && this.m.CombatDifficulty >= 1)
 			{
 				if (this.World.getTime().Days >= 365)
